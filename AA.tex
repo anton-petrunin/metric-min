@@ -1,0 +1,115 @@
+\begin{thm}{Proposition}
+Let $Y\in\CAT(0)$ 
+and 
+$f\:\DD\to Y$ be a metric minimizing embedding.
+Then $(\DD,\hat\rho_f)\in \CAT(0)$.
+\end{thm}
+
+
+
+\parit{Proof.}
+Let us glue $\RR^2$ to $Y$ along $f$.
+We obtain a metrizable space, say $\hat Y$
+and the map $f\:\DD\to Y$ admits a natural extension to $\hat f\:\RR^2\to \hat Y$.
+
+According to Proposition~\ref{prop:point-complement}, for any point $y\in \hat Y$ the complement 
+
+
+
+
+
+
+
+
+Let $A\subset X$ be a closed subset.
+A map $f\:X\to Y$ is called metric minimizing rel. $A$
+if there is no map $h\:X\to Y$ such that $f\succ h$ and $h(a)=f(a)$ for any $a\in A$.
+
+
+Let $X$ be a compact connected topological space
+and $Y$ be metric spaces.
+Given a map $f\:X\to Y$ and two points $x,y\in X$
+set 
+\[\rho_f(x,y)=\inf\{\diam K\},\]
+where infimum is taken for all connected sets $K\subset X$
+such that $K\supset x,y$.
+
+Note that $\rho_f$ defines a pseudmetric on $X$;
+that is it satifies all the condition for the metric except for $\rho_f(x,y)=0$ does not nesessury implies $x=y$.
+
+
+Let us consider the equivalence realtion $\sim$ on $X$ 
+defined by
+$x\sim y$ if and only if $\rho_f(x,y)=0$.
+The equivalence class of $x\in X$ with respect to $\sim$
+will be denoted by $[x]_f$.
+We will denote by $X_f$ 
+the metric space of all the equvalence classes with the metric induced by $\rho_f$.
+
+Note that the map $X\to X_f$ defiend as $x\mapsto [x]_f$
+is continuous $f$;
+in particular $X_f$ is compact.
+
+Consider the induced length metric $\hat\rho_f$ on $X_f$.
+
+
+Assume $X$ and $Y$ be two metric spaces 
+and $f\:T\to M$ is an arbitrary map.
+
+Let us define the intrinsic pullback premetric along $f$.
+
+Fix $\eps>0$.
+Given two points $x,y\in X$
+set 
+\[\ell_\eps(x,y)=\inf\left\{\sum_{i\ge 1}|f(x_i)-f(x_{i-1})|_Y\right\}\]
+where the infimum is taken for all $\eps$-chains
+$x=x_0,x_1,\dots,x_n=y$.
+
+Set
+\[\rho_f(x,y)=\lim_{\eps\to0}\ell_\eps.\]
+Note that the function $\eps\mapsto\ell_\eps$ is nonincreasing;
+therefore the limit is always defined although might be infinite.
+
+It is straightforward to check that $\rho_f$ is a pseudometric;
+that is it satisfies all the axioms of metric except $\rho_f(x,y)=0$ does not nesessury impy $x=y$.
+On the other hand, $\rho_f$
+defines genuine metric on the quoteint space $X/sim$,
+where $x\sim y$ if and ony if $\rho_f(x,y)=0$.
+The metric space $(X/\sim,\rho_f)$ will pullback space along $f$
+and denoted as $?_f$.
+
+\begin{thm}{Definition}
+Let $f\:X\to Y$ be a map between metric spaces
+and $A\subset X$.
+The map $f$ is called \emph{metric minimizing rel.} $A$
+if for any other map $h\: X\to Y$ 
+such that $f(a)=h(a)$ for any $A$
+the inequality
+\[\rho_{h}(x,y)\le \rho_f(x,y)\]
+for any pair $x,y\in X$
+implies the equality
+\[\rho_{h}(x,y)= \rho_f(x,y)\]
+for any pair $x,y\in X$.
+\end{thm}
+
+For example a minimizing geodesic with any reparametrization is a metric minimizing map fro an interval rel. its ends.
+
+If $X$ is a 2-dimesional disc $\DD$,
+we will say that $\DD$ is metric minimizing if it is metric minimizing rel. its boundary
+
+\begin{thm}{Proposition}
+For any map $f\:X\to Y$ we have the inequality 
+$\rho_f(x,y)\le |f(x)-f(y)|_X$
+holds for any pair of points $x,y\in X$.
+\end{thm}
+
+
+\begin{thm}{Proposition}
+Assume $f\:X\to Y$ be a continuous map.
+Then the pullback pseudometric $\rho_f$ is lowe semicontinuous;
+that is
+\[\rho_h(x_0,y_0)
+\le
+\liminf_{|x-x_0|_X,|y-y_0|_X\to 0}
+\rho_h(x,y).\]
+\end{thm}

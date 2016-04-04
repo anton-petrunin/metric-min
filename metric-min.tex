@@ -1,0 +1,456 @@
+\documentclass[a4paper,10pt]{amsart}
+\usepackage{metric-min}
+
+\begin{document}
+\title{Metric minimzing surfaces revisited}
+\author{Anton Petrunin}
+\address{A. Petrunin\newline\vskip-4mm
+Math. Dept. PSU,
+University Park, PA 16802,
+USA}
+\email{petrunin@math.psu.edu}
+\author{Stephan Stadler}
+%\thanks{A.~Petrunin was partially supported by NSF grant DMS 1309340.}
+
+
+\date{}
+
+\begin{abstract}
+We say that a surface is metric minimizing if it does not admit a metric decreasing deformation.
+We show that metric the metric minimizing surfaces in $\CAT[0]$ spaces are $\CAT[0]$.
+\end{abstract}
+\maketitle
+
+
+
+\section{Definitions}
+
+Let $X$ be a set.
+A \emph{pseudometric} $|{*}-{*}|$ on set $X$ 
+is a function $X\times X\to[0,\infty]$ (infinity is included in the codomain)
+such that 
+\begin{itemize}
+\item $|x-x|=0$, for any $x\in X$;
+\item $|x-y|=|y-x|$, for any $x,y\in X$;
+\item $|x-y|+|y-z|=|x-z|$ for any  $x,y,z\in X$.
+\end{itemize}
+
+If in addition we assume that $|x-y|=0$ implies $x=y$ then $\rho$ is called \emph{metric}.
+
+
+A set with pseudometric or metric will be called \emph{pseudometric} or \emph{metric space}.
+
+For any pseudometric on a set 
+there is an equivalence relation ``$\sim$''
+such that $x\sim y$ if and only if $|x-y|=0$.
+The pseudmetric $\rho$ defines a genuine metric on the set of equivalence classes of $\sim$.
+The obletined metric space will be denoted as $[X,\rho]$.
+
+\parbf{Induced  pseudometrics.}
+Let $X$ and $Y$ be metric spaces.
+Given a map $f\:X\to Y$,
+define \emph{connecting pseudometric} $|{*}-{*}|_f$ on $X$ 
+the following way
+\[|x-y|_f=\inf\{\diam f(K)\},\]
+where the infimum is taken for all connected sets $K\subset X$ which contain $x$ and $y$;
+if there is no such set we assume $|x-y|=\infty$.
+
+The intrinsic metric induced by $|{*}-{*}|_f$ will be denoted as 
+$\|{*}-{*}\|_f$. 
+That is, 
+$\|x-y\|_f$ is the infimum of all numbers $\ell\ge 0$ such that for any $\eps>0$ there is an array of pints 
+$x=x_0,x_1,\dots,x_n=y$ such that 
+$|x_i-x_{i-1}|_f<\eps$ for any $i$ and 
+\[\sum_{i=1}^n|x_i-x_{i-1}|_f<\ell.\]
+
+The metric spaces defined by the pseudomatrics $|{*}-{*}|_f$ 
+and $\|{*}-{*}\|_f$ on $X$ will be denoted as $|X|_f$ and $\|X\|_f$ correspondingly.
+
+Given two maps $f,h\:X\to Y$ we will write $f\succcurlyeq h$ if 
+\[\|x-y\|_f\ge \|x-y\|_h\]
+for any pair of points $x,y\in X$.
+If in addition the inequality is strict for at least one pair of points then we will write $f\succ h$.
+
+\parbf{Metric minimizing map.}
+Let $A\subset X$ be a closed subset.
+The map $f\:X\to Y$ is called \emph{metric minimizing rel. $A$}
+if there is no map $h\:X\to Y$ such that $f\succ h$
+and $h$ agree with $f$ on $A$;
+that is $h(a)=f(a)$ for any $a\in A$.
+
+We say that $f\:X\to Y$ is \emph{strict metric minimizing rel. $A$}
+if there is no map $h\:X\to Y$ distinct from $f$
+such that $f\succcurlyeq h$, 
+and $h$ agree with $f$ on $A$;
+that is $h(a)=f(a)$ for any $a\in A$.
+
+\begin{thm}{Proposition}\label{prop:point-complement}
+Let $X$ and $Y$ be  metric spaces 
+and $A\subset X$ is a closed subset.
+Assume $X$ is connected and $f\:X\to Y$ is metric minimizing map rel. $A$.
+Then for any point $x\in X$ any connected component of $X\backslash [x]_f$ intersects $A$.
+
+\end{thm}
+
+\parit{Proof.}
+Assume contrary, denote by $W$ the connected component of $X\backslash [x]_f$ such that $A\cap W=\emptyset$.
+Let us define the new map $h\:X\to\ Y$ 
+by setting $f(z)=f(x)$ for any $z\in W$
+and $h(z)=f(z)$ for any $z\notin W$.
+Note that $f\succ h$, a contradiction.
+\qeds
+
+The following two propositions follow directly from the definition of metric minimizing maps.
+
+\begin{thm}{Proposition}\label{prop:subset}
+Let $X$ and $Y$ be metric spaces and $A\subset X$ be a closed subset.
+Assume $X$ is locally connected and $f\:X\to Y$ is a metric minimizing map rel. $A$.
+
+Given a closed subset $W\subset X$, set 
+\[A_W=\partial W\cup (A\cap W).\]
+Then the restriction $f|_W$ is metric minimizing rel. $A_W$.
+\end{thm}
+
+\begin{thm}{Proposition}\label{prop:factor}
+Let $X, X'$ and $Y$ be metric spaces and $A\subset X$ be a closed subset.
+Assume $f\:X\to Y$ is a metric minimizing map rel. $A$
+which factros through a continous surjective map $\phi\:X\to X'$;
+that is there is a map $f'\:X'\to Y$ such that $f=f'\circ\phi$.
+Then $f'\:X'\to Y$ is metric minimizing rel. $\phi(A)$.
+\end{thm}
+
+\section{Metric minimizing graphs}
+
+
+
+\begin{thm}{Proposition}
+Assume $\Gamma$ is a  finite graph and $A$ is a collection of its vertices.
+Let $Y\in\CAT[0]$ and $f\:\Gamma\to Y$ is arbitrary map.
+Then there is a metric minimizing map $f'\:\Gamma\to Y$ rel. $A$ such that
+$f'(a)=f(a)$ for any $a\in A $ and 
+$f\succcurlyeq f'$.
+\end{thm} 
+
+\parit{Proof.}???\qeds
+
+\begin{thm}{Proposition}\label{prop:metric-min-graph}
+Let $Y$ be a $\CAT[0]$ space 
+and $\Gamma$ be a finite  graph and $A$ is a seubset of its vertices.
+Assume $f\:\Gamma\to Y$ is is metric minimizing rel. $A$.
+Then each edge of $\Gamma$ maps to a geodesic 
+and for any vertex $v\notin A$ and any geodesic $[vx]$
+there is a geodesic $[vw]\subset f(\Gamma)$ such that
+$\measuredangle wvx\ge \tfrac\pi2$.
+
+Moreover if $f\succcurlyeq h$
+for an other map $h\:\Gamma\to Y$ such that $h(a)=f(a)$ for any $a\in A$ then $f=h$.
+\end{thm}
+
+\begin{wrapfigure}{r}{22 mm}
+\begin{lpic}[t(-5 mm),b(-0 mm),r(0 mm),l(0 mm)]{pics/not-sufficient(1)}
+%\lbl[lb]{12.5,11;$W_0$}}
+\end{lpic}
+\end{wrapfigure}
+
+As one may see from the diagram,
+the condition in the proposition does not guarantee that the map $f$ is metric minimizing.
+
+\parit{Proof.}???\qeds
+
+Assume $\Gamma$ is a finite graph embedded in the plane,
+in particular it is a planar graph.
+
+The complement to the unbounded connected component of $\RR^2\backslash\Gamma$ will be called filling of $\Gamma$;
+it will be denoted as $\Fill\Gamma$.
+
+The vertex of $\Gamma$ will be called \emph{boundary vertex}
+if it lies in in the boundary $\partial\Fill\Gamma$,
+otherwise it will be called \emph{interior vertex}.
+
+\begin{thm}{Corollary}
+Let $Y$ be a $\CAT[0]$ space,
+$\Gamma$ is a graph embedded in $\RR^2$.
+If $f\:\Gamma\to Y$ is a metric minimizing map rel. to the boundary vertices 
+then the domain of $\Gamma$ admits a 
+a $\CAT[0]$ intrinsic pseudometric which makes $f$ to be length preserving.
+\end{thm}
+
+\parit{Proof.}
+Fix a cycle $\gamma$ in $\Gamma$ which bounds one of the discs in the complement $\RR^2\backslash \Gamma$.
+Set $\ell=\length\gamma$.
+
+By Reshetnyak's majorization theorem, there is a polygon $P$ (possibly degenerate) with perimeter $\ell$ which admits a short map to $Y$ in such a way that $\gamma$ is formed by the image of the boundary.
+Note that the angle of the polygon is at least as big as the angle between the corresponding edges.
+
+Prepare a polygon as above for each contry of $\Gamma$
+and glue a space from them as ???.
+The obtained space $D$ is simply connected.
+Therefore in order to show that $D$ is $\CAT[0]$,
+we need to check that sum of the angles around each interior vertex in $\Gamma$ is at least $2\cdot\pi$.
+
+Fix an interior vertex $v$.
+Assume that the sum of angles around $v$ is less that $2\cdot\pi$.
+The space of directions $\Sigma_{f(v)}$ is a $\CAT[1]$ space.
+The directions of the edges from $v$ give a cyclically ordered sequence say $\xi_1,\dots,\xi_k$
+such that
+\[\measuredangle(\xi_1,\xi_2)+\dots+\measuredangle(\xi_k,\xi_1)<2\cdot\pi.\]
+By Reshetnyak's majorization theorem,
+the closed broken line $\xi_1,\dots,\xi_k$ is majorized by a convex spherical polygon $P$.
+Note that $P$ lies in an open hemisphere with the pole  at some point in $P$.
+Choose $x\in Y$ so that the direction form $f(v)$ to $x$ coinsides with the image of the pole in $\Sigma_{f(v)}$.
+This choice of $x$ contradicts the condition in Proposition~\ref{prop:metric-min-graph}.\qeds
+
+
+
+
+
+
+
+\section{Metric minimizing discs}
+
+
+
+Let us denote by $\DD$ the closed unit disc in the plane,
+its boundary $\partial \DD$ is a unit circle.
+
+Assume $f\:\DD\to X$ is a continuous map.
+Let us consider the disc $\DD$ as a subset in the sphere $\SS^2$.
+For any $x\in \DD$, we define $[x]_f$ as above
+and 
+if $x\in \SS^2\backslash \DD$, set $[x]_f=\{x\}$.
+Denote by $\SS^2_f$ the set of classes $[x]_f$ with quotient topology induced by the map $\iota_f\:x\mapsto [x]_f$.
+
+According to Moore's theorem \cite{moore},
+if the set $\SS^2\backslash[x]_f$ is connected for any $x\in \SS^2$
+then $\SS^2_f$ is homeomorphic to $\SS^2$.
+Applying Proposition~\ref{prop:point-complement} we get the following.
+
+\begin{thm}{Proposition}
+Let $f\:\DD\to\ Y$ be a metric minimizing map rel. $\partial \DD$.
+Then $|\DD|_f$ is compact and it admits an embedding $\iota\:|\DD|_f\to \RR^2$.
+
+Moreover the image of $\partial \DD$
+under the map $x\mapsto [x]_f$
+is 
+\[\partial|\DD|_f\df\iota^{-1}(\partial_{\RR^2}[\iota(|\DD|_f)]).\]
+
+\end{thm}
+
+Note that the map $f\:\DD\to Y$ factors through the projection 
+$\DD\to|\DD|_f$ defined as $x\mapsto[x]_f$.
+Define $f'\:|\DD|_f\to Y$ as the map such that $f(x)=f'([x]_f)$ for any $x\in\DD$.
+
+By Proposition \ref{prop:factor} the map $f'\:|\DD|_f\to Y$
+is metric minimizing rel. $\partial|\DD|_f$.
+
+\begin{thm}{Proposition}
+Let $Y\in\CAT(0)$ 
+and 
+$f\:\DD\to Y$ be a metric minimizing disc.
+Then $\|\DD\|_f$ is a complete metric space.
+\end{thm}
+
+\parit{Proof.}
+Denote by $W$ be completion of $\|\DD\|_f$.
+Note that the map $f\:\DD\to Y$ extends naturally to the map $\bar f\:W\to Y$.
+
+Clearly $\bar f(W)\subset f(\DD)$. 
+It follows that if $\|\DD\|_f$ is a proper subset of $W$
+then $\bar f$ is not injective.
+
+???
+\qeds
+
+
+
+
+
+
+
+
+\section{Key Lemma}
+
+
+\begin{thm}{Key Lemma}\label{lem:key}
+Let $s\:\DD\to Y$ 
+be a metric minimizing disc rel. the boundary $\partial \DD$
+in a $\CAT(0)$ space $Y$.
+Given a finite set $F\subset \DD$
+there a $\CAT(0)$ space $W$ which is homeomorphic to a compact subset of the plane
+and the maps $p\:F\to W$ and $q\:W\to Y$ such that
+$s(x)=q\circ p(x)$ for any $x\in F\cap \partial \DD$
+and $\|p(x),p(y)\|_q\le \|x-y\|_s$ for any $x,y\in F$.
+\end{thm}
+
+\parit{Proof.}
+According to ???, we can assume that $s$ is a pseudoimmersion.
+In particular, 
+for any two points $x$ and $y$ in $\DD$ such that $|x-y|_s<\infty$,
+can be joined by a geodesic.
+
+Let us connect all points in $F$ by geodesics.
+We can assume that 
+every pair of the constructed geodesics 
+are either disjoint, or their intersection is connected.
+This can be proved by induction on number of geodesics.
+%???A FORMAL PROOF IS NEEDED!!!
+
+
+In particular the set of all these geodesics forms a finite graph, say $\Gamma$,
+embedded in $\DD$. 
+
+Denote by $\tau$ a triangulation of $\DD$ which contains $\Gamma$ in its $1$-skeleton.
+
+The $0$-skeletons of $\tau$ will be denoted by $\tau^0$.
+Note that $\tau^0\supset F$. 
+Given two points $x,y\in \tau^0$ we will write 
+$x \leftrightarrow y$ if $x$ and $y$ are the ends of an edge in $\tau$. 
+Given two maps $a,b\:\tau^0\to Y$ we will write
+$a\succcurlyeq b$ if 
+\[x\leftrightarrow y\ \ \Rightarrow\ \ |a(x)-a(y)|\ge |b(x)-b(y)|.\]
+If at least one of the inequalities is strict, we will write $a\succ b$.
+
+Denote by $\mathcal{A}$ the class of maps $a\:\tau^0\to Y$ such that
+$a(x)=s(x)$ for any $x\in F\cap\partial \DD$ and $s|_{\tau^0}\succcurlyeq a$.
+Let us show that in this class we can choose a minimal map $a^*$ with respect to $\succcurlyeq$;
+that is, there is no map $a$ in the class such that  $a^*\succ a$.
+
+Note that we can choose a decreasing sequence 
+$a_1
+\succcurlyeq
+a_2
+\succcurlyeq
+\dots $
+in $\mathcal{A}$ such that for any $a\in \mathcal{A}$
+we have $a_n\not\succcurlyeq a$ for some $n$.
+
+If $Y$ is locally compact, 
+take $a^*$ to be partial limit of $(a_n)$,
+it is defined by Arzel\'a--Ascoli theorem.
+
+If $Y$ is not locally compact then by assumptions $Y\in\CAT(0)$.
+In this case we can show that the sequence $a_1\succcurlyeq a_2\succcurlyeq\dots $ converges.
+Fix a pair $x\leftrightarrow y$ and set $\ell_n=|a_n(x)-a_n(y)|$.
+Note that $\ell_n$ is nonincresing therefore converging sequence.
+
+Now assume that $(a_n)$ diverge,
+then for a fixed $\eps>0$ and fixed  $x\in\tau^{0}$
+we can pass to a subsequence of $(a_n)$ so that
+$|a_{n+1}(x)-a_{n}(x)|>\eps$ for any $n$.
+
+Let us equip $\tau$ with a metric $d$,
+such that each triangle $[xyz]$ in $\tau$ is isometric to (possibly degenerate) plane triangle with sides $|a^*(x)-a^*(y)|_Y$,
+$|a^*(y)-a^*(z)|_Y$ and  $|a^*(z)-a^*(x)|_Y$.
+
+Note that $(\tau,d)$ is $\CAT(0)$.
+Indeed ???
+
+Hence the statement follows.
+\qeds
+
+
+
+\section{Lemma on compactness}
+
+\begin{thm}{Lemma}
+Let $K_\ell$ be the set of isometry classes of $\CAT(0)$ metrics on the disc $\DD$ with the length of the boundary at most $\ell$.
+The $K_\ell$ is precompact in Gromov--Hausdorff topology.
+\end{thm}
+
+\parit{Proof.}
+Consider a metric $d$ on $\DD$ with isometry class in $K_\ell$.
+Note that $\area (\DD,d)\le \ell^2$.
+
+Fix $\eps>0$. 
+Set $N=\lceil 10\cdot\tfrac\ell\eps\rceil$.
+Choose $N$ points $y_1,\dots,y_N$ on $\partial D$
+which divide $\partial D$ into arcs of equal length.
+
+Consider the maximal set of points $\{x_1,\dots,x_n\}$ such that $d(x_i,x_j)>\eps$ and $d(x_i,y_j)>\eps$.
+
+Note that the set $\{x_1,\dots,x_n,y_1,\dots,y_N\}$
+forms an $\eps$-net in $(\DD,d)$.
+
+Further note that the balls $B_i=B_{\eps/2}(x_i)$
+do not overlap and $\area B_i\ge \tfrac{\pi\cdot\eps^2}{4}$.
+It follows that $n\le 2\cdot\left(\tfrac\ell\eps\right)^2$.
+That is, there is a function $N(\eps)$,
+which returns a positive integer for any $\eps>0$
+such that for any 
+$(\DD,d)$ contains an $\eps$-net
+with at most $N(\eps)$ points.
+According to Theorem ???, 
+any class of metrics with such property is precompact in Gromov--Hausdorff topology.
+\qeds
+
+
+\section{Proof assembling}
+
+Note that it is sufficient to prove the theorem 
+in the case if $\partial \DD$ is rectifiable with respect to $|{*}{*}|_s$.
+
+Indeed, fix a triangle $\triangle$ in $(\DD,|{*}{*}|_s)$.
+If the above case is proved 
+then it bounds a $\CAT[0]$ disc in $(\DD,|{*}{*}|_s)$.
+In particular the comparison holds for $\triangle$.
+Since $\triangle$ is arbitrary, the statement follows.
+
+Given a fine set $F\subset \DD$,
+denote by $W_F$
+the set of isometry classes $(\triangle,d)$ for $d\in {M}_F$.
+
+\begin{thm}{Lemma}\label{lem:GH-compact}
+$W_F$
+is compact in the Gromov--Hausdorff topology.
+\end{thm}
+
+Note that $W_F\supset W_{F'}$
+for any two finite sets $F\subset F'$ in $\DD$.
+From Lemma~\ref{lem:GH-compact}, we get
+\[W
+=
+\cap_{F}W_F\ne \emptyset.\]
+
+Fix a dense sequence of points $\{x_1,x_2,\dots\}$ in $\DD$,
+such that the subsequence of points in $\partial \DD$
+is also dense in $\partial \DD$.
+Set $F_n=\{x_1,\dots,x_n\}$.
+By construction $K$ is isometric to $(\DD,d)$ for some $d\in\mathcal{M}_{F_n}$;
+denote by $\iota_n\:(\DD,d)\to K$ the isometry.
+
+Passing to a subsequence by $n$ we can ensure that the sequence
+$z_n=\iota_n(x_k)$ for every $k$;
+define $\iota(x_k)$ to be its limit.
+Note that $\iota$ is short, therefore it can be extended to whole $\DD$ as a short map which we will still denote as $\iota$.
+
+
+\begin{thebibliography}{52}
+\bibitem{moore}
+Moore, R. L.,
+``Concerning upper semi-continuous collections of continua,''
+Trans. Amer. Math. Soc. 27 no. 4 (1925) pp. 416--428
+\end{thebibliography}
+
+
+\end{document}
+
+@article {moore,
+    AUTHOR = {Moore, R. L.},
+     TITLE = {Concerning upper semi-continuous collections of continua},
+   JOURNAL = {Trans. Amer. Math. Soc.},
+  FJOURNAL = {Transactions of the American Mathematical Society},
+    VOLUME = {27},
+      YEAR = {1925},
+    NUMBER = {4},
+     PAGES = {416--428},
+      ISSN = {0002-9947},
+     CODEN = {TAMTAM},
+   MRCLASS = {54F15 (54B99)},
+  MRNUMBER = {1501320},
+       DOI = {10.2307/1989234},
+       URL = {http://dx.doi.org/10.2307/1989234},
+}
+
+
+
+
