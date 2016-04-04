@@ -32,7 +32,7 @@ such that
 \begin{itemize}
 \item $|x-x|=0$, for any $x\in X$;
 \item $|x-y|=|y-x|$, for any $x,y\in X$;
-\item $|x-y|+|y-z|=|x-z|$ for any  $x,y,z\in X$.
+\item $|x-y|+|y-z|\ge|x-z|$ for any  $x,y,z\in X$.
 \end{itemize}
 
 If in addition we assume that $|x-y|=0$ implies $x=y$ then $\rho$ is called \emph{metric}.
@@ -44,7 +44,8 @@ For any pseudometric on a set
 there is an equivalence relation ``$\sim$''
 such that $x\sim y$ if and only if $|x-y|=0$.
 The pseudmetric $\rho$ defines a genuine metric on the set of equivalence classes of $\sim$.
-The obletined metric space will be denoted as $[X,\rho]$.
+Given a pseudometric space $X$,
+the obtained metric space will be denoted as $[X]$.
 
 \parbf{Induced  pseudometrics.}
 Let $X$ and $Y$ be metric spaces.
@@ -72,7 +73,8 @@ for any pair of points $x,y\in X$.
 If in addition the inequality is strict for at least one pair of points then we will write $f\succ h$.
 
 \parbf{Metric minimizing map.}
-Let $A\subset X$ be a closed subset.
+Let $X$ and $Y$ be metric spaces and $A\subset X$ be a closed subset.
+
 The map $f\:X\to Y$ is called \emph{metric minimizing rel. $A$}
 if there is no map $h\:X\to Y$ such that $f\succ h$
 and $h$ agree with $f$ on $A$;
@@ -81,8 +83,7 @@ that is $h(a)=f(a)$ for any $a\in A$.
 We say that $f\:X\to Y$ is \emph{strict metric minimizing rel. $A$}
 if there is no map $h\:X\to Y$ distinct from $f$
 such that $f\succcurlyeq h$, 
-and $h$ agree with $f$ on $A$;
-that is $h(a)=f(a)$ for any $a\in A$.
+and $h$ agree with $f$ on $A$.
 
 \begin{thm}{Proposition}\label{prop:point-complement}
 Let $X$ and $Y$ be  metric spaces 
@@ -97,14 +98,20 @@ Assume contrary, denote by $W$ the connected component of $X\backslash [x]_f$ su
 Let us define the new map $h\:X\to\ Y$ 
 by setting $f(z)=f(x)$ for any $z\in W$
 and $h(z)=f(z)$ for any $z\notin W$.
-Note that $f\succ h$, a contradiction.
+
+Clearly $f$ and $h$ agree on $A$.
+
+Note that $f\succ h$.
+Indeed $f\succcurlyeq h$ by construction
+and $\|x-y\|_f>0=\|x-y\|_h$ for any $y\in W$.
+We just arrived to a contradiction.
 \qeds
 
 The following two propositions follow directly from the definition of metric minimizing maps.
 
 \begin{thm}{Proposition}\label{prop:subset}
 Let $X$ and $Y$ be metric spaces and $A\subset X$ be a closed subset.
-Assume $X$ is locally connected and $f\:X\to Y$ is a metric minimizing map rel. $A$.
+Assume $X$ is $f\:X\to Y$ is a metric minimizing map rel. $A$.
 
 Given a closed subset $W\subset X$, set 
 \[A_W=\partial W\cup (A\cap W).\]
@@ -135,15 +142,17 @@ $f\succcurlyeq f'$.
 
 \begin{thm}{Proposition}\label{prop:metric-min-graph}
 Let $Y$ be a $\CAT[0]$ space 
-and $\Gamma$ be a finite  graph and $A$ is a seubset of its vertices.
+and $\Gamma$ be a finite  graph and $A$ is a subset of its vertices.
 Assume $f\:\Gamma\to Y$ is is metric minimizing rel. $A$.
-Then each edge of $\Gamma$ maps to a geodesic 
-and for any vertex $v\notin A$ and any geodesic $[vx]$
-there is a geodesic $[vw]\subset f(\Gamma)$ such that
-$\measuredangle wvx\ge \tfrac\pi2$.
+Then
+\begin{itemize}
+\item $f$ is strictly metric minimizing rel. $A$ 
+\item each edge of $\Gamma$ maps to a geodesic
+\item for any vertex $v\notin A$ and any geodesic $x\ne f(v)$
+there is an edge  $[vw]$ in $\Gamma$ such that
+$\measuredangle[f(v)^{f(w)}_x]\ge \tfrac\pi2$.
+\end{itemize}
 
-Moreover if $f\succcurlyeq h$
-for an other map $h\:\Gamma\to Y$ such that $h(a)=f(a)$ for any $a\in A$ then $f=h$.
 \end{thm}
 
 \begin{wrapfigure}{r}{22 mm}
@@ -153,12 +162,12 @@ for an other map $h\:\Gamma\to Y$ such that $h(a)=f(a)$ for any $a\in A$ then $f
 \end{wrapfigure}
 
 As one may see from the diagram,
-the condition in the proposition does not guarantee that the map $f$ is metric minimizing.
+the last two conditions in the proposition do not guarantee that the map $f$ is metric minimizing.
 
 \parit{Proof.}???\qeds
 
 Assume $\Gamma$ is a finite graph embedded in the plane,
-in particular it is a planar graph.
+in particular $\Gamma$ is a planar.
 
 The complement to the unbounded connected component of $\RR^2\backslash\Gamma$ will be called filling of $\Gamma$;
 it will be denoted as $\Fill\Gamma$.
@@ -215,9 +224,8 @@ its boundary $\partial \DD$ is a unit circle.
 
 Assume $f\:\DD\to X$ is a continuous map.
 Let us consider the disc $\DD$ as a subset in the sphere $\SS^2$.
-For any $x\in \DD$, we define $[x]_f$ as above
-and 
-if $x\in \SS^2\backslash \DD$, set $[x]_f=\{x\}$.
+For any $x\in \DD$, we define $[x]_f$ as above;
+if $x\in \SS^2\backslash \DD$ we assume $[x]_f=\{x\}$.
 Denote by $\SS^2_f$ the set of classes $[x]_f$ with quotient topology induced by the map $\iota_f\:x\mapsto [x]_f$.
 
 According to Moore's theorem \cite{moore},
@@ -225,16 +233,19 @@ if the set $\SS^2\backslash[x]_f$ is connected for any $x\in \SS^2$
 then $\SS^2_f$ is homeomorphic to $\SS^2$.
 Applying Proposition~\ref{prop:point-complement} we get the following.
 
-\begin{thm}{Proposition}
+\begin{thm}{Proposition}\label{prop:|D|}
 Let $f\:\DD\to\ Y$ be a metric minimizing map rel. $\partial \DD$.
 Then $|\DD|_f$ is compact and it admits an embedding $\iota\:|\DD|_f\to \RR^2$.
 
 Moreover the image of $\partial \DD$
-under the map $x\mapsto [x]_f$
-is 
-\[\partial|\DD|_f\df\iota^{-1}(\partial_{\RR^2}[\iota(|\DD|_f)]).\]
-
+under the map $x\mapsto \iota([x]_f)$
+is $\partial_{\RR^2}[\iota(|\DD|_f)]$.
 \end{thm}
+
+Further we denote by $\partial|\DD|_f$ the image of $\partial \DD$
+under the map $x\mapsto [x]_f$.
+According to the above proposition 
+\[\partial|\DD|_f=\iota^{-1}\left(\partial_{\RR^2}[\iota(|\DD|_f)]\right).\]
 
 Note that the map $f\:\DD\to Y$ factors through the projection 
 $\DD\to|\DD|_f$ defined as $x\mapsto[x]_f$.
@@ -252,12 +263,19 @@ Then $\|\DD\|_f$ is a complete metric space.
 
 \parit{Proof.}
 Denote by $W$ be completion of $\|\DD\|_f$.
-Note that the map $f\:\DD\to Y$ extends naturally to the map $\bar f\:W\to Y$.
 
-Clearly $\bar f(W)\subset f(\DD)$. 
-It follows that if $\|\DD\|_f$ is a proper subset of $W$
+By Proposition \ref{prop:|D|},
+the space $|\DD|_f$ is compact.
+Therefore the tautological map $f\:\|\DD\|_f\to |\DD|_f$ 
+extends to a continuous map $\bar f\:W\to |\DD|_f$.
+
+If $\|\DD\|_f$ is a proper subset of $W$ 
+then from above we get that
 then $\bar f$ is not injective.
 
+In this case there is a rectifiable path $\gamma\:[0,1]\to W$,
+such that $\gamma(t)\in\|\DD\|_f$ for all $t<1$ and $\gamma(1)\notin \|\DD\|_f$.
+Note that the path $\bar f\circ \gamma$ is also rectifiable and in particular continuous.
 ???
 \qeds
 
@@ -278,8 +296,11 @@ in a $\CAT(0)$ space $Y$.
 Given a finite set $F\subset \DD$
 there a $\CAT(0)$ space $W$ which is homeomorphic to a compact subset of the plane
 and the maps $p\:F\to W$ and $q\:W\to Y$ such that
-$s(x)=q\circ p(x)$ for any $x\in F\cap \partial \DD$
-and $\|p(x),p(y)\|_q\le \|x-y\|_s$ for any $x,y\in F$.
+\[s(x)=q\circ p(x)\] 
+for any $x\in F\cap \partial \DD$
+and 
+\[\|p(x),p(y)\|_q\le \|x-y\|_s\] 
+for any $x,y\in F$.
 \end{thm}
 
 \parit{Proof.}
@@ -352,7 +373,7 @@ Hence the statement follows.
 
 \section{Lemma on compactness}
 
-\begin{thm}{Lemma}
+\begin{thm}{Lemma on compactness}\label{lem:compact}
 Let $K_\ell$ be the set of isometry classes of $\CAT(0)$ metrics on the disc $\DD$ with the length of the boundary at most $\ell$.
 The $K_\ell$ is precompact in Gromov--Hausdorff topology.
 \end{thm}
@@ -387,36 +408,33 @@ any class of metrics with such property is precompact in Gromov--Hausdorff topol
 \section{Proof assembling}
 
 Note that it is sufficient to prove the theorem 
-in the case if $\partial \DD$ is rectifiable with respect to $|{*}{*}|_s$.
+in the case if $\partial |\DD|_f$ is rectifiable.
 
-Indeed, fix a triangle $\triangle$ in $(\DD,|{*}{*}|_s)$.
+Indeed, fix a triangle $\triangle$ in $\|\DD\|_f$.
 If the above case is proved 
-then it bounds a $\CAT[0]$ disc in $(\DD,|{*}{*}|_s)$.
-In particular the comparison holds for $\triangle$.
+then it bounds a closed set which is $\CAT[0]$.
+In particular $\triangle$ is thin.
 Since $\triangle$ is arbitrary, the statement follows.
 
 Given a fine set $F\subset \DD$,
-denote by $W_F$
-the set of isometry classes $(\triangle,d)$ for $d\in {M}_F$.
+denote by $\mathcal{W}_F$
+the set of isometry classes of spaces $W$ which meet the conditions of the Key Lemma~\ref{lem:key}
+for $F$.
+According to Lemma on compactness (\ref{lem:compact}) $\mathcal{W}_F$.
 
-\begin{thm}{Lemma}\label{lem:GH-compact}
-$W_F$
-is compact in the Gromov--Hausdorff topology.
-\end{thm}
-
-Note that $W_F\supset W_{F'}$
+Note that $\mathcal{W}_F\supset \mathcal{W}_{F'}$
 for any two finite sets $F\subset F'$ in $\DD$.
-From Lemma~\ref{lem:GH-compact}, we get
-\[W
+Therefore 
+\[\mathcal{W}
 =
-\cap_{F}W_F\ne \emptyset.\]
+\bigcap_{F}\mathcal{W}_F\ne \emptyset.\]
 
-Fix a dense sequence of points $\{x_1,x_2,\dots\}$ in $\DD$,
+Fix a space $W$ from $\mathcal{W}$
+and a dense sequence of points $\{x_1,x_2,\dots\}$ in $\DD$,
 such that the subsequence of points in $\partial \DD$
 is also dense in $\partial \DD$.
 Set $F_n=\{x_1,\dots,x_n\}$.
-By construction $K$ is isometric to $(\DD,d)$ for some $d\in\mathcal{M}_{F_n}$;
-denote by $\iota_n\:(\DD,d)\to K$ the isometry.
+By construction ???
 
 Passing to a subsequence by $n$ we can ensure that the sequence
 $z_n=\iota_n(x_k)$ for every $k$;
