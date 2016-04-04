@@ -38,14 +38,12 @@ such that
 If in addition we assume that $|x-y|=0$ implies $x=y$ then $\rho$ is called \emph{metric}.
 
 
-A set with pseudometric or metric will be called \emph{pseudometric} or \emph{metric space}.
+A set with pseudometric or metric will be called \emph{pseudometric} or correspondingly \emph{metric space}.
 
 For any pseudometric on a set 
 there is an equivalence relation ``$\sim$''
 such that $x\sim y$ if and only if $|x-y|=0$.
 The pseudmetric $\rho$ defines a genuine metric on the set of equivalence classes of $\sim$.
-Given a pseudometric space $X$,
-the obtained metric space will be denoted as $[X]$.
 
 \parbf{Induced  pseudometrics.}
 Let $X$ and $Y$ be metric spaces.
@@ -59,10 +57,10 @@ if there is no such set we assume $|x-y|=\infty$.
 The intrinsic metric induced by $|{*}-{*}|_f$ will be denoted as 
 $\|{*}-{*}\|_f$. 
 That is, 
-$\|x-y\|_f$ is the infimum of all numbers $\ell\ge 0$ such that for any $\eps>0$ there is an array of pints 
+\[\|x-y\|_f=\liminf_{\eps\to0+}\left\{\sum_{i=1}^n|x_i-x_{i-1}|_f\right\}.\]
+where the infimum is taken for all arrays of pints 
 $x=x_0,x_1,\dots,x_n=y$ such that 
-$|x_i-x_{i-1}|_f<\eps$ for any $i$ and 
-\[\sum_{i=1}^n|x_i-x_{i-1}|_f<\ell.\]
+$|x_i-x_{i-1}|_f<\eps$ for any $i$.
 
 The metric spaces defined by the pseudomatrics $|{*}-{*}|_f$ 
 and $\|{*}-{*}\|_f$ on $X$ will be denoted as $|X|_f$ and $\|X\|_f$ correspondingly.
@@ -99,12 +97,10 @@ Let us define the new map $h\:X\to\ Y$
 by setting $f(z)=f(x)$ for any $z\in W$
 and $h(z)=f(z)$ for any $z\notin W$.
 
-Clearly $f$ and $h$ agree on $A$.
+By construction $f$ and $h$ agree on $A$ and $f\succcurlyeq h$.
 
-Note that $f\succ h$.
-Indeed $f\succcurlyeq h$ by construction
-and $\|x-y\|_f>0=\|x-y\|_h$ for any $y\in W$.
-We just arrived to a contradiction.
+Note that $\|x-y\|_f>0=\|x-y\|_h$ for any $y\in W$.
+Therefore $f\succ h$, a contradiction.
 \qeds
 
 The following two propositions follow directly from the definition of metric minimizing maps.
@@ -180,7 +176,7 @@ otherwise it will be called \emph{interior vertex}.
 Let $Y$ be a $\CAT[0]$ space,
 $\Gamma$ is a graph embedded in $\RR^2$.
 If $f\:\Gamma\to Y$ is a metric minimizing map rel. to the boundary vertices 
-then the domain of $\Gamma$ admits a 
+then $\Fill\Gamma$ admits a 
 a $\CAT[0]$ intrinsic pseudometric which makes $f$ to be length preserving.
 \end{thm}
 
@@ -223,14 +219,14 @@ Let us denote by $\DD$ the closed unit disc in the plane,
 its boundary $\partial \DD$ is a unit circle.
 
 Assume $f\:\DD\to X$ is a continuous map.
-Let us consider the disc $\DD$ as a subset in the sphere $\SS^2$.
+Let us consider the disc $\DD$ as a subset in the plane $\RR^2$.
 For any $x\in \DD$, we define $[x]_f$ as above;
-if $x\in \SS^2\backslash \DD$ we assume $[x]_f=\{x\}$.
-Denote by $\SS^2_f$ the set of classes $[x]_f$ with quotient topology induced by the map $\iota_f\:x\mapsto [x]_f$.
+if $x\in \RR^2\backslash \DD$ we assume $[x]_f=\{x\}$.
+Denote by $\RR^2_f$ the set of classes $[x]_f$ with quotient topology induced by the map $\iota_f\:x\mapsto [x]_f$.
 
 According to Moore's theorem \cite{moore},
-if the set $\SS^2\backslash[x]_f$ is connected for any $x\in \SS^2$
-then $\SS^2_f$ is homeomorphic to $\SS^2$.
+if for any point $x$, the set $[x]_f$ is connected compact set with connected complement
+then $\RR^2_f$ is homeomorphic to the plane.
 Applying Proposition~\ref{prop:point-complement} we get the following.
 
 \begin{thm}{Proposition}\label{prop:|D|}
