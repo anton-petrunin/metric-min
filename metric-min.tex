@@ -308,17 +308,24 @@ for any $x,y\in F$.
 \end{thm}
 
 \parit{Proof.}
-According to ???, we can assume that $s$ is a pseudoimmersion.
-In particular, 
-for any two points $x$ and $y$ in $\DD$ such that $|x-y|_s<\infty$,
-can be joined by a geodesic.
+Let us connect each pair $x,y$ of points in $F$ by geodesics
+if $\|x-y\|_s<\infty$.
 
-Let us connect all points in $F$ by geodesics.
 We can assume that 
 every pair of the constructed geodesics 
-are either disjoint, or their intersection is connected.
-This can be proved by induction on number of geodesics.
-%???A FORMAL PROOF IS NEEDED!!!
+are either disjoint, or their intersection is formed by finite collections of arcs and points.
+
+Indeed, assuming some number of geodesics $\gamma_1,\dots\gamma_n$ which meets the above properrty is already chousen and we need to choose one more geodesics connecting $x$ to $y$.
+Choose a minimizing geodesic $\gamma_{n+1}$ which maximize the time it spends in $\gamma_1,\dots\gamma_n$  in the order of importance.
+Namely, 
+\begin{itemize}
+\item  among all minimizing geodesics connecting $x$ to $y$
+chosse one which spends maximal time in $\gamma_1$ --- in this case $\gamma_{n+1}$ intesects $\gamma_1$ along empty set, one-point set or a closed arc.
+\item among all minimizing geodesics as above
+chosse one which spends maximal time in $\gamma_2$ --- in this case $\gamma_{n+1}$ intesects $\gamma_2$ along at most two arcs and points.
+\item and so on.
+\end{itemize}
+
 
 
 In particular the set of all these geodesics forms a finite graph, say $\Gamma$,
