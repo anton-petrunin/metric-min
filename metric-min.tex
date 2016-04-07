@@ -35,7 +35,7 @@ such that
 \item $|x-y|+|y-z|\ge|x-z|$ for any  $x,y,z\in X$.
 \end{itemize}
 
-If in addition we assume that $|x-y|=0$ implies $x=y$ then $\rho$ is called \emph{metric}.
+If in addition $|x-y|=0$ implies $x=y$ then $|{*}-{*}|$ is called \emph{metric}.
 
 
 A set with pseudometric or metric will be called \emph{pseudometric} or correspondingly \emph{metric space}.
@@ -43,7 +43,7 @@ A set with pseudometric or metric will be called \emph{pseudometric} or correspo
 For any pseudometric on a set 
 there is an equivalence relation ``$\sim$''
 such that $x\sim y$ if and only if $|x-y|=0$.
-The pseudmetric $\rho$ defines a genuine metric on the set of equivalence classes of $\sim$.
+The pseudmetric $|{*}-{*}|$ defines a genuine metric on the set of equivalence classes of $\sim$.
 
 \parbf{Induced  pseudometrics.}
 Let $X$ and $Y$ be metric spaces.
@@ -52,7 +52,7 @@ define \emph{connecting pseudometric} $|{*}-{*}|_f$ on $X$
 the following way
 \[|x-y|_f=\inf\{\diam f(K)\},\]
 where the infimum is taken for all connected sets $K\subset X$ which contain $x$ and $y$;
-if there is no such set we assume $|x-y|=\infty$.
+if there is no such set we assume $|x-y|_f=\infty$.
 
 The intrinsic metric induced by $|{*}-{*}|_f$ will be denoted as 
 $\|{*}-{*}\|_f$. 
@@ -65,6 +65,12 @@ $|x_i-x_{i-1}|_f<\eps$ for any $i$.
 The metric spaces defined by the pseudomatrics $|{*}-{*}|_f$ 
 and $\|{*}-{*}\|_f$ on $X$ will be denoted as $|X|_f$ and $\|X\|_f$ correspondingly.
 
+Note that $|x-y|_f=0$ if and only if $\|x-y\|_f=0$;
+that is,  both pseudometrics $|{*}-{*}|_f$ and  $\|{*}-{*}\|_f$
+define the same equivalence classes on $X$.
+The equivalence class of $x\in X$ will be denoted as $[x]_f$; 
+it can be regarded as point in  $|X|_f$ and in $\|X\|_f$.
+
 Given two maps $f,h\:X\to Y$ we will write $f\succcurlyeq h$ if 
 \[\|x-y\|_f\ge \|x-y\|_h\]
 for any pair of points $x,y\in X$.
@@ -76,12 +82,12 @@ Let $X$ and $Y$ be metric spaces and $A\subset X$ be a closed subset.
 The map $f\:X\to Y$ is called \emph{metric minimizing rel. $A$}
 if there is no map $h\:X\to Y$ such that $f\succ h$
 and $h$ agree with $f$ on $A$;
-that is $h(a)=f(a)$ for any $a\in A$.
+that is, $h|_A=f|_A$.
 
 We say that $f\:X\to Y$ is \emph{strict metric minimizing rel. $A$}
 if there is no map $h\:X\to Y$ distinct from $f$
 such that $f\succcurlyeq h$, 
-and $h$ agree with $f$ on $A$.
+and $h|_A=f|_A$.
 
 \begin{thm}{Proposition}\label{prop:point-complement}
 Let $X$ and $Y$ be  metric spaces 
@@ -115,7 +121,8 @@ Then the restriction $f|_W$ is metric minimizing rel. $A_W$.
 \end{thm}
 
 \begin{thm}{Proposition}\label{prop:factor}
-Let $X, X'$ and $Y$ be metric spaces and $A\subset X$ be a closed subset.
+Let $X, X'$ and $Y$ be metric spaces, 
+$A\subset X$ be a closed subset.
 Assume $f\:X\to Y$ is a metric minimizing map rel. $A$
 which factros through a continous surjective map $\phi\:X\to X'$;
 that is there is a map $f'\:X'\to Y$ such that $f=f'\circ\phi$.
@@ -130,7 +137,7 @@ Then $f'\:X'\to Y$ is metric minimizing rel. $\phi(A)$.
 Assume $\Gamma$ is a  finite graph and $A$ is a collection of its vertices.
 Let $Y\in\CAT[0]$ and $f\:\Gamma\to Y$ is arbitrary map.
 Then there is a metric minimizing map $f'\:\Gamma\to Y$ rel. $A$ such that
-$f'(a)=f(a)$ for any $a\in A $ and 
+$f'|_A=f|_A$ and 
 $f\succcurlyeq f'$.
 \end{thm} 
 
@@ -144,7 +151,7 @@ Then
 \begin{itemize}
 \item $f$ is strictly metric minimizing rel. $A$ 
 \item each edge of $\Gamma$ maps to a geodesic
-\item for any vertex $v\notin A$ and any geodesic $x\ne f(v)$
+\item for any vertex $v\notin A$ and any $x\ne f(v)$
 there is an edge  $[vw]$ in $\Gamma$ such that
 $\measuredangle[f(v)^{f(w)}_x]\ge \tfrac\pi2$.
 \end{itemize}
@@ -176,8 +183,9 @@ otherwise it will be called \emph{interior vertex}.
 Let $Y$ be a $\CAT[0]$ space,
 $\Gamma$ is a graph embedded in $\RR^2$.
 If $f\:\Gamma\to Y$ is a metric minimizing map rel. to the boundary vertices 
-then $\Fill\Gamma$ admits a 
-a $\CAT[0]$ intrinsic pseudometric which makes $f$ to be length preserving.
+then 
+one can equip $\Fill\Gamma$ with a $\CAT[0]$ pseudometric 
+and extend $f$ to a short map $\bar f\:\Fill\Gamma\to Y$ which is length preserving on $\Gamma$.
 \end{thm}
 
 \parit{Proof.}
@@ -370,39 +378,57 @@ Hence the statement follows.
 \section{Lemma on compactness}
 
 \begin{thm}{Lemma on compactness}\label{lem:compact}
-Let $K_\ell$ be the set of isometry classes of $\CAT(0)$ metrics on the disc $\DD$ with the length of the boundary at most $\ell$.
-The $K_\ell$ is precompact in Gromov--Hausdorff topology.
+Let $\mathcal{K}_\ell$ be the set of isometry classes of $\CAT(0)$ metrics on compact simply connected sets of the plane 
+with the length of the boundary at most $\ell$.
+Then $\mathcal{K}_\ell$ is compact in Gromov--Hausdorff topology.
 \end{thm}
 
+Further $\area K$ denotes the two-dimensional Hausdorff measure of a metric space $K$. 
+
 \parit{Proof.}
-Consider a metric $d$ on $\DD$ with isometry class in $K_\ell$.
-Note that $\area (\DD,d)\le \ell^2$.
+Let $K$ be a metric space with isometry class in $\mathcal {K}_\ell$.
+By Reshetnyak's theorem there is a short map from a convex plane figure $F$ with perimeter at most $\ell$ onto $K$.
+In particular, $\area K \le \area F 
+\le \ell^2$.
 
 Fix $\eps>0$. 
-Set $N=\lceil 10\cdot\tfrac\ell\eps\rceil$.
-Choose $N$ points $y_1,\dots,y_N$ on $\partial D$
+Set $m=\lceil 10\cdot\tfrac\ell\eps\rceil$.
+Choose $m$ points $y_1,\dots,y_m$ on $\partial D$
 which divide $\partial D$ into arcs of equal length.
 
 Consider the maximal set of points $\{x_1,\dots,x_n\}$ such that $d(x_i,x_j)>\eps$ and $d(x_i,y_j)>\eps$.
 
-Note that the set $\{x_1,\dots,x_n,y_1,\dots,y_N\}$
+Note that the set $\{x_1,\dots,x_n,y_1,\dots,y_m\}$
 forms an $\eps$-net in $(\DD,d)$.
 
 Further note that the balls $B_i=B_{\eps/2}(x_i)$
-do not overlap and $\area B_i\ge \tfrac{\pi\cdot\eps^2}{4}$.
+do not overlap.
+By comparison,
+\[\area B_i\ge \tfrac{\pi\cdot\eps^2}{4}.\]
+
 It follows that $n\le 2\cdot\left(\tfrac\ell\eps\right)^2$.
 That is, there is a function $N(\eps)$,
 which returns a positive integer for any $\eps>0$
 such that for any 
 $(\DD,d)$ contains an $\eps$-net
 with at most $N(\eps)$ points.
-According to Theorem ???, 
-any class of metrics with such property is precompact in Gromov--Hausdorff topology.
-\qeds
+
+In other words, $\mathcal{K}_\ell$ is uniformly totally bounded.
+Any class of metrics with such property is precompact in Gromov--Hausdorff topology; 
+see for example \cite[7.4.15]{BBI}.
+
+It remains to show that  $\mathcal{K}_\ell$ forms a closed set in the space of the isometry classes of compact spaces with Gromov--Hausdorff metric.
+Assume $(K_n)$ is the sequence of metric spaces
+converging to $K_\infty$.
+We need to show that if the isometry class of each $K_n$ belongs to  
+$\mathcal{K}_\ell$ then so is $K_\infty$.
+
+???\qeds
 
 
 \section{Proof assembling}
 
+\parit{Proof of Main theorem.}
 Note that it is sufficient to prove the theorem 
 in the case if $\partial |\DD|_f$ is rectifiable.
 
@@ -416,10 +442,10 @@ Given a fine set $F\subset \DD$,
 denote by $\mathcal{W}_F$
 the set of isometry classes of spaces $W$ which meet the conditions of the Key Lemma~\ref{lem:key}
 for $F$.
-According to Lemma on compactness (\ref{lem:compact}) $\mathcal{W}_F$.
+According to Lemma on compactness (\ref{lem:compact}) $\mathcal{W}_F$ is compact.
 
-Note that $\mathcal{W}_F\supset \mathcal{W}_{F'}$
-for any two finite sets $F\subset F'$ in $\DD$.
+For two finite sets $F\subset F'\subset \DD$,
+we have $\mathcal{W}_F\supset \mathcal{W}_{F'}$.
 Therefore 
 \[\mathcal{W}
 =
@@ -430,12 +456,17 @@ and a dense sequence of points $\{x_1,x_2,\dots\}$ in $\DD$,
 such that the subsequence of points in $\partial \DD$
 is also dense in $\partial \DD$.
 Set $F_n=\{x_1,\dots,x_n\}$.
-By construction ???
+Denote by $p_n\:F_n\to W$ a map satisfying the conditions in the Key Lemma~\ref{lem:key}.
 
 Passing to a subsequence by $n$ we can ensure that the sequence
-$z_n=\iota_n(x_k)$ for every $k$;
-define $\iota(x_k)$ to be its limit.
-Note that $\iota$ is short, therefore it can be extended to whole $\DD$ as a short map which we will still denote as $\iota$.
+$z_n=p_n(x_k)$ converges for every $k$.
+Set 
+\[p(x_k)=\lim_{n\to\infty} p_n(x_k).\]
+
+Note that $p$ is short. 
+Therefore it can be extended to whole $\DD$ as a short map which we will still denote as $p$.
+
+Summarizing ??? Hence the statement follows.\qeds
 
 
 \begin{thebibliography}{52}
@@ -443,6 +474,10 @@ Note that $\iota$ is short, therefore it can be extended to whole $\DD$ as a sho
 Moore, R. L.,
 ``Concerning upper semi-continuous collections of continua,''
 Trans. Amer. Math. Soc. 27 no. 4 (1925) pp. 416--428
+
+\bibitem{BBI}Burago, D.; Burago, Y.; Ivanov, S.
+A course in metric geometry.
+Graduate Studies in Mathematics, 33. American Mathematical Society, Providence, RI, 2001. xiv+415 pp. 
 \end{thebibliography}
 
 
