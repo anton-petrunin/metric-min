@@ -179,7 +179,7 @@ The vertex of $\Gamma$ will be called \emph{boundary vertex}
 if it lies in in the boundary $\partial\Fill\Gamma$,
 otherwise it will be called \emph{interior vertex}.
 
-\begin{thm}{Corollary}
+\begin{thm}{Corollary}\label{cor:planar-minimizing-graph}
 Let $Y$ be a $\CAT[0]$ space,
 $\Gamma$ is a graph embedded in $\RR^2$.
 If $f\:\Gamma\to Y$ is a metric minimizing map rel. to the boundary vertices 
@@ -294,9 +294,8 @@ Note that the path $\bar f\circ \gamma$ is also rectifiable and in particular co
 
 
 \begin{thm}{Key Lemma}\label{lem:key}
-Let $s\:\DD\to Y$ 
-be a metric minimizing disc rel. the boundary $\partial \DD$
-in a $\CAT(0)$ space $Y$.
+Let $Y$ be a $\CAT(0)$ space and $s\:\DD\to Y$ 
+be a metric minimizing disc rel. the boundary $\partial \DD$.
 Given a finite set $F\subset \DD$
 there a $\CAT(0)$ space $W$ which is homeomorphic to a compact subset of the plane
 and the maps $p\:F\to W$ and $q\:W\to Y$ such that
@@ -329,55 +328,13 @@ chosse one which spends maximal time in $\gamma_2$ --- in this case $\gamma_{n+1
 
 
 In particular the set of all these geodesics forms a finite graph, say $\Gamma$,
-embedded in $\DD$. 
+embedded in $|\DD|_s$. 
 
-Denote by $\tau$ a triangulation of $\DD$ which contains $\Gamma$ in its $1$-skeleton.
+According to Proposition~\ref{prop:|D|},
+$|\DD|_s$ admits an embedding into plane.
+Therefore $\Gamma$ can be considered as a graph embedded into the plane.
 
-The $0$-skeletons of $\tau$ will be denoted by $\tau^0$.
-Note that $\tau^0\supset F$. 
-Given two points $x,y\in \tau^0$ we will write 
-$x \leftrightarrow y$ if $x$ and $y$ are the ends of an edge in $\tau$. 
-Given two maps $a,b\:\tau^0\to Y$ we will write
-$a\succcurlyeq b$ if 
-\[x\leftrightarrow y\ \ \Rightarrow\ \ |a(x)-a(y)|\ge |b(x)-b(y)|.\]
-If at least one of the inequalities is strict, we will write $a\succ b$.
-
-Denote by $\mathcal{A}$ the class of maps $a\:\tau^0\to Y$ such that
-$a(x)=s(x)$ for any $x\in F\cap\partial \DD$ and $s|_{\tau^0}\succcurlyeq a$.
-Let us show that in this class we can choose a minimal map $a^*$ with respect to $\succcurlyeq$;
-that is, there is no map $a$ in the class such that  $a^*\succ a$.
-
-Note that we can choose a decreasing sequence 
-$a_1
-\succcurlyeq
-a_2
-\succcurlyeq
-\dots $
-in $\mathcal{A}$ such that for any $a\in \mathcal{A}$
-we have $a_n\not\succcurlyeq a$ for some $n$.
-
-If $Y$ is locally compact, 
-take $a^*$ to be partial limit of $(a_n)$,
-it is defined by Arzel\'a--Ascoli theorem.
-
-If $Y$ is not locally compact then by assumptions $Y\in\CAT(0)$.
-In this case we can show that the sequence $a_1\succcurlyeq a_2\succcurlyeq\dots $ converges.
-Fix a pair $x\leftrightarrow y$ and set $\ell_n=|a_n(x)-a_n(y)|$.
-Note that $\ell_n$ is nonincresing therefore converging sequence.
-
-Now assume that $(a_n)$ diverge,
-then for a fixed $\eps>0$ and fixed  $x\in\tau^{0}$
-we can pass to a subsequence of $(a_n)$ so that
-$|a_{n+1}(x)-a_{n}(x)|>\eps$ for any $n$.
-
-Let us equip $\tau$ with a metric $d$,
-such that each triangle $[xyz]$ in $\tau$ is isometric to (possibly degenerate) plane triangle with sides $|a^*(x)-a^*(y)|_Y$,
-$|a^*(y)-a^*(z)|_Y$ and  $|a^*(z)-a^*(x)|_Y$.
-
-Note that $(\tau,d)$ is $\CAT(0)$.
-Indeed ???
-
-Hence the statement follows.
+It remains to apply Corollary~\ref{cor:planar-minimizing-graph}.
 \qeds
 
 
