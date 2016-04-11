@@ -141,21 +141,39 @@ $f'|_A=f|_A$ and
 $f\succcurlyeq f'$.
 \end{thm} 
 
-\parit{Proof.}???\qeds
+\parit{Proof.} Note that there is a sequence of maps $f=f_0\succcurlyeq f_1\succcurlyeq\dots$ such that $f_n|_A=f|_A$ and there is no map $h\:\Gamma\to Y$ such that $f'|_A=f|_A$ and $f_n\succ h$ for each $n$.
+
+Indeed, the sequence $f_n$ can be chosen so that
+\[\length f_n<\inf\set{\length h}{f_{n-1}\succcurlyeq h,\ h|_A=f|_A},\]
+where $\length f_n$ denotes the sum of lengths of all edges of $\Gamma$. %???BETTER WORDING??? 
+Since $f_n\succ h$ implies $\length f_n>\length h$, 
+the condition above holds for $f_n$.
+
+Fix an ultra-filter $\omega$ on the set of natural numbers.
+Let $Y^\omega$ be the ultra-power of $Y$;
+recall that $Y$ can be (and will be) considered as a subspace of $Y^\omega$.
+Pass to the ultra-limit $f_\omega\:\Gamma\to Y^\omega$ 
+of $f_n\:\Gamma\to Y$.
+Note that $f_\omega$ is a metric minimizing map.
+
+It remains to show that $f_\omega(\Gamma)\subset Y$.
+Assume contrary, then there is a subsequence of $f_n$ which $\omega$-converges to a metric minimizing map, say $v_\omega\:\Gamma\to Y^\omega$ distinct from $f_\omega$.
+Denote by $g_\omega(x)$ the midpoint of $[v_\omega(x)f_\omega(x)]$.
+Note that $f_\omega\succ g_\omega$ and $g_\omega|_A=f|_A$, a contradiction.
+\qeds
 
 \begin{thm}{Proposition}\label{prop:metric-min-graph}
 Let $Y$ be a $\CAT[0]$ space 
 and $\Gamma$ be a finite  graph and $A$ is a subset of its vertices.
-Assume $f\:\Gamma\to Y$ is is metric minimizing rel. $A$.
+Assume $f\:\Gamma\to Y$ is metric minimizing rel. $A$.
 Then
 \begin{itemize}
-\item $f$ is strictly metric minimizing rel. $A$ 
 \item each edge of $\Gamma$ maps to a geodesic
 \item for any vertex $v\notin A$ and any $x\ne f(v)$
 there is an edge  $[vw]$ in $\Gamma$ such that
 $\measuredangle[f(v)^{f(w)}_x]\ge \tfrac\pi2$.
 \end{itemize}
-
+Moreover, $f$ is strictly metric minimizing rel. $A$ 
 \end{thm}
 
 \begin{wrapfigure}{r}{22 mm}
@@ -167,7 +185,27 @@ $\measuredangle[f(v)^{f(w)}_x]\ge \tfrac\pi2$.
 As one may see from the diagram,
 the last two conditions in the proposition do not guarantee that the map $f$ is metric minimizing.
 
-\parit{Proof.}???\qeds
+\parit{Proof.}
+By Proposition~\ref{prop:subset},
+the restriction of $f$ to any edge $[vw]$ of $\Gamma$
+is metric minimizing map rel. $\{v,w\}$.
+Hence the first condition follows.
+
+Assume the second condition does not hold at vertex $v\notin A$;
+that is, there is a point $x\in Y$ such that
+$\measuredangle[f(v)^{f(w)}_x]< \tfrac\pi2$
+for any adjacent vertex $w$.
+In this case moving $f(v)$ toward $x$ along $[f(v)x]$ decrease the lengths of all edges adjacent to $v$, a contradiction.
+
+To prove the last statement, assume there is a map $f'$ distinct from $f$ such that $f|_A=f'|_A$ and $f\succcurlyeq f'$.
+Denote by $g(x)$ the midpoint of $f(x)$ and $f'(x)$ for any $x\in \Gamma$. 
+By comparison $f\succcurlyeq g$.
+It follows that the tautological map $\|\Gamma\|_f\to \|\Gamma\|_g$ is an isometry.
+The later imply that the distance $|f(v)-g(v)|$ is the same for all the vertices $v$ in $\Gamma$.
+Since we have $|f(v)-g(v)|=0$ for any $v\in A$,
+we get $f(v)=g(v)$ for any vertex $v$ in $\Gamma$.
+The later implies that $f=f'$, a contradiction.
+\qeds
 
 Assume $\Gamma$ is a finite graph embedded in the plane,
 in particular $\Gamma$ is a planar.
@@ -182,7 +220,7 @@ otherwise it will be called \emph{interior vertex}.
 \begin{thm}{Corollary}\label{cor:planar-minimizing-graph}
 Let $Y$ be a $\CAT[0]$ space,
 $\Gamma$ is a graph embedded in $\RR^2$.
-If $f\:\Gamma\to Y$ is a metric minimizing map rel. to the boundary vertices 
+Assume $f\:\Gamma\to Y$ is a metric minimizing map rel. to the boundary vertices 
 then 
 one can equip $\Fill\Gamma$ with a $\CAT[0]$ pseudometric 
 and extend $f$ to a short map $\bar f\:\Fill\Gamma\to Y$ which is length preserving on $\Gamma$.
@@ -192,11 +230,12 @@ and extend $f$ to a short map $\bar f\:\Fill\Gamma\to Y$ which is length preserv
 Fix a cycle $\gamma$ in $\Gamma$ which bounds one of the discs in the complement $\RR^2\backslash \Gamma$.
 Set $\ell=\length\gamma$.
 
-By Reshetnyak's majorization theorem, there is a polygon $P$ (possibly degenerate) with perimeter $\ell$ which admits a short map to $Y$ in such a way that $\gamma$ is formed by the image of the boundary.
-Note that the angle of the polygon is at least as big as the angle between the corresponding edges.
+By Reshetnyak's majorization theorem, there is a convex polygon $P$ (possibly degenerate) with perimeter $\ell$ which admits a short map to $Y$ in such a way that $\gamma$ is formed by the image of the boundary.
+Note that each angle of $P$ is at least as big as 
+the angle between the corresponding edges.
 
-Prepare a polygon as above for each contry of $\Gamma$
-and glue a space from them as ???.
+Prepare a polygon as above for each disc in the complement of $\Gamma$
+and glue these polygons into $|\Gamma|_f$ along the natural map.
 The obtained space $D$ is simply connected.
 Therefore in order to show that $D$ is $\CAT[0]$,
 we need to check that sum of the angles around each interior vertex in $\Gamma$ is at least $2\cdot\pi$.
@@ -204,7 +243,8 @@ we need to check that sum of the angles around each interior vertex in $\Gamma$ 
 Fix an interior vertex $v$.
 Assume that the sum of angles around $v$ is less that $2\cdot\pi$.
 The space of directions $\Sigma_{f(v)}$ is a $\CAT[1]$ space.
-The directions of the edges from $v$ give a cyclically ordered sequence say $\xi_1,\dots,\xi_k$
+The directions of the edges from $v$ have natural
+cyclic order say $\xi_1,\dots,\xi_k$
 such that
 \[\measuredangle(\xi_1,\xi_2)+\dots+\measuredangle(\xi_k,\xi_1)<2\cdot\pi.\]
 By Reshetnyak's majorization theorem,
@@ -325,7 +365,7 @@ chosse one which spends maximal time in $\gamma_2$ --- in this case $\gamma_{n+1
 \item and so on.
 \end{itemize}
 
-
+%IT SHOULD BE POSSIBLE TO ENSURE THAT INTERSECTION OF ANY TWO GEODESIC IS EMPTY OR CONNECTED, BUT I FAILED TO MAKE IT FORMALLY???
 
 In particular the set of all these geodesics forms a finite graph, say $\Gamma$,
 embedded in $|\DD|_s$. 
@@ -413,7 +453,8 @@ we have $\mathcal{W}_F\supset \mathcal{W}_{F'}$.
 Therefore 
 \[\mathcal{W}
 =
-\bigcap_{F}\mathcal{W}_F\ne \emptyset.\]
+\bigcap_{F}\mathcal{W}_F\ne \emptyset,\]
+Where the intersection is taken for all finite subsets $F$ in $\DD$.
 
 Fix a space $W$ from $\mathcal{W}$
 and a dense sequence of points $\{x_1,x_2,\dots\}$ in $\DD$,
