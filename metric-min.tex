@@ -377,6 +377,72 @@ Therefore $\Gamma$ can be considered as a graph embedded into the plane.
 It remains to apply Corollary~\ref{cor:planar-minimizing-graph}.
 \qeds
 
+\section{Topology of planar CAT(0) spaces}
+
+\begin{thm}{Lemma}
+ Let $X$ be a CAT(0) space. Then any local cut point $p\in X$ is a global cut point.
+\end{thm}
+
+\parit{Proof.}
+If two points $x$ and $y$ in $X$ can be connected by a path disjoint from $p$, then
+the same is true for every ball $B_r(p)$ that contains the points $x$ and $y$, since 
+$X$ retracts onto $B_r(p)$.
+\qeds
+
+Let $X$ be a CAT(0) space. The set of cut points in $X$ will be denoted by $cut(X)$. For any point $p\in X$ we define its {\em convex component}
+by 
+$$
+conv(p):=\{q\in X|\ (pq)\cap cut(p)=\emptyset \}.
+$$
+The name is justified by the following.
+
+\begin{thm}{Lemma}
+ For any point $p$ in a CAT(0) space $X$ the set $conv(p)$  is convex.
+\end{thm}
+
+\parit{Proof.}
+Clearly, $conv(p)$ is closed. Let $x,y\in conv(p)$ and $z\in cut(X)\setminus\{x,y\}$. Then a dense subset
+of the geodesic cone from $p$ over $[xy]$ is contained in the same component of $X\setminus \{z\}$ as $p$.
+\qeds
+
+Now we specialize our discussion to a CAT(0) space $Z$ which is homeomorphic to a subset of the plane $\mathbb{R}^2$. 
+Moreover,
+we ask that boundary $\partial Z$ is rectifiable.
+
+\begin{thm}{Lemma}
+ For any point $p$ in $Z$ holds $\partial conv(p)\subset\partial Z$.
+\end{thm}
+
+\parit{Proof.}
+Let $x$ be a point in $\partial conv(p)$. If $y\in Z\setminus conv(p)$ satisfies $|x-y|<\epsilon$,
+then there is a cut point $c\in[py]$ with $|x-c|<\epsilon$. The claim follows since $cut(Z)\subset\partial Z$.
+\qeds
+
+\begin{thm}{Lemma}
+ For any two different points $x$ and $y$ on $\partial Z$ the geodesic $[xy]$ is either contained in $\partial Z$
+ or else seperates $Z$.
+\end{thm}
+
+\parit{Proof.}
+If $[xy]$ is not contained in $\partial Z$, then we pick a point $z\in(x,y)$ which lies in the interior of $Z$. 
+Then there is a small radius $\epsilon>0$ such that $[xy]$ seperates $B_\epsilon(z)$. Choose points $a_+$ and $a_-$
+on different components  of $B_\epsilon(z)\setminus[xy]$. If $Z\setminus [xy]$ is connected, then we find an arc in $Z\setminus [xy]$
+which connects $a_+$ and $a_-$. We can extend this arc to a Jordan curve $\gamma$ by an arc lying inside $B_\epsilon(z)$.
+Moreover, we can arrange that $\gamma$ intersects $[xy]$ in a single point. Denote $D$ the Jordan domain bounded by $\gamma$.
+Since $\gamma$ is contractible in $Z$ all of $D$ is contained in $Z$. This contradicts  $a_+$ and $a_-$ beeing boundary points.
+\qeds
+
+\begin{thm}{Lemma}
+ Let $x$ and $y$ be different points on $\partial Z$. If $(xy)$ is disjoint from $cut(Z)$, then $\partial Z\setminus\{x,y\}$
+ is disconnected.
+\end{thm}
+
+\parit{Proof.}
+
+\qeds
+
+
+
 
 
 \section{Lemma on compactness}
@@ -479,14 +545,14 @@ Summarizing ??? Hence the statement follows.\qeds
 Moore, R. L.,
 ``Concerning upper semi-continuous collections of continua,''
 Trans. Amer. Math. Soc. 27 no. 4 (1925) pp. 416--428
-
 \bibitem{BBI}Burago, D.; Burago, Y.; Ivanov, S.
 A course in metric geometry.
-Graduate Studies in Mathematics, 33. American Mathematical Society, Providence, RI, 2001. xiv+415 pp. 
+Graduate Studies in Mathematics, 33. American Mathematical Society, Providence, RI, 2001. xiv+415 pp.
 \end{thebibliography}
 
 
 \end{document}
+
 
 @article {moore,
     AUTHOR = {Moore, R. L.},
@@ -503,7 +569,7 @@ Graduate Studies in Mathematics, 33. American Mathematical Society, Providence, 
   MRNUMBER = {1501320},
        DOI = {10.2307/1989234},
        URL = {http://dx.doi.org/10.2307/1989234},
-}
+}	
 
 
 
