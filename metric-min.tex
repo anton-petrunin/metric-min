@@ -21,7 +21,7 @@ Universit\"at M\"unchen, Theresienstr. 39, D-80333 M\"unchen, Germany}
 
 \begin{abstract}
 We say that a surface is metric minimizing if it does not admit a metric decreasing deformation.
-We show that metric the metric minimizing surfaces in $\CAT[0]$ spaces are $\CAT[0]$.
+We show that metric minimizing surfaces in $\CAT[0]$ spaces are $\CAT[0]$.
 \end{abstract}
 \maketitle
 
@@ -30,7 +30,7 @@ We show that metric the metric minimizing surfaces in $\CAT[0]$ spaces are $\CAT
 \section{Definitions}
 
 Let $X$ be a set.
-A \emph{pseudometric} $|{*}-{*}|$ on set $X$ 
+A \emph{pseudometric} $|{*}-{*}|$ on a set $X$ 
 is a function $X\times X\to[0,\infty]$ (infinity is included in the codomain)
 such that 
 \begin{itemize}
@@ -42,38 +42,38 @@ such that
 If in addition $|x-y|=0$ implies $x=y$ then $|{*}-{*}|$ is called \emph{metric}.
 
 
-A set with pseudometric or metric will be called \emph{pseudometric} or correspondingly \emph{metric space}.
+A set with a pseudometric or metric will be called \emph{pseudometric} or correspondingly \emph{metric space}.
 
 For any pseudometric on a set 
 there is an equivalence relation ``$\sim$''
 such that $x\sim y$ if and only if $|x-y|=0$.
-The pseudmetric $|{*}-{*}|$ defines a genuine metric on the set of equivalence classes of $\sim$.
+The pseudometric $|{*}-{*}|$ defines a genuine metric on the set of equivalence classes of $\sim$.
 
 \parbf{Induced  pseudometrics.}
 Let $X$ and $Y$ be metric spaces.
 Given a map $f\:X\to Y$,
-define \emph{connecting pseudometric} $|{*}-{*}|_f$ on $X$ 
+define a \emph{connecting pseudometric} $|{*}-{*}|_f$ on $X$ in
 the following way
 \[|x-y|_f=\inf\{\diam f(K)\},\]
 where the infimum is taken for all connected sets $K\subset X$ which contain $x$ and $y$;
-if there is no such set we assume $|x-y|_f=\infty$.
+if there is no such set we set $|x-y|_f=\infty$.
 
 The intrinsic metric induced by $|{*}-{*}|_f$ will be denoted as 
 $\|{*}-{*}\|_f$. 
 That is, 
 \[\|x-y\|_f=\liminf_{\eps\to0+}\left\{\sum_{i=1}^n|x_i-x_{i-1}|_f\right\}.\]
-where the infimum is taken for all arrays of pints 
+where the infimum is taken for all arrays of points 
 $x=x_0,x_1,\dots,x_n=y$ such that 
 $|x_i-x_{i-1}|_f<\eps$ for any $i$.
 
-The metric spaces defined by the pseudomatrics $|{*}-{*}|_f$ 
+The metric spaces defined by the pseudometrics $|{*}-{*}|_f$ 
 and $\|{*}-{*}\|_f$ on $X$ will be denoted as $|X|_f$ and $\|X\|_f$ correspondingly.
 
 Note that $|x-y|_f=0$ if and only if $\|x-y\|_f=0$;
 that is,  both pseudometrics $|{*}-{*}|_f$ and  $\|{*}-{*}\|_f$
 define the same equivalence classes on $X$.
 The equivalence class of $x\in X$ will be denoted as $[x]_f$; 
-it can be regarded as point in  $|X|_f$ and in $\|X\|_f$.
+it can be regarded as a point in  $|X|_f$ and in $\|X\|_f$.
 
 Given two maps $f,h\:X\to Y$ we will write $f\succcurlyeq h$ if 
 \[\|x-y\|_f\ge \|x-y\|_h\]
@@ -85,7 +85,7 @@ Let $X$ and $Y$ be metric spaces and $A\subset X$ be a closed subset.
 
 The map $f\:X\to Y$ is called \emph{metric minimizing rel. $A$}
 if there is no map $h\:X\to Y$ such that $f\succ h$
-and $h$ agree with $f$ on $A$;
+and $h$ agrees with $f$ on $A$;
 that is, $h|_A=f|_A$.
 
 We say that $f\:X\to Y$ is \emph{strict metric minimizing rel. $A$}
@@ -96,15 +96,15 @@ and $h|_A=f|_A$.
 \begin{thm}{Proposition}\label{prop:point-complement}
 Let $X$ and $Y$ be  metric spaces 
 and $A\subset X$ is a closed subset.
-Assume $X$ is connected and $f\:X\to Y$ is metric minimizing map rel. $A$.
+Assume $X$ is connected and $f\:X\to Y$ is a metric minimizing map rel. $A$.
 Then for any point $x\in X$ any connected component of $X\backslash [x]_f$ intersects $A$.
 
 \end{thm}
 
 \parit{Proof.}
-Assume contrary, denote by $W$ the connected component of $X\backslash [x]_f$ such that $A\cap W=\emptyset$.
+Assume to the contrary, denote by $W$ the connected component of $X\backslash [x]_f$ such that $A\cap W=\emptyset$.
 Let us define the new map $h\:X\to\ Y$ 
-by setting $f(z)=f(x)$ for any $z\in W$
+by setting $h(z)=f(x)$ for any $z\in W$
 and $h(z)=f(z)$ for any $z\notin W$.
 
 By construction $f$ and $h$ agree on $A$ and $f\succcurlyeq h$.
@@ -117,7 +117,7 @@ The following two propositions follow directly from the definition of metric min
 
 \begin{thm}{Proposition}\label{prop:subset}
 Let $X$ and $Y$ be metric spaces and $A\subset X$ be a closed subset.
-Assume $X$ is $f\:X\to Y$ is a metric minimizing map rel. $A$.
+Assume $f\:X\to Y$ is a metric minimizing map rel. $A$.
 
 Given a closed subset $W\subset X$, set 
 \[A_W=\partial W\cup (A\cap W).\]
@@ -128,7 +128,7 @@ Then the restriction $f|_W$ is metric minimizing rel. $A_W$.
 Let $X, X'$ and $Y$ be metric spaces, 
 $A\subset X$ be a closed subset.
 Assume $f\:X\to Y$ is a metric minimizing map rel. $A$
-which factros through a continous surjective map $\phi\:X\to X'$;
+which factors through a continuous surjective map $\phi\:X\to X'$;
 that is there is a map $f'\:X'\to Y$ such that $f=f'\circ\phi$.
 Then $f'\:X'\to Y$ is metric minimizing rel. $\phi(A)$.
 \end{thm}
@@ -138,14 +138,14 @@ Then $f'\:X'\to Y$ is metric minimizing rel. $\phi(A)$.
 
 
 \begin{thm}{Proposition}
-Assume $\Gamma$ is a  finite graph and $A$ is a collection of its vertices.
-Let $Y\in\CAT[0]$ and $f\:\Gamma\to Y$ is arbitrary map.
+Assume $\Gamma$ is a  finite graph and $A$ is the collection of its vertices.
+Let $Y\in\CAT[0]$ and $f\:\Gamma\to Y$ be an arbitrary map.
 Then there is a metric minimizing map $f'\:\Gamma\to Y$ rel. $A$ such that
 $f'|_A=f|_A$ and 
 $f\succcurlyeq f'$.
 \end{thm} 
 
-\parit{Proof.} Note that there is a sequence of maps $f=f_0\succcurlyeq f_1\succcurlyeq\dots$ such that $f_n|_A=f|_A$ and there is no map $h\:\Gamma\to Y$ such that $f'|_A=f|_A$ and $f_n\succ h$ for each $n$.
+\parit{Proof.} Note that there is a sequence of maps $f=f_0\succcurlyeq f_1\succcurlyeq\dots$ such that $f_n|_A=f|_A$ and there is no map $h\:\Gamma\to Y$ such that $h|_A=f|_A$ and $f_n\succ h$ for each $n$.
 
 Indeed, the sequence $f_n$ can be chosen so that
 \[\length f_n<\inf\set{\length h}{f_{n-1}\succcurlyeq h,\ h|_A=f|_A},\]
@@ -167,8 +167,8 @@ Note that $f_\omega\succ g_\omega$ and $g_\omega|_A=f|_A$, a contradiction.
 \qeds
 
 \begin{thm}{Proposition}\label{prop:metric-min-graph}
-Let $Y$ be a $\CAT[0]$ space 
-and $\Gamma$ be a finite  graph and $A$ is a subset of its vertices.
+Let $Y$ be a $\CAT[0]$ space, 
+$\Gamma$ a finite  graph and $A$ a subset of its vertices.
 Assume $f\:\Gamma\to Y$ is metric minimizing rel. $A$.
 Then
 \begin{itemize}
@@ -192,10 +192,10 @@ the last two conditions in the proposition do not guarantee that the map $f$ is 
 \parit{Proof.}
 By Proposition~\ref{prop:subset},
 the restriction of $f$ to any edge $[vw]$ of $\Gamma$
-is metric minimizing map rel. $\{v,w\}$.
+is metric minimizing rel. $\{v,w\}$.
 Hence the first condition follows.
 
-Assume the second condition does not hold at vertex $v\notin A$;
+Assume the second condition does not hold at a vertex $v\notin A$;
 that is, there is a point $x\in Y$ such that
 $\measuredangle[f(v)^{f(w)}_x]< \tfrac\pi2$
 for any adjacent vertex $w$.
@@ -205,27 +205,27 @@ To prove the last statement, assume there is a map $f'$ distinct from $f$ such t
 Denote by $g(x)$ the midpoint of $f(x)$ and $f'(x)$ for any $x\in \Gamma$. 
 By comparison $f\succcurlyeq g$.
 It follows that the tautological map $\|\Gamma\|_f\to \|\Gamma\|_g$ is an isometry.
-The later imply that the distance $|f(v)-g(v)|$ is the same for all the vertices $v$ in $\Gamma$.
+The later implies that the distance $|f(v)-g(v)|$ is the same for all the vertices $v$ in $\Gamma$.
 Since we have $|f(v)-g(v)|=0$ for any $v\in A$,
 we get $f(v)=g(v)$ for any vertex $v$ in $\Gamma$.
-The later implies that $f=f'$, a contradiction.
+Hence $f=f'$, a contradiction.
 \qeds
 
 Assume $\Gamma$ is a finite graph embedded in the plane,
-in particular $\Gamma$ is a planar.
+in particular $\Gamma$ is planar.
 
 The complement to the unbounded connected component of $\RR^2\backslash\Gamma$ will be called filling of $\Gamma$;
 it will be denoted as $\Fill\Gamma$.
 
 The vertex of $\Gamma$ will be called \emph{boundary vertex}
-if it lies in in the boundary $\partial\Fill\Gamma$,
+if it lies in the boundary $\partial\Fill\Gamma$,
 otherwise it will be called \emph{interior vertex}.
 
 \begin{thm}{Corollary}\label{cor:planar-minimizing-graph}
-Let $Y$ be a $\CAT[0]$ space,
-$\Gamma$ is a graph embedded in $\RR^2$.
-Assume $f\:\Gamma\to Y$ is a metric minimizing map rel. to the boundary vertices 
-then 
+Let $Y$ be a $\CAT[0]$ space and
+$\Gamma$ an embedded graph in $\RR^2$.
+Assume $f\:\Gamma\to Y$ is a metric minimizing map rel. to the boundary vertices. 
+Then 
 one can equip $\Fill\Gamma$ with a $\CAT[0]$ pseudometric 
 and extend $f$ to a short map $\bar f\:\Fill\Gamma\to Y$ which is length preserving on $\Gamma$.
 \end{thm}
@@ -242,12 +242,12 @@ Prepare a polygon as above for each disc in the complement of $\Gamma$
 and glue these polygons into $|\Gamma|_f$ along the natural map.
 The obtained space $D$ is simply connected.
 Therefore in order to show that $D$ is $\CAT[0]$,
-we need to check that sum of the angles around each interior vertex in $\Gamma$ is at least $2\cdot\pi$.
+we need to check that the sum of the angles around each interior vertex in $\Gamma$ is at least $2\cdot\pi$.
 
 Fix an interior vertex $v$.
-Assume that the sum of angles around $v$ is less that $2\cdot\pi$.
+Assume that the sum of the angles around $v$ is less than $2\cdot\pi$.
 The space of directions $\Sigma_{f(v)}$ is a $\CAT[1]$ space.
-The directions of the edges from $v$ have natural
+The directions of the edges from $v$ have a natural
 cyclic order say $\xi_1,\dots,\xi_k$
 such that
 \[\measuredangle(\xi_1,\xi_2)+\dots+\measuredangle(\xi_k,\xi_1)<2\cdot\pi.\]
@@ -274,10 +274,10 @@ Assume $f\:\DD\to X$ is a continuous map.
 Let us consider the disc $\DD$ as a subset in the plane $\RR^2$.
 For any $x\in \DD$, we define $[x]_f$ as above;
 if $x\in \RR^2\backslash \DD$ we assume $[x]_f=\{x\}$.
-Denote by $\RR^2_f$ the set of classes $[x]_f$ with quotient topology induced by the map $\iota_f\:x\mapsto [x]_f$.
+Denote by $\RR^2_f$ the set of classes $[x]_f$ with the quotient topology induced by the map $\iota_f\:x\mapsto [x]_f$.
 
 According to Moore's theorem \cite{moore},
-if for any point $x$, the set $[x]_f$ is connected compact set with connected complement
+if for any point $x$, the set $[x]_f$ is connected and compact, with connected complement,
 then $\RR^2_f$ is homeomorphic to the plane.
 Applying Proposition~\ref{prop:point-complement} we get the following.
 
@@ -341,8 +341,8 @@ Note that the path $\bar f\circ \gamma$ is also rectifiable and in particular co
 Let $Y$ be a $\CAT(0)$ space and $s\:\DD\to Y$ 
 be a metric minimizing disc rel. the boundary $\partial \DD$.
 Given a finite set $F\subset \DD$
-there a $\CAT(0)$ space $W$ which is homeomorphic to a compact subset of the plane
-and the maps $p\:F\to W$ and $q\:W\to Y$ such that
+there is a $\CAT(0)$ space $W$, which is homeomorphic to a compact subset of the plane,
+and maps $p\:F\to W$ and $q\:W\to Y$ such that
 \[s(x)=q\circ p(x)\] 
 for any $x\in F\cap \partial \DD$
 and 
@@ -358,14 +358,14 @@ We can assume that
 every pair of the constructed geodesics 
 are either disjoint, or their intersection is formed by finite collections of arcs and points.
 
-Indeed, assuming some number of geodesics $\gamma_1,\dots\gamma_n$ which meets the above properrty is already chousen and we need to choose one more geodesics connecting $x$ to $y$.
+Indeed, assuming some number of geodesics $\gamma_1,\dots\gamma_n$ which meets the above property is already chosen and we need to choose one more geodesic connecting $x$ to $y$.
 Choose a minimizing geodesic $\gamma_{n+1}$ which maximize the time it spends in $\gamma_1,\dots\gamma_n$  in the order of importance.
 Namely, 
 \begin{itemize}
 \item  among all minimizing geodesics connecting $x$ to $y$
-chosse one which spends maximal time in $\gamma_1$ --- in this case $\gamma_{n+1}$ intesects $\gamma_1$ along empty set, one-point set or a closed arc.
+choose one which spends maximal time in $\gamma_1$ --- in this case $\gamma_{n+1}$ intesects $\gamma_1$ along the empty set, one-point set or a closed arc.
 \item among all minimizing geodesics as above
-chosse one which spends maximal time in $\gamma_2$ --- in this case $\gamma_{n+1}$ intesects $\gamma_2$ along at most two arcs and points.
+choose one which spends maximal time in $\gamma_2$ --- in this case $\gamma_{n+1}$ intesects $\gamma_2$ along at most two arcs and points.
 \item and so on.
 \end{itemize}
 
@@ -375,7 +375,7 @@ In particular the set of all these geodesics forms a finite graph, say $\Gamma$,
 embedded in $|\DD|_s$. 
 
 According to Proposition~\ref{prop:|D|},
-$|\DD|_s$ admits an embedding into plane.
+$|\DD|_s$ admits an embedding into the plane.
 Therefore $\Gamma$ can be considered as a graph embedded into the plane.
 
 It remains to apply Corollary~\ref{cor:planar-minimizing-graph}.
@@ -526,11 +526,11 @@ $\mathcal{K}_\ell$ is compact in the Gromov--Hausdorff topology.
 
 \parit{Proof of Main theorem.}
 Note that it is sufficient to prove the theorem 
-in the case if $\partial |\DD|_f$ is rectifiable.
+in the case that $\partial |\DD|_f$ is rectifiable.
 
 Indeed, fix a triangle $\triangle$ in $\|\DD\|_f$.
-If the above case is proved 
-then it bounds a closed set which is $\CAT[0]$.
+If the above case has been proven, 
+then $\triangle$ bounds a closed set which is $\CAT[0]$.
 In particular $\triangle$ is thin.
 Since $\triangle$ is arbitrary, the statement follows.
 
@@ -546,7 +546,7 @@ Therefore
 \[\mathcal{W}
 =
 \bigcap_{F}\mathcal{W}_F\ne \emptyset,\]
-Where the intersection is taken for all finite subsets $F$ in $\DD$.
+Where the intersection is taken over all finite subsets $F$ in $\DD$.
 
 Fix a space $W$ from $\mathcal{W}$
 and a dense sequence of points $\{x_1,x_2,\dots\}$ in $\DD$,
