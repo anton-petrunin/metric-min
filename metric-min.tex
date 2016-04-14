@@ -10,6 +10,10 @@ University Park, PA 16802,
 USA}
 \email{petrunin@math.psu.edu}
 \author{Stephan Stadler}
+\address{S. Stadler\newline\vskip-4mm
+Math. Inst.,
+Universit\"at M\"unchen, Theresienstr. 39, D-80333 M\"unchen, Germany}
+\email{stadler@math.lmu.de}
 %\thanks{A.~Petrunin was partially supported by NSF grant DMS 1309340.}
 
 
@@ -377,87 +381,77 @@ Therefore $\Gamma$ can be considered as a graph embedded into the plane.
 It remains to apply Corollary~\ref{cor:planar-minimizing-graph}.
 \qeds
 
-\section{Topology of planar CAT(0) spaces}
+\section{Compactness of planar CAT(0) spaces}
+
+We recall some terminology. Let $X$ be a connected topological space. A point $c\in X$
+is called a {\em cut point}, if $X\setminus \{c\}$ is disconnected. The set of cut points in $X$ 
+will be denoted by $cut(X)$. If $X$ is connected and $x,y\in X$ are such that no cut point in $X$
+seperates $x$ and $y$, then they are called {\em conjugate}. For a non-cut point $p\in X$
+we define $conj(p)$ as the set of all points conjugate to $p$. A point $e\in X$ is called an {\em endpoint},
+if $conj(e)=\{e\}$. The conjugacy set $conj(p)$ for non-endpoints
+are called {\em cyclic elements}. Every cyclic element is a closed set\cite[IV(1.4)]{W2}. If $X$ is a 
+Peano continuum\footnote{A {\em Peano continuum} is a compact
+connected and locally connected metric space.}, then every cyclic element $conj(p)$ is {\em cyclically connected},\ i.e.
+any two points $x,y\in conj(p)$ lie in a Jordan curve $J\subset conj(p)$\cite[III(3.32)]{Wi}. Any two different 
+cyclic elements $conj(p)$ and $conj(q)$ intersect at most in a single point. Any point common to two 
+different cyclic elements is a cut point\cite[IV(1.4)]{W2}.
 
 \begin{thm}{Lemma}
- Let $X$ be a CAT(0) space. Then any local cut point $p\in X$ is a global cut point.
-\end{thm}
-
-\parit{Proof.}
-If two points $x$ and $y$ in $X$ can be connected by a path disjoint from $p$, then
-the same is true for every ball $B_r(p)$ that contains the points $x$ and $y$, since 
-$X$ retracts onto $B_r(p)$.
-\qeds
-
-Let $X$ be a CAT(0) space. The set of cut points in $X$ will be denoted by $cut(X)$. For any point $p\in X$ we define its {\em convex component}
-by 
+ Let $X$ be a CAT(0) space. The conjugacy set for any point $p\in X$ is convex, and it is given by
+ $$
+conj(p):=\{q\in X|\ (pq)\cap cut(p)=\emptyset \}.
 $$
-conv(p):=\{q\in X|\ (pq)\cap cut(p)=\emptyset \}.
-$$
-The name is justified by the following.
-
-\begin{thm}{Lemma}
- For any point $p$ in a CAT(0) space $X$ the set $conv(p)$  is convex.
 \end{thm}
 
 \parit{Proof.}
-Clearly, $conv(p)$ is closed. Let $x,y\in conv(p)$ and $z\in cut(X)\setminus\{x,y\}$. Then a dense subset
-of the geodesic cone from $p$ over $[xy]$ is contained in the same component of $X\setminus \{z\}$ as $p$.
+If two points are separated by a cut point, then any path connecting those points has to go through the cut point.
+Hence the particular representation follows. Let $x,y\in conj(p)$ and $z\in cut(X)\setminus\{x,y\}$. Then a dense subset
+of the geodesic cone from $p$ over $[xy]$ is contained in the same component of $X\setminus \{z\}$ as $p$. 
+The claim follows since $conj(p)$ is closed.
 \qeds
 
-Now we specialize our discussion to a CAT(0) space $Z$ which is homeomorphic to a subset of the plane $\mathbb{R}^2$. 
-Moreover,
-we ask that boundary $\partial Z$ is rectifiable.
+If $C$ is a locally connected continuum such that 
+each cyclic element in $C$ is homeomorphic to a circle, then $C$ is
+called a {\em boundary curve}. A {\em base set} is a locally connected continuum which
+embeds into the plane $\mathbb{R}^2$ such that its image is not separating. A locally connected
+continuum $B$ is a base set if and only if every cyclic element in $B$ is homeomorphic to a disc,
+whose interior is open in $B$. If we remove the interiors of all cyclic elements in $B$ the remaining
+space is a boundary curve $C$. In this case we say that $B$ is bounded by $C$.
+
 
 \begin{thm}{Lemma}
- For any point $p$ in $Z$ holds $\partial conv(p)\subset\partial Z$.
+ Let $X$ be a compact CAT(0) space which embeds into $\mathbb{R}^2$. Then $X$
+ is homeomorphic to a base set.
 \end{thm}
 
 \parit{Proof.}
-Let $x$ be a point in $\partial conv(p)$. If $y\in Z\setminus conv(p)$ satisfies $|x-y|<\epsilon$,
-then there is a cut point $c\in[py]$ with $|x-c|<\epsilon$. The claim follows since $cut(Z)\subset\partial Z$.
+Clearly $X$ is connected and locally connected. Let $\iota :X\hookrightarrow\mathbb{R}^2$ be an embedding.
+If $\iota(X)$ separates $\mathbb{R}^2$, then it would contain a Jordan curve $J$ which still separates
+$\mathbb{R}^2$. This is impossible since $J$ is contractible in $X$.
 \qeds
+
+We need Whyburn's notion of {\em regular convergence}\footnote{Our definition of regular convergence coincides with Whyburn's regular convergence relative
+to 0- and 1-cycles.}. A sequence of compact metric spaces $(K_n,d_n)$ converges regularly to a 
+metric space $(K,d)$, if they converge with respect to Gromov--Hausdorff distance and the following two conditions are fulfilled:
+\begin{itemize}
+ \item[(i)] For any sequence of pairs of points $x_n,y_n\in K_n$ with $d_n(x_n,y_n)\to 0$, there is a sequence of paths $\gamma_n$
+ connecting $x_n$ to $y_n$ such that $\diam(\gamma_n)\to 0$.
+ \item[(ii)] For any sequence of Jordan curves $J_n\subset K_n$ with $\diam(J_n)\to 0$, there is a sequence of continuous discs $D_n\subset K_n$
+ with $\partial D_n=J_n$ and $\diam D_n\to 0$. 
+\end{itemize}
+
+Note that if all spaces $K_n$ are geodesic, then condition (i) is automatically fulfilled. Moreover, if all 
+spaces $K_n$ are CAT(0), then condition (ii) is fulfilled as well because any Jordan curve of diameter $a$ in a CAT(0)
+space is contractible in a ball of radius $a$. Hence any Gromov--Hausdorff converging sequence of CAT(0) spaces is 
+regularly convergent.
+
+Let $\mathcal{K}_\ell$ be the set of isometry classes of $\CAT(0)$ metrics on base sets with rectifiable
+boundary curves of length at most $\ell$.
+
+
 
 \begin{thm}{Lemma}
- For any two different points $x$ and $y$ on $\partial Z$ the geodesic $[xy]$ is either contained in $\partial Z$
- or else seperates $Z$.
-\end{thm}
-
-\parit{Proof.}
-If $[xy]$ is not contained in $\partial Z$, then we pick a point $z\in(x,y)$ which lies in the interior of $Z$. 
-Then there is a small radius $\epsilon>0$ such that $[xy]$ seperates $B_\epsilon(z)$. Choose points $a_+$ and $a_-$
-on different components  of $B_\epsilon(z)\setminus[xy]$. If $Z\setminus [xy]$ is connected, then we find an arc in $Z\setminus [xy]$
-which connects $a_+$ and $a_-$. We can extend this arc to a Jordan curve $\gamma$ by an arc lying inside $B_\epsilon(z)$.
-Moreover, we can arrange that $\gamma$ intersects $[xy]$ in a single point. Denote $D$ the Jordan domain bounded by $\gamma$.
-Since $\gamma$ is contractible in $Z$ all of $D$ is contained in $Z$. This contradicts  $a_+$ and $a_-$ beeing boundary points.
-\qeds
-
-\begin{thm}{Lemma}
- Let $x$ and $y$ be different points on $\partial Z$. If $(xy)$ is disjoint from $cut(Z)$, then $\partial Z\setminus\{x,y\}$
- is disconnected.
-\end{thm}
-
-\parit{Proof.}
-Let us first assume that $[xy]$ seperates $Z$, i.e. we have a nontrivial decomposition $Z\setminus[xy]=A_+\dot\cup A_-$ with
-$A_+$ connected. Note that the sets $Z\setminus A_\pm$ are convex. Assume that $c$ is a point in  
-$\partial Z\setminus A_+\cap[xy]\setminus\{x,y\}$. 
-Then $c$ separates $x$ and $y$ in $Z\setminus A_+$. Indeed, any path in $Z\setminus A_+$ connecting $x$
-to $y$ has to go through $c$ because $c\partial Z$. As a consequence any point in 
- $(\partial Z\setminus A_+\cap\partial Z\setminus A_-)\setminus\{x,y\}$ is a cut point in $Z$.
-
-If $[xy]\subset \partial Z$... 
-\qeds
-
-
-
-
-
-\section{Lemma on compactness}
-
-\begin{thm}{Lemma on compactness}\label{lem:compact}
-Let $\mathcal{K}_\ell$ be the set of isometry classes of $\CAT(0)$ metrics on compact simply connected sets of the plane 
-with the length of the boundary at most $\ell$.
-Then $\mathcal{K}_\ell$ is compact in Gromov--Hausdorff topology.
+$\mathcal{K}_\ell$ is precompact in the Gromov--Hausdorff topology.
 \end{thm}
 
 Further $\area K$ denotes the two-dimensional Hausdorff measure of a metric space $K$. 
@@ -493,14 +487,39 @@ with at most $N(\eps)$ points.
 In other words, $\mathcal{K}_\ell$ is uniformly totally bounded.
 Any class of metrics with such property is precompact in Gromov--Hausdorff topology; 
 see for example \cite[7.4.15]{BBI}.
+\qeds
 
-It remains to show that  $\mathcal{K}_\ell$ forms a closed set in the space of the isometry classes of compact spaces with Gromov--Hausdorff metric.
-Assume $(K_n)$ is the sequence of metric spaces
-converging to $K_\infty$.
-We need to show that if the isometry class of each $K_n$ belongs to  
-$\mathcal{K}_\ell$ then so is $K_\infty$.
 
-???\qeds
+
+
+
+\begin{thm}{Lemma}
+$\mathcal{K}_\ell$ is closed in the Gromov--Hausdorff topology.
+\end{thm}
+\parit{Proof.}
+Let $K_n\to K$ be a Gromov--Hausdorff convergent sequence  where every $K_n$ represents an element in  $\mathcal{K}_\ell$. Then
+$K$ is a compact CAT(0) space. Let $p\in K$ be a point which is neither a cut point not an end point. We need to show that the cyclic 
+element $conj(p)$ is homeomorphic to a disc. Let $J\subset conj(p)$ be a Jordan curve with $p\in J$. Choose Jordan curves $J_n\subset K_n$
+with $J_n\to K_n$ \cite[2.2]{W1}. Then there is a unique cyclic element $C_n\subset K_n$ such that $J_n\subset C_n$. By assumption $C_n$ is homeomorphic
+to a disc. The limit $C_\infty:=\lim C_n$ is a convex subset of $K$ containing $J$. By \cite[6.3]{W1}, $C_\infty$ is a base set and therefore contains a
+unique cyclic element $D_\infty$ such that $J\subset D_\infty$. Since $D_\infty$ is homeomorphic to a disc, it is clear that $D_\infty\subset conj(p)$.
+
+{\it Claim:} $D_\infty=conj(p)$.
+
+\noindent If this is not the case, then there is an element $q\in conj(p)\setminus D_\infty$. Choose a point $p'\in D_\infty\setminus J$ which is surrounded 
+by $J$. Using the cyclic connectedness we find a Jordan curve $J'\subset conj(p)$ such that $p',q\in J'$. Approximate $J'$
+by Jordan curves $J_n'\subset K_n$ and the point $p'$ by points $p_n'\in K_n$. Since $p_n'$ is then surrounded by the $J_n'$, the intersection
+$J_n'\cap J_n$ contains at least two points. Consequently $J_n'$ lies in the same cyclic element as $J_n$,\ i.e. $J_n'\subset C_n$. As
+above we conclude that there is a unique cyclic element $D_\infty'\subset C_\infty$ such that $J'\subset D_\infty'$. But 
+$J'$ intersects the interior of $D_\infty$ in the point $p'$. Hence $D_\infty=D_\infty'$, a contradiction.
+\qeds
+
+Combining the last two statements we arrive at:
+
+\begin{thm}{Lemma on compactness}\label{lem:compact}
+$\mathcal{K}_\ell$ is compact in the Gromov--Hausdorff topology.
+\end{thm}
+
 
 
 \section{Proof assembling}
@@ -555,6 +574,10 @@ Trans. Amer. Math. Soc. 27 no. 4 (1925) pp. 416--428
 \bibitem{BBI}Burago, D.; Burago, Y.; Ivanov, S.
 A course in metric geometry.
 Graduate Studies in Mathematics, 33. American Mathematical Society, Providence, RI, 2001. xiv+415 pp.
+\bibitem{W1}G. T. Whyburn, ``On sequences and limiting sets,'' Fund. Math. vol. 25 (1935) pp. 408-426.
+\bibitem{W2} G. T. Whyburn, ``Analytic topology,'' Amer. Math. Soc. Colloquium Publications, vol. 28, 1942.
+\bibitem{Wi} R. L. Wilder, ``Topology of Manifolds,'' American Mathematical Society Colloquium Publications, vol. 32. American Mathematical
+Society, New York, N. Y., 1949
 \end{thebibliography}
 
 
