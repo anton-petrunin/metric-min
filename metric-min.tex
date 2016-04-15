@@ -565,6 +565,77 @@ Therefore it can be extended to whole $\DD$ as a short map which we will still d
 
 Summarizing ??? Hence the statement follows.\qeds
 
+\section{Energy of Sobolev maps}
+
+
+Let $\Omega\subset \mathbb{R}^n$ be an open and bounded subset. Further, let $(X,d)$ be a metric space.
+A measurable map $u:\Omega\to X$ lies in 
+$L^2(\Omega,X)$ if and only if
+\begin{enumerate}
+ \item there is a full measure subset $M\subset \Omega$ such that $u(M)\subset X$ is separable;
+ \item for any $x\in X$ the map $z\mapsto d(u(z),x)$ belongs to $L^2(\Omega)$.
+\end{enumerate}
+
+Following Reshetnyak \cite{R}, we define the Sobolev space $W^{1,2}(\Omega,X)$ of finite energy maps as follows. 
+A map $u\in L^2(\Omega,X)$ is contained in $W^{1,2}(\Omega,X)$ if and only if
+
+\begin{enumerate}
+ \item for any $x\in X$ the map $u_x(z):=d(u(z),x)$ belongs to $W^{1,2}(\Omega)$;
+ \item there exists a uniform bound for the weak gradients $|\nabla u_x|$,\ i.e. there is a function $h\in L^2(\Omega)$ 
+ such that $|\nabla u_x|\leq h$ holds for all $x$ almost everywhere in $\Omega$. 
+\end{enumerate}
+
+If for a map $u:\Omega\to X$ the  approximate limit
+$$
+ap\lim_{t\searrow 0}\frac{d(u(z+tv),u(z))}{t}
+$$
+exists, then it is called {\em approximate metric derivative} in the direction $v\in\mathbb{R}$ at the point $z$. It will be denoted
+as $|du_z(v)|$. According to
+\cite[Prop.4.3]{LW}, if $u\in W^{1,2}(\Omega,X)$, then its approximate metric derivative exists in every direction at almost every point $z\in\Omega$,
+and defines a semi-norm $|du_z|$ on $\mathbb{R}^n$. Moreover, the function $z\to\int_{S^1}|du_z(v)|^2 d\mathcal{L}^1$ is in $L^2(\Omega)$.
+We define the {\em energy} of a map $u\in W^{1,2}(\Omega,X)$ as
+$$
+E(u):=\int_\Omega\left(\frac{1}{\omega_n}\int_{S^{n-1}}|du_z(v)|^2 d\mathcal{L}^1(v)\right)d\mathcal{H}^{n-1}(z).
+$$
+It was shown in \cite{LW} that this definition coincides up to a factor with the Korevaar-Schoen 2-energy \cite{KS}.
+
+From now on we will assume that $X$ is a CAT(0) space. Recall that between any two maps $u_0,u_1:\Omega\to X$ there is 
+a unique {\em geodesic homotopy} $u_t$. Namely for $t\in[0,1]$ we define $u_t(z)$ as the point on $[u_0(z),u_1(z)]$ at distance $t$
+from $u_0(z)$. If $u_0, u_1\in W^{1,2}(\Omega,X)$, then energy is convex along geodesic homotopies \cite[(2.2vi)]{KS}:
+$$
+E(u_t)\leq (1-t)E(u_0)+tE(u_1)-t(1-t)\int_\Omega|\nabla d(u_0,u_1)|^2d\mathcal{H}^2.
+$$
+
+
+
+
+\section{Existence and uniqueness}
+
+We say that two rectifiable paths $\gamma_{\pm 1}:I\to X$ are {\em parallel}, if $d(\gamma_{-1},\gamma_{+1})$
+is constant on $I$.
+
+\begin{thm}{Lemma}
+Let $\gamma_{-1}$ and $\gamma_{+1}$ be two parallel paths and $h:I^2\to X$ the geodesic homotopy
+between. Then $h(I^2)$ is intrinsically flat.
+\end{thm}
+\parit{Proof.}
+
+\qeds
+
+\begin{thm}{Lemma}
+Let $\gamma_{\pm 1}:I\to X$ be two rectifiable paths of equal length $L>0$. Set $\gamma_t:=h(\cdot,t)$ where $h$ denotes the geodesic homotopy
+between their arclength parametrizations. If $\gamma_0$ has length $L$, then $\gamma_{-1}$ and $\gamma_{+1}$ are parallel. 
+\end{thm}
+\parit{Proof.}
+
+\qeds
+
+
+
+
+
+
+
 
 \begin{thebibliography}{52}
 \bibitem{moore}
@@ -574,6 +645,9 @@ Trans. Amer. Math. Soc. 27 no. 4 (1925) pp. 416--428.
 \bibitem{BBI}Burago, D.; Burago, Y.; Ivanov, S.
 A course in metric geometry.
 Graduate Studies in Mathematics, 33. American Mathematical Society, Providence, RI, 2001. xiv+415 pp.
+\bibitem{KS}Korevaar, N. J.; Schoen, R. M. ``Sobolev spaces and harmonic maps for metric space targets,'' Comm. Anal. Geom., 1(3-4):561-659, 1993.
+\bibitem{LW}Lytchak, A.; Wenger, S. ``Area minimizing discs in metric spaces,'' preprint arXiv:1502.06571, 2015.
+\bibitem{R}Reshetnyak, Yu. G. ``Sobolev classes of functions with values in a metric space,'' II, Sibirsk. Mat. Zh. 45 (2004), no. 4, 855-870. MR 2091651 (2005e:46055)
 \bibitem{W1}Whyburn, G. T., ``On sequences and limiting sets,'' Fund. Math. vol. 25 (1935) pp. 408-426.
 \bibitem{W2}Whyburn, G. T., ``Analytic topology,'' Amer. Math. Soc. Colloquium Publications, vol. 28, 1942.
 \bibitem{Wi}Wilder, R. L., ``Topology of Manifolds,'' American Mathematical Society Colloquium Publications, vol. 32. American Mathematical
