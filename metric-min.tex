@@ -524,6 +524,13 @@ $\mathcal{K}_\ell$ is compact in the Gromov--Hausdorff topology.
 
 \section{Proof assembling}
 
+\begin{thm}{Main Theorem}
+Assume $Y$ is a $\CAT[0]$ space 
+and $s\:\DD\to Y$ is a metric minimizing map rel. to the boundary $\partial\DD$.
+Then $\|\DD\|_s$ is a $\CAT[0]$ space.
+\end{thm}
+
+
 \parit{Proof of Main theorem.}
 Note that it is sufficient to prove the theorem 
 in the case that $\partial |\DD|_f$ is rectifiable.
@@ -538,10 +545,10 @@ Given a finite set $F\subset \DD$,
 denote by $\mathcal{W}_F$
 the set of isometry classes of spaces $W$ which meet the conditions of the Key Lemma~\ref{lem:key}
 for $F$.
-According to Lemma on compactness (\ref{lem:compact}) $\mathcal{W}_F$ is compact.
-
-For two finite sets $F\subset F'\subset \DD$,
+Note that for two finite sets $F\subset F'$ in $\DD$,
 we have $\mathcal{W}_F\supset \mathcal{W}_{F'}$.
+
+According to Lemma on compactness (\ref{lem:compact}) $\mathcal{W}_F$ is compact.
 Therefore 
 \[\mathcal{W}
 =
@@ -556,14 +563,25 @@ Set $F_n=\{x_1,\dots,x_n\}$.
 Denote by $p_n\:F_n\to W$ a map satisfying the conditions in the Key Lemma~\ref{lem:key}.
 
 Passing to a subsequence by $n$ we can ensure that the sequence
-$z_n=p_n(x_k)$ converges for every $k$.
+$p_n(x_k)$ converges as $n\to\infty$ for every fixed $k$.
 Set 
 \[p(x_k)=\lim_{n\to\infty} p_n(x_k).\]
 
-Note that $p$ is short. 
-Therefore it can be extended to whole $\DD$ as a short map which we will still denote as $p$.
+Note that $p$ is short.
+Since $\{x_k\}$ is dense in $\DD$,
+the map $p$ can be extended to whole $\DD$ 
+as a short map.
+The obtained map will be still denoted as $p$.
 
-Summarizing ??? Hence the statement follows.\qeds
+Summarizing, the space $W$ is $\CAT[0]$ space 
+homeomorphic to a planar continuum.
+By construction, therere are two short maps 
+$\DD\xrightarrow{p} W \xrightarrow{q} Y$
+such that 
+\[q\circ p|_{\partial\DD}=s|_{\partial\DD}.\]
+Since $s$ is metric minimizing, both maps $p$ and $q$ are legth preserving.
+??? 
+Hence the statement follows.\qeds
 
 
 \begin{thebibliography}{52}
