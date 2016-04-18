@@ -524,6 +524,13 @@ $\mathcal{K}_\ell$ is compact in the Gromov--Hausdorff topology.
 
 \section{Proof assembling}
 
+\begin{thm}{Main Theorem}
+Assume $Y$ is a $\CAT[0]$ space 
+and $s\:\DD\to Y$ is a metric minimizing map rel. to the boundary $\partial\DD$.
+Then $\|\DD\|_s$ is a $\CAT[0]$ space.
+\end{thm}
+
+
 \parit{Proof of Main theorem.}
 Note that it is sufficient to prove the theorem 
 in the case that $\partial |\DD|_f$ is rectifiable.
@@ -538,10 +545,10 @@ Given a finite set $F\subset \DD$,
 denote by $\mathcal{W}_F$
 the set of isometry classes of spaces $W$ which meet the conditions of the Key Lemma~\ref{lem:key}
 for $F$.
-According to Lemma on compactness (\ref{lem:compact}) $\mathcal{W}_F$ is compact.
-
-For two finite sets $F\subset F'\subset \DD$,
+Note that for two finite sets $F\subset F'$ in $\DD$,
 we have $\mathcal{W}_F\supset \mathcal{W}_{F'}$.
+
+According to Lemma on compactness (\ref{lem:compact}) $\mathcal{W}_F$ is compact.
 Therefore 
 \[\mathcal{W}
 =
@@ -556,27 +563,38 @@ Set $F_n=\{x_1,\dots,x_n\}$.
 Denote by $p_n\:F_n\to W$ a map satisfying the conditions in the Key Lemma~\ref{lem:key}.
 
 Passing to a subsequence by $n$ we can ensure that the sequence
-$z_n=p_n(x_k)$ converges for every $k$.
+$p_n(x_k)$ converges as $n\to\infty$ for every fixed $k$.
 Set 
 \[p(x_k)=\lim_{n\to\infty} p_n(x_k).\]
 
-Note that $p$ is short. 
-Therefore it can be extended to whole $\DD$ as a short map which we will still denote as $p$.
+Note that $p$ is short.
+Since $\{x_k\}$ is dense in $\DD$,
+the map $p$ can be extended to whole $\DD$ 
+as a short map.
+The obtained map will be still denoted as $p$.
 
-Summarizing ??? Hence the statement follows.\qeds
+Summarizing, the space $W$ is $\CAT[0]$ space 
+homeomorphic to a planar continuum.
+By construction, therere are two short maps 
+$\DD\xrightarrow{p} W \xrightarrow{q} Y$
+such that 
+\[q\circ p|_{\partial\DD}=s|_{\partial\DD}.\]
+Since $s$ is metric minimizing, both maps $p$ and $q$ are legth preserving.
+??? 
+Hence the statement follows.\qeds
 
 \section{Energy of Sobolev maps}
 
 
-Let $\Omega\subset \mathbb{R}^n$ be an open and bounded subset. Further, let $(X,d)$ be a metric space.
-A measurable map $u:\Omega\to X$ lies in 
+Let $\Omega$ be an open and bounded subset of $\mathbb{R}^n$ and $(X,d)$ a metric space.
+We say that a measurable map $u:\Omega\to X$ lies in 
 $L^2(\Omega,X)$ if and only if
 \begin{enumerate}
  \item there is a full measure subset $M\subset \Omega$ such that $u(M)\subset X$ is separable;
  \item for any $x\in X$ the map $z\mapsto d(u(z),x)$ belongs to $L^2(\Omega)$.
 \end{enumerate}
 
-Following Reshetnyak \cite{R}, we define the Sobolev space $W^{1,2}(\Omega,X)$ of finite energy maps as follows. 
+Following Reshetnyak \cite{R}, we define the Sobolev space $W^{1,2}(\Omega,X)$, of finite energy maps, as follows. 
 A map $u\in L^2(\Omega,X)$ is contained in $W^{1,2}(\Omega,X)$ if and only if
 
 \begin{enumerate}
@@ -589,18 +607,18 @@ If for a map $u:\Omega\to X$ the  approximate limit
 $$
 ap\lim_{t\searrow 0}\frac{d(u(z+tv),u(z))}{t}
 $$
-exists, then it is called {\em approximate metric derivative} in the direction $v\in\mathbb{R}$ at the point $z$. It will be denoted
+exists, then we call this limit the {\em approximate metric derivative} at the point $z$ in the direction $v\in\mathbb{R}^n$. It will be denoted
 as $|du_z(v)|$. According to
-\cite[Prop.4.3]{LW}, if $u\in W^{1,2}(\Omega,X)$, then its approximate metric derivative exists in every direction at almost every point $z\in\Omega$,
-and defines a semi-norm $|du_z|$ on $\mathbb{R}^n$. Moreover, the function $z\to\int_{S^1}|du_z(v)|^2 d\mathcal{L}^1$ is in $L^2(\Omega)$.
-We define the {\em energy} of a map $u\in W^{1,2}(\Omega,X)$ as
+\cite[Prop.4.3]{LW}, if $u\in W^{1,2}(\Omega,X)$, then its approximate metric derivative exists and defines a semi-norm $|du_z|$ on $\mathbb{R}^n$, 
+in every direction at almost every point $z\in\Omega$. Moreover, the function $z\to\int_{S^1}|du_z(v)|^2 d\mathcal{L}^1$ lies in $L^2(\Omega)$.
+We can then define the {\em energy} of a map $u\in W^{1,2}(\Omega,X)$ as
 $$
 E(u):=\int_\Omega\left(\frac{1}{\omega_n}\int_{S^{n-1}}|du_z(v)|^2 d\mathcal{L}^1(v)\right)d\mathcal{H}^{n-1}(z).
 $$
-It was shown in \cite{LW} that this definition coincides up to a factor with the Korevaar-Schoen 2-energy \cite{KS}.
+It was shown in \cite{LW} that this definition coincides, up to a factor, with the Korevaar-Schoen 2-energy \cite{KS}.
 
-From now on we will assume that $X$ is a CAT(0) space. Recall that between any two maps $u_0,u_1:\Omega\to X$ there is 
-a unique {\em geodesic homotopy} $u_t$. Namely for $t\in[0,1]$ we define $u_t(z)$ as the point on $[u_0(z),u_1(z)]$ at distance $t$
+From now on, we will assume that $X$ is a CAT(0) space. Recall that between any two maps $u_0,u_1:\Omega\to X$ there is 
+a unique {\em geodesic homotopy} $u_t$. Namely for $t\in[0,1]$ we define $u_t(z)$ as the point on $[u_0(z)u_1(z)]$ at distance $t$
 from $u_0(z)$. If $u_0, u_1\in W^{1,2}(\Omega,X)$, then energy is convex along geodesic homotopies \cite[(2.2vi)]{KS}:
 $$
 E(u_t)\leq (1-t)E(u_0)+tE(u_1)-t(1-t)\int_\Omega|\nabla d(u_0,u_1)|^2d\mathcal{H}^2.
@@ -611,23 +629,39 @@ $$
 
 \section{Existence and uniqueness}
 
-We say that two rectifiable paths $\gamma_{\pm 1}:I\to X$ are {\em parallel}, if $d(\gamma_{-1},\gamma_{+1})$
+Let $\gamma_{\pm 1}:I\to X$ be two rectifiable paths, parametrized by arc length. We say that  $\gamma_{-1}$ is {\em parallel} to $\gamma_{+1}$, if $d(\gamma_{-1},\gamma_{+1})$
 is constant on $I$.
 
-\begin{thm}{Lemma}
-Let $\gamma_{-1}$ and $\gamma_{+1}$ be two parallel paths and $h:I^2\to X$ the geodesic homotopy
-between. Then $h(I^2)$ is intrinsically flat.
-\end{thm}
-\parit{Proof.}
-
-\qeds
 
 \begin{thm}{Lemma}
-Let $\gamma_{\pm 1}:I\to X$ be two rectifiable paths of equal length $L>0$. Set $\gamma_t:=h(\cdot,t)$ where $h$ denotes the geodesic homotopy
-between their arclength parametrizations. If $\gamma_0$ has length $L$, then $\gamma_{-1}$ and $\gamma_{+1}$ are parallel. 
+Let $\gamma_{\pm 1}:I\to X$ be two rectifiable paths of equal length $L>0$. Set $\gamma_t:=h(\cdot,t)$ where $h:[-1,1]\times[0,L]\to X$ denotes the geodesic homotopy
+between their arclength parametrizations. If $\gamma_0$ has length $L$, then $\gamma_{-1}$ and $\gamma_{+1}$ are parallel. Moreover, $h([-1,1]\times[0,L])$ is intrinsically 
+flat.
 \end{thm}
 \parit{Proof.}
+Convexity of $d$ implies $|\dot\gamma_0(t)|\leq 1$. By assumtion, length of $\gamma_0$ equals $L$, hence $|\dot\gamma_0(t)|=1$ for almost all $t\in[0,L]$. So $\gamma_0$
+is parametrized by arc length. Since the energy of a unit speed path equals its length, we conclude from energy convexity 
+$$
+\int_0^L|\nabla d(\gamma_{-1},\gamma_{+1})|^2 d\mathcal{H}^1=0.
+$$
+Therefore, $\gamma_{-1}$ is parallel to $\gamma_{+1}$.
 
+For the second claim, denote $H$ the surface $h([-1,1]\times[0,L])$ equipped with the pull-back metric. By \ref{main}, $H$
+is CAT(0).
+Now let $\epsilon>0$ and choose an array of points $x_0^{0},x_1^{0},\ldots,x_k^{0}$ on $\gamma_{0}$ 
+such that $\sum_{i=0}^k d(x_i^{0},x_{i+1}^{0})\geq L-\epsilon$. For $t\in[-1,1]$ denote by $x_i^{t}$ the
+point $\gamma_t$ corresponding to $x_i^{0}$. Now use the comparison triangles
+$\triangle(x_{j}^{-1},x_{j+1}^{-1},x_{j+1}^{+1})$ and $\triangle(x_{j}^{+1},x_{j+1}^{+1},x_{j+1}^{-1})$, $j=0,\ldots k-1$,
+to glue a flat comparison surface $S_\epsilon$ for $H$. From Reshetnyak's majorization theorem, we obtain a short map 
+$f_\epsilon:S_\epsilon\to H$. Denote by by $\hat x_i^{t}$ the point on on $S_\epsilon$ corresponding to $x_i^{t}$. Then
+$$
+L-\epsilon\leq\sum_{i=0}^k d(x_i^{0},x_{i+1}^{0})\leq\sum_{i=0}^k d(\hat x_i^{0},\hat x_{i+1}^{0})\leq
+\frac{1}{2}\sum_{i=0}^k d(x_i^{-1}, x_{i+1}^{-1})+\frac{1}{2}\sum_{i=0}^k d(x_i^{+1}, x_{i+1}^{+1})\leq L.
+$$
+Hence we can choose a sequence $\epsilon_j\to 0$ such that $S_{\epsilon_j}$ converges to a flat surface $S$ and $f_{\epsilon_j}$
+converges to a short map $f:S\to H$. Note that $f$ is surjective. Moreover, $S$
+has two transversal foliations, one by parallel paths of constant length $L$ and one by geodesic segments of constant length.
+It follows that the Jacbian of $f$ is almost everywhere equal to one. Thus $f$ is area preserving and therefore an isometry by \ref{}.
 \qeds
 
 
