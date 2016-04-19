@@ -40,14 +40,15 @@ such that
 \end{itemize}
 
 If in addition $|x-y|=0$ implies $x=y$ then $|{*}-{*}|$ is called \emph{metric}.
+
 Note that by our definition, the distance between points might be infinite.%
-\footnote{To remove possible psychological barriere with infinity,
-let us mention an other construction  --- it will not be used further.
+\footnote{Let us mention an other construction to remove a possible psychological barrier with infinity --- it will not be used further.
+
 Consider an equivalence relation ``$\approx$'' on a metric space defined as \[x\approx y\  \iff\  |x-y|<\infty.\]
-Note that its equivalence classes form genuine metric spaces; 
-that is, in addition to the conditions above we have $|x-y|<\infty$ for any pair of points $x$ and $y$.
+Note that its equivalence classes form \emph{usual metric spaces}; 
+that is $|x-y|<\infty$ for any pair of points $x$ and $y$ in the class.
 It implies that metric spaces in our definition 
-can be thought of disjoint union of some collection genuine metric spaces with infinite distance from each other.}
+can be thought of disjoint union of some collection \emph{usual metric spaces} with infinite distance from each other.}
 
 
 A set with a pseudometric or metric will be called \emph{pseudometric} or correspondingly \emph{metric space}.
@@ -86,31 +87,35 @@ it can be regarded as a point in  $|X|_f$ and in $\|X\|_f$.
 Given two maps $f,h\:X\to Y$ we will write $f\succcurlyeq h$ if 
 \[\|x-y\|_f\ge \|x-y\|_h\]
 for any pair of points $x,y\in X$.
-If in addition the inequality is strict for at least one pair of points then we will write $f\succ h$.
+We will write $f\succ h$ 
+if in addition the inequality is strict for at least one pair of points then.
+
+
 
 \parbf{Metric minimizing map.}
 Let $X$ and $Y$ be metric spaces and $A\subset X$ be a closed subset.
 
-The map $f\:X\to Y$ is called \emph{metric minimizing rel. $A$}
+The map $f\:X\to Y$ is called \emph{metric minimizing relative to $A$}
 if there is no map $h\:X\to Y$ such that $f\succ h$
 and $h$ agrees with $f$ on $A$;
 that is, $h|_A=f|_A$.
 
-We say that $f\:X\to Y$ is \emph{strict metric minimizing rel. $A$}
+We say that $f\:X\to Y$ is \emph{strict metric minimizing relative to $A$}
 if there is no map $h\:X\to Y$ distinct from $f$
 such that $f\succcurlyeq h$, 
 and $h|_A=f|_A$.
 
 \begin{thm}{Proposition}\label{prop:point-complement}
-Let $X$ and $Y$ be  metric spaces 
-and $A\subset X$ is a closed subset.
-Assume $X$ is connected and $f\:X\to Y$ is a metric minimizing map rel. $A$.
+Let $X$ and $Y$ be metric spaces 
+and $A\subset X$ be a closed subset.
+Assume $X$ is connected and $f\:X\to Y$ is a metric minimizing map relative to $A$.
 Then for any point $x\in X$ any connected component of $X\backslash [x]_f$ intersects $A$.
 
 \end{thm}
 
 \parit{Proof.}
-Assume to the contrary, denote by $W$ the connected component of $X\backslash [x]_f$ such that $A\cap W=\emptyset$.
+Assume contrary.
+Denote by $W$ the connected component of $X\backslash [x]_f$ such that $A\cap W=\emptyset$.
 Let us define the new map $h\:X\to\ Y$ 
 by setting $h(z)=f(x)$ for any $z\in W$
 and $h(z)=f(z)$ for any $z\notin W$.
@@ -125,20 +130,20 @@ The following two propositions follow directly from the definition of metric min
 
 \begin{thm}{Proposition}\label{prop:subset}
 Let $X$ and $Y$ be metric spaces and $A\subset X$ be a closed subset.
-Assume $f\:X\to Y$ is a metric minimizing map rel. $A$.
+Assume $f\:X\to Y$ is a metric minimizing map relative to $A$.
 
 Given a closed subset $W\subset X$, set 
 \[A_W=\partial W\cup (A\cap W).\]
-Then the restriction $f|_W$ is metric minimizing rel. $A_W$.
+Then the restriction $f|_W$ is metric minimizing relative to $A_W$.
 \end{thm}
 
 \begin{thm}{Proposition}\label{prop:factor}
 Let $X, X'$ and $Y$ be metric spaces, 
 $A\subset X$ be a closed subset.
-Assume $f\:X\to Y$ is a metric minimizing map rel. $A$
+Assume $f\:X\to Y$ is a metric minimizing map relative to $A$
 which factors through a continuous surjective map $\phi\:X\to X'$;
 that is there is a map $f'\:X'\to Y$ such that $f=f'\circ\phi$.
-Then $f'\:X'\to Y$ is metric minimizing rel. $\phi(A)$.
+Then $f'\:X'\to Y$ is metric minimizing relative to $\phi(A)$.
 \end{thm}
 
 \section{Metric minimizing graphs}
@@ -148,7 +153,7 @@ Then $f'\:X'\to Y$ is metric minimizing rel. $\phi(A)$.
 \begin{thm}{Proposition}
 Assume $\Gamma$ is a  finite graph and $A$ is the collection of its vertices.
 Let $Y\in\CAT[0]$ and $f\:\Gamma\to Y$ be an arbitrary map.
-Then there is a metric minimizing map $f'\:\Gamma\to Y$ rel. $A$ such that
+Then there is a metric minimizing map $f'\:\Gamma\to Y$ relative to $A$ such that
 $f'|_A=f|_A$ and 
 $f\succcurlyeq f'$.
 \end{thm} 
@@ -177,7 +182,7 @@ Note that $f_\omega\succ g_\omega$ and $g_\omega|_A=f|_A$, a contradiction.
 \begin{thm}{Proposition}\label{prop:metric-min-graph}
 Let $Y$ be a $\CAT[0]$ space, 
 $\Gamma$ a finite  graph and $A$ a subset of its vertices.
-Assume $f\:\Gamma\to Y$ is metric minimizing rel. $A$.
+Assume $f\:\Gamma\to Y$ is metric minimizing relative to $A$.
 Then
 \begin{itemize}
 \item each edge of $\Gamma$ maps to a geodesic
@@ -185,7 +190,7 @@ Then
 there is an edge  $[vw]$ in $\Gamma$ such that
 $\measuredangle[f(v)^{f(w)}_x]\ge \tfrac\pi2$.
 \end{itemize}
-Moreover, $f$ is strictly metric minimizing rel. $A$ 
+Moreover, $f$ is strictly metric minimizing relative to $A$ 
 \end{thm}
 
 \begin{wrapfigure}{r}{22 mm}
@@ -200,7 +205,7 @@ the last two conditions in the proposition do not guarantee that the map $f$ is 
 \parit{Proof.}
 By Proposition~\ref{prop:subset},
 the restriction of $f$ to any edge $[vw]$ of $\Gamma$
-is metric minimizing rel. $\{v,w\}$.
+is metric minimizing relative to $\{v,w\}$.
 Hence the first condition follows.
 
 Assume the second condition does not hold at a vertex $v\notin A$;
@@ -232,7 +237,7 @@ otherwise it will be called \emph{interior vertex}.
 \begin{thm}{Corollary}\label{cor:planar-minimizing-graph}
 Let $Y$ be a $\CAT[0]$ space and
 $\Gamma$ an embedded graph in $\RR^2$.
-Assume $f\:\Gamma\to Y$ is a metric minimizing map rel. to the boundary vertices. 
+Assume $f\:\Gamma\to Y$ is a metric minimizing map relative to the boundary vertices. 
 Then 
 one can equip $\Fill\Gamma$ with a $\CAT[0]$ pseudometric 
 and extend $f$ to a short map $\bar f\:\Fill\Gamma\to Y$ which is length preserving on $\Gamma$.
@@ -295,17 +300,17 @@ that is $X$ compact simply connected space which admits an embedding into the pl
 
 \parit{Proof.}
 Assume $f\:\DD\to X$ is a continuous map.
-Let us consider the disc $\DD$ as a subset in the plane $\RR^2$.
+Let us consider the disc $\DD$ as a subset in the plane $\SS^2$.
 For any $x\in \DD$, set $[x]_f=f^{-1}\{f(x)\}$
 and
-if $x\in \RR^2\backslash \DD$ we assume $[x]_f=\{x\}$.
-Denote by $\RR^2_f$ the set of classes $[x]_f$ with the quotient topology induced by the map $\iota_f\:x\mapsto [x]_f$.
+if $x\in \SS^2\backslash \DD$ we assume $[x]_f=\{x\}$.
+Denote by $\SS^2_f$ the set of classes $[x]_f$ with the quotient topology induced by the map $\iota_f\:x\mapsto [x]_f$.
 
 According to Moore's theorem \cite{moore},
 if for any point $x$, the set $[x]_f$ is connected and compact, with connected complement,
-then $\RR^2_f$ is homeomorphic to the plane.
+then $\SS^2_f$ is homeomorphic to $\SS^2$.
 
-It remains to note that $X$ is embedded into $\RR^2_f$ \qeds
+It remains to note that $X$ is embedded into $\SS^2_f$ and its complement is homeomorphic to an open disc.\qeds
 
 Given a disc retruct $X$,
 define its interior as a maximal open set which is homeomorphic to an open set in the plane.
@@ -315,26 +320,16 @@ The complement to the interior of $X$ will be called boundary and denoted as $\p
 Applying \ref{prop:point-complement} and \ref{prop:disc-moore}, we get the following.
 
 \begin{thm}{Proposition}\label{prop:|D|}
-Let $f\:\DD\to\ Y$ be a metric minimizing map rel. $\partial \DD$.
-Then $|\DD|_f$ is homeomorphic to a disc retruct;
-that is $|\DD|_f$ compact simply connected space which admits an embedding $\iota\:|\DD|_f\to \RR^2$.
-
-Moreover the image of $\partial \DD$
-under the map $x\mapsto \iota([x]_f)$
-is $\partial_{\RR^2}[\iota(|\DD|_f)]$.
+Let $f\:\DD\to\ Y$ be a metric minimizing map relative to $\partial \DD$.
+Then $|\DD|_f$ is homeomorphic to a disc retract.
+Moreover $\partial|\DD|_f$ is the image of $\partial \DD$
+under the map $x\mapsto [x]_f$.
 \end{thm}
 
-Further we denote by $\partial|\DD|_f$ the image of $\partial \DD$
-under the map $x\mapsto [x]_f$.
-According to the above proposition 
-\[\partial|\DD|_f=\iota^{-1}\left(\partial_{\RR^2}[\iota(|\DD|_f)]\right).\]
-
-Note that the map $f\:\DD\to Y$ factors through the projection 
-$\DD\to|\DD|_f$ defined as $x\mapsto[x]_f$.
-Define $f'\:|\DD|_f\to Y$ as the map such that $f(x)=f'([x]_f)$ for any $x\in\DD$.
-
-By Proposition \ref{prop:factor} the map $f'\:|\DD|_f\to Y$
-is metric minimizing rel. $\partial|\DD|_f$.
+Note that the metric minimizing map $f\:\:\DD\to\ Y$ factors through a map $f'\:|\DD|_f\to Y$
+and by \ref{prop:factor} and \ref{prop:|D|} 
+the map $f'$
+is metric minimizing relative to $\partial|\DD|_f$.
 
 \begin{thm}{Proposition}
 Let $Y\in\CAT(0)$ 
@@ -373,7 +368,7 @@ Note that the path $\bar f\circ \gamma$ is also rectifiable and in particular co
 
 \begin{thm}{Key Lemma}\label{lem:key}
 Let $Y$ be a $\CAT(0)$ space and $s\:\DD\to Y$ 
-be a metric minimizing disc rel. the boundary $\partial \DD$.
+be a metric minimizing disc relative to the boundary $\partial \DD$.
 Given a finite set $F\subset \DD$
 there is a $\CAT(0)$ space $W$, which is homeomorphic to a compact subset of the plane,
 and maps $p\:F\to W$ and $q\:W\to Y$ such that
@@ -596,7 +591,7 @@ The limit map
 
 \begin{thm}{Main Theorem}
 Assume $Y$ is a $\CAT[0]$ space 
-and $s\:\DD\to Y$ is a metric minimizing map rel. to the boundary $\partial\DD$.
+and $s\:\DD\to Y$ is a metric minimizing map relative to the boundary $\partial\DD$.
 Then $\|\DD\|_s$ is a $\CAT[0]$ space.
 \end{thm}
 
