@@ -57,6 +57,7 @@ For any pseudometric on a set
 there is an equivalence relation ``$\sim$''
 such that $x\sim y$ if and only if $|x-y|=0$.
 The pseudometric $|{*}-{*}|$ defines a genuine metric on the set of equivalence classes of $\sim$.
+We will say that obtained metric space is \emph{defined} by the  original pseudometric space.%???IS IT A GOOD WAY TO SAY??? 
 
 \parbf{Induced  pseudometrics.}
 Let $X$ and $Y$ be metric spaces.
@@ -142,7 +143,7 @@ Let $X, X'$ and $Y$ be metric spaces,
 $A\subset X$ be a closed subset.
 Assume $f\:X\to Y$ is a metric minimizing map relative to $A$
 which factors through a continuous surjective map $\phi\:X\to X'$;
-that is there is a map $f'\:X'\to Y$ such that $f=f'\circ\phi$.
+that is $f=f'\circ\phi$ for a map $f'\:X'\to Y$.
 Then $f'\:X'\to Y$ is metric minimizing relative to $\phi(A)$.
 \end{thm}
 
@@ -200,7 +201,7 @@ Moreover, $f$ is strictly metric minimizing relative to $A$
 \end{wrapfigure}
 
 As one may see from the diagram,
-the last two conditions in the proposition do not guarantee that the map $f$ is metric minimizing.
+the two conditions in the proposition do not guarantee that the map $f$ is metric minimizing.
 
 \parit{Proof.}
 By Proposition~\ref{prop:subset},
@@ -286,7 +287,7 @@ its boundary $\partial \DD$ is a unit circle.
 We will need the following disc version of Moore's theorem proved in \cite{moore}.
 
 \begin{thm}{Proposition}\label{prop:disc-moore}
-Let $X$ be a metric space and
+Let $X$ be a Hausdorff space and
 $f\:\DD\to X$ be a continuous map.
 Assume that for any $x\in X$, 
 the inverse image
@@ -298,7 +299,12 @@ Then $X$ is homeomorphic to a \emph{disc retruct};
 that is $X$ compact simply connected space which admits an embedding into the plane.
 \end{thm}
 
+Further the maps satifying the assumptions in the proposition will be called \emph{cell-like}.%???IS IT OK TO CALL IT THIS WAY???
+
 \parit{Proof.}
+Since $X$ is a Hausdorff space and $\DD$ is compact, 
+the $X$ has quotient topology for $f$. 
+
 Assume $f\:\DD\to X$ is a continuous map.
 Let us consider the disc $\DD$ as a subset in the plane $\SS^2$.
 For any $x\in \DD$, set $[x]_f=f^{-1}\{f(x)\}$
@@ -551,38 +557,112 @@ $\mathcal{K}_\ell$ is compact in the Gromov--Hausdorff topology.
 
 \section{2-dimensional case}
 
-\begin{thm}{Shefel's theorem}\label{thm:shefel-2D}
-Let $W$ be a $\CAT[0]$ space which is homeomorphic to a plane continuum.
-Assume $s\:\DD\to W$ be a map such that for any geodesic $\gamma$ in $W$ 
-any connected component of the complement $\DD\backslash s^{-1}(\gamma)$
+Let $W$ be a metric space.
+A coninous map $s\:\DD\to W$ is called \emph{saddle} if for any closed convex subset $K\subset W$ 
+any connected component of the complement $\DD\backslash s^{-1}(K)$
 has a point from the boundary $\partial \DD$.
-Then $\|DD\|_s$ is $\CAT[0]$.
+
+\begin{thm}{Proposition}
+Let $W$ be a $\CAT[0]$ space then any metric minimizing map $s\:\DD\to W$ is saddle.
 \end{thm}
 
-We repeat word-by-word the proof of Shefel in \cite{shefel-2D}, 
-the only difference is instead of ``plane'' one has to say ``$W$''.
+\parit{Proof.}
+Assume contrary, let $\Omega$ be the violating component of the complement $\DD\backslash s^{-1}(\gamma)$.
+Redefine $s$ for each $x\in\Omega$ by moving 
+$s(x)$ to its closest point projection on $\gamma$.
+Denote by $s'$ the new map.
+
+Since $\gamma$ is convex the closest point projection is short,
+therefore $s\succcurlyeq s'$.
+That is $s$ is not strictly metric minimizing.
+It remains to apply Proposition~\ref{prop:strict-mm}.
+\qeds
+
+
+\begin{thm}{Shefel's theorem}\label{thm:shefel-2D}
+Let $W$ be a $\CAT[0]$ space which is homeomorphic to disc retract.
+Assume $s\:\DD\to W$ be a saddle map. 
+Then $\|\DD\|_s$ is $\CAT[0]$.
+\end{thm}
+
+We almost repeat the proof of Shefel in \cite{shefel-2D}.
+The main difference is instead of ``plane'' one has to say ``$W$''.
+However, Shefel's proof was written rather tight, so we have through in few details.
 
 \parit{Proof.}
 Fix a fine triangulation $\tau$ of $\DD$.
 Map the vertices of $\tau$ by $s$
-and extend it to whole $\DD$ using barycentric map.
+and extend it to whole $\DD$ so that image of each triangle 
+is the closed region bounded by the geodesic triangle in $W$ with the corresponding vertices.
 
-We get a map, say $u\:\DD\to W$.
-Note that $u$ can be made arbitrary close to $s$ assuming that the triangulation is fine.
+The obtained map $u\:\DD\to W$ can be made arbitrary close to $s$ assuming that the triangulation is fine.
+Say given $\eps>0$ we can assume that $u$ is $\eps$-close to $s$,
+that is 
+\[|s(x)-u(x)|_X<\eps\]
+for any $x\in\DD$.
 
-If $s_\tau$ does not satisfy the condition of the theorem,
+Note that we can assume in addition that the restriction of $u$ to any triangle  $\triangle$ of $\tau$ is cell-like;
+in particular $\|\triangle\|_u$ is isometric to the image $u(\triangle)$.
+It follows that $\|\DD\|_u$ can be obtained by gluing together the images of the triangles in $\tau$.
+
+In other words, the space $\|\DD\|_u$ can be reconstructed by gluing the geodesic triangles in $W$ along common closed arcs in their boundaries.
+Moreover, without loss of generality, %???BIT MORE EXPL???
+we can assume that sides of each triangle do not overlap, 
+if this is the case, we can remove the overlapping part and glue directly what comes to it from the sides.%???WE SHOULD DO SOMETHING WITH HAIR
+
+Denote by $N$ the number of triangles in $\tau$.
+Consider the class of spaces $\mathcal{S}_N$ which can be constructed the following way:
+take at most $N$ convex sets in $W$ and glue some pieces of the common boundaries to get a disc retract.
+Note that $\|\DD\|_u$ belongs to $\mathcal{S}_N$ and $\mathcal{S}_N$ is compact in Gromov--Hausdorff topology.
+
+
+Assume $u$ is not saddle,
 that is for some geodesic $\gamma$ in $W$
 the complement $u^{-1}(\gamma)$ contains a connected component $\Omega$ without boundary points of $\DD$.
-Redefine the map $u$ on $\Omega$ to the closest-point projection to $\gamma$.
 
-Now let us apply the above procedure recursively
-for a dense sequence of geodesics $\gamma_1,\gamma_2,\dots$ in $W$.
-We obtain a sequence of maps $u_1,u_2,\dots$ which define a short map of $\|D\|_u$.
-In particular a subsequecnce of $(u_n)$ converges,
-denote its limit as $v$.
-(In fact it is true that $(u_n)$ converges, but we do not need it.)
+Now let us redefine the map $u$ in $\Omega$.
+More precisely, let us construct a new map $u'\:\DD\to W$
+such that $u'(x)=u(x)$ for $x\notin\Omega$.
+To do this fix a continuous function $\lambda\:\Omega\to [0,1]$
+which is $0$ at the boundary and $1$ outside a sufficiently small neighborhood of $\partial \Omega$.
+Note that $u(\partial\Omega)$ forms a geodesic in $W$,
+in particular it is a convex set.
+In particular, the closest point projection of $W$ to $\gamma$ is a short map.
 
-The limit map
+For $x\in \Omega$, set $u'(x)$ to be the point which minimum point of the function 
+\[\lambda\cdot\dist^2_p+(1-\lambda)\cdot\dist^2_q,\]
+where $p$ and $q$ are correspondingly the closest point projections of  $u(x)$ and $s(x)$ on $u(\partial\Omega)$.
+
+\begin{nnthm}{Claim}
+For the right choice of $\lambda$ the map $u'\:\DD\to W$ satisfies
+\[|u'(x)-s(x)|<\eps\] 
+for any $x$.
+\end{nnthm}
+
+
+
+Fix a dense sequence of geodesics $\gamma_1,\gamma_2,\dots$ in $W$.
+Apply the above procedure recursively
+for $\gamma_1,\gamma_2,\dots$.
+We obtain a sequence of maps $u_1,u_2,\dots$ such that 
+\[|u_n(x)-s(x)|<\eps\]
+for any $x$.
+
+The spaces $\|\DD\|_{u_n}$ belong to $\mathcal{S}_N$,
+so we can pass to its partial limit as $n\to\infty$,
+say $\|\DD\|_\eps$.
+
+
+Note that the projection $\|\DD\|_\eps\to W$ is saddle,
+Indeed ???
+
+(In particular, it implies that each convex set in the decomposition of $\|\DD\|_\eps$ is a polygon, but we will not need it.)
+
+It follows that $\|\DD\|_\eps$ is $\CAT[0]$. Indeed ???.
+
+Finally note that as $\eps_\to 0$, $\|\DD\|_\eps$ converges to $\|\DD\|_s$. Indeed ???
+
+Hence the result follows.
 \qeds
 
 
@@ -730,6 +810,10 @@ It follows that the Jacbian of $f$ is almost everywhere equal to one. Thus $f$ i
 \qeds
 
 
+%MAYBE IT WILL BE A COR OR PART OF AN OTHER STATEMENT, BUT WE NEED IT???
+\begin{thm}{Proposition}\label{prop:strict-mm}
+Any metric minimizing map in $\CAT[0]$ space is strict metric minimizing.
+\end{thm}
 
 
 \begin{thebibliography}{52}

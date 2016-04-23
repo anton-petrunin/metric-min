@@ -29,8 +29,7 @@
 \def\RR{\mathbb{R}}
 \def\SS{\mathbb{S}}
 \def\Fill{\mathop{\rm Fill}}
-\def\conn{\mathfrak{c}}
-\def\intr{\mathfrak{l}}
+\def\dist{\mathop{\rm dist}\nolimits}
 
 \def\l{\left}
 \def\r{\right}
@@ -52,16 +51,13 @@
 }
 \def\endclaim{
 \par\medskip}
-\newenvironment{thm}{\claim}{\endclaim}
-\newcommand*{\DCto}{\begin{picture}(20,10)
-\put(1,0){$\longrightarrow$}
-\put(12,-2.5){\llap{\text{\sf\tiny DC}}}
-\end{picture}}
-\newcommand*\GHto{\begin{picture}(20,10)
-\put(1,0){$\longrightarrow$}
-\put(12,-2.5){\llap{\text{\sf\tiny GH}}}
-\end{picture}}
 
+\newenvironment{thm}{\claim}{\endclaim}
+
+\def\clm#1{\par\medskip\noindent\hbox{\bf #1.}
+\it\ %\ignorespaces
+}
+\newenvironment{nnthm}{\clm}{\endclaim}
 
 
 %LIST STILES
