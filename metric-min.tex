@@ -770,6 +770,79 @@ E(u_t)\leq (1-t)E(u_0)+tE(u_1)-t(1-t)\int_\Omega|\nabla d(u_0,u_1)|^2d\mathcal{H
 $$
 
 
+\section{Area preserving short maps between CAT(0) surfaces}
+
+Let $X$ be a CAT(0) disc. For any subset $A\subset X$ we denote $N_\epsilon (A)$ its open $\epsilon$-neighbourhood.
+Let $x,y\in X$ be different points and $[xy]$ the geodesic segement between them. We define an $\epsilon$-halfneighbourhood
+$N^+_\epsilon ([xy])$ in the following way. Note first that $[xy]$ seperates the ball $B$ of radius $\frac{|x-y|}{2}$ around
+the midpoint of $[xy]$ into two components $B^+$ and $B^-$. Let $f$ be the distance function to $[xy]$. Choose gradient curves 
+$\gamma_x$ and $\gamma_y$ of $f$ starting in $x$ respectively $y$ and such that they are tangential to $B^+$. The concatenation
+of $\gamma_x$, $[xy]$ and $\gamma_y$ seperates $N_\epsilon([xy])$ into two components and we choose $N^+_\epsilon ([xy])$ to be the one
+with interior angles equal to  $\frac{\pi}{2}$. The curves $\gamma_x$ and $\gamma_y$ will be called {\em boundary curves} of the 
+halfneighbourhood.
+
+
+For $t<\epsilon$ set $\gamma_t:=\partial N_t([xy])\cap N^+_\epsilon ([xy])$. If $\epsilon$
+is small enough, then $\gamma_t$ defines a rectifiable simple arc.
+
+
+\begin{thm}{Lemma}\label{lem:length continuity}
+The length of $\gamma_t$ converges to $|x-y|$ for $t\to 0$.
+\end{thm}
+
+In order to prove this, we need the following auxiliary lemma. For $\epsilon>0$ we denote
+$X_\epsilon$ the subset of points in $X$ at distance $>\epsilon$ from the boundary.
+
+\begin{thm}{Lemma}
+Let $\epsilon>0$ be fixed. Assume that for every $k\in\mathbb{N}$ there is a geodesic quadrangle $\square_k\subset X_\epsilon$ with
+sides $a_k,b^+_k,b^-_k$ and $c_k$ such that
+\begin{enumerate}
+	\item $\angle(a_k,b^\pm_k)=\frac{\pi}{2};$
+	\item $|a|\leq\frac{1}{k};$
+	\item $|b^\pm|\geq \frac{4}{k};$
+	\item there is a point $m_k\in c_k$, such that $|m_k-a_k|\leq \frac{1}{k}.$
+\end{enumerate}
+Then any limit point $z$ of  $a_k$ has the property that $\mathcal{H}^1(\Sigma_z X)\geq \frac{7}{3}\pi$.
+\end{thm}
+\parit{Proof.}
+Let $z$ be such a limit point. Since the quadrangles $\square_k$ are contained in $X_\epsilon$  we can extend their sides 
+by a definite amount in both directions. Denote the extensions by $\bar a_k$, $\bar b^\pm_k$ and $\bar c_k$ respectively.
+After choosing converging subsequences we obtain limit geodesics $\bar a_\infty$, $\bar b^\pm_\infty$ and $\bar c_\infty$
+all going through the point $z$. We will now estimate appropriate angles. The geodesic $\bar c_k$ encloses two angles with
+$b^\pm$, one interior angle of $\square_k$ and the other one will be denoted by $\beta^\pm_k$. Moreover, set $x^\pm:=c\cap b^\pm$.
+Let $f_k$ be the distance function to $a_k$ restricted to $\bar c_k$. Then we have 
+$$
+f'(x_k^-)\leq\frac{f(m_k)-f(x_k^-)}{|m_k-x_k^-|}\leq-\frac{1}{2}\text{  and  }f'(x_k^+)\geq\frac{f(x_k^+)-f(m_k)}{|x_k^+-m_k|}\geq\frac{1}{2}.
+$$
+By the first variation formula we conclude (using (2)) $\beta_k^\pm\geq\frac{2\pi}{3}$. Now we can estimate the length of
+$\Sigma_z X$. The geodesic $\bar c_\infty$ induces a decomposition of $\Sigma_z X$ into two convex subset, both of length at least $\pi$.
+By the semicontinuity of angles $\beta^\pm_\infty\geq\limsup \beta_k^\pm\geq\frac{2\pi}{3}$. Hence one of those components has length at least
+$\frac{4\pi}{3}$. The claim follows. 
+\qeds
+
+\begin{thm}{Corollary}\label{cor:partition}
+For every $\epsilon>0$ there exists $\delta>0$ such that for any nondegenerated geodesic $[xy]$ 
+in $X_\epsilon$ with $\mathcal{H}^1(\Sigma_z X)< \frac{7}{3}\pi$
+for every $z$ in $(xy)$, the following holds. If $[x'y']\subset[xy]$ is a subgeodesic of length $<\delta$ and $N^+_r([xy])$ is some halfneighbourhood of $[x'y']$ with boundary curves $\gamma_{x'}$ and $\gamma_{y'}$, 
+then the geodesic $c_\delta$ between  $\gamma_{x'}(4\delta)$ and $\gamma_{y'}(4\delta)$ has distance $>\delta$
+from $[x'y']$.
+\end{thm}
+\parit{Proof of Lemma\ref{lem:length continuity}.}
+Let $[xy]$ be a geodesic in $X_\epsilon$ for some $\epsilon>0$. Assume first that $\mathcal{H}^1(\Sigma_z X)< \frac{7}{3}\pi$
+for every $z$ in $(xy)$. Choose $\delta>0$ as in Corollary \ref{cor:partition} and a point array
+$x=x_0,x_1,\ldots,x_n=y$ on $[xy]$ such that $|x_j-x_{j+1}|<\delta$. Let $N_r^ +([x_j x_{j+1}])$ be a halfneighbourhood contained in $N_r^ +([x y])$
+with boundary curves $\gamma_{x_j^ +}$ and $\gamma_{x_{j+1}^ -}$. Then by Corollary \ref{cor:partition}, the geodesic between $\gamma_j^ -(4\delta)$
+and $\gamma_{j+1}^ +(4\delta)$ has distance more than $\delta$ from $[xy]$. We connect the point $\gamma_j^ +(4\delta)$ to $\gamma_j^ -(4\delta)$ by a shortest path $\rho_j$
+contained in $\partial B_{4\delta}(x_j)$. Note that the length $L_j$ of $\rho_j$ is $O(\delta)$. Moreover, since $X$
+is a CAT(0) disc, the contribution of single points to the total curvature is finite. Hence even $\sum_{j=0}^ n L_j$ is $O(\delta)$.
+Hence we can estimate the length $L_\delta$ of $\gamma_\delta$ by 
+$$
+L_\delta\leq L_0+n\cdot o(\delta)+O(\delta).
+$$
+
+ \qeds
+
+
 
 
 \section{Existence and uniqueness}
