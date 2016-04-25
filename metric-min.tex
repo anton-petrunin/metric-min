@@ -567,12 +567,13 @@ Let $W$ be a $\CAT[0]$ space then any metric minimizing map $s\:\DD\to W$ is sad
 \end{thm}
 
 \parit{Proof.}
-Assume contrary, let $\Omega$ be the violating component of the complement $\DD\backslash s^{-1}(\gamma)$.
+Assume contrary, let $K$ be a convex set in $W$
+and $\Omega$ be the violating component of the complement $\DD\backslash s^{-1}(K)$.
 Redefine $s$ for each $x\in\Omega$ by moving 
-$s(x)$ to its closest point projection on $\gamma$.
+$s(x)$ to its closest point projection on $K$.
 Denote by $s'$ the new map.
 
-Since $\gamma$ is convex the closest point projection is short,
+Since $K$ is convex the closest point projection is short,
 therefore $s\succcurlyeq s'$.
 That is $s$ is not strictly metric minimizing.
 It remains to apply Proposition~\ref{prop:strict-mm}.
@@ -580,7 +581,7 @@ It remains to apply Proposition~\ref{prop:strict-mm}.
 
 
 \begin{thm}{Shefel's theorem}\label{thm:shefel-2D}
-Let $W$ be a $\CAT[0]$ space which is homeomorphic to disc retract.
+Let $W$ be a $\CAT[0]$ space which is a disc retract.
 Assume $s\:\DD\to W$ be a saddle map. 
 Then $\|\DD\|_s$ is $\CAT[0]$.
 \end{thm}
@@ -589,57 +590,94 @@ We almost repeat the proof of Shefel in \cite{shefel-2D}.
 The main difference is instead of ``plane'' one has to say ``$W$''.
 However, Shefel's proof was written rather tight, so we have through in few details.
 
+In the proof we will need the following lemmas.
+
+\begin{thm}{Lemma}
+Let 
+$W$ be a $\CAT[0]$ space, 
+$K\subset W$ be a closed convex set 
+and $\eps>0$,.
+Assume $s\:\DD\to W$ is a saddle map and $u\:\partial\DD\to K$ is a continupus map such that 
+\[|s(x)-u(x)|<\eps\]
+for any $x\in\partial \DD$.
+Then $u$ can be extended to a continuous map whole $\DD$ such that inequality 
+\[|s(x)-u(x)|<\eps\]
+holds for any $x\in\DD$.
+\end{thm}
+
+\begin{thm}{Lemma}
+Given a continuous map  
+\end{thm}
+
+
+
 \parit{Proof.}
 Fix a fine triangulation $\tau$ of $\DD$.
 Map the vertices of $\tau$ by $s$
-and extend it to whole $\DD$ so that image of each triangle 
-is the closed region bounded by the geodesic triangle in $W$ with the corresponding vertices.
+and extend it to whole $\DD$ by using baricentric map on each simplex.
 
 The obtained map $u\:\DD\to W$ can be made arbitrary close to $s$ assuming that the triangulation is fine.
 Say given $\eps>0$ we can assume that $u$ is $\eps$-close to $s$,
 that is 
-\[|s(x)-u(x)|_X<\eps\]
+\[|s(x)-u(x)|_X<\eps\eqlbl{eq:|s-u|<e}\]
 for any $x\in\DD$.
 
-Note that we can assume in addition that the restriction of $u$ to any triangle  $\triangle$ of $\tau$ is cell-like;
-in particular $\|\triangle\|_u$ is isometric to the image $u(\triangle)$.
-It follows that $\|\DD\|_u$ can be obtained by gluing together the images of the triangles in $\tau$.
-
-In other words, the space $\|\DD\|_u$ can be reconstructed by gluing the geodesic triangles in $W$ along common closed arcs in their boundaries.
-Moreover, without loss of generality, %???BIT MORE EXPL???
-we can assume that sides of each triangle do not overlap, 
-if this is the case, we can remove the overlapping part and glue directly what comes to it from the sides.%???WE SHOULD DO SOMETHING WITH HAIR
+Note that the that image of each triangle $\triangle$
+is the closed region bounded by the geodesic triangle in $W$ with the corresponding vertices.
+Moreover,  $\|\triangle\|_u$ is isometric to the image $u(\triangle)$.
+In other words, the space $\|\DD\|_u$ can be reconstructed by gluing solid geodesic triangles in $W$ along their common sides.
 
 Denote by $N$ the number of triangles in $\tau$.
-Consider the class of spaces $\mathcal{S}_N$ which can be constructed the following way:
-take at most $N$ convex sets in $W$ and glue some pieces of the common boundaries to get a disc retract.
+Consider the class of metric spaces $\mathcal{S}_N$ 
+which are homeomorphic to a disc retract
+and can be constructed the following way:
+take at most $N$ convex sets in $W$ 
+glue them together along arcs in their boundaries.
+
 Note that $\|\DD\|_u$ belongs to $\mathcal{S}_N$ and $\mathcal{S}_N$ is compact in Gromov--Hausdorff topology.
 
 
-Assume $u$ is not saddle,
-that is for some geodesic $\gamma$ in $W$
-the complement $u^{-1}(\gamma)$ contains a connected component $\Omega$ without boundary points of $\DD$.
+Assume $\gamma$
+is a geodesic $\gamma$ in $W$
+such that 
+the complement $\DD\backslash u^{-1}(\gamma)$ contains a connected component $\Omega$ without boundary points of $\DD$.
+Let us redefine the map $u$ in $\Omega$.
+More precisely, let us construct a new map $w\:\DD\to W$
+such that $w(x)=u(x)$ for $x\notin\Omega$.
 
-Now let us redefine the map $u$ in $\Omega$.
-More precisely, let us construct a new map $u'\:\DD\to W$
-such that $u'(x)=u(x)$ for $x\notin\Omega$.
-To do this fix a continuous function $\lambda\:\Omega\to [0,1]$
+To do this first fix a continuous function $\lambda\:\Omega\to [0,1]$
 which is $0$ at the boundary and $1$ outside a sufficiently small neighborhood of $\partial \Omega$.
 Note that $u(\partial\Omega)$ forms a geodesic in $W$,
 in particular it is a convex set.
 In particular, the closest point projection of $W$ to $\gamma$ is a short map.
 
-For $x\in \Omega$, set $u'(x)$ to be the point which minimum point of the function 
+For $x\notin \Omega$ set $v(x)=u(x)$ and if 
+$x\in \Omega$, set $v(x)$ to be the point which minimum point of the function 
 \[\lambda\cdot\dist^2_p+(1-\lambda)\cdot\dist^2_q,\]
 where $p$ and $q$ are correspondingly the closest point projections of  $u(x)$ and $s(x)$ on $u(\partial\Omega)$.
 
 \begin{nnthm}{Claim}
-For the right choice of $\lambda$ the map $u'\:\DD\to W$ satisfies
-\[|u'(x)-s(x)|<\eps\] 
+For some choice of $\lambda$ the map $v\:\DD\to W$ satisfies
+\[|v(x)-s(x)|<\eps\] 
 for any $x$.
 \end{nnthm}
 
+Indeed, ???.
 
+Now if for some point $p\in  W$ the complement inverse image $\DD\backslash v^{-1}\{p\}$ has a connected component $\Omega$ without points on the boundary reset $v(x)=p$ for any $x\in\Omega$.
+Repeating this procedure we obtain a new map, say $w\:\DD\to W$,
+such that for any $p\in  W$ any connected component of the complement of the inverse image $\DD\backslash v^{-1}\{p\}$ has  points on the boundary. Note that we still have 
+\[|w(x)-s(x)|<\eps\]
+for any $x\in\DD$.
+
+Note that by construction, $\|\DD\|_w$ belongs to $\mathcal{S}_N$.
+So we can apply the construction $w$ form $u$ recursively.
+
+We can assume in addition that for any point $p\in W$
+each connected component of the complement $\DD\backslash u^{-1}\{p\}$ has points in the boundaray $\partial\DD$.
+If this is not the case redefine the map $u$ as $\bar u(x)=p$  for any point $x$ inside the violating component 
+and $\bar u(x)=u(x)$ otherwise.
+Since the map is saddle, the inequality \ref{eq:|s-u|<e} will still hold.
 
 Fix a dense sequence of geodesics $\gamma_1,\gamma_2,\dots$ in $W$.
 Apply the above procedure recursively
