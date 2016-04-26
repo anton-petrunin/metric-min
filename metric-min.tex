@@ -284,41 +284,41 @@ This choice of $x$ contradicts the condition in Proposition~\ref{prop:metric-min
 Let us denote by $\DD$ the closed unit disc in the plane,
 its boundary $\partial \DD$ is a unit circle.
 
+Let $X$ be a Hausdorff space and
+$f\:\DD\to X$ be a continuous map.
+We say that $f$ is a \emph{no-bubble map}
+if for any point $p\in X$ every connected component of the complement $\DD\backslash f^{-1}\{p\}$ has points in the boundary $\partial \DD$.
+
+
 We will need the following disc version of Moore's theorem proved in \cite{moore}.
 
 \begin{thm}{Proposition}\label{prop:disc-moore}
 Let $X$ be a Hausdorff space and
-$f\:\DD\to X$ be a continuous map.
-Assume that for any $x\in X$, 
-the inverse image
-$f^{-1}(x)$ is connected compact set such that 
-each connected  component 
-of the complement $\DD\backslash f^{-1}\{x\}$ 
-contains a boundary point of $\DD$.
-Then $X$ is homeomorphic to a \emph{disc retruct};
-that is $X$ compact simply connected space which admits an embedding into the plane.
+$f\:\DD\to X$ be a no-bubble map.
+Then $|\DD|_f$ is homeomorphic to a \emph{disc retruct};
+that is, $|\DD|_f$ is a compact simply connected space which admits an embedding into the plane.
 \end{thm}
 
-Further the maps satifying the assumptions in the proposition will be called \emph{cell-like}.%???IS IT OK TO CALL IT THIS WAY???
 
 \parit{Proof.}
-Since $X$ is a Hausdorff space and $\DD$ is compact, 
-the $X$ has quotient topology for $f$. 
+Note that $|\DD|_f$ is a Hausdorff space.
+and the forgetful map $h\:\DD\to |\DD|_f$ is continuous.
+Since and $\DD$ is compact, the space $|\DD|_f$ comes with the quotient topology for $h$. 
 
-Assume $f\:\DD\to X$ is a continuous map.
-Let us consider the disc $\DD$ as a subset in the plane $\SS^2$.
-For any $x\in \DD$, set $[x]_f=f^{-1}\{f(x)\}$
+Consider the disc $\DD$ as a subset in the plane $\SS^2$.
+For any $x\in \DD$, set 
+\[[x]=h^{-1}\{h(x)\}\]
 and
-if $x\in \SS^2\backslash \DD$ we assume $[x]_f=\{x\}$.
-Denote by $\SS^2_f$ the set of classes $[x]_f$ with the quotient topology induced by the map $\iota_f\:x\mapsto [x]_f$.
+if $x\in \SS^2\backslash \DD$ we assume $[x]=\{x\}$.
+Denote by $\SS^2_f$ the set of classes $[x]$ with the quotient topology induced by the map $\iota_f\:x\mapsto [x]$.
 
-According to Moore's theorem \cite{moore},
-if for any point $x$, the set $[x]_f$ is connected and compact, with connected complement,
-then $\SS^2_f$ is homeomorphic to $\SS^2$.
+Note that for any point $x$, the set $[x]$ is connected and compact, with connected complement.
+Therefore by Moore's theorem \cite{moore},
+$\SS^2_f$ is homeomorphic to $\SS^2$.
 
-It remains to note that $X$ is embedded into $\SS^2_f$ and its complement is homeomorphic to an open disc.\qeds
+It remains to note that $|\DD|_f$ is embedded into $\SS^2_f$ and its complement is homeomorphic to an open disc.\qeds
 
-Given a disc retruct $X$,
+Given a disc retract $X$,
 define its interior as a maximal open set which is homeomorphic to an open set in the plane.
 By Domain Invariance Theorem, interior is well defined.
 The complement to the interior of $X$ will be called boundary and denoted as $\partial X$.
@@ -327,9 +327,11 @@ Applying \ref{prop:point-complement} and \ref{prop:disc-moore}, we get the follo
 
 \begin{thm}{Proposition}\label{prop:|D|}
 Let $f\:\DD\to\ Y$ be a metric minimizing map relative to $\partial \DD$.
-Then $|\DD|_f$ is homeomorphic to a disc retract.
+Then $f$ is a no-buble map.
+
+In particular,  $|\DD|_f$ is homeomorphic to a disc retract.
 Moreover $\partial|\DD|_f$ is the image of $\partial \DD$
-under the map $x\mapsto [x]_f$.
+under the tautological map $x\mapsto [x]_f$.
 \end{thm}
 
 Note that the metric minimizing map $f\:\:\DD\to\ Y$ factors through a map $f'\:|\DD|_f\to Y$
@@ -381,7 +383,7 @@ and maps $p\:F\to W$ and $q\:W\to Y$ such that
 \[s(x)=q\circ p(x)\] 
 for any $x\in F\cap \partial \DD$
 and 
-\[\|p(x),p(y)\|_q\le \|x-y\|_s\] 
+\[\|p(x)-p(y)\|_q\le \|x-y\|_s\] 
 for any $x,y\in F$.
 \end{thm}
 
@@ -562,6 +564,8 @@ A coninous map $s\:\DD\to W$ is called \emph{saddle} if for any closed convex su
 any connected component of the complement $\DD\backslash s^{-1}(K)$
 has a point from the boundary $\partial \DD$.
 
+Note that any saddle map is no-bubble.
+
 \begin{thm}{Proposition}
 Let $W$ be a $\CAT[0]$ space then any metric minimizing map $s\:\DD\to W$ is saddle.
 \end{thm}
@@ -592,100 +596,80 @@ However, Shefel's proof was written rather tight, so we have through in few deta
 
 In the proof we will need the following lemmas.
 
-\begin{thm}{Lemma}
+\begin{thm}{Cutting hat lemma}\label{lem:cutting-hat}
 Let 
 $W$ be a $\CAT[0]$ space, 
 $K\subset W$ be a closed convex set 
-and $\eps>0$,.
-Assume $s\:\DD\to W$ is a saddle map and $u\:\partial\DD\to K$ is a continupus map such that 
+and $\eps>0$.
+Assume $s\:\DD\to W$ is a saddle map 
+and $u\:\DD\to K$ is a continuous map such that 
 \[|s(x)-u(x)|<\eps\]
-for any $x\in\partial \DD$.
-Then $u$ can be extended to a continuous map whole $\DD$ such that inequality 
-\[|s(x)-u(x)|<\eps\]
-holds for any $x\in\DD$.
+and $u(x)\in K$ for any point in the boundary of some open set $\Omega\subset \DD$.
+
+Then there is a continuous map $v\:\DD\to K$ such that 
+\begin{enumerate}[(i)]
+\item $|s(x)-v(x)|<\eps$ holds for any $x\in\DD$.
+\item $u(x)=v(x)$ for any $x\notin\Omega$ and
+$v(x)\in K$ for any $x\in\Omega$.
+\end{enumerate}
+Moreover, we can assume that the constructed map $v$ has no bubbles
+and 
+\[v(\Omega)\subset \Conv u(\partial\Omega),\]
+where $\Conv S$ denotes the minimal closed convex set containing $S$.
 \end{thm}
-
-\begin{thm}{Lemma}
-Let $W$ be a metric space.
-Given a continuous map $s\:\DD\to W$
-there is a locally cell-like map $s'\:\DD\to W$
-
-\end{thm}
-
-
 
 \parit{Proof.}
-Fix a fine triangulation $\tau$ of $\DD$.
-Map the vertices of $\tau$ by $s$
-and extend it to whole $\DD$ by using baricentric map on each simplex.
-
-The obtained map $u\:\DD\to W$ can be made arbitrary close to $s$ assuming that the triangulation is fine.
-Say given $\eps>0$ we can assume that $u$ is $\eps$-close to $s$,
-that is 
-\[|s(x)-u(x)|_X<\eps\eqlbl{eq:|s-u|<e}\]
-for any $x\in\DD$.
-
-Note that the that image of each triangle $\triangle$
-is the closed region bounded by the geodesic triangle in $W$ with the corresponding vertices.
-Moreover,  $\|\triangle\|_u$ is isometric to the image $u(\triangle)$.
-In other words, the space $\|\DD\|_u$ can be reconstructed by gluing solid geodesic triangles in $W$ along their common sides.
-
-Denote by $N$ the number of triangles in $\tau$.
-Consider the class of metric spaces $\mathcal{S}_N$ 
-which are homeomorphic to a disc retract
-and can be constructed the following way:
-take at most $N$ convex sets in $W$ 
-glue them together along arcs in their boundaries.
-
-Note that $\|\DD\|_u$ belongs to $\mathcal{S}_N$ and $\mathcal{S}_N$ is compact in Gromov--Hausdorff topology.
-
-
-Assume $\gamma$
-is a geodesic $\gamma$ in $W$
-such that 
-the complement $\DD\backslash u^{-1}(\gamma)$ contains a connected component $\Omega$ without boundary points of $\DD$.
-Let us redefine the map $u$ in $\Omega$.
-More precisely, let us construct a new map $w\:\DD\to W$
-such that $w(x)=u(x)$ for $x\notin\Omega$.
-
-To do this first fix a continuous function $\lambda\:\Omega\to [0,1]$
-which is $0$ at the boundary and $1$ outside a sufficiently small neighborhood of $\partial \Omega$.
-Note that $u(\partial\Omega)$ forms a geodesic in $W$,
-in particular it is a convex set.
-In particular, the closest point projection of $W$ to $\gamma$ is a short map.
+Fix a continuous function $\lambda\:\Omega\to [0,1]$
+which is $0$ on $\partial \Omega$ and $1$ outside a sufficiently small neighborhood of $\partial \Omega$.
+Note that the closest point projection of $W$ to $K$ is a short map.
 
 For $x\notin \Omega$ set $v(x)=u(x)$ and if 
 $x\in \Omega$, set $v(x)$ to be the point which minimum point of the function 
 \[\lambda\cdot\dist^2_p+(1-\lambda)\cdot\dist^2_q,\]
 where $p$ and $q$ are correspondingly the closest point projections of  $u(x)$ and $s(x)$ on $u(\partial\Omega)$.
+Note that for some choice of $\lambda$ the map $v\:\DD\to W$ satisfies
+both conditions.
 
-\begin{nnthm}{Claim}
-For some choice of $\lambda$ the map $v\:\DD\to W$ satisfies
-\[|v(x)-s(x)|<\eps\] 
-for any $x$.
-\end{nnthm}
+To prove the last statement we need to remove bubbles form the constructed map $v$.
+Namely any $x$ we can choose the maximal open set $\Upsilon_x$ such that for some point $p\in W$ the complement $\DD\backslash v^{-1}\{p\}$ has $\Upsilon_x$ as a
+connected component with no points from $\partial \DD$.
+Redefine $v$ by setting $v(x)=p$.
+\qeds
 
-Indeed, ???.
 
-Now if for some point $p\in  W$ the complement inverse image $\DD\backslash v^{-1}\{p\}$ has a connected component $\Omega$ without points on the boundary reset $v(x)=p$ for any $x\in\Omega$.
-Repeating this procedure we obtain a new map, say $w\:\DD\to W$,
-such that for any $p\in  W$ any connected component of the complement of the inverse image $\DD\backslash v^{-1}\{p\}$ has  points on the boundary. Note that we still have 
-\[|w(x)-s(x)|<\eps\]
+
+
+
+\parit{Proof of Shefel's theorem \ref{thm:shefel-2D}.}
+Fix a fine triangulation $\tau$ of $\DD$.
+Map the vertices of $\tau$ by $s$
+and extend it to whole $\DD$ by using baricentric map on each simplex.
+
+The obtained map $u\:\DD\to W$ can be made arbitrary close to $s$ assuming that the triangulation is fine.
+Say given $\eps>0$ we can assume that 
+\[|s(x)-u(x)|_X<\eps\eqlbl{eq:|s-u|<e}\]
 for any $x\in\DD$.
 
-Note that by construction, $\|\DD\|_w$ belongs to $\mathcal{S}_N$.
-So we can apply the construction $w$ form $u$ recursively.
+Note that the image of each triangle $\triangle$
+is the closed region bounded by the geodesic triangle in $W$ with the corresponding vertices.
+Moreover,  $\|\triangle\|_u$ is isometric to the image $u(\triangle)$.
 
-We can assume in addition that for any point $p\in W$
-each connected component of the complement $\DD\backslash u^{-1}\{p\}$ has points in the boundaray $\partial\DD$.
-If this is not the case redefine the map $u$ as $\bar u(x)=p$  for any point $x$ inside the violating component 
-and $\bar u(x)=u(x)$ otherwise.
-Since the map is saddle, the inequality \ref{eq:|s-u|<e} will still hold.
+It follows that, the space $\|\DD\|_u$ can be reconstructed by gluing solid geodesic triangles in $W$ along their common sides.
 
-Fix a dense sequence of geodesics $\gamma_1,\gamma_2,\dots$ in $W$.
-Apply the above procedure recursively
-for $\gamma_1,\gamma_2,\dots$.
-We obtain a sequence of maps $u_1,u_2,\dots$ such that 
+Denote by $N$ the number of triangles in $\tau$.
+Consider the class of metric spaces $\mathcal{S}_N$ 
+which are homeomorphic to a disc retract
+and can be constructed gluing at most $N$ convex sets in $W$ 
+along some arcs in their boundaries.
+Note that $\mathcal{S}_N$ is compact in Gromov--Hausdorff topology.
+
+From above, $\|\DD\|_u$ belongs to $\mathcal{S}_N$.  
+
+Note that the space $\Gamma$ of all geodeisics in $W$ withthe ends on $\partial W$ is compact. 
+Fix a dense sequence of geodesics $\gamma_1,\gamma_2,\dots$ in $\Gamma$.
+The geodesics are convex form sets in $W$, so we can apply Cutting hat lemma \ref{lem:cutting-hat}
+recursively ???.
+We obtain a sequence of maps, say $u=u_0,u_1,u_2,\dots$ such that 
 \[|u_n(x)-s(x)|<\eps\]
 for any $x$.
 
@@ -693,15 +677,21 @@ The spaces $\|\DD\|_{u_n}$ belong to $\mathcal{S}_N$,
 so we can pass to its partial limit as $n\to\infty$,
 say $\|\DD\|_\eps$.
 
+Note that the projection $w\:\|\DD\|_\eps\to W$ is saddle.
+Otherwise we could cut a hat from $w$ along some geodesic $\gamma$.
+There should be a point, say $y$ in one of the convex sets in the decomposition of $\|\DD\|_\eps$ which disapear after cutting along $\gamma$.
+Since the sequence $\gamma_n$ is dense in the space of all geodesics
+we can choose a geodesic $\gamma_n$ which cuts a hat with $y$ inside, a contradiction.
 
-Note that the projection $\|\DD\|_\eps\to W$ is saddle,
+It follows that the convex sets in the decomposition of $\|\DD\|_\eps$ are glued along geodesics,
+if not a hat could be cutted from the map $w$.
+
+It follows that $\|\DD\|_\eps$ is $\CAT[0]$. Indeed it is glued from $\CAT[0]$ spaces along geodesics,
+so we only need to check if the total angle around a vertex is at least $2\cdot\pi$.
+If the latter does not hold then one could cut a hat from $w$. %???
+
+Finally note that $\|\DD\|_\eps$ converges to $\|\DD\|_s$ as $\eps\to 0$. 
 Indeed ???
-
-(In particular, it implies that each convex set in the decomposition of $\|\DD\|_\eps$ is a polygon, but we will not need it.)
-
-It follows that $\|\DD\|_\eps$ is $\CAT[0]$. Indeed ???.
-
-Finally note that as $\eps_\to 0$, $\|\DD\|_\eps$ converges to $\|\DD\|_s$. Indeed ???
 
 Hence the result follows.
 \qeds
