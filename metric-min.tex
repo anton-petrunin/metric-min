@@ -564,7 +564,9 @@ A coninous map $s\:\DD\to W$ is called \emph{saddle} if for any closed convex su
 any connected component of the complement $\DD\backslash s^{-1}(K)$
 has a point from the boundary $\partial \DD$.
 
-Note that any saddle map is no-bubble.
+Applying this definition to the one-point sets,
+we get that any saddle map has no bubbles.
+
 
 \begin{thm}{Proposition}
 Let $W$ be a $\CAT[0]$ space then any metric minimizing map $s\:\DD\to W$ is saddle.
@@ -630,10 +632,14 @@ where $p$ and $q$ are correspondingly the closest point projections of  $u(x)$ a
 Note that for some choice of $\lambda$ the map $v\:\DD\to W$ satisfies
 both conditions.
 
-To prove the last statement we need to remove bubbles form the constructed map $v$.
+To prove the first \emph{moreover} statement we need to remove bubbles form the constructed map $v$.
 Namely any $x$ we can choose the maximal open set $\Upsilon_x$ such that for some point $p\in W$ the complement $\DD\backslash v^{-1}\{p\}$ has $\Upsilon_x$ as a
 connected component with no points from $\partial \DD$.
 Redefine $v$ by setting $v(x)=p$.
+
+Finally note that $\Conv u(\partial\Omega)\subset K$. 
+Therefore to prove the second \emph{moreover} statement 
+we need to apply lemma for the convex set $K'=\Conv u(\partial\Omega)$.
 \qeds
 
 
@@ -668,30 +674,41 @@ From above, $\|\DD\|_u$ belongs to $\mathcal{S}_N$.
 Note that the space $\Gamma$ of all geodeisics in $W$ withthe ends on $\partial W$ is compact. 
 Fix a dense sequence of geodesics $\gamma_1,\gamma_2,\dots$ in $\Gamma$.
 The geodesics are convex form sets in $W$, so we can apply Cutting hat lemma \ref{lem:cutting-hat}
-recursively ???.
+recursively.
 We obtain a sequence of maps, say $u=u_0,u_1,u_2,\dots$ such that 
 \[|u_n(x)-s(x)|<\eps\]
 for any $x$.
 
-The spaces $\|\DD\|_{u_n}$ belong to $\mathcal{S}_N$,
-so we can pass to its partial limit as $n\to\infty$,
-say $\|\DD\|_\eps$.
+Further each space $\|\DD\|_{u_n}$
+belong to $\mathcal{S}_N$.
+Denote by $w_n\:\|\DD\|_{u_n}\to W$ the its projection.
+
+Since $\mathcal{S}_N$ is compact, we can pass to its partial limit as $n\to\infty$,
+say $\|\DD\|_\eps$,
+denote by $w\:\|\DD\|_\eps\to W$ the limit map.
 
 Note that the projection $w\:\|\DD\|_\eps\to W$ is saddle.
 Otherwise we could cut a hat from $w$ along some geodesic $\gamma$.
-There should be a point, say $y$ in one of the convex sets in the decomposition of $\|\DD\|_\eps$ which disapear after cutting along $\gamma$.
+There should be a point, say $y$ in one of the convex sets in the decomposition of $\|\DD\|_\eps$ which disappear after cutting along $\gamma$.
 Since the sequence $\gamma_n$ is dense in the space of all geodesics
 we can choose a geodesic $\gamma_n$ which cuts a hat with $y$ inside, a contradiction.
 
 It follows that the convex sets in the decomposition of $\|\DD\|_\eps$ are glued along geodesics,
 if not a hat could be cutted from the map $w$.
 
-It follows that $\|\DD\|_\eps$ is $\CAT[0]$. Indeed it is glued from $\CAT[0]$ spaces along geodesics,
+Note that the space $\|\DD\|_\eps$ is $\CAT[0]$. 
+Indeed it is glued from $\CAT[0]$ spaces along geodesics,
 so we only need to check if the total angle around a vertex is at least $2\cdot\pi$.
 If the latter does not hold then one could cut a hat from $w$. %???
 
-Finally note that $\|\DD\|_\eps$ converges to $\|\DD\|_s$ as $\eps\to 0$. 
-Indeed ???
+To show that $\|\DD\|_s$ is $\CAT[0]$,
+we need to show that $\CAT[0]$ comparison holds for any quadruple of points  in $\DD$.
+Fix quadruple $(x,y,z,t)$, we can assume that these 4 points as well as sufficiently dense set of points on the
+
+It follows that that $\|\DD\|_\eps$ converges to a $\CAT[0]$ space, say $L$ as $\eps\to 0$. 
+Clearly there is a short map $L\to\ \|\DD\|_s$ which is length preserving on the boundary.
+By Reshetnyak's majorization theorem, there is a the boundary of $L$ andmits a majorization.
+The projection of this majorization to $\|\DD\|_s$ givea a majorization of $\partial\|\DD\|_s$.
 
 Hence the result follows.
 \qeds
