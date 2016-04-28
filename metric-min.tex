@@ -821,74 +821,192 @@ $$
 \section{Area preserving short maps between CAT(0) surfaces}
 
 Let $X$ be a CAT(0) disc. For any subset $A\subset X$ we denote $N_\epsilon (A)$ its open $\epsilon$-neighbourhood.
-Let $x,y\in X$ be different points and $[xy]$ the geodesic segement between them. We define an $\epsilon$-halfneighbourhood
+Let $x,y\in X$ be different points and $[xy]$ the geodesic segement between them. We define an $\epsilon$-half-neighbourhood
 $N^+_\epsilon ([xy])$ in the following way. Note first that $[xy]$ seperates the ball $B$ of radius $\frac{|x-y|}{2}$ around
 the midpoint of $[xy]$ into two components $B^+$ and $B^-$. Let $f$ be the distance function to $[xy]$. Choose gradient curves 
 $\gamma_x$ and $\gamma_y$ of $f$ starting in $x$ respectively $y$ and such that they are tangential to $B^+$. The concatenation
 of $\gamma_x$, $[xy]$ and $\gamma_y$ seperates $N_\epsilon([xy])$ into two components and we choose $N^+_\epsilon ([xy])$ to be the one
 with interior angles equal to  $\frac{\pi}{2}$. The curves $\gamma_x$ and $\gamma_y$ will be called {\em boundary curves} of the 
-halfneighbourhood.
+half-neighbourhood.
 
 
 For $t<\epsilon$ set $\gamma_t:=\partial N_t([xy])\cap N^+_\epsilon ([xy])$. If $\epsilon$
 is small enough, then $\gamma_t$ defines a rectifiable simple arc.
 
 
-\begin{thm}{Lemma}\label{lem:length continuity}
+\begin{thm}{Proposition}\label{prop:length continuity}
 The length of $\gamma_t$ converges to $|x-y|$ for $t\to 0$.
 \end{thm}
 
-In order to prove this, we need the following auxiliary lemma. For $\epsilon>0$ we denote
+In order to prove this, we need a little preparation. For $\epsilon>0$ we denote
 $X_\epsilon$ the subset of points in $X$ at distance $>\epsilon$ from the boundary.
 
-\begin{thm}{Lemma}
-Let $\epsilon>0$ be fixed. Assume that for every $k\in\mathbb{N}$ there is a geodesic quadrangle $\square_k\subset X_\epsilon$ with
-sides $a_k,b^+_k,b^-_k$ and $c_k$ such that
-\begin{enumerate}
-	\item $\angle(a_k,b^\pm_k)=\frac{\pi}{2};$
-	\item $|a|\leq\frac{1}{k};$
-	\item $|b^\pm|\geq \frac{4}{k};$
-	\item there is a point $m_k\in c_k$, such that $|m_k-a_k|\leq \frac{1}{k}.$
-\end{enumerate}
-Then any limit point $z$ of  $a_k$ has the property that $\mathcal{H}^1(\Sigma_z X)\geq \frac{7}{3}\pi$.
+\begin{thm}{Lemma}\label{lem:extension}
+For any geodesic segment $[xy]$ of length $L>0$ in $X_\epsilon$ there is a point 
+$x_y\in X$ such that $[x x_y]$ extends $[xy]$ and has length $L+\epsilon$.
 \end{thm}
 \parit{Proof.}
-Let $z$ be such a limit point. Since the quadrangles $\square_k$ are contained in $X_\epsilon$  we can extend their sides 
-by a definite amount in both directions. Denote the extensions by $\bar a_k$, $\bar b^\pm_k$ and $\bar c_k$ respectively.
-After choosing converging subsequences we obtain limit geodesics $\bar a_\infty$, $\bar b^\pm_\infty$ and $\bar c_\infty$
-all going through the point $z$. We will now estimate appropriate angles. The geodesic $\bar c_k$ encloses two angles with
-$b^\pm$, one interior angle of $\square_k$ and the other one will be denoted by $\beta^\pm_k$. Moreover, set $x^\pm:=c\cap b^\pm$.
-Let $f_k$ be the distance function to $a_k$ restricted to $\bar c_k$. Then we have 
-$$
-f'(x_k^-)\leq\frac{f(m_k)-f(x_k^-)}{|m_k-x_k^-|}\leq-\frac{1}{2}\text{  and  }f'(x_k^+)\geq\frac{f(x_k^+)-f(m_k)}{|x_k^+-m_k|}\geq\frac{1}{2}.
-$$
-By the first variation formula we conclude (using (2)) $\beta_k^\pm\geq\frac{2\pi}{3}$. Now we can estimate the length of
-$\Sigma_z X$. The geodesic $\bar c_\infty$ induces a decomposition of $\Sigma_z X$ into two convex subset, both of length at least $\pi$.
-By the semicontinuity of angles $\beta^\pm_\infty\geq\limsup \beta_k^\pm\geq\frac{2\pi}{3}$. Hence one of those components has length at least
-$\frac{4\pi}{3}$. The claim follows. 
+We use an argument from \cite{Kleiner}. Note that there exists a radius $r\geq\epsilon$, such 
+that the radius $r$ distance sphere around $y$ contains a Jordan curve $J$. The Jordan domain bounded by $J$
+will be called $D_J$.
+Denote $cone_x(J)$ the geodesic cone over $J$ with respect to $x$. Then, 
+for any small $\delta>0$, $cone_x(J)$ and $D_J$
+represent the same element in $H_2(X,N_\delta(J))$. Hence $D_J\subset cone_x(J)$. 
+In particular $y\in cone_x(J)$.
 \qeds
 
-\begin{thm}{Corollary}\label{cor:partition}
-For every $\epsilon>0$ there exists $\delta>0$ such that for any nondegenerated geodesic $[xy]$ 
+A {\em geodesic quadrangle} $\square$ consits of an ordered tuple of four pairwise 
+distinct points $x_k\in X$, $k\in\mathbb{Z}_4$, 
+called vertices, and the four geodesic segments $[x_k,x_{k+1}]$, called the sides. 
+If no side is separating,\ i.e. no maximal extension of that side as a geodesic 
+separates the other two vertices, $\square$ is said to be {\em regular}.
+
+\begin{thm}{Lemma}\label{lem:large angles}
+Let $\epsilon>0$ be fixed. For some $\delta>0$ let $\square_\delta$ be a regular geodesic quadrangle with
+vertices $x,y,u$ and $v$ in $X_\epsilon$ such that
+\begin{enumerate}
+	\item $\angle_x(u,y)=\angle_y(v,x_y)=\frac{\pi}{2};$
+	\item $|x-y|\leq\delta;$
+	\item $|x-u|\geq 4\delta\text{ and }|y-v|\geq 4\delta;$
+	\item there is a point $m\in [uv]$ with $|m-[xy]|\leq \delta.$
+\end{enumerate}
+Then 
+\begin{itemize}
+\item $\angle_u(x_u,v)\geq\frac{2\pi}{3};$
+\item $\angle_v(u_v,y)\geq\frac{2\pi}{3}.$
+\end{itemize}
+\end{thm}
+
+\parit{Proof.}
+We will use the notation for extensions of geodesics as in Lemma \ref{lem:extension}.
+Let $f$ be the distance function to $[x x_y]$ restricted to $[u u_v]$. Then we have
+$$
+f'(u)\leq\frac{f(m)-f(u)}{|m-u|}\leq-\frac{1}{2}\text{  and  }f'(v)\geq\frac{f(v)-f(m)}{|v-m|}\geq\frac{1}{2}.
+$$
+By condition (1) the claim now follows from the first variation formula.
+\qeds
+
+\begin{thm}{Corollary}
+Let $\epsilon>0$ be fixed. For a sequence $\delta_k\to 0$ let $\square_k$ be a converging sequence of quadrangles
+as in Lemma \ref{lem:large angles} with $\square_k\to \{z\}$. Denote by $x^\infty_u, u^\infty_v$ and $v^\infty_y$
+the limits of $\epsilon$-extensions of the respective sides of $\square_k$. Then
+\begin{itemize}
+\item $\angle_z(x^\infty_u,u^\infty_v)\geq\frac{2\pi}{3};$
+\item $\angle_z(u^\infty_v,v^\infty_y)\geq\frac{2\pi}{3};$
+\item $\angle_z(v^\infty_y,x^\infty_u)\geq\pi.$
+\end{itemize}
+In particular $\mathcal{H}^1(\Sigma_z(X))\geq\frac{7}{3}\pi$.
+\end{thm}
+\parit{Proof.}
+The inequalities follow from semi-continuity of angles together with Lemma \ref{lem:large angles}.
+For the supplement note that $[x^\infty_u u^\infty_x]$ induces a decomposition of $\Sigma_z X$ into two convex subset, both of length at least $\pi$.
+But as a result of the first two inequlities, one of those convex sets has length at least $\frac{4}{3}\pi$, hence the claim.
+\qeds
+
+\begin{thm}{Corollary}\label{cor:level distance 1}
+For every $\epsilon>0$ there exists $\bar\delta>0$ such that for any nondegenerated geodesic $[xy]$ 
 in $X_\epsilon$ with $\mathcal{H}^1(\Sigma_z X)< \frac{7}{3}\pi$
-for every $z$ in $(xy)$, the following holds. If $[x'y']\subset[xy]$ is a subgeodesic of length $<\delta$ and $N^+_r([xy])$ is some halfneighbourhood of $[x'y']$ with boundary curves $\gamma_{x'}$ and $\gamma_{y'}$, 
+for every $z$ in $[xy]$, the following holds for every $\delta\leq\bar\delta$. 
+If $[x'y']\subset[xy]$ is a subgeodesic of length $\leq\delta$ and $N^+_r([xy])$ is some half-neighbourhood 
+of $[x'y']$ with boundary curves $\gamma_{x'}$ and $\gamma_{y'}$, 
 then the geodesic $c_\delta$ between  $\gamma_{x'}(4\delta)$ and $\gamma_{y'}(4\delta)$ has distance $>\delta$
 from $[x'y']$.
 \end{thm}
-\parit{Proof of Lemma\ref{lem:length continuity}.}
-Let $[xy]$ be a geodesic in $X_\epsilon$ for some $\epsilon>0$. Assume first that $\mathcal{H}^1(\Sigma_z X)< \frac{7}{3}\pi$
-for every $z$ in $(xy)$. Choose $\delta>0$ as in Corollary \ref{cor:partition} and a point array
-$x=x_0,x_1,\ldots,x_n=y$ on $[xy]$ such that $|x_j-x_{j+1}|<\delta$. Let $N_r^ +([x_j x_{j+1}])$ be a halfneighbourhood contained in $N_r^ +([x y])$
-with boundary curves $\gamma_{x_j^ +}$ and $\gamma_{x_{j+1}^ -}$. Then by Corollary \ref{cor:partition}, the geodesic between $\gamma_j^ -(4\delta)$
-and $\gamma_{j+1}^ +(4\delta)$ has distance more than $\delta$ from $[xy]$. We connect the point $\gamma_j^ +(4\delta)$ to $\gamma_j^ -(4\delta)$ by a shortest path $\rho_j$
-contained in $\partial B_{4\delta}(x_j)$. Note that the length $L_j$ of $\rho_j$ is $O(\delta)$. Moreover, since $X$
-is a CAT(0) disc, the contribution of single points to the total curvature is finite. Hence even $\sum_{j=0}^ n L_j$ is $O(\delta)$.
-Hence we can estimate the length $L_\delta$ of $\gamma_\delta$ by 
-$$
-L_\delta\leq L_0+n\cdot o(\delta)+O(\delta).
-$$
 
- \qeds
+\begin{thm}{Corollary}\label{cor:level distance 2}
+Let $p$ be a point in the interior of $X$ and $(c,c^\perp)$ a {\em rightangled hinge} at $p$, \ i.e. $c,c^\perp:[0,T]\to X$ are unit speed geodesics starting in $p$
+with $\angle_p(\dot c(0),\dot c^\perp (0))=\frac{\pi}{2}$. For every $t\in[0,T]$ let
+$c^\perp_t$ be a gradient curve of the distance function to $c$ starting in $c(t)$ and lying on the same side
+of $c$ as $c^\perp$. Then there exists $\hat\delta>0$ such that for all $\delta\leq\hat\delta$ the distance between 
+$[c^\perp(4\delta)c^\perp_\delta(4\delta)]$
+and $c$ is larger than $\delta$.
+\end{thm}
+
+
+
+
+
+
+
+
+\parit{Proof of Proposition\ref{prop:length continuity}.}
+Let $[xy]$ be a geodesic in $X_\epsilon$ for some $\epsilon>0$. Call a point
+$z\in X$ with $\mathcal{H}^1(\Sigma_z X)\geq \frac{7}{3}\pi$ a {\em fat point}. 
+Note that there is only a finite number of 
+fat points in $X$. We will prove the statement by induction on  the number 
+of fat points lying on $[xy]$. If there is no such point, then we choose $\bar\delta>0$ 
+as in Corollary \ref{cor:level distance 1} and a point array
+$x=x_0,x_1,\ldots,x_n=y$ on $[xy]$ such that $|x_j-x_{j+1}|=\delta\leq\bar\delta$. Let $N_r^ +([x_j x_{j+1}])$ 
+be a half-neighbourhood contained in $N_r^ +([x y])$
+with boundary curves $\gamma_{x_j^ +}$ and $\gamma_{x_{j+1}^ -}$. Then by Corollary \ref{cor:level distance 1}, 
+the geodesic between $\gamma_j^ -(4\delta)$
+and $\gamma_{j+1}^ +(4\delta)$ has distance more than $\delta$ from $[xy]$. We connect the point 
+$\gamma_j^ +(4\delta)$ to $\gamma_j^ -(4\delta)$ by a shortest path $\rho_j$
+contained in $\partial B_{4\delta}(x_j)$. Note that the length $L_j$ of $\rho_j$ is $O(\delta)$. 
+Moreover, since $X$
+is a CAT(0) disc, the contribution of single points to the total curvature of $X$ is finite. Hence 
+even $\sum_{j=0}^ n L_j$ is $O(\delta)$.
+Therefore, since half-neighbourhoods are convex and projections onto convex subsets are short, the 
+length $L_\delta$ of $\gamma_\delta$ can be
+estimated by 
+$$
+L_\delta\leq |x-y|+n\cdot o(\delta)+O(\delta).
+$$
+Since $|x-y|=n\delta$, the claim follows in this case.
+
+For the general case, we choose $s\in[xy]$ to be the fat point closest to $x$. We assume that $s\neq x$,
+the other case is similar. Let $\gamma_s^\pm\subset N_r^+([x y])$ be geodesics starting in $s$ and such that 
+$\angle_s(x,\gamma_s^-(r))=\frac{\pi}{2}$ and $\angle_s(y,\gamma_s^+(r))=\frac{\pi}{2}$. Applying Corollary 
+\ref{cor:level distance 2}
+to the rightangled hinges $([xs],\gamma_s^-)$ and $([sy],\gamma_s^+)$ we obtain constants $\hat\delta^\pm>0$. 
+Set $\hat\delta:=\min\{\hat\delta^-,\hat\delta^+\}$.
+Next choose $s^-\in[xs]$ and $s^+\in[sy]$ with $|s-s^\pm|\leq\hat\delta$. Then the induction hypothesis applies 
+to $[xs^-]$ and $[s^+y]$ since we have reduced 
+the number of fat points. If $N^+_r([s^- s^+])$ is a half-neighbourhood with boundary curves $\gamma_{s^\pm}$, 
+then for $\delta\leq\hat\delta$ we can estimate the length of $\gamma_\delta$ as before. 
+Namely choose a shortest path $\rho$ in $\partial B_{4\delta}(s)$ from $\gamma_s^-(4\delta)$ to $\gamma_s^+(4\delta)$ 
+and concatenate it 
+with $[\gamma_{s^-}(4\delta)\gamma_s^-(4\delta)]$ and $[\gamma_s^+(4\delta)\gamma_{s^+}(4\delta)]$. The same estimate 
+as above applies now because, by Corollary \ref{cor:level distance 2}, this path has distance $>\delta$ from $[s^- s^+]$.
+\qeds
+
+
+
+
+
+
+\begin{thm}{Theorem}\label{thm:short+area=isom}
+Let $X$ be a 2-rectifiable space and $Y$ a planar CAT(0) space. 
+Let $\varphi:X\to Y$ be a surjective short map. If $\area(X)=\area(Y)$,
+then $\varphi$ is an isometry. 
+\end{thm}
+
+\parit{Proof.}
+Recall that each cyclic element of $Y$ is homeomorphic to a closed disc. 
+Pick points $p,q\in Y$ which ly in the interior of the same cyclic element $C$. 
+Then choose a half-neighbourhood $N_r^+$ of $[pq]$ which is still contained
+in the interior of $C$. Denote $f$ the distance function of $[pq]$.
+Let $\hat N_r^+$ be the inverse image of $N_r^+$
+under $\varphi$. 
+By the coarea formula we obtain
+$$
+\area(N_r^+)=\int_0^\delta \mathcal{H}^1(f^ {-1}(t))dt
+$$
+and
+$$
+\area(\hat N_r^+)\geq\int_{\hat N_r^+}|\nabla (f\circ\varphi)|=\int_0^\delta \mathcal{H}^1((f\circ\varphi)^ {-1}(t))dt.
+$$
+Hence $\mathcal{H}^1((f\circ\varphi)^ {-1}(t))\leq \mathcal{H}^1(f^ {-1}(t))$ for almost all $t\leq r$.
+Since for almost all $t\leq r$ $\mathcal{H}^1((f\circ\varphi)^ {-1}(t))$ contains a full measure subset which is a disjoint union of paths ....
+ 
+\qeds
+
+
+
+
+
+
+
 
 
 
