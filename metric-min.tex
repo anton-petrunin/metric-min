@@ -557,180 +557,23 @@ Combining the last two statements we arrive at:
 $\mathcal{K}_\ell$ is compact in the Gromov--Hausdorff topology.
 \end{thm}
 
-\section{2-dimensional case}
-
-Let $W$ be a metric space.
-A coninous map $s\:\DD\to W$ is called \emph{saddle} if for any closed convex subset $K\subset W$ 
-any connected component of the complement $\DD\backslash s^{-1}(K)$
-has a point from the boundary $\partial \DD$.
-
-Applying this definition to the one-point sets,
-we get that any saddle map has no bubbles.
-
-
-\begin{thm}{Proposition}
-Let $W$ be a $\CAT[0]$ space then any metric minimizing map $s\:\DD\to W$ is saddle.
-\end{thm}
-
-\parit{Proof.}
-Assume contrary, let $K$ be a convex set in $W$
-and $\Omega$ be the violating component of the complement $\DD\backslash s^{-1}(K)$.
-Redefine $s$ for each $x\in\Omega$ by moving 
-$s(x)$ to its closest point projection on $K$.
-Denote by $s'$ the new map.
-
-Since $K$ is convex the closest point projection is short,
-therefore $s\succcurlyeq s'$.
-That is $s$ is not strictly metric minimizing.
-It remains to apply Proposition~\ref{prop:strict-mm}.
-\qeds
-
-
-\begin{thm}{Shefel's theorem}\label{thm:shefel-2D}
-Let $W$ be a $\CAT[0]$ space which is a disc retract.
-Assume $s\:\DD\to W$ be a saddle map. 
-Then $\|\DD\|_s$ is $\CAT[0]$.
-\end{thm}
-
-We almost repeat the proof of Shefel in \cite{shefel-2D}.
-The main difference is instead of ``plane'' one has to say ``$W$''.
-However, Shefel's proof was written rather tight, so we have through in few details.
-
-In the proof we will need the following lemmas.
-
-\begin{thm}{Cutting hat lemma}\label{lem:cutting-hat}
-Let 
-$W$ be a $\CAT[0]$ space, 
-$K\subset W$ be a closed convex set 
-and $\eps>0$.
-Assume $s\:\DD\to W$ is a saddle map 
-and $u\:\DD\to K$ is a continuous map such that 
-\[|s(x)-u(x)|<\eps\]
-and $u(x)\in K$ for any point in the boundary of some open set $\Omega\subset \DD$.
-
-Then there is a continuous map $v\:\DD\to K$ such that 
-\begin{enumerate}[(i)]
-\item $|s(x)-v(x)|<\eps$ holds for any $x\in\DD$.
-\item $u(x)=v(x)$ for any $x\notin\Omega$ and
-$v(x)\in K$ for any $x\in\Omega$.
-\end{enumerate}
-Moreover, we can assume that the constructed map $v$ has no bubbles
-and 
-\[v(\Omega)\subset \Conv u(\partial\Omega),\]
-where $\Conv S$ denotes the minimal closed convex set containing $S$.
-\end{thm}
-
-\parit{Proof.}
-Fix a continuous function $\lambda\:\Omega\to [0,1]$
-which is $0$ on $\partial \Omega$ and $1$ outside a sufficiently small neighborhood of $\partial \Omega$.
-Note that the closest point projection of $W$ to $K$ is a short map.
-
-For $x\notin \Omega$ set $v(x)=u(x)$ and if 
-$x\in \Omega$, set $v(x)$ to be the point which minimum point of the function 
-\[\lambda\cdot\dist^2_p+(1-\lambda)\cdot\dist^2_q,\]
-where $p$ and $q$ are correspondingly the closest point projections of  $u(x)$ and $s(x)$ on $u(\partial\Omega)$.
-Note that for some choice of $\lambda$ the map $v\:\DD\to W$ satisfies
-both conditions.
-
-To prove the first \emph{moreover} statement we need to remove bubbles form the constructed map $v$.
-Namely any $x$ we can choose the maximal open set $\Upsilon_x$ such that for some point $p\in W$ the complement $\DD\backslash v^{-1}\{p\}$ has $\Upsilon_x$ as a
-connected component with no points from $\partial \DD$.
-Redefine $v$ by setting $v(x)=p$.
-
-Finally note that $\Conv u(\partial\Omega)\subset K$. 
-Therefore to prove the second \emph{moreover} statement 
-we need to apply lemma for the convex set $K'=\Conv u(\partial\Omega)$.
-\qeds
-
-
-
-
-
-\parit{Proof of Shefel's theorem \ref{thm:shefel-2D}.}
-Fix a fine triangulation $\tau$ of $\DD$.
-Map the vertices of $\tau$ by $s$
-and extend it to whole $\DD$ by using baricentric map on each simplex.
-
-The obtained map $u\:\DD\to W$ can be made arbitrary close to $s$ assuming that the triangulation is fine.
-Say given $\eps>0$ we can assume that 
-\[|s(x)-u(x)|_X<\eps\eqlbl{eq:|s-u|<e}\]
-for any $x\in\DD$.
-
-Note that the image of each triangle $\triangle$
-is the closed region bounded by the geodesic triangle in $W$ with the corresponding vertices.
-Moreover,  $\|\triangle\|_u$ is isometric to the image $u(\triangle)$.
-
-It follows that, the space $\|\DD\|_u$ can be reconstructed by gluing solid geodesic triangles in $W$ along their common sides.
-
-Denote by $N$ the number of triangles in $\tau$.
-Consider the class of metric spaces $\mathcal{S}_N$ 
-which are homeomorphic to a disc retract
-and can be constructed gluing at most $N$ convex sets in $W$ 
-along some arcs in their boundaries.
-Note that $\mathcal{S}_N$ is compact in Gromov--Hausdorff topology.
-
-From above, $\|\DD\|_u$ belongs to $\mathcal{S}_N$.  
-
-Note that the space $\Gamma$ of all geodeisics in $W$ withthe ends on $\partial W$ is compact. 
-Fix a dense sequence of geodesics $\gamma_1,\gamma_2,\dots$ in $\Gamma$.
-The geodesics are convex form sets in $W$, so we can apply Cutting hat lemma \ref{lem:cutting-hat}
-recursively.
-We obtain a sequence of maps, say $u=u_0,u_1,u_2,\dots$ such that 
-\[|u_n(x)-s(x)|<\eps\]
-for any $x$.
-
-Further each space $\|\DD\|_{u_n}$
-belong to $\mathcal{S}_N$.
-Denote by $w_n\:\|\DD\|_{u_n}\to W$ the its projection.
-
-Since $\mathcal{S}_N$ is compact, we can pass to its partial limit as $n\to\infty$,
-say $\|\DD\|_\eps$,
-denote by $w\:\|\DD\|_\eps\to W$ the limit map.
-
-Note that the projection $w\:\|\DD\|_\eps\to W$ is saddle.
-Otherwise we could cut a hat from $w$ along some geodesic $\gamma$.
-There should be a point, say $y$ in one of the convex sets in the decomposition of $\|\DD\|_\eps$ which disappear after cutting along $\gamma$.
-Since the sequence $\gamma_n$ is dense in the space of all geodesics
-we can choose a geodesic $\gamma_n$ which cuts a hat with $y$ inside, a contradiction.
-
-It follows that the convex sets in the decomposition of $\|\DD\|_\eps$ are glued along geodesics,
-if not a hat could be cutted from the map $w$.
-
-Note that the space $\|\DD\|_\eps$ is $\CAT[0]$. 
-Indeed it is glued from $\CAT[0]$ spaces along geodesics,
-so we only need to check if the total angle around a vertex is at least $2\cdot\pi$.
-If the latter does not hold then one could cut a hat from $w$. %???
-
-To show that $\|\DD\|_s$ is $\CAT[0]$,
-we need to show that $\CAT[0]$ comparison holds for any quadruple of points  in $\DD$.
-Fix quadruple $(x,y,z,t)$, we can assume that these 4 points as well as sufficiently dense set of points on the
-
-It follows that that $\|\DD\|_\eps$ converges to a $\CAT[0]$ space, say $L$ as $\eps\to 0$. 
-Clearly there is a short map $L\to\ \|\DD\|_s$ which is length preserving on the boundary.
-By Reshetnyak's majorization theorem, there is a the boundary of $L$ andmits a majorization.
-The projection of this majorization to $\|\DD\|_s$ givea a majorization of $\partial\|\DD\|_s$.\longrightarrow
-
-Hence the result follows.
-\qeds
-
-
-
 \section{Main theorem}
 
 \begin{thm}{Main Theorem}
-Assume $Y$ is a $\CAT[0]$ space 
-and $s\:\DD\to Y$ is a metric minimizing map relative to the boundary $\partial\DD$.
+Let $Y$ be a $\CAT[0]$ space 
+and $s\:\DD\to Y$ be a metric minimizing map relative to the boundary $\partial\DD$.
+Assume $\|\DD\|_s$  is separable. 
 Then $\|\DD\|_s$ is a $\CAT[0]$ space.
 \end{thm}
 
 
 \parit{Proof of Main theorem.}
 Note that it is sufficient to prove the theorem 
-in the case that $\partial |\DD|_f$ is rectifiable.
+in the case that $\partial |\DD|_f$ formed by a rectifiable simple closed curve.
 
 Indeed, fix a triangle $\triangle$ in $\|\DD\|_f$.
 If the above case has been proven, 
-then $\triangle$ bounds a closed set which is $\CAT[0]$.
+then closure of each connected open coponent bounded by $\triangle$ is $\CAT[0]$.
 In particular $\triangle$ is thin.
 Since $\triangle$ is arbitrary, the statement follows.
 
@@ -769,12 +612,27 @@ The obtained map will be still denoted as $p$.
 Summarizing, the space $W$ is $\CAT[0]$ space 
 homeomorphic to a planar continuum.
 By construction, therere are two short maps 
-$\DD\xrightarrow{p} W \xrightarrow{q} Y$
+$\|\DD\|_s\xrightarrow{p} W \xrightarrow{q} Y$
 such that 
 \[q\circ p|_{\partial\DD}=s|_{\partial\DD}.\]
 Since $s$ is metric minimizing, both maps $p$ and $q$ are length preserving.
 
-By Shefel's theorem \ref{thm:shefel-2D}, the statement follows.\qeds
+It remains to show that $p$ is injective, it is similar to the the problem ``Saddle surface'' in \cite{petrunin-orthodox}.
+
+Assume  $w=p(x)=p(y)$ for distinct points $x,y\in\|\DD\|_s$
+Note that  $w$ lies in the interior of $W$.
+Choose a geodesic $\gamma$ which pass through $w$ and goes 
+from boundary to boundary of $W$.
+The inverse image $p^{-1}(\gamma)$ is a contractabe set with two ends at $\partial\|\DD\|_s$, say $a$ and $b$.
+It follows that $p^{-1}(\gamma)$ can be arbitrary well approximated by a simple curve from $a$ to $b$. 
+In particular the there is well defined order of  points on $p^{-1}(\gamma)$.
+We can assume that the points $a,x,y,b$ appear in the same order on $p^{-1}(\gamma)$. 
+
+Note that there is a continuous one parameter family of geodesics $\gamma_t$ passing through $w$ with the ends at $\partial W$
+such that $\gamma=\gamma_0$ and $\gamma_1$ is $\gamma$ with reversed parametrization.
+Note that the order of $x$ and $y$ on $p^{-1}(\gamma_t)$ does not change in $t$.
+On the other hand the order on $\gamma_0$ and on $\gamma_1$ are opposite, a contradiction.
+\qeds
 
 \section{Energy of Sobolev maps}
 
@@ -1064,8 +922,14 @@ Trans. Amer. Math. Soc. 27 no. 4 (1925) pp. 416--428.
 \bibitem{BBI}Burago, D.; Burago, Y.; Ivanov, S.
 A course in metric geometry.
 Graduate Studies in Mathematics, 33. American Mathematical Society, Providence, RI, 2001. xiv+415 pp.
+
 \bibitem{KS}Korevaar, N. J.; Schoen, R. M. ``Sobolev spaces and harmonic maps for metric space targets,'' Comm. Anal. Geom., 1(3-4):561-659, 1993.
+
 \bibitem{LW}Lytchak, A.; Wenger, S. ``Area minimizing discs in metric spaces,'' preprint arXiv:1502.06571, 2015.
+
+\bibitem{petrunin-orthodox} A. Petrunin
+``Exercises in Orthodox Geometry''{\tt arXiv:0906.0290 [math.HO]}
+
 \bibitem{R}Reshetnyak, Yu. G. ``Sobolev classes of functions with values in a metric space,'' II, Sibirsk. Mat. Zh. 45 (2004), no. 4, 855-870. MR 2091651 (2005e:46055)
 
 \bibitem{shefel-2D} S. Z. \v{S}efel′, On saddle surfaces bounded by a rectifiable curve, Dokl. Akad. Nauk SSSR 162 (1965), 294--296.
@@ -1082,25 +946,3 @@ Society, New York, N. Y., 1949.
 
 
 \end{document}
-
-
-@article {moore,
-    AUTHOR = {Moore, R. L.},
-     TITLE = {Concerning upper semi-continuous collections of continua},
-   JOURNAL = {Trans. Amer. Math. Soc.},
-  FJOURNAL = {Transactions of the American Mathematical Society},
-    VOLUME = {27},
-      YEAR = {1925},
-    NUMBER = {4},
-     PAGES = {416--428},
-      ISSN = {0002-9947},
-     CODEN = {TAMTAM},
-   MRCLASS = {54F15 (54B99)},
-  MRNUMBER = {1501320},
-       DOI = {10.2307/1989234},
-       URL = {http://dx.doi.org/10.2307/1989234},
-}	
-
-
-
-
