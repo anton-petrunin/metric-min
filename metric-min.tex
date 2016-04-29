@@ -676,7 +676,9 @@ E(u_t)\leq (1-t)E(u_0)+tE(u_1)-t(1-t)\int_\Omega|\nabla d(u_0,u_1)|^2d\mathcal{H
 $$
 
 
-\section{Area preserving short maps between CAT(0) surfaces}
+\section{CAT(0) surfaces}
+
+\subsection{Half-neighbourhoods and continuous deformations}
 
 Let $X$ be a CAT(0) disc. For any subset $A\subset X$ we denote $N_\epsilon (A)$ its open $\epsilon$-neighbourhood.
 Let $x,y\in X$ be different points and $[xy]$ the geodesic segement between them. We define an $\epsilon$-half-neighbourhood
@@ -830,33 +832,86 @@ as above applies now because, by Corollary \ref{cor:level distance 2}, this path
 
 
 
+\subsection{Area preserving short maps}
 
 
+Throughout this section we let $X$ and $Y$ be planar CAT(0) spaces and
+ $\varphi:X\to Y$ a surjective short map between them which preserves area.
+ Our aim is to prove the following.
 
 \begin{thm}{Theorem}\label{thm:short+area=isom}
-Let $X$ be a 2-rectifiable space and $Y$ a planar CAT(0) space. 
+Let $X$ and $Y$ be planar CAT(0) spaces. 
 Let $\varphi:X\to Y$ be a surjective short map. If $\area(X)=\area(Y)$,
 then $\varphi$ is an isometry. 
 \end{thm}
 
-\parit{Proof.}
+
+\begin{thm}{Lemma}\label{lem:inverse image estimate}
+For a point $y\in Y$ holds 
+$$
+2\pi\cdot \#\varphi^{-1}(y)\leq\mathcal{H}^1(\Sigma_y Y). 
+$$
+In particular, if $\mathcal{H}^1(\Sigma_y Y)<4\pi$, then $\varphi^{-1}(y)$
+consits of a single point.
+\end{thm}
+
+\parit{Proof.} 
+Let $x_1,\ldots,x_n$ be points in $\varphi^{-1}(y)$. Since $\varphi$
+is area preserving, we obtain for small enough $r>0$:
+$\area(B_r(y))\geq\sum_{i=1}^n\area(B_r(x_i))$. The coarea formula implies
+$\int_0^r(\mathcal{H}^1(S_t(y))-\sum_{i=1}^n \mathcal{H}^1(S_t(x_i)))dt\geq 0$.
+Hence we can choose a sequence $t_k\to 0$ such that 
+$\mathcal{H}^1(S_{t_k}(y))\geq\sum_{i=1}^n \mathcal{H}^1(S_{t_k}(x_i))$. 
+Dividing by $t_k$ and passing to the limit yields 
+$\mathcal{H}^1(\Sigma_y Y)\geq\sum_{i=1}^n\mathcal{H}^1(\Sigma_{x_i}X)$.
+The claim follows since $\mathcal{H}^1(\Sigma_{x}X)\geq 2\pi$
+for every $x\in X$.
+\qeds
+
+
+\begin{thm}{Corollary}\label{cor:finite point inverses}
+Any point in $Y$ has only a finite number of inverse images.
+\end{thm}
+
+
+\begin{thm}{Corollary}\label{cor:finite point inverses}
+The subset of $Y$ consisting of points that have more than
+one inverse image is finite.
+\end{thm}
+
+
+
+
+
+\parit{Proof of Theorem \ref{thm:short+area=isom}.}
 Recall that each cyclic element of $Y$ is homeomorphic to a closed disc. 
-Pick points $p,q\in Y$ which ly in the interior of the same cyclic element $C$. 
-Then choose a half-neighbourhood $N_r^+$ of $[pq]$ which is still contained
-in the interior of $C$. Denote $f$ the distance function of $[pq]$.
-Let $\hat N_r^+$ be the inverse image of $N_r^+$
-under $\varphi$. 
+Pick points $p,q\in Y$ which lie in the same cyclic element and assume that
+$[pq]$ does not contain a point $z$ with $\mathcal{H}^1(\Sigma_y Y)\geq 4\pi$.
+Then choose $r>0$ small, and a the half-neighbourhood $N_r^+$ of $[pq]$, 
+such that $N_r^+$ still does not contain points $z$ with 
+$\mathcal{H}^1(\Sigma_y Y)\geq 4\pi$. Let $\hat N_r^+$ be the inverse image of $N_r^+$
+under $\varphi$. According to Lemma \ref{lem:inverse image estimate}, $\varphi|_{\hat N_r^+}$ 
+is injective and therefore a homeomorphism onto $N_r^+$. 
+Denote $f$ the distance function of $[pq]$. Then, in the notation above, $f^{-1}(t)=\gamma_t$.
+Set $\Gamma_t:=\varphi^{-1}(\gamma_t)$. Then $\Gamma_t$ is a continuous arc for every $t\leq r$.
 By the coarea formula we obtain
 $$
-\area(N_r^+)=\int_0^\delta \mathcal{H}^1(f^ {-1}(t))dt
+\area(N_r^+)=\int_0^\delta \mathcal{H}^1(\gamma_t)dt
 $$
 and
 $$
-\area(\hat N_r^+)\geq\int_{\hat N_r^+}|\nabla (f\circ\varphi)|=\int_0^\delta \mathcal{H}^1((f\circ\varphi)^ {-1}(t))dt.
+\area(\hat N_r^+)\geq\int_{\hat N_r^+}|\nabla (f\circ\varphi)|=\int_0^\delta \mathcal{H}^1(\Gamma_t)dt.
 $$
-Hence $\mathcal{H}^1((f\circ\varphi)^ {-1}(t))\leq \mathcal{H}^1(f^ {-1}(t))$ for almost all $t\leq r$.
-Since for almost all $t\leq r$ $\mathcal{H}^1((f\circ\varphi)^ {-1}(t))$ contains a full measure subset which is a disjoint union of paths ....
- 
+Hence $\mathcal{H}^1(\Gamma_t)\leq \mathcal{H}^1(\gamma_t)$ for almost all $t\leq r$.
+Now choose an appropriate sequence $t_k\to 0$. Then, by semi-continuity of length, we have
+$$
+\mathcal{H}^1(\Gamma_0)\leq \liminf_{k\to\infty}\mathcal{H}^1(\Gamma_{t_k})\leq\mathcal{H}^1(\gamma_{t_k}).
+$$
+Continuity of length, Lemma \ref{prop:length continuity}, implies
+$\mathcal{H}^1(\Gamma_0)\leq|p-q|$ and hence $|\varphi^{-1}(p)-\varphi^{-1}(q)|=|p-q|$. 
+Corollary \ref{cor:finite point inverses} guarantees that $\varphi$ is invertible on a subset 
+$Y\setminus\{y_1,\ldots,y_n\}$. Its inverse $\psi:Y\setminus\{y_1,\ldots,y_n\}\to X$ is a local
+isometry which extends uniquely to an isometry $\bar\psi:Y\to X$. Clearly $\bar\psi=\varphi^{-1}$.
 \qeds
 
 
