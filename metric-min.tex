@@ -20,7 +20,7 @@ Universit\"at M\"unchen, Theresienstr. 39, D-80333 M\"unchen, Germany}
 \date{}
 
 \begin{abstract}
-We say that a surface is metric minimizing if it does not admit a metric decreasing deformation.
+A surface which does not admit a metric decreasing deformation is called \emph{metric minimizing}.
 We show that metric minimizing surfaces in $\CAT[0]$ spaces are $\CAT[0]$.
 \end{abstract}
 \maketitle
@@ -38,20 +38,19 @@ such that
 \item $|x-y|=|y-x|$, for any $x,y\in X$;
 \item $|x-y|+|y-z|\ge|x-z|$ for any  $x,y,z\in X$.
 \end{itemize}
+If in addition $|x-y|=0$ implies $x=y$ then the pseudometric $|{*}-{*}|$ is called \emph{metric}.
 
-If in addition $|x-y|=0$ implies $x=y$ then $|{*}-{*}|$ is called \emph{metric}.
+A set with a pseudometric or metric will be called \emph{pseudometric} or correspondingly \emph{metric space}.
 
+The value $|x-y|$ will be also called \emph{distance} form $x$ to $y$.
 Note that by our definition, the distance between points might be infinite.%
-\footnote{Let us mention an other construction to remove a possible psychological barrier with infinity --- it will not be used further.
+\footnote{Let us mention the following construction to remove a possible psychological barrier with infinity --- it will not be used further.
 
 Consider an equivalence relation ``$\approx$'' on a metric space defined as \[x\approx y\  \iff\  |x-y|<\infty.\]
 Note that its equivalence classes form \emph{usual metric spaces}; 
 that is $|x-y|<\infty$ for any pair of points $x$ and $y$ in the class.
 It implies that metric spaces in our definition 
 can be thought of disjoint union of some collection \emph{usual metric spaces} with infinite distance from each other.}
-
-
-A set with a pseudometric or metric will be called \emph{pseudometric} or correspondingly \emph{metric space}.
 
 For any pseudometric on a set 
 there is an equivalence relation ``$\sim$''
@@ -61,7 +60,7 @@ We will say that obtained metric space is \emph{defined} by the  original pseudo
 
 \parbf{Induced  pseudometrics.}
 Let $X$ and $Y$ be metric spaces.
-Given a map $f\:X\to Y$,
+Given a continuous map $f\:X\to Y$,
 define a \emph{connecting pseudometric} $|{*}-{*}|_f$ on $X$ in
 the following way
 \[|x-y|_f=\inf\{\diam f(K)\},\]
@@ -78,6 +77,9 @@ $|x_i-x_{i-1}|_f<\eps$ for any $i$.
 
 The metric spaces defined by the pseudometrics $|{*}-{*}|_f$ 
 and $\|{*}-{*}\|_f$ on $X$ will be denoted as $|X|_f$ and $\|X\|_f$ correspondingly.
+
+Note that if $f$ is injective, and the image $f(X)$ is compact then 
+the space $\|X\|_f$ is isometric to the image $f(X)$ in $Y$ equipped with induced intrinsic metric.
 
 Note that $|x-y|_f=0$ if and only if $\|x-y\|_f=0$;
 that is,  both pseudometrics $|{*}-{*}|_f$ and  $\|{*}-{*}\|_f$
@@ -557,6 +559,170 @@ Combining the last two statements we arrive at:
 $\mathcal{K}_\ell$ is compact in the Gromov--Hausdorff topology.
 \end{thm}
 
+\section{2-dimensional case}
+
+Let $W$ be a metric space.
+A coninous map $s\:\DD\to W$ is called \emph{saddle} if for any closed convex subset $K\subset W$ 
+any connected component of the complement $\DD\backslash s^{-1}(K)$
+has a point from the boundary $\partial \DD$.
+
+Applying this definition to the one-point sets,
+we get that any saddle map has no bubbles.
+
+
+\begin{thm}{Proposition}
+Let $W$ be a $\CAT[0]$ space then any metric minimizing map $s\:\DD\to W$ is saddle.
+\end{thm}
+
+\parit{Proof.}
+Assume contrary, let $K$ be a convex set in $W$
+and $\Omega$ be the violating component of the complement $\DD\backslash s^{-1}(K)$.
+Redefine $s$ for each $x\in\Omega$ by moving 
+$s(x)$ to its closest point projection on $K$.
+Denote by $s'$ the new map.
+
+Since $K$ is convex the closest point projection is short,
+therefore $s\succcurlyeq s'$.
+That is $s$ is not strictly metric minimizing.
+It remains to apply Proposition~\ref{prop:strict-mm}.
+\qeds
+
+
+\begin{thm}{Shefel's theorem}\label{thm:shefel-2D}
+Let $W$ be a $\CAT[0]$ space which is a disc retract.
+Assume $s\:\DD\to W$ be a saddle map. 
+Then $\|\DD\|_s$ is $\CAT[0]$.
+\end{thm}
+
+We almost repeat the proof of Shefel in \cite{shefel-2D}.
+The main difference is instead of ``plane'' one has to say ``$W$''.
+However, Shefel's proof was written rather tight, so we have through in few details.
+
+In the proof we will need the following lemmas.
+
+\begin{thm}{Cutting hat lemma}\label{lem:cutting-hat}
+Let 
+$W$ be a $\CAT[0]$ space, 
+$K\subset W$ be a closed convex set 
+and $\eps>0$.
+Assume $s\:\DD\to W$ is a saddle map 
+and $u\:\DD\to K$ is a continuous map such that 
+\[|s(x)-u(x)|<\eps\]
+and $u(x)\in K$ for any point in the boundary of some open set $\Omega\subset \DD$.
+
+Then there is a continuous map $v\:\DD\to K$ such that 
+\begin{enumerate}[(i)]
+\item $|s(x)-v(x)|<\eps$ holds for any $x\in\DD$.
+\item $u(x)=v(x)$ for any $x\notin\Omega$ and
+$v(x)\in K$ for any $x\in\Omega$.
+\end{enumerate}
+
+Moreover,
+\begin{enumerate}[(a)]
+\item we can assume that \[v(\Omega)\subset \Conv u(\partial\Omega),\]
+where $\Conv S$ denotes the minimal closed convex set containing $S$.
+\item\label{lem:cutting-hat:b} if $u$ has no bubbles, we can assume that the constructed map $v$ has no bubbles
+\end{enumerate}
+\end{thm}
+
+\parit{Proof.}
+Fix a continuous function $\lambda\:\Omega\to [0,1]$
+which is $0$ on $\partial \Omega$ and $1$ outside a sufficiently small neighborhood of $\partial \Omega$.
+Note that the closest point projection of $W$ to $K$ is a short map.
+
+For $x\notin \Omega$ set $v(x)=u(x)$ and if 
+$x\in \Omega$, set $v(x)$ to be the point which minimum point of the function 
+\[\lambda\cdot\dist^2_p+(1-\lambda)\cdot\dist^2_q,\]
+where $p$ and $q$ are correspondingly the closest point projections of  $u(x)$ and $s(x)$ on $u(\partial\Omega)$.
+Note that for some choice of $\lambda$ the map $v\:\DD\to W$ satisfies
+both conditions.
+
+Finally note that $\Conv u(\partial\Omega)\subset K$. 
+Therefore to prove the second \emph{moreover} statement 
+we need to apply lemma for the convex set $K'=\Conv u(\partial\Omega)$.
+
+To prove \ref{lem:cutting-hat:b}, we need to remove bubbles form the constructed map $v$.
+Namely any $x$ we can choose the maximal open set $\Upsilon_x$ such that for some point $p\in W$ the complement $\DD\backslash v^{-1}\{p\}$ has $\Upsilon_x$ as a
+connected component with no points from $\partial \DD$.
+Redefine $v$ by setting $v(x)=p$.
+\qeds
+
+
+
+
+
+\parit{Proof of Shefel's theorem \ref{thm:shefel-2D}.}
+Fix a fine triangulation $\tau$ of $\DD$.
+Map the vertices of $\tau$ by $s$,
+and extend it to whole $\DD$ by using baricentric map on each simplex.
+
+The obtained map $u\:\DD\to W$ can be made arbitrary close to $s$ assuming that the triangulation is fine.
+Say given $\eps>0$ we can assume that 
+\[|s(x)-u(x)|_X<\eps\eqlbl{eq:|s-u|<e}\]
+for any $x\in\DD$.
+
+Note that the image of each triangle $\triangle$
+is the closed region bounded by the geodesic triangle in $W$ with the corresponding vertices.
+Moreover,  $\|\triangle\|_u$ is isometric to the image $u(\triangle)$.
+
+It follows that, the space $\|\DD\|_u$ can be reconstructed by gluing solid geodesic triangles in $W$ along their common sides.
+
+Denote by $N$ the number of triangles in $\tau$.
+Consider the class of metric spaces $\mathcal{S}_N$ 
+which are homeomorphic to a disc retract
+and can be constructed gluing at most $N$ convex sets in $W$ 
+along some arcs in their boundaries.
+Note that $\mathcal{S}_N$ is compact in Gromov--Hausdorff topology.
+
+From above, $\|\DD\|_u$ belongs to $\mathcal{S}_N$.  
+
+Note that the space $\Gamma$ of all geodeisics in $W$ with the ends on $\partial W$ is compact. 
+Fix a dense sequence of geodesics $\gamma_1,\gamma_2,\dots$ in $\Gamma$.
+The geodesics form convex sets in $W$, so we can apply Cutting hat lemma \ref{lem:cutting-hat}
+recursively.
+We obtain a sequence of maps, say $u=u_0,u_1,u_2,\dots$ such that 
+\[|u_n(x)-s(x)|<\eps\]
+for any $x$.
+
+Further each space $\|\DD\|_{u_n}$
+belong to $\mathcal{S}_N$.
+Denote by $w_n\:\|\DD\|_{u_n}\to W$ the its projection.
+
+Since $\mathcal{S}_N$ is compact, we can pass to its partial limit as $n\to\infty$,
+say $Q_\eps$,
+denote by $w_\eps\:Q_\eps\to W$ the limit map.
+
+Note that the projection $w_\eps\:Q_\eps\to W$ is saddle.
+Otherwise we could cut a hat from $w_\eps$ along some geodesic $\gamma$.
+Ther latter contradicts the construction.
+Indeed, there should be a point, say $y$ in one of the convex sets in the decomposition of $Q_\eps$ which disappear after cutting along $\gamma$.
+Since the sequence $\gamma_n$ is dense in the space of all geodesics
+we can choose a geodesic $\gamma_n$ which cuts a hat with $y$ inside, a contradiction.
+
+Note that the convex sets in the decomposition of $Q_\eps$ are glued along geodesics.
+If not, a hat could be cutted from the map $w_\eps$.
+
+Note that the space $Q_\eps$ is $\CAT[0]$. 
+Indeed it is glued from convex figures in $\CAT[0]$ spaces along geodesics,
+so we only need to check if the total angle around an interior vertex, say $z\in Q_\eps$ is at least $2\cdot\pi$.
+If the latter does not hold then 
+$w_\eps(z)\notin\Conv [w_\eps (\partial\Omega)]$
+for a small neighborhood $\Omega\ni w$ in $Q_\eps$;
+that is one could cut a hat from $Q_\eps$ with $z$ in it.
+
+Assume that the boundary of $\|\DD\|_s$ is rectifiable.
+By Lemma on compactness~\ref{lem:compact},
+we can pass to the partial limit, say $Q_0$, of $Q_\eps$ as $\eps\to 0$ and let $w_0\:Q_0\to W$ is the limit map.
+By construction, $Q_0$ is a $\CAT[0]$ disc retruct which majorates $\|\DD\|_s$,
+that is the limit map lifts to a short map $Q_0\to \|\DD\|_s$ which maps $\partial Q_0$ onto  $\partial \|\DD\|_s$ in a length-preserving way.
+
+Since $\partial |\DD\|_0$ is a $\CAT[0]$ space, its boundary can be majorized by a convex figure in the plane.
+Hence the same holds for $\|\DD\|_s$.
+
+The same argument can be repeated for all discs retructs in $\|\DD\|_s$ with rectifiable boundary, in particular for all solid triangles in $\|\DD\|_s$.
+Existance of majorization implies that all triangles in $\|\DD\|_s$ are thin, that is $\|\DD\|_s$ is $\CAT[0]$.
+\qeds
+
 \section{Main theorem}
 
 \begin{thm}{Main Theorem}
@@ -615,24 +781,33 @@ By construction, therere are two short maps
 $\|\DD\|_s\xrightarrow{p} W \xrightarrow{q} Y$
 such that 
 \[q\circ p|_{\partial\DD}=s|_{\partial\DD}.\]
-Since $s$ is metric minimizing, both maps $p$ and $q$ are length preserving.
+Since $s$ is metric minimizing, both maps $p$ and $q$ are length preserving and metric minimizing.
 
-It remains to show that $p$ is injective, it is similar to the the problem ``Saddle surface'' in \cite{petrunin-orthodox}.
+It reamins to apply Shefel's theorem \ref{thm:shefel-2D}.
+\qeds
 
-Assume  $w=p(x)=p(y)$ for distinct points $x,y\in\|\DD\|_s$
+
+
+\parbf{Remark.} An argument similar to the the problem ``Saddle surface'' in \cite{petrunin-orthodox}
+can be used to show that the constructed map $p$ 
+is injective. 
+In particular $\|\DD\|_s$ is isometric to $W$.
+Unfortunately the proof requres some regularity of $\|\DD\|_s$ which only follows from Shefel's theorem. 
+
+Here is \emh{not a proof} of the statement above, try to guess where is the cheating.
+
+\parit{Not a proof.} Assume  $w=p(x)=p(y)$ for distinct points $x,y\in\|\DD\|_s$
 Note that  $w$ lies in the interior of $W$.
 Choose a geodesic $\gamma$ which pass through $w$ and goes 
 from boundary to boundary of $W$.
 The inverse image $p^{-1}(\gamma)$ is a contractabe set with two ends at $\partial\|\DD\|_s$, say $a$ and $b$.
-It follows that $p^{-1}(\gamma)$ can be arbitrary well approximated by a simple curve from $a$ to $b$. 
 In particular the there is well defined order of  points on $p^{-1}(\gamma)$.
 We can assume that the points $a,x,y,b$ appear in the same order on $p^{-1}(\gamma)$. 
 
 Note that there is a continuous one parameter family of geodesics $\gamma_t$ passing through $w$ with the ends at $\partial W$
 such that $\gamma=\gamma_0$ and $\gamma_1$ is $\gamma$ with reversed parametrization.
 Note that the order of $x$ and $y$ on $p^{-1}(\gamma_t)$ does not change in $t$.
-On the other hand the order on $\gamma_0$ and on $\gamma_1$ are opposite, a contradiction.
-\qeds
+On the other hand the order on $\gamma_0$ and on $\gamma_1$ are opposite, a contradiction.\qeds
 
 \section{Energy of Sobolev maps}
 
@@ -966,7 +1141,6 @@ It follows that the Jacbian of $f$ is almost everywhere equal to one. Thus $f$ i
 \begin{thm}{Proposition}\label{prop:strict-mm}
 Any metric minimizing map in $\CAT[0]$ space is strict metric minimizing.
 \end{thm}
-
 
 \begin{thebibliography}{52}
 \bibitem{moore}
