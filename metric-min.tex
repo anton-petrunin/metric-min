@@ -341,40 +341,6 @@ and by \ref{prop:factor} and \ref{prop:|D|}
 the map $f'$
 is metric minimizing relative to $\partial|\DD|_f$.
 
-%IT SEEMS WE DO NOT NEED THIS PROPOSITION???
-
-\begin{thm}{Proposition}
-Let $Y\in\CAT(0)$ 
-and 
-$f\:\DD\to Y$ be a metric minimizing disc.
-Then $\|\DD\|_f$ is a complete metric space.
-\end{thm}
-
-\parit{Proof.}
-Denote by $W$ be completion of $\|\DD\|_f$.
-
-By Proposition \ref{prop:|D|},
-the space $|\DD|_f$ is compact.
-Therefore the tautological map $f\:\|\DD\|_f\to |\DD|_f$ 
-extends to a continuous map $\bar f\:W\to |\DD|_f$.
-
-If $\|\DD\|_f$ is a proper subset of $W$ 
-then from above we get that
-then $\bar f$ is not injective.
-
-In this case there is a rectifiable path $\gamma\:[0,1]\to W$,
-such that $\gamma(t)\in\|\DD\|_f$ for all $t<1$ and $\gamma(1)\notin \|\DD\|_f$.
-Note that the path $\bar f\circ \gamma$ is also rectifiable and in particular continuous, so it can be lifted to $\|\DD\|_f$.
-That is, $\gamma(1)\in \|\DD\|_f$, a contradiction.
-\qeds
-
-
-
-
-
-
-
-
 \section{Key Lemma}
 
 
@@ -757,7 +723,7 @@ Existance of majorization implies that all triangles in $\|\DD\|_s$ are thin, th
 
 \section{Main theorem}
 
-\begin{thm}{Main Theorem}
+\begin{thm}{Main Theorem}\label{thm:main}
 Let $Y$ be a $\CAT[0]$ space 
 and $s\:\DD\to Y$ be a metric minimizing map relative to the boundary $\partial\DD$.
 Assume $\|\DD\|_s$  is separable. 
@@ -1173,6 +1139,55 @@ It follows that the Jacbian of $f$ is almost everywhere equal to one. Thus $f$ i
 \begin{thm}{Proposition}\label{prop:strict-mm}
 Any metric minimizing map in $\CAT[0]$ space is strict metric minimizing.
 \end{thm}
+
+\section{Smooth case}
+
+\begin{thm}{Proposition}
+Any smooth strictly saddle surface in $\RR^3$ is locally metric minimizing.
+\end{thm}
+
+
+
+\section{Final remarks}
+
+\parbf{Separability condition.}
+Note that since disc $\DD$ is compact, 
+for any continuous $s\:\DD\to Y$ into a metric space,
+the space $|\DD|_s$ is compact.
+On the other hand the space $\|\DD\|_s$ might not be even separable,
+say if $s$ is given as a cone over Koch snowflake then 
+$|\DD|_s$ is homeomorphic to the disc while $\|\DD\|_s$ is homeomorphic to uncountable set of segments glued at one end.
+
+The separablity condition in the main theorem \ref{thm:main}
+might be not necesary.
+While we tried to remove it, we found the following statement 
+which we want to share.
+
+\begin{thm}{Proposition}
+Let $Y\in\CAT(0)$ 
+and 
+$f\:\DD\to Y$ be a metric minimizing disc.
+Then $\|\DD\|_f$ is a complete metric space.
+\end{thm}
+
+\parit{Proof.}
+Denote by $W$ be completion of $\|\DD\|_f$.
+
+By Proposition \ref{prop:|D|},
+the space $|\DD|_f$ is compact.
+Therefore the tautological map $f\:\|\DD\|_f\to |\DD|_f$ 
+extends to a continuous map $\bar f\:W\to |\DD|_f$.
+
+If $\|\DD\|_f$ is a proper subset of $W$ 
+then from above we get that
+then $\bar f$ is not injective.
+
+In this case there is a rectifiable path $\gamma\:[0,1]\to W$,
+such that $\gamma(t)\in\|\DD\|_f$ for all $t<1$ and $\gamma(1)\notin \|\DD\|_f$.
+Note that the path $\bar f\circ \gamma$ is also rectifiable and in particular continuous, so it can be lifted to $\|\DD\|_f$.
+That is, $\gamma(1)\in \|\DD\|_f$, a contradiction.
+\qeds
+
 
 \begin{thebibliography}{52}
 \bibitem{moore}
