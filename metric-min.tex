@@ -27,7 +27,9 @@ We show that metric minimizing surfaces in $\CAT[0]$ spaces are $\CAT[0]$.
 
 \section{Introduction}
 
-This peper substantialy exteded results in \cite{petrunin-metric-min}; it also fills a gap in the proof. 
+This paper substantially extends results in \cite{petrunin-metric-min}; it also fills a gap in the proof. 
+
+\medskip
 
 We want to thank 
 Sergei Ivanov,
@@ -37,7 +39,7 @@ and
 Burkhard Wilking
 for helping us with the proof of Proposition~\ref{prop:smooth}.
 
-\section{Definitions}
+\section{Definitions}\label{sec:Def}
 
 Let $X$ be a set.
 A \emph{pseudometric} $|{*}-{*}|$ on a set $X$ 
@@ -307,7 +309,7 @@ We will need the following disc version of Moore's theorem proved in \cite{moore
 \begin{thm}{Proposition}\label{prop:disc-moore}
 Let $X$ be a Hausdorff space and
 $f\:\DD\to X$ be a no-bubble map.
-Then $|\DD|_f$ is homeomorphic to a \emph{disc retruct};
+Then $|\DD|_f$ is homeomorphic to a \emph{disc retract};
 that is, $|\DD|_f$ is a compact simply connected space which admits an embedding into the plane.
 \end{thm}
 
@@ -339,14 +341,14 @@ Applying \ref{prop:point-complement} and \ref{prop:disc-moore}, we get the follo
 
 \begin{thm}{Proposition}\label{prop:|D|}
 Let $f\:\DD\to\ Y$ be a metric minimizing map relative to $\partial \DD$.
-Then $f$ is a no-buble map.
+Then $f$ is a no-bubble map.
 
 In particular,  $|\DD|_f$ is homeomorphic to a disc retract.
 Moreover $\partial|\DD|_f$ is the image of $\partial \DD$
 under the tautological map $x\mapsto [x]_f$.
 \end{thm}
 
-Note that the metric minimizing map $f\:\:\DD\to\ Y$ factors through a map $f'\:|\DD|_f\to Y$
+Note that the metric minimizing map $f\:\DD\to\ Y$ factors through a map $f'\:|\DD|_f\to Y$
 and by \ref{prop:factor} and \ref{prop:|D|} 
 the map $f'$
 is metric minimizing relative to $\partial|\DD|_f$.
@@ -549,7 +551,7 @@ $f_n$ is a short map which is lenght preserving on the boundary and $\gamma_n$ f
 Consider th limit figure $F_\infty$ and the limit map $f_\infty\:F_\infty\to X_\infty$.
 Note that it is onto.
 
-Let us remove bubles from $f_\infty$, denote the obtained map by $f_\infty'$.
+Let us remove bubbles from $f_\infty$, denote the obtained map by $f_\infty'$.
 Note that after that operation we still have $f_\infty'(F_\infty)=X_\infty$.
 Indeed, arguing by contradiction assume that $z\in X_\infty\backslash f_\infty'(F_\infty)$
 Denote by $z_n\in X_n$ be a lift of $z$.
@@ -569,7 +571,7 @@ $\mathcal{K}_\ell$ is compact in the Gromov--Hausdorff topology.
 \section{2-dimensional case}
 
 Let $W$ be a metric space.
-A coninous map $s\:\DD\to W$ is called \emph{saddle} if for any closed convex subset $K\subset W$ 
+A continous map $s\:\DD\to W$ is called \emph{saddle} if for any closed convex subset $K\subset W$ 
 any connected component of the complement $\DD\backslash s^{-1}(K)$
 has a point from the boundary $\partial \DD$.
 
@@ -597,13 +599,13 @@ It remains to apply Proposition~\ref{prop:strict-mm}.
 
 \begin{thm}{Shefel's theorem}\label{thm:shefel-2D}
 Let $W$ be a $\CAT[0]$ space which is a disc retract.
-Assume $s\:\DD\to W$ be a saddle map. 
+Assume $s\:\DD\to W$ is a saddle map. 
 Then $\|\DD\|_s$ is $\CAT[0]$.
 \end{thm}
 
 We almost repeat the proof of Shefel in \cite{shefel-2D}.
 The main difference is instead of ``plane'' one has to say ``$W$''.
-However, Shefel's proof was written rather tight, so we have through in few details.
+However, Shefel's proof was written rather tight, so we have thrown in few details.
 
 In the proof we will need the following lemmas.
 
@@ -613,7 +615,7 @@ $W$ be a $\CAT[0]$ space,
 $K\subset W$ be a closed convex set 
 and $\eps>0$.
 Assume $s\:\DD\to W$ is a saddle map 
-and $u\:\DD\to K$ is a continuous map such that 
+and $u\:\DD\to W$ is a continuous map such that 
 \[|s(x)-u(x)|<\eps\]
 and $u(x)\in K$ for any point in the boundary of some open set $\Omega\subset \DD$.
 
@@ -628,7 +630,7 @@ Moreover,
 \begin{enumerate}[(a)]
 \item we can assume that \[v(\Omega)\subset \Conv u(\partial\Omega),\]
 where $\Conv S$ denotes the minimal closed convex set containing $S$.
-\item\label{lem:cutting-hat:b} if $u$ has no bubbles, we can assume that the constructed map $v$ has no bubbles
+\item\label{lem:cutting-hat:b} if $u$ has no bubbles, we can assume that the constructed map $v$ has no bubbles.
 \end{enumerate}
 \end{thm}
 
@@ -638,18 +640,18 @@ which is $0$ on $\partial \Omega$ and $1$ outside a sufficiently small neighborh
 Note that the closest point projection of $W$ to $K$ is a short map.
 
 For $x\notin \Omega$ set $v(x)=u(x)$ and if 
-$x\in \Omega$, set $v(x)$ to be the point which minimum point of the function 
+$x\in \Omega$, set $v(x)$ to be the point which minimizes 
 \[\lambda\cdot\dist^2_p+(1-\lambda)\cdot\dist^2_q,\]
-where $p$ and $q$ are correspondingly the closest point projections of  $u(x)$ and $s(x)$ on $u(\partial\Omega)$.
+where $p$ and $q$ are correspondingly the closest point projections of  $u(x)$ and $s(x)$ onto $\Conv u(\partial\Omega)$.
 Note that for some choice of $\lambda$ the map $v\:\DD\to W$ satisfies
 both conditions.
 
 Finally note that $\Conv u(\partial\Omega)\subset K$. 
 Therefore to prove the second \emph{moreover} statement 
-we need to apply lemma for the convex set $K'=\Conv u(\partial\Omega)$.
+we only need to apply the lemma for the convex set $K'=\Conv u(\partial\Omega)$.
 
 To prove \ref{lem:cutting-hat:b}, we need to remove bubbles form the constructed map $v$.
-Namely any $x$ we can choose the maximal open set $\Upsilon_x$ such that for some point $p\in W$ the complement $\DD\backslash v^{-1}\{p\}$ has $\Upsilon_x$ as a
+Namely for any $x$ we can choose the maximal open set $\Upsilon_x$ such that for some point $p\in W$ the complement $\DD\backslash v^{-1}\{p\}$ has $\Upsilon_x$ as a
 connected component with no points from $\partial \DD$.
 Redefine $v$ by setting $v(x)=p$.
 \qeds
@@ -661,7 +663,7 @@ Redefine $v$ by setting $v(x)=p$.
 \parit{Proof of Shefel's theorem \ref{thm:shefel-2D}.}
 Fix a fine triangulation $\tau$ of $\DD$.
 Map the vertices of $\tau$ by $s$,
-and extend it to whole $\DD$ by using baricentric map on each simplex.
+and extend it to whole $\DD$ by using barycentric map on each simplex.
 
 The obtained map $u\:\DD\to W$ can be made arbitrary close to $s$ assuming that the triangulation is fine.
 Say given $\eps>0$ we can assume that 
@@ -672,42 +674,42 @@ Note that the image of each triangle $\triangle$
 is the closed region bounded by the geodesic triangle in $W$ with the corresponding vertices.
 Moreover,  $\|\triangle\|_u$ is isometric to the image $u(\triangle)$.
 
-It follows that, the space $\|\DD\|_u$ can be reconstructed by gluing solid geodesic triangles in $W$ along their common sides.
+It follows that the space $\|\DD\|_u$ can be reconstructed by gluing solid geodesic triangles in $W$ along their common sides.
 
 Denote by $N$ the number of triangles in $\tau$.
 Consider the class of metric spaces $\mathcal{S}_N$ 
 which are homeomorphic to a disc retract
-and can be constructed gluing at most $N$ convex sets in $W$ 
+and can be constructed by gluing at most $N$ convex sets in $W$ 
 along some arcs in their boundaries.
 Note that $\mathcal{S}_N$ is compact in Gromov--Hausdorff topology.
 
 From above, $\|\DD\|_u$ belongs to $\mathcal{S}_N$.  
 
-Note that the space $\Gamma$ of all geodeisics in $W$ with the ends on $\partial W$ is compact. 
+Note that the space $\Gamma$ of all geodesics in $W$ with the ends on $\partial W$ is compact. 
 Fix a dense sequence of geodesics $\gamma_1,\gamma_2,\dots$ in $\Gamma$.
-The geodesics form convex sets in $W$, so we can apply Cutting hat lemma \ref{lem:cutting-hat}
+The geodesics form convex sets in $W$, so we can apply the Cutting hat lemma \ref{lem:cutting-hat}
 recursively.
 We obtain a sequence of maps, say $u=u_0,u_1,u_2,\dots$ such that 
 \[|u_n(x)-s(x)|<\eps\]
 for any $x$.
 
-Further each space $\|\DD\|_{u_n}$
-belong to $\mathcal{S}_N$.
-Denote by $w_n\:\|\DD\|_{u_n}\to W$ the its projection.
+Furthermore, each space $\|\DD\|_{u_n}$
+belongs to $\mathcal{S}_N$.
+Denote by $w_n\:\|\DD\|_{u_n}\to W$ the projection.
 
 Since $\mathcal{S}_N$ is compact, we can pass to its partial limit as $n\to\infty$,
-say $Q_\eps$,
-denote by $w_\eps\:Q_\eps\to W$ the limit map.
+say $Q_\eps$.
+Denote by $w_\eps\:Q_\eps\to W$ the limit map.
 
 Note that the projection $w_\eps\:Q_\eps\to W$ is saddle.
 Otherwise we could cut a hat from $w_\eps$ along some geodesic $\gamma$.
 Ther latter contradicts the construction.
-Indeed, there should be a point, say $y$ in one of the convex sets in the decomposition of $Q_\eps$ which disappear after cutting along $\gamma$.
+Indeed, there should be a point, say $y$ in one of the convex sets in the decomposition of $Q_\eps$ which disappears after cutting along $\gamma$.
 Since the sequence $\gamma_n$ is dense in the space of all geodesics
 we can choose a geodesic $\gamma_n$ which cuts a hat with $y$ inside, a contradiction.
 
-Note that the convex sets in the decomposition of $Q_\eps$ are glued along geodesics.
-If not, a hat could be cutted from the map $w_\eps$.
+Observe that the convex sets in the decomposition of $Q_\eps$ are glued along geodesics.
+If not, a hat could be cut from the map $w_\eps$.
 
 Note that the space $Q_\eps$ is $\CAT[0]$. 
 Indeed it is glued from convex figures in $\CAT[0]$ spaces along geodesics,
@@ -720,14 +722,14 @@ that is one could cut a hat from $Q_\eps$ with $z$ in it.
 
 Assume that the boundary of $\|\DD\|_s$ is rectifiable.
 By Lemma on compactness~\ref{lem:compact},
-we can pass to the partial limit, say $Q_0$, of $Q_\eps$ as $\eps\to 0$ and let $w_0\:Q_0\to W$ is the limit map.
-By construction, $Q_0$ is a $\CAT[0]$ disc retruct which majorates $\|\DD\|_s$,
+we can pass to a partial limit, say $Q_0$, of $Q_\eps$ as $\eps\to 0$ and denote $w_0\:Q_0\to W$ the limit map.
+By construction, $Q_0$ is a $\CAT[0]$ disc retract which majorizes $\|\DD\|_s$,
 that is the limit map lifts to a short map $Q_0\to \|\DD\|_s$ which maps $\partial Q_0$ onto  $\partial \|\DD\|_s$ in a length-preserving way.
 
 Since $\partial |\DD\|_0$ is a $\CAT[0]$ space, its boundary can be majorized by a convex figure in the plane.
 Hence the same holds for $\|\DD\|_s$.
 
-The same argument can be repeated for all discs retructs in $\|\DD\|_s$ with rectifiable boundary, in particular for all solid triangles in $\|\DD\|_s$.
+The same argument can be repeated for all discs retracts in $\|\DD\|_s$ with rectifiable boundary, in particular for all solid triangles in $\|\DD\|_s$.
 Existance of majorization implies that all triangles in $\|\DD\|_s$ are thin, that is $\|\DD\|_s$ is $\CAT[0]$.
 \qeds
 
@@ -819,6 +821,7 @@ On the other hand the order on $\gamma_0$ and on $\gamma_1$ are opposite, a cont
 
 \section{Energy of Sobolev maps}
 
+\subsection{Definitions}
 
 Let $\Omega$ be an open and bounded subset of $\mathbb{R}^n$ and $(X,d)$ a metric space.
 We say that a measurable map $u:\Omega\to X$ lies in 
@@ -858,8 +861,55 @@ $$
 E(u_t)\leq (1-t)E(u_0)+tE(u_1)-t(1-t)\int_\Omega|\nabla d(u_0,u_1)|^2d\mathcal{H}^2.
 $$
 
+The convexity of energy is fundamental and leads to existence and uniqueness results of least energy maps. (See \cite{KS}.)
+
+\subsection{Energy minimizing discs}
+
+It was shown in \cite{KS} that any finite energy disc $u$ in a CAT(0) space has a well defined trace $\operatorname{tr}(u)$ which is an
+element in $L^2(\partial\DD,X)$. If $u$ is continuous then its restriction to $\partial\DD$ is a representative of $\operatorname{tr}(u)$.
+If $\gamma$ is a continuous circle in a CAT(0) space $X$ and $u$ is a finite energy disc with $\operatorname{tr}(u)=\gamma$, then we say that 
+$u$ {\em spans} $\gamma$.
+As a consequence of Korevaar and Schoen's work one obtains the following solution to the Dirichlet problem in CAT(0) spaces.
+
+\begin{thm}{Dirichlet problem}(\cite{KS})\label{thm:dirichlet}
+Let $\gamma$ be a continuous circle in a CAT(0) space $X$. Then there is a unique energy minimizing disc $u$ which spans $\gamma$, i.e. $u$
+has the least energy among all discs spanning $\gamma$. The energy minimizer $u$ is locally Lipschitz continuous in the interior of $\DD$ and continuous on all of $\DD$.
+Moreover, the local Lipschitz constant depends only on the energy of $u$ and the distance to the boundary.
+\end{thm}
+
+
+
+Our aim is to show that energy minimizing discs are metric minimizing. For this, the following characterization of finite energy maps is particularly useful.
+\begin{thm}{Finite energy characterization}
+A continuous map $u$ in $L^2(\Omega,X)$ has finite energy iff there is a Borel function $\rho\in\L^2(\Omega)$ such that for 2-almost all curves\footnote{A property holds for 
+2-almost all curves iff there is a nonnegative Borel function $f\in L^2(\Omega)$ such that the property can only fail for rectifiable curves $c$ with $\int_c f=\infty$.} 
+$\gamma:I\to\Omega$ the composition $u\circ\gamma$ is continous and
+$$
+\operatorname{length}(u\circ\gamma)\leq\int_\gamma \rho.
+$$
+\end{thm}
+
+This characterization is proven in \cite{HKST}.
+
+\begin{thm}{Theorem}
+ Let $\gamma$ be a continuous circle in a CAT(0) space $X$ and $u$ an energy minimizing disc spanning $\gamma$.
+ Then $u$ is a metric minimizing disc.
+ \end{thm}
+
+ \parit{Proof.}
+ If $u$ is not metric minimizing, then by Theorem \ref{thm:dirichlet} and Proposition \ref{prop:exist} there is a metric minimizing
+ disc $s$ with $u \succcurlyeq s$ and $u|_{\partial\DD}=s|_{\partial\DD}$. The first property implies $E(u)=E(s)$, hence $s$ is also energy minimizing, and then the second
+ property gives $u=s$ by uniqueness of the solution to the Dirichlet problem.
+ \qeds
+ 
+
+
+
+
 
 \section{CAT(0) surfaces}
+
+ 
 
 \subsection{Half-neighbourhoods and continuous deformations}
 
@@ -1109,11 +1159,17 @@ isometry which extends uniquely to an isometry $\bar\psi:Y\to X$. Clearly $\bar\
 
 \section{Existence and uniqueness}
 
+
+
+
+\subsection{Intrinsic metric determines metric minimizing discs}~
+
+\medskip
 Let $\gamma_{\pm 1}:I\to X$ be two rectifiable paths, parametrized by arc length. We say that  $\gamma_{-1}$ is {\em parallel} to $\gamma_{+1}$, if $d(\gamma_{-1},\gamma_{+1})$
 is constant on $I$.
 
 
-\begin{thm}{Lemma}
+\begin{thm}{Lemma}\label{lem:parpaths}
 Let $\gamma_{\pm 1}:I\to X$ be two rectifiable paths of equal length $L>0$. Set $\gamma_t:=h(\cdot,t)$ where $h:[-1,1]\times[0,L]\to X$ denotes the geodesic homotopy
 between their arclength parametrizations. If $\gamma_0$ has length $L$, then $\gamma_{-1}$ and $\gamma_{+1}$ are parallel. Moreover, $h([-1,1]\times[0,L])$ is intrinsically 
 flat.
@@ -1126,7 +1182,7 @@ $$
 $$
 Therefore, $\gamma_{-1}$ is parallel to $\gamma_{+1}$.
 
-For the second claim, denote $H$ the surface $h([-1,1]\times[0,L])$ equipped with the pull-back metric. By \ref{main}, $H$
+For the second claim, denote $H$ the surface $h([-1,1]\times[0,L])$ equipped with the pull-back metric. By \ref{thm:main}, $H$
 is CAT(0).
 Now let $\epsilon>0$ and choose an array of points $x_0^{0},x_1^{0},\ldots,x_k^{0}$ on $\gamma_{0}$ 
 such that $\sum_{i=0}^k d(x_i^{0},x_{i+1}^{0})\geq L-\epsilon$. For $t\in[-1,1]$ denote by $x_i^{t}$ the
@@ -1141,14 +1197,89 @@ $$
 Hence we can choose a sequence $\epsilon_j\to 0$ such that $S_{\epsilon_j}$ converges to a flat surface $S$ and $f_{\epsilon_j}$
 converges to a short map $f:S\to H$. Note that $f$ is surjective. Moreover, $S$
 has two transversal foliations, one by parallel paths of constant length $L$ and one by geodesic segments of constant length.
-It follows that the Jacbian of $f$ is almost everywhere equal to one. Thus $f$ is area preserving and therefore an isometry by \ref{}.
+It follows that the Jacbian of $f$ is almost everywhere equal to one. Thus $f$ is area preserving and therefore an isometry by \ref{thm:short+area=isom}.
+\qeds
+
+\begin{thm}{Uniqueness Theorem}\label{prop:strict-mm}
+Let $X$ be a CAT(0) space and $s_0, s_1:\DD\to X$ be metric minimizing discs. If 
+$\|\DD\|_{s_0}$ is isometric to $\|\DD\|_{s_1}$, then $s_0=s_1$.
+\end{thm}
+
+\parit{Proof.}
+For $t\in[0,1]$ denote $s_t:\DD\to X$ the map obtained by geodesic interpolation. Then
+$\|\DD\|_{s_t}$ is isometric to $\|\DD\|_{s_0}$ for all $t\in[0,1]$. In particular, every $s_t$ is metric minimizing.
+Let $\gamma$ be a path $\DD$ connecting two boundary points and such that $s_0\circ\gamma$ is rectifiable.
+Moreover, assume that the parametrization is such that $s_0\circ\gamma$ is parametrized by arclength. Then each 
+$s_t\circ\gamma$ is parametrized by arclength and Lemma \ref{lem:parpaths} we obtain $s_t\circ\gamma\cong s_0\circ\gamma$.
+The claim follows.
 \qeds
 
 
+
 %MAYBE IT WILL BE A COR OR PART OF AN OTHER STATEMENT, BUT WE NEED IT???
-\begin{thm}{Proposition}\label{prop:strict-mm}
-Any metric minimizing map in $\CAT[0]$ space is strict metric minimizing.
+\begin{thm}{Corollary}\label{prop:strict-mm}
+Any metric minimizing disc in a $\CAT(0)$ space is strictly metric minimizing.
 \end{thm}
+
+
+
+\subsection{Metric minimizing discs below given continuous ones}~
+\medskip
+\begin{thm}{Intrinsic continuity}
+A map $f:Y\to Z$ from a metric space $Y$ to a metric space
+ $Z$ is called
+{\em intrinsically continuous}, if for every $y\in Y$ 
+and every $\epsilon>0$ there
+exists $\delta>0$ such that any  $y'\in Y$
+with $|y,y'|<\delta$ can be connected to $y$ by a path $\gamma$ 
+with $\operatorname{length}(f\circ\gamma)<\epsilon$.
+\end{thm}
+
+\begin{thm}{Remark}
+\begin{enumerate}
+ \item The main example of intrinsically continuous maps are Lipschitz
+maps from geodesic spaces to arbitrary metric spaces.
+\item Restrictions of intrinsically continuous maps to compact sets are uniformly intrinsically continuous. 
+\item If a map $f:Y\to Z$ is intrinsically continuous, then 
+the natural projection $\pi_f:Y\rightarrow \|Y\|_f$ is continuous. If
+moreover $Y$ is compact, then $\|Y\|_f$ equipped with the induced 
+metric is a geodesic space.
+\end{enumerate}
+\end{thm}
+
+
+\subsubsection{Proper metric spaces}~
+
+\medskip
+
+Let $X$ be a proper metric space. Denote the set
+of continuous maps $\DD\to X$ equipped with the compact-open topology 
+by $\mathcal{C}(\DD,X)$. In Section \ref{sec:Def} we defined a partial 
+order on $\mathcal{C}(D,X)$ by $g\succcurlyeq f$.
+
+We address the problem of finding a
+metric minimizing disc below a given continuous one.
+
+For a map $f\in\mathcal{C}(D,X)$ we 
+define its relative sublevel $\mathcal{F}(f)$ consisting of all maps $g\in\mathcal{C}(D,X)$
+with $g|_{\partial \DD}=f|_{\partial \DD}$ and $f\succcurlyeq g$. If $f$ is intrinsically continuous as a map from $\DD$, then
+so is every element in $\mathcal{F}(f)$. In this case, the family
+$\mathcal{F}(f)$ is equicontinuous. 
+By Arzel\`a-Ascoli, it is precompact, since $X$ is proper and it is
+closed by the semi-continuity of length structures. Hence, we conclude 
+that $\mathcal{F}(f)$ contains a 
+minimal element. This element is clearly metric minimizing, since the induced metric 
+determines the length structure. This explains
+
+\begin{thm}{Proposition}\label{prop:exist}
+ If $X$ is a proper metric space, then for every intrinsically continuous map $f:\DD\rightarrow X$,
+ there is a metric minimizing map $s:\DD\rightarrow X$
+ such that $\|{*}-{*}\|_s\leq\|{*}-{*}\|_f$.
+\end{thm}
+
+
+
+
 
 \section{Smooth surfaces}
 
@@ -1309,6 +1440,9 @@ The one-dimensional Cauchy problem.'' Oxford Lecture Series in Mathematics and i
 \bibitem{BBI}Burago, D.; Burago, Y.; Ivanov, S.
 A course in metric geometry.
 Graduate Studies in Mathematics, 33. American Mathematical Society, Providence, RI, 2001. xiv+415 pp.
+
+\bibitem{HKST} Heinonen, J.;  Koskela, P.;  Shanmugalinga, N.; Tyson, J.``Sobolev spaces on metric measure spaces,''
+volume 27 of New Mathematical Monographs. Cambridge University Press, Cambridge, 2015.
 
 \bibitem{KS}Korevaar, N. J.; Schoen, R. M. ``Sobolev spaces and harmonic maps for metric space targets,'' Comm. Anal. Geom., 1(3-4):561-659, 1993.
 
