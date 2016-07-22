@@ -571,11 +571,11 @@ $\mathcal{K}_\ell$ is compact in the Gromov--Hausdorff topology.
 \section{2-dimensional case}
 
 Let $W$ be a metric space.
-A continous map $s\:\DD\to W$ is called \emph{saddle} if for any closed convex subset $K\subset W$ 
-any connected component of the complement $\DD\backslash s^{-1}(K)$
-has a point from the boundary $\partial \DD$.
+A continuous map $s\:\DD\to W$ is called \emph{saddle} if for any closed convex subset $K\subset W$ holds that
+the boundary $\partial \DD$ intersects
+any connected component of $\DD\backslash s^{-1}(K)$.
 
-Applying this definition to the one-point sets,
+Applying this definition to one-point sets,
 we get that any saddle map has no bubbles.
 
 
@@ -585,7 +585,7 @@ Let $W$ be a $\CAT[0]$ space then any metric minimizing map $s\:\DD\to W$ is sad
 
 \parit{Proof.}
 Assume contrary, let $K$ be a convex set in $W$
-and $\Omega$ be the violating component of the complement $\DD\backslash s^{-1}(K)$.
+and $\Omega$ be a violating component of the complement $\DD\backslash s^{-1}(K)$.
 Redefine $s$ for each $x\in\Omega$ by moving 
 $s(x)$ to its closest point projection on $K$.
 Denote by $s'$ the new map.
@@ -635,23 +635,23 @@ where $\Conv S$ denotes the minimal closed convex set containing $S$.
 \end{thm}
 
 \parit{Proof.}
-Fix a continuous function $\lambda\:\Omega\to [0,1]$
-which is $0$ on $\partial \Omega$ and $1$ outside a sufficiently small neighborhood of $\partial \Omega$.
-Note that the closest point projection of $W$ to $K$ is a short map.
-
+Let $\pi:W\to K$ denote the closest point projection of $W$ onto $K$. Note that $\pi$
+is a short map. Choose an open neighborhood $U$ of $\partial \Omega$ such that 
+$|s(x)-\pi\circ u(x)|<\epsilon$ for $x\in U$. The assumptions imply that $s(\Omega)$ is 
+contained in the $\epsilon$-neighborhood of $K$, i.e. $|s(x)-\pi\circ s(x)|<\epsilon$ for $x\in\Omega$.
+It follows that for points in $U$ the geodesic segment $\pi\circ s(x)\pi\circ u(x)$ is contained in the $\epsilon$-ball
+around $s(x)$. Fix a continuous function $\lambda\:\Omega\to [0,1]$
+which is equal to $1$ on $\partial \Omega$ and has support in $U$.
 For $x\notin \Omega$ set $v(x)=u(x)$ and if 
-$x\in \Omega$, set $v(x)$ to be the point which minimizes 
-\[\lambda\cdot\dist^2_p+(1-\lambda)\cdot\dist^2_q,\]
-where $p$ and $q$ are correspondingly the closest point projections of  $u(x)$ and $s(x)$ onto $\Conv u(\partial\Omega)$.
-Note that for some choice of $\lambda$ the map $v\:\DD\to W$ satisfies
-both conditions.
+$x\in \Omega$, set $v(x)$ to be the point which divides the geodesic $\pi\circ s(x)\pi\circ u(x)$
+at proportion $\lambda(x)$. By construction $v$ satisfies both conditions.
 
 Finally note that $\Conv u(\partial\Omega)\subset K$. 
-Therefore to prove the second \emph{moreover} statement 
-we only need to apply the lemma for the convex set $K'=\Conv u(\partial\Omega)$.
+Therefore we obtain statement (a) 
+by applying the lemma for the convex set $K'=\Conv u(\partial\Omega)$.
 
-To prove \ref{lem:cutting-hat:b}, we need to remove bubbles form the constructed map $v$.
-Namely for any $x$ we can choose the maximal open set $\Upsilon_x$ such that for some point $p\in W$ the complement $\DD\backslash v^{-1}\{p\}$ has $\Upsilon_x$ as a
+To prove (\ref{lem:cutting-hat:b}), we need to remove bubbles form the constructed map $v$.
+Namely for any $x$ we can choose a maximal open set $\Upsilon_x$ such that for some point $p\in W$ the complement $\DD\backslash v^{-1}\{p\}$ has $\Upsilon_x$ as a
 connected component with no points from $\partial \DD$.
 Redefine $v$ by setting $v(x)=p$.
 \qeds
@@ -663,7 +663,7 @@ Redefine $v$ by setting $v(x)=p$.
 \parit{Proof of Shefel's theorem \ref{thm:shefel-2D}.}
 Fix a fine triangulation $\tau$ of $\DD$.
 Map the vertices of $\tau$ by $s$,
-and extend it to whole $\DD$ by using barycentric map on each simplex.
+and extend it to the whole disc by using barycentric maps on simplices.
 
 The obtained map $u\:\DD\to W$ can be made arbitrary close to $s$ assuming that the triangulation is fine.
 Say given $\eps>0$ we can assume that 
@@ -672,20 +672,21 @@ for any $x\in\DD$.
 
 Note that the image of each triangle $\triangle$
 is the closed region bounded by the geodesic triangle in $W$ with the corresponding vertices.
-Moreover,  $\|\triangle\|_u$ is isometric to the image $u(\triangle)$.
+Moreover,  $\|\triangle\|_u$ is isometric to the image $u(\triangle)$ because $u$ embeds every
+simplex {\bf ??}.
 
-It follows that the space $\|\DD\|_u$ can be reconstructed by gluing solid geodesic triangles in $W$ along their common sides.
+It follows that the space $\|\DD\|_u$ can be reconstructed by gluing solid geodesic triangles in $W$ along convex subsets containing common sides.
 
 Denote by $N$ the number of triangles in $\tau$.
 Consider the class of metric spaces $\mathcal{S}_N$ 
 which are homeomorphic to a disc retract
 and can be constructed by gluing at most $N$ convex sets in $W$ 
-along some arcs in their boundaries.
-Note that $\mathcal{S}_N$ is compact in Gromov--Hausdorff topology.
+along SOMETHING.
+Note that $\mathcal{S}_N$ is compact in Gromov--Hausdorff topology (BY COMPACTNESS LEMMA?).
 
 From above, $\|\DD\|_u$ belongs to $\mathcal{S}_N$.  
 
-Note that the space $\Gamma$ of all geodesics in $W$ with the ends on $\partial W$ is compact. 
+Note that the space $\Gamma$ of all geodesics in $W$ with endpoints on $\partial W$ is compact. 
 Fix a dense sequence of geodesics $\gamma_1,\gamma_2,\dots$ in $\Gamma$.
 The geodesics form convex sets in $W$, so we can apply the Cutting hat lemma \ref{lem:cutting-hat}
 recursively.
@@ -697,7 +698,7 @@ Furthermore, each space $\|\DD\|_{u_n}$
 belongs to $\mathcal{S}_N$.
 Denote by $w_n\:\|\DD\|_{u_n}\to W$ the projection.
 
-Since $\mathcal{S}_N$ is compact, we can pass to its partial limit as $n\to\infty$,
+Since $\mathcal{S}_N$ is compact, we can pass to its partial limit of $\|\DD\|_{u_n}$ as $n\to\infty$,
 say $Q_\eps$.
 Denote by $w_\eps\:Q_\eps\to W$ the limit map.
 
