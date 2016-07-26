@@ -596,6 +596,12 @@ That is $s$ is not strictly metric minimizing.
 It remains to apply Proposition~\ref{prop:strict-mm}.
 \qeds
 
+ 
+
+
+
+
+
 
 \begin{thm}{Shefel's theorem}\label{thm:shefel-2D}
 Let $W$ be a $\CAT[0]$ space which is a disc retract.
@@ -608,6 +614,30 @@ The main difference is instead of ``plane'' one has to say ``$W$''.
 However, Shefel's proof was written rather tight, so we have thrown in few details.
 
 In the proof we will need the following lemmas.
+
+Note that since $W$ is a disc retract, its boundary $\partial W$ is compact. Therefore
+the space $\Gamma$ of geodesic segments with endpoints on $\partial W$ is compact as well.
+
+\begin{thm}{Lemma}\label{thm:saddle-2D}
+Let $W$ be a $\CAT[0]$ space which is a disc retract. Furthermore, let $\mathcal{G}$ be a countable dense subset 
+of $\Gamma$.
+If $s\:\DD\to W$ is a map such that for any element $g$ in $\mathcal{G}$ every 
+component of $\DD\backslash s^{-1}(g)$ intersects the boundary $\partial\DD$,
+then $s$ is saddle.
+\end{thm}
+
+\parit{Proof.} Assume that there is a closed convex set $K$ in $W$ such that 
+$\DD\backslash s^{-1}(g)$ has a component $U$ which is disjoint from the boundary $\partial\DD$. Note that 
+$U$ is open. Pick a point $p$ in $U$. Denote $\overline{s(p)}$ the closest point projection of $s(p)$ onto $K$.
+It is enough to find an element in $\mathcal{G}$ which seperates $s(p)$ and $\overline{s(p)}$.
+If the geodesic segment $s(p)\overline{s(p)}$ contains an interior point $x$ where the link $\Sigma_x W$ consists of 
+more than two points, then we are done. On the other hand, if we do not find such a point then any point on $s(p)\overline{s(p)}$
+is a cut point, in particular $s(p)\overline{s(p)}$ is contained in $\partial W$. 
+Since $K$ intersects the image of $s$ the segment $s(p)\overline{s(p)}$ has to lie entirely in the image of $s$.
+But then a subinterval of $s(p)\overline{s(p)}$ seperates $s(p)$ and $\overline{s(p)}$ and by density we can find an element in $\mathcal{G}$ with the same property.
+that its inverse image separates $p$ from the boundary $\partial \DD$.
+This contradicts the assumptions.
+\qeds
 
 \begin{thm}{Cutting hat lemma}\label{lem:cutting-hat}
 Let 
@@ -656,14 +686,29 @@ connected component with no points from $\partial \DD$.
 Redefine $v$ by setting $v(x)=p$.
 \qeds
 
+\begin{thm}{Lemma}\label{lem:isomtri}
+Let $W$ be a $\CAT[0]$ space which is a disc retract. Let $\Delta$ be a triangel in the euclidean plane
+and $\Delta'$ a triangle in $W$. If $f:\Delta\to \Delta'$ is a map which restricts to constant speed
+parametrizations on each side, then there is an extension $F$ of $f$ to a map between convex hulls
+$F:ch(\Delta)\to ch(\Delta')$ such that $F$ induces an isometry $\bar F:\|ch(\Delta)\|_F\to ch(\Delta')$. 
+\end{thm}
 
-
+\parit{Proof.}
+There are obious cases, namely if $\Delta'$ is either embedded or contained in a single geodesic. 
+For the general case we observe that if we cut $\Delta$ into two triangles $\Delta^\pm$ by a geodesic which joins a vertex to its opposite side, and if 
+the claim is true for both triangles $\Delta^+$ and $\Delta^-$, then it is also true for $\Delta$. Now let us assume that $\Delta'$ is neither embedded nor contained
+in a single geodesic. Then there is a vertex of $\Delta'$ such that the two adjacent sides have a closed nontrivial interval in common. Choose a point $p$ in the interior
+of a side of $\Delta$ which maps to an endpoint of this interval. Cut $\Delta$ into two triangles $\Delta^\pm$ by joining $p$ to its opposite vertex.
+We obtain natural maps $f^\pm:\Delta^\pm\to\Delta'$ where one of them say $f^+$ is degenerated, in the sense that its image is contained in a side of $\Delta'$, and $f^-$ has 
+a nondegenerated vertex, in the sense that the image of adjacent sides only intersect in the image of the vertex. Repeating at most two times reduces the general case to the above obvious ones.
+\qeds
 
 
 \parit{Proof of Shefel's theorem \ref{thm:shefel-2D}.}
 Fix a fine triangulation $\tau$ of $\DD$.
 Map the vertices of $\tau$ by $s$,
-and extend it to the whole disc by using barycentric maps on simplices.
+and extend it to the 1-skeleton by mapping edges with constant speed to 
+corresponding geodesics. Then use Lemma \ref{lem:isomtri} to extend the map to the whole disc.
 
 The obtained map $u\:\DD\to W$ can be made arbitrary close to $s$ assuming that the triangulation is fine.
 Say given $\eps>0$ we can assume that 
@@ -672,17 +717,16 @@ for any $x\in\DD$.
 
 Note that the image of each triangle $\triangle$
 is the closed region bounded by the geodesic triangle in $W$ with the corresponding vertices.
-Moreover,  $\|\triangle\|_u$ is isometric to the image $u(\triangle)$ because $u$ embeds every
-simplex {\bf ??}.
+Moreover,  $\|\triangle\|_u$ is isometric to the image $u(\triangle)$ by construction.
 
-It follows that the space $\|\DD\|_u$ can be reconstructed by gluing solid geodesic triangles in $W$ along convex subsets containing common sides.
+It follows that the space $\|\DD\|_u$ can be reconstructed by gluing solid geodesic triangles in $W$ along convex subsets.
 
 Denote by $N$ the number of triangles in $\tau$.
 Consider the class of metric spaces $\mathcal{S}_N$ 
 which are homeomorphic to a disc retract
 and can be constructed by gluing at most $N$ convex sets in $W$ 
-along SOMETHING.
-Note that $\mathcal{S}_N$ is compact in Gromov--Hausdorff topology (BY COMPACTNESS LEMMA?).
+along convex subsets.
+Note that $\mathcal{S}_N$ is compact in Gromov--Hausdorff topology (BY MODIFIED COMPACTNESS LEMMA?).
 
 From above, $\|\DD\|_u$ belongs to $\mathcal{S}_N$.  
 
