@@ -62,13 +62,13 @@ Consider an equivalence relation ``$\approx$'' on a metric space defined as \[x\
 Note that its equivalence classes form \emph{usual metric spaces}; 
 that is $|x-y|<\infty$ for any pair of points $x$ and $y$ in the class.
 It implies that metric spaces in our definition 
-can be thought of disjoint union of some collection \emph{usual metric spaces} with infinite distance from each other.}
+can be thought of disjoint union of some collection \emph{usual metric spaces}.}
 
 For any pseudometric on a set 
 there is an equivalence relation ``$\sim$''
 such that $x\sim y$ if and only if $|x-y|=0$.
 The pseudometric $|{*}-{*}|$ defines a genuine metric on the set of equivalence classes of $\sim$.
-We will say that obtained metric space is \emph{defined} by the  original pseudometric space.%???IS IT A GOOD WAY TO SAY??? 
+We will say that the obtained metric space is \emph{defined} by the  original pseudometric space.%???IS IT A GOOD WAY TO SAY??? 
 
 \parbf{Induced  pseudometrics.}
 Let $X$ and $Y$ be metric spaces.
@@ -82,7 +82,7 @@ if there is no such set we set $|x-y|_f=\infty$.
 The intrinsic metric induced by $|{*}-{*}|_f$ will be denoted as 
 $\|{*}-{*}\|_f$. 
 That is, 
-\[\|x-y\|_f=\liminf_{\eps\to0+}\left\{\sum_{i=1}^n|x_i-x_{i-1}|_f\right\}.\]
+\[\|x-y\|_f=\liminf_{\eps\to0+}\left\{\sum_{i=1}^n|x_i-x_{i-1}|_f\right\},\]
 where the infimum is taken for all arrays of points 
 $x=x_0,x_1,\dots,x_n=y$ such that 
 $|x_i-x_{i-1}|_f<\eps$ for any $i$.
@@ -90,14 +90,20 @@ $|x_i-x_{i-1}|_f<\eps$ for any $i$.
 The metric spaces defined by the pseudometrics $|{*}-{*}|_f$ 
 and $\|{*}-{*}\|_f$ on $X$ will be denoted as $|X|_f$ and $\|X\|_f$ correspondingly.
 
-Note that if $f$ is injective, and the image $f(X)$ is compact then 
+\parbf{Remarks.}
+\begin{itemize}
+\item If $f$ is injective, and the image $f(X)$ is compact then 
 the space $\|X\|_f$ is isometric to the image $f(X)$ in $Y$ equipped with induced intrinsic metric.
-
-Note that $|x-y|_f=0$ if and only if $\|x-y\|_f=0$;
-that is,  both pseudometrics $|{*}-{*}|_f$ and  $\|{*}-{*}\|_f$
-define the same equivalence classes on $X$.
+\item Both pseudometrics $|{*}-{*}|_f$ and  $\|{*}-{*}\|_f$
+define the same equivalence classes on $X$;
+that is,
+\[|x-y|_f=0\quad\iff\quad\|x-y\|_f=0.\]
 The equivalence class of $x\in X$ will be denoted as $[x]_f$; 
 it can be regarded as a point in  $|X|_f$ and in $\|X\|_f$.
+\end{itemize}
+
+
+
 
 Given two maps $f,h\:X\to Y$ we will write $f\succcurlyeq h$ if 
 \[\|x-y\|_f\ge \|x-y\|_h\]
@@ -148,7 +154,8 @@ Let $X$ and $Y$ be metric spaces and $A\subset X$ be a closed subset.
 Assume $f\:X\to Y$ is a metric minimizing map relative to $A$.
 
 Given a closed subset $W\subset X$, set 
-\[A_W=\partial W\cup (A\cap W).\]
+\[A_W=\partial_X W\cup (A\cap W),\]
+where $\partial_X W$ denotes the boundary of $W$ relative to $X$.
 Then the restriction $f|_W$ is metric minimizing relative to $A_W$.
 \end{thm}
 
@@ -166,20 +173,33 @@ Then $f'\:X'\to Y$ is metric minimizing relative to $\phi(A)$.
 
 
 \begin{thm}{Proposition}
-Assume $\Gamma$ is a  finite graph and $A$ is the collection of its vertices.
+Assume $\Gamma$ is a  finite graph and $A$ is the collection of its vertexes.
 Let $Y\in\CAT[0]$ and $f\:\Gamma\to Y$ be an arbitrary map.
 Then there is a metric minimizing map $f'\:\Gamma\to Y$ relative to $A$ such that
 $f'|_A=f|_A$ and 
 $f\succcurlyeq f'$.
 \end{thm} 
 
-\parit{Proof.} Note that there is a sequence of maps $f=f_0\succcurlyeq f_1\succcurlyeq\dots$ such that $f_n|_A=f|_A$ and there is no map $h\:\Gamma\to Y$ such that $h|_A=f|_A$ and $f_n\succ h$ for each $n$.
+\parit{Proof.} 
+Given a map $h\:\Gamma\to Y$, denote its total length by $\length h$.
+That is, if $e_1,\dots,e_k$ be the edges of $\Gamma$ 
+then each restriction $h|_{e_i}$ is a curve and
+\[\length h
+\df
+\sum\length(h|_{e_i}).\]
+
+Note that there is a sequence of maps $f_n\:\Gamma\to Y$
+such that (1)
+$f=f_0\succcurlyeq f_1\succcurlyeq\dots$, (2) $f_n|_A=f|_A$ for each $n$ and (3) if for some $h\:\Gamma\to Y$ we have $h|_A=f|_A$ and $f_n\succ h$ for each $n$ then 
+\[\length h=\lim_{n\to\infty}\length f_n.\]
 
 Indeed, the sequence $f_n$ can be chosen so that
-\[\length f_n<\inf\set{\length h}{f_{n-1}\succcurlyeq h,\ h|_A=f|_A},\]
+\[\length f_n-\tfrac1n
+<
+\inf\set{\length h}{f_{n-1}\succcurlyeq h,\ h|_A=f|_A},\]
 where $\length f_n$ denotes the sum of lengths of all edges of $\Gamma$. %???BETTER WORDING??? 
 Since $f_n\succ h$ implies $\length f_n>\length h$, 
-the condition above holds for $f_n$.
+the conditions above hold.
 
 Fix an ultra-filter $\omega$ on the set of natural numbers.
 Let $Y^\omega$ be the ultra-power of $Y$;
@@ -196,7 +216,7 @@ Note that $f_\omega\succ g_\omega$ and $g_\omega|_A=f|_A$, a contradiction.
 
 \begin{thm}{Proposition}\label{prop:metric-min-graph}
 Let $Y$ be a $\CAT[0]$ space, 
-$\Gamma$ a finite  graph and $A$ a subset of its vertices.
+$\Gamma$ a finite  graph and $A$ a subset of its vertexes.
 Assume $f\:\Gamma\to Y$ is metric minimizing relative to $A$.
 Then
 \begin{itemize}
@@ -205,7 +225,7 @@ Then
 there is an edge  $[vw]$ in $\Gamma$ such that
 $\measuredangle[f(v)^{f(w)}_x]\ge \tfrac\pi2$.
 \end{itemize}
-Moreover, $f$ is strictly metric minimizing relative to $A$ 
+Moreover, $f$ is strictly metric minimizing relative to $A$. 
 \end{thm}
 
 \begin{wrapfigure}{r}{22 mm}
@@ -239,14 +259,14 @@ we get $f(v)=g(v)$ for any vertex $v$ in $\Gamma$.
 Hence $f=f'$, a contradiction.
 \qeds
 
-Assume $\Gamma$ is a finite graph embedded in the plane,
+Assume $\Gamma$ is a finite graph embedded in the plane $\RR^2$;
 in particular $\Gamma$ is planar.
 
 The complement to the unbounded connected component of $\RR^2\backslash\Gamma$ will be called filling of $\Gamma$;
 it will be denoted as $\Fill\Gamma$.
 
 The vertex of $\Gamma$ will be called \emph{boundary vertex}
-if it lies in the boundary $\partial\Fill\Gamma$,
+if it lies in the boundary $\partial_{\RR^2}[\Fill\Gamma]$,
 otherwise it will be called \emph{interior vertex}.
 
 \begin{thm}{Corollary}\label{cor:planar-minimizing-graph}
@@ -272,8 +292,9 @@ The obtained space $D$ is simply connected.
 Therefore in order to show that $D$ is $\CAT[0]$,
 we need to check that the sum of the angles around each interior vertex in $\Gamma$ is at least $2\cdot\pi$.
 
-Fix an interior vertex $v$.
-Assume that the sum of the angles around $v$ is less than $2\cdot\pi$.
+
+Assume contrary, that is, 
+the sum of the angles around a fixed interior vertex $v$ is less than $2\cdot\pi$.
 The space of directions $\Sigma_{f(v)}$ is a $\CAT[1]$ space.
 The directions of the edges from $v$ have a natural
 cyclic order say $\xi_1,\dots,\xi_k$
@@ -301,7 +322,7 @@ its boundary $\partial \DD$ is a unit circle.
 Let $X$ be a Hausdorff space and
 $f\:\DD\to X$ be a continuous map.
 We say that $f$ is a \emph{no-bubble map}
-if for any point $p\in X$ every connected component of the complement $\DD\backslash f^{-1}\{p\}$ has points in the boundary $\partial \DD$.
+if for any point $p\in X$ every connected component of the complement $\DD\backslash f^{-1}\{p\}$ contains a point from $\partial \DD$.
 
 
 We will need the following disc version of Moore's theorem proved in \cite{moore}.
@@ -315,20 +336,19 @@ that is, $|\DD|_f$ is a compact simply connected space which admits an embedding
 
 
 \parit{Proof.}
-Note that $|\DD|_f$ is a Hausdorff space.
+Note that $|\DD|_f$ is a Hausdorff space
 and the forgetful map $h\:\DD\to |\DD|_f$ is continuous.
 Since and $\DD$ is compact, the space $|\DD|_f$ comes with the quotient topology for $h$. 
 
-Consider the disc $\DD$ as a subset in the plane $\SS^2$.
+Consider the disc $\DD$ as a subset in the sphere $\SS^2$.
 For any $x\in \DD$, set 
 \[[x]=h^{-1}\{h(x)\}\]
 and
-if $x\in \SS^2\backslash \DD$ we assume $[x]=\{x\}$.
+if $x\in \SS^2\backslash \DD$, set $[x]=\{x\}$.
 Denote by $\SS^2_f$ the set of classes $[x]$ with the quotient topology induced by the map $\iota_f\:x\mapsto [x]$.
 
 Note that for any point $x$, the set $[x]$ is connected and compact, with connected complement.
-Therefore by Moore's theorem \cite{moore},
-$\SS^2_f$ is homeomorphic to $\SS^2$.
+Therefore $\SS^2_f$ is homeomorphic to $\SS^2$ by Moore's theorem, see \cite{moore}.
 
 It remains to note that $|\DD|_f$ is embedded into $\SS^2_f$ and its complement is homeomorphic to an open disc.\qeds
 
@@ -345,11 +365,11 @@ Then $f$ is a no-bubble map.
 
 In particular,  $|\DD|_f$ is homeomorphic to a disc retract.
 Moreover $\partial|\DD|_f$ is the image of $\partial \DD$
-under the tautological map $x\mapsto [x]_f$.
+under the map $x\mapsto [x]_f$.
 \end{thm}
 
-Note that the metric minimizing map $f\:\DD\to\ Y$ factors through a map $f'\:|\DD|_f\to Y$
-and by \ref{prop:factor} and \ref{prop:|D|} 
+Note that the metric minimizing map $f\:\DD\to\ Y$ factors through a map \[f'\:|\DD|_f\to Y.\]
+By \ref{prop:factor} and \ref{prop:|D|} 
 the map $f'$
 is metric minimizing relative to $\partial|\DD|_f$.
 
@@ -360,8 +380,9 @@ is metric minimizing relative to $\partial|\DD|_f$.
 Let $Y$ be a $\CAT(0)$ space and $s\:\DD\to Y$ 
 be a metric minimizing disc relative to the boundary $\partial \DD$.
 Given a finite set $F\subset \DD$
-there is a $\CAT(0)$ space $W$, which is a disc retract,
-and maps $p\:F\to W$ and $q\:W\to Y$ such that
+there is 
+(1) a $\CAT(0)$ space $W$, which is a disc retract,
+and (2) maps $p\:F\to W$ and $q\:W\to Y$ such that
 \[s(x)=q\circ p(x)\] 
 for any $x\in F\cap \partial \DD$
 and 
@@ -405,15 +426,19 @@ It remains to apply Corollary~\ref{cor:planar-minimizing-graph}.
 We recall some terminology. Let $X$ be a connected topological space. A point $c\in X$
 is called a {\em cut point}, if $X\setminus \{c\}$ is disconnected. The set of cut points in $X$ 
 will be denoted by $cut(X)$. If $X$ is connected and $x,y\in X$ are such that no cut point in $X$
-seperates $x$ and $y$, then they are called {\em conjugate}. For a non-cut point $p\in X$
+seperates $x$ and $y$, then they are called {\em conjugate}%???
+. 
+
+For a non-cut point $p\in X$
 we define $conj(p)$ as the set of all points conjugate to $p$. A point $e\in X$ is called an {\em endpoint},
-if $conj(e)=\{e\}$. The conjugacy set $conj(p)$ for non-endpoints
-are called {\em cyclic elements}. 
+if $conj(e)=\{e\}$. 
+The conjugacy set $conj(p)$ for non-endpoints
+are called {\em cyclic elements}. %??? STRANGE DEF, maybe set of cyclic elements, or  support of cycles
 According to \cite[IV(1.4)]{W2},
 every cyclic element is a closed set. 
 If $X$ is a 
 Peano continuum\footnote{A {\em Peano continuum} is a compact
-connected and locally connected metric space.}, then every cyclic element $conj(p)$ is {\em cyclically connected},\ i.e.
+connected and locally connected metric space.}, then every cyclic element $conj(p)$ is {\em cyclically connected}; that is,
 any two points $x,y\in conj(p)$ lie in a Jordan curve $J\subset conj(p)$, see \cite[III(3.32)]{Wi}. 
 Any two different 
 cyclic elements $conj(p)$ and $conj(q)$ intersect at most in a single point. 
@@ -534,7 +559,7 @@ unique cyclic element $D_\infty$ such that $J\subset D_\infty$. Since $D_\infty$
 \noindent If this is not the case, then there is an element $q\in conj(p)\setminus D_\infty$. Choose a point $p'\in D_\infty\setminus J$ which is surrounded 
 by $J$. Using the cyclic connectedness we find a Jordan curve $J'\subset conj(p)$ such that $p',q\in J'$. Approximate $J'$
 by Jordan curves $J_n'\subset K_n$ and the point $p'$ by points $p_n'\in K_n$. Since $p_n'$ is then surrounded by the $J_n'$, the intersection
-$J_n'\cap J_n$ contains at least two points. Consequently $J_n'$ lies in the same cyclic element as $J_n$,\ i.e. $J_n'\subset C_n$. As
+$J_n'\cap J_n$ contains at least two points. Consequently $J_n'$ lies in the same cyclic element as $J_n$; that is, $J_n'\subset C_n$. As
 above we conclude that there is a unique cyclic element $D_\infty'\subset C_\infty$ such that $J'\subset D_\infty'$. But 
 $J'$ intersects the interior of $D_\infty$ in the point $p'$. Hence $D_\infty=D_\infty'$, a contradiction.
 \qeds
@@ -668,7 +693,8 @@ where $\Conv S$ denotes the minimal closed convex set containing $S$.
 Let $\pi:W\to K$ denote the closest point projection of $W$ onto $K$. Note that $\pi$
 is a short map. Choose an open neighborhood $U$ of $\partial \Omega$ such that 
 $|s(x)-\pi\circ u(x)|<\epsilon$ for $x\in U$. The assumptions imply that $s(\Omega)$ is 
-contained in the $\epsilon$-neighborhood of $K$, i.e. $|s(x)-\pi\circ s(x)|<\epsilon$ for $x\in\Omega$.
+contained in the $\epsilon$-neighborhood of $K$;
+that is, $|s(x)-\pi\circ s(x)|<\epsilon$ for $x\in\Omega$.
 It follows that for points in $U$ the geodesic segment $\pi\circ s(x)\pi\circ u(x)$ is contained in the $\epsilon$-ball
 around $s(x)$. Fix a continuous function $\lambda\:\Omega\to [0,1]$
 which is equal to $1$ on $\partial \Omega$ and has support in $U$.
@@ -881,7 +907,8 @@ A map $u\in L^2(\Omega,X)$ is contained in $W^{1,2}(\Omega,X)$ if and only if
 
 \begin{enumerate}
  \item for any $x\in X$ the map $u_x(z):=d(u(z),x)$ belongs to $W^{1,2}(\Omega)$;
- \item there exists a uniform bound for the weak gradients $|\nabla u_x|$,\ i.e. there is a function $h\in L^2(\Omega)$ 
+ \item there exists a uniform bound for the weak gradients $|\nabla u_x|$; 
+ that is, there is a function $h\in L^2(\Omega)$ 
  such that $|\nabla u_x|\leq h$ holds for all $x$ almost everywhere in $\Omega$. 
 \end{enumerate}
 
@@ -917,7 +944,7 @@ $u$ {\em spans} $\gamma$.
 As a consequence of Korevaar and Schoen's work one obtains the following solution to the Dirichlet problem in CAT(0) spaces.
 
 \begin{thm}{Dirichlet problem}(\cite{KS})\label{thm:dirichlet}
-Let $\gamma$ be a continuous circle in a CAT(0) space $X$. Then there is a unique energy minimizing disc $u$ which spans $\gamma$, i.e. $u$
+Let $\gamma$ be a continuous circle in a CAT(0) space $X$. Then there is a unique energy minimizing disc $u$ which spans $\gamma$; that is, $u$
 has the least energy among all discs spanning $\gamma$. The energy minimizer $u$ is locally Lipschitz continuous in the interior of $\DD$ and continuous on all of $\DD$.
 Moreover, the local Lipschitz constant depends only on the energy of $u$ and the distance to the boundary.
 \end{thm}
@@ -996,7 +1023,7 @@ In particular $y\in cone_x(J)$.
 A {\em geodesic quadrangle} $\square$ consits of an ordered tuple of four pairwise 
 distinct points $x_k\in X$, $k\in\mathbb{Z}_4$, 
 called vertices, and the four geodesic segments $[x_k,x_{k+1}]$, called the sides. 
-If no side is separating,\ i.e. no maximal extension of that side as a geodesic 
+If no side is separating; that is, no maximal extension of that side as a geodesic 
 separates the other two vertices, $\square$ is said to be {\em regular}.
 
 \begin{thm}{Lemma}\label{lem:large angles}
@@ -1052,7 +1079,7 @@ from $[x'y']$.
 \end{thm}
 
 \begin{thm}{Corollary}\label{cor:level distance 2}
-Let $p$ be a point in the interior of $X$ and $(c,c^\perp)$ a {\em rightangled hinge} at $p$, \ i.e. $c,c^\perp:[0,T]\to X$ are unit speed geodesics starting in $p$
+Let $p$ be a point in the interior of $X$ and $(c,c^\perp)$ a {\em rightangled hinge} at $p$; that is, $c,c^\perp:[0,T]\to X$ are unit speed geodesics starting in $p$
 with $\angle_p(\dot c(0),\dot c^\perp (0))=\frac{\pi}{2}$. For every $t\in[0,T]$ let
 $c^\perp_t$ be a gradient curve of the distance function to $c$ starting in $c(t)$ and lying on the same side
 of $c$ as $c^\perp$. Then there exists $\hat\delta>0$ such that for all $\delta\leq\hat\delta$ the distance between 
