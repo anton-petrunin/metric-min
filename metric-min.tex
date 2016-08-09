@@ -584,7 +584,7 @@ Note that for fixed $\eps>0$ and large $n$,
 the $\eps$ neighborhood of $z_n$ can be cut from the boundary points of $X_n$ by a curve or arbitrary small length,
 this is a contradiction.
 
-It ramins to apply Proposition~\ref{prop:disc-moore}
+It remains to apply Proposition~\ref{prop:disc-moore}
 \qeds
 
 Combining the last two statements we arrive at:
@@ -715,18 +715,19 @@ Redefine $v$ by setting $v(x)=p$.
 \begin{thm}{Lemma}\label{lem:isomtri}
 Let $W$ be a $\CAT[0]$ space which is a disc retract. Let $\Delta$ be a triangel in the euclidean plane
 and $\Delta'$ a triangle in $W$. If $f:\Delta\to \Delta'$ is a map which restricts to constant speed
-parametrizations on each side, then there is an extension $F$ of $f$ to a map between convex hulls
-$F:ch(\Delta)\to ch(\Delta')$ such that $F$ induces an isometry $\bar F:\|ch(\Delta)\|_F\to ch(\Delta')$. 
+parametrizations on each side, then it extends to a map 
+$F:ch(\Delta)\to ch(\Delta')$ between convex hulls which induces an isometry $\bar F:\|ch(\Delta)\|_F\to ch(\Delta')$. 
 \end{thm}
 
 \parit{Proof.}
-There are obious cases, namely if $\Delta'$ is either embedded or contained in a single geodesic. 
+There are obvious cases, namely if $\Delta'$ is either embedded or contained in a single geodesic. 
 For the general case we observe that if we cut $\Delta$ into two triangles $\Delta^\pm$ by a geodesic which joins a vertex to its opposite side, and if 
 the claim is true for both triangles $\Delta^+$ and $\Delta^-$, then it is also true for $\Delta$. Now let us assume that $\Delta'$ is neither embedded nor contained
 in a single geodesic. Then there is a vertex of $\Delta'$ such that the two adjacent sides have a closed nontrivial interval in common. Choose a point $p$ in the interior
 of a side of $\Delta$ which maps to an endpoint of this interval. Cut $\Delta$ into two triangles $\Delta^\pm$ by joining $p$ to its opposite vertex.
 We obtain natural maps $f^\pm:\Delta^\pm\to\Delta'$ where one of them say $f^+$ is degenerated, in the sense that its image is contained in a side of $\Delta'$, and $f^-$ has 
-a nondegenerated vertex, in the sense that the image of adjacent sides only intersect in the image of the vertex. Repeating at most two times reduces the general case to the above obvious ones.
+a nondegenerated vertex, in the sense that the image of adjacent sides only intersect in the image of the vertex. Repeating this modification at most twice,
+reduces the general case to the above obvious ones.
 \qeds
 
 
