@@ -423,84 +423,19 @@ It remains to apply Corollary~\ref{cor:planar-minimizing-graph}.
 
 \section{Compactness of planar CAT(0) spaces}
 
-We recall some terminology. Let $X$ be a connected topological space. A point $c\in X$
-is called a {\em cut point}, if $X\setminus \{c\}$ is disconnected. The set of cut points in $X$ 
-will be denoted by $cut(X)$. If $X$ is connected and $x,y\in X$ are such that no cut point in $X$
-seperates $x$ and $y$, then they are called {\em conjugate}%???
-. 
-
-For a non-cut point $p\in X$
-we define $conj(p)$ as the set of all points conjugate to $p$. A point $e\in X$ is called an {\em endpoint},
-if $conj(e)=\{e\}$. 
-The conjugacy set $conj(p)$ for non-endpoints
-are called {\em cyclic elements}. %??? STRANGE DEF, maybe set of cyclic elements, or  support of cycles
-According to \cite[IV(1.4)]{W2},
-every cyclic element is a closed set. 
-If $X$ is a 
-Peano continuum\footnote{A {\em Peano continuum} is a compact
-connected and locally connected metric space.}, then every cyclic element $conj(p)$ is {\em cyclically connected}; that is,
-any two points $x,y\in conj(p)$ lie in a Jordan curve $J\subset conj(p)$, see \cite[III(3.32)]{Wi}. 
-Any two different 
-cyclic elements $conj(p)$ and $conj(q)$ intersect at most in a single point. 
-Any point common to two 
-different cyclic elements is a cut point, see \cite[IV(1.4)]{W2}.
-
-\begin{thm}{Lemma}
-Let $X$ be a CAT(0) space. The conjugacy set for any point $p\in X$ is convex, and it is given by
-$$
-conj(p):=\{q\in X|\ (pq)\cap cut(p)=\emptyset \}.
-$$
-
-\end{thm}
-
-\parit{Proof.}
-If two points are separated by a cut point, then any path connecting those points has to go through the cut point.
-Hence the particular representation follows. Let $x,y\in conj(p)$ and $z\in cut(X)\setminus\{x,y\}$. Then a dense subset
-of the geodesic cone from $p$ over $[xy]$ is contained in the same component of $X\setminus \{z\}$ as $p$. 
-The claim follows since $conj(p)$ is closed.
-\qeds
-
-If $C$ is a locally connected continuum such that 
-each cyclic element in $C$ is homeomorphic to a circle, then $C$ is
-called a {\em boundary curve}. 
-A locally connected
-continuum $B$ is a disc retract if and only if every cyclic element in $B$ is homeomorphic to a disc,
-whose interior is open in $B$. If we remove the interiors of all cyclic elements in $B$ the remaining
-space is a boundary curve $C$. In this case we say that $B$ is bounded by $C$.
-
-
-\begin{thm}{Lemma}
- Let $X$ be a compact CAT(0) space which embeds into $\mathbb{R}^2$. Then $X$
- is homeomorphic to a disc retract.
-\end{thm}
-
-\parit{Proof.}
-Clearly $X$ is connected and locally connected. Let $\iota :X\hookrightarrow\mathbb{R}^2$ be an embedding.
-If $\iota(X)$ separates $\mathbb{R}^2$, then it would contain a Jordan curve $J$ which still separates
-$\mathbb{R}^2$. This is impossible since $J$ is contractible in $X$.
-\qeds
-
-We need Whyburn's notion of {\em regular convergence}\footnote{Our definition of regular convergence coincides with Whyburn's regular convergence relative
-to 0- and 1-cycles.}. A sequence of compact metric spaces $(K_n,d_n)$ converges regularly to a 
-metric space $(K,d)$, if they converge with respect to Gromov--Hausdorff distance and the following two conditions are fulfilled:
-\begin{itemize}
- \item[(i)] For any sequence of pairs of points $x_n,y_n\in K_n$ with $d_n(x_n,y_n)\to 0$, there is a sequence of paths $\gamma_n$
- connecting $x_n$ to $y_n$ such that $\diam(\gamma_n)\to 0$.
- \item[(ii)] For any sequence of Jordan curves $J_n\subset K_n$ with $\diam(J_n)\to 0$, there is a sequence of continuous discs $D_n\subset K_n$
- with $\partial D_n=J_n$ and $\diam D_n\to 0$. 
-\end{itemize}
-
-Note that if all spaces $K_n$ are geodesic, then condition (i) is automatically fulfilled. Moreover, if all 
-spaces $K_n$ are CAT(0), then condition (ii) is fulfilled as well because any Jordan curve of diameter $a$ in a CAT(0)
-space is contractible in a ball of radius $a$. Hence any Gromov--Hausdorff converging sequence of CAT(0) spaces is 
-regularly convergent.
-
 Let $\mathcal{K}_\ell$ be the set of isometry classes of $\CAT(0)$ metrics on a disc retract with rectifiable
 boundary curves of length at most $\ell$.
 
 
+Here is the main statement in this section.
 
-\begin{thm}{Lemma}
+\begin{thm}{Compactness lemma}\label{lem:compact}
+$\mathcal{K}_\ell$ is compact in the Gromov--Hausdorff topology.
+\end{thm}
+
+It follows immediately lemmas \ref{lem:precompact} and \ref{lem:closed} proved below.
+
+\begin{thm}{Lemma}\label{lem:precompact}
 $\mathcal{K}_\ell$ is precompact in the Gromov--Hausdorff topology.
 \end{thm}
 
@@ -543,57 +478,41 @@ see for example \cite[7.4.15]{BBI}.
 
 
 
-\begin{thm}{Lemma}
+\begin{thm}{Lemma}\label{lem:closed}
 $\mathcal{K}_\ell$ is closed in the Gromov--Hausdorff topology.
 \end{thm}
+
 \parit{Proof.}
-Let $K_n\to K$ be a Gromov--Hausdorff convergent sequence  where every $K_n$ represents an element in  $\mathcal{K}_\ell$. Then
-$K$ is a compact CAT(0) space. Let $p\in K$ be a point which is neither a cut point not an end point. We need to show that the cyclic 
-element $conj(p)$ is homeomorphic to a disc. Let $J\subset conj(p)$ be a Jordan curve with $p\in J$. Choose Jordan curves $J_n\subset K_n$
-with $J_n\to K_n$ \cite[2.2]{W1}. Then there is a unique cyclic element $C_n\subset K_n$ such that $J_n\subset C_n$. By assumption $C_n$ is homeomorphic
-to a disc. The limit $C_\infty:=\lim C_n$ is a convex subset of $K$ containing $J$. By \cite[6.3]{W1}, $C_\infty$ is a disc retract and therefore contains a
-unique cyclic element $D_\infty$ such that $J\subset D_\infty$. Since $D_\infty$ is homeomorphic to a disc, it is clear that $D_\infty\subset conj(p)$.
-
-{\it Claim:} $D_\infty=conj(p)$.
-
-\noindent If this is not the case, then there is an element $q\in conj(p)\setminus D_\infty$. Choose a point $p'\in D_\infty\setminus J$ which is surrounded 
-by $J$. Using the cyclic connectedness we find a Jordan curve $J'\subset conj(p)$ such that $p',q\in J'$. Approximate $J'$
-by Jordan curves $J_n'\subset K_n$ and the point $p'$ by points $p_n'\in K_n$. Since $p_n'$ is then surrounded by the $J_n'$, the intersection
-$J_n'\cap J_n$ contains at least two points. Consequently $J_n'$ lies in the same cyclic element as $J_n$; that is, $J_n'\subset C_n$. As
-above we conclude that there is a unique cyclic element $D_\infty'\subset C_\infty$ such that $J'\subset D_\infty'$. But 
-$J'$ intersects the interior of $D_\infty$ in the point $p'$. Hence $D_\infty=D_\infty'$, a contradiction.
-\qeds
-
-\parit{Alternative proof.}
 For each $n$, consider a boundary curve $\gamma_n\:\SS^1\to X_n$
 which is composition of the boundary curve in the disc with 
 strong deformational retract $\DD\to X_n$.
 
-Let $f_n\:F_n\to X_n$ be the majorizor of $\gamma_n$,
-that is $F_n$ is a convex figure in the plane,
-$f_n$ is a short map which is lenght preserving on the boundary and $\gamma_n$ forms the boundary curve.
+Let $f_n\:F_n\to X_n$ be the majorizor of $\gamma_n$;
+that is, $F_n$ is a convex figure in the plane,
+$f_n$ is a short map which is length preserving on the boundary and $\gamma_n$ forms the boundary curve.
 
-Consider th limit figure $F_\infty$ and the limit map $f_\infty\:F_\infty\to X_\infty$.
-Note that it is onto.
+In addition we can assume that for each $n$ the map $f_n$ is minimal in the following sense: if $f_n'\:F_n\to X_n$ is an other majorization then inequality 
+\[|f_n'(x)-f_n'(y)|_{X_n}> |f_n(x)-f_n(y)|_{X_n}\eqlbl{eq:f'>f}\]
+holds for at least one pair of points $x,y\in F_n$.
+In this case  we have
+\[\diam [f_n(\Omega)]=\diam [f_n(\partial\Omega)]\eqlbl{eq:in-the-bry}\]
+for any open set $\Omega\subset F_n$.
+Indeed if this is not the case for some $\Omega$, one can redefine the map $f_n$ so that any $x\in\Omega$ maps to the closest-point projection to $\Conv[\partial\Omega]$.
+For obtained map $f'_n$ violates \ref{eq:f'>f}.
 
-Let us remove bubbles from $f_\infty$, denote the obtained map by $f_\infty'$.
-Note that after that operation we still have $f_\infty'(F_\infty)=X_\infty$.
-Indeed, arguing by contradiction assume that $z\in X_\infty\backslash f_\infty'(F_\infty)$
-Denote by $z_n\in X_n$ be a lift of $z$.
-Note that for fixed $\eps>0$ and large $n$, 
-the $\eps$ neighborhood of $z_n$ can be cut from the boundary points of $X_n$ by a curve or arbitrary small length,
-this is a contradiction.
+
+Consider the limit figure $F_\infty$ and the limit map $f_\infty\:F_\infty\to X_\infty$.
+Note that $f_\infty$ is onto and 
+\[\diam [f_\infty(\Omega)]=\diam [f_\infty(\partial\Omega)]
+\eqlbl{eq:in-the-bry}\]
+for any open set $\Omega\subset F_\infty$.
+In particular $f_\infty$ has no bubbles.
 
 It remains to apply Proposition~\ref{prop:disc-moore}
 \qeds
 
-Combining the last two statements we arrive at:
 
-\begin{thm}{Lemma on compactness}\label{lem:compact}
-$\mathcal{K}_\ell$ is compact in the Gromov--Hausdorff topology.
-\end{thm}
-
-\section{2-dimensional case}
+\section{Two-dimensional case}
 
 Let $W$ be a metric space.
 A continuous map $s\:\DD\to W$ is called \emph{saddle} if for any closed convex subset $K\subset W$ holds that
@@ -641,27 +560,34 @@ However, Shefel's proof was written rather tight, so we have thrown in few detai
 In the proof we will need the following lemmas.
 
 Note that since $W$ is a disc retract, its boundary $\partial W$ is compact. Therefore
-the space $\Gamma$ of geodesic segments with endpoints on $\partial W$ is compact as well.
+the space $\Geod(W)$ of geodesic segments with endpoints on $\partial W$ is compact as well.
 
 \begin{thm}{Lemma}\label{thm:saddle-2D}
-Let $W$ be a $\CAT[0]$ space which is a disc retract. Furthermore, let $\mathcal{G}$ be a countable dense subset 
-of $\Gamma$.
-If $s\:\DD\to W$ is a map such that for any element $g$ in $\mathcal{G}$ every 
-component of $\DD\backslash s^{-1}(g)$ intersects the boundary $\partial\DD$,
-then $s$ is saddle.
+Let $W$ be a $\CAT[0]$ space which is a disc retract. 
+Furthermore, let $\mathcal{G}$ be a countable dense subset 
+of $\Geod(W)$.
+Assume $s\:\DD\to W$ is a map such that for any element $g$ in $\mathcal{G}$ every 
+component of $\DD\backslash s^{-1}(g)$ intersects the boundary $\partial\DD$.
+Then $s$ is saddle.
 \end{thm}
 
-\parit{Proof.} Assume that there is a closed convex set $K$ in $W$ such that 
-$\DD\backslash s^{-1}(g)$ has a component $U$ which is disjoint from the boundary $\partial\DD$. Note that 
-$U$ is open. Pick a point $p$ in $U$. Denote $\overline{s(p)}$ the closest point projection of $s(p)$ onto $K$.
-It is enough to find an element in $\mathcal{G}$ which seperates $s(p)$ and $\overline{s(p)}$.
-If the geodesic segment $s(p)\overline{s(p)}$ contains an interior point $x$ where the link $\Sigma_x W$ consists of 
-more than two points, then we are done. On the other hand, if we do not find such a point then any point on $s(p)\overline{s(p)}$
-is a cut point, in particular $s(p)\overline{s(p)}$ is contained in $\partial W$. 
-Since $K$ intersects the image of $s$ the segment $s(p)\overline{s(p)}$ has to lie entirely in the image of $s$.
-But then a subinterval of $s(p)\overline{s(p)}$ seperates $s(p)$ and $\overline{s(p)}$ and by density we can find an element in $\mathcal{G}$ with the same property.
-that its inverse image separates $p$ from the boundary $\partial \DD$.
-This contradicts the assumptions.
+\parit{Proof.} 
+Assume that there is a closed convex set $K$ in $W$ such that 
+$\DD\backslash s^{-1}(g)$ has a component $U$ which is disjoint from the boundary $\partial\DD$. 
+Note that $U$ is open. 
+Pick a point $p$ in $U$. 
+It is sufficient to find an element in $\mathcal{G}$ which separates $s(p)$ and $K$.
+
+Note that any geodesic in $W$ extends to a geodesic in $\Geod(W)$.
+Indeed ???
+
+Fix a point $z\notin K$ which lies on a geodesic from $s(p)$ to a point on $K$.
+Since $K$ is convex,
+an oriented geodesic passing through $z$ may intersect $K$ either before $z$ or after and these two sets of geodesics, say $B$ and $A$, are closed.
+
+The set of $\Geod(W)$ passing through $z$ is connected ???.
+Therefore there is a geodesic $\gamma$ which neither in $B$ nor in $A$.
+It remains to choose a geodesic in $\mathcal{G}$ which is sufficiently close to $\gamma$.
 \qeds
 
 \begin{thm}{Cutting hat lemma}\label{lem:cutting-hat}
@@ -757,8 +683,8 @@ Note that $\mathcal{S}_N$ is compact in Gromov--Hausdorff topology (BY MODIFIED 
 
 From above, $\|\DD\|_u$ belongs to $\mathcal{S}_N$.  
 
-Note that the space $\Gamma$ of all geodesics in $W$ with endpoints on $\partial W$ is compact. 
-Fix a dense sequence of geodesics $\gamma_1,\gamma_2,\dots$ in $\Gamma$.
+Note that the space $\Geod(W)$ of all geodesics in $W$ with endpoints on $\partial W$ is compact. 
+Fix a dense sequence of geodesics $\gamma_1,\gamma_2,\dots$ in $\Geod(W)$.
 The geodesics form convex sets in $W$, so we can apply the Cutting hat lemma \ref{lem:cutting-hat}
 recursively.
 We obtain a sequence of maps, say $u=u_0,u_1,u_2,\dots$ such that 
@@ -821,14 +747,15 @@ in the case that $\partial |\DD|_f$ formed by a rectifiable simple closed curve.
 
 Indeed, fix a triangle $\triangle$ in $\|\DD\|_f$.
 If the above case has been proven, 
-then closure of each connected open coponent bounded by $\triangle$ is $\CAT[0]$.
+then closure of each connected open component bounded by $\triangle$ is $\CAT[0]$.
 In particular $\triangle$ is thin.
 Since $\triangle$ is arbitrary, the statement follows.
 
 Given a finite set $F\subset \DD$,
 denote by $\mathcal{W}_F$
 the set of isometry classes of spaces $W$ which meet the conditions of the Key Lemma~\ref{lem:key}
-for $F$.
+for $F$;
+according to lemma $\mathcal{W}_F\ne\emptyset$
 Note that for two finite sets $F\subset F'$ in $\DD$,
 we have $\mathcal{W}_F\supset \mathcal{W}_{F'}$.
 
@@ -853,13 +780,13 @@ Set
 
 Note that $p$ is short.
 Since $\{x_k\}$ is dense in $\DD$,
-the map $p$ can be extended to whole $\DD$ 
+the map $p$ can be extended to whole disc $\DD$ 
 as a short map.
 The obtained map will be still denoted as $p$.
 
 Summarizing, the space $W$ is $\CAT[0]$ space 
 homeomorphic to a planar continuum.
-By construction, therere are two short maps 
+By construction, there are two short maps 
 $\|\DD\|_s\xrightarrow{p} W \xrightarrow{q} Y$
 such that 
 \[q\circ p|_{\partial\DD}=s|_{\partial\DD}.\]
@@ -876,7 +803,9 @@ is injective.
 In particular $\|\DD\|_s$ is isometric to $W$.
 Unfortunately the proof requres some regularity of $\|\DD\|_s$ which only follows from Shefel's theorem. 
 
-Here is \emph{not a proof} of the statement above, try to guess where is the cheating.
+Here is \emph{not a proof} of the statement above.
+We cheat in the use of order; 
+it is hard (if at all possible) to fix its precise meaning.
 
 \parit{Not a proof.} Assume  $w=p(x)=p(y)$ for distinct points $x,y\in\|\DD\|_s$
 Note that  $w$ lies in the interior of $W$.
@@ -889,7 +818,7 @@ We can assume that the points $a,x,y,b$ appear in the same order on $p^{-1}(\gam
 Note that there is a continuous one parameter family of geodesics $\gamma_t$ passing through $w$ with the ends at $\partial W$
 such that $\gamma=\gamma_0$ and $\gamma_1$ is $\gamma$ with reversed parametrization.
 Note that the order of $x$ and $y$ on $p^{-1}(\gamma_t)$ does not change in $t$.
-On the other hand the order on $\gamma_0$ and on $\gamma_1$ are opposite, a contradiction.\qeds
+On the other hand the order on $\gamma_0$ and on $\gamma_1$ are opposite, a contradiction.\qeds 
 
 \section{Energy of Sobolev maps}
 
@@ -1199,7 +1128,8 @@ $\mathcal{H}^1(\Sigma_y Y)\geq 4\pi$. Let $\hat N_r^+$ be the inverse image of $
 under $\varphi$. According to Lemma \ref{lem:inverse image estimate}, $\varphi|_{\hat N_r^+}$ 
 is injective and therefore a homeomorphism onto $N_r^+$. 
 Denote $f$ the distance function of $[pq]$. Then, in the notation above, $f^{-1}(t)=\gamma_t$.
-Set $\Gamma_t:=\varphi^{-1}(\gamma_t)$. Then $\Gamma_t$ is a continuous arc for every $t\leq r$.
+Set $\Gamma_t:=\varphi^{-1}(\gamma_t)$. 
+Then $\Gamma_t$ is a continuous arc for every $t\leq r$.
 By the coarea formula we obtain
 $$
 \area(N_r^+)=\int_0^\delta \mathcal{H}^1(\gamma_t)dt
