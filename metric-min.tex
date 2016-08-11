@@ -324,14 +324,22 @@ $f\:\DD\to X$ be a continuous map.
 We say that $f$ is a \emph{no-bubble map}
 if for any point $p\in X$ every connected component of the complement $\DD\backslash f^{-1}\{p\}$ contains a point from $\partial \DD$.
 
+The following topological notion will be important throughout the text.
+
+\begin{thm}{Definition}
+A compact simply connected topological space which admits an embedding into the plane is 
+called a \emph{disc retract}. 
+\end{thm}
+
+
+
 
 We will need the following disc version of Moore's theorem proved in \cite{moore}.
 
 \begin{thm}{Proposition}\label{prop:disc-moore}
 Let $X$ be a Hausdorff space and
 $f\:\DD\to X$ be a no-bubble map.
-Then $|\DD|_f$ is homeomorphic to a \emph{disc retract};
-that is, $|\DD|_f$ is a compact simply connected space which admits an embedding into the plane.
+Then $|\DD|_f$ is homeomorphic to a disc retract.
 \end{thm}
 
 
@@ -562,6 +570,31 @@ In the proof we will need the following lemmas.
 Note that since $W$ is a disc retract, its boundary $\partial W$ is compact. Therefore
 the space $\Geod(W)$ of geodesic segments with endpoints on $\partial W$ is compact as well.
 
+\begin{thm}{Lemma}\label{lem:sepbygeo}
+Let $W$ be a $\CAT[0]$  disc retract. If $C\subset W$ is a closed convex subset and $p$ is a
+point in $W-C$, then there is a (possibly degenerated) geodesic $\gamma\in\Geod(W)$ which separates $p$ and $C$. 
+In particular, $\gamma$ is disjoint from $p$ and $C$.
+\end{thm}
+
+\parit{Proof.}
+If there is a cut point in $W$ which separates $p$ and $C$, then we are done because every cut point of $W$
+is contained in the boundary of $W$. So let us assume that this is not the case.
+Let $\bar p$ be the nearest point projection of $p$ onto $C$. 
+
+Denote $m$ the midpoint of the segment $p\bar p$.
+Since $m$ is not a cut point, the link $\Sigma_m W$ is connected. Hence there is a direction $v\in \Sigma_m W$
+with angle equal to $\frac{\pi}{2}$ to the geodesic $m\bar p$. Let $(v_k)$ be a sequence of directions with angle 
+less or equal to $\frac{\pi}{2}$, converging to
+$v$ and such that there are geodesics $\gamma_k\in\Geod(W)$ with $\dot\gamma_k(0)=v_k$. If some $\gamma_k$
+is disjoint from $C$, then we are done. Else, all
+geodesics $\gamma_k$ intersect $C$. Necessarily, they intersect for positive times. Therefore the $\gamma_k$ have uniform length
+and subconverge to a geodesic $\gamma_\infty$ starting in the direction $v$. But then an extension of $\gamma_\infty$ to an element 
+of $\Geod(W)$ separates $p$ from $C$.
+\qeds
+
+
+
+
 \begin{thm}{Lemma}\label{lem:saddle-crit}
 Let $W$ be a $\CAT[0]$ space which is a disc retract. 
 Furthermore, let $\mathcal{G}$ be a countable dense subset 
@@ -576,18 +609,8 @@ Assume that there is a closed convex set $K$ in $W$ such that
 $\DD\backslash s^{-1}(g)$ has a component $U$ which is disjoint from the boundary $\partial\DD$. 
 Note that $U$ is open. 
 Pick a point $p$ in $U$. 
-It is sufficient to find an element in $\mathcal{G}$ which separates $s(p)$ and $K$.
-
-Note that any geodesic in $W$ extends to a geodesic in $\Geod(W)$.
-Indeed ???
-
-Fix a point $z\notin K$ which lies on a geodesic from $s(p)$ to a point on $K$.
-Since $K$ is convex,
-an oriented geodesic passing through $z$ may intersect $K$ either before $z$ or after and these two sets of geodesics, say $B$ and $A$, are closed.
-
-The set of $\Geod(W)$ passing through $z$ is connected ???.
-Therefore there is a geodesic $\gamma$ which neither in $B$ nor in $A$.
-It remains to choose a geodesic in $\mathcal{G}$ which is sufficiently close to $\gamma$.
+It is sufficient to find an element in $\mathcal{G}$ which separates $s(p)$ and $K$. By Lemma \ref{lem:sepbygeo}
+there is an element in $\Geod(W)$ which separates $s(p)$ and $K$ and since $\mathcal{G}$ is dense we are done.
 \qeds
 
 \begin{thm}{Cutting hat lemma}\label{lem:cutting-hat}
@@ -677,13 +700,13 @@ It follows that the space $\|\DD\|_u$ can be reconstructed by gluing solid geode
 Denote by $N$ the number of triangles in $\tau$.
 Consider the class of metric spaces $\mathcal{S}_N$ 
 which are homeomorphic to a disc retract
-and can be constructed by gluing at most $N$ convex sets in $W$ 
-along convex subsets.
+and can be covered by at most $N$ isometrically embedded convex subsets of $W$.
 Note that $\mathcal{S}_N$ is compact in Gromov--Hausdorff topology.
 Indeed, any limit space is clearly covered by at most $N$ convex subsets of 
 $W$ and its homeomorphic to a disc retract by Lemma \ref{lem:closed}.
 
-From above, $\|\DD\|_u$ belongs to $\mathcal{S}_N$.  
+From above, $\|\DD\|_u$ decomposes into $N$ convex sets which are mapped isometrically by the induced map
+$\bar u$, in particular, $\|\DD\|_u$ belongs to $\mathcal{S}_N$.  
 
 Recall that the space $\Geod(W)$ of all geodesics in $W$ with endpoints on $\partial W$ is compact. 
 Fix a dense sequence of geodesics $\mathcal{G}=\{\gamma_1,\gamma_2,\ldots\}$ in $\Geod(W)$.
@@ -694,8 +717,10 @@ We obtain a sequence of maps, say $u=u_0,u_1,u_2,\ldots$ such that
 for any $x$.
 
 Furthermore, each space $\|\DD\|_{u_n}$
-belongs to $\mathcal{S}_N$.
-Denote by $\bar u_n\:\|\DD\|_{u_n}\to W$ the induced map.
+belongs to $\mathcal{S}_N$ and has a decomposition into at most $N$ convex sets which are mapped isometrically by 
+the induced map $\bar u_n\:\|\DD\|_{u_n}\to W$. There is a more precise description, namely each of the convex sets is 
+obtained from one of the triangles in $\tau$ by applying cuts along the geodesics $\gamma_k$. In particular, the decompositions
+are nested.
 
 Since $\mathcal{S}_N$ is compact, we can pass to a partial limit of $\|\DD\|_{u_n}$ as $n\to\infty$,
 say $Q_\eps$.
@@ -706,11 +731,14 @@ Denote by $u_\eps\:Q_\eps\to W$ the limit map.
 \end{thm}
 
 \parit{Proof.}
-Assume that $u_\eps$ is not saddle. Then there is $\delta>0$ and a disc $D$ in $Q_\eps$, a point $p\in\int D$ and a geodesic $\gamma$ in $W$ such that
-$u_\eps(\partial D)$ and $u_\eps(p)$ lie in different components of $W-\gamma$ and at distance larger than $\delta$ from $\gamma$????
-It follows that the same is true for $u_n$ if $n$ is larger than some number $M$ but where the distances are only bounded below by $\frac{\delta}{2}$.
-By density of $\mathcal{G}$, there is a geodesic $\gamma_k$ with $k>M$ which has distance less than $\frac{\delta}{2}$ from $\gamma$. This is a contradiction because
-by construction $\gamma_k$ cannot cut a hat from $u_k$.
+Assume that $u_\eps$ is not saddle. Then there is a geodesic $\gamma\in\Geod(W)$ such that $\DD-u_\eps^{-1}(\gamma)$
+has a component $U$ which is disjoint from $\partial \DD$. Choose a point $p$ in $U$. By Lemma \ref{lem:sepbygeo}, there is  
+a geodesic $\gamma'\in\Geod(W)$ which separates $u_\eps(p)$ and $\gamma$.
+Then there is $\delta>0$ and a disc $D$ in $U$ such that
+$u_\eps(\partial D)$ and $u_\eps(p)$ lie in different components of $W-\gamma'$ and moreover at distance larger than $\delta$ from $\gamma'$.
+The same is true for $u_n$ if $n$ is larger than some number $M$, but where the distances are only bounded below by $\frac{\delta}{2}$.
+By density of $\mathcal{G}$, there is a geodesic $\gamma_k$ with $k>M$ which has distance less than $\frac{\delta}{2}$ from $\gamma'$. 
+This is a contradiction because, by construction, $\gamma_k$ cannot cut a hat from $u_k$.
 \qeds
 
 Observe that the convex sets in the decomposition of $Q_\eps$ are glued along geodesics.
