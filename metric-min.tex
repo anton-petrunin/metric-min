@@ -93,7 +93,7 @@ and $\|{*}-{*}\|_f$ on $X$ will be denoted as $|X|_f$ and $\|X\|_f$ correspondin
 \parbf{Remarks.}
 \begin{itemize}
 \item If $f$ is injective, and the image $f(X)$ is compact then 
-the space $\|X\|_f$ is isometric to the image $f(X)$ in $Y$ equipped with induced intrinsic metric.
+the space $\|X\|_f$ is isometric to the image $f(X)$ in $Y$ equipped with induced intrinsic metric. 
 \item Both pseudometrics $|{*}-{*}|_f$ and  $\|{*}-{*}\|_f$
 define the same equivalence classes on $X$;
 that is,
@@ -562,11 +562,11 @@ In the proof we will need the following lemmas.
 Note that since $W$ is a disc retract, its boundary $\partial W$ is compact. Therefore
 the space $\Geod(W)$ of geodesic segments with endpoints on $\partial W$ is compact as well.
 
-\begin{thm}{Lemma}\label{thm:saddle-2D}
+\begin{thm}{Lemma}\label{lem:saddle-crit}
 Let $W$ be a $\CAT[0]$ space which is a disc retract. 
 Furthermore, let $\mathcal{G}$ be a countable dense subset 
 of $\Geod(W)$.
-Assume $s\:\DD\to W$ is a map such that for any element $g$ in $\mathcal{G}$ every 
+Assume $s\:\DD\to W$ is saddle with respect to $\mathcal{G}$, i.e. for any element $g$ in $\mathcal{G}$ every 
 component of $\DD\backslash s^{-1}(g)$ intersects the boundary $\partial\DD$.
 Then $s$ is saddle.
 \end{thm}
@@ -679,35 +679,42 @@ Consider the class of metric spaces $\mathcal{S}_N$
 which are homeomorphic to a disc retract
 and can be constructed by gluing at most $N$ convex sets in $W$ 
 along convex subsets.
-Note that $\mathcal{S}_N$ is compact in Gromov--Hausdorff topology (BY MODIFIED COMPACTNESS LEMMA?).
+Note that $\mathcal{S}_N$ is compact in Gromov--Hausdorff topology.
+Indeed, any limit space is clearly covered by at most $N$ convex subsets of 
+$W$ and its homeomorphic to a disc retract by Lemma \ref{lem:closed}.
 
 From above, $\|\DD\|_u$ belongs to $\mathcal{S}_N$.  
 
-Note that the space $\Geod(W)$ of all geodesics in $W$ with endpoints on $\partial W$ is compact. 
-Fix a dense sequence of geodesics $\gamma_1,\gamma_2,\dots$ in $\Geod(W)$.
+Recall that the space $\Geod(W)$ of all geodesics in $W$ with endpoints on $\partial W$ is compact. 
+Fix a dense sequence of geodesics $\mathcal{G}=\{\gamma_1,\gamma_2,\ldots\}$ in $\Geod(W)$.
 The geodesics form convex sets in $W$, so we can apply the Cutting hat lemma \ref{lem:cutting-hat}
 recursively.
-We obtain a sequence of maps, say $u=u_0,u_1,u_2,\dots$ such that 
+We obtain a sequence of maps, say $u=u_0,u_1,u_2,\ldots$ such that 
 \[|u_n(x)-s(x)|<\eps\]
 for any $x$.
 
 Furthermore, each space $\|\DD\|_{u_n}$
 belongs to $\mathcal{S}_N$.
-Denote by $w_n\:\|\DD\|_{u_n}\to W$ the projection.
+Denote by $\bar u_n\:\|\DD\|_{u_n}\to W$ the induced map.
 
-Since $\mathcal{S}_N$ is compact, we can pass to its partial limit of $\|\DD\|_{u_n}$ as $n\to\infty$,
+Since $\mathcal{S}_N$ is compact, we can pass to a partial limit of $\|\DD\|_{u_n}$ as $n\to\infty$,
 say $Q_\eps$.
-Denote by $w_\eps\:Q_\eps\to W$ the limit map.
+Denote by $u_\eps\:Q_\eps\to W$ the limit map.
 
-Note that the projection $w_\eps\:Q_\eps\to W$ is saddle.
-Otherwise we could cut a hat from $w_\eps$ along some geodesic $\gamma$.
-Ther latter contradicts the construction.
-Indeed, there should be a point, say $y$ in one of the convex sets in the decomposition of $Q_\eps$ which disappears after cutting along $\gamma$.
-Since the sequence $\gamma_n$ is dense in the space of all geodesics
-we can choose a geodesic $\gamma_n$ which cuts a hat with $y$ inside, a contradiction.
+\begin{thm}{Sublemma}
+ The map $u_\eps$ is saddle.
+\end{thm}
+
+\parit{Proof.}
+Assume that $u_\eps$ is not saddle. Then there is $\delta>0$ and a disc $D$ in $Q_\eps$, a point $p\in\int D$ and a geodesic $\gamma$ in $W$ such that
+$u_\eps(\partial D)$ and $u_\eps(p)$ lie in different components of $W-\gamma$ and at distance larger than $\delta$ from $\gamma$????
+It follows that the same is true for $u_n$ if $n$ is larger than some number $M$ but where the distances are only bounded below by $\frac{\delta}{2}$.
+By density of $\mathcal{G}$, there is a geodesic $\gamma_k$ with $k>M$ which has distance less than $\frac{\delta}{2}$ from $\gamma$. This is a contradiction because
+by construction $\gamma_k$ cannot cut a hat from $u_k$.
+\qeds
 
 Observe that the convex sets in the decomposition of $Q_\eps$ are glued along geodesics.
-If not, a hat could be cut from the map $w_\eps$.
+If not, a hat could be cut from the map $w_\eps$????????
 
 Note that the space $Q_\eps$ is $\CAT[0]$. 
 Indeed it is glued from convex figures in $\CAT[0]$ spaces along geodesics,
