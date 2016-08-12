@@ -561,9 +561,9 @@ Assume $s\:\DD\to W$ is a saddle map.
 Then $\|\DD\|_s$ is $\CAT[0]$.
 \end{thm}
 
-We almost repeat the proof of Shefel in \cite{shefel-2D}.
-The main difference is instead of ``plane'' one has to say ``$W$''.
-However, Shefel's proof was written rather tight, so we have thrown in few details.
+We follow the rough outline of the proof of Shefel in \cite{shefel-2D}.
+However, Shefel's proof was written rather tight and generalizing from the plane to a
+disc retract come with some additional complications, so we have decided to provide all details.
 
 In the proof we will need the following lemmas.
 
@@ -580,14 +580,13 @@ In particular, $\gamma$ is disjoint from $p$ and $C$.
 If there is a cut point in $W$ which separates $p$ and $C$, then we are done because every cut point of $W$
 is contained in the boundary of $W$. So let us assume that this is not the case.
 Let $\bar p$ be the nearest point projection of $p$ onto $C$. 
-
-Denote $m$ the midpoint of the segment $p\bar p$.
-Since $m$ is not a cut point, the link $\Sigma_m W$ is connected. Hence there is a direction $v\in \Sigma_m W$
-with angle equal to $\frac{\pi}{2}$ to the geodesic $m\bar p$. Let $(v_k)$ be a sequence of directions with angle 
-less or equal to $\frac{\pi}{2}$, converging to
+Choose a point $z$ on the segment $p\bar p$ such that the angle between $zp$ and $z\bar p$ is less than $\frac{5\pi}{4}$.
+Since $z$ is not a cut point, the link $\Sigma_z W$ is connected. Hence there is a direction $v\in \Sigma_z W$
+which encloses an angle of $\frac{\pi}{2}$ with the geodesic $z\bar p$. Let $(v_k)$ be a sequence of directions with angles
+between $\frac{\pi}{4}$ and $\frac{\pi}{2}$, converging to
 $v$ and such that there are geodesics $\gamma_k\in\Geod(W)$ with $\dot\gamma_k(0)=v_k$. If some $\gamma_k$
-is disjoint from $C$, then we are done. Else, all
-geodesics $\gamma_k$ intersect $C$. Necessarily, they intersect for positive times. Therefore the $\gamma_k$ have uniform length
+is disjoint from $C$, then, by the assumptions on the angles, it is also disjoint form $p$ and we are done. Else, all
+geodesics $\gamma_k$ intersect $C$. Necessarily, the intersects have to occur for positive times. Therefore, the $\gamma_k$ have uniform length
 and subconverge to a geodesic $\gamma_\infty$ starting in the direction $v$. But then an extension of $\gamma_\infty$ to an element 
 of $\Geod(W)$ separates $p$ from $C$.
 \qeds
@@ -679,6 +678,31 @@ a nondegenerated vertex, in the sense that the image of adjacent sides only inte
 reduces the general case to the above obvious ones.
 \qeds
 
+\begin{thm}{Lemma}\label{lem:puzzle-compact}
+ We $W$ be a CAT[0] disc retract and fix a number $N$. Consider the class of metric spaces $\mathcal{S}_N$ 
+which are homeomorphic to a disc retract
+and can be covered by at most $N$ closed convex subsets of $W$.
+Then $\mathcal{S}_N$ is compact in Gromov--Hausdorff topology.
+\end{thm}
+
+\parit{Proof.}
+$\mathcal{S}_N$ is precompact by \cite[7.4.15]{BBI}. So let $Z$ be a limit space. Clearly, $Z$
+is covered by at most $N$ convex subsets of 
+$W$ and by Lemma \ref{lem:closed} it is homeomorphic to a disc retract.
+\qeds
+
+\begin{thm}{Lemma}\label{lem:proj-continuous}
+Let $X$ be a metric space and $u:\DD\to X$ a continuous map. Denote by $\pi:\DD\to \|\DD\|_u$ the natrual projection and
+by $\bar u:\|\DD\|_u\to X$ the induced map. Assume that $\DD$ has a decomposition $\DD=\bigcup_{n=1}^N C_n$ into a finite 
+number of sets such that $\bar u$ embeds each $\pi(C_n)$ isometrically as a closed subset into $X$. Then $\pi$
+is continuous.
+\end{thm}
+
+\parit{Proof.}
+Let $x_k\to x$ be a converging sequence in $\DD$. After passing to a subsequence we may assume that all $x_k$
+are contained in a single set $C_n$. By assumptions $u(x_k)\to u(x)\in u(C_n)=\bar u\circ \pi (C_n)$. 
+Since $\bar u$ restricts to an isometry on $\pi(C_n)$, the claim follows.
+\qeds
 
 \parit{Proof of Shefel's theorem \ref{thm:shefel-2D}.}
 Fix a fine triangulation $\tau$ of $\DD$.
@@ -693,19 +717,8 @@ for any $x\in\DD$.
 
 Note that the image of each triangle $\triangle$
 is the closed region bounded by the geodesic triangle in $W$ with the corresponding vertices.
-Moreover,  $\|\triangle\|_u$ is isometric to the image $u(\triangle)$ by construction.
-
-It follows that the space $\|\DD\|_u$ can be reconstructed by gluing solid geodesic triangles in $W$ along convex subsets.
-
-Denote by $N$ the number of triangles in $\tau$.
-Consider the class of metric spaces $\mathcal{S}_N$ 
-which are homeomorphic to a disc retract
-and can be covered by at most $N$ isometrically embedded convex subsets of $W$.
-Note that $\mathcal{S}_N$ is compact in Gromov--Hausdorff topology.
-Indeed, any limit space is clearly covered by at most $N$ convex subsets of 
-$W$ and its homeomorphic to a disc retract by Lemma \ref{lem:closed}.
-
-From above, $\|\DD\|_u$ decomposes into $N$ convex sets which are mapped isometrically by the induced map
+Moreover,  $\|\triangle\|_u$ is isometric to the image $u(\triangle)$ by Lemma \ref{lem:isomtri}.
+Denote by $N$ the number of triangles in $\tau$. Then, $\|\DD\|_u$ decomposes into $N$ convex sets which are mapped isometrically by the induced map
 $\bar u$, in particular, $\|\DD\|_u$ belongs to $\mathcal{S}_N$.  
 
 Recall that the space $\Geod(W)$ of all geodesics in $W$ with endpoints on $\partial W$ is compact. 
@@ -716,6 +729,9 @@ We obtain a sequence of maps, say $u=u_0,u_1,u_2,\ldots$ such that
 \[|u_n(x)-s(x)|<\eps\]
 for any $x$.
 
+
+
+
 Furthermore, each space $\|\DD\|_{u_n}$
 belongs to $\mathcal{S}_N$ and has a decomposition into at most $N$ convex sets which are mapped isometrically by 
 the induced map $\bar u_n\:\|\DD\|_{u_n}\to W$. There is a more precise description, namely each of the convex sets is 
@@ -724,46 +740,57 @@ are nested.
 
 Since $\mathcal{S}_N$ is compact, we can pass to a partial limit of $\|\DD\|_{u_n}$ as $n\to\infty$,
 say $Q_\eps$.
-Denote by $u_\eps\:Q_\eps\to W$ the limit map.
+Denote by $w_\eps\:Q_\eps\to W$ the limit of the short maps $\bar u_n$.
 
 \begin{thm}{Sublemma}
- The map $u_\eps$ is saddle.
+ The map $w_\eps$ is saddle.
 \end{thm}
 
 \parit{Proof.}
-Assume that $u_\eps$ is not saddle. Then there is a geodesic $\gamma\in\Geod(W)$ such that $\DD-u_\eps^{-1}(\gamma)$
+Assume that $w_\eps$ is not saddle. Then there is a geodesic $\gamma\in\Geod(W)$ such that $\DD-w_\eps^{-1}(\gamma)$
 has a component $U$ which is disjoint from $\partial \DD$. Choose a point $p$ in $U$. By Lemma \ref{lem:sepbygeo}, there is  
-a geodesic $\gamma'\in\Geod(W)$ which separates $u_\eps(p)$ and $\gamma$.
-Then there is $\delta>0$ and a disc $D$ in $U$ such that
-$u_\eps(\partial D)$ and $u_\eps(p)$ lie in different components of $W-\gamma'$ and moreover at distance larger than $\delta$ from $\gamma'$.
-The same is true for $u_n$ if $n$ is larger than some number $M$, but where the distances are only bounded below by $\frac{\delta}{2}$.
-By density of $\mathcal{G}$, there is a geodesic $\gamma_k$ with $k>M$ which has distance less than $\frac{\delta}{2}$ from $\gamma'$. 
+a geodesic $\gamma'\in\Geod(W)$ which separates $w_\eps(p)$ and $\gamma$.
+Then there exists a disc $D$ in $U$ such that
+$w_\eps(\partial D)$ and $w_\eps(p)$ lie in different components of $W-\gamma'$. Choose $\delta>0$ 
+such that the distance from $\gamma'$ of $w_\eps(\partial D)$ and $w_\eps(p)$ is larger than $\delta$.
+Then there is a natural number $M$ such that the distance from $\gamma'$ of $\bar u_n(\partial D_n)$ and $\bar u_n(p_n)$ is larger than $\frac{\delta}{2}$
+where $D_n$ and $p_n$ are lifts of $D$ respectively $p$.
+By density of $\mathcal{G}$, there is a geodesic $\gamma_k\in \mathcal{G}$ with $k>M$ which has distance less than $\frac{\delta}{2}$ from $\gamma'$. 
+Hence $\bar u_k^{-1}(\gamma')$ separates $p_k$ from the boundary. By Lemma \ref{lem:proj-continuous}, the projection $\pi_k:\DD\to \|\DD\|_{u_k}$ is continuous
+and therefore $u_k^{-1}(\gamma')$ separates some lift $\hat p_k$ of $p_k$ from the boundary.
 This is a contradiction because, by construction, $\gamma_k$ cannot cut a hat from $u_k$.
 \qeds
 
-Observe that the convex sets in the decomposition of $Q_\eps$ are glued along geodesics.
-If not, a hat could be cut from the map $w_\eps$????????
+\begin{thm}{Sublemma}
+The space $Q_\eps$ is $\CAT[0]$. 
+\end{thm}
 
-Note that the space $Q_\eps$ is $\CAT[0]$. 
-Indeed it is glued from convex figures in $\CAT[0]$ spaces along geodesics,
-so we only need to check if the total angle around an interior vertex, say $z\in Q_\eps$ is at least $2\cdot\pi$.
-If the latter does not hold then 
-$w_\eps(z)\notin\Conv [w_\eps (\partial\Omega)]$
-for a small neighborhood $\Omega\ni w$ in $Q_\eps$;
-that is one could cut a hat from $Q_\eps$ with $z$ in it.
-(Compare with the proof of Corollary~\ref{cor:planar-minimizing-graph}.)
+\parit{Proof.}
+It is enough to show that any point in the interior of $Q_\eps$ has a CAT[0] neighborhood.
+We first show that the total angle around any such point, say $z\in Q_\eps$ is at least $2\cdot\pi$.
+Since the decompositions of $\|\DD\|_{u_n}$ into convex subset of $W$ are nested for varying $n$, they
+induce such unique such limit decomposition of $Q_\eps$. Moreover, $w_\eps$ restricts to an isometry on each 
+of the convex sets occuring in this decomposition. Therefore, $w_\eps$ is a local radial isometry.
+If the total angle at $z$ is too small, then $w_\eps(z)\notin\Conv [w_\eps (\partial\Omega)]$
+for a small neighborhood $\Omega\ni w$ in $Q_\eps$. By Lemma \ref{lem:sepbygeo} we could cut a hat from $w_\eps$
+contradicting that $w_\eps$ is saddle.
+To conclude that $z$ has a CAT[0] neighborhood, we first cut a small ball around $z$ into to halves using a geodesic through $z$.
+Next observe that for a small enough radius we can cut each of this halves into sectors which are contained in a single convex set
+from our decomposition. The claim follows from Reshetnyak's gluing theorem.
+\qeds
 
-Assume that the boundary of $\|\DD\|_s$ is rectifiable.
-By Lemma on compactness~\ref{lem:compact},
+
+Now, assume that the boundary of $\|\DD\|_s$ is rectifiable.
+By the Lemma on compactness~\ref{lem:compact},
 we can pass to a partial limit, say $Q_0$, of $Q_\eps$ as $\eps\to 0$ and denote $w_0\:Q_0\to W$ the limit map.
 By construction, $Q_0$ is a $\CAT[0]$ disc retract which majorizes $\|\DD\|_s$,
 that is the limit map lifts to a short map $Q_0\to \|\DD\|_s$ which maps $\partial Q_0$ onto  $\partial \|\DD\|_s$ in a length-preserving way.
 
-Since $\partial |\DD\|_0$ is a $\CAT[0]$ space, its boundary can be majorized by a convex figure in the plane.
+Since $Q_0$ is a $\CAT[0]$ space, its boundary can be majorized by a convex figure in the plane.
 Hence the same holds for $\|\DD\|_s$.
 
-The same argument can be repeated for all discs retracts in $\|\DD\|_s$ with rectifiable boundary, in particular for all solid triangles in $\|\DD\|_s$.
-Existance of majorization implies that all triangles in $\|\DD\|_s$ are thin, that is $\|\DD\|_s$ is $\CAT[0]$.
+The same argument can be repeated for all disc retracts in $\|\DD\|_s$ with rectifiable boundary, in particular for all solid triangles in $\|\DD\|_s$.
+Existence of majorization implies that all triangles in $\|\DD\|_s$ are thin, that is $\|\DD\|_s$ is $\CAT[0]$.
 \qeds
 
 \section{Main theorem}
@@ -778,9 +805,9 @@ Then $\|\DD\|_s$ is a $\CAT[0]$ space.
 
 \parit{Proof of Main theorem.}
 Note that it is sufficient to prove the theorem 
-in the case that $\partial |\DD|_f$ formed by a rectifiable simple closed curve.
+in the case that $\partial \|\DD\|_s$ formed by a rectifiable simple closed curve.
 
-Indeed, fix a triangle $\triangle$ in $\|\DD\|_f$.
+Indeed, fix a triangle $\triangle$ in $\|\DD\|_s$. HOW IS IT GEODESIC?
 If the above case has been proven, 
 then closure of each connected open component bounded by $\triangle$ is $\CAT[0]$.
 In particular $\triangle$ is thin.
@@ -799,10 +826,10 @@ Therefore
 \[\mathcal{W}
 =
 \bigcap_{F}\mathcal{W}_F\ne \emptyset\]
-where the intersection is taken over all finite subsets $F$ in $\DD$.
+where the intersection is taken over all finite subsets $F$ in $\DD$. ALL? OR NESTED SEQUENCE EXHAUSTING A DENSE SET  
 
 Fix a space $W$ from $\mathcal{W}$
-and a dense sequence of points $\{x_1,x_2,\dots\}$ in $\DD$,
+and a dense sequence of points $\{x_1,x_2,\dots\}$ in $\DD$, OR $\|\DD\|_s$ ???
 such that the subsequence of points in $\partial \DD$
 is also dense in $\partial \DD$.
 Set $F_n=\{x_1,\dots,x_n\}$.
@@ -824,10 +851,10 @@ homeomorphic to a planar continuum.
 By construction, there are two short maps 
 $\|\DD\|_s\xrightarrow{p} W \xrightarrow{q} Y$
 such that 
-\[q\circ p|_{\partial\DD}=s|_{\partial\DD}.\]
+\[q\circ p|_{\partial\DD}=s|_{\partial\DD}.\] HOW DID WE GET q???
 Since $s$ is metric minimizing, both maps $p$ and $q$ are length preserving and metric minimizing.
 
-It reamins to apply Shefel's theorem \ref{thm:shefel-2D}.
+It remains to apply Shefel's theorem \ref{thm:shefel-2D}.
 \qeds
 
 
@@ -918,7 +945,7 @@ Moreover, the local Lipschitz constant depends only on the energy of $u$ and the
 
 Our aim is to show that energy minimizing discs are metric minimizing. For this, the following characterization of finite energy maps is particularly useful.
 \begin{thm}{Finite energy characterization}
-A continuous map $u$ in $L^2(\Omega,X)$ has finite energy iff there is a Borel function $\rho\in\L^2(\Omega)$ such that for 2-almost all curves\footnote{A property holds for 
+A continuous map $u$ in $L^2(\Omega,X)$ has finite energy iff there is a Borel function $\rho\in L^2(\Omega)$ such that for 2-almost all curves\footnote{A property holds for 
 2-almost all curves iff there is a nonnegative Borel function $f\in L^2(\Omega)$ such that the property can only fail for rectifiable curves $c$ with $\int_c f=\infty$.} 
 $\gamma:I\to\Omega$ the composition $u\circ\gamma$ is continous and
 $$
