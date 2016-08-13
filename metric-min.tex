@@ -385,11 +385,11 @@ is metric minimizing relative to $\partial|\DD|_f$.
 
 
 \begin{thm}{Key Lemma}\label{lem:key}
-Let $Y$ be a $\CAT(0)$ space and $s\:\DD\to Y$ 
+Let $Y$ be a $\CAT[0]$ space and $s\:\DD\to Y$ 
 be a metric minimizing disc relative to the boundary $\partial \DD$.
 Given a finite set $F\subset \DD$
 there is 
-(1) a $\CAT(0)$ space $W$, which is a disc retract,
+(1) a $\CAT[0]$ space $W$, which is a disc retract,
 and (2) maps $p\:F\to W$ and $q\:W\to Y$ such that
 \[s(x)=q\circ p(x)\] 
 for any $x\in F\cap \partial \DD$
@@ -429,9 +429,9 @@ Therefore $\Gamma$ can be considered as a graph embedded into the plane.
 It remains to apply Corollary~\ref{cor:planar-minimizing-graph}.
 \qeds
 
-\section{Compactness of planar CAT(0) spaces}
+\section{Compactness of planar CAT[0] spaces}
 
-Let $\mathcal{K}_\ell$ be the set of isometry classes of $\CAT(0)$ metrics on a disc retract with rectifiable
+Let $\mathcal{K}_\ell$ be the set of isometry classes of $\CAT[0]$ metrics on a disc retract with rectifiable
 boundary curves of length at most $\ell$.
 
 
@@ -650,10 +650,10 @@ where $\Conv S$ denotes the minimal closed convex set containing $S$.
 \parit{Proof.}
 Let $\pi\:W\to K$ denote the closest point projection of $W$ onto $K$. Note that $\pi$
 is a short map. Choose an open neighborhood $U$ of $\partial \Omega$ such that 
-$|s(x)-\pi\circ u(x)|<\epsilon$ for $x\in U$. The assumptions imply that $s(\Omega)$ is 
-contained in the $\epsilon$-neighborhood of $K$;
-that is, $|s(x)-\pi\circ s(x)|<\epsilon$ for $x\in\Omega$.
-It follows that for points in $U$ the geodesic segment $\pi\circ s(x)\pi\circ u(x)$ is contained in the $\epsilon$-ball
+$|s(x)-\pi\circ u(x)|<\eps$ for $x\in U$. The assumptions imply that $s(\Omega)$ is 
+contained in the $\eps$-neighborhood of $K$;
+that is, $|s(x)-\pi\circ s(x)|<\eps$ for $x\in\Omega$.
+It follows that for points in $U$ the geodesic segment $\pi\circ s(x)\pi\circ u(x)$ is contained in the $\eps$-ball
 around $s(x)$. Fix a continuous function $\lambda\:\Omega\to [0,1]$
 which is equal to $1$ on $\partial \Omega$ and has support in $U$.
 For $x\notin \Omega$ set $v(x)=u(x)$ and if 
@@ -782,7 +782,7 @@ The space $Q_\eps$ is $\CAT[0]$.
 \end{thm}
 
 \parit{Proof.}
-It is enough to show that any point in the interior of $Q_\eps$ has a CAT[0] neighborhood.
+It is enough to show that any point in the interior of $Q_\eps$ has a $\CAT[0]$ neighborhood.
 We first show that the total angle around any such point, say $z\in Q_\eps$ is at least $2\cdot\pi$.
 Since the decompositions of $\|\DD\|_{u_n}$ into convex subset of $W$ are nested for varying $n$, they
 induce such unique such limit decomposition of $Q_\eps$. Moreover, $w_\eps$ restricts to an isometry on each 
@@ -790,7 +790,7 @@ of the convex sets occuring in this decomposition. Therefore, $w_\eps$ is a loca
 If the total angle at $z$ is too small, then $w_\eps(z)\notin\Conv [w_\eps (\partial\Omega)]$
 for a small neighborhood $\Omega\ni w$ in $Q_\eps$. By Lemma \ref{lem:sepbygeo} we could cut a hat from $w_\eps$
 contradicting that $w_\eps$ is saddle.
-To conclude that $z$ has a CAT[0] neighborhood, we first cut a small ball around $z$ into to halves using a geodesic through $z$.
+To conclude that $z$ has a $\CAT[0]$ neighborhood, we first cut a small ball around $z$ into to halves using a geodesic through $z$.
 Next observe that for a small enough radius we can cut each of this halves into sectors which are contained in a single convex set
 from our decomposition. The claim follows from Reshetnyak's gluing theorem.
 \qeds
@@ -957,7 +957,8 @@ E(u):=\int_\Omega\left(\frac{1}{\omega_n}\int_{S^{n-1}}|du_z(v)|^2 d\mathcal{L}^
 $$
 It was shown in \cite{LW} that this definition coincides, up to a factor, with the Korevaar-Schoen 2-energy \cite{KS}.
 
-From now on, we will assume that $X$ is a CAT(0) space. Recall that between any two maps $u_0,u_1\:\Omega\to X$ there is 
+From now on, we will assume that $X$ is a $\CAT[0]$ space. 
+Recall that between any two maps $u_0,u_1\:\Omega\to X$ there is 
 a unique {\em geodesic homotopy} $u_t$. Namely for $t\in[0,1]$ we define $u_t(z)$ as the point on $[u_0(z)u_1(z)]$ at distance $t$
 from $u_0(z)$. If $u_0, u_1\in W^{1,2}(\Omega,X)$, then energy is convex along geodesic homotopies \cite[(2.2vi)]{KS}:
 $$
@@ -968,14 +969,14 @@ The convexity of energy is fundamental and leads to existence and uniqueness res
 
 \subsection{Energy minimizing discs}
 
-It was shown in \cite{KS} that any finite energy disc $u$ in a CAT(0) space has a well defined trace $\operatorname{tr}(u)$ which is an
+It was shown in \cite{KS} that any finite energy disc $u$ in a $\CAT[0]$ space has a well defined trace $\operatorname{tr}(u)$ which is an
 element in $L^2(\partial\DD,X)$. If $u$ is continuous then its restriction to $\partial\DD$ is a representative of $\operatorname{tr}(u)$.
-If $\gamma$ is a continuous circle in a CAT(0) space $X$ and $u$ is a finite energy disc with $\operatorname{tr}(u)=\gamma$, then we say that 
+If $\gamma$ is a continuous circle in a $\CAT[0]$ space $X$ and $u$ is a finite energy disc with $\operatorname{tr}(u)=\gamma$, then we say that 
 $u$ {\em spans} $\gamma$.
-As a consequence of Korevaar and Schoen's work one obtains the following solution to the Dirichlet problem in CAT(0) spaces.
+As a consequence of Korevaar and Schoen's work one obtains the following solution to the Dirichlet problem in $\CAT[0]$ spaces.
 
 \begin{thm}{Dirichlet problem}(\cite{KS})\label{thm:dirichlet}
-Let $\gamma$ be a continuous circle in a CAT(0) space $X$. 
+Let $\gamma$ be a continuous circle in a $\CAT[0]$ space $X$. 
 Then there is a unique energy minimizing disc $u$ which spans $\gamma$; 
 that is, $u$
 has the least energy among all discs spanning $\gamma$. 
@@ -998,7 +999,7 @@ $$
 This characterization is proven in \cite{HKST}.
 
 \begin{thm}{Theorem}
- Let $\gamma$ be a continuous circle in a CAT(0) space $X$ and $u$ an energy minimizing disc spanning $\gamma$.
+ Let $\gamma$ be a continuous circle in a $\CAT[0]$ space $X$ and $u$ an energy minimizing disc spanning $\gamma$.
  Then $u$ is a metric minimizing disc.
  \end{thm}
 
@@ -1013,23 +1014,23 @@ This characterization is proven in \cite{HKST}.
 
 
 
-\section{CAT(0) surfaces}
+\section{CAT[0] surfaces}
 
  
 
 \subsection{Half-neighbourhoods and continuous deformations}
 
-Let $X$ be a CAT(0) disc. For any subset $A\subset X$ we denote $N_\epsilon (A)$ its open $\epsilon$-neighbourhood.
-Let $x,y\in X$ be different points and $[xy]$ the geodesic segement between them. We define an $\epsilon$-half-neighbourhood
-$N^+_\epsilon ([xy])$ in the following way. Note first that $[xy]$ seperates the ball $B$ of radius $\frac{|x-y|}{2}$ around
+Let $X$ be a $\CAT[0]$ disc. For any subset $A\subset X$ we denote $N_\eps (A)$ its open $\eps$-neighbourhood.
+Let $x,y\in X$ be different points and $[xy]$ the geodesic segement between them. We define an $\eps$-half-neighbourhood
+$N^+_\eps ([xy])$ in the following way. Note first that $[xy]$ seperates the ball $B$ of radius $\frac{|x-y|}{2}$ around
 the midpoint of $[xy]$ into two components $B^+$ and $B^-$. Let $f$ be the distance function to $[xy]$. Choose gradient curves 
 $\gamma_x$ and $\gamma_y$ of $f$ starting in $x$ respectively $y$ and such that they are tangential to $B^+$. The concatenation
-of $\gamma_x$, $[xy]$ and $\gamma_y$ separates $N_\epsilon([xy])$ into two components and we choose $N^+_\epsilon ([xy])$ to be the one
+of $\gamma_x$, $[xy]$ and $\gamma_y$ separates $N_\eps([xy])$ into two components and we choose $N^+_\eps ([xy])$ to be the one
 with interior angles equal to  $\frac{\pi}{2}$. The curves $\gamma_x$ and $\gamma_y$ will be called {\em boundary curves} of the 
 half-neighbourhood.
 
 
-For $t<\epsilon$ set $\gamma_t\:=\partial N_t([xy])\cap N^+_\epsilon ([xy])$. If $\epsilon$
+For $t<\eps$ set $\gamma_t\:=\partial N_t([xy])\cap N^+_\eps ([xy])$. If $\eps$
 is small enough, then $\gamma_t$ defines a rectifiable simple arc.
 
 
@@ -1037,15 +1038,15 @@ is small enough, then $\gamma_t$ defines a rectifiable simple arc.
 The length of $\gamma_t$ converges to $|x-y|$ for $t\to 0$.
 \end{thm}
 
-In order to prove this, we need a little preparation. For $\epsilon>0$ we denote
-$X_\epsilon$ the subset of points in $X$ at distance $>\epsilon$ from the boundary.
+In order to prove this, we need a little preparation. For $\eps>0$ we denote
+$X_\eps$ the subset of points in $X$ at distance $>\eps$ from the boundary.
 
 \begin{thm}{Lemma}\label{lem:extension}
-For any geodesic segment $[xy]$ of length $L>0$ in $X_\epsilon$ there is a point 
-$x_y\in X$ such that $[x x_y]$ extends $[xy]$ and has length $L+\epsilon$.
+For any geodesic segment $[xy]$ of length $L>0$ in $X_\eps$ there is a point 
+$x_y\in X$ such that $[x x_y]$ extends $[xy]$ and has length $L+\eps$.
 \end{thm}
 \parit{Proof.}
-We use an argument from \cite{Kleiner}. Note that there exists a radius $r\geq\epsilon$, such 
+We use an argument from \cite{Kleiner}. Note that there exists a radius $r\geq\eps$, such 
 that the radius $r$ distance sphere around $y$ contains a Jordan curve $J$. The Jordan domain bounded by $J$
 will be called $D_J$.
 Denote $cone_x(J)$ the geodesic cone over $J$ with respect to $x$. Then, 
@@ -1061,8 +1062,8 @@ If no side is separating; that is, no maximal extension of that side as a geodes
 separates the other two vertices, $\square$ is said to be {\em regular}.
 
 \begin{thm}{Lemma}\label{lem:large angles}
-Let $\epsilon>0$ be fixed. For some $\delta>0$ let $\square_\delta$ be a regular geodesic quadrangle with
-vertices $x,y,u$ and $v$ in $X_\epsilon$ such that
+Let $\eps>0$ be fixed. For some $\delta>0$ let $\square_\delta$ be a regular geodesic quadrangle with
+vertices $x,y,u$ and $v$ in $X_\eps$ such that
 \begin{enumerate}
 	\item $\angle_x(u,y)=\angle_y(v,x_y)=\frac{\pi}{2};$
 	\item $|x-y|\leq\delta;$
@@ -1071,8 +1072,8 @@ vertices $x,y,u$ and $v$ in $X_\epsilon$ such that
 \end{enumerate}
 Then 
 \begin{itemize}
-\item $\angle_u(x_u,v)\geq\frac{2\pi}{3};$
-\item $\angle_v(u_v,y)\geq\frac{2\pi}{3}.$
+\item $\angle_u(x_u,v)\geq\frac{2{\cdot}\pi}{3};$
+\item $\angle_v(u_v,y)\geq\frac{2{\cdot}\pi}{3}.$
 \end{itemize}
 \end{thm}
 
@@ -1086,12 +1087,12 @@ By condition (1) the claim now follows from the first variation formula.
 \qeds
 
 \begin{thm}{Corollary}
-Let $\epsilon>0$ be fixed. For a sequence $\delta_k\to 0$ let $\square_k$ be a converging sequence of quadrangles
+Let $\eps>0$ be fixed. For a sequence $\delta_k\to 0$ let $\square_k$ be a converging sequence of quadrangles
 as in Lemma \ref{lem:large angles} with $\square_k\to \{z\}$. Denote by $x^\infty_u, u^\infty_v$ and $v^\infty_y$
-the limits of $\epsilon$-extensions of the respective sides of $\square_k$. Then
+the limits of $\eps$-extensions of the respective sides of $\square_k$. Then
 \begin{itemize}
-\item $\angle_z(x^\infty_u,u^\infty_v)\geq\frac{2\pi}{3};$
-\item $\angle_z(u^\infty_v,v^\infty_y)\geq\frac{2\pi}{3};$
+\item $\angle_z(x^\infty_u,u^\infty_v)\geq\frac{2{\cdot}\pi}{3};$
+\item $\angle_z(u^\infty_v,v^\infty_y)\geq\frac{2{\cdot}\pi}{3};$
 \item $\angle_z(v^\infty_y,x^\infty_u)\geq\pi.$
 \end{itemize}
 In particular $\mathcal{H}^1(\Sigma_z(X))\geq\frac{7}{3}\pi$.
@@ -1103,8 +1104,8 @@ But as a result of the first two inequlities, one of those convex sets has lengt
 \qeds
 
 \begin{thm}{Corollary}\label{cor:level distance 1}
-For every $\epsilon>0$ there exists $\bar\delta>0$ such that for any nondegenerated geodesic $[xy]$ 
-in $X_\epsilon$ with $\mathcal{H}^1(\Sigma_z X)< \frac{7}{3}\pi$
+For every $\eps>0$ there exists $\bar\delta>0$ such that for any nondegenerated geodesic $[xy]$ 
+in $X_\eps$ with $\mathcal{H}^1(\Sigma_z X)< \frac{7}{3}\pi$
 for every $z$ in $[xy]$, the following holds for every $\delta\leq\bar\delta$. 
 If $[x'y']\subset[xy]$ is a subgeodesic of length $\leq\delta$ and $N^+_r([xy])$ is some half-neighbourhood 
 of $[x'y']$ with boundary curves $\gamma_{x'}$ and $\gamma_{y'}$, 
@@ -1129,7 +1130,7 @@ and $c$ is larger than $\delta$.
 
 
 \parit{Proof of Proposition\ref{prop:length continuity}.}
-Let $[xy]$ be a geodesic in $X_\epsilon$ for some $\epsilon>0$. Call a point
+Let $[xy]$ be a geodesic in $X_\eps$ for some $\eps>0$. Call a point
 $z\in X$ with $\mathcal{H}^1(\Sigma_z X)\geq \frac{7}{3}\pi$ a {\em fat point}. 
 Note that there is only a finite number of 
 fat points in $X$. We will prove the statement by induction on  the number 
@@ -1143,7 +1144,7 @@ and $\gamma_{j+1}^ +(4\delta)$ has distance more than $\delta$ from $[xy]$. We c
 $\gamma_j^ +(4\delta)$ to $\gamma_j^ -(4\delta)$ by a shortest path $\rho_j$
 contained in $\partial B_{4\delta}(x_j)$. Note that the length $L_j$ of $\rho_j$ is $O(\delta)$. 
 Moreover, since $X$
-is a CAT(0) disc, the contribution of single points to the total curvature of $X$ is finite. Hence 
+is a $\CAT[0]$ disc, the contribution of single points to the total curvature of $X$ is finite. Hence 
 even $\sum_{j=0}^ n L_j$ is $O(\delta)$.
 Therefore, since half-neighbourhoods are convex and projections onto convex subsets are short, the 
 length $L_\delta$ of $\gamma_\delta$ can be
@@ -1174,23 +1175,26 @@ as above applies now because, by Corollary \ref{cor:level distance 2}, this path
 \subsection{Area preserving short maps}
 
 
-Throughout this section we let $X$ and $Y$ be planar CAT(0) spaces and
+Throughout this section we let $X$ and $Y$ be planar $\CAT[0]$ spaces and
  $\varphi\:X\to Y$ a surjective short map between them which preserves area.
  Our aim is to prove the following.
 
 \begin{thm}{Theorem}\label{thm:short+area=isom}
-Let $X$ and $Y$ be planar CAT(0) spaces. 
-Let $\varphi\:X\to Y$ be a surjective short map. If $\area(X)=\area(Y)$,
+Let $X$ and $Y$ be planar $\CAT[0]$ spaces. 
+Let $\varphi\:X\to Y$ be a surjective short map. 
+If $\area(X)=\area(Y)$,
 then $\varphi$ is an isometry. 
 \end{thm}
+
+???IT IS NOT TRUE FOR TWO DISCS CONNECTED BY A SEGMENT.
 
 
 \begin{thm}{Lemma}\label{lem:inverse image estimate}
 For a point $y\in Y$ holds 
 $$
-2\pi\cdot \#\varphi^{-1}(y)\leq\mathcal{H}^1(\Sigma_y Y). 
+2{\cdot}\pi\cdot \#\varphi^{-1}(y)\leq\mathcal{H}^1(\Sigma_y Y). 
 $$
-In particular, if $\mathcal{H}^1(\Sigma_y Y)<4\pi$, then $\varphi^{-1}(y)$
+In particular, if $\mathcal{H}^1(\Sigma_y Y)<4{\cdot}\pi$, then $\varphi^{-1}(y)$
 consits of a single point.
 \end{thm}
 
@@ -1201,12 +1205,14 @@ is area preserving,
 \[\area(B_r(y))\geq\sum_{i=1}^n\area(B_r(x_i))\]
 for small enough $r>0$. 
 The coarea formula implies
-$\int_0^r(\mathcal{H}^1(S_t(y))-\sum_{i=1}^n \mathcal{H}^1(S_t(x_i)))dt\geq 0$.
+\[\int\limits_0^r\biggl(\mathcal{H}^1(S_t(y))-\sum_{i=1}^n \mathcal{H}^1(S_t(x_i))\biggr)\cdot dt
+\geq 
+0.\]
 Hence we can choose a sequence $t_k\to 0$ such that 
-$\mathcal{H}^1(S_{t_k}(y))\geq\sum_{i=1}^n \mathcal{H}^1(S_{t_k}(x_i))$. 
+\[\mathcal{H}^1(S_{t_k}(y))\geq\sum_{i=1}^n \mathcal{H}^1(S_{t_k}(x_i)).\] 
 Dividing by $t_k$ and passing to the limit yields 
-$\mathcal{H}^1(\Sigma_y Y)\geq\sum_{i=1}^n\mathcal{H}^1(\Sigma_{x_i}X)$.
-The claim follows since $\mathcal{H}^1(\Sigma_{x}X)\geq 2\pi$
+\[\mathcal{H}^1(\Sigma_y Y)\geq\sum_{i=1}^n\mathcal{H}^1(\Sigma_{x_i}X).\]
+The claim follows since $\mathcal{H}^1(\Sigma_{x}X)\geq 2{\cdot}\pi$
 for every $x\in X$.
 \qeds
 
@@ -1228,10 +1234,10 @@ one inverse image is finite.
 \parit{Proof of Theorem \ref{thm:short+area=isom}.}
 Recall that each cyclic element of $Y$ is homeomorphic to a closed disc. 
 Pick points $p,q\in Y$ which lie in the same cyclic element and assume that
-$[pq]$ does not contain a point $z$ with $\mathcal{H}^1(\Sigma_y Y)\geq 4\pi$.
+$[pq]$ does not contain a point $z$ with $\mathcal{H}^1(\Sigma_y Y)\geq 4{\cdot}\pi$.
 Then choose $r>0$ small, and a the half-neighborhood $N_r^+$ of $[pq]$, 
 such that $N_r^+$ still does not contain points $z$ with 
-$\mathcal{H}^1(\Sigma_y Y)\geq 4\pi$. Let $\hat N_r^+$ be the inverse image of $N_r^+$
+$\mathcal{H}^1(\Sigma_y Y)\geq 4{\cdot}\pi$. Let $\hat N_r^+$ be the inverse image of $N_r^+$
 under $\varphi$. According to Lemma \ref{lem:inverse image estimate}, $\varphi|_{\hat N_r^+}$ 
 is injective and therefore a homeomorphism onto $N_r^+$. 
 Denote $f$ the distance function of $[pq]$. Then, in the notation above, $f^{-1}(t)=\gamma_t$.
@@ -1293,25 +1299,25 @@ $$
 Therefore, $\gamma_{-1}$ is parallel to $\gamma_{+1}$.
 
 For the second claim, denote $H$ the surface $h([-1,1]\times[0,L])$ equipped with the pull-back metric. By \ref{thm:main}, $H$
-is CAT(0).
-Now let $\epsilon>0$ and choose an array of points $x_0^{0},x_1^{0},\ldots,x_k^{0}$ on $\gamma_{0}$ 
-such that $\sum_{i=0}^k d(x_i^{0},x_{i+1}^{0})\geq L-\epsilon$. For $t\in[-1,1]$ denote by $x_i^{t}$ the
+is $\CAT[0]$.
+Now let $\eps>0$ and choose an array of points $x_0^{0},x_1^{0},\ldots,x_k^{0}$ on $\gamma_{0}$ 
+such that $\sum_{i=0}^k d(x_i^{0},x_{i+1}^{0})\geq L-\eps$. For $t\in[-1,1]$ denote by $x_i^{t}$ the
 point $\gamma_t$ corresponding to $x_i^{0}$. Now use the comparison triangles
 $\triangle(x_{j}^{-1},x_{j+1}^{-1},x_{j+1}^{+1})$ and $\triangle(x_{j}^{+1},x_{j+1}^{+1},x_{j+1}^{-1})$, $j=0,\ldots k-1$,
-to glue a flat comparison surface $S_\epsilon$ for $H$. From Reshetnyak's majorization theorem, we obtain a short map 
-$f_\epsilon\:S_\epsilon\to H$. Denote by by $\hat x_i^{t}$ the point on on $S_\epsilon$ corresponding to $x_i^{t}$. Then
+to glue a flat comparison surface $S_\eps$ for $H$. From Reshetnyak's majorization theorem, we obtain a short map 
+$f_\eps\:S_\eps\to H$. Denote by by $\hat x_i^{t}$ the point on on $S_\eps$ corresponding to $x_i^{t}$. Then
 $$
-L-\epsilon\leq\sum_{i=0}^k d(x_i^{0},x_{i+1}^{0})\leq\sum_{i=0}^k d(\hat x_i^{0},\hat x_{i+1}^{0})\leq
+L-\eps\leq\sum_{i=0}^k d(x_i^{0},x_{i+1}^{0})\leq\sum_{i=0}^k d(\hat x_i^{0},\hat x_{i+1}^{0})\leq
 \frac{1}{2}\sum_{i=0}^k d(x_i^{-1}, x_{i+1}^{-1})+\frac{1}{2}\sum_{i=0}^k d(x_i^{+1}, x_{i+1}^{+1})\leq L.
 $$
-Hence we can choose a sequence $\epsilon_j\to 0$ such that $S_{\epsilon_j}$ converges to a flat surface $S$ and $f_{\epsilon_j}$
+Hence we can choose a sequence $\eps_j\to 0$ such that $S_{\eps_j}$ converges to a flat surface $S$ and $f_{\eps_j}$
 converges to a short map $f\:S\to H$. Note that $f$ is surjective. Moreover, $S$
 has two transversal foliations, one by parallel paths of constant length $L$ and one by geodesic segments of constant length.
 It follows that the Jacbian of $f$ is almost everywhere equal to one. Thus $f$ is area preserving and therefore an isometry by \ref{thm:short+area=isom}.
 \qeds
 
 \begin{thm}{Uniqueness Theorem}\label{prop:strict-mm}
-Let $X$ be a CAT(0) space and $s_0, s_1\:\DD\to X$ be metric minimizing discs. If 
+Let $X$ be a $\CAT[0]$ space and $s_0, s_1\:\DD\to X$ be metric minimizing discs. If 
 $\|\DD\|_{s_0}$ is isometric to $\|\DD\|_{s_1}$, then $s_0=s_1$.
 \end{thm}
 
@@ -1329,7 +1335,7 @@ The claim follows.
 
 %MAYBE IT WILL BE A COR OR PART OF AN OTHER STATEMENT, BUT WE NEED IT???
 \begin{thm}{Corollary}\label{prop:strict-mm}
-Any metric minimizing disc in a $\CAT(0)$ space is strictly metric minimizing.
+Any metric minimizing disc in a $\CAT[0]$ space is strictly metric minimizing.
 \end{thm}
 
 
@@ -1340,10 +1346,10 @@ Any metric minimizing disc in a $\CAT(0)$ space is strictly metric minimizing.
 A map $f\:Y\to Z$ from a metric space $Y$ to a metric space
  $Z$ is called
 {\em intrinsically continuous}, if for every $y\in Y$ 
-and every $\epsilon>0$ there
+and every $\eps>0$ there
 exists $\delta>0$ such that any  $y'\in Y$
 with $|y,y'|<\delta$ can be connected to $y$ by a path $\gamma$ 
-with $\operatorname{length}(f\circ\gamma)<\epsilon$.
+with $\operatorname{length}(f\circ\gamma)<\eps$.
 \end{thm}
 
 \begin{thm}{Remark}
@@ -1392,7 +1398,7 @@ determines the length structure. This explains
 
 
 
-\section{Smooth surfaces}
+\section{Smooth surfaces}\label{sec:smooth}
 
 In this section we show that any strictly saddle surface is locally metric minimizing.
 So in particular, the metric minimizing surfaces do generalize saddle strictly saddle surfaces.
@@ -1513,7 +1519,7 @@ While we tried to remove it, we found the following statement
 which we want to share.
 
 \begin{thm}{Proposition}
-Let $Y\in\CAT(0)$ 
+Let $Y\in\CAT[0]$ 
 and 
 $f\:\DD\to Y$ be a metric minimizing disc.
 Then $\|\DD\|_f$ is a complete metric space.
@@ -1536,6 +1542,14 @@ such that $\gamma(t)\in\|\DD\|_f$ for all $t<1$ and $\gamma(1)\notin \|\DD\|_f$.
 Note that the path $\bar f\circ \gamma$ is also rectifiable and in particular continuous, so it can be lifted to $\|\DD\|_f$.
 That is, $\gamma(1)\in \|\DD\|_f$, a contradiction.
 \qeds
+
+\parbf{Smooth metric minimizing surfaces.}
+At the moment we do not see any way to show that given surface is metric minimizing except constructing energy for which it is energy minimizing, as we did in Section~\ref{sec:smooth}.
+Calculations show that generic smooth saddle surfaces in $\RR^4$ is not energy minimizing for any energy.
+
+We expect that generic smooth saddle surfaces in $\RR^4$ are not metric minimizing; that is arbitrary small neighborhood of any point admit a deformation which shrinks the intrinsic metric and keeps the boundary fixed.
+
+
 
 
 \begin{thebibliography}{52}
