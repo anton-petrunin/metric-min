@@ -636,8 +636,11 @@ Then there is a continuous map $v\:\DD\to K$ such that
 $v(x)\in K$ for any $x\in\Omega$.
 \end{enumerate}
 
+\medskip
+
 Moreover,
-\begin{enumerate}[(a)]
+\begin{enumerate}[(i)]
+\addtocounter{enumi}{2}
 \item we can assume that \[v(\Omega)\subset \Conv u(\partial\Omega),\]
 where $\Conv S$ denotes the minimal closed convex set containing $S$.
 \item\label{lem:cutting-hat:b} if $u$ has no bubbles, we can assume that the constructed map $v$ has no bubbles.
@@ -645,7 +648,7 @@ where $\Conv S$ denotes the minimal closed convex set containing $S$.
 \end{thm}
 
 \parit{Proof.}
-Let $\pi:W\to K$ denote the closest point projection of $W$ onto $K$. Note that $\pi$
+Let $\pi\:W\to K$ denote the closest point projection of $W$ onto $K$. Note that $\pi$
 is a short map. Choose an open neighborhood $U$ of $\partial \Omega$ such that 
 $|s(x)-\pi\circ u(x)|<\epsilon$ for $x\in U$. The assumptions imply that $s(\Omega)$ is 
 contained in the $\epsilon$-neighborhood of $K$;
@@ -668,10 +671,12 @@ Redefine $v$ by setting $v(x)=p$.
 \qeds
 
 \begin{thm}{Lemma}\label{lem:isomtri}
-Let $W$ be a $\CAT[0]$ space which is a disc retract. Let $\Delta$ be a triangel in the euclidean plane
-and $\Delta'$ a triangle in $W$. If $f:\Delta\to \Delta'$ is a map which restricts to constant speed
+Let $W$ be a $\CAT[0]$ disc retract. 
+Let $\Delta$ be a triangle in the euclidean plane
+and $\Delta'$ a triangle in $W$. 
+If $f\:\Delta\to \Delta'$ is a map which restricts to constant speed
 parametrizations on each side, then it extends to a map 
-$F:ch(\Delta)\to ch(\Delta')$ between convex hulls which induces an isometry $\bar F:\|ch(\Delta)\|_F\to ch(\Delta')$. 
+$F\:\Conv(\Delta)\to \Conv(\Delta')$ between convex hulls which induces an isometry $\bar F\:\|\Conv(\Delta)\|_F\to \Conv(\Delta')$. 
 \end{thm}
 
 \parit{Proof.}
@@ -701,8 +706,8 @@ $W$ and by Lemma \ref{lem:closed} it is homeomorphic to a disc retract.
 \qeds
 
 \begin{thm}{Lemma}\label{lem:proj-continuous}
-Let $X$ be a metric space and $u:\DD\to X$ a continuous map. Denote by $\pi:\DD\to \|\DD\|_u$ the natrual projection and
-by $\bar u:\|\DD\|_u\to X$ the induced map. Assume that $\DD$ has a decomposition $\DD=\bigcup_{n=1}^N C_n$ into a finite 
+Let $X$ be a metric space and $u\:\DD\to X$ a continuous map. Denote by $\pi\:\DD\to \|\DD\|_u$ the natrual projection and
+by $\bar u\:\|\DD\|_u\to X$ the induced map. Assume that $\DD$ has a decomposition $\DD=\bigcup_{n=1}^N C_n$ into a finite 
 number of sets such that $\bar u$ embeds each $\pi(C_n)$ isometrically as a closed subset into $X$. Then $\pi$
 is continuous.
 \end{thm}
@@ -724,7 +729,7 @@ Say given $\eps>0$ we can assume that
 \[|s(x)-u(x)|_X<\eps\eqlbl{eq:|s-u|<e}\]
 for any $x\in\DD$.
 
-Note that the image of each triangle $\triangle$
+Note that the image of each solid triangle $\triangle$
 is the closed region bounded by the geodesic triangle in $W$ with the corresponding vertices.
 Moreover,  $\|\triangle\|_u$ is isometric to the image $u(\triangle)$ by Lemma \ref{lem:isomtri}.
 Denote by $N$ the number of triangles in $\tau$. Then, $\|\DD\|_u$ decomposes into $N$ convex sets which are mapped isometrically by the induced map
@@ -743,7 +748,9 @@ for any $x$.
 
 Furthermore, each space $\|\DD\|_{u_n}$
 belongs to $\mathcal{S}_N$ and has a decomposition into at most $N$ convex sets which are mapped isometrically by 
-the induced map $\bar u_n\:\|\DD\|_{u_n}\to W$. There is a more precise description, namely each of the convex sets is 
+the induced map 
+\[\bar u_n\:\|\DD\|_{u_n}\to W.\] 
+There is a more precise description, namely each of the convex sets is 
 obtained from one of the triangles in $\tau$ by applying cuts along the geodesics $\gamma_k$. In particular, the decompositions
 are nested.
 
@@ -765,7 +772,7 @@ such that the distance from $\gamma'$ of $w_\eps(\partial D)$ and $w_\eps(p)$ is
 Then there is a natural number $M$ such that the distance from $\gamma'$ of $\bar u_n(\partial D_n)$ and $\bar u_n(p_n)$ is larger than $\frac{\delta}{2}$
 where $D_n$ and $p_n$ are lifts of $D$ respectively $p$.
 By density of $\mathcal{G}$, there is a geodesic $\gamma_k\in \mathcal{G}$ with $k>M$ which has distance less than $\frac{\delta}{2}$ from $\gamma'$. 
-Hence $\bar u_k^{-1}(\gamma')$ separates $p_k$ from the boundary. By Lemma \ref{lem:proj-continuous}, the projection $\pi_k:\DD\to \|\DD\|_{u_k}$ is continuous
+Hence $\bar u_k^{-1}(\gamma')$ separates $p_k$ from the boundary. By Lemma \ref{lem:proj-continuous}, the projection $\pi_k\:\DD\to \|\DD\|_{u_k}$ is continuous
 and therefore $u_k^{-1}(\gamma')$ separates some lift $\hat p_k$ of $p_k$ from the boundary.
 This is a contradiction because, by construction, $\gamma_k$ cannot cut a hat from $u_k$.
 \qeds
@@ -811,12 +818,25 @@ Assume $\|\DD\|_s$  is separable.
 Then $\|\DD\|_s$ is a $\CAT[0]$ space.
 \end{thm}
 
-
 \parit{Proof of Main theorem.}
+First let us show that $\|\DD\|_s$ is geodesic.
+
+Indeed, given two points $p$ and $q$ in $|\DD|_s$ 
+choose a sequence of constant-speed paths $\gamma_n$ from $p$ to $q$
+such that 
+\[\length\gamma_n\to \|p-q\|_s\]
+as $n\to\infty$.
+
+Note that $\gamma_n$ are Lipschitz maps in $|\DD|_s$.
+Since $|\DD|_s$ is compact, we can pass to a partial limit $\gamma$ of $\gamma_n$.
+Clearly \[\length\gamma= \|p-q\|_s;\]
+that is $\gamma$ forms a geodesic in $\|\DD\|_s$
+
+
 Note that it is sufficient to prove the theorem 
 in the case that $\partial \|\DD\|_s$ formed by a rectifiable simple closed curve.
 
-Indeed, fix a triangle $\triangle$ in $\|\DD\|_s$. HOW IS IT GEODESIC?
+Indeed, fix a triangle $\triangle$ in $\|\DD\|_s$. 
 If the above case has been proven, 
 then closure of each connected open component bounded by $\triangle$ is $\CAT[0]$.
 In particular $\triangle$ is thin.
@@ -826,7 +846,7 @@ Given a finite set $F\subset \DD$,
 denote by $\mathcal{W}_F$
 the set of isometry classes of spaces $W$ which meet the conditions of the Key Lemma~\ref{lem:key}
 for $F$;
-according to lemma $\mathcal{W}_F\ne\emptyset$
+according to lemma $\mathcal{W}_F\ne\emptyset$.
 Note that for two finite sets $F\subset F'$ in $\DD$,
 we have $\mathcal{W}_F\supset \mathcal{W}_{F'}$.
 
@@ -835,12 +855,14 @@ Therefore
 \[\mathcal{W}
 =
 \bigcap_{F}\mathcal{W}_F\ne \emptyset\]
-where the intersection is taken over all finite subsets $F$ in $\DD$. ALL? OR NESTED SEQUENCE EXHAUSTING A DENSE SET  
+where the intersection is taken over all finite subsets $F$ in $\DD$. 
+%ALL? OR NESTED SEQUENCE EXHAUSTING A DENSE SET  --- I think it is true forl all???
 
 Fix a space $W$ from $\mathcal{W}$
-and a dense sequence of points $\{x_1,x_2,\dots\}$ in $\DD$, OR $\|\DD\|_s$ ???
-such that the subsequence of points in $\partial \DD$
-is also dense in $\partial \DD$.
+and a dense sequence of points $\{x_1,x_2,\dots\}$ in $\|\DD\|_s$, 
+such that its subsequence of points in $\partial \|\DD\|_s$
+ also dense in $\partial \|\DD\|_s$.
+
 Set $F_n=\{x_1,\dots,x_n\}$.
 Denote by $p_n\:F_n\to W$ a map satisfying the conditions in the Key Lemma~\ref{lem:key}.
 
@@ -850,17 +872,25 @@ Set
 \[p(x_k)=\lim_{n\to\infty} p_n(x_k).\]
 
 Note that $p$ is short.
-Since $\{x_k\}$ is dense in $\DD$,
-the map $p$ can be extended to whole disc $\DD$ 
+Since $\{x_k\}$ is dense in $\|\DD\|_s$,
+the map $p$ can be extended to whole disc $\|\DD\|_s$ 
 as a short map.
 The obtained map will be still denoted as $p$.
 
-Summarizing, the space $W$ is $\CAT[0]$ space 
-homeomorphic to a planar continuum.
+Pass to an ultralimit $\mathfrak{q}$ of the maps $q_n$ provided by Key Lemma~\ref{lem:key} the target of $\mathfrak{q}$ is an ultrapower  $\mathfrak{Y}$ of $Y$,
+which is $\CAT[0]$ space containing $Y$ as a convex subspace.
+The closest point projection of $\mathfrak{q}$ to $Y$ will be denoted by $q$.
+By construction, 
+$\mathfrak{q}$ is short 
+and closest point projection is short,
+therefore $q$ is also short.
+
+
+Summarizing, the space $W$ is $\CAT[0]$ disc retract.
 By construction, there are two short maps 
 $\|\DD\|_s\xrightarrow{p} W \xrightarrow{q} Y$
 such that 
-\[q\circ p|_{\partial\DD}=s|_{\partial\DD}.\] HOW DID WE GET q???
+\[q\circ p|_{\partial\DD}=s|_{\partial\DD}.\] 
 Since $s$ is metric minimizing, both maps $p$ and $q$ are length preserving and metric minimizing.
 
 It remains to apply Shefel's theorem \ref{thm:shefel-2D}.
@@ -896,7 +926,7 @@ On the other hand the order on $\gamma_0$ and on $\gamma_1$ are opposite, a cont
 \subsection{Definitions}
 
 Let $\Omega$ be an open and bounded subset of $\mathbb{R}^n$ and $(X,d)$ a metric space.
-We say that a measurable map $u:\Omega\to X$ lies in 
+We say that a measurable map $u\:\Omega\to X$ lies in 
 $L^2(\Omega,X)$ if and only if
 \begin{enumerate}
  \item there is a full measure subset $M\subset \Omega$ such that $u(M)\subset X$ is separable;
@@ -913,7 +943,7 @@ A map $u\in L^2(\Omega,X)$ is contained in $W^{1,2}(\Omega,X)$ if and only if
  such that $|\nabla u_x|\leq h$ holds for all $x$ almost everywhere in $\Omega$. 
 \end{enumerate}
 
-If for a map $u:\Omega\to X$ the  approximate limit
+If for a map $u\:\Omega\to X$ the  approximate limit
 $$
 ap\lim_{t\searrow 0}\frac{d(u(z+tv),u(z))}{t}
 $$
@@ -927,7 +957,7 @@ E(u):=\int_\Omega\left(\frac{1}{\omega_n}\int_{S^{n-1}}|du_z(v)|^2 d\mathcal{L}^
 $$
 It was shown in \cite{LW} that this definition coincides, up to a factor, with the Korevaar-Schoen 2-energy \cite{KS}.
 
-From now on, we will assume that $X$ is a CAT(0) space. Recall that between any two maps $u_0,u_1:\Omega\to X$ there is 
+From now on, we will assume that $X$ is a CAT(0) space. Recall that between any two maps $u_0,u_1\:\Omega\to X$ there is 
 a unique {\em geodesic homotopy} $u_t$. Namely for $t\in[0,1]$ we define $u_t(z)$ as the point on $[u_0(z)u_1(z)]$ at distance $t$
 from $u_0(z)$. If $u_0, u_1\in W^{1,2}(\Omega,X)$, then energy is convex along geodesic homotopies \cite[(2.2vi)]{KS}:
 $$
@@ -945,8 +975,11 @@ $u$ {\em spans} $\gamma$.
 As a consequence of Korevaar and Schoen's work one obtains the following solution to the Dirichlet problem in CAT(0) spaces.
 
 \begin{thm}{Dirichlet problem}(\cite{KS})\label{thm:dirichlet}
-Let $\gamma$ be a continuous circle in a CAT(0) space $X$. Then there is a unique energy minimizing disc $u$ which spans $\gamma$; that is, $u$
-has the least energy among all discs spanning $\gamma$. The energy minimizer $u$ is locally Lipschitz continuous in the interior of $\DD$ and continuous on all of $\DD$.
+Let $\gamma$ be a continuous circle in a CAT(0) space $X$. 
+Then there is a unique energy minimizing disc $u$ which spans $\gamma$; 
+that is, $u$
+has the least energy among all discs spanning $\gamma$. 
+The energy minimizer $u$ is locally Lipschitz continuous in the interior of $\DD$ and continuous on all of $\DD$.
 Moreover, the local Lipschitz constant depends only on the energy of $u$ and the distance to the boundary.
 \end{thm}
 
@@ -956,7 +989,7 @@ Our aim is to show that energy minimizing discs are metric minimizing. For this,
 \begin{thm}{Finite energy characterization}
 A continuous map $u$ in $L^2(\Omega,X)$ has finite energy iff there is a Borel function $\rho\in L^2(\Omega)$ such that for 2-almost all curves\footnote{A property holds for 
 2-almost all curves iff there is a nonnegative Borel function $f\in L^2(\Omega)$ such that the property can only fail for rectifiable curves $c$ with $\int_c f=\infty$.} 
-$\gamma:I\to\Omega$ the composition $u\circ\gamma$ is continous and
+$\gamma\:I\to\Omega$ the composition $u\circ\gamma$ is continous and
 $$
 \operatorname{length}(u\circ\gamma)\leq\int_\gamma \rho.
 $$
@@ -991,12 +1024,12 @@ Let $x,y\in X$ be different points and $[xy]$ the geodesic segement between them
 $N^+_\epsilon ([xy])$ in the following way. Note first that $[xy]$ seperates the ball $B$ of radius $\frac{|x-y|}{2}$ around
 the midpoint of $[xy]$ into two components $B^+$ and $B^-$. Let $f$ be the distance function to $[xy]$. Choose gradient curves 
 $\gamma_x$ and $\gamma_y$ of $f$ starting in $x$ respectively $y$ and such that they are tangential to $B^+$. The concatenation
-of $\gamma_x$, $[xy]$ and $\gamma_y$ seperates $N_\epsilon([xy])$ into two components and we choose $N^+_\epsilon ([xy])$ to be the one
+of $\gamma_x$, $[xy]$ and $\gamma_y$ separates $N_\epsilon([xy])$ into two components and we choose $N^+_\epsilon ([xy])$ to be the one
 with interior angles equal to  $\frac{\pi}{2}$. The curves $\gamma_x$ and $\gamma_y$ will be called {\em boundary curves} of the 
 half-neighbourhood.
 
 
-For $t<\epsilon$ set $\gamma_t:=\partial N_t([xy])\cap N^+_\epsilon ([xy])$. If $\epsilon$
+For $t<\epsilon$ set $\gamma_t\:=\partial N_t([xy])\cap N^+_\epsilon ([xy])$. If $\epsilon$
 is small enough, then $\gamma_t$ defines a rectifiable simple arc.
 
 
@@ -1125,7 +1158,7 @@ the other case is similar. Let $\gamma_s^\pm\subset N_r^+([x y])$ be geodesics s
 $\angle_s(x,\gamma_s^-(r))=\frac{\pi}{2}$ and $\angle_s(y,\gamma_s^+(r))=\frac{\pi}{2}$. Applying Corollary 
 \ref{cor:level distance 2}
 to the rightangled hinges $([xs],\gamma_s^-)$ and $([sy],\gamma_s^+)$ we obtain constants $\hat\delta^\pm>0$. 
-Set $\hat\delta:=\min\{\hat\delta^-,\hat\delta^+\}$.
+Set $\hat\delta\:=\min\{\hat\delta^-,\hat\delta^+\}$.
 Next choose $s^-\in[xs]$ and $s^+\in[sy]$ with $|s-s^\pm|\leq\hat\delta$. Then the induction hypothesis applies 
 to $[xs^-]$ and $[s^+y]$ since we have reduced 
 the number of fat points. If $N^+_r([s^- s^+])$ is a half-neighbourhood with boundary curves $\gamma_{s^\pm}$, 
@@ -1142,12 +1175,12 @@ as above applies now because, by Corollary \ref{cor:level distance 2}, this path
 
 
 Throughout this section we let $X$ and $Y$ be planar CAT(0) spaces and
- $\varphi:X\to Y$ a surjective short map between them which preserves area.
+ $\varphi\:X\to Y$ a surjective short map between them which preserves area.
  Our aim is to prove the following.
 
 \begin{thm}{Theorem}\label{thm:short+area=isom}
 Let $X$ and $Y$ be planar CAT(0) spaces. 
-Let $\varphi:X\to Y$ be a surjective short map. If $\area(X)=\area(Y)$,
+Let $\varphi\:X\to Y$ be a surjective short map. If $\area(X)=\area(Y)$,
 then $\varphi$ is an isometry. 
 \end{thm}
 
@@ -1162,9 +1195,12 @@ consits of a single point.
 \end{thm}
 
 \parit{Proof.} 
-Let $x_1,\ldots,x_n$ be points in $\varphi^{-1}(y)$. Since $\varphi$
-is area preserving, we obtain for small enough $r>0$:
-$\area(B_r(y))\geq\sum_{i=1}^n\area(B_r(x_i))$. The coarea formula implies
+Let $x_1,\ldots,x_n$ be points in $\varphi^{-1}(y)$. 
+Since $\varphi$
+is area preserving, 
+\[\area(B_r(y))\geq\sum_{i=1}^n\area(B_r(x_i))\]
+for small enough $r>0$. 
+The coarea formula implies
 $\int_0^r(\mathcal{H}^1(S_t(y))-\sum_{i=1}^n \mathcal{H}^1(S_t(x_i)))dt\geq 0$.
 Hence we can choose a sequence $t_k\to 0$ such that 
 $\mathcal{H}^1(S_{t_k}(y))\geq\sum_{i=1}^n \mathcal{H}^1(S_{t_k}(x_i))$. 
@@ -1193,7 +1229,7 @@ one inverse image is finite.
 Recall that each cyclic element of $Y$ is homeomorphic to a closed disc. 
 Pick points $p,q\in Y$ which lie in the same cyclic element and assume that
 $[pq]$ does not contain a point $z$ with $\mathcal{H}^1(\Sigma_y Y)\geq 4\pi$.
-Then choose $r>0$ small, and a the half-neighbourhood $N_r^+$ of $[pq]$, 
+Then choose $r>0$ small, and a the half-neighborhood $N_r^+$ of $[pq]$, 
 such that $N_r^+$ still does not contain points $z$ with 
 $\mathcal{H}^1(\Sigma_y Y)\geq 4\pi$. Let $\hat N_r^+$ be the inverse image of $N_r^+$
 under $\varphi$. According to Lemma \ref{lem:inverse image estimate}, $\varphi|_{\hat N_r^+}$ 
@@ -1217,8 +1253,8 @@ $$
 Continuity of length, Lemma \ref{prop:length continuity}, implies
 $\mathcal{H}^1(\Gamma_0)\leq|p-q|$ and hence $|\varphi^{-1}(p)-\varphi^{-1}(q)|=|p-q|$. 
 Corollary \ref{cor:finite point inverses} guarantees that $\varphi$ is invertible on a subset 
-$Y\setminus\{y_1,\ldots,y_n\}$. Its inverse $\psi:Y\setminus\{y_1,\ldots,y_n\}\to X$ is a local
-isometry which extends uniquely to an isometry $\bar\psi:Y\to X$. Clearly $\bar\psi=\varphi^{-1}$.
+$Y\setminus\{y_1,\ldots,y_n\}$. Its inverse $\psi\:Y\setminus\{y_1,\ldots,y_n\}\to X$ is a local
+isometry which extends uniquely to an isometry $\bar\psi\:Y\to X$. Clearly $\bar\psi=\varphi^{-1}$.
 \qeds
 
 
@@ -1239,12 +1275,12 @@ isometry which extends uniquely to an isometry $\bar\psi:Y\to X$. Clearly $\bar\
 \subsection{Intrinsic metric determines metric minimizing discs}~
 
 \medskip
-Let $\gamma_{\pm 1}:I\to X$ be two rectifiable paths, parametrized by arc length. We say that  $\gamma_{-1}$ is {\em parallel} to $\gamma_{+1}$, if $d(\gamma_{-1},\gamma_{+1})$
+Let $\gamma_{\pm 1}\:I\to X$ be two rectifiable paths, parametrized by arc length. We say that  $\gamma_{-1}$ is {\em parallel} to $\gamma_{+1}$, if $d(\gamma_{-1},\gamma_{+1})$
 is constant on $I$.
 
 
 \begin{thm}{Lemma}\label{lem:parpaths}
-Let $\gamma_{\pm 1}:I\to X$ be two rectifiable paths of equal length $L>0$. Set $\gamma_t:=h(\cdot,t)$ where $h:[-1,1]\times[0,L]\to X$ denotes the geodesic homotopy
+Let $\gamma_{\pm 1}\:I\to X$ be two rectifiable paths of equal length $L>0$. Set $\gamma_t:=h(\cdot,t)$ where $h\:[-1,1]\times[0,L]\to X$ denotes the geodesic homotopy
 between their arclength parametrizations. If $\gamma_0$ has length $L$, then $\gamma_{-1}$ and $\gamma_{+1}$ are parallel. Moreover, $h([-1,1]\times[0,L])$ is intrinsically 
 flat.
 \end{thm}
@@ -1263,27 +1299,28 @@ such that $\sum_{i=0}^k d(x_i^{0},x_{i+1}^{0})\geq L-\epsilon$. For $t\in[-1,1]$
 point $\gamma_t$ corresponding to $x_i^{0}$. Now use the comparison triangles
 $\triangle(x_{j}^{-1},x_{j+1}^{-1},x_{j+1}^{+1})$ and $\triangle(x_{j}^{+1},x_{j+1}^{+1},x_{j+1}^{-1})$, $j=0,\ldots k-1$,
 to glue a flat comparison surface $S_\epsilon$ for $H$. From Reshetnyak's majorization theorem, we obtain a short map 
-$f_\epsilon:S_\epsilon\to H$. Denote by by $\hat x_i^{t}$ the point on on $S_\epsilon$ corresponding to $x_i^{t}$. Then
+$f_\epsilon\:S_\epsilon\to H$. Denote by by $\hat x_i^{t}$ the point on on $S_\epsilon$ corresponding to $x_i^{t}$. Then
 $$
 L-\epsilon\leq\sum_{i=0}^k d(x_i^{0},x_{i+1}^{0})\leq\sum_{i=0}^k d(\hat x_i^{0},\hat x_{i+1}^{0})\leq
 \frac{1}{2}\sum_{i=0}^k d(x_i^{-1}, x_{i+1}^{-1})+\frac{1}{2}\sum_{i=0}^k d(x_i^{+1}, x_{i+1}^{+1})\leq L.
 $$
 Hence we can choose a sequence $\epsilon_j\to 0$ such that $S_{\epsilon_j}$ converges to a flat surface $S$ and $f_{\epsilon_j}$
-converges to a short map $f:S\to H$. Note that $f$ is surjective. Moreover, $S$
+converges to a short map $f\:S\to H$. Note that $f$ is surjective. Moreover, $S$
 has two transversal foliations, one by parallel paths of constant length $L$ and one by geodesic segments of constant length.
 It follows that the Jacbian of $f$ is almost everywhere equal to one. Thus $f$ is area preserving and therefore an isometry by \ref{thm:short+area=isom}.
 \qeds
 
 \begin{thm}{Uniqueness Theorem}\label{prop:strict-mm}
-Let $X$ be a CAT(0) space and $s_0, s_1:\DD\to X$ be metric minimizing discs. If 
+Let $X$ be a CAT(0) space and $s_0, s_1\:\DD\to X$ be metric minimizing discs. If 
 $\|\DD\|_{s_0}$ is isometric to $\|\DD\|_{s_1}$, then $s_0=s_1$.
 \end{thm}
 
 \parit{Proof.}
-For $t\in[0,1]$ denote $s_t:\DD\to X$ the map obtained by geodesic interpolation. Then
+For $t\in[0,1]$ denote $s_t\:\DD\to X$ the map obtained by geodesic interpolation. Then
 $\|\DD\|_{s_t}$ is isometric to $\|\DD\|_{s_0}$ for all $t\in[0,1]$. In particular, every $s_t$ is metric minimizing.
 Let $\gamma$ be a path $\DD$ connecting two boundary points and such that $s_0\circ\gamma$ is rectifiable.
-Moreover, assume that the parametrization is such that $s_0\circ\gamma$ is parametrized by arclength. Then each 
+Moreover, assume that the parametrization is such that $s_0\circ\gamma$ is parametrized by arc length. 
+Then each 
 $s_t\circ\gamma$ is parametrized by arclength and Lemma \ref{lem:parpaths} we obtain $s_t\circ\gamma\cong s_0\circ\gamma$.
 The claim follows.
 \qeds
@@ -1300,7 +1337,7 @@ Any metric minimizing disc in a $\CAT(0)$ space is strictly metric minimizing.
 \subsection{Metric minimizing discs below given continuous ones}~
 \medskip
 \begin{thm}{Intrinsic continuity}
-A map $f:Y\to Z$ from a metric space $Y$ to a metric space
+A map $f\:Y\to Z$ from a metric space $Y$ to a metric space
  $Z$ is called
 {\em intrinsically continuous}, if for every $y\in Y$ 
 and every $\epsilon>0$ there
@@ -1314,8 +1351,8 @@ with $\operatorname{length}(f\circ\gamma)<\epsilon$.
  \item The main example of intrinsically continuous maps are Lipschitz
 maps from geodesic spaces to arbitrary metric spaces.
 \item Restrictions of intrinsically continuous maps to compact sets are uniformly intrinsically continuous. 
-\item If a map $f:Y\to Z$ is intrinsically continuous, then 
-the natural projection $\pi_f:Y\rightarrow \|Y\|_f$ is continuous. If
+\item If a map $f\:Y\to Z$ is intrinsically continuous, then 
+the natural projection $\pi_f\:Y\rightarrow \|Y\|_f$ is continuous. If
 moreover $Y$ is compact, then $\|Y\|_f$ equipped with the induced 
 metric is a geodesic space.
 \end{enumerate}
@@ -1346,8 +1383,8 @@ minimal element. This element is clearly metric minimizing, since the induced me
 determines the length structure. This explains
 
 \begin{thm}{Proposition}\label{prop:exist}
- If $X$ is a proper metric space, then for every intrinsically continuous map $f:\DD\rightarrow X$,
- there is a metric minimizing map $s:\DD\rightarrow X$
+ If $X$ is a proper metric space, then for every intrinsically continuous map $f\:\DD\rightarrow X$,
+ there is a metric minimizing map $s\:\DD\rightarrow X$
  such that $\|{*}-{*}\|_s\leq\|{*}-{*}\|_f$.
 \end{thm}
 
