@@ -561,56 +561,55 @@ Assume $s\:\DD\to W$ is a saddle map.
 Then $\|\DD\|_s$ is $\CAT[0]$.
 \end{thm}
 
-We follow the rough outline of the proof of Shefel in \cite{shefel-2D}.
-However, Shefel's proof was written rather tight and generalizing from the plane to a
-disc retract come with some additional complications, so we have decided to provide all details.
+The statement above is a slight generalization of theorem proved by Shefel in \cite{shefel-2D};
+originally it was proved if the ambient space is the plane and we need it for a disc retract.
+The proof below roughly the same as the original.
+However, Shefel's proof was written rather tight 
+and we have decided to provide all details.
 
 In the proof we will need the following lemmas.
 
 Note that since $W$ is a disc retract, its boundary $\partial W$ is compact. Therefore
 the space $\Geod(W)$ of geodesic segments with endpoints on $\partial W$ is compact as well.
+Further, according to Lemma~\ref{lem:extension}, any geodesic in $W$ can be extended to a geodesic in $\Geod(W)$.
 
-\begin{thm}{Lemma}\label{lem:sepbygeo}
-Let $W$ be a $\CAT[0]$  disc retract. If $C\subset W$ is a closed convex subset and $p$ is a
-point in $W-C$, then there is a (possibly degenerated) geodesic $\gamma\in\Geod(W)$ which separates $p$ and $C$. 
-In particular, $\gamma$ is disjoint from $p$ and $C$.
+\begin{thm}{Lemma}\label{lem:sepbygeo}\label{lem:saddle-crit}
+Let $W$ be a $\CAT[0]$  disc retract. If $K\subset W$ is a closed convex subset and $p$ is a
+point in $W\backslash K$, then there is a (possibly degenerated) geodesic $\sigma\in\Geod(W)$ which separates $p$ and $K$;
+that is $K$ and $p$ lie in the different connected components of $W\backslash \sigma$.
+
+Moreover one can assume that $\sigma$ lies in the given countable dense subset $\mathcal{G}$
+of $\Geod(W)$.
 \end{thm}
+
+This lemma analogous to the following statement in the plane geometry: \emph{any closed convex set in the plane is an intersection of open half planes}.
+A Euclidean proof admits a straightforward generalization to the $\CAT[0]$ disc retracts.
+
+\begin{wrapfigure}{r}{34 mm}
+\begin{lpic}[t(-5 mm),b(-0 mm),r(0 mm),l(0 mm)]{pics/K-p(1)}
+\lbl[]{5,10;$W$}
+\lbl[]{14,12;$K$}
+\lbl[tl]{28,14;$p$}
+\lbl[tr]{26,7;$x$}
+\lbl[br]{22.5,13;$y$}
+\lbl[tl]{18.5,10.5;$q$}
+\end{lpic}
+\end{wrapfigure}
 
 \parit{Proof.}
-If there is a cut point in $W$ which separates $p$ and $C$, then we are done because every cut point of $W$
-is contained in the boundary of $W$. So let us assume that this is not the case.
-Let $\bar p$ be the nearest point projection of $p$ onto $C$. 
-Choose a point $z$ on the segment $p\bar p$ such that the angle between $zp$ and $z\bar p$ is less than $\frac{5\pi}{4}$.
-Since $z$ is not a cut point, the link $\Sigma_z W$ is connected. Hence there is a direction $v\in \Sigma_z W$
-which encloses an angle of $\frac{\pi}{2}$ with the geodesic $z\bar p$. Let $(v_k)$ be a sequence of directions with angles
-between $\frac{\pi}{4}$ and $\frac{\pi}{2}$, converging to
-$v$ and such that there are geodesics $\gamma_k\in\Geod(W)$ with $\dot\gamma_k(0)=v_k$. If some $\gamma_k$
-is disjoint from $C$, then, by the assumptions on the angles, it is also disjoint form $p$ and we are done. Else, all
-geodesics $\gamma_k$ intersect $C$. Necessarily, the intersects have to occur for positive times. Therefore, the $\gamma_k$ have uniform length
-and subconverge to a geodesic $\gamma_\infty$ starting in the direction $v$. But then an extension of $\gamma_\infty$ to an element 
-of $\Geod(W)$ separates $p$ from $C$.
+Let $q$ be the nearest point projection of $p$ onto $K$.
+
+Assume there is point $x\not\in [pq]$ which lies sufficiently close to the midpoint of $[pq]$.
+Then the nearest point projection $y$ of $x$ onto $[pq]$ lies in the interior of $[pq]$.
+Extend the geodesic $[xy]$ to a geodesic $\sigma$ in $\Geod(W)$
+and note that it separates $K$ from $p$.
+
+If there is no point $x\not\in [pq]$ which lies sufficiently close to the midpoint of $[pq]$
+then the midpoint $m$ of $[pq]$ forms a degenerate geodesic in $\Geod(W)$ which separates $K$ from $p$.
 \qeds
 
 
 
-
-\begin{thm}{Lemma}\label{lem:saddle-crit}
-Let $W$ be a $\CAT[0]$ space which is a disc retract. 
-Furthermore, let $\mathcal{G}$ be a countable dense subset 
-of $\Geod(W)$.
-Assume $s\:\DD\to W$ is saddle with respect to $\mathcal{G}$, i.e. for any element $g$ in $\mathcal{G}$ every 
-component of $\DD\backslash s^{-1}(g)$ intersects the boundary $\partial\DD$.
-Then $s$ is saddle.
-\end{thm}
-
-\parit{Proof.} 
-Assume that there is a closed convex set $K$ in $W$ such that 
-$\DD\backslash s^{-1}(g)$ has a component $U$ which is disjoint from the boundary $\partial\DD$. 
-Note that $U$ is open. 
-Pick a point $p$ in $U$. 
-It is sufficient to find an element in $\mathcal{G}$ which separates $s(p)$ and $K$. By Lemma \ref{lem:sepbygeo}
-there is an element in $\Geod(W)$ which separates $s(p)$ and $K$ and since $\mathcal{G}$ is dense we are done.
-\qeds
 
 \begin{thm}{Cutting hat lemma}\label{lem:cutting-hat}
 Let 
@@ -679,9 +678,11 @@ reduces the general case to the above obvious ones.
 \qeds
 
 \begin{thm}{Lemma}\label{lem:puzzle-compact}
- We $W$ be a CAT[0] disc retract and fix a number $N$. Consider the class of metric spaces $\mathcal{S}_N$ 
+Let $W$ be a $\CAT[0]$ disc retract 
+and $N$ is a positive integer. 
+Consider the class of metric spaces $\mathcal{S}_N$ 
 which are homeomorphic to a disc retract
-and can be covered by at most $N$ closed convex subsets of $W$.
+and can be covered by at most $N$ isometric copies of closed convex subsets of $W$.
 Then $\mathcal{S}_N$ is compact in Gromov--Hausdorff topology.
 \end{thm}
 
