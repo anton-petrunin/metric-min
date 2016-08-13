@@ -564,10 +564,9 @@ Then $\|\DD\|_s$ is $\CAT[0]$.
 The statement above is a slight generalization of theorem proved by Shefel in \cite{shefel-2D};
 originally it was proved if the ambient space is the plane and we need it for a disc retract.
 The proof below roughly the same as the original.
-However, Shefel's proof was written rather tight 
+However, Shefel's proof was written very tight
 and we have decided to provide all details.
 
-In the proof we will need the following lemmas.
 
 Note that since $W$ is a disc retract, its boundary $\partial W$ is compact. Therefore
 the space $\Geod(W)$ of geodesic segments with endpoints on $\partial W$ is compact as well.
@@ -576,7 +575,7 @@ Further, according to Lemma~\ref{lem:extension}, any geodesic in $W$ can be exte
 \begin{thm}{Lemma}\label{lem:sepbygeo}\label{lem:saddle-crit}
 Let $W$ be a $\CAT[0]$  disc retract. If $K\subset W$ is a closed convex subset and $p$ is a
 point in $W\backslash K$, then there is a (possibly degenerated) geodesic $\sigma\in\Geod(W)$ which separates $p$ and $K$;
-that is $K$ and $p$ lie in the different connected components of $W\backslash \sigma$.
+that is, $K$ and $p$ lie in the different connected components of $W\backslash \sigma$.
 
 Moreover one can assume that $\sigma$ lies in the given countable dense subset $\mathcal{G}$
 of $\Geod(W)$.
@@ -601,11 +600,14 @@ Let $q$ be the nearest point projection of $p$ onto $K$.
 
 Assume there is point $x\not\in [pq]$ which lies sufficiently close to the midpoint of $[pq]$.
 Then the nearest point projection $y$ of $x$ onto $[pq]$ lies in the interior of $[pq]$.
-Extend the geodesic $[xy]$ to a geodesic $\sigma$ in $\Geod(W)$
-and note that it separates $K$ from $p$.
+Extend the geodesic $[xy]$ to a geodesic $\sigma$ in $\Geod(W)$.
+Note that $\sigma$ separates $K$ from $p$.
 
 If there is no point $x\not\in [pq]$ which lies sufficiently close to the midpoint of $[pq]$
 then the midpoint $m$ of $[pq]$ forms a degenerate geodesic in $\Geod(W)$ which separates $K$ from $p$.
+
+To prove the last statement, 
+note that the set of geodesics in $\Geod(W)$ which separates $K$ from $p$ is open. %!!!NOT quite true, but almost.
 \qeds
 
 
