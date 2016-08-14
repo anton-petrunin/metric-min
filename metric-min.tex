@@ -921,92 +921,45 @@ such that $\gamma=\gamma_0$ and $\gamma_1$ is $\gamma$ with reversed parametriza
 Note that the order of $x$ and $y$ on $p^{-1}(\gamma_t)$ does not change in $t$.
 On the other hand the order on $\gamma_0$ and on $\gamma_1$ are opposite, a contradiction.\qeds 
 
-\section{Energy of Sobolev maps}
+\section{Harmonic maps}
 
-\subsection{Definitions}
+%???MAYBE WE SHOULD say harmonic insted of energy minimizing
 
-Let $\Omega$ be an open and bounded subset of $\mathbb{R}^n$ and $(X,d)$ a metric space.
-We say that a measurable map $u\:\Omega\to X$ lies in 
-$L^2(\Omega,X)$ if and only if
-\begin{enumerate}
- \item there is a full measure subset $M\subset \Omega$ such that $u(M)\subset X$ is separable;
- \item for any $x\in X$ the map $z\mapsto d(u(z),x)$ belongs to $L^2(\Omega)$.
-\end{enumerate}
+In this section we show that harmonic maps from disc to $\CAT[0]$ space are metric minimizing, see Proposition~\ref{prop:harmonic}.
 
-Following Reshetnyak \cite{R}, we define the Sobolev space $W^{1,2}(\Omega,X)$, of finite energy maps, as follows. 
-A map $u\in L^2(\Omega,X)$ is contained in $W^{1,2}(\Omega,X)$ if and only if
+The following theorem was proved by Korevaar and Schoen in \cite{KS}, it generalize ???.
 
-\begin{enumerate}
- \item for any $x\in X$ the map $u_x(z):=d(u(z),x)$ belongs to $W^{1,2}(\Omega)$;
- \item there exists a uniform bound for the weak gradients $|\nabla u_x|$; 
- that is, there is a function $h\in L^2(\Omega)$ 
- such that $|\nabla u_x|\leq h$ holds for all $x$ almost everywhere in $\Omega$. 
-\end{enumerate}
-
-If for a map $u\:\Omega\to X$ the  approximate limit
-$$
-ap\lim_{t\searrow 0}\frac{d(u(z+tv),u(z))}{t}
-$$
-exists, then we call this limit the {\em approximate metric derivative} at the point $z$ in the direction $v\in\mathbb{R}^n$. It will be denoted
-as $|du_z(v)|$. According to
-\cite[Prop.4.3]{LW}, if $u\in W^{1,2}(\Omega,X)$, then its approximate metric derivative exists and defines a semi-norm $|du_z|$ on $\mathbb{R}^n$, 
-in every direction at almost every point $z\in\Omega$. Moreover, the function $z\to\int_{S^1}|du_z(v)|^2 d\mathcal{L}^1$ lies in $L^2(\Omega)$.
-We can then define the {\em energy} of a map $u\in W^{1,2}(\Omega,X)$ as
-$$
-E(u):=\int_\Omega\left(\frac{1}{\omega_n}\int_{S^{n-1}}|du_z(v)|^2 d\mathcal{L}^1(v)\right)d\mathcal{H}^{n-1}(z).
-$$
-It was shown in \cite{LW} that this definition coincides, up to a factor, with the Korevaar-Schoen 2-energy \cite{KS}.
-
-From now on, we will assume that $X$ is a $\CAT[0]$ space. 
-Recall that between any two maps $u_0,u_1\:\Omega\to X$ there is 
-a unique {\em geodesic homotopy} $u_t$. Namely for $t\in[0,1]$ we define $u_t(z)$ as the point on $[u_0(z)u_1(z)]$ at distance $t$
-from $u_0(z)$. If $u_0, u_1\in W^{1,2}(\Omega,X)$, then energy is convex along geodesic homotopies \cite[(2.2vi)]{KS}:
-$$
-E(u_t)\leq (1-t)E(u_0)+tE(u_1)-t(1-t)\int_\Omega|\nabla d(u_0,u_1)|^2d\mathcal{H}^2.
-$$
-
-The convexity of energy is fundamental and leads to existence and uniqueness results of least energy maps. (See \cite{KS}.)
-
-\subsection{Energy minimizing discs}
-
-It was shown in \cite{KS} that any finite energy disc $u$ in a $\CAT[0]$ space has a well defined trace $\operatorname{tr}(u)$ which is an
-element in $L^2(\partial\DD,X)$. If $u$ is continuous then its restriction to $\partial\DD$ is a representative of $\operatorname{tr}(u)$.
-If $\gamma$ is a continuous circle in a $\CAT[0]$ space $X$ and $u$ is a finite energy disc with $\operatorname{tr}(u)=\gamma$, then we say that 
-$u$ {\em spans} $\gamma$.
-As a consequence of Korevaar and Schoen's work one obtains the following solution to the Dirichlet problem in $\CAT[0]$ spaces.
-
-\begin{thm}{Dirichlet problem}(\cite{KS})\label{thm:dirichlet}
+\begin{thm}{Dirichlet problem}\label{thm:dirichlet}
 Let $\gamma$ be a continuous circle in a $\CAT[0]$ space $X$. 
 Then there is a unique energy minimizing disc $u$ which spans $\gamma$; 
 that is, $u$
 has the least energy among all discs spanning $\gamma$. 
 The energy minimizer $u$ is locally Lipschitz continuous in the interior of $\DD$ and continuous on all of $\DD$.
-Moreover, the local Lipschitz constant depends only on the energy of $u$ and the distance to the boundary.
+
+Moreover, the local Lipschitz constant of $u$ depends only on the energy of $u$ and the distance to the boundary.
+\end{thm}
+
+For a Sobolev map $u$ from the disc $\DD$ to the Euclidean space, the energy of a map $u\:\DD\to X$ is defined as 
+\[E(u)=\int\limits_\DD|d_xu|^2\cdot d_x\area.\]
+In \cite{R}, Reshetnyak gives an appropriate generalization of Sobolev maps and energy with target in general metric space.
+This generalization is used in the formulation above.
+
+\begin{thm}{Proposition}\label{prop:harmonic}
+Let $X$ be a $\CAT[0]$ space 
+and $u\:\DD\to X$ is an energy minimizing disc with fixed boundary curve.
+Then $u$ is metric minimizing.
 \end{thm}
 
 
+In the proof we will use that if $u\:\DD\to X$ is Soblev and 
+$u \succcurlyeq s$ then $s$ is Sobolev and $E(u)\ge E(s)$.
+This statement follow from ???.
 
-Our aim is to show that energy minimizing discs are metric minimizing. For this, the following characterization of finite energy maps is particularly useful.
-\begin{thm}{Finite energy characterization}
-A continuous map $u$ in $L^2(\Omega,X)$ has finite energy iff there is a Borel function $\rho\in L^2(\Omega)$ such that for 2-almost all curves\footnote{A property holds for 
-2-almost all curves iff there is a nonnegative Borel function $f\in L^2(\Omega)$ such that the property can only fail for rectifiable curves $c$ with $\int_c f=\infty$.} 
-$\gamma\:I\to\Omega$ the composition $u\circ\gamma$ is continous and
-$$
-\operatorname{length}(u\circ\gamma)\leq\int_\gamma \rho.
-$$
-\end{thm}
-
-This characterization is proven in \cite{HKST}.
-
-\begin{thm}{Theorem}
- Let $\gamma$ be a continuous circle in a $\CAT[0]$ space $X$ and $u$ an energy minimizing disc spanning $\gamma$.
- Then $u$ is a metric minimizing disc.
- \end{thm}
-
- \parit{Proof.}
- If $u$ is not metric minimizing, then by Theorem \ref{thm:dirichlet} and Proposition \ref{prop:exist} there is a metric minimizing
- disc $s$ with $u \succcurlyeq s$ and $u|_{\partial\DD}=s|_{\partial\DD}$. The first property implies $E(u)=E(s)$, hence $s$ is also energy minimizing, and then the second
- property gives $u=s$ by uniqueness of the solution to the Dirichlet problem.
+\parit{Proof.}
+By  Proposition \ref{prop:exist} there is a metric minimizing
+disc $s$ with $u \succcurlyeq s$ and $u|_{\partial\DD}=s|_{\partial\DD}$. 
+Then $E(u)=E(s)$, that is $s$ is also energy minimizing.
+By uniqueness in \ref{thm:dirichlet}, we get $u=s$.
  \qeds
  
 
@@ -1195,7 +1148,7 @@ $$
 2{\cdot}\pi\cdot \#\varphi^{-1}(y)\leq\mathcal{H}^1(\Sigma_y Y). 
 $$
 In particular, if $\mathcal{H}^1(\Sigma_y Y)<4{\cdot}\pi$, then $\varphi^{-1}(y)$
-consits of a single point.
+consists of a single point.
 \end{thm}
 
 \parit{Proof.} 
@@ -1566,7 +1519,7 @@ The one-dimensional Cauchy problem.'' Oxford Lecture Series in Mathematics and i
 A course in metric geometry.
 Graduate Studies in Mathematics, 33. American Mathematical Society, Providence, RI, 2001. xiv+415 pp.
 
-\bibitem{HKST} Heinonen, J.;  Koskela, P.;  Shanmugalinga, N.; Tyson, J.``Sobolev spaces on metric measure spaces,''
+\bibitem{HKST} Heinonen, J.;  Koskela, P.;  Shanmugalinga, N.; Tyson, J. ``Sobolev spaces on metric measure spaces,''
 volume 27 of New Mathematical Monographs. Cambridge University Press, Cambridge, 2015.
 
 \bibitem{KS}Korevaar, N. J.; Schoen, R. M. ``Sobolev spaces and harmonic maps for metric space targets,'' Comm. Anal. Geom., 1(3-4):561-659, 1993.
