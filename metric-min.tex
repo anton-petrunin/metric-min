@@ -940,7 +940,7 @@ Moreover, the local Lipschitz constant of $u$ depends only on the energy of $u$ 
 \end{thm}
 
 For a Sobolev map $u$ from the disc $\DD$ to the Euclidean space, the energy of a map $u\:\DD\to X$ is defined as 
-\[E(u)=\int\limits_\DD|d_xu|^2\cdot d_x\area.\]
+\[E(u)=\int\limits_\DD|du|^2\cdot d\area.\]
 In \cite{R}, Reshetnyak gives an appropriate generalization of Sobolev maps and energy with target in general metric space.
 This generalization is used in the formulation above.
 
@@ -1020,7 +1020,7 @@ vertices $x,y,u$ and $v$ in $X_\eps$ such that
 \begin{enumerate}
 	\item $\angle_x(u,y)=\angle_y(v,x_y)=\frac{\pi}{2};$
 	\item $|x-y|\leq\delta;$
-	\item $|x-u|\geq 4\delta\text{ and }|y-v|\geq 4\delta;$
+	\item $|x-u|\geq 4\cdot\delta\text{ and }|y-v|\geq 4\cdot\delta;$
 	\item there is a point $m\in [uv]$ with $|m-[xy]|\leq \delta.$
 \end{enumerate}
 Then 
@@ -1062,7 +1062,7 @@ in $X_\eps$ with $\mathcal{H}^1(\Sigma_z X)< \frac{7}{3}\pi$
 for every $z$ in $[xy]$, the following holds for every $\delta\leq\bar\delta$. 
 If $[x'y']\subset[xy]$ is a subgeodesic of length $\leq\delta$ and $N^+_r([xy])$ is some half-neighbourhood 
 of $[x'y']$ with boundary curves $\gamma_{x'}$ and $\gamma_{y'}$, 
-then the geodesic $c_\delta$ between  $\gamma_{x'}(4\delta)$ and $\gamma_{y'}(4\delta)$ has distance $>\delta$
+then the geodesic $c_\delta$ between  $\gamma_{x'}(4\cdot\delta)$ and $\gamma_{y'}(4\cdot\delta)$ has distance $>\delta$
 from $[x'y']$.
 \end{thm}
 
@@ -1071,7 +1071,7 @@ Let $p$ be a point in the interior of $X$ and $(c,c^\perp)$ a {\em rightangled h
 with $\angle_p(\dot c(0),\dot c^\perp (0))=\frac{\pi}{2}$. For every $t\in[0,T]$ let
 $c^\perp_t$ be a gradient curve of the distance function to $c$ starting in $c(t)$ and lying on the same side
 of $c$ as $c^\perp$. Then there exists $\hat\delta>0$ such that for all $\delta\leq\hat\delta$ the distance between 
-$[c^\perp(4\delta)c^\perp_\delta(4\delta)]$
+$[c^\perp(4\cdot\delta)c^\perp_\delta(4\cdot\delta)]$
 and $c$ is larger than $\delta$.
 \end{thm}
 
@@ -1092,10 +1092,10 @@ as in Corollary \ref{cor:level distance 1} and a point array
 $x=x_0,x_1,\ldots,x_n=y$ on $[xy]$ such that $|x_j-x_{j+1}|=\delta\leq\bar\delta$. Let $N_r^ +([x_j x_{j+1}])$ 
 be a half-neighbourhood contained in $N_r^ +([x y])$
 with boundary curves $\gamma_{x_j^ +}$ and $\gamma_{x_{j+1}^ -}$. Then by Corollary \ref{cor:level distance 1}, 
-the geodesic between $\gamma_j^ -(4\delta)$
-and $\gamma_{j+1}^ +(4\delta)$ has distance more than $\delta$ from $[xy]$. We connect the point 
-$\gamma_j^ +(4\delta)$ to $\gamma_j^ -(4\delta)$ by a shortest path $\rho_j$
-contained in $\partial B_{4\delta}(x_j)$. Note that the length $L_j$ of $\rho_j$ is $O(\delta)$. 
+the geodesic between $\gamma_j^ -(4\cdot\delta)$
+and $\gamma_{j+1}^ +(4\cdot\delta)$ has distance more than $\delta$ from $[xy]$. We connect the point 
+$\gamma_j^ +(4\cdot\delta)$ to $\gamma_j^ -(4\cdot\delta)$ by a shortest path $\rho_j$
+contained in $\partial B_{4\cdot\delta}(x_j)$. Note that the length $L_j$ of $\rho_j$ is $O(\delta)$. 
 Moreover, since $X$
 is a $\CAT[0]$ disc, the contribution of single points to the total curvature of $X$ is finite. Hence 
 even $\sum_{j=0}^ n L_j$ is $O(\delta)$.
@@ -1105,7 +1105,7 @@ estimated by
 $$
 L_\delta\leq |x-y|+n\cdot o(\delta)+O(\delta).
 $$
-Since $|x-y|=n\delta$, the claim follows in this case.
+Since $|x-y|=n\cdot\delta$, the claim follows in this case.
 
 For the general case, we choose $s\in[xy]$ to be the fat point closest to $x$. We assume that $s\neq x$,
 the other case is similar. Let $\gamma_s^\pm\subset N_r^+([x y])$ be geodesics starting in $s$ and such that 
@@ -1117,9 +1117,9 @@ Next choose $s^-\in[xs]$ and $s^+\in[sy]$ with $|s-s^\pm|\leq\hat\delta$. Then t
 to $[xs^-]$ and $[s^+y]$ since we have reduced 
 the number of fat points. If $N^+_r([s^- s^+])$ is a half-neighbourhood with boundary curves $\gamma_{s^\pm}$, 
 then for $\delta\leq\hat\delta$ we can estimate the length of $\gamma_\delta$ as before. 
-Namely choose a shortest path $\rho$ in $\partial B_{4\delta}(s)$ from $\gamma_s^-(4\delta)$ to $\gamma_s^+(4\delta)$ 
+Namely choose a shortest path $\rho$ in $\partial B_{4\cdot\delta}(s)$ from $\gamma_s^-(4\cdot\delta)$ to $\gamma_s^+(4\cdot\delta)$ 
 and concatenate it 
-with $[\gamma_{s^-}(4\delta)\gamma_s^-(4\delta)]$ and $[\gamma_s^+(4\delta)\gamma_{s^+}(4\delta)]$. The same estimate 
+with $[\gamma_{s^-}(4\cdot\delta)\gamma_s^-(4\cdot\delta)]$ and $[\gamma_s^+(4\cdot\delta)\gamma_{s^+}(4\cdot\delta)]$. The same estimate 
 as above applies now because, by Corollary \ref{cor:level distance 2}, this path has distance $>\delta$ from $[s^- s^+]$.
 \qeds
 
@@ -1198,11 +1198,13 @@ Set $\Gamma_t:=\varphi^{-1}(\gamma_t)$.
 Then $\Gamma_t$ is a continuous arc for every $t\leq r$.
 By the coarea formula we obtain
 $$
-\area(N_r^+)=\int_0^\delta \mathcal{H}^1(\gamma_t)dt
+\area(N_r^+)=\int\limits_0^\delta \mathcal{H}^1(\gamma_t)dt
 $$
 and
 $$
-\area(\hat N_r^+)\geq\int_{\hat N_r^+}|\nabla (f\circ\varphi)|=\int_0^\delta \mathcal{H}^1(\Gamma_t)dt.
+\area(\hat N_r^+)\geq\int\limits_{\hat N_r^+}|\nabla (f\circ\varphi)|
+=
+\int\limits_0^\delta \mathcal{H}^1(\Gamma_t)dt.
 $$
 Hence $\mathcal{H}^1(\Gamma_t)\leq \mathcal{H}^1(\gamma_t)$ for almost all $t\leq r$.
 Now choose an appropriate sequence $t_k\to 0$. Then, by semi-continuity of length, we have
@@ -1247,7 +1249,9 @@ flat.
 Convexity of $d$ implies $|\dot\gamma_0(t)|\leq 1$. By assumtion, length of $\gamma_0$ equals $L$, hence $|\dot\gamma_0(t)|=1$ for almost all $t\in[0,L]$. So $\gamma_0$
 is parametrized by arc length. Since the energy of a unit speed path equals its length, we conclude from energy convexity 
 $$
-\int_0^L|\nabla d(\gamma_{-1},\gamma_{+1})|^2 d\mathcal{H}^1=0.
+\int\limits_0^L|\nabla d(\gamma_{-1},\gamma_{+1})|^2 d\mathcal{H}^1
+=
+0.
 $$
 Therefore, $\gamma_{-1}$ is parallel to $\gamma_{+1}$.
 
