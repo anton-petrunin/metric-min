@@ -1358,7 +1358,7 @@ determines the length structure. This explains
 \section{Smooth surfaces}\label{sec:smooth}
 
 In this section we show that any strictly saddle surface is locally metric minimizing.
-So in particular, the metric minimizing surfaces do generalize saddle strictly saddle surfaces.
+So in particular, the metric minimizing surfaces do generalize strictly saddle surfaces.
 
 \begin{thm}{Proposition}\label{prop:smooth}
 Any smooth strictly saddle surface in $\RR^3$ is locally metric minimizing.
@@ -1385,8 +1385,8 @@ Fix an array of vector fields $\bm{v}=(v_1,\dots,v_k)$ in $\DD$. Consider the en
 \sum_i\int\limits_\DD |v_is|^2\cdot d_x\area.\]
 Set 
 \[\Delta_{\bm{v}}s=\sum_iv_i(v_is).\]
-(The operator $s\mapsto \Delta_{\bm{v}}s$
-should be considered as an analog of the Laplasian.)
+It is convenient to think of operator $s\mapsto \Delta_{\bm{v}}s$
+as an analog of the Laplasian.
 
 Note that 
 \begin{enumerate}[(i)]
@@ -1401,7 +1401,7 @@ t\cdot E_{\bm{v}} s_1+(1-t)\cdot E_{\bm{v}} s_2.\]
 
 \end{enumerate}
 
-The discussion above reduces the Proposition above to the following Claim:
+The discussion above reduces the Proposition above to the following.
 
 \begin{thm}{Claim}
 Assume $s\:\DD\to \RR^3$ is a smooth strictly saddle surface. 
@@ -1411,18 +1411,18 @@ holds in an open neighborhood of $p$.
 
 \parit{Proof.}
 Denote 
-by $\kappa_1,\kappa_2$ the principle curvatures, 
-by $e_1,e_2$ the unit principle vectors, 
-by $a_1,a_2$ a pair of asymptotic vectors which give coordinate vectors in a neighborhood of $x$.
+by $\kappa_1,\kappa_2$ the principle curvatures,
+and by $e_1,e_2$ the corresponding unit principle vectors. 
+Further, denote by by $a_1,a_2$ a pair of asymptotic vectors; we can assume that $a_1,a_2$ form coordinate vector fields in a neighborhood of $x$.
 
 
 Set $v_1=\tfrac 1{\sqrt{|\kappa_1|}}\cdot e_1$ and $v_2=\tfrac 1{\sqrt{|\kappa_2|}}\cdot e_2$. 
 It remains to show that one can choose smooth functions  $\lambda_1$ and $\lambda_2$ 
-so that if we set $v_3=\lambda_1\cdot a_1$ and $v_4=\lambda_1\cdot a_1$ then \ref{eq:laplasian}
-holds in a neighborhood of $x$.
+so that \ref{eq:laplasian}
+holds in a neighborhood of $x$ for $v_3=\lambda_1\cdot a_1$ and $v_4=\lambda_1\cdot a_1$.
 
 Note that the sum $v_1(v_1s)+v_2(v_2s)$ has vanishing normal part.
-That is $v_1(v_1s)+v_2(v_2s)$ is a tangent vector to the surface.
+That is \[v_1(v_1s)+v_2(v_2s)\] is a tangent vector to the surface.
 
 Since $a_i$ are asymptotic,
 the vectors $a_1(a_1s)$ and $a_2(a_2s)$ have vanishing normal part.
@@ -1454,7 +1454,8 @@ Then the system takes form
   \end{smallmatrix}\right)
 w_z=h(t+z,t-z,w)\]
 
-According by \cite[Theorem 3.6]{bressan}, this system can be solved locally for smooth initial data at $t=0$.
+This system is ???,
+according by \cite[Theorem 3.6]{bressan}, it can be solved locally for smooth initial data at $t=0$.
 
 It remains to choose $v_3$ and $v_4$ for solution so that $\lambda_1, \lambda_2>0$ in a small neighborhood of $p$.
 \qeds
