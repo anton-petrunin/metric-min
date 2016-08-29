@@ -346,7 +346,7 @@ Then $|\DD|_f$ is homeomorphic to a disc retract.
 \parit{Proof.}
 Note that $|\DD|_f$ is a Hausdorff space
 and the forgetful map $h\:\DD\to |\DD|_f$ is continuous.
-Since and $\DD$ is compact, the space $|\DD|_f$ comes with the quotient topology for $h$. 
+Since $f$ is continuous and $\DD$ is compact, the space $|\DD|_f$ comes with the quotient topology for $h$. 
 
 Consider the disc $\DD$ as a subset in the sphere $\SS^2$.
 For any $x\in \DD$, set 
@@ -925,9 +925,14 @@ On the other hand the order on $\gamma_0$ and on $\gamma_1$ are opposite, a cont
 
 %???MAYBE WE SHOULD say harmonic insted of energy minimizing
 
-In this section we show that harmonic maps from disc to $\CAT[0]$ space are metric minimizing, see Proposition~\ref{prop:harmonic}.
+In this section we show that harmonic maps from discs to $\CAT[0]$ spaces are metric minimizing, see Proposition~\ref{prop:harmonic}.
 
-The following theorem was proved by Korevaar and Schoen in \cite{KS}, it generalize ???.
+For definitions and properties of Sobolev maps we refer the reader to \cite{LW} and \cite{LW2}. For convenience we will call
+an energy minimizing map a {\em harmonic map}.
+
+
+The following theorem was proved by Korevaar and Schoen in \cite{KS}, it generalizes earlier results by Hamilton on Riemannian manifolds of non-positive
+curvature \cite{H}.
 
 \begin{thm}{Dirichlet problem}\label{thm:dirichlet}
 Let $\gamma$ be a continuous circle in a $\CAT[0]$ space $X$. 
@@ -939,10 +944,12 @@ The energy minimizer $u$ is locally Lipschitz continuous in the interior of $\DD
 Moreover, the local Lipschitz constant of $u$ depends only on the energy of $u$ and the distance to the boundary.
 \end{thm}
 
-For a Sobolev map $u$ from the disc $\DD$ to the Euclidean space, the energy of a map $u\:\DD\to X$ is defined as 
+For a Sobolev map $u$ from the disc $\DD$ to the Euclidean space, its energy is defined as 
 \[E(u)=\int\limits_\DD|du|^2\cdot d\area.\]
-In \cite{R}, Reshetnyak gives an appropriate generalization of Sobolev maps and energy with target in general metric space.
-This generalization is used in the formulation above.
+In \cite{KS}, an appropriate generalization of energy for maps with target in general metric spaces is defined.
+We will call this generalization {\em Korevaar-Schoen energy} and denote it by $E$. It is used throughout this section. 
+A thorough treatment of general energies and their associated Sobolev
+spaces can be found in \cite{LW2}.
 
 \begin{thm}{Proposition}\label{prop:harmonic}
 Let $X$ be a $\CAT[0]$ space 
@@ -951,272 +958,25 @@ Then $u$ is metric minimizing.
 \end{thm}
 
 
-In the proof we will use that if $u\:\DD\to X$ is Soblev and 
-$u \succcurlyeq s$ then $s$ is Sobolev and $E(u)\ge E(s)$.
-This statement follow from ???.
-
 \parit{Proof.}
-By  Proposition \ref{prop:exist} there is a metric minimizing
-disc $s$ with $u \succcurlyeq s$ and $u|_{\partial\DD}=s|_{\partial\DD}$. 
-Then $E(u)=E(s)$, that is $s$ is also energy minimizing.
-By uniqueness in \ref{thm:dirichlet}, we get $u=s$.
+The regularity statement in Theorem \ref{thm:dirichlet} allows us to apply Proposition \ref{prop:exist} to obtain a metric minimizing
+disc $s$ with $u \succcurlyeq s$ and $u|_{\partial\DD}=s|_{\partial\DD}$. Since $u$ is continuous, it has finite Korevaar-Schoen energy iff
+there is a Borel function $\rho\in L^2(\DD)$ such that for 2-almost all curves $\gamma:I\to \DD$
+$$
+length(u\circ \gamma)\leq\int_\gamma \rho.\footnote{See section 3.2 in \cite{LW3}.}
+$$
+Since $s$ is metric minimizing it has finite Korevaar-Schoen energy as well. From Lemma 3.1 in \cite{LW3} we have for 2-alomst all rectifiable
+curves $\gamma:I\to \DD$
+$$
+length(s\circ \gamma)=\int_I |ds_{\gamma(t)}(\dot\gamma(t))|dt\leq \int_I |du_{\gamma(t)}(\dot\gamma(t))|dt=length(u\circ \gamma).
+$$
+From the Lebesgue Differentiation theorem we obtain $ds\leq du$ almost everywhere. Since $E$ is monotonic in the metric differentials, it follows that 
+$E(s)=E(u)$, that is $s$ is also energy minimizing.
+By uniqueness in Theorem \ref{thm:dirichlet} we get $u=s$.
  \qeds
  
 
 
-
-
-
-\section{CAT[0] surfaces}
-
- 
-
-\subsection{Half-neighbourhoods and continuous deformations}
-
-Let $X$ be a $\CAT[0]$ disc. For any subset $A\subset X$ we denote $N_\eps (A)$ its open $\eps$-neighbourhood.
-Let $x,y\in X$ be different points and $[xy]$ the geodesic segement between them. We define an $\eps$-half-neighbourhood
-$N^+_\eps ([xy])$ in the following way. Note first that $[xy]$ seperates the ball $B$ of radius $\frac{|x-y|}{2}$ around
-the midpoint of $[xy]$ into two components $B^+$ and $B^-$. Let $f$ be the distance function to $[xy]$. Choose gradient curves 
-$\gamma_x$ and $\gamma_y$ of $f$ starting in $x$ respectively $y$ and such that they are tangential to $B^+$. The concatenation
-of $\gamma_x$, $[xy]$ and $\gamma_y$ separates $N_\eps([xy])$ into two components and we choose $N^+_\eps ([xy])$ to be the one
-with interior angles equal to  $\frac{\pi}{2}$. The curves $\gamma_x$ and $\gamma_y$ will be called {\em boundary curves} of the 
-half-neighbourhood.
-
-
-For $t<\eps$ set $\gamma_t\:=\partial N_t([xy])\cap N^+_\eps ([xy])$. If $\eps$
-is small enough, then $\gamma_t$ defines a rectifiable simple arc.
-
-
-\begin{thm}{Proposition}\label{prop:length continuity}
-The length of $\gamma_t$ converges to $|x-y|$ for $t\to 0$.
-\end{thm}
-
-In order to prove this, we need a little preparation. For $\eps>0$ we denote
-$X_\eps$ the subset of points in $X$ at distance $>\eps$ from the boundary.
-
-\begin{thm}{Lemma}\label{lem:extension}
-For any geodesic segment $[xy]$ of length $L>0$ in $X_\eps$ there is a point 
-$x_y\in X$ such that $[x x_y]$ extends $[xy]$ and has length $L+\eps$.
-\end{thm}
-\parit{Proof.}
-We use an argument from \cite{Kleiner}. Note that there exists a radius $r\geq\eps$, such 
-that the radius $r$ distance sphere around $y$ contains a Jordan curve $J$. The Jordan domain bounded by $J$
-will be called $D_J$.
-Denote $cone_x(J)$ the geodesic cone over $J$ with respect to $x$. Then, 
-for any small $\delta>0$, $cone_x(J)$ and $D_J$
-represent the same element in $H_2(X,N_\delta(J))$. Hence $D_J\subset cone_x(J)$. 
-In particular $y\in cone_x(J)$.
-\qeds
-
-A {\em geodesic quadrangle} $\square$ consits of an ordered tuple of four pairwise 
-distinct points $x_k\in X$, $k\in\mathbb{Z}_4$, 
-called vertices, and the four geodesic segments $[x_k,x_{k+1}]$, called the sides. 
-If no side is separating; that is, no maximal extension of that side as a geodesic 
-separates the other two vertices, $\square$ is said to be {\em regular}.
-
-\begin{thm}{Lemma}\label{lem:large angles}
-Let $\eps>0$ be fixed. For some $\delta>0$ let $\square_\delta$ be a regular geodesic quadrangle with
-vertices $x,y,u$ and $v$ in $X_\eps$ such that
-\begin{enumerate}
-	\item $\angle_x(u,y)=\angle_y(v,x_y)=\frac{\pi}{2};$
-	\item $|x-y|\leq\delta;$
-	\item $|x-u|\geq 4\cdot\delta\text{ and }|y-v|\geq 4\cdot\delta;$
-	\item there is a point $m\in [uv]$ with $|m-[xy]|\leq \delta.$
-\end{enumerate}
-Then 
-\begin{itemize}
-\item $\angle_u(x_u,v)\geq\frac{2{\cdot}\pi}{3};$
-\item $\angle_v(u_v,y)\geq\frac{2{\cdot}\pi}{3}.$
-\end{itemize}
-\end{thm}
-
-\parit{Proof.}
-We will use the notation for extensions of geodesics as in Lemma \ref{lem:extension}.
-Let $f$ be the distance function to $[x x_y]$ restricted to $[u u_v]$. Then we have
-$$
-f'(u)\leq\frac{f(m)-f(u)}{|m-u|}\leq-\frac{1}{2}\text{  and  }f'(v)\geq\frac{f(v)-f(m)}{|v-m|}\geq\frac{1}{2}.
-$$
-By condition (1) the claim now follows from the first variation formula.
-\qeds
-
-\begin{thm}{Corollary}
-Let $\eps>0$ be fixed. For a sequence $\delta_k\to 0$ let $\square_k$ be a converging sequence of quadrangles
-as in Lemma \ref{lem:large angles} with $\square_k\to \{z\}$. Denote by $x^\infty_u, u^\infty_v$ and $v^\infty_y$
-the limits of $\eps$-extensions of the respective sides of $\square_k$. Then
-\begin{itemize}
-\item $\angle_z(x^\infty_u,u^\infty_v)\geq\frac{2{\cdot}\pi}{3};$
-\item $\angle_z(u^\infty_v,v^\infty_y)\geq\frac{2{\cdot}\pi}{3};$
-\item $\angle_z(v^\infty_y,x^\infty_u)\geq\pi.$
-\end{itemize}
-In particular $\mathcal{H}^1(\Sigma_z(X))\geq\frac{7}{3}\pi$.
-\end{thm}
-\parit{Proof.}
-The inequalities follow from semi-continuity of angles together with Lemma \ref{lem:large angles}.
-For the supplement note that $[x^\infty_u u^\infty_x]$ induces a decomposition of $\Sigma_z X$ into two convex subset, both of length at least $\pi$.
-But as a result of the first two inequlities, one of those convex sets has length at least $\frac{4}{3}\pi$, hence the claim.
-\qeds
-
-\begin{thm}{Corollary}\label{cor:level distance 1}
-For every $\eps>0$ there exists $\bar\delta>0$ such that for any nondegenerated geodesic $[xy]$ 
-in $X_\eps$ with $\mathcal{H}^1(\Sigma_z X)< \frac{7}{3}\pi$
-for every $z$ in $[xy]$, the following holds for every $\delta\leq\bar\delta$. 
-If $[x'y']\subset[xy]$ is a subgeodesic of length $\leq\delta$ and $N^+_r([xy])$ is some half-neighbourhood 
-of $[x'y']$ with boundary curves $\gamma_{x'}$ and $\gamma_{y'}$, 
-then the geodesic $c_\delta$ between  $\gamma_{x'}(4\cdot\delta)$ and $\gamma_{y'}(4\cdot\delta)$ has distance $>\delta$
-from $[x'y']$.
-\end{thm}
-
-\begin{thm}{Corollary}\label{cor:level distance 2}
-Let $p$ be a point in the interior of $X$ and $(c,c^\perp)$ a {\em rightangled hinge} at $p$; that is, $c,c^\perp:[0,T]\to X$ are unit speed geodesics starting in $p$
-with $\angle_p(\dot c(0),\dot c^\perp (0))=\frac{\pi}{2}$. For every $t\in[0,T]$ let
-$c^\perp_t$ be a gradient curve of the distance function to $c$ starting in $c(t)$ and lying on the same side
-of $c$ as $c^\perp$. Then there exists $\hat\delta>0$ such that for all $\delta\leq\hat\delta$ the distance between 
-$[c^\perp(4\cdot\delta)c^\perp_\delta(4\cdot\delta)]$
-and $c$ is larger than $\delta$.
-\end{thm}
-
-
-
-
-
-
-
-
-\parit{Proof of Proposition\ref{prop:length continuity}.}
-Let $[xy]$ be a geodesic in $X_\eps$ for some $\eps>0$. Call a point
-$z\in X$ with $\mathcal{H}^1(\Sigma_z X)\geq \frac{7}{3}\pi$ a {\em fat point}. 
-Note that there is only a finite number of 
-fat points in $X$. We will prove the statement by induction on  the number 
-of fat points lying on $[xy]$. If there is no such point, then we choose $\bar\delta>0$ 
-as in Corollary \ref{cor:level distance 1} and a point array
-$x=x_0,x_1,\ldots,x_n=y$ on $[xy]$ such that $|x_j-x_{j+1}|=\delta\leq\bar\delta$. Let $N_r^ +([x_j x_{j+1}])$ 
-be a half-neighbourhood contained in $N_r^ +([x y])$
-with boundary curves $\gamma_{x_j^ +}$ and $\gamma_{x_{j+1}^ -}$. Then by Corollary \ref{cor:level distance 1}, 
-the geodesic between $\gamma_j^ -(4\cdot\delta)$
-and $\gamma_{j+1}^ +(4\cdot\delta)$ has distance more than $\delta$ from $[xy]$. We connect the point 
-$\gamma_j^ +(4\cdot\delta)$ to $\gamma_j^ -(4\cdot\delta)$ by a shortest path $\rho_j$
-contained in $\partial B_{4\cdot\delta}(x_j)$. Note that the length $L_j$ of $\rho_j$ is $O(\delta)$. 
-Moreover, since $X$
-is a $\CAT[0]$ disc, the contribution of single points to the total curvature of $X$ is finite. Hence 
-even $\sum_{j=0}^ n L_j$ is $O(\delta)$.
-Therefore, since half-neighbourhoods are convex and projections onto convex subsets are short, the 
-length $L_\delta$ of $\gamma_\delta$ can be
-estimated by 
-$$
-L_\delta\leq |x-y|+n\cdot o(\delta)+O(\delta).
-$$
-Since $|x-y|=n\cdot\delta$, the claim follows in this case.
-
-For the general case, we choose $s\in[xy]$ to be the fat point closest to $x$. We assume that $s\neq x$,
-the other case is similar. Let $\gamma_s^\pm\subset N_r^+([x y])$ be geodesics starting in $s$ and such that 
-$\angle_s(x,\gamma_s^-(r))=\frac{\pi}{2}$ and $\angle_s(y,\gamma_s^+(r))=\frac{\pi}{2}$. Applying Corollary 
-\ref{cor:level distance 2}
-to the rightangled hinges $([xs],\gamma_s^-)$ and $([sy],\gamma_s^+)$ we obtain constants $\hat\delta^\pm>0$. 
-Set $\hat\delta\:=\min\{\hat\delta^-,\hat\delta^+\}$.
-Next choose $s^-\in[xs]$ and $s^+\in[sy]$ with $|s-s^\pm|\leq\hat\delta$. Then the induction hypothesis applies 
-to $[xs^-]$ and $[s^+y]$ since we have reduced 
-the number of fat points. If $N^+_r([s^- s^+])$ is a half-neighbourhood with boundary curves $\gamma_{s^\pm}$, 
-then for $\delta\leq\hat\delta$ we can estimate the length of $\gamma_\delta$ as before. 
-Namely choose a shortest path $\rho$ in $\partial B_{4\cdot\delta}(s)$ from $\gamma_s^-(4\cdot\delta)$ to $\gamma_s^+(4\cdot\delta)$ 
-and concatenate it 
-with $[\gamma_{s^-}(4\cdot\delta)\gamma_s^-(4\cdot\delta)]$ and $[\gamma_s^+(4\cdot\delta)\gamma_{s^+}(4\cdot\delta)]$. The same estimate 
-as above applies now because, by Corollary \ref{cor:level distance 2}, this path has distance $>\delta$ from $[s^- s^+]$.
-\qeds
-
-
-
-\subsection{Area preserving short maps}
-
-
-Throughout this section we let $X$ and $Y$ be planar $\CAT[0]$ spaces and
- $\varphi\:X\to Y$ a surjective short map between them which preserves area.
- Our aim is to prove the following.
-
-\begin{thm}{Theorem}\label{thm:short+area=isom}
-Let $X$ and $Y$ be planar $\CAT[0]$ spaces. 
-Let $\varphi\:X\to Y$ be a surjective short map. 
-If $\area(X)=\area(Y)$,
-then $\varphi$ is an isometry. 
-\end{thm}
-
-???IT IS NOT TRUE FOR TWO DISCS CONNECTED BY A SEGMENT.
-
-
-\begin{thm}{Lemma}\label{lem:inverse image estimate}
-For a point $y\in Y$ holds 
-$$
-2{\cdot}\pi\cdot \#\varphi^{-1}(y)\leq\mathcal{H}^1(\Sigma_y Y). 
-$$
-In particular, if $\mathcal{H}^1(\Sigma_y Y)<4{\cdot}\pi$, then $\varphi^{-1}(y)$
-consists of a single point.
-\end{thm}
-
-\parit{Proof.} 
-Let $x_1,\ldots,x_n$ be points in $\varphi^{-1}(y)$. 
-Since $\varphi$
-is area preserving, 
-\[\area(B_r(y))\geq\sum_{i=1}^n\area(B_r(x_i))\]
-for small enough $r>0$. 
-The coarea formula implies
-\[\int\limits_0^r\biggl(\mathcal{H}^1(S_t(y))-\sum_{i=1}^n \mathcal{H}^1(S_t(x_i))\biggr)\cdot dt
-\geq 
-0.\]
-Hence we can choose a sequence $t_k\to 0$ such that 
-\[\mathcal{H}^1(S_{t_k}(y))\geq\sum_{i=1}^n \mathcal{H}^1(S_{t_k}(x_i)).\] 
-Dividing by $t_k$ and passing to the limit yields 
-\[\mathcal{H}^1(\Sigma_y Y)\geq\sum_{i=1}^n\mathcal{H}^1(\Sigma_{x_i}X).\]
-The claim follows since $\mathcal{H}^1(\Sigma_{x}X)\geq 2{\cdot}\pi$
-for every $x\in X$.
-\qeds
-
-
-\begin{thm}{Corollary}\label{cor:finite point inverses}
-Any point in $Y$ has only a finite number of inverse images.
-\end{thm}
-
-
-\begin{thm}{Corollary}\label{cor:finite point inverses}
-The subset of $Y$ consisting of points that have more than
-one inverse image is finite.
-\end{thm}
-
-
-
-
-
-\parit{Proof of Theorem \ref{thm:short+area=isom}.}
-Recall that each cyclic element of $Y$ is homeomorphic to a closed disc. 
-Pick points $p,q\in Y$ which lie in the same cyclic element and assume that
-$[pq]$ does not contain a point $z$ with $\mathcal{H}^1(\Sigma_y Y)\geq 4{\cdot}\pi$.
-Then choose $r>0$ small, and a the half-neighborhood $N_r^+$ of $[pq]$, 
-such that $N_r^+$ still does not contain points $z$ with 
-$\mathcal{H}^1(\Sigma_y Y)\geq 4{\cdot}\pi$. Let $\hat N_r^+$ be the inverse image of $N_r^+$
-under $\varphi$. According to Lemma \ref{lem:inverse image estimate}, $\varphi|_{\hat N_r^+}$ 
-is injective and therefore a homeomorphism onto $N_r^+$. 
-Denote $f$ the distance function of $[pq]$. Then, in the notation above, $f^{-1}(t)=\gamma_t$.
-Set $\Gamma_t:=\varphi^{-1}(\gamma_t)$. 
-Then $\Gamma_t$ is a continuous arc for every $t\leq r$.
-By the coarea formula we obtain
-$$
-\area(N_r^+)=\int\limits_0^\delta \mathcal{H}^1(\gamma_t)dt
-$$
-and
-$$
-\area(\hat N_r^+)\geq\int\limits_{\hat N_r^+}|\nabla (f\circ\varphi)|
-=
-\int\limits_0^\delta \mathcal{H}^1(\Gamma_t)dt.
-$$
-Hence $\mathcal{H}^1(\Gamma_t)\leq \mathcal{H}^1(\gamma_t)$ for almost all $t\leq r$.
-Now choose an appropriate sequence $t_k\to 0$. Then, by semi-continuity of length, we have
-$$
-\mathcal{H}^1(\Gamma_0)\leq \liminf_{k\to\infty}\mathcal{H}^1(\Gamma_{t_k})\leq\mathcal{H}^1(\gamma_{t_k}).
-$$
-Continuity of length, Lemma \ref{prop:length continuity}, implies
-$\mathcal{H}^1(\Gamma_0)\leq|p-q|$ and hence $|\varphi^{-1}(p)-\varphi^{-1}(q)|=|p-q|$. 
-Corollary \ref{cor:finite point inverses} guarantees that $\varphi$ is invertible on a subset 
-$Y\setminus\{y_1,\ldots,y_n\}$. Its inverse $\psi\:Y\setminus\{y_1,\ldots,y_n\}\to X$ is a local
-isometry which extends uniquely to an isometry $\bar\psi\:Y\to X$. Clearly $\bar\psi=\varphi^{-1}$.
-\qeds
 
 
 
@@ -1242,8 +1002,7 @@ is constant on $I$.
 
 \begin{thm}{Lemma}\label{lem:parpaths}
 Let $\gamma_{\pm 1}\:I\to X$ be two rectifiable paths of equal length $L>0$. Set $\gamma_t:=h(\cdot,t)$ where $h\:[-1,1]\times[0,L]\to X$ denotes the geodesic homotopy
-between their arclength parametrizations. If $\gamma_0$ has length $L$, then $\gamma_{-1}$ and $\gamma_{+1}$ are parallel. Moreover, $h([-1,1]\times[0,L])$ is intrinsically 
-flat.
+between their arclength parametrizations. If $\gamma_0$ has length $L$, then $\gamma_{-1}$ and $\gamma_{+1}$ are parallel. 
 \end{thm}
 \parit{Proof.}
 Convexity of $d$ implies $|\dot\gamma_0(t)|\leq 1$. By assumtion, length of $\gamma_0$ equals $L$, hence $|\dot\gamma_0(t)|=1$ for almost all $t\in[0,L]$. So $\gamma_0$
@@ -1254,24 +1013,11 @@ $$
 0.
 $$
 Therefore, $\gamma_{-1}$ is parallel to $\gamma_{+1}$.
-
-For the second claim, denote $H$ the surface $h([-1,1]\times[0,L])$ equipped with the pull-back metric. By \ref{thm:main}, $H$
-is $\CAT[0]$.
-Now let $\eps>0$ and choose an array of points $x_0^{0},x_1^{0},\ldots,x_k^{0}$ on $\gamma_{0}$ 
-such that $\sum_{i=0}^k d(x_i^{0},x_{i+1}^{0})\geq L-\eps$. For $t\in[-1,1]$ denote by $x_i^{t}$ the
-point $\gamma_t$ corresponding to $x_i^{0}$. Now use the comparison triangles
-$\triangle(x_{j}^{-1},x_{j+1}^{-1},x_{j+1}^{+1})$ and $\triangle(x_{j}^{+1},x_{j+1}^{+1},x_{j+1}^{-1})$, $j=0,\ldots k-1$,
-to glue a flat comparison surface $S_\eps$ for $H$. From Reshetnyak's majorization theorem, we obtain a short map 
-$f_\eps\:S_\eps\to H$. Denote by by $\hat x_i^{t}$ the point on on $S_\eps$ corresponding to $x_i^{t}$. Then
-$$
-L-\eps\leq\sum_{i=0}^k d(x_i^{0},x_{i+1}^{0})\leq\sum_{i=0}^k d(\hat x_i^{0},\hat x_{i+1}^{0})\leq
-\frac{1}{2}\sum_{i=0}^k d(x_i^{-1}, x_{i+1}^{-1})+\frac{1}{2}\sum_{i=0}^k d(x_i^{+1}, x_{i+1}^{+1})\leq L.
-$$
-Hence we can choose a sequence $\eps_j\to 0$ such that $S_{\eps_j}$ converges to a flat surface $S$ and $f_{\eps_j}$
-converges to a short map $f\:S\to H$. Note that $f$ is surjective. Moreover, $S$
-has two transversal foliations, one by parallel paths of constant length $L$ and one by geodesic segments of constant length.
-It follows that the Jacbian of $f$ is almost everywhere equal to one. Thus $f$ is area preserving and therefore an isometry by \ref{thm:short+area=isom}.
 \qeds
+
+\begin{thm}{Remark}
+It is possible to show that in the above situation $h([-1,1]\times[0,L])$ is intrinsically flat.
+\end{thm}
 
 \begin{thm}{Uniqueness Theorem}\label{prop:strict-mm}
 Let $X$ be a $\CAT[0]$ space and $s_0, s_1\:\DD\to X$ be metric minimizing discs. If 
@@ -1281,10 +1027,10 @@ $\|\DD\|_{s_0}$ is isometric to $\|\DD\|_{s_1}$, then $s_0=s_1$.
 \parit{Proof.}
 For $t\in[0,1]$ denote $s_t\:\DD\to X$ the map obtained by geodesic interpolation. Then
 $\|\DD\|_{s_t}$ is isometric to $\|\DD\|_{s_0}$ for all $t\in[0,1]$. In particular, every $s_t$ is metric minimizing.
-Let $\gamma$ be a path $\DD$ connecting two boundary points and such that $s_0\circ\gamma$ is rectifiable.
-Moreover, assume that the parametrization is such that $s_0\circ\gamma$ is parametrized by arc length. 
+Let $\gamma$ be a path in $\DD$ connecting two boundary points and such that $s_0\circ\gamma$ is rectifiable.
+Moreover, assume that $s_0\circ\gamma$ is parametrized by arc length. 
 Then each 
-$s_t\circ\gamma$ is parametrized by arclength and Lemma \ref{lem:parpaths} we obtain $s_t\circ\gamma\cong s_0\circ\gamma$.
+$s_t\circ\gamma$ is parametrized by arclength and from Lemma \ref{lem:parpaths} we obtain $s_t\circ\gamma\equiv s_0\circ\gamma$.
 The claim follows.
 \qeds
 
@@ -1524,12 +1270,18 @@ The one-dimensional Cauchy problem.'' Oxford Lecture Series in Mathematics and i
 A course in metric geometry.
 Graduate Studies in Mathematics, 33. American Mathematical Society, Providence, RI, 2001. xiv+415 pp.
 
+\bibitem{H} Hamilton, R. S. ``Harmonic Maps of Manifolds with Boundary,'' Lecture Notes in Mathematics, Springer, 1975, ISBN 978-3-540-37530-2.
+
 \bibitem{HKST} Heinonen, J.;  Koskela, P.;  Shanmugalinga, N.; Tyson, J. ``Sobolev spaces on metric measure spaces,''
 volume 27 of New Mathematical Monographs. Cambridge University Press, Cambridge, 2015.
 
 \bibitem{KS}Korevaar, N. J.; Schoen, R. M. ``Sobolev spaces and harmonic maps for metric space targets,'' Comm. Anal. Geom., 1(3-4):561-659, 1993.
 
 \bibitem{LW}Lytchak, A.; Wenger, S. ``Area minimizing discs in metric spaces,'' preprint arXiv:1502.06571, 2015.
+
+\bibitem{LW2}Lytchak, A.; Wenger, S. ``Energy and area minimizers in metric spaces,'' preprint  arXiv:1507.02670, 2015.
+
+\bibitem{LW3}Lytchak, A.; Wenger, S. ``Intrinsic structure of minimal discs in metric spaces ,'' preprint  arXiv:1602.06755, 2016.
 
 \bibitem{petrunin-metric-min} Petrunin, A.
 ``Metric minimizing surfaces.''
