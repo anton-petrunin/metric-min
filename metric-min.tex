@@ -50,25 +50,25 @@ such that
 \item $|x-y|=|y-x|$, for any $x,y\in X$;
 \item $|x-y|+|y-z|\ge|x-z|$ for any  $x,y,z\in X$.
 \end{itemize}
-If in addition $|x-y|=0$ implies $x=y$ then the pseudometric $|{*}-{*}|$ is called \emph{metric}.
+If in addition $|x-y|=0$ implies $x=y$ then the pseudometric $|{*}-{*}|$ is called \emph{nondegenerated}.
+A nondegenerated pseudometric which only takes finite values is called a \emph{metric}. A set with a pseudometric 
+or metric will be called \emph{pseudometric} or correspondingly \emph{metric space}.
 
-A set with a pseudometric or metric will be called \emph{pseudometric} or correspondingly \emph{metric space}.
-
-The value $|x-y|$ will be also called \emph{distance} form $x$ to $y$.
+The value $|x-y|$ will also be called \emph{distance} form $x$ to $y$.
 Note that by our definition, the distance between points might be infinite.%
-\footnote{Let us mention the following construction to remove a possible psychological barrier with infinity --- it will not be used further.
-
-Consider an equivalence relation ``$\approx$'' on a metric space defined as \[x\approx y\  \iff\  |x-y|<\infty.\]
-Note that its equivalence classes form \emph{usual metric spaces}; 
-that is $|x-y|<\infty$ for any pair of points $x$ and $y$ in the class.
-It implies that metric spaces in our definition 
-can be thought of disjoint union of some collection \emph{usual metric spaces}.}
 
 For any pseudometric on a set 
 there is an equivalence relation ``$\sim$''
 such that $x\sim y$ if and only if $|x-y|=0$.
-The pseudometric $|{*}-{*}|$ defines a genuine metric on the set of equivalence classes of $\sim$.
-We will say that the obtained metric space is \emph{defined} by the  original pseudometric space.%???IS IT A GOOD WAY TO SAY??? 
+The induced pseudometric $|{*}-{*}|$ on the set of equivalence classes of $\sim$ is nondegenerated.
+
+Further, for a nondegenerated pseudometric space we can consider the equivalence relation ``$\approx$'' defined as \[x\approx y\  \iff\  |x-y|<\infty.\]
+Its equivalence classes are called \emph{metric components}.
+Note that by definition each metric component is a \emph{metric space}.
+Consequentely, a nondegenerated pseudometric space 
+can be thought of as a disjoint union of \emph{metric spaces}.
+We will say that the obtained metric spaces are \emph{defined} by the  
+original pseudometric space.%???IS IT A GOOD WAY TO SAY??? 
 
 \parbf{Induced  pseudometrics.}
 Let $X$ and $Y$ be metric spaces.
@@ -173,7 +173,7 @@ Then $f'\:X'\to Y$ is metric minimizing relative to $\phi(A)$.
 
 
 \begin{thm}{Proposition}
-Assume $\Gamma$ is a  finite graph and $A$ is the collection of its vertexes.
+Assume $\Gamma$ is a  finite graph and $A$ is the collection of its vertices.
 Let $Y\in\CAT[0]$ and $f\:\Gamma\to Y$ be an arbitrary map.
 Then there is a metric minimizing map $f'\:\Gamma\to Y$ relative to $A$ such that
 $f'|_A=f|_A$ and 
@@ -216,7 +216,7 @@ Note that $f_\omega\succ g_\omega$ and $g_\omega|_A=f|_A$, a contradiction.
 
 \begin{thm}{Proposition}\label{prop:metric-min-graph}
 Let $Y$ be a $\CAT[0]$ space, 
-$\Gamma$ a finite  graph and $A$ a subset of its vertexes.
+$\Gamma$ a finite  graph and $A$ a subset of its vertices.
 Assume $f\:\Gamma\to Y$ is metric minimizing relative to $A$.
 Then
 \begin{itemize}
@@ -275,14 +275,15 @@ $\Gamma$ an embedded graph in $\RR^2$.
 Assume $f\:\Gamma\to Y$ is a metric minimizing map relative to the boundary vertices. 
 Then 
 one can equip $\Fill\Gamma$ with a $\CAT[0]$ pseudometric 
-and extend $f$ to a short map $\bar f\:\Fill\Gamma\to Y$ which is length preserving on $\Gamma$.
+and extend $f$ to a short map $\bar f\:\Fill\Gamma\to Y$ which is length preserving on $\|\Gamma\|_f$.
 \end{thm}
 
 \parit{Proof.}
 Fix a cycle $\gamma$ in $\Gamma$ which bounds one of the discs in the complement $\RR^2\backslash \Gamma$.
-Set $\ell=\length\gamma$.
+Set $\ell=\length f\circ\gamma$.
 
-By Reshetnyak's majorization theorem, there is a convex polygon $P$ (possibly degenerate) with perimeter $\ell$ which admits a short map to $Y$ in such a way that $\gamma$ is formed by the image of the boundary.
+By Reshetnyak's majorization theorem, there is a convex polygon $P$ (possibly degenerate) with perimeter $\ell$ which admits 
+a short map to $Y$ in such a way that $f\circ\gamma$ is formed by the image of the boundary.
 Note that each angle of $P$ is at least as big as 
 the angle between the corresponding edges.
 
@@ -303,7 +304,7 @@ such that
 By Reshetnyak's majorization theorem,
 the closed broken line $\xi_1,\dots,\xi_k$ is majorized by a convex spherical polygon $P$.
 Note that $P$ lies in an open hemisphere with the pole  at some point in $P$.
-Choose $x\in Y$ so that the direction form $f(v)$ to $x$ coinsides with the image of the pole in $\Sigma_{f(v)}$.
+Choose $x\in Y$ so that the direction form $f(v)$ to $x$ coincides with the image of the pole in $\Sigma_{f(v)}$.
 This choice of $x$ contradicts the condition in Proposition~\ref{prop:metric-min-graph}.\qeds
 
 
@@ -362,13 +363,13 @@ It remains to note that $|\DD|_f$ is embedded into $\SS^2_f$ and its complement 
 
 Given a disc retract $X$,
 define its interior as a maximal open set which is homeomorphic to an open set in the plane.
-By Domain Invariance Theorem, interior is well defined.
+By the Invariance of Domain theorem, the interior is well defined.
 The complement to the interior of $X$ will be called boundary and denoted as $\partial X$.
 
 Applying \ref{prop:point-complement} and \ref{prop:disc-moore}, we get the following.
 
 \begin{thm}{Proposition}\label{prop:|D|}
-Let $f\:\DD\to\ Y$ be a metric minimizing map relative to $\partial \DD$.
+Let $f\:\DD\to\ Y$ be a continuous metric minimizing map relative to $\partial \DD$.
 Then $f$ is a no-bubble map.
 
 In particular,  $|\DD|_f$ is homeomorphic to a disc retract.
@@ -387,7 +388,7 @@ is metric minimizing relative to $\partial|\DD|_f$.
 \begin{thm}{Key Lemma}\label{lem:key}
 Let $Y$ be a $\CAT[0]$ space and $s\:\DD\to Y$ 
 be a metric minimizing disc relative to the boundary $\partial \DD$.
-Given a finite set $F\subset \DD$
+Given a finite set $F\subset \DD$ such that $\|x-y\|_s<\infty$ for each pair $x,y$ of points in $F$. Then
 there is 
 (1) a $\CAT[0]$ space $W$, which is a disc retract,
 and (2) maps $p\:F\to W$ and $q\:W\to Y$ such that
@@ -399,8 +400,7 @@ for any $x,y\in F$.
 \end{thm}
 
 \parit{Proof.}
-Let us connect each pair $x,y$ of points in $F$ by geodesics
-if $\|x-y\|_s<\infty$.
+Let us connect each pair $x,y$ of points in $F$ by geodesics.
 
 We can assume that 
 every pair of the constructed geodesics 
@@ -441,7 +441,7 @@ Here is the main statement in this section.
 $\mathcal{K}_\ell$ is compact in the Gromov--Hausdorff topology.
 \end{thm}
 
-It follows immediately lemmas \ref{lem:precompact} and \ref{lem:closed} proved below.
+It follows immediately from Lemmas \ref{lem:precompact} and \ref{lem:closed} proven below.
 
 \begin{thm}{Lemma}\label{lem:precompact}
 $\mathcal{K}_\ell$ is precompact in the Gromov--Hausdorff topology.
@@ -532,7 +532,7 @@ we get that any saddle map has no bubbles.
 
 
 \begin{thm}{Proposition}
-Let $W$ be a $\CAT[0]$ space then any metric minimizing map $s\:\DD\to W$ is saddle.
+Let $W$ be a $\CAT[0]$ space then any continuous metric minimizing map $s\:\DD\to W$ is saddle.
 \end{thm}
 
 \parit{Proof.}
@@ -570,9 +570,20 @@ and we have decided to provide all details.
 
 Note that since $W$ is a disc retract, its boundary $\partial W$ is compact. Therefore
 the space $\Geod(W)$ of geodesic segments with endpoints on $\partial W$ is compact as well.
-Further, according to Lemma~\ref{lem:extension}, any geodesic in $W$ can be extended to a geodesic in $\Geod(W)$.
 
-\begin{thm}{Lemma}\label{lem:sepbygeo}\label{lem:saddle-crit}
+\begin{thm}{Lemma}\label{lem:extension}
+Let $W$ be a $\CAT[0]$  disc retract. Then any geodesic segment can be extended to a geodesic in $\Geod(W)$.
+\end{thm}
+
+\parit{Proof.}
+It is enough to show that a geodesic segment $[pq]$ extends beyond $q$ if $q$ is an interior point of $W$.
+Choose a neighborhood $A$ of $q$ which is homeomorphic to a closed disc and such that the boundary $\partial A$
+intersects $[pq]$ in a point $z\neq q$. Then the geodesic cone from $z$ over $\partial A$ covers $A$ because $\partial A$
+is not contractible in $W-\{x\}$ for any $x$ in the interior of $A$. In particular, $[pq]$ extends beyond $q$ to the boundary of
+$A$.
+\qeds
+
+\begin{thm}{Lemma}\label{lem:sepbygeo}
 Let $W$ be a $\CAT[0]$  disc retract. If $K\subset W$ is a closed convex subset and $p$ is a
 point in $W\backslash K$, then there is a (possibly degenerated) geodesic $\sigma\in\Geod(W)$ which separates $p$ and $K$;
 that is, $K$ and $p$ lie in the different connected components of $W\backslash \sigma$.
@@ -653,11 +664,11 @@ is a short map. Choose an open neighborhood $U$ of $\partial \Omega$ such that
 $|s(x)-\pi\circ u(x)|<\eps$ for $x\in U$. The assumptions imply that $s(\Omega)$ is 
 contained in the $\eps$-neighborhood of $K$;
 that is, $|s(x)-\pi\circ s(x)|<\eps$ for $x\in\Omega$.
-It follows that for points in $U$ the geodesic segment $\pi\circ s(x)\pi\circ u(x)$ is contained in the $\eps$-ball
+It follows that for points in $U$ the geodesic segment $[\pi\circ s(x)\pi\circ u(x)]$ is contained in the $\eps$-ball
 around $s(x)$. Fix a continuous function $\lambda\:\Omega\to [0,1]$
 which is equal to $1$ on $\partial \Omega$ and has support in $U$.
 For $x\notin \Omega$ set $v(x)=u(x)$ and if 
-$x\in \Omega$, set $v(x)$ to be the point which divides the geodesic $\pi\circ s(x)\pi\circ u(x)$
+$x\in \Omega$, set $v(x)$ to be the point which divides the geodesic $[\pi\circ s(x)\pi\circ u(x)]$
 at proportion $\lambda(x)$. By construction $v$ satisfies both conditions.
 
 Finally note that $\Conv u(\partial\Omega)\subset K$. 
@@ -815,11 +826,12 @@ Existence of majorization implies that all triangles in $\|\DD\|_s$ are thin, th
 Let $Y$ be a $\CAT[0]$ space 
 and $s\:\DD\to Y$ be a metric minimizing map relative to the boundary $\partial\DD$.
 Assume $\|\DD\|_s$  is separable. 
-Then $\|\DD\|_s$ is a $\CAT[0]$ space.
+Then each metric component of $\|\DD\|_s$ is a $\CAT[0]$ space. 
+Moreover, if $s|_{\partial \DD}$ is rectifiable, then $\|\DD\|_s$ is a $\CAT[0]$ space. 
 \end{thm}
 
 \parit{Proof of Main theorem.}
-First let us show that $\|\DD\|_s$ is geodesic.
+First let us show that each metric component of $\|\DD\|_s$ is geodesic.
 
 Indeed, given two points $p$ and $q$ in $|\DD|_s$ 
 choose a sequence of constant-speed paths $\gamma_n$ from $p$ to $q$
@@ -833,8 +845,8 @@ Clearly \[\length\gamma= \|p-q\|_s;\]
 that is $\gamma$ forms a geodesic in $\|\DD\|_s$
 
 
-Note that it is sufficient to prove the theorem 
-in the case that $\partial \|\DD\|_s$ formed by a rectifiable simple closed curve.
+To prove the first statement it is sufficient to consider
+the case that $\partial \|\DD\|_s$ formed by a rectifiable simple closed curve.
 
 Indeed, fix a triangle $\triangle$ in $\|\DD\|_s$. 
 If the above case has been proven, 
@@ -842,15 +854,15 @@ then closure of each connected open component bounded by $\triangle$ is $\CAT[0]
 In particular $\triangle$ is thin.
 Since $\triangle$ is arbitrary, the statement follows.
 
-Given a finite set $F\subset \DD$,
+Given a finite set $F\subset \DD$ which maps to a single metric component of $\|\DD\|_s$,
 denote by $\mathcal{W}_F$
 the set of isometry classes of spaces $W$ which meet the conditions of the Key Lemma~\ref{lem:key}
 for $F$;
 according to lemma $\mathcal{W}_F\ne\emptyset$.
-Note that for two finite sets $F\subset F'$ in $\DD$,
+Note that for two such finite sets $F\subset F'$ in $\DD$,
 we have $\mathcal{W}_F\supset \mathcal{W}_{F'}$.
 
-According to Lemma on compactness (\ref{lem:compact}) $\mathcal{W}_F$ is compact.
+According to the Lemma on compactness (\ref{lem:compact}) $\mathcal{W}_F$ is compact.
 Therefore 
 \[\mathcal{W}
 =
@@ -859,19 +871,17 @@ where the intersection is taken over all finite subsets $F$ in $\DD$.
 %ALL? OR NESTED SEQUENCE EXHAUSTING A DENSE SET  --- I think it is true forl all???
 
 Fix a space $W$ from $\mathcal{W}$
-and a dense sequence of points $\{x_1,x_2,\dots\}$ in $\|\DD\|_s$, 
+and a dense sequence of points $\mathcal{F}=\{x_1,x_2,\dots\}$ in $\|\DD\|_s$, 
 such that its subsequence of points in $\partial \|\DD\|_s$
  also dense in $\partial \|\DD\|_s$.
 
 Set $F_n=\{x_1,\dots,x_n\}$.
 Denote by $p_n\:F_n\to W$ a map satisfying the conditions in the Key Lemma~\ref{lem:key}.
 
-Passing to a subsequence by $n$ we can ensure that the sequence
-$p_n(x_k)$ converges as $n\to\infty$ for every fixed $k$.
-Set 
-\[p(x_k)=\lim_{n\to\infty} p_n(x_k).\]
+Using a diagonal argument we can extract a short map
 
-Note that $p$ is short.
+\[p:\mathcal{F}\to W.\]
+
 Since $\{x_k\}$ is dense in $\|\DD\|_s$,
 the map $p$ can be extended to whole disc $\|\DD\|_s$ 
 as a short map.
