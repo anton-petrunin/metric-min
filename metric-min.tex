@@ -987,7 +987,7 @@ spaces can be found in \cite{LW2}.
 
 \begin{thm}{Proposition}\label{prop:harmonic}
 Let $X$ be a $\CAT[0]$ space 
-and $u\:\DD\to X$ is an energy minimizing disc with fixed boundary curve.
+and $u\:\DD\to X$ an energy minimizing disc with fixed boundary curve.
 Then $u$ is metric minimizing.
 \end{thm}
 
@@ -1009,8 +1009,16 @@ $E(s)=E(u)$, that is $s$ is also energy minimizing.
 By uniqueness in Theorem \ref{thm:dirichlet} we get $u=s$.
  \qeds
  
+\begin{thm}{Remark}
+This proposition generalizes to other energy functionals besides the one form Korevaar and Schoen. ??????????????
+\end{thm}
 
-
+ 
+\begin{thm}{Corollary}
+Let $X$ be a $\CAT[0]$ space 
+and $u\:\DD\to X$ an energy minimizing disc which spans a rectifiable boundary curve.
+Then $\|\DD\|_u$ is a $\CAT[0]$ disc retract and a $\CAT[0]$ disc if the boundary is embedded.
+\end{thm}
 
 
 
@@ -1030,7 +1038,7 @@ By uniqueness in Theorem \ref{thm:dirichlet} we get $u=s$.
 \subsection{Intrinsic metric determines metric minimizing discs}~
 
 \medskip
-Let $\gamma_{\pm 1}\:I\to X$ be two rectifiable paths, parametrized by arc length. We say that  $\gamma_{-1}$ is {\em parallel} to $\gamma_{+1}$, if $d(\gamma_{-1},\gamma_{+1})$
+Let $\gamma_{\pm 1}\:I\to X$ be two rectifiable paths, parametrized by arc length. We say that  $\gamma_{-1}$ is {\em parallel} to $\gamma_{+1}$, if $|\gamma_{-1}(t)-\gamma_{+1}(t)|$
 is constant on $I$.
 
 
@@ -1039,10 +1047,10 @@ Let $\gamma_{\pm 1}\:I\to X$ be two rectifiable paths of equal length $L>0$. Set
 between their arclength parametrizations. If $\gamma_0$ has length $L$, then $\gamma_{-1}$ and $\gamma_{+1}$ are parallel. 
 \end{thm}
 \parit{Proof.}
-Convexity of $d$ implies $|\dot\gamma_0(t)|\leq 1$. By assumtion, length of $\gamma_0$ equals $L$, hence $|\dot\gamma_0(t)|=1$ for almost all $t\in[0,L]$. So $\gamma_0$
+Convexity of the metric implies $|\dot\gamma_0(t)|\leq 1$. By assumtion, the length of $\gamma_0$ equals $L$, hence $|\dot\gamma_0(t)|=1$ for almost all $t\in[0,L]$. So $\gamma_0$
 is parametrized by arc length. Since the energy of a unit speed path equals its length, we conclude from energy convexity 
 $$
-\int\limits_0^L|\nabla d(\gamma_{-1},\gamma_{+1})|^2 d\mathcal{H}^1
+\int\limits_0^L|\nabla |\gamma_{-1}-\gamma_{+1}||^2 d\mathcal{H}^1
 =
 0.
 $$
@@ -1078,8 +1086,13 @@ Any metric minimizing disc in a $\CAT[0]$ space is strictly metric minimizing.
 
 
 \subsection{Metric minimizing discs below given continuous ones}~
-\medskip
-\begin{thm}{Intrinsic continuity}
+
+
+Let $f\:X\to Y$ be a map between metric spaces and $A$ a subset of $X$. Using Zorn's Lemma it is alway possible to find 
+a metric minimizing map $s$ relative to $A$ with $f\succcurlyeq s$. In this subsection we give a criterion which allows to 
+find continuous such maps.
+
+\begin{thm}{Definition}(Intrinsic continuity)
 A map $f\:Y\to Z$ from a metric space $Y$ to a metric space
  $Z$ is called
 {\em intrinsically continuous}, if for every $y\in Y$ 
@@ -1109,7 +1122,7 @@ metric is a geodesic space.
 Let $X$ be a proper metric space. Denote the set
 of continuous maps $\DD\to X$ equipped with the compact-open topology 
 by $\mathcal{C}(\DD,X)$. In Section \ref{sec:Def} we defined a partial 
-order on $\mathcal{C}(D,X)$ by $g\succcurlyeq f$.
+order $``\succcurlyeq ''$ on $\mathcal{C}(D,X)$.
 
 We address the problem of finding a
 metric minimizing disc below a given continuous one.
@@ -1127,7 +1140,7 @@ determines the length structure. This explains
 
 \begin{thm}{Proposition}\label{prop:exist}
  If $X$ is a proper metric space, then for every intrinsically continuous map $f\:\DD\rightarrow X$,
- there is a metric minimizing map $s\:\DD\rightarrow X$
+ there is an intrinsically continuous  metric minimizing map $s\:\DD\rightarrow X$
  such that $\|{*}-{*}\|_s\leq\|{*}-{*}\|_f$.
 \end{thm}
 
@@ -1150,9 +1163,9 @@ Any smooth strictly saddle surface in $\RR^3$ is locally metric minimizing.
 \end{lpic}
 \end{wrapfigure}
 
-In general smooth saddle surface may not be globally metric minimizing.
+In general smooth saddle surfaces may not be globally metric minimizing.
 An example homeomorphic to a pair of pants 
-can be found among surfaces sorrounding the triangle with three segments as shown on the picture.
+can be found among surfaces surrounding the triangle with three segments as shown on the picture.
 We could not find examples like that among strictly saddle surfaces or discs, but it is very likely that such examples do exist.
 
 \medskip
@@ -1165,18 +1178,18 @@ Fix an array of vector fields $\bm{v}=(v_1,\dots,v_k)$ in $\DD$. Consider the en
 \sum_i\int\limits_\DD |v_is|^2\cdot d_x\area.\]
 Set 
 \[\Delta_{\bm{v}}s=\sum_iv_i(v_is).\]
-It is convenient to think of operator $s\mapsto \Delta_{\bm{v}}s$
-as an analog of the Laplasian.
+It is convenient to think of the operator $s\mapsto \Delta_{\bm{v}}s$
+as an analog of the Laplacian.
 
 Note that 
 \begin{enumerate}[(i)]
-\item $E_{\bm{v}}$ is well defined for any lipscitz map $s$.
+\item $E_{\bm{v}}$ is well defined for any Lipschitz map $s$.
 \item $E_{\bm{v}}$ is convex, that is
 \[E_{\bm{v}}[t\cdot s_1+(1-t)\cdot s_2]
 \le 
 t\cdot E_{\bm{v}} s_1+(1-t)\cdot E_{\bm{v}} s_2.\]
-\item If $s$ is smooth $E_{\bm{v}}$-minimizing map in the class of Lipschitz maps with given boundary data then $s$ is metric minimizing.
-\item A smooth map $s\:\DD\to\RR^3$ is $E_{\bm{v}}$-minimizing map among the class of Lipschitz maps with given boundary if and only if
+\item If $s$ is a smooth $E_{\bm{v}}$-minimizing map in the class of Lipschitz maps with given boundary data then $s$ is metric minimizing.
+\item A smooth map $s\:\DD\to\RR^3$ is a $E_{\bm{v}}$-minimizing map among the class of Lipschitz maps with given boundary if and only if
 \[\Delta_{\bm{v}}s=0.\]
 
 \end{enumerate}
@@ -1191,8 +1204,8 @@ holds in an open neighborhood of $p$.
 
 \parit{Proof.}
 Denote 
-by $\kappa_1,\kappa_2$ the principle curvatures,
-and by $e_1,e_2$ the corresponding unit principle vectors. 
+by $\kappa_1,\kappa_2$ the principal curvatures,
+and by $e_1,e_2$ the corresponding unit principal vectors. 
 Further, denote by by $a_1,a_2$ a pair of asymptotic vectors; we can assume that $a_1,a_2$ form coordinate vector fields in a neighborhood of $x$.
 
 
@@ -1204,10 +1217,10 @@ holds in a neighborhood of $x$ for $v_3=\lambda_1\cdot a_1$ and $v_4=\lambda_1\c
 Note that the sum $v_1(v_1s)+v_2(v_2s)$ has vanishing normal part.
 That is \[v_1(v_1s)+v_2(v_2s)\] is a tangent vector to the surface.
 
-Since $a_i$ are asymptotic,
+Since the $a_i$ are asymptotic,
 the vectors $a_1(a_1s)$ and $a_2(a_2s)$ have vanishing normal part.
 Therefore, for any choice of $\lambda_i$,
-the following tow vectors are also tangent
+the following two vectors are also tangent
 \begin{align*}
 v_3(v_3s)&=\lambda_1^2\cdot a_1(a_1s)+\tfrac12\cdot a_1\lambda_1^2\cdot a_1s
 \\
@@ -1227,15 +1240,15 @@ w_x
 w_y=h(x,y,w),\]
 where $h\:\RR^3\to\RR^2$ is a smooth function.
 
-Change coordinate system, by setting $x=t+z$ and  and $y=t-z$.
-Then the system takes form 
+Change coordinate system, by setting $x=t+z$ and $y=t-z$.
+Then the system takes the form 
 \[w_t+\left(\begin{smallmatrix}
    1&0\\0&-1
   \end{smallmatrix}\right)
 w_z=h(t+z,t-z,w)\]
 
 This system is ???,
-according by \cite[Theorem 3.6]{bressan}, it can be solved locally for smooth initial data at $t=0$.
+according to \cite[Theorem 3.6]{bressan}, it can be solved locally for smooth initial data at $t=0$.
 
 It remains to choose $v_3$ and $v_4$ for solution so that $\lambda_1, \lambda_2>0$ in a small neighborhood of $p$.
 \qeds
@@ -1247,45 +1260,45 @@ It remains to choose $v_3$ and $v_4$ for solution so that $\lambda_1, \lambda_2>
 Note that since disc $\DD$ is compact, 
 for any continuous $s\:\DD\to Y$ into a metric space,
 the space $|\DD|_s$ is compact.
-On the other hand the space $\|\DD\|_s$ might not be even separable,
-say if $s$ is given as a cone over Koch snowflake then 
-$|\DD|_s$ is homeomorphic to the disc while $\|\DD\|_s$ is homeomorphic to uncountable set of segments glued at one end.
+On the other hand the space $\|\DD\|_s$ might not even be separable,
+say if $s$ is given as a cone over a Koch snowflake then 
+$|\DD|_s$ is homeomorphic to the disc while $\|\DD\|_s$ is homeomorphic to an uncountable set of segments glued at one end.
 
-The separablity condition in the main theorem \ref{thm:main}
-might be not necesary.
+The separablity condition in the Main Theorem \ref{thm:main}
+might not be necesary.
 While we tried to remove it, we found the following statement 
 which we want to share.
 
 \begin{thm}{Proposition}
 Let $Y\in\CAT[0]$ 
 and 
-$f\:\DD\to Y$ be a metric minimizing disc.
+$f\:\DD\to Y$ be a continuous metric minimizing disc.
 Then $\|\DD\|_f$ is a complete metric space.
 \end{thm}
 
 \parit{Proof.}
-Denote by $W$ be completion of $\|\DD\|_f$.
+Denote by $Z$ the completion of $\|\DD\|_f$.
 
 By Proposition \ref{prop:|D|},
 the space $|\DD|_f$ is compact.
-Therefore the tautological map $f\:\|\DD\|_f\to |\DD|_f$ 
-extends to a continuous map $\bar f\:W\to |\DD|_f$.
+Therefore the tautological map $\iota\:\|\DD\|_f\to |\DD|_f$ 
+extends to a continuous map $\bar \iota\:W\to |\DD|_f$.
 
-If $\|\DD\|_f$ is a proper subset of $W$ 
-then from above we get that
-then $\bar f$ is not injective.
+If $\|\DD\|_f$ is a proper subset of $Z$ 
+then $\bar \iota$ is not injective.
 
-In this case there is a rectifiable path $\gamma\:[0,1]\to W$,
+In this case there is a rectifiable path $\gamma\:[0,1]\to Z$,
 such that $\gamma(t)\in\|\DD\|_f$ for all $t<1$ and $\gamma(1)\notin \|\DD\|_f$.
 Note that the path $\bar f\circ \gamma$ is also rectifiable and in particular continuous, so it can be lifted to $\|\DD\|_f$.
 That is, $\gamma(1)\in \|\DD\|_f$, a contradiction.
 \qeds
 
 \parbf{Smooth metric minimizing surfaces.}
-At the moment we do not see any way to show that given surface is metric minimizing except constructing energy for which it is energy minimizing, as we did in Section~\ref{sec:smooth}.
-Calculations show that generic smooth saddle surfaces in $\RR^4$ is not energy minimizing for any energy.
+At the moment we do not see any way to show that a given surface is metric minimizing except by constructing an appropriate energy for which it is energy minimizing, as we did in Section~\ref{sec:smooth}.
+Calculations show that generic smooth saddle surfaces in $\RR^4$ are not energy minimizing for any energy.
 
-We expect that generic smooth saddle surfaces in $\RR^4$ are not metric minimizing; that is arbitrary small neighborhood of any point admit a deformation which shrinks the intrinsic metric and keeps the boundary fixed.
+We expect that generic smooth saddle surfaces in $\RR^4$ are not metric minimizing; that is arbitrary small neighborhoods of any point admit deformations which shrink 
+the intrinsic metric and keep the boundary fixed.
 
 
 
