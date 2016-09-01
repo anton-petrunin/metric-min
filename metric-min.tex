@@ -340,7 +340,8 @@ We will need the following disc version of Moore's theorem proved in \cite{moore
 \begin{thm}{Proposition}\label{prop:disc-moore}
 Let $X$ be a Hausdorff space and
 $f\:\DD\to X$ be a no-bubble map.
-Then $|\DD|_f$ is homeomorphic to a disc retract.
+Then $|\DD|_f$ is homeomorphic to a disc retract. Moreover, if $f|_{\partial\DD}$ is 
+an embedding, then $|\DD|_f$ is homeomorphic to a disc.
 \end{thm}
 
 
@@ -359,7 +360,9 @@ Denote by $\SS^2_f$ the set of classes $[x]$ with the quotient topology induced 
 Note that for any point $x$, the set $[x]$ is connected and compact, with connected complement.
 Therefore $\SS^2_f$ is homeomorphic to $\SS^2$ by Moore's theorem, see \cite{moore}.
 
-It remains to note that $|\DD|_f$ is embedded into $\SS^2_f$ and its complement is homeomorphic to an open disc.\qeds
+It remains to note that $|\DD|_f$ is embedded into $\SS^2_f$ and its complement is homeomorphic to an open disc.
+The special case when $f|{\partial\DD}$ is an embedding follows then from the Schoenflies theorem.
+\qeds
 
 Given a disc retract $X$,
 define its interior as a maximal open set which is homeomorphic to an open set in the plane.
@@ -372,7 +375,8 @@ Applying \ref{prop:point-complement} and \ref{prop:disc-moore}, we get the follo
 Let $f\:\DD\to\ Y$ be a continuous metric minimizing map relative to $\partial \DD$.
 Then $f$ is a no-bubble map.
 
-In particular,  $|\DD|_f$ is homeomorphic to a disc retract.
+In particular,  $|\DD|_f$ is homeomorphic to a disc retract. In case $f|_{\partial\DD}$ is an
+embedding it is homeomorphic to a disc.
 Moreover $\partial|\DD|_f$ is the image of $\partial \DD$
 under the map $x\mapsto [x]_f$.
 \end{thm}
@@ -827,7 +831,6 @@ Let $Y$ be a $\CAT[0]$ space
 and $s\:\DD\to Y$ be a metric minimizing map relative to the boundary $\partial\DD$.
 Assume $\|\DD\|_s$  is separable. 
 Then each metric component of $\|\DD\|_s$ is a $\CAT[0]$ space. 
-Moreover, if $s|_{\partial \DD}$ is rectifiable, then $\|\DD\|_s$ is a $\CAT[0]$ space. 
 \end{thm}
 
 \parit{Proof of Main theorem.}
@@ -853,13 +856,15 @@ If the above case has been proven,
 then closure of each connected open component bounded by $\triangle$ is $\CAT[0]$.
 In particular $\triangle$ is thin.
 Since $\triangle$ is arbitrary, the statement follows.
+In addition we can also assume that $\|\DD\|_s$ is a metric space. Otherwise we treat each metric component 
+individually.
 
-Given a finite set $F\subset \DD$ which maps to a single metric component of $\|\DD\|_s$,
+Given a finite set $F\subset \DD$,
 denote by $\mathcal{W}_F$
 the set of isometry classes of spaces $W$ which meet the conditions of the Key Lemma~\ref{lem:key}
 for $F$;
-according to lemma $\mathcal{W}_F\ne\emptyset$.
-Note that for two such finite sets $F\subset F'$ in $\DD$,
+according to Lemma~\ref{lem:key} $\mathcal{W}_F\ne\emptyset$.
+Note that for two finite sets $F\subset F'$ in $\DD$,
 we have $\mathcal{W}_F\supset \mathcal{W}_{F'}$.
 
 According to the Lemma on compactness (\ref{lem:compact}) $\mathcal{W}_F$ is compact.
@@ -878,17 +883,15 @@ such that its subsequence of points in $\partial \|\DD\|_s$
 Set $F_n=\{x_1,\dots,x_n\}$.
 Denote by $p_n\:F_n\to W$ a map satisfying the conditions in the Key Lemma~\ref{lem:key}.
 
-Using a diagonal argument we can extract a short map
+Using a diagonal argument we can extract a short map \[p:\mathcal{F}\to W.\]
 
-\[p:\mathcal{F}\to W.\]
-
-Since $\{x_k\}$ is dense in $\|\DD\|_s$,
+Since $\mathcal{F}$ is dense in $\|\DD\|_s$,
 the map $p$ can be extended to whole disc $\|\DD\|_s$ 
 as a short map.
 The obtained map will be still denoted as $p$.
 
-Pass to an ultralimit $\mathfrak{q}$ of the maps $q_n$ provided by Key Lemma~\ref{lem:key} the target of $\mathfrak{q}$ is an ultrapower  $\mathfrak{Y}$ of $Y$,
-which is $\CAT[0]$ space containing $Y$ as a convex subspace.
+Pass to an ultralimit $\mathfrak{q}$ of the maps $q_n$ provided by Key Lemma~\ref{lem:key}. The target of $\mathfrak{q}$ is an ultrapower  $\mathfrak{Y}$ of $Y$,
+which is a $\CAT[0]$ space containing $Y$ as a convex subspace.
 The closest point projection of $\mathfrak{q}$ to $Y$ will be denoted by $q$.
 By construction, 
 $\mathfrak{q}$ is short 
@@ -904,6 +907,8 @@ such that
 Since $s$ is metric minimizing, both maps $p$ and $q$ are length preserving and metric minimizing.
 
 It remains to apply Shefel's theorem \ref{thm:shefel-2D}.
+
+
 \qeds
 
 
@@ -930,6 +935,25 @@ Note that there is a continuous one parameter family of geodesics $\gamma_t$ pas
 such that $\gamma=\gamma_0$ and $\gamma_1$ is $\gamma$ with reversed parametrization.
 Note that the order of $x$ and $y$ on $p^{-1}(\gamma_t)$ does not change in $t$.
 On the other hand the order on $\gamma_0$ and on $\gamma_1$ are opposite, a contradiction.\qeds 
+
+\begin{thm}{Corollary}\label{thm:dirichlet}
+Let $Y$ be a $\CAT[0]$ space 
+and $s\:\DD\to Y$ be a continuous metric minimizing map relative to the boundary $\partial\DD$ such that $s|_{\partial\DD}$ is rectifiable.
+Suppose that $\|\DD\|_s$  is separable. Then $\|\DD\|_s$ is a $\CAT[0]$ disc retract. If moreover  $s|_{\partial\DD}$ is an embedding,
+then $\|\DD\|_s$ is a $\CAT[0]$ disc.
+\end{thm}
+
+\parit{Proof.}
+By Proposition \ref{prop:|D|} $|\DD|_s$ is a disc retract in the general case, and a disc if $s|_{\partial\DD}$ is an embedding.
+The identity map $\iota:\|\DD\|_s\to |\DD|_s$ is continuous. Pick a point $p\in\partial\|\DD\|_s$ and consider the geodesic 
+cone $C$ from $p$ over $\partial\|\DD\|_s$. Then $\iota|_C$ is surjective because otherwise there would be a point $q$ in the 
+interior of $|\DD|_s$ such that $C$ defines a contraction of $\partial|\DD|_s$ in $|\DD|_s-\{q\}$. In particular $C=\|\DD\|_s$.
+Since $C$ is the continuous image of a disc, we get that $\|\DD\|_s$ is compact and that $\iota$ is a homeomorphism.
+\qeds
+
+
+
+
 
 \section{Harmonic maps}
 
