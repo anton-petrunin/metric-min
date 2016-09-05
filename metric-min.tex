@@ -965,8 +965,8 @@ For definitions and properties of Sobolev maps we refer the reader to \cite{LW} 
 an energy minimizing map a {\em harmonic map}.
 
 
-The following theorem was proved by Korevaar and Schoen in \cite{KS}, it generalizes earlier results by Hamilton on Riemannian manifolds of non-positive
-curvature \cite{H}.
+Apart from boundary regularity the following theorem was proved by Korevaar and Schoen in \cite{KS}, it generalizes earlier results by Hamilton on Riemannian manifolds of non-positive
+curvature \cite{H}. The boundary regularity in this from is due to Lytchak and Wenger \cite{LW4}.
 
 \begin{thm}{Dirichlet problem}\label{thm:dirichlet}
 Let $\gamma$ be a continuous circle in a $\CAT[0]$ space $X$. 
@@ -987,14 +987,42 @@ spaces can be found in \cite{LW2}.
 
 \begin{thm}{Proposition}\label{prop:harmonic}
 Let $X$ be a $\CAT[0]$ space 
-and $u\:\DD\to X$ an energy minimizing disc with fixed boundary curve.
-Then $u$ is metric minimizing.
+and $u\:\DD\to X$ an energy minimizing disc with fixed rectifiable boundary curve $\gamma$.
+Then $u$ is metric minimizing relative $\gamma$.
 \end{thm}
 
 
 \parit{Proof.}
-The regularity statement in Theorem \ref{thm:dirichlet} allows us to apply Proposition \ref{prop:exist} to obtain a metric minimizing
-disc $s$ with $u \succcurlyeq s$ and $u|_{\partial\DD}=s|_{\partial\DD}$. Since $u$ is continuous, it has finite Korevaar-Schoen energy iff
+We will first prove the existence of a metric minimizing
+disc $s$ with $u \succcurlyeq s$ and $u|_{\partial\DD}=s|_{\partial\DD}$. 
+Define the relative sublevel $\mathcal{F}(u)$ as the family of all saddle maps $f:\DD\to X$
+with $f|_{\partial \DD}=u|_{\partial \DD}$ and $u\succcurlyeq f$.
+We claim that $\mathcal{F}(u)$ is equicontinuous. This is clear for points in the interior of $\DD$. So let 
+$z$ be a point in the boundary $\partial\DD$. Since $u|_\partial\DD$ is rectifiable the Courant-Lebesgue lemma (Lemma 7.3 in \cite{LW})
+implies that for every $\epsilon>0$ we can find a Jordan curve $J\subset\DD$ containing $z$ which is mapped into a set of diameter less than
+$\epsilon$ by every element in $\mathcal{F}(u)$. The equicontinuity now follows from the saddle property.
+
+\begin{thm}{Sublemma}
+$\mathcal{F}(u)$ is sequentially compact with respect to uniform convergence. 
+\end{thm}
+\parit{Proof.}
+Let $(f_n)$ be a sequence in $\mathcal{F}(u)$ and choose a nonprincipal ultrafilter $\omega$ on 
+$N$. Then $\omega\lim f_n:\DD_\omega\to X_\omega$ is well defined, since $\mathcal{F}(u)$ is equicontinuous.
+Since $\DD_\omega\cong \DD$, we obtain the desired limit map by composing $\omega\lim f_n$ with the closest point projection
+$X_\omega\to X$.
+\qeds
+
+It follows that $\mathcal{F}(u)$ has a minimal element $s$. ???????????????????????????
+
+
+
+
+
+
+
+
+
+Since $u$ is continuous, it has finite Korevaar-Schoen energy iff
 there is a Borel function $\rho\in L^2(\DD)$ such that for 2-almost all curves $\gamma:I\to \DD$
 $$
 length(u\circ \gamma)\leq\int_\gamma \rho.\footnote{See section 3.2 in \cite{LW3}.}
