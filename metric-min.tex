@@ -121,7 +121,7 @@ if there is no map $h\:X\to Y$ such that $f\succ h$
 and $h$ agrees with $f$ on $A$;
 that is, $h|_A=f|_A$.
 
-We say that $f\:X\to Y$ is \emph{strict metric minimizing relative to $A$}
+We say that $f\:X\to Y$ is \emph{strictly metric minimizing relative to $A$}
 if there is no map $h\:X\to Y$ distinct from $f$
 such that $f\succcurlyeq h$, 
 and $h|_A=f|_A$.
@@ -986,18 +986,16 @@ A thorough treatment of general energies and their associated Sobolev
 spaces can be found in \cite{LW2}.
 
 \begin{thm}{Proposition}\label{prop:harmonic}
-Let $X$ be a $\CAT[0]$ space 
-and $u\:\DD\to X$ an energy minimizing disc with fixed rectifiable boundary curve $\gamma$.
-Then $u$ is metric minimizing relative $\gamma$.
+Let $X$ be a proper $\CAT[0]$ space 
+and $u\:\DD\to X$ an energy minimizing disc with fixed rectifiable boundary curve $u|_{\partial\DD}$.
+Then $u$ is metric minimizing relative $\partial\DD$.
 \end{thm}
 
 
 \parit{Proof.}
-We will first prove the existence of a metric minimizing
-disc $s$ with $u \succcurlyeq s$ and $u|_{\partial\DD}=s|_{\partial\DD}$. 
-Define the relative sublevel $\mathcal{F}(u)$ as the family of all saddle maps $f:\DD\to X$
-with $f|_{\partial \DD}=u|_{\partial \DD}$ and $u\succcurlyeq f$.
-We claim that $\mathcal{F}(u)$ is equicontinuous. This is clear for points in the interior of $\DD$. So let 
+The map $u$ factorizes as $u=\bar u\circ\pi_u$ with $\pi_u:\DD\to\|\DD\|_u$ and $\bar u: \|\DD\|_u\to X$.
+By definition $\bar u$ is length preserving and hence short, and we claim that $\pi_u$ is continuous.
+This is clear for points in the interior of $\DD$ since $u$ is locally Lipschitz continuous there. So let 
 $z$ be a point in the boundary $\partial\DD$. Since $u|_\partial\DD$ is rectifiable the Courant-Lebesgue lemma (Lemma 7.3 in \cite{LW})
 implies that for every $\epsilon>0$ we can find a Jordan curve $J\subset\DD$ containing $z$ which is mapped into a set of diameter less than
 $\epsilon$ by every element in $\mathcal{F}(u)$. The equicontinuity now follows from the saddle property.
@@ -1090,8 +1088,9 @@ It is possible to show that in the above situation $h([-1,1]\times[0,L])$ is int
 \end{thm}
 
 \begin{thm}{Uniqueness Theorem}\label{prop:strict-mm}
-Let $X$ be a $\CAT[0]$ space and $s_0, s_1\:\DD\to X$ be metric minimizing discs. If 
-$\|\DD\|_{s_0}$ is isometric to $\|\DD\|_{s_1}$, then $s_0=s_1$.
+Let $X$ be a $\CAT[0]$ space and $s_0, s_1\:\DD\to X$ be metric minimizing relative to $\partial\DD$. Assume that 
+$s_0|_{\partial \DD}$ is rectifiable and equal to $s_1|_{\partial \DD}$. If 
+$\|\DD\|_{s_0}$ is isometric to $\|\DD\|_{s_1}$, then $s_0=s_1$ on the metric component of $\partial\DD$.
 \end{thm}
 
 \parit{Proof.}
@@ -1108,7 +1107,8 @@ The claim follows.
 
 %MAYBE IT WILL BE A COR OR PART OF AN OTHER STATEMENT, BUT WE NEED IT???
 \begin{thm}{Corollary}\label{prop:strict-mm}
-Any metric minimizing disc in a $\CAT[0]$ space is strictly metric minimizing.
+Let  $X$ be a $\CAT[0]$ space and $s\:\DD\to X$ be metric minimizing relative to $\partial\DD$. 
+If $\|\DD\|_s$ is a metric space, then $s$ is strictly metric minimizing.
 \end{thm}
 
 
@@ -1133,7 +1133,7 @@ with $\operatorname{length}(f\circ\gamma)<\eps$.
 \begin{thm}{Remark}
 \begin{enumerate}
  \item The main example of intrinsically continuous maps are Lipschitz
-maps from geodesic spaces to arbitrary metric spaces.
+maps from length spaces to arbitrary metric spaces.
 \item Restrictions of intrinsically continuous maps to compact sets are uniformly intrinsically continuous. 
 \item If a map $f\:Y\to Z$ is intrinsically continuous, then 
 the natural projection $\pi_f\:Y\rightarrow \|Y\|_f$ is continuous. If
@@ -1147,29 +1147,29 @@ metric is a geodesic space.
 
 \medskip
 
-Let $X$ be a proper metric space. Denote the set
-of continuous maps $\DD\to X$ equipped with the compact-open topology 
-by $\mathcal{C}(\DD,X)$. In Section \ref{sec:Def} we defined a partial 
-order $``\succcurlyeq ''$ on $\mathcal{C}(D,X)$.
+Let $X$ be a compact metric space and $Y$ a proper metric space. Denote the set
+of continuous maps $X \to Y$ equipped with the compact-open topology 
+by $\mathcal{C}(X,Y)$. In Section \ref{sec:Def} we defined a partial 
+order $``\succcurlyeq ''$ on $\mathcal{C}(X,Y)$.
 
 We address the problem of finding a
-metric minimizing disc below a given continuous one.
+metric minimizing map below a given continuous one.
 
-For a map $f\in\mathcal{C}(D,X)$ we 
-define its relative sublevel $\mathcal{F}(f)$ consisting of all maps $g\in\mathcal{C}(D,X)$
-with $g|_{\partial \DD}=f|_{\partial \DD}$ and $f\succcurlyeq g$. If $f$ is intrinsically continuous as a map from $\DD$, then
+For a subset $A\subset X$ and a map $f\in\mathcal{C}(X,Y)$ we 
+define its relative sublevel $\mathcal{F}(f)$ consisting of all maps $g\in\mathcal{C}(X,Y)$
+with $g|_{A}=f|_{A}$ and $f\succcurlyeq g$. If $f$ is intrinsically continuous as a map from $X$, then
 so is every element in $\mathcal{F}(f)$. In this case, the family
 $\mathcal{F}(f)$ is equicontinuous. 
-By Arzel\`a-Ascoli, it is precompact, since $X$ is proper and it is
+By Arzel\`a-Ascoli, it is precompact, since $Y$ is proper and it is
 closed by the semi-continuity of length structures. Hence, we conclude 
 that $\mathcal{F}(f)$ contains a 
 minimal element. This element is clearly metric minimizing, since the induced metric 
 determines the length structure. This explains
 
 \begin{thm}{Proposition}\label{prop:exist}
- If $X$ is a proper metric space, then for every intrinsically continuous map $f\:\DD\rightarrow X$,
- there is an intrinsically continuous  metric minimizing map $s\:\DD\rightarrow X$
- such that $\|{*}-{*}\|_s\leq\|{*}-{*}\|_f$.
+ If $X$ is a compact metric space and $Y$ is a proper metric space, then for every intrinsically continuous map $f\:X\rightarrow Y$,
+ there is an intrinsically continuous  metric minimizing map $s\:X\rightarrow Y$
+ such that $f\succcurlyeq s$.
 \end{thm}
 
 
