@@ -936,7 +936,7 @@ such that $\gamma=\gamma_0$ and $\gamma_1$ is $\gamma$ with reversed parametriza
 Note that the order of $x$ and $y$ on $p^{-1}(\gamma_t)$ does not change in $t$.
 On the other hand the order on $\gamma_0$ and on $\gamma_1$ are opposite, a contradiction.\qeds 
 
-\begin{thm}{Corollary}\label{thm:dirichlet}
+\begin{thm}{Corollary}\label{cor:main}
 Let $Y$ be a $\CAT[0]$ space 
 and $s\:\DD\to Y$ be a continuous metric minimizing map relative to the boundary $\partial\DD$ such that $s|_{\partial\DD}$ is rectifiable.
 Suppose that $\|\DD\|_s$  is separable. Then $\|\DD\|_s$ is a $\CAT[0]$ disc retract. If moreover  $s|_{\partial\DD}$ is an embedding,
@@ -985,42 +985,16 @@ We will call this generalization {\em Korevaar-Schoen energy} and denote it by $
 A thorough treatment of general energies and their associated Sobolev
 spaces can be found in \cite{LW2}.
 
-\begin{thm}{Proposition}\label{prop:harmonic}
-Let $X$ be a proper $\CAT[0]$ space 
-and $u\:\DD\to X$ an energy minimizing disc with fixed rectifiable boundary curve $u|_{\partial\DD}$.
+\begin{thm}{Lemma}\label{lem:harmonic}
+Let $X$ be a $\CAT[0]$ space 
+and $u\:\DD\to X$ an intrinsically continuous harmonic disc.
 Then $u$ is metric minimizing relative $\partial\DD$.
 \end{thm}
 
 
 \parit{Proof.}
-The map $u$ factorizes as $u=\bar u\circ\pi_u$ with $\pi_u:\DD\to\|\DD\|_u$ and $\bar u: \|\DD\|_u\to X$.
-By definition $\bar u$ is length preserving and hence short, and we claim that $\pi_u$ is continuous.
-This is clear for points in the interior of $\DD$ since $u$ is locally Lipschitz continuous there. So let 
-$z$ be a point in the boundary $\partial\DD$. Since $u|_\partial\DD$ is rectifiable the Courant-Lebesgue lemma (Lemma 7.3 in \cite{LW})
-implies that for every $\epsilon>0$ we can find a Jordan curve $J\subset\DD$ containing $z$ which is mapped into a set of diameter less than
-$\epsilon$ by every element in $\mathcal{F}(u)$. The equicontinuity now follows from the saddle property.
-
-\begin{thm}{Sublemma}
-$\mathcal{F}(u)$ is sequentially compact with respect to uniform convergence. 
-\end{thm}
-\parit{Proof.}
-Let $(f_n)$ be a sequence in $\mathcal{F}(u)$ and choose a nonprincipal ultrafilter $\omega$ on 
-$N$. Then $\omega\lim f_n:\DD_\omega\to X_\omega$ is well defined, since $\mathcal{F}(u)$ is equicontinuous.
-Since $\DD_\omega\cong \DD$, we obtain the desired limit map by composing $\omega\lim f_n$ with the closest point projection
-$X_\omega\to X$.
-\qeds
-
-It follows that $\mathcal{F}(u)$ has a minimal element $s$. ???????????????????????????
-
-
-
-
-
-
-
-
-
-Since $u$ is continuous, it has finite Korevaar-Schoen energy iff
+By Proposition \ref{prop:exist} there exists an intrinsically continuous metric minimizing map
+$s:\DD\to X$ with $u\succcurlyeq s$. Since $u$ is continuous, it has finite Korevaar-Schoen energy iff
 there is a Borel function $\rho\in L^2(\DD)$ such that for 2-almost all curves $\gamma:I\to \DD$
 $$
 length(u\circ \gamma)\leq\int_\gamma \rho.\footnote{See section 3.2 in \cite{LW3}.}
@@ -1030,20 +1004,48 @@ curves $\gamma:I\to \DD$
 $$
 length(s\circ \gamma)=\int_I |ds_{\gamma(t)}(\dot\gamma(t))|dt\leq \int_I |du_{\gamma(t)}(\dot\gamma(t))|dt=length(u\circ \gamma).
 $$
-From the Lebesgue Differentiation theorem we obtain $ds\leq du$ almost everywhere. Since $E$ is monotonic in the metric differentials, it follows that 
+The Lebesgue Differentiation theorem implies $ds\leq du$ almost everywhere. Since $E$ is monotonic in the metric differentials, it follows that 
 $E(s)=E(u)$, that is $s$ is also energy minimizing.
 By uniqueness in Theorem \ref{thm:dirichlet} we get $u=s$.
  \qeds
  
-\begin{thm}{Remark}
-This proposition generalizes to other energy functionals besides the one form Korevaar and Schoen. ??????????????
+ 
+ 
+ \begin{thm}{Proposition}\label{prop:harmonic}
+Let $X$ be a $\CAT[0]$ space 
+and $u\:\DD\to X$ a harmonic disc with rectifiable boundary $u|_{\partial \DD}$.
+Then $u$ is intrinsically continuous and metric minimizing relative $\partial\DD$.
 \end{thm}
 
+
+\parit{Proof.}
+ For $r\leq 1$ set $B_r:=\overline{B_r(0)}\subset\DD$ and $S_r:=\partial B_r$. Choose a sequence $r_k\to 1$. From the regularity part of Theorem \ref{thm:dirichlet}
+ we get that $u_k:=u|_{B_{r_k}}$ is a Lipschitz continuous harmonic disc.  
+ such that $length (u(S_{r_k}))$ is finite. By Lemma \ref{lem:harmonic}, Theorem \ref{thm:main} and Corollary \ref{cor:main} the spaces $Z_k:=\|\DD\|_{u_k}$ are $\CAT[0]$ disc retracts. 
+ The natural maps $Z_k\hookrightarrow\|\DD\|_u$ are length preserving and the union $\bigcup_k Z_k$ contains the interior of $\|\DD\|_u$. The Courant-Lebesgue Lemma (Lemma 7.3 in \cite{LW})
+ implies $\overline{\bigcup_k Z_k}=\|\DD\|_u$. It follows that $\|\DD\|_u$ is a $\CAT[0]$ space. Since $u|_{\partial \DD}$ is rectifiable the same argument as in Corollary \ref{cor:main} shows that 
+ $\|\DD\|_u$ is actually a $\CAT[0]$ disc retract.
+ Next we prove the intrinsic continuity of $u$. By Theorem \ref{thm:dirichlet} we only need to look at boundary points. Choose $z\in\partial\DD$. From the   
+ Courant-Lebesgue Lemma and the rectifiability of $u|_{\partial \DD}$ we get for every $\epsilon>0$ a Jordan curve $J$ in $\DD$ which contains $z$ and bounds a neighborhood $U$ of $z$ 
+ such that $length(u(J))<\epsilon$. Since $\|\DD\|_u$ is a $\CAT[0]$ disc retract, any point in $U$ has intrinsic distance less than $\frac{\epsilon}{\pi}$ from $z$. Hence $u$
+ is intrinsically continuous and Lemma \ref{lem:harmonic} implies that $u$ is metric minimizing relative $\partial\DD$.
+ \qeds
  
-\begin{thm}{Corollary}
+ 
+ 
+\begin{thm}{Remark}
+This proposition immediately generalizes to other convex energy functionals which are monotonic in the metric differentials and have locally intrinsically
+continuous minimizers.
+\end{thm}
+
+We summarize the main result of this section.
+
+
+\begin{thm}{Theorem}\label{thm:harmonic}
 Let $X$ be a $\CAT[0]$ space 
-and $u\:\DD\to X$ an energy minimizing disc which spans a rectifiable boundary curve.
-Then $\|\DD\|_u$ is a $\CAT[0]$ disc retract and a $\CAT[0]$ disc if the boundary is embedded.
+and $u\:\DD\to X$ a harmonic disc which spans a rectifiable boundary curve. 
+Then $u$ is intrinsically continuous and $\|\DD\|_u$ is a $\CAT[0]$ disc retract. 
+Moreover, if the boundary is embedded then $\|\DD\|_u$ is a $\CAT[0]$ disc .
 \end{thm}
 
 
@@ -1115,10 +1117,8 @@ If $\|\DD\|_s$ is a metric space, then $s$ is strictly metric minimizing.
 
 \subsection{Metric minimizing discs below given continuous ones}~
 
-
-Let $f\:X\to Y$ be a map between metric spaces and $A$ a subset of $X$. Using Zorn's Lemma it is alway possible to find 
-a metric minimizing map $s$ relative to $A$ with $f\succcurlyeq s$. In this subsection we give a criterion which allows to 
-find continuous such maps.
+In this subsection we give a criterion which allows to 
+find continuous metric minimizing maps inside a given sublevel set defined by our partial order $"\succcurlyeq"$.
 
 \begin{thm}{Definition}(Intrinsic continuity)
 A map $f\:Y\to Z$ from a metric space $Y$ to a metric space
@@ -1143,34 +1143,46 @@ metric is a geodesic space.
 \end{thm}
 
 
-\subsubsection{Proper metric spaces}~
+\subsubsection{CAT[0] spaces}~
 
 \medskip
 
-Let $X$ be a compact metric space and $Y$ a proper metric space. Denote the set
-of continuous maps $X \to Y$ equipped with the compact-open topology 
-by $\mathcal{C}(X,Y)$. In Section \ref{sec:Def} we defined a partial 
-order $``\succcurlyeq ''$ on $\mathcal{C}(X,Y)$.
+Let $X$ be a compact geodesic space and $Y$ a $CAT[0]$ space. Fix a map  
+$f:X\to Y$.
 
-We address the problem of finding a
-metric minimizing map below a given continuous one.
-
-For a subset $A\subset X$ and a map $f\in\mathcal{C}(X,Y)$ we 
-define its relative sublevel $\mathcal{F}(f)$ consisting of all maps $g\in\mathcal{C}(X,Y)$
+For a subset $A\subset X$  we 
+define its relative sublevel $\mathcal{S}(f)$ consisting of all maps $g:X\to Y$
 with $g|_{A}=f|_{A}$ and $f\succcurlyeq g$. If $f$ is intrinsically continuous as a map from $X$, then
-so is every element in $\mathcal{F}(f)$. In this case, the family
-$\mathcal{F}(f)$ is equicontinuous. 
-By Arzel\`a-Ascoli, it is precompact, since $Y$ is proper and it is
-closed by the semi-continuity of length structures. Hence, we conclude 
-that $\mathcal{F}(f)$ contains a 
-minimal element. This element is clearly metric minimizing, since the induced metric 
-determines the length structure. This explains
+so is every element in $\mathcal{S}(f)$. 
 
 \begin{thm}{Proposition}\label{prop:exist}
- If $X$ is a compact metric space and $Y$ is a proper metric space, then for every intrinsically continuous map $f\:X\rightarrow Y$,
+ If $X$ is a compact geodesic space and $Y$ a CAT[0] space, then for every subset $A\subset X$ and every intrinsically continuous map $f\:X\rightarrow Y$,
  there is an intrinsically continuous  metric minimizing map $s\:X\rightarrow Y$
  such that $f\succcurlyeq s$.
 \end{thm}
+
+
+\parit{Proof.}
+Let $\mathcal{O}\subset\mathcal{S}(f)$ be a well-ordered subset. If $\mathcal{O}$ does not
+have a minimum, then we define
+$$
+\mathcal{F}:=\{A\subset\mathcal{O}|\ \mathcal{O}-A\text{ has a lower bound in }\mathcal{O}\}.
+$$
+This defines a filter since $\mathcal{O}$ does not have a minimum and any point is a lower bound for the empty set.
+Complete $\mathcal{F}$ to an ultrafilter $\omega$. Note that $\omega$ is non-principal since finite subsets have lower bounds.
+Set $Y_\omega:=\omega\lim_{\mathcal{O}}(Y,*)$ a pointed ultralimit with arbitrary fixed base point. Then $Y_\omega$
+is a CAT[0] space which contains $Y$ as a convex subset. The ultralimit $s_\omega:X_\omega\to Y_\omega$ is well defined, since
+$f$ is intrinsically continuous. Denote $\bar s_\omega$ the composition of $s_\omega$ with the nearest point projection $Y_\omega\to Y$.
+Since $X_\omega$ is canonically isometric to $X$, the map $\bar s_\omega$ lies in $\mathcal{S}(f)$. We claim that $\bar s_\omega$
+is a lower bound for $\mathcal{O}$. Let $\gamma$ be a path in $X$ and $s_0$ an element in $\mathcal{O}$. For a partition $x_0,\ldots,x_k$
+of $\gamma$ we have
+$$
+\sum_{j=0}^k|\bar s_\omega(x_j)-\bar s_\omega(x_{j+1})|=\omega\lim_{\mathcal{O}}\sum_{j=0}^k|s(x_j)-s(x_{j+1})|\leq \omega\lim_{\mathcal{O}}length(s\circ\gamma)\leq length(s_0\circ\gamma)
+$$
+where we identified points in $X_\omega$ with constant nets in $X$. The last inequality follows from the fact that the subset $\{s\succcurlyeq s_0\}\subset \mathcal{O}$
+is not in $\omega$. Consequentely $length(s_\omega\circ\gamma)\leq length(s_0\circ\gamma)$ and $\bar s_\omega$
+is a lower bound for $\mathcal{O}$. By Zorn's lemma we obtain a minimal element $s_{min}$ for $\mathcal{S}(f)$.
+\qeds
 
 
 
@@ -1360,6 +1372,8 @@ volume 27 of New Mathematical Monographs. Cambridge University Press, Cambridge,
 \bibitem{LW2}Lytchak, A.; Wenger, S. ``Energy and area minimizers in metric spaces,'' preprint  arXiv:1507.02670, 2015.
 
 \bibitem{LW3}Lytchak, A.; Wenger, S. ``Intrinsic structure of minimal discs in metric spaces ,'' preprint  arXiv:1602.06755, 2016.
+
+\bibitem{LW4}Lytchak, A.; Wenger, S. ``Regularity of harmonic discs in spaces with quadratic isoperimetric inequality  ,'' preprint  arXiv:1512.01060, 2016.
 
 \bibitem{petrunin-metric-min} Petrunin, A.
 ``Metric minimizing surfaces.''
