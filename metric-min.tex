@@ -70,6 +70,17 @@ can be thought of as a disjoint union of \emph{metric spaces}.
 We will say that the obtained metric spaces are \emph{defined} by the  
 original pseudometric space.%???IS IT A GOOD WAY TO SAY??? 
 
+For a metric space $X$ and a continuous curve $c:[a,b]\to X$ we define its {\em length} as
+\[\length_X(c):=\sup\sum_{i=0}^{k-1} |c(t_i)-c(t_{i+1})|\]
+where the supremum is taken over all finite partitions ${a=t_0<t_1<\ldots t_k=b}$ of $[a,b]$. 
+A continuous curve $c$ is called {\em rectifiable} if its length is finite.
+
+
+
+
+
+
+
 \parbf{Induced  pseudometrics.}
 Let $X$ and $Y$ be metric spaces.
 Given a continuous map $f\:X\to Y$,
@@ -82,13 +93,14 @@ if there is no such set we set $|x-y|_f=\infty$.
 The intrinsic metric induced by $|{*}-{*}|_f$ will be denoted as 
 $\|{*}-{*}\|_f$. 
 That is, 
-\[\|x-y\|_f=\liminf_{\eps\to0+}\left\{\sum_{i=1}^n|x_i-x_{i-1}|_f\right\},\]
-where the infimum is taken for all arrays of points 
-$x=x_0,x_1,\dots,x_n=y$ such that 
-$|x_i-x_{i-1}|_f<\eps$ for any $i$.
+\[\|x-y\|_f=\inf\{\length(\gamma)|\ \gamma \text{ continuous curve in } X \text{ connecting } x \text{ and } y\}\]
+where the length is computed with respect to $|{*}-{*}|_f$.
 
 The metric spaces defined by the pseudometrics $|{*}-{*}|_f$ 
 and $\|{*}-{*}\|_f$ on $X$ will be denoted as $|X|_f$ and $\|X\|_f$ correspondingly.
+
+
+
 
 \parbf{Remarks.}
 \begin{itemize}
@@ -100,8 +112,24 @@ that is,
 \[|x-y|_f=0\quad\iff\quad\|x-y\|_f=0.\]
 The equivalence class of $x\in X$ will be denoted as $[x]_f$; 
 it can be regarded as a point in  $|X|_f$ and in $\|X\|_f$.
+\item The map $f$ factors as $f=\bar f\circ \pi_f$ with $\pi_f\:X\to|X|_f$ continuous and $\bar f\:|X|_f\to Y$ short.
+If we regard $\pi_f$ and $\bar f$ as maps to $\|X\|_f$, then $\pi_f$ is typically not continuous but $\bar f$ is length 
+preserving. More precisely, $\bar f$ preserves the lengths of all curves $\pi_f(\gamma)$ with $\gamma$ a curve in $X$, see the following lemma.
 \end{itemize}
 
+
+
+\begin{thm}{Lemma}\label{lem:intrinsicmetric}
+Let $X$ and $Y$ be metric spaces and let $f\:X\to Y$ be a continuous map. Then for any curve $\gamma$ in $X$ holds $f\circ\gamma$
+is rectifiable iff $\pi_f\circ\gamma$ is rectifiable; and in this case $\length_Y(f\circ\gamma)=\length_{\|X\|_f}(\pi_f(\gamma))$.
+\end{thm}
+\parit{Proof.}
+Let $\gamma\:[a,b]\to X$ be a continuous curve.
+Since $\bar f\:|X|_f\to Y$ is short, we have $\length_Y(f\circ \gamma)\leq\length_{\|X\|_f}(\pi_f(\gamma))$. On the other hand,
+if $\length_Y(f\circ \gamma)$ is finite, then for every finite partition ${a=t_0<t_1<\ldots t_k=b}$ of $[a,b]$ we have
+\[\length_Y(f\circ \gamma)=\sum_{i=0}^{k-1}\length_Y(f\circ \gamma|_{[t_i,t_{i+1}]})\geq\sum_{i=0}^{k-1}|\gamma(t_i)-\gamma(t_{i+1})|_f.\]
+Hence $\length_Y(f\circ \gamma)\geq\length_{\|X\|_f}(\pi_f(\gamma))$.
+\qeds
 
 
 
