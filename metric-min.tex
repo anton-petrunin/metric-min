@@ -1130,11 +1130,12 @@ is a lower bound for $\mathcal{O}$. By Zorn's lemma we obtain a minimal element 
 \section{Application to harmonic maps}
 
 %???MAYBE WE SHOULD say harmonic insted of energy minimizing
+\subsection{Harmonic discs are metric minimizing}
 
-In this section we show that harmonic maps from discs to $\CAT[0]$ spaces are metric minimizing, see Proposition~\ref{prop:harmonic}.
+In this subsection we show that harmonic maps from discs to $\CAT[0]$ spaces are metric minimizing, see Proposition~\ref{prop:harmonic}.
 
 For definitions and properties of Sobolev maps we refer the reader to \cite{LW} and \cite{LW2}. For convenience we will call
-an energy minimizing map a {\em harmonic map}.
+an energy minimizing map relative to some boundary condition a {\em harmonic map}.
 
 
 Apart from boundary regularity the following theorem was proved by Korevaar and Schoen in \cite{KS}, it generalizes earlier results by Hamilton on Riemannian manifolds of non-positive
@@ -1157,60 +1158,131 @@ We will call this generalization {\em Korevaar-Schoen energy} and denote it by $
 A thorough treatment of general energies and their associated Sobolev
 spaces can be found in \cite{LW2}.
 
-\begin{thm}{Lemma}\label{lem:harmonic}
+
+
+We will begin with some preparations. 
+
+
+\begin{thm}{Lemma}\label{lem:harmsaddle}
+Let $X$ be a $\CAT[0]$ space and
+$u\:\DD\to X$ a harmonic disc with rectifiable boundary $u|_{\partial \DD}$.
+The map $u$ is saddle and continuous.
+\end{thm}
+
+\parit{Proof.}
+Since energy is nonincreasing under postcomposition with short maps, the uniquness in Theorem \ref{thm:harmonic} implies that
+$u$ is saddle. By the Courant-Lebesgue lemma (Lemma 7.3 in \cite{LW}), every point $x$ in $\DD$ and every $\epsilon>0$
+there is a neighborhood of $x$ which is bounded by a Jordan curve $J$ such that $\length_X(u(J))<\epsilon$. From the saddle property we conclude 
+that $u$ is continuous.
+\qeds
+
+\begin{thm}{Corollary}\label{cor:harmdiscretract}
+In the situation of the lemma, the space $|D|_u$ is homeomorphic to a disc retract.
+\end{thm}
+\parit{Proof.}
+This follows from \ref{} since $u$ is a no-bubble map by Lemma \ref{lem:harmsaddle}.
+\qeds
+
+Recall that any continuous map $u$ factors as $u=\bar u\circ \pi_u$ with $\pi_u\:\DD\to|\DD|_u$ and $\bar u\:|\DD|_u\to X$.
+
+
+\begin{thm}{Lemma}\label{lem:memicrit}
+Let $u\:\DD\to X$ be a continuous map. 
+If $\bar u$ is metric minimizing relative to $\pi_u(\partial\DD)$, then $u$ is metric minimizing relative to $\partial\DD$.
+\end{thm}
+
+\parit{Proof.}
+If $u$ is not metric minimizing, then there is a map $s\:\DD\to X$ such that $s|_{\partial\DD}=u|_{\partial\DD}$ and $\|*-*\|_s\leq \|*-*\|_u$
+with a strict inequality for at least one pair of points. It follows that $\pi_s$ factors as $\pi_s=\alpha\circ\pi_u$ with a short  map $\alpha\:\|\DD\|_u\to\|\DD\|_s$.
+Note that $\bar s\circ\alpha|_{\partial|\DD|_u}=\bar u|_{\partial|\DD|_u}$, hence $\bar u$ is not metric minimizing.
+\qeds
+
+
+
+
+
+
+
+ \begin{thm}{Proposition}\label{prop:harmonic}
 Let $X$ be a $\CAT[0]$ space 
-and $u\:\DD\to X$ an intrinsically continuous harmonic disc.
+and $u\:\DD\to X$ a harmonic disc.
 Then $u$ is metric minimizing relative $\partial\DD$.
 \end{thm}
 
 
 \parit{Proof.}
-By Proposition \ref{prop:exist} there exists an intrinsically continuous metric minimizing map
-$s:\DD\to X$ with $u\succcurlyeq s$. Since $u$ is continuous, it has finite Korevaar-Schoen energy iff
+By Lemma \ref{lem:memicrit}, it is enough to show that $\bar u$ is metric minimizing relative to $\partial|\DD|_u$.
+By Proposition \ref{prop:exist} there exists a metric minimizing map
+$s\:|\DD|_u\to X$ with $u\succcurlyeq s$. Since $s$ is saddle by Lemma \ref{}, the Courant-Lebesgue lemma implies that $s$
+is continuous. (Compare the proof of Lemma \ref{lem:harmsaddle}.) 
+Since $u$ is continuous, it has finite Korevaar-Schoen energy iff
 there is a Borel function $\rho\in L^2(\DD)$ such that for 2-almost all curves $\gamma:I\to \DD$
 $$
 \length(u\circ \gamma)\leq\int_\gamma \rho.\footnote{See section 3.2 in \cite{LW3}.}
 $$
-Since $s$ is metric minimizing it has finite Korevaar-Schoen energy as well. From Lemma 3.1 in \cite{LW3} we have for 2-alomst all rectifiable
+Since $s$ is metric minimizing and $s\circ\pi_u$ is continous, we get that $s\circ\pi_u$ has finite Korevaar-Schoen energy as well. 
+From Lemma 3.1 in \cite{LW3} we have for 2-alomst all rectifiable
 curves $\gamma:I\to \DD$
 $$
-\length(s\circ \gamma)=\int_I |ds_{\gamma(t)}(\dot\gamma(t))|dt\leq \int_I |du_{\gamma(t)}(\dot\gamma(t))|dt=\length(u\circ \gamma).
+\length(s\circ\pi_u\circ \gamma)=\int_I |d(s\circ\pi_u)_{\gamma(t)}(\dot\gamma(t))|dt\leq \int_I |du_{\gamma(t)}(\dot\gamma(t))|dt=\length(u\circ \gamma).
 $$
-The Lebesgue Differentiation theorem implies $ds\leq du$ almost everywhere. Since $E$ is monotonic in the metric differentials, it follows that 
-$E(s)=E(u)$, that is $s$ is also energy minimizing.
-By uniqueness in Theorem \ref{thm:dirichlet} we get $u=s$.
+The Lebesgue Differentiation theorem implies $d(s\circ\pi_u)\leq du$ almost everywhere. Since $E$ is monotonic in the metric differentials, it follows that 
+$E(s)=E(u)$, that is $s\circ\pi_u$ is also energy minimizing.
+By uniqueness in Theorem \ref{thm:dirichlet} we get $u=s\circ\pi_u$. Therefore $\bar u=s$ and Lemma \ref{lem:memicrit} implies that $u$
+is metric minimizing.
  \qeds
  
  
+ \parbf{Remark.}
+This proposition immediately generalizes to other convex energy functionals which are monotonic in the metric differentials.
  
- \begin{thm}{Proposition}\label{prop:harmonic}
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+\subsection{Intrinisic structure and regularity of harmonic discs}
+
+Now we are going to apply our main theorem (Theorem \ref{thm:main}) to obtain structural results about harmonic maps.
+In order to do so, we need the following auxiliary observation.
+
+\begin{thm}{Lemma}\label{lem:separable}
 Let $X$ be a $\CAT[0]$ space 
-and $u\:\DD\to X$ a harmonic disc with rectifiable boundary $u|_{\partial \DD}$.
-Then $u$ is intrinsically continuous and metric minimizing relative $\partial\DD$.
+and $u\:\DD\to X$ a Sobolev disc with rectifiable boundary $u|_{\partial \DD}$.
+If $u$ is a no-bubble map, then $\|\DD\|_u$ is separable.
 \end{thm}
 
-
 \parit{Proof.}
- For $r\leq 1$ set $B_r:=\overline{B_r(0)}\subset\DD$ and $S_r:=\partial B_r$. Choose a sequence $r_k\to 1$. From the regularity part of Theorem \ref{thm:dirichlet}
- we get that $u_k:=u|_{B_{r_k}}$ is a Lipschitz continuous harmonic disc.  
- such that $\length (u(S_{r_k}))$ is finite. By Lemma \ref{lem:harmonic}, Theorem \ref{thm:main} and Corollary \ref{cor:main} the spaces $Z_k:=\|\DD\|_{u_k}$ are $\CAT[0]$ disc retracts. 
- The natural maps $Z_k\hookrightarrow\|\DD\|_u$ are length preserving and the union $\bigcup_k Z_k$ contains the interior of $\|\DD\|_u$. The Courant-Lebesgue Lemma (Lemma 7.3 in \cite{LW})
- implies $\overline{\bigcup_k Z_k}=\|\DD\|_u$. It follows that $\|\DD\|_u$ is a $\CAT[0]$ space. Since $u|_{\partial \DD}$ is rectifiable the same argument as in Corollary \ref{cor:main} shows that 
- $\|\DD\|_u$ is actually a $\CAT[0]$ disc retract.
- Next we prove the intrinsic continuity of $u$. By Theorem \ref{thm:dirichlet} we only need to look at boundary points. Choose $z\in\partial\DD$. From the   
- Courant-Lebesgue Lemma and the rectifiability of $u|_{\partial \DD}$ we get for every $\epsilon>0$ a Jordan curve $J$ in $\DD$ which contains $z$ and bounds a neighborhood $U$ of $z$ 
- such that $\length(u(J))<\epsilon$. Since $\|\DD\|_u$ is a $\CAT[0]$ disc retract, any point in $U$ has intrinsic distance less than $\frac{\epsilon}{\pi}$ from $z$. Hence $u$
- is intrinsically continuous and Lemma \ref{lem:harmonic} implies that $u$ is metric minimizing relative $\partial\DD$.
- \qeds
- 
- 
- 
-\parbf{Remark.}
-This proposition immediately generalizes to other convex energy functionals which are monotonic in the metric differentials and have locally intrinsically
-continuous minimizers.
+Since $u|_{\partial \DD}$ is rectifiable it is enough to show that 
+the interior of $\|\DD\|_u$ is separable. Let $p$ be a point in the interior of $\|\DD\|_u$ and denote $\hat p\in\DD$ 
+a lift of $p$. Choose intervals $I_1$ and $I_2$ with rational endpoints such that $\hat p$ is contained in the interior of $I_1\times I_2$.
+By \ref{}, there are subsets $A_j\subset I_j$ of full measure such that $u|_{\{a_1\}\times I_2}$
+and $u|_{I_1\times \{a_2\}}$ have finite energy for every $a_j\in A_j$. Choose countable subsets $B_j\subset A_j$
+such that $\overline{B_j}=I_j$. Then the closure of $\pi_u(B_1\times B_2)$ in $\|\DD\|_u$ contains 
+$\pi_u(A_1\times I_2)\cup \pi_u(I_1\times A_2)$.
+For any point $q$ at finite distance $r>0$ from $p$ choose a lift $\hat q$ in $\DD$. Then there are subintervals $I'_j\subset I_j$
+such that $\partial I'_j\subset B_j$ and $\partial( I'_1\times I'_2)$ separates $\hat p$ form $\hat q$.
+Since $u$ is a no-bubble map .........
+Therefore $\pi_u(\partial( I'_1\times I'_2))$ intersects every continuous path in $|\DD|_u$ from $p$ to $q$. In particular, it intersects
+any geodesic in $\|\DD\|_u$ between $p$ and $q$. This shows that $\overline{\pi_u(B_1\times B_2)}$ intersects every open ball around $p$.
+\qeds
 
 
-We summarize the main result of this section.
+
+
+
+We obtain the main result of this section.
 
 
 \begin{thm}{Theorem}\label{thm:harmonic}
@@ -1220,7 +1292,10 @@ Then $u$ is intrinsically continuous and $\|\DD\|_u$ is a $\CAT[0]$ disc retract
 Moreover, if the boundary is embedded then $\|\DD\|_u$ is a $\CAT[0]$ disc .
 \end{thm}
 
-
+\parit{Proof.}
+From Lemma \ref{harmsaddle} we know that $u$ is a no-bubble map. Then Lemma \ref{lem:separable} implies that 
+$\|\DD\|_u$ is separable. The claim now follows from Corollary \ref{cor:main} of our main theorem.
+\qeds
 
 
 
