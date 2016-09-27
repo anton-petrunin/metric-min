@@ -572,7 +572,7 @@ Applying this definition to one-point sets,
 we get that any saddle map has no bubbles.
 
 
-\begin{thm}{Proposition}
+\begin{thm}{Proposition}\label{prop:memisaddle}
 Let $W$ be a $\CAT[0]$ space then any continuous metric minimizing map $s\:\DD\to W$ is saddle.
 \end{thm}
 
@@ -1138,15 +1138,15 @@ For definitions and properties of Sobolev maps we refer the reader to \cite{LW} 
 an energy minimizing map relative to some boundary condition a {\em harmonic map}.
 
 
-Apart from boundary regularity the following theorem was proved by Korevaar and Schoen in \cite{KS}, it generalizes earlier results by Hamilton on Riemannian manifolds of non-positive
-curvature \cite{H}. The boundary regularity in this from is due to Lytchak and Wenger \cite{LW4}.
+The following theorem was proved by Korevaar and Schoen in \cite{KS}, it generalizes earlier results by Hamilton on Riemannian manifolds of non-positive
+curvature \cite{H}.
 
 \begin{thm}{Dirichlet problem}\label{thm:dirichlet}
 Let $\gamma$ be a continuous circle in a $\CAT[0]$ space $X$. 
 Then there is a unique energy minimizing disc $u$ which spans $\gamma$; 
 that is, $u$
 has the least energy among all discs spanning $\gamma$. 
-The energy minimizer $u$ is locally Lipschitz continuous in the interior of $\DD$ and continuous on all of $\DD$.
+The energy minimizer $u$ is locally Lipschitz continuous in the interior of $\DD$.
 
 Moreover, the local Lipschitz constant of $u$ depends only on the energy of $u$ and the distance to the boundary.
 \end{thm}
@@ -1180,7 +1180,7 @@ that $u$ is continuous.
 In the situation of the lemma, the space $|D|_u$ is homeomorphic to a disc retract.
 \end{thm}
 \parit{Proof.}
-This follows from \ref{} since $u$ is a no-bubble map by Lemma \ref{lem:harmsaddle}.
+This follows from Proposition \ref{prop:disc-moore} since $u$ is a no-bubble map by Lemma \ref{lem:harmsaddle}.
 \qeds
 
 Recall that any continuous map $u$ factors as $u=\bar u\circ \pi_u$ with $\pi_u\:\DD\to|\DD|_u$ and $\bar u\:|\DD|_u\to X$.
@@ -1213,7 +1213,7 @@ Then $u$ is metric minimizing relative $\partial\DD$.
 \parit{Proof.}
 By Lemma \ref{lem:memicrit}, it is enough to show that $\bar u$ is metric minimizing relative to $\partial|\DD|_u$.
 By Proposition \ref{prop:exist} there exists a metric minimizing map
-$s\:|\DD|_u\to X$ with $u\succcurlyeq s$. Since $s$ is saddle by Lemma \ref{}, the Courant-Lebesgue lemma implies that $s$
+$s\:|\DD|_u\to X$ with $u\succcurlyeq s$. Since $s$ is saddle by Proposition \ref{prop:memisaddle}, the Courant-Lebesgue lemma implies that $s$
 is continuous. (Compare the proof of Lemma \ref{lem:harmsaddle}.) 
 Since $u$ is continuous, it has finite Korevaar-Schoen energy iff
 there is a Borel function $\rho\in L^2(\DD)$ such that for 2-almost all curves $\gamma:I\to \DD$
@@ -1252,9 +1252,10 @@ This proposition immediately generalizes to other convex energy functionals whic
 
 
 
-\subsection{Intrinisic structure and regularity of harmonic discs}
+\subsection{Intrinisic structure and regularity of harmonic discs}                                                      			
 
-Now we are going to apply our main theorem (Theorem \ref{thm:main}) to obtain structural results about harmonic maps.
+Now we are going to apply our main theorem (Theorem \ref{thm:main}) to obtain structural results about harmonic maps. In particular,
+we get a quick alternative proof of local Lipschitz regularity of harmonic discs.
 In order to do so, we need the following auxiliary observation.
 
 \begin{thm}{Lemma}\label{lem:separable}
@@ -1267,34 +1268,60 @@ If $u$ is a no-bubble map, then $\|\DD\|_u$ is separable.
 Since $u|_{\partial \DD}$ is rectifiable it is enough to show that 
 the interior of $\|\DD\|_u$ is separable. Let $p$ be a point in the interior of $\|\DD\|_u$ and denote $\hat p\in\DD$ 
 a lift of $p$. Choose intervals $I_1$ and $I_2$ with rational endpoints such that $\hat p$ is contained in the interior of $I_1\times I_2$.
-By \ref{}, there are subsets $A_j\subset I_j$ of full measure such that $u|_{\{a_1\}\times I_2}$
+By Proposition 4.10 in \cite{LW}, there are subsets $A_j\subset I_j$ of full measure such that $u|_{\{a_1\}\times I_2}$
 and $u|_{I_1\times \{a_2\}}$ have finite energy for every $a_j\in A_j$. Choose countable subsets $B_j\subset A_j$
 such that $\overline{B_j}=I_j$. Then the closure of $\pi_u(B_1\times B_2)$ in $\|\DD\|_u$ contains 
 $\pi_u(A_1\times I_2)\cup \pi_u(I_1\times A_2)$.
 For any point $q$ at finite distance $r>0$ from $p$ choose a lift $\hat q$ in $\DD$. Then there are subintervals $I'_j\subset I_j$
 such that $\partial I'_j\subset B_j$ and $\partial( I'_1\times I'_2)$ separates $\hat p$ form $\hat q$.
-Since $u$ is a no-bubble map .........
-Therefore $\pi_u(\partial( I'_1\times I'_2))$ intersects every continuous path in $|\DD|_u$ from $p$ to $q$. In particular, it intersects
-any geodesic in $\|\DD\|_u$ between $p$ and $q$. This shows that $\overline{\pi_u(B_1\times B_2)}$ intersects every open ball around $p$.
+\begin{thm}{Sublemma}\label{sublem:separating}
+$\pi_u(\partial( I'_1\times I'_2))$ intersects every continuous path from $p$ to $q$.
+\end{thm}
+
+\parit{Proof.}
+Since $u$ is a no-bubble map, we know from the proof of Proposition \ref{prop:disc-moore} that $\pi_u\:\DD\to|\DD|_u$ is cell-like and 
+$|\DD|_u$ is a disc retract. 
+Let $\gamma$ be a continous path from $p$ to $q$. Since $\pi_u$ is cell-like we find for every $\epsilon>0$ a continuous path $\hat\gamma_\epsilon$ joining $\hat p$
+and $\hat q$ such that $\pi_u(\hat\gamma_\epsilon)$ is pointwise $\epsilon$-close to $\gamma$. Clearly $\hat\gamma_\epsilon$ has to intersect 
+$\partial( I'_1\times I'_2)$ and the claim follows.
+\qeds
+
+In particular, this implies that $\pi_u(\partial( I'_1\times I'_2))$ intersects any geodesic in $\|\DD\|_u$ between $p$ and $q$. 
+Consequentely, $\overline{\pi_u(B_1\times B_2)}$ intersects every open ball around $p$.
 \qeds
 
 
 
 
 
-We obtain the main result of this section.
+We arrive at the main result of this section.
 
 
 \begin{thm}{Theorem}\label{thm:harmonic}
 Let $X$ be a $\CAT[0]$ space 
 and $u\:\DD\to X$ a harmonic disc which spans a rectifiable boundary curve. 
-Then $u$ is intrinsically continuous and $\|\DD\|_u$ is a $\CAT[0]$ disc retract. 
+Then $u$ is intrinsically continuous on all of $\DD$, locally Lipschitz continuous in the interior of $\DD$ and $\|\DD\|_u$ is a $\CAT[0]$ disc retract. 
 Moreover, if the boundary is embedded then $\|\DD\|_u$ is a $\CAT[0]$ disc .
 \end{thm}
 
 \parit{Proof.}
-From Lemma \ref{harmsaddle} we know that $u$ is a no-bubble map. Then Lemma \ref{lem:separable} implies that 
-$\|\DD\|_u$ is separable. The claim now follows from Corollary \ref{cor:main} of our main theorem.
+From Lemma \ref{lem:harmsaddle} we know that $u$ is a no-bubble map. Then Lemma \ref{lem:separable} implies that 
+$\|\DD\|_u$ is separable. Now, apart from the local Lipschitz regularity, the claim follows from Corollary \ref{cor:main} of our main theorem.
+We will now show that $\pi_u\:\DD\to\|\DD\|_u$ is locally Lipschitz continuous. This is enough since $\bar u\:\|\DD\|_u\to X$ is short.
+Fix $\delta>0$ and look at $D_\delta:=B_{1-\sqrt{\delta}}(0)\subset\DD$. For points $p,q\in D_\delta$ choose a minimal number of points $\{p_j\}_{1\leq j\leq k}$
+such that 
+\begin{itemize}
+  \item $p_0=p$ and $p_k=q$;
+  \item $p_{j+1}\in B_{r_j}(p_j)$ with $r_j\in(\delta,\sqrt{\delta})$ and $\length_X(u(\partial)B_{r_j}(p_j))\leq \pi\sqrt{\frac{2 E(u)}{|\log\delta|}}$;
+\end{itemize}
+Such points exist by the Courant-Lebesgue lemma (Lemma 7.3 in \cite{LW}). The second point implies, by Reshetnyak's majorization theorem, that 
+$\|p_j-p_{j+1}\|_u\leq \sqrt{\frac{2 E(u)}{|\log\delta|}}$. Since we chose a minimal number of such points we know that
+$\#\{p_j\}\leq \frac{\|p-q\|}{\delta}$. Hence from the trianlge inequality we get
+\[\|p-q\|_u\leq C\cdot\|p-q\| \]
+with $C=\sqrt{\frac{2 E(u)}{\delta^2|\log\delta|}}$ .
+
+
+
 \qeds
 
 
