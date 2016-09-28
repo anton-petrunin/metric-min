@@ -577,15 +577,22 @@ Let $W$ be a $\CAT[0]$ space then any continuous metric minimizing map $s\:\DD\t
 
 \parit{Proof.}
 Assume contrary, let $K$ be a closed convex set in $W$
-and $\Omega$ be a violating component of the complement $\DD\backslash s^{-1}(K)$.
+and $\Omega$ be a violating component of the complement $\DD\backslash s^{-1}(K)$. 
+Note that $\Omega$ is open.
 Redefine $s$ for each $x\in\Omega$ by moving 
 $s(x)$ to its closest point projection on $K$.
-Denote by $s'$ the new map.
-
+Denote by $s'$ the new map. We may assume that $s$
+and $s'$ are replaced by their restrictions to $\overline \Omega$.
 Since $K$ is convex the closest point projection is short,
-therefore $s\succcurlyeq s'$.
-That is $s$ is not strictly metric minimizing.
-It remains to apply Proposition~\ref{prop:strict-mm}.
+therefore $s\succcurlyeq s'$. 
+That is $s$ and $s'$ are metric minimizing relative to $\partial\overline{\Omega}$.
+Similar to the proof of Lemma \ref{lem:parpaths} we see that $s$ agrees with $s'$ on every path $\gamma$ which starts
+in $\partial\overline{\Omega}$ and has the property that $s\circ\gamma$ is rectifiable. Denote $A\subset\overline{\Omega}$
+the set of endpoints of such paths. Since $s$ and $s'$ are continuous, we conclude $s_{\overline{A}}=s'_{\overline{A}}$.
+But $U:=\overline{\Omega}-\overline{A}$ is open. If we modify $s$ another time to $\tilde s$ by sending all of $U$ to a point. Note that $\tilde s$
+is still metric minimizing. 
+For any point $p\in U$ we can choose a segment $\sigma$ going through $p$ and such that $\sigma$ intersects $\overline{A}$ exactly in its endpoints. 
+With respect to $\tilde s$ all points on $\sigma$ have intrinsic distance equal to zero.  Hence the same is true for $s$. It follows that $U=\emptyset$.
 \qeds
 
  
