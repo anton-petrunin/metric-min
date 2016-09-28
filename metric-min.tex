@@ -543,8 +543,7 @@ For obtained map $f'_n$ violates \ref{eq:f'>f}.
 
 Consider the limit figure $F_\infty$ and the limit map $f_\infty\:F_\infty\to X_\infty$.
 Note that $f_\infty$ is onto and 
-\[\diam [f_\infty(\Omega)]=\diam [f_\infty(\partial\Omega)]
-\eqlbl{eq:in-the-bry}\]
+\[\diam [f_\infty(\Omega)]=\diam [f_\infty(\partial\Omega)]p\]
 for any open set $\Omega\subset F_\infty$.
 In particular $f_\infty$ has no bubbles.
 
@@ -577,7 +576,7 @@ Let $W$ be a $\CAT[0]$ space then any continuous metric minimizing map $s\:\DD\t
 \end{thm}
 
 \parit{Proof.}
-Assume contrary, let $K$ be a convex set in $W$
+Assume contrary, let $K$ be a closed convex set in $W$
 and $\Omega$ be a violating component of the complement $\DD\backslash s^{-1}(K)$.
 Redefine $s$ for each $x\in\Omega$ by moving 
 $s(x)$ to its closest point projection on $K$.
@@ -1047,7 +1046,7 @@ The claim follows.
 
 
 %MAYBE IT WILL BE A COR OR PART OF AN OTHER STATEMENT, BUT WE NEED IT???
-\begin{thm}{Corollary}\label{prop:strict-mm}
+\begin{thm}{Corollary}\label{cor:strict-mm}
 Let  $X$ be a $\CAT[0]$ space and $s\:\DD\to X$ be metric minimizing relative to $\partial\DD$. 
 If $\|\DD\|_s$ is a metric space, then $s$ is strictly metric minimizing.
 \end{thm}
@@ -1294,39 +1293,47 @@ Consequentely, $\overline{\pi_u(B_1\times B_2)}$ intersects every open ball arou
 
 
 
-We arrive at the main result of this section.
+We arrive at the main results of this section.
 
 
 \begin{thm}{Theorem}\label{thm:harmonic}
 Let $X$ be a $\CAT[0]$ space 
 and $u\:\DD\to X$ a harmonic disc which spans a rectifiable boundary curve. 
-Then $u$ is intrinsically continuous on all of $\DD$, locally Lipschitz continuous in the interior of $\DD$ and $\|\DD\|_u$ is a $\CAT[0]$ disc retract. 
+Then $u$ is intrinsically continuous on $\DD$ and $\|\DD\|_u$ is a $\CAT[0]$ disc retract. 
 Moreover, if the boundary is embedded then $\|\DD\|_u$ is a $\CAT[0]$ disc .
 \end{thm}
 
 \parit{Proof.}
 From Lemma \ref{lem:harmsaddle} we know that $u$ is a no-bubble map. Then Lemma \ref{lem:separable} implies that 
-$\|\DD\|_u$ is separable. Now, apart from the local Lipschitz regularity, the claim follows from Corollary \ref{cor:main} of our main theorem.
-We will now show that $\pi_u\:\DD\to\|\DD\|_u$ is locally Lipschitz continuous. This is enough since $\bar u\:\|\DD\|_u\to X$ is short.
-Fix $\delta>0$ and look at $D_\delta:=B_{1-\sqrt{\delta}}(0)\subset\DD$. For points $p,q\in D_\delta$ choose a minimal number of points $\{p_j\}_{1\leq j\leq k}$
-such that 
-\begin{itemize}
-  \item $p_0=p$ and $p_k=q$;
-  \item $p_{j+1}\in B_{r_j}(p_j)$ with $r_j\in(\delta,\sqrt{\delta})$ and $\length_X(u(\partial)B_{r_j}(p_j))\leq \pi\sqrt{\frac{2 E(u)}{|\log\delta|}}$;
-\end{itemize}
-Such points exist by the Courant-Lebesgue lemma (Lemma 7.3 in \cite{LW}). The second point implies, by Reshetnyak's majorization theorem, that 
-$\|p_j-p_{j+1}\|_u\leq \sqrt{\frac{2 E(u)}{|\log\delta|}}$. Since we chose a minimal number of such points we know that
-$\#\{p_j\}\leq \frac{\|p-q\|}{\delta}$. Hence from the trianlge inequality we get
-\[\|p-q\|_u\leq C\cdot\|p-q\| \]
-with $C=\sqrt{\frac{2 E(u)}{\delta^2|\log\delta|}}$ .
-
-
+$\|\DD\|_u$ is separable. The claim now follows from Corollary \ref{cor:main} of our main theorem.
 
 \qeds
 
 
 
+\begin{thm}{Theorem}\label{thm:Lipregularity}
+Let $X$ be a $\CAT[0]$ space 
+and $u\:\DD\to X$ a harmonic disc which spans a rectifiable boundary curve. 
+Then $u$ is locally Lipschitz continuous in the interior of $\DD$. 
+Moreover, if $u|_{\partial\DD}$ is $\beta$-H\"older continuous, $\beta\in(0,1]$, then $u$ is $\alpha$-H\"older continuous on all of
+$\DD$ for every $\alpha<\beta$.
+\end{thm}
 
+\parit{Proof.}
+By Theorem \ref{thm:harmonic}, $u$ is intrinsically continuous on $\DD$ and therefore $\pi_u$ is continuous. From 
+Corollary 3.2 in \cite{LW3} it follows that $\pi_u$ has finite energy. Hence $\pi_u\:\DD\to\|\DD\|_u$ is itself harmonic since $\bar u$
+is short. Recall that, by Theorem \ref{thm:harmonic}, $\|\DD\|_u$ is a $\CAT[0]$ disc retract. Now choose a sequence of compact Riemannian surfaces 
+$Z_k$ with nonpositive curvature and Lipschitz boundary $\partial Z_k$
+such that $Z_k\to\|\DD\|_u$ in Gromov-Hausdorff topology and $\length(\partial Z_k)\to\length \partial\|\DD\|_u$. Assume that
+$u|_{\partial\DD}$ is $\beta$-H\"older continuous. For $\alpha<\beta$ we construct $\alpha$-H\"older continuous maps 
+$\psi_k\:\partial\DD\to\partial Z_k$ such that $\varphi_k\to\pi_u|_{\partial\DD}$ pointwise. Denote $\varphi_k\:\DD\to Z_k$ the solution of the Dirichlet problem
+with boundary condition $\psi_k$. By classical regularity theory, $\varphi_k$ is smooth in the interior of $\DD$ and $\alpha$-H\"older continuous
+on all of $\DD$. (See e.g. Theorem 5.3 in \cite{S}.) From this the second claim follows. To get the first claim we note that the energies of the $\varphi_k$
+are uniformly bounded since the $Z_k$ are nonpositively curved and their boundaries have uniformly bounded length. The claim follows since the $\varphi_k$
+obeys the a priori estimate
+\[\sup_{\Omega}|d\varphi_k|^2\leq C\cdot E(\varphi_k)\]
+for any open $\Omega$ compactly supported in $\DD$, where $C$ depends only on the distance of $\Omega$ to the boundary $\partial\DD$. (See Chapter 4 in \cite{S}.)
+\qeds
 
 
 
@@ -1531,9 +1538,11 @@ Electron. Res. Announc. Amer. Math. Soc. 5 (1999), 47--54
 
 \bibitem{R}Reshetnyak, Yu. G. ``Sobolev classes of functions with values in a metric space,'' II, Sibirsk. Mat. Zh. 45 (2004), no. 4, 855-870. MR 2091651 (2005e:46055)
 
-\bibitem{shefel-2D} S. Z. \v{S}efel′, On saddle surfaces bounded by a rectifiable curve, Dokl. Akad. Nauk SSSR 162 (1965), 294--296.
+\bibitem{S}Schoen, R. ``Analytic Aspects of The Harmonic Map Problem'' Chapter IX in ``Lectures on harmonic maps'' by Richard Schoen and Shing-Tung Yau, International Press, 1997, ISBN-10: 1571462600. 
 
-\bibitem{shefel-3D} S. Z. \v{S}efel′, On the intrinsic geometry of saddle surfaces, Sibirsk. Mat. Ž. 5 (1964), 1382--1396
+\bibitem{shefel-2D} S. Z. \v{S}efel′ ``On saddle surfaces bounded by a rectifiable curve,'' Dokl. Akad. Nauk SSSR 162 (1965), 294--296.
+
+\bibitem{shefel-3D} S. Z. \v{S}efel′ ``On the intrinsic geometry of saddle surfaces,'' Sibirsk. Mat. Ž. 5 (1964), 1382--1396
 
 %\bibitem{W1}Whyburn, G. T., ``On sequences and limiting sets,'' Fund. Math. vol. 25 (1935) pp. 408-426.
 
