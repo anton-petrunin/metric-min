@@ -409,10 +409,20 @@ Moreover $\partial|\DD|_f$ is the image of $\partial \DD$
 under the map $x\mapsto [x]_f$.
 \end{thm}
 
-Note that the metric minimizing map $f\:\DD\to\ Y$ factors through a map \[f'\:|\DD|_f\to Y.\]
+Recall that the metric minimizing map $f\:\DD\to\ Y$ factors through a map \[\bar f\:|\DD|_f\to Y.\]
 By \ref{prop:factor} and \ref{prop:|D|} 
-the map $f'$
+the map $\bar f$
 is metric minimizing relative to $\partial|\DD|_f$.
+
+
+
+
+
+
+
+
+
+
 
 \section{Key Lemma}
 
@@ -578,21 +588,10 @@ Let $W$ be a $\CAT[0]$ space then any continuous metric minimizing map $s\:\DD\t
 \parit{Proof.}
 Assume contrary, let $K$ be a closed convex set in $W$
 and $\Omega$ be a violating component of the complement $\DD\backslash s^{-1}(K)$. 
-Note that $\Omega$ is open.
 Redefine $s$ for each $x\in\Omega$ by moving 
 $s(x)$ to its closest point projection on $K$.
-Denote by $s'$ the new map. We may assume that $s$
-and $s'$ are replaced by their restrictions to $\overline \Omega$.
-Since $K$ is convex the closest point projection is short,
-therefore $s\succcurlyeq s'$. 
-That is $s$ and $s'$ are metric minimizing relative to $\partial\overline{\Omega}$.
-Similar to the proof of Lemma \ref{lem:parpaths} we see that $s$ agrees with $s'$ on every path $\gamma$ which starts
-in $\partial\overline{\Omega}$ and has the property that $s\circ\gamma$ is rectifiable. Denote $A\subset\overline{\Omega}$
-the set of endpoints of such paths. Since $s$ and $s'$ are continuous, we conclude $s_{\overline{A}}=s'_{\overline{A}}$.
-But $U:=\overline{\Omega}-\overline{A}$ is open. If we modify $s$ another time to $\tilde s$ by sending all of $U$ to a point. Note that $\tilde s$
-is still metric minimizing. 
-For any point $p\in U$ we can choose a segment $\sigma$ going through $p$ and such that $\sigma$ intersects $\overline{A}$ exactly in its endpoints. 
-With respect to $\tilde s$ all points on $\sigma$ have intrinsic distance equal to zero.  Hence the same is true for $s$. It follows that $U=\emptyset$.
+Denote by $s'$ the new map. Since $K$ is closed and convex, the nearest point projection onto $K$ is short.
+Hence $s'$ is also continuous and metric minimizing. It remains to apply Corollary \ref{cor:strict-mm}.
 \qeds
 
  
@@ -1033,29 +1032,36 @@ Therefore, $\gamma_{-1}$ is parallel to $\gamma_{+1}$.
 \parbf{Remark.}
 It is possible to show in the above situation that  $h([-1,1]\times[0,L])$ is intrinsically flat.
 
+\begin{thm}{Corollary}\label{cor:parpaths}
+Let $\gamma_{\pm 1}\:I\to X$ be two rectifiable paths both starting in a point $p\in X$ and of equal length $L>0$. 
+If the lengths of the curves $\gamma_t$ is constant, then $\gamma_{-1}=\gamma_{+1}$.
+\end{thm}
 
 \begin{thm}{Uniqueness Theorem}\label{prop:strict-mm}
-Let $X$ be a $\CAT[0]$ space and $s_0, s_1\:\DD\to X$ be metric minimizing relative to $\partial\DD$. Assume that 
-$s_0|_{\partial \DD}$ is rectifiable and equal to $s_1|_{\partial \DD}$. If 
-$\|\DD\|_{s_0}$ is isometric to $\|\DD\|_{s_1}$, then $s_0=s_1$ on the metric component of $\partial\DD$.
+Let $X$ be a $\CAT[0]$ space and $s_0, s_1\:\DD\to X$ be continuous and metric minimizing relative to $\partial\DD$. If 
+$\|\DD\|_{s_0}$ is isometric to $\|\DD\|_{s_1}$, then $s_0=s_1$.
 \end{thm}
 
 \parit{Proof.}
 For $t\in[0,1]$ denote $s_t\:\DD\to X$ the map obtained by geodesic interpolation. Then
 $\|\DD\|_{s_t}$ is isometric to $\|\DD\|_{s_0}$ for all $t\in[0,1]$. In particular, every $s_t$ is metric minimizing.
-Let $\gamma$ be a path in $\DD$ connecting two boundary points and such that $s_0\circ\gamma$ is rectifiable.
-Moreover, assume that $s_0\circ\gamma$ is parametrized by arc length. 
-Then each 
-$s_t\circ\gamma$ is parametrized by arc length and from Lemma \ref{lem:parpaths} we obtain $s_t\circ\gamma\equiv s_0\circ\gamma$.
-The claim follows.
+From Corollary \ref{cor:parpaths} we see that $s_0$ agrees with $s_1$ on every path $\gamma$ which starts
+in $\partial\DD$ and has the property that $s_0\circ\gamma$ is rectifiable. Denote $A\subset\DD$ the closure of
+the set of endpoints of such paths. Since $s_0$ and $s_1$ are continuous, we conclude $s_0|_{A}=s_1|_{A}$.
+But $U:=\DD-A$ is open. Now let us modify $s_0$ another time to $\tilde s$ by sending all of $U$ to a point. Note that $\tilde s$
+is still metric minimizing. 
+For any point $p\in U$ we can choose a segment $\sigma$ going through $p$ and such that $\sigma$ intersects $A$ exactly in its endpoints. 
+With respect to $\tilde s$ all points on $\sigma$ have intrinsic distance equal to zero.  Hence the same is true for all $s_t$. 
+In particular, every $s_t$ is constant on $\sigma$. From $\partial \sigma\subset A$ we have  $s_0|_{\partial\sigma}=s_1|_{\partial\sigma}$
+and therefore $s_0(p)=s_1(p)$. The claim follows.
 \qeds
 
 
 
 %MAYBE IT WILL BE A COR OR PART OF AN OTHER STATEMENT, BUT WE NEED IT???
 \begin{thm}{Corollary}\label{cor:strict-mm}
-Let  $X$ be a $\CAT[0]$ space and $s\:\DD\to X$ be metric minimizing relative to $\partial\DD$. 
-If $\|\DD\|_s$ is a metric space, then $s$ is strictly metric minimizing.
+Let  $X$ be a $\CAT[0]$ space and $s\:\DD\to X$ be continuous and metric minimizing relative to $\partial\DD$. 
+Then $s$ is strictly metric minimizing.
 \end{thm}
 
 
@@ -1160,9 +1166,9 @@ Moreover, the local Lipschitz constant of $u$ depends only on the energy of $u$ 
 For a Sobolev map $u$ from the disc $\DD$ to the Euclidean space, its energy is defined as 
 \[E(u)=\int\limits_\DD|du|^2\cdot d\area.\]
 In \cite{KS}, an appropriate generalization of energy for maps with target in general metric spaces is defined.
-We will call this generalization {\em Korevaar-Schoen energy} and denote it by $E$. It is used throughout this section. 
-A thorough treatment of general energies and their associated Sobolev
-spaces can be found in \cite{LW2}.
+We will denote this generalized energy by $E$. It is used throughout this section. 
+A modern approach to $E$ and also a thorough treatment of general energies and their associated Sobolev
+spaces can be found in \cite{LW} and \cite{LW2}.
 
 
 
@@ -1327,16 +1333,33 @@ $\DD$ for every $\alpha<\beta$.
 \end{thm}
 
 \parit{Proof.}
-By Theorem \ref{thm:harmonic}, $u$ is intrinsically continuous on $\DD$ and therefore $\pi_u$ is continuous. From 
+By Theorem \ref{thm:harmonic}, $u$ is intrinsically continuous on $\DD$ and therefore $\pi_u$ is continuous as a map to $\|\DD\|_u$. From 
 Corollary 3.2 in \cite{LW3} it follows that $\pi_u$ has finite energy. Hence $\pi_u\:\DD\to\|\DD\|_u$ is itself harmonic since $\bar u$
 is short. Recall that, by Theorem \ref{thm:harmonic}, $\|\DD\|_u$ is a $\CAT[0]$ disc retract. Now choose a sequence of compact Riemannian surfaces 
 $Z_k$ with nonpositive curvature and Lipschitz boundary $\partial Z_k$
 such that $Z_k\to\|\DD\|_u$ in Gromov-Hausdorff topology and $\length(\partial Z_k)\to\length \partial\|\DD\|_u$. Assume that
 $u|_{\partial\DD}$ is $\beta$-H\"older continuous. For $\alpha<\beta$ we construct $\alpha$-H\"older continuous maps 
-$\psi_k\:\partial\DD\to\partial Z_k$ such that $\varphi_k\to\pi_u|_{\partial\DD}$ pointwise. Denote $\varphi_k\:\DD\to Z_k$ the solution of the Dirichlet problem
+$\psi_k\:\partial\DD\to\partial Z_k$ such that $\psi_k\to\pi_u|_{\partial\DD}$ pointwise. Denote $\varphi_k\:\DD\to Z_k$ the solution of the Dirichlet problem
 with boundary condition $\psi_k$. By classical regularity theory, $\varphi_k$ is smooth in the interior of $\DD$ and $\alpha$-H\"older continuous
-on all of $\DD$. (See e.g. Theorem 5.3 in \cite{S}.) From this the second claim follows. To get the first claim we note that the energies of the $\varphi_k$
-are uniformly bounded since the $Z_k$ are nonpositively curved and their boundaries have uniformly bounded length. The claim follows since the $\varphi_k$
+on all of $\DD$. (See e.g. Theorem 5.3 in \cite{S}.) Since the $Z_k$ are compact, of uniformly bounded diameter and uniformly bounded boundary lengths, the energies of the
+$\varphi_k$ are also unifomly bounded. Hence they subconverge to a map $\varphi_\infty:\DD\to \|\DD\|_u$ of finite energy $E(\varphi_\infty)\leq \liminf E(\varphi_k)$.
+\begin{thm}{Sublemma}\label{sublem:minimizer}
+We have $\varphi_\infty=\pi_u$.
+\end{thm}
+\parit{Proof.}
+By uniqueness in Theorem \ref{thm:dirichlet} is it enough to show that $\varphi_\infty$ is energy minimizing. 
+So assume that there is $\epsilon>0$ such that $(1+2\epsilon)E(\pi_u)\leq E(\varphi_\infty)$. Then there exists $k\in\mathbb{N}$
+such that we still have $(1+\epsilon)E(\pi_u)\leq E(\varphi_k)$. Fix $\delta<\epsilon$ and choose a radius $\rho>0$
+such that $Z_k$ is covered by a finite number of $\rho$-balls each of which is $(1+\delta)$-bilipschitz to the euclidean  
+$\rho$-ball via the exponential map at its center. Next, we cover $\|\DD\|_u$ by a finite number of $\rho$-balls centered at regular points.
+Then we triangulate $\DD$ fine enough such that each 2-simplex maps via $\pi_u$ into one of the chosen $\rho$-balls. For any 2-simplex
+$\Delta$ in this triangulation we can compose $\pi_u|_\Delta$ with an appropriately chosen logarithm map in $\|\DD\|_u$ and an exponential map in 
+$Z_k$ such that $E(\exp^{Z_k}\circ\log^{\|\DD\|_u}\pi_u|_\Delta)\leq (1+\delta)E(\pi_u|_\Delta)$. By assumption there exists a 2-simplex
+$\Delta$ such that $(1+\epsilon)E(\pi_u|_\Delta)\leq E(\varphi_k|_\Delta)$. This is a contradiction, since $\delta<\epsilon$ and $\varphi_k$ is energy minimizing.
+\qeds
+
+
+It remains to prove the first claim. It also follows from Sublemma \ref{sublem:minimizer}, the uniformly bounded energies of the $\varphi_k$ and the fact that $\varphi_k$
 obeys the a priori estimate
 \[\sup_{\Omega}|d\varphi_k|^2\leq C\cdot E(\varphi_k)\]
 for any open $\Omega$ compactly supported in $\DD$, where $C$ depends only on the distance of $\Omega$ to the boundary $\partial\DD$. (See Chapter 4 in \cite{S}.)
@@ -1545,7 +1568,9 @@ Electron. Res. Announc. Amer. Math. Soc. 5 (1999), 47--54
 
 \bibitem{R}Reshetnyak, Yu. G. ``Sobolev classes of functions with values in a metric space,'' II, Sibirsk. Mat. Zh. 45 (2004), no. 4, 855-870. MR 2091651 (2005e:46055)
 
-\bibitem{S}Schoen, R. ``Analytic Aspects of The Harmonic Map Problem'' Chapter IX in ``Lectures on harmonic maps'' by Richard Schoen and Shing-Tung Yau, International Press, 1997, ISBN-10: 1571462600. 
+\bibitem{S}Schoen, R. ``Analytic Aspects of The Harmonic Map Problem'' Chapter IX in  
+``Lectures on harmonic maps'' by Schoen, R.; Yau, S. T.,  
+Conference Proceedings and Lecture Notes in Geometry and Topology, II. International Press, Cambridge, MA, 1997. vi+394 pp. ISBN: 1-57146-002-0
 
 \bibitem{shefel-2D} S. Z. \v{S}efel′ ``On saddle surfaces bounded by a rectifiable curve,'' Dokl. Akad. Nauk SSSR 162 (1965), 294--296.
 
