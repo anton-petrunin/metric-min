@@ -28,18 +28,85 @@ We show that metric minimizing surfaces in $\CAT[0]$ spaces are $\CAT[0]$.
 \section{Introduction}
 
 
+\subsection{Motivation and results}
 
-This paper substantially extends results in \cite{petrunin-metric-min}; it also fills a gap in the proof. 
+Let us consider a smooth surface $\Sigma$ immersed in $\mathbb{R}^n$.  
+If the principal curvatures at a point $p$ of $\Sigma$ with respect to a certain normal direction have the same sign, then
+a pointed neighbourhood of $p$ is contained in an open halfspace. For smooth harmonic surfaces such behaviour is excluded
+by the maximum principle and therefore any smooth immersed harmonic surface in $\mathbb{R}^n$ is nonpositively curved.   
+This has strong analytical and topological consequences since the intrinsic metric is subject to Bishop-Gromov, Gau\ss-Bonnet, etc. 
+Unfortunately, the above argument breaks down if either the surface is not immersed or else it is not regular enough.
+But as it turns out, both conditions are irrelevant in order for the intrinsic metric to be nonpositively curved.
 
+The aim of this paper is to prove a global structural result about the intrinsic metric of a much more general class of surfaces.
+We will study "metric minimizing" surfaces in general $\CAT[0]$ spaces\footnote{A general $\CAT[0]$ space is not necessarily locally compact.}. Their defining property is that any other parametrized surface with
+equal boundary increases the intrinsic distance for at least two points of the domain. Examples of metric minimizing surfaces are
+ruled surfaces, energy minimizing and area minimizing surfaces. 
+
+
+ For the intrinsic structure of metric minimizing surfaces 
+we obtain global geometric and topological information. A special case of our main theorem reads
+
+\begin{thm}{Theorem}\label{thm:mainintro}
+Let $X$ be a $\CAT[0]$ space 
+and $s\:\DD\to X$ be a continuous metric minimizing map relative to the boundary $\partial\DD$ such that $s|_{\partial\DD}$ is rectifiable
+and embedded.
+Suppose that the intrinsic metric space $\|\DD\|_s$  is separable. Then $\|\DD\|_s$ is a $\CAT[0]$ space homeomorphic to a disc.
+\end{thm}
+
+This is a substantial extension of the results in \cite{petrunin-metric-min}. It also generalizes Alexandrov's theorem on ruled surfaces.
+Another source for applications comes from the following result.
+
+\begin{thm}{Theorem}\label{thm:harmonicintro}
+Let $X$ be a $\CAT[0]$ space 
+and $u\:\DD\to X$ an energy minimizing disc.
+Then $u$ is continuous and metric minimizing relative $\partial\DD$.
+\end{thm}
+
+A combination of Theorem \ref{thm:mainintro} and Theorem \ref{thm:harmonicintro} generalizes in the $\CAT[0]$-setting
+a recent result by Lytchak and Wenger from area minimizers to energy minimizers???
+
+
+Note that the separability assumption in Theorem \ref{thm:mainintro} is a priori not even enough to ensure the continuity of the natural 
+map from the disc to the induced intrinsic space. This generality is rewarded with applications to the regularity theory of harmonic maps 
+and minimal surfaces. Indeed our result combined with the smoothability of $\CAT[0]$-surfaces allows to reduce regularity questions to 
+the smooth case. In particular we obtain for energy minimizing discs quick alternative proofs of Korevaar and Schoen's interior regularity
+result as well as Serbinowski's boundary regularity result. 
+
+\begin{thm}{Theorem}\label{thm:Lipregularityintro}
+Let $X$ be a $\CAT[0]$ space 
+and $u\:\DD\to X$ a harmonic disc which spans a rectifiable boundary curve. 
+Then $u$ is locally Lipschitz continuous in the interior of $\DD$. 
+Moreover, if $u|_{\partial\DD}$ is $\beta$-H\"older continuous, $\beta\in(0,1]$, then $u$ is $\alpha$-H\"older continuous on all of
+$\DD$ for every $\alpha<\beta$.
+\end{thm}
+
+Actually our result is even stronger as we obtain global intrinsic continuity (see Theorem \ref{thm:harmonic}). 
+
+\subsection{Structure of the paper}
+In section 2 we recall some definitions from metric geometry, introduce the concept of metric minimizing map and prove some
+basic properties. In section 3 we discuss metric minimizing graphs and show that any metric minimizing graph can be extended to a short
+map defined on a $\CAT[0]$ space (Corollary \ref{cor:planar-minimizing-graph}). In section 4 we study metric minimizing discs and
+use a theorem of Moore \cite{} to obtain topological information about  their 
+associated "`connecting metric space"' (Proposition \ref{prop:|D|}). This result is result is responsible for 
+the topological control in the main theorems. In section 5 we prove the key lemma (Lemma \ref{lem:key}) which implies that 
+metric minimizing discs factorize through two-dimensional $\CAT[0]$-spaces. Section 6 provides a compactness result for $\CAT[0]$-surfaces
+which might be of independent interest. In section 7 we treat the two-dimensional case, i.e. metric minimizing discs
+in $\CAT[0]$-surfaces and generalize Shefel's result on saddle surfaces. In section 8 we prove our main theorem (Theorem \ref{thm:main})
+from which Corollary \ref{cor:main} directly follows. Section 9 is devoted to the existence and uniqueness of metric minimizing maps.
+Here we also introduce the notion of intrinsic continuity. In section 10 we turn to applications and prove structure and regularity results
+for harmonic discs. In section 11 we treat smooth saddle surfaces in $\mathbb{R}^3$ and show that they are locally metric minimizing.
+This is rather tricky and relies on PDE results. In the final section 12 we comment on the separability condition and on the saddle 
+surfaces in general.
+
+\subsection{Acknowledgement}
+We want to thank Sergei Ivanov, Carlo Sinestrari, Peter Topping and
+Burkhard Wilking for helping us with the proof of Proposition~\ref{prop:smooth}.
+The second author would like to thank Alexander Lytchak for explaining his recent work 
+with Stefan Wenger and for several helpful discussions.
 \medskip
 
-We want to thank 
-Sergei Ivanov,
-Carlo Sinestrari,
-Peter Topping
-and
-Burkhard Wilking
-for helping us with the proof of Proposition~\ref{prop:smooth}.
+
 
 \section{Definitions}\label{sec:Def}
 
@@ -1220,7 +1287,7 @@ Note that $\bar s\circ\alpha|_{\partial|\DD|_u}=\bar u|_{\partial|\DD|_u}$, henc
  \begin{thm}{Proposition}\label{prop:harmonic}
 Let $X$ be a $\CAT[0]$ space 
 and $u\:\DD\to X$ a harmonic disc.
-Then $u$ is metric minimizing relative $\partial\DD$.
+Then $u$ is continuous and metric minimizing relative $\partial\DD$.
 \end{thm}
 
 
