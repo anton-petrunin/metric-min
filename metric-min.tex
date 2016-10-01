@@ -613,35 +613,6 @@ $\mathcal{K}_\ell$ is closed in the Gromov--Hausdorff topology.
 \end{thm}
 
 \parit{Proof.}
-For each $n$, consider a boundary curve $\gamma_n\:\SS^1\to X_n$
-which is composition of the boundary curve in the disc with 
-strong deformational retract $\DD\to X_n$.
-
-Let $f_n\:F_n\to X_n$ be the majorizor of $\gamma_n$;
-that is, $F_n$ is a convex figure in the plane,
-$f_n$ is a short map which is length preserving on the boundary and $\gamma_n$ forms the boundary curve.
-
-In addition we can assume that for each $n$ the map $f_n$ is minimal in the following sense: if $f_n'\:F_n\to X_n$ is an other majorization then inequality 
-\[|f_n'(x)-f_n'(y)|_{X_n}> |f_n(x)-f_n(y)|_{X_n}\eqlbl{eq:f'>f}\]
-holds for at least one pair of points $x,y\in F_n$.
-In this case  we have
-\[\diam [f_n(\Omega)]=\diam [f_n(\partial\Omega)]\eqlbl{eq:in-the-bry}\]
-for any open set $\Omega\subset F_n$.
-Indeed if this is not the case for some $\Omega$, one can redefine the map $f_n$ so that any $x\in\Omega$ maps to the closest-point projection to $\Conv[\partial\Omega]$.
-For obtained map $f'_n$ violates \ref{eq:f'>f}.
-
-
-Consider the limit figure $F_\infty$ and the limit map $f_\infty\:F_\infty\to X_\infty$.
-Note that $f_\infty$ is onto and 
-\[\diam [f_\infty(\Omega)]=\diam [f_\infty(\partial\Omega)]p\]
-for any open set $\Omega\subset F_\infty$.
-In particular $f_\infty$ has no bubbles.
-
-It remains to apply Proposition~\ref{prop:disc-moore}
-\qeds
-
-\parbf{Modified proof:}
-
 Let $(X_n)$ be a sequence in $\mathcal{K}_\ell$ with $X_n\to X_\infty$. Set $r_n:=\frac{\length\partial X_n}{2\pi}$ and $B_n:=B_{r_n}(0)\subset \mathbb{R}^2$.
 Let $\gamma_n:\partial B_n\to\partial X_\infty$ be an arc length parametrization. Choose a point $p_n\in X_n$ with $X_n\subset B_{r_n}(p_n)$ and define
 $f_n:B_n\to X_n$ by sending the geodesic $[0\theta]$ for $\theta\in\partial B_n$ to the geodesic $[p_n\gamma_n(\theta)]$ with constant speed. Note that $f_n$ is short.
@@ -649,6 +620,8 @@ We obtain a limit map $f_\infty:B_\infty\to X_\infty$ which is short and maps ra
 to a boundary point. Note that if two points $x$  and $y$ map to the same point $q$ under $f_\infty$, then $q$ is a branch point in $X_\infty$ and there is a path $c$ connecting 
 $x$ and $y$ which also maps to $q$. In particular, $f^{-1}(q)$ is connected. On the other hand, since we can lift radial geodesics from $X_\infty$ to $B_\infty$ we see that $X_\infty-f^{-1}(q)$
 is connected as well. As in Proposition~\ref{prop:disc-moore} the claim now follows from Moore's theorem in \cite{moore}.
+\qeds
+
 
 \section{Two-dimensional case}
 
