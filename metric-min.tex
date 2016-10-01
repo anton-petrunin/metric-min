@@ -21,7 +21,10 @@ Universit\"at M\"unchen, Theresienstr. 39, D-80333 M\"unchen, Germany}
 
 \begin{abstract}
 A surface which does not admit a length nonincreasing deformation is called \emph{metric minimizing}.
-We show that metric minimizing surfaces in $\CAT[0]$ spaces are $\CAT[0]$.
+We show that metric minimizing surfaces in $\CAT[0]$ spaces are $\CAT[0]$ with respect to their intrinsic metric.
+As an application we obtain structural results about energy and area minimizing surfaces including
+strengthenings of known regularity results. 
+
 \end{abstract}
 \maketitle
 
@@ -29,23 +32,28 @@ We show that metric minimizing surfaces in $\CAT[0]$ spaces are $\CAT[0]$.
 
 
 \subsection{Motivation and results}
-
-Let us consider a smooth surface $\Sigma$ immersed in $\mathbb{R}^n$.  
+Beginning in the late 40s, Alexandrov and his school developed a theory of surfaces of bounded curvature, thereby 
+generalizing Riemannian geometry of surfaces to a nonsmooth setting. Emphasizing the intrinsic viewpoint, they succeeded
+in proving strong structural results about such surfaces, which makes their theory a powerful tool in studying objects with an
+associated surface of bounded curvature. To give an example of such a situation, let us consider a smooth surface $\Sigma$ immersed 
+in $\mathbb{R}^n$.  
 If the principal curvatures at a point $p$ of $\Sigma$ with respect to a certain normal direction have the same sign, then
-a pointed neighbourhood of $p$ is contained in an open halfspace. For smooth harmonic surfaces such behaviour is excluded
-by the maximum principle and therefore any smooth immersed harmonic surface in $\mathbb{R}^n$ is nonpositively curved.   
-This has strong analytical and topological consequences since the intrinsic metric is subject to Bishop-Gromov, Gau\ss-Bonnet, etc. 
+a pointed neighbourhood of $p$ is contained in an open halfspace. For smooth harmonic surfaces, such behaviour is excluded
+by the maximum principle and therefore, any smooth immersed harmonic surface in $\mathbb{R}^n$ is nonpositively curved.   
+In particular, we can associate to such a harmonic map a Riemannian surface of nonpositive curvature. 
+This in turn has strong analytical and topological consequences since the intrinsic metric is subject to Bishop-Gromov, Gau\ss-Bonnet, etc. 
 Unfortunately, the above argument breaks down if either the surface is not immersed or else it is not regular enough.
-But as it turns out, both conditions are irrelevant in order for the intrinsic metric to be nonpositively curved.
+But as it turns out, both conditions are irrelevant in order for the intrinsic metric to be nonpositively curved in the sense of Alexandrov.
 
-The aim of this paper is to prove a global structural result about the intrinsic metric of a much more general class of surfaces.
-We will study "metric minimizing" surfaces in general $\CAT[0]$ spaces\footnote{A general $\CAT[0]$ space is not necessarily locally compact.}. Their defining property is that any other parametrized surface with
-equal boundary increases the intrinsic distance for at least two points of the domain. Examples of metric minimizing surfaces are
+The aim of this paper is to prove a analogous global structural result about the intrinsic metric of a much more general class of surfaces.
+We will study "metric minimizing" surfaces in general $\CAT[0]$ spaces\footnote{A general $\CAT[0]$ space is not necessarily locally compact.}. 
+Their defining property is that any other parametrized surface with
+equal boundary increases the intrinsic distance for at least two points of the domain. Examples of metric minimizing surfaces include
 ruled surfaces, energy minimizing and area minimizing surfaces. 
 
 
  For the intrinsic structure of metric minimizing surfaces 
-we obtain global geometric and topological information. A special case of our main theorem reads
+we obtain global geometric and topological information. A special case of our main theorem, Corollary \ref{cor:main} reads:
 
 \begin{thm}{Theorem}\label{thm:mainintro}
 Let $X$ be a $\CAT[0]$ space 
@@ -54,8 +62,9 @@ and embedded.
 Suppose that the intrinsic metric space $\|\DD\|_s$  is separable. Then $\|\DD\|_s$ is a $\CAT[0]$ space homeomorphic to a disc.
 \end{thm}
 
-This is a substantial extension of the results in \cite{petrunin-metric-min}. It also generalizes Alexandrov's theorem on ruled surfaces.
-Another source for applications comes from the following result.
+This is a substantial extension of the results in \cite{petrunin-metric-min}; and also fills in a gap in the proof. 
+It also generalizes Alexandrov's theorem on ruled surfaces \cite{A}.
+Another source for applications comes from the following result (see Theorem \ref{thm:harmonic}).
 
 \begin{thm}{Theorem}\label{thm:harmonicintro}
 Let $X$ be a $\CAT[0]$ space 
@@ -63,15 +72,15 @@ and $u\:\DD\to X$ an energy minimizing disc.
 Then $u$ is continuous and metric minimizing relative $\partial\DD$.
 \end{thm}
 
-A combination of Theorem \ref{thm:mainintro} and Theorem \ref{thm:harmonicintro} generalizes in the $\CAT[0]$-setting
+A combination of Theorem \ref{thm:mainintro} and Theorem \ref{thm:harmonicintro} generalizes, within the $\CAT[0]$-setting,
 a recent result by Lytchak and Wenger from area minimizers to energy minimizers???
 
 
 Note that the separability assumption in Theorem \ref{thm:mainintro} is a priori not even enough to ensure the continuity of the natural 
 map from the disc to the induced intrinsic space. This generality is rewarded with applications to the regularity theory of harmonic maps 
-and minimal surfaces. Indeed our result combined with the smoothability of $\CAT[0]$-surfaces allows to reduce regularity questions to 
-the smooth case. In particular we obtain for energy minimizing discs quick alternative proofs of Korevaar and Schoen's interior regularity
-result as well as Serbinowski's boundary regularity result. 
+and minimal surfaces. Indeed our result combined with the smoothability of $\CAT[0]$-surfaces (i.e. Alexandrov's theory) 
+allows to reduce regularity questions to the smooth case. In particular we obtain for energy minimizing discs quick alternative proofs of Korevaar and Schoen's interior regularity
+result \cite{KS} as well as Serbinowski's boundary regularity result \cite{Se} (see Theorem \ref{thm:Lipregularity}). 
 
 \begin{thm}{Theorem}\label{thm:Lipregularityintro}
 Let $X$ be a $\CAT[0]$ space 
@@ -81,13 +90,15 @@ Moreover, if $u|_{\partial\DD}$ is $\beta$-H\"older continuous, $\beta\in(0,1]$,
 $\DD$ for every $\alpha<\beta$.
 \end{thm}
 
-Actually our result is even stronger as we obtain global intrinsic continuity (see Theorem \ref{thm:harmonic}). 
+Actually our result is even stronger, as we obtain global intrinsic continuity (see Theorem \ref{thm:harmonic}). 
+
+Other applications of our result will be presented in \cite{LSW} and \cite{St}. 
 
 \subsection{Structure of the paper}
 In section 2 we recall some definitions from metric geometry, introduce the concept of metric minimizing map and prove some
 basic properties. In section 3 we discuss metric minimizing graphs and show that any metric minimizing graph can be extended to a short
 map defined on a $\CAT[0]$ space (Corollary \ref{cor:planar-minimizing-graph}). In section 4 we study metric minimizing discs and
-use a theorem of Moore \cite{} to obtain topological information about  their 
+use a theorem of Moore \cite{moore} to obtain topological information about  their 
 associated "`connecting metric space"' (Proposition \ref{prop:|D|}). This result is result is responsible for 
 the topological control in the main theorems. In section 5 we prove the key lemma (Lemma \ref{lem:key}) which implies that 
 metric minimizing discs factorize through two-dimensional $\CAT[0]$-spaces. Section 6 provides a compactness result for $\CAT[0]$-surfaces
@@ -1596,10 +1607,8 @@ the intrinsic metric and keep the boundary fixed.
 
 
 \begin{thebibliography}{52}
-\bibitem{moore}
-Moore, R. L.,
-``Concerning upper semi-continuous collections of continua,''
-Trans. Amer. Math. Soc. 27 no. 4 (1925) pp. 416--428.
+
+\bibitem{A} Alexandrov, A. D. ``Ruled  surfaces  in  metric  spaces,'' Vestnik Leningrad. Univ., 12:5-26, 1957 (Russian).
 
 \bibitem{bressan} Bressan, A.
 ``Hyperbolic systems of conservation laws.
@@ -1619,6 +1628,8 @@ volume 27 of New Mathematical Monographs. Cambridge University Press, Cambridge,
 
 \bibitem{KS}Korevaar, N. J.; Schoen, R. M. ``Sobolev spaces and harmonic maps for metric space targets,'' Comm. Anal. Geom., 1(3-4):561-659, 1993.
 
+\bibitem{LSW} Lytchak, A.; Stadler, S.; Wenger, S.  ``On conformal changes of CAT(0) spaces'', in preparation.
+
 \bibitem{LW}Lytchak, A.; Wenger, S. ``Area minimizing discs in metric spaces,'' preprint arXiv:1502.06571, 2015.
 
 \bibitem{LW2}Lytchak, A.; Wenger, S. ``Energy and area minimizers in metric spaces,'' preprint  arXiv:1507.02670, 2015.
@@ -1626,6 +1637,11 @@ volume 27 of New Mathematical Monographs. Cambridge University Press, Cambridge,
 \bibitem{LW3}Lytchak, A.; Wenger, S. ``Intrinsic structure of minimal discs in metric spaces ,'' preprint  arXiv:1602.06755, 2016.
 
 \bibitem{LW4}Lytchak, A.; Wenger, S. ``Regularity of harmonic discs in spaces with quadratic isoperimetric inequality  ,'' preprint  arXiv:1512.01060, 2016.
+
+\bibitem{moore}
+Moore, R. L.,
+``Concerning upper semi-continuous collections of continua,''
+Trans. Amer. Math. Soc. 27 no. 4 (1925) pp. 416--428.
 
 \bibitem{petrunin-metric-min} Petrunin, A.
 ``Metric minimizing surfaces.''
@@ -1637,13 +1653,18 @@ Electron. Res. Announc. Amer. Math. Soc. 5 (1999), 47--54
 
 \bibitem{R}Reshetnyak, Yu. G. ``Sobolev classes of functions with values in a metric space,'' II, Sibirsk. Mat. Zh. 45 (2004), no. 4, 855-870. MR 2091651 (2005e:46055)
 
+\bibitem{Se} Serbinowski,  T. ``Boundary regularity of harmonic maps to nonpositively curved metric spaces,''
+Comm. Anal. Geom. , 2(1):139-153, 1994.
+
 \bibitem{S}Schoen, R. ``Analytic Aspects of The Harmonic Map Problem'' Chapter IX in  
 ``Lectures on harmonic maps'' by Schoen, R.; Yau, S. T.,  
 Conference Proceedings and Lecture Notes in Geometry and Topology, II. International Press, Cambridge, MA, 1997. vi+394 pp. ISBN: 1-57146-002-0
 
 \bibitem{shefel-2D} S. Z. \v{S}efel′ ``On saddle surfaces bounded by a rectifiable curve,'' Dokl. Akad. Nauk SSSR 162 (1965), 294--296.
 
-\bibitem{shefel-3D} S. Z. \v{S}efel′ ``On the intrinsic geometry of saddle surfaces,'' Sibirsk. Mat. Ž. 5 (1964), 1382--1396
+%\bibitem{shefel-3D} S. Z. \v{S}efel′ ``On the intrinsic geometry of saddle surfaces,'' Sibirsk. Mat. Ž. 5 (1964), 1382--1396
+
+\bibitem{St} Stadler, S. ``Harmonic discs in CAT(0) spaces'', in preparation.
 
 %\bibitem{W1}Whyburn, G. T., ``On sequences and limiting sets,'' Fund. Math. vol. 25 (1935) pp. 408-426.
 
