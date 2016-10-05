@@ -1195,33 +1195,62 @@ is a lower bound for $\mathcal{O}$. By Zorn's lemma we obtain a minimal element 
 \section{Application to harmonic maps}
 
 %???MAYBE WE SHOULD say harmonic insted of energy minimizing
-\subsection{Harmonic discs are metric minimizing}
+\subsection{Sobolev spaces and energy}
 
-In this subsection we show that harmonic maps from discs to $\CAT[0]$ spaces are metric minimizing, see Proposition~\ref{prop:harmonic}.
+We will collect some basic definitions and properties from Sobolev space theory in metric spaces as developed in 
+\cite{KS},\cite{R}, \cite{HKST} and \cite{LW}. For more details we refer the reader to these articles.
+We set $D:=\operatorname{interior}\DD$ and fix a metric space $X$.
+Following Reshetnyak (\cite{R}), we say that a map $u\:D\to X$ has {\em finite energy}, or lies in the Sobolev space $W^{1,2}(D,X)$ iff
+\begin{itemize}
+ \item $u$ is measureable and has essentially separable image.
+ \item There exists $g\in L^2(D)$ such that the composition $f\circ u$ with any short map $f\:X\to \mathbb{R}$ lies in the classical Sobolev space $W^{1,2}(D)$
+ and the norm of the gradient $|\nabla(f\circ u)|$ is almost everywhere bounded by $g$.
+\end{itemize}
 
-For definitions and properties of Sobolev maps we refer the reader to \cite{LW} and \cite{LW2}. For convenience we will call
-an energy minimizing map relative to some boundary condition a {\em harmonic map}.
+If $u$ lies in the Sobolev space $W^{1,2}(D,X)$ then its energy 
+\[E(u):=\int\limits_{D}\left(\frac{1}{\pi}\int_{S^1}|du_z|^2 d\mathcal{H}^1(v)\right) d\area(z)\]
+is finite. Here $du_z$ denotes the approximate metric differential of $u$ at $z$. (See \cite{LW}.)
+We call a map $u\in W^{1,2}(D,X)$ a {\em Sobolev disc}.
+
+The following characterization of continuous Sobolev discs is well suited for our purposes.
+
+
+
+
+
+
+
+
+
+
+
+
+Any Sobolev disc $u$ has a well defined trace $\operatorname{tr}(u)\in L^2(\partial\DD)$. (See \cite{KS} and \cite{LW}.)
+If $u$ extends to a continuous map $\bar u$ on $\DD$, then $\operatorname{tr}(u)$ is represented by $\bar u|_{\partial\DD}$. 
+We say that a circle $\gamma\:\partial\DD\to X$ is {\em spanned by} a Sobolev disc $u$, if $\gamma=\operatorname{tr}(u)$ in $L^2(\partial\DD,X)$.
 
 
 The following theorem was proved by Korevaar and Schoen in \cite{KS}, it generalizes earlier results by Hamilton on Riemannian manifolds of non-positive
 curvature \cite{H}.
 
 \begin{thm}{Dirichlet problem}\label{thm:dirichlet}
-Let $\gamma$ be a continuous circle in a $\CAT[0]$ space $X$. 
+Let $\gamma$ be a circle in a $\CAT[0]$ space $X$ which can be spanned by a Sobolev disc. 
 Then there is a unique energy minimizing disc $u$ which spans $\gamma$; 
 that is, $u$
-has the least energy among all discs spanning $\gamma$. 
+has the least energy among all Sobolev discs spanning $\gamma$. 
 The energy minimizer $u$ is locally Lipschitz continuous in the interior of $\DD$.
 
 Moreover, the local Lipschitz constant of $u$ depends only on the energy of $u$ and the distance to the boundary.
 \end{thm}
 
-For a Sobolev map $u$ from the disc $\DD$ to the Euclidean space, its energy is defined as 
-\[E(u)=\int\limits_\DD|du|^2\cdot d\area.\]
-In \cite{KS}, an appropriate generalization of energy for maps with target in general metric spaces is defined.
-We will denote this generalized energy by $E$. It is used throughout this section. 
-A modern approach to $E$ and also a thorough treatment of general energies and their associated Sobolev
-spaces can be found in \cite{LW} and \cite{LW2}.
+
+
+
+\subsection{Harmonic discs are metric minimizing}
+
+In this subsection we show that harmonic maps from discs to $\CAT[0]$ spaces are metric minimizing, see Proposition~\ref{prop:harmonic}.
+
+
 
 
 
