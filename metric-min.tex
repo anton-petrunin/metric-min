@@ -1199,11 +1199,12 @@ is a lower bound for $\mathcal{O}$. By Zorn's lemma we obtain a minimal element 
 
 We will collect some basic definitions and properties from Sobolev space theory in metric spaces as developed in 
 \cite{KS},\cite{R}, \cite{HKST} and \cite{LW}. For more details we refer the reader to these articles.
-We set $D:=\operatorname{interior}\DD$ and fix a metric space $X$.
+We set $D:=\operatorname{interior}\DD$ and fix a complete metric space $X$.
 Following Reshetnyak (\cite{R}), we say that a map $u\:D\to X$ has {\em finite energy}, or lies in the Sobolev space $W^{1,2}(D,X)$ iff
 \begin{itemize}
  \item $u$ is measureable and has essentially separable image.
- \item There exists $g\in L^2(D)$ such that the composition $f\circ u$ with any short map $f\:X\to \mathbb{R}$ lies in the classical Sobolev space $W^{1,2}(D)$
+ \item There exists $g\in L^2(D)$ such that the composition $f\circ u$ with any short map $f\:X\to \mathbb{R}$ 
+lies in the classical Sobolev space $W^{1,2}(D)$
  and the norm of the gradient $|\nabla(f\circ u)|$ is almost everywhere bounded by $g$.
 \end{itemize}
 
@@ -1213,12 +1214,33 @@ is finite. Here $du_z$ denotes the approximate metric differential of $u$ at $z$
 We call a map $u\in W^{1,2}(D,X)$ a {\em Sobolev disc}.
 
 The following characterization of continuous Sobolev discs is well suited for our purposes.
+See section 3.2 in \cite{LW3}.
 
 
+\begin{thm}{Lemma}\label{lem:sobolevchar}
+Let $u\:D\to X$ be a continuous. Then $u$ has finite energy iff
+for some (and then any) $p\in X$ the map $x\mapsto|u(x)-p|$ lies in $L^2(D)$ and
+there is a Borel function $\rho\in L^2(D)$ such that for 2-almost all curves\footnote{A property $\mathcal{P}$ holds for 
+for 2-almost all curves in $D$ if there is a Borel function $f\:D\to[0,\infty]$ such that $\int_\gamma f=\infty$
+for every rectifiable curve $\gamma$ which fails to satisfy $\mathcal{P}$.} $\gamma:I\to D$
+$$
+\length(u\circ \gamma)\leq\int_\gamma \rho.
+$$
+\end{thm}
 
 
+The following variant of the Courant-Lebesgue Lemma will be used repeatedly.
 
-
+\begin{thm}{Courant-Lebesgue Lemma}(Lemma 7.3 in \cite{LW})\label{lem:CL}
+Let $u\:D\to X$ be a Sobolev disc. Let $z_0\in\DD$ and $\delta\in(0,1)$. For each $r\in(0,1)$
+let $\gamma_r$ be an arc-length parametrization of $\{z\in D:\ |z-z_0|=r\}$. Then there exists
+$A\subset (\delta,\sqrt{\delta})$ of strictly positive measure such that $u\circ\gamma_r$
+has an absolutely continuous representative of length
+$$
+\length_X(u\circ\gamma_r)\leq\pi\sqrt{\frac{2E(u)}{|\log\delta|}}
+$$
+for every $r\in A$.
+\end{thm}
 
 
 
@@ -1227,10 +1249,12 @@ The following characterization of continuous Sobolev discs is well suited for ou
 
 Any Sobolev disc $u$ has a well defined trace $\operatorname{tr}(u)\in L^2(\partial\DD)$. (See \cite{KS} and \cite{LW}.)
 If $u$ extends to a continuous map $\bar u$ on $\DD$, then $\operatorname{tr}(u)$ is represented by $\bar u|_{\partial\DD}$. 
-We say that a circle $\gamma\:\partial\DD\to X$ is {\em spanned by} a Sobolev disc $u$, if $\gamma=\operatorname{tr}(u)$ in $L^2(\partial\DD,X)$.
+We say that a circle $\gamma\:\partial\DD\to X$ is {\em spanned by} a Sobolev disc $u$, if $\gamma=\operatorname{tr}(u)$ in 
+$L^2(\partial\DD,X)$.
 
 
-The following theorem was proved by Korevaar and Schoen in \cite{KS}, it generalizes earlier results by Hamilton on Riemannian manifolds of non-positive
+The following theorem was proved by Korevaar and Schoen in \cite{KS}, it generalizes earlier results by Hamilton on 
+Riemannian manifolds of non-positive
 curvature \cite{H}.
 
 \begin{thm}{Dirichlet problem}\label{thm:dirichlet}
@@ -1243,7 +1267,7 @@ The energy minimizer $u$ is locally Lipschitz continuous in the interior of $\DD
 Moreover, the local Lipschitz constant of $u$ depends only on the energy of $u$ and the distance to the boundary.
 \end{thm}
 
-
+For convenience we will call an energy minimizing disc a {\em harmonic disc}.
 
 
 \subsection{Harmonic discs are metric minimizing}
@@ -1265,7 +1289,7 @@ The map $u$ is saddle and continuous.
 
 \parit{Proof.}
 Since energy is nonincreasing under postcomposition with short maps, the uniquness in Theorem \ref{thm:harmonic} implies that
-$u$ is saddle. By the Courant-Lebesgue lemma (Lemma 7.3 in \cite{LW}), every point $x$ in $\DD$ and every $\epsilon>0$
+$u$ is saddle. By Lemma \ref{lem:CL}, every point $x$ in $\DD$ and every $\epsilon>0$
 there is a neighborhood of $x$ which is bounded by a Jordan curve $J$ such that $\length_X(u(J))<\epsilon$. From the saddle property we conclude 
 that $u$ is continuous.
 \qeds
@@ -1307,16 +1331,11 @@ Then $u$ is continuous and metric minimizing relative $\partial\DD$.
 \parit{Proof.}
 By Lemma \ref{lem:memicrit}, it is enough to show that $\bar u$ is metric minimizing relative to $\partial|\DD|_u$.
 By Proposition \ref{prop:exist} there exists a metric minimizing map
-$s\:|\DD|_u\to X$ with $u\succcurlyeq s$. Since $s$ is saddle by Proposition \ref{prop:memisaddle}, the Courant-Lebesgue lemma implies that $s$
+$s\:|\DD|_u\to X$ with $u\succcurlyeq s$. Since $s$ is saddle by Proposition \ref{prop:memisaddle}, Lemma \ref{lem:CL} implies that $s$
 is continuous. (Compare the proof of Lemma \ref{lem:harmsaddle}.) 
-Since $u$ is continuous, it has finite Korevaar-Schoen energy iff
-there is a Borel function $\rho\in L^2(\DD)$ such that for 2-almost all curves $\gamma:I\to \DD$
-$$
-\length(u\circ \gamma)\leq\int_\gamma \rho.\footnote{See section 3.2 in \cite{LW3}.}
-$$
-Since $s$ is metric minimizing and $s\circ\pi_u$ is continous, we get that $s\circ\pi_u$ has finite Korevaar-Schoen energy as well. 
-From Lemma 3.1 in \cite{LW3} we have for 2-alomst all rectifiable
-curves $\gamma:I\to \DD$
+Since $s$ is metric minimizing and $s\circ\pi_u$ is continuous, we get that $s\circ\pi_u$ has finite energy from Lemma \ref{lem:sobolevchar}. 
+From Lemma 3.1 in \cite{LW3} we have for 2-almost all 
+curves $\gamma:I\to D$
 $$
 \length(s\circ\pi_u\circ \gamma)=\int_I |d(s\circ\pi_u)_{\gamma(t)}(\dot\gamma(t))|dt\leq \int_I |du_{\gamma(t)}(\dot\gamma(t))|dt=\length(u\circ \gamma).
 $$
