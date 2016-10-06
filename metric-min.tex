@@ -41,11 +41,11 @@ If the principal curvatures at a point $p$ of $\Sigma$ with respect to a certain
 a pointed neighbourhood of $p$ is contained in an open halfspace. For smooth harmonic surfaces, such behaviour is excluded
 by the maximum principle and therefore, any smooth immersed harmonic surface in $\mathbb{R}^n$ is nonpositively curved.   
 In particular, we can associate to such a harmonic map a Riemannian surface of nonpositive curvature. 
-This in turn has strong analytical and topological consequences since the intrinsic metric is subject to Bishop-Gromov, Gau\ss-Bonnet, etc. 
+This has strong analytical and topological consequences since the intrinsic metric is subject to Bishop-Gromov, Gau\ss-Bonnet, etc. 
 Unfortunately, the above argument breaks down if either the surface is not immersed or else it is not regular enough.
 But as it turns out, both conditions are irrelevant in order for the intrinsic metric to be nonpositively curved in the sense of Alexandrov.
 
-The aim of this paper is to prove a analogous global structural result about the intrinsic metric of a much more general class of surfaces.
+The aim of this paper is to prove an analogous global structural result about the intrinsic metric of a much more general class of surfaces.
 We will study "metric minimizing" surfaces in general $\CAT[0]$ spaces\footnote{A general $\CAT[0]$ space is not necessarily locally compact.}. 
 Their defining property is that any other parametrized surface with
 equal boundary increases the intrinsic distance for at least two points of the domain. Examples of metric minimizing surfaces include
@@ -107,7 +107,7 @@ in $\CAT[0]$-surfaces and generalize Shefel's result on saddle surfaces. In sect
 from which Corollary \ref{cor:main} directly follows. Section 9 is devoted to the existence and uniqueness of metric minimizing maps.
 Here we also introduce the notion of intrinsic continuity. In section 10 we turn to applications and prove structure and regularity results
 for harmonic discs. In section 11 we treat smooth saddle surfaces in $\mathbb{R}^3$ and show that they are locally metric minimizing.
-This is rather tricky and relies on PDE results. In the final section 12 we comment on the separability condition and on the saddle 
+This is rather tricky and relies on PDE results. In the final section 12 we comment on the separability condition and on saddle 
 surfaces in general.
 
 \subsection{Acknowledgement}
@@ -145,7 +145,7 @@ The induced pseudometric $|{*}-{*}|$ on the set of equivalence classes of $\sim$
 Further, for a nondegenerated pseudometric space we can consider the equivalence relation ``$\approx$'' defined as \[x\approx y\  \iff\  |x-y|<\infty.\]
 Its equivalence classes are called \emph{metric components}.
 Note that by definition each metric component is a \emph{metric space}.
-Consequentely, a nondegenerated pseudometric space 
+Consequently, a nondegenerated pseudometric space 
 can be thought of as a disjoint union of \emph{metric spaces}.
 We will say that the obtained metric spaces are \emph{defined} by the  
 original pseudometric space.%???IS IT A GOOD WAY TO SAY??? 
@@ -1184,7 +1184,7 @@ $$
 \sum_{j=0}^k|\bar s_\omega(x_j)-\bar s_\omega(x_{j+1})|=\omega\lim_{\mathcal{O}}\sum_{j=0}^k|s(x_j)-s(x_{j+1})|\leq \omega\lim_{\mathcal{O}}\length(s\circ\gamma)\leq \length(s_0\circ\gamma)
 $$
 where we identified points in $X_\omega$ with constant nets in $X$. The last inequality follows from the fact that the subset $\{s\succcurlyeq s_0\}\subset \mathcal{O}$
-is not in $\omega$. Consequentely $\length(s_\omega\circ\gamma)\leq \length(s_0\circ\gamma)$ and $\bar s_\omega$
+is not in $\omega$. Consequently $\length(s_\omega\circ\gamma)\leq \length(s_0\circ\gamma)$ and $\bar s_\omega$
 is a lower bound for $\mathcal{O}$. By Zorn's lemma we obtain a minimal element $s_{min}$ for $\mathcal{S}(f)$.
 \qeds
 
@@ -1205,12 +1205,14 @@ Following Reshetnyak (\cite{R}), we say that a map $u\:D\to X$ has {\em finite e
  \item $u$ is measureable and has essentially separable image.
  \item There exists $g\in L^2(D)$ such that the composition $f\circ u$ with any short map $f\:X\to \mathbb{R}$ 
 lies in the classical Sobolev space $W^{1,2}(D)$
- and the norm of the gradient $|\nabla(f\circ u)|$ is almost everywhere bounded by $g$.
+ and the norm of the weak gradient $|\nabla(f\circ u)|$ is almost everywhere bounded by $g$.
 \end{itemize}
 
 If $u$ lies in the Sobolev space $W^{1,2}(D,X)$ then its energy 
 \[E(u):=\int\limits_{D}\left(\frac{1}{\pi}\int_{S^1}|du_z|^2 d\mathcal{H}^1(v)\right) d\area(z)\]
 is finite. Here $du_z$ denotes the approximate metric differential of $u$ at $z$. (See \cite{LW}.)
+Note that in the case of a Riemannian manifold $X$ the energy as define above is equal to
+the classical Dirichlet energy up to a constant factor.
 We call a map $u\in W^{1,2}(D,X)$ a {\em Sobolev disc}.
 
 The following characterization of continuous Sobolev discs is well suited for our purposes.
@@ -1218,7 +1220,7 @@ See section 3.2 in \cite{LW3}.
 
 
 \begin{thm}{Lemma}\label{lem:sobolevchar}
-Let $u\:D\to X$ be a continuous. Then $u$ has finite energy iff
+Let $u\:D\to X$ be a continuous map. Then $u$ has finite energy iff
 for some (and then any) $p\in X$ the map $x\mapsto|u(x)-p|$ lies in $L^2(D)$ and
 there is a Borel function $\rho\in L^2(D)$ such that for 2-almost all curves\footnote{A property $\mathcal{P}$ holds for 
 for 2-almost all curves in $D$ if there is a Borel function $f\:D\to[0,\infty]$ such that $\int_\gamma f=\infty$
@@ -1288,7 +1290,7 @@ The map $u$ is saddle and continuous.
 \end{thm}
 
 \parit{Proof.}
-Since energy is nonincreasing under postcomposition with short maps, the uniquness in Theorem \ref{thm:harmonic} implies that
+Since energy is nonincreasing under postcomposition with short maps, the uniqueness in Theorem \ref{thm:harmonic} implies that
 $u$ is saddle. By Lemma \ref{lem:CL}, every point $x$ in $\DD$ and every $\epsilon>0$
 there is a neighborhood of $x$ which is bounded by a Jordan curve $J$ such that $\length_X(u(J))<\epsilon$. From the saddle property we conclude 
 that $u$ is continuous.
@@ -1394,13 +1396,13 @@ $\pi_u(\partial( I'_1\times I'_2))$ intersects every continuous path from $p$ to
 \parit{Proof.}
 Since $u$ is a no-bubble map, we know from the proof of Proposition \ref{prop:disc-moore} that $\pi_u\:\DD\to|\DD|_u$ is cell-like and 
 $|\DD|_u$ is a disc retract. 
-Let $\gamma$ be a continous path from $p$ to $q$. Since $\pi_u$ is cell-like we find for every $\epsilon>0$ a continuous path $\hat\gamma_\epsilon$ joining $\hat p$
+Let $\gamma$ be a continuous path from $p$ to $q$. Since $\pi_u$ is cell-like we find for every $\epsilon>0$ a continuous path $\hat\gamma_\epsilon$ joining $\hat p$
 and $\hat q$ such that $\pi_u(\hat\gamma_\epsilon)$ is pointwise $\epsilon$-close to $\gamma$. Clearly $\hat\gamma_\epsilon$ has to intersect 
 $\partial( I'_1\times I'_2)$ and the claim follows.
 \qeds
 
 In particular, this implies that $\pi_u(\partial( I'_1\times I'_2))$ intersects any geodesic in $\|\DD\|_u$ between $p$ and $q$. 
-Consequentely, $\overline{\pi_u(B_1\times B_2)}$ intersects every open ball around $p$.
+Consequently, $\overline{\pi_u(B_1\times B_2)}$ intersects every open ball around $p$.
 \qeds
 
 
@@ -1460,7 +1462,7 @@ $\Delta$ such that $(1+\epsilon)E(\pi_u|_\Delta)\leq E(\varphi_k|_\Delta)$. This
 \qeds
 
 
-It remains to prove the first claim. It also follows from Sublemma \ref{sublem:minimizer}, the uniformly bounded energies of the $\varphi_k$ and the fact that $\varphi_k$
+It remains to prove the first claim. This follows from Sublemma \ref{sublem:minimizer}, the uniformly bounded energies of the $\varphi_k$ and the fact that $\varphi_k$
 obeys the a priori estimate
 \[\sup_{\Omega}|d\varphi_k|^2\leq C\cdot E(\varphi_k)\]
 for any open $\Omega$ compactly supported in $\DD$, where $C$ depends only on the distance of $\Omega$ to the boundary $\partial\DD$. (See Chapter 4 in \cite{S}.)
