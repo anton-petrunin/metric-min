@@ -163,24 +163,94 @@ A continuous curve $c$ is called {\em rectifiable} if its length is finite.
 
 \parbf{Induced  pseudometrics.}
 Let $X$ and $Y$ be metric spaces.
-Given a continuous map $f\:X\to Y$,
+Given a map $f\:X\to Y$,
 define a \emph{connecting pseudometric} $|{*}-{*}|_f$ on $X$ in
 the following way
 \[|x-y|_f=\inf\{\diam f(K)\},\]
-where the infimum is taken for all connected sets $K\subset X$ which contain $x$ and $y$;
+where the infimum is taken over all connected sets $K\subset X$ which contain $x$ and $y$;
 if there is no such set we set $|x-y|_f=\infty$.
 
 The intrinsic metric induced by $|{*}-{*}|_f$ will be denoted as 
 $\|{*}-{*}\|_f$. 
 That is, 
-\[\|x-y\|_f=\inf\{\length(\gamma)|\ \gamma \text{ continuous curve in } X \text{ connecting } x \text{ and } y\}\]
+\[\|x-y\|_f=\inf\{\length(\gamma)|\ \gamma \text{ continuous curve in } |X|_f \text{ connecting } x \text{ and } y\}\]
 where the length is computed with respect to $|{*}-{*}|_f$.
 
 The metric spaces defined by the pseudometrics $|{*}-{*}|_f$ 
 and $\|{*}-{*}\|_f$ on $X$ will be denoted as $|X|_f$ and $\|X\|_f$ correspondingly.
 
+The map $f$ factors as $f=\bar f\circ \pi_f$ with $\pi_f\:X\to|X|_f$ and $\bar f\:|X|_f\to Y$.
 
 
+\begin{thm}{Lemma}\label{lem:picont}
+Let $X$ be a length space, $Y$ a metric spaces and $f\:X\to Y$ a continuous map. Then the following holds true.
+\begin{itemize}
+ \item $\pi_f\:X\to|X|_f$ is continuous.
+ \item For points $x,y\in X$ with $|x-y|_f<\infty$ holds
+\[|x-y|_f=\inf\{\diam f(K)\},\]
+where the infimum is taken over all {\em open} connected sets $K\subset X$ which contain $x$ and $y$.
+  \item $|X|_f$ is locally pathconnected.
+\end{itemize}
+
+\end{thm}
+\parit{Proof.}
+Let $(x_k)$ be a sequence in $X$ which converges to a point $x$. For $\epsilon>0$ choose $\delta>0$ such that
+$f(B_\delta(x))\subset B_\epsilon(f(x))$. If $x_k\in B_\delta(x)$, then there is a path in $X$ connecting $x_k$
+to $x$ whose image under $f$ has diameter less than $2\epsilon$ and therefore $|x-x_k|_f\to 0$. This shows the first claim.
+
+Let $C$ be a connected subset of $Y$ with finite diameter. Then for every $\epsilon>0$ the open $\epsilon$-neighbourhood $U_\epsilon$ of $C$ has diameter less than
+$\diam C+2\epsilon$. The claim follows since every component of the inverse image $f^{-1}(U_\epsilon)$ is open. 
+
+Let $x$ be a point in $|X|_f$ and $y\in B_r(x)$ for some $r>0$. Denote $\hat x$ and $\hat y$ arbitrary lifts of $x$ and $y$.
+From above we know that there is an open connected subset $C$ in $X$ containing $\hat x$ and $\hat y$ and such that 
+$\diam f(C)<r$. It remains to join $\hat x$ and $\hat y$ by a path in $C$.
+\qeds
+
+\begin{thm}{Corollary}\label{cor:geospace}
+Let $X$ be a compact geodesic space, $Y$ a metric spaces and $f\:X\to Y$ a continuous map. Then $\|X\|_f$ is a geodesic space.
+\end{thm}
+\parit{Proof.}
+From Lemma \ref{lem:picont} we know that $\pi_f$ is continuous and therefore $|X|_f$ is compact.
+\qeds
+
+\begin{thm}{Lifting Lemma}\label{lem:lift}
+Let $X$ be a compact geodesic space, $Y$ a metric spaces and $f\:X\to Y$ a continuous map. Let $c\:[0,1]\to|X|_f$ be a rectifiable
+path joining points $p$ and $q$ in $|X|_f$. Suppose that $\hat p$ and $\hat q$ are lifts of the points $p$ an $q$ to $X$.
+Then for every $\epsilon>0$ there exists a piecewise geodesic path $\hat c\:[0,1]\to X$ joining $\hat p$ to $\hat q$ such that 
+\[|\pi_f\circ\hat c(t)-c(t)|_f<\epsilon\ \text{ for all }t\in[0,1].\]
+\end{thm}
+\parit{Proof.}
+ Since $\|X\|_f$ is a geodesic space by Corollary \ref{cor:geospace} it is enough to consider the case where $c$ is a geodesic.
+ Given $\epsilon>0$ denote $U_\epsilon$ the open $\epsilon$-neighborhood of $c([0,1])$ and choose times $0=t_0<t_1<\ldots<t_k=1$ 
+ such that $|c(t_i)-c(t_{i+1})|_f<\frac{\epsilon}{2}$. Choose arbitrary lifts $\hat c(t_i)$ of the points
+ $c(t_i)$ for $i\in\{1,\ldots,k-1\}$. By Lemma \ref{lem:picont}, we find open connected sets $C_i\subset X$ containing $\hat c(t_i)$ and $\hat c(t_{i+1})$ with
+ $\diam f(C_i)<\epsilon$. In particular $\pi_f(C_i)\subset U_\epsilon$. To finish the proof we join $\hat c(t_i)$ and $\hat c(t_{i+1})$ by piecewise geodesics
+ in $C_i$.
+\qeds
+
+\begin{thm}{Corollary}\label{cor:connecedpreimage}
+Let $X$ be a compact geodesic space, $Y$ a metric spaces and $f\:X\to Y$ a continuous map. Then
+the inverse image of an open connected subset $C$ of $|X|_f$ under $\pi_f$ is pathconnected in $X$.
+\end{thm}
+\parit{Proof.}
+Let $C$ be an open connected subset of $|X|_f$. By Lemma \ref{lem:picont}, $|X|_f$ is locally pathconnected and therefore
+$C$ is pathconnected. Hence the claim follows from the Lifting Lemma \ref{lem:lift}.
+\qeds
+
+\begin{thm}{Lifting Lemma}\label{lem:lift}
+Let $X$ be a compact geodesic space, $Y$ a metric spaces and $f\:X\to Y$ a continuous map. Let $c\:[0,1]\to|X|_f$ be a rectifiable
+path joining points $p$ and $q$ in $|X|_f$. Suppose that $\hat p$ and $\hat q$ are lifts of the points $p$ an $q$ to $X$.
+Then for every $\epsilon>0$ there exists a piecewise geodesic path $\hat c\:[0,1]\to X$ joining $\hat p$ to $\hat q$ such that 
+\[|\pi_f\circ\hat c(t)-c(t)|_f<\epsilon\ \text{ for all }t\in[0,1].\]
+\end{thm}
+\parit{Proof.}
+ Since $\|X\|_f$ is a geodesic space by Corollary \ref{cor:geospace} it is enough to consider the case where $c$ is a geodesic.
+ Given $\epsilon>0$ denote $U_\epsilon$ the open $\epsilon$-neighborhood of $c([0,1])$ and choose times $0=t_0<t_1<\ldots<t_k=1$ 
+ such that $|c(t_i)-c(t_{i+1})|_f<\frac{\epsilon}{2}$. Choose arbitrary lifts $\hat c(t_i)$ of the points
+ $c(t_i)$ for $i\in\{1,\ldots,k-1\}$. By Lemma \ref{lem:picont}, we find open connected sets $C_i\subset X$ containing $\hat c(t_i)$ and $\hat c(t_{i+1})$ with
+ $\diam f(C_i)<\epsilon$. In particular $\pi_f(C_i)\subset U_\epsilon$. To finish the proof we join $\hat c(t_i)$ and $\hat c(t_{i+1})$ by piecewise geodesics
+ in $C_i$.
+\qeds
 
 \parbf{Remarks.}
 \begin{itemize}
@@ -192,9 +262,7 @@ that is,
 \[|x-y|_f=0\quad\iff\quad\|x-y\|_f=0.\]
 The equivalence class of $x\in X$ will be denoted as $[x]_f$; 
 it can be regarded as a point in  $|X|_f$ and in $\|X\|_f$.
-\item The map $f$ factors as $f=\bar f\circ \pi_f$ with $\pi_f\:X\to|X|_f$ continuous and $\bar f\:|X|_f\to Y$ short.
-If we regard $\pi_f$ and $\bar f$ as maps to $\|X\|_f$, then $\pi_f$ is typically not continuous but $\bar f$ is length 
-preserving. More precisely, $\bar f$ preserves the lengths of all curves $\pi_f(\gamma)$ with $\gamma$ a curve in $X$, see the following lemma.
+\item  More precisely, $\bar f$ preserves the lengths of all curves $\pi_f(\gamma)$ with $\gamma$ a curve in $X$, see the following lemma.
 \end{itemize}
 
 
