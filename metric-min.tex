@@ -1,5 +1,6 @@
 \documentclass[a4paper,10pt]{amsart}
 \usepackage{metric-min}
+\usepackage{showkeys}
 
 \begin{document}
 \title{Metric minimzing surfaces revisited}
@@ -311,6 +312,25 @@ if there is no map $h\:X\to Y$ distinct from $f$
 such that $f\succcurlyeq h$, 
 and $h|_A=f|_A$.
 
+\begin{thm}{Proposition}\label{prop:memicrit}
+Let $X$ be a compact geodesic space, $Y$ a metric space 
+and $A\subset X$ a closed subset.
+Let $f\:X\to Y$ be a continuous map. Then $f$ is metric minimizing relative to $A$
+iff $\bar f$ is metric minimizing relative to $\pi_f(A)$.
+\end{thm}
+
+\parit{Proof.}
+Assume that $f$ is metric minimizing relative to $A$ but there is a map $s\:|X|_f\to Y$ with $\bar f\succ s$. 
+Then there is a surjective short map $\||X|_f\|_{\bar f}\to\||X|_f\|_s$ which strictly
+contracts the distance of at least one pair of points. This is a contradiction because $s\circ\pi_f|_A=f|_A$ and, by Lemma \ref{lem:idem}, 
+$\||X|_f\|_{\bar f}\cong\|X\|_f$ and $\||X|_f\|_s\cong\|X\|_{s\circ\pi_f}$. 
+
+If on the other hand $\bar f$ is metric minimizing relative to $\pi_f(A)$ but there exists a map $s\:X\to Y$ with $f\succ s$,
+then there is a surjective short map $\alpha\:\|X\|_f\to\|X\|_s$ which strictly
+contracts the distance of at least one pair of points and such that $\pi_s=\alpha\circ\pi_f$. Again, by Lemma \ref{lem:idem}, we have 
+$\||X|_f\|_{\bar f}\cong\|X\|_f$ and $\||X|_f\|_s\cong\|X\|_{\bar s\circ\alpha}$. Contradiction. 
+\qeds
+
 \begin{thm}{Proposition}\label{prop:point-complement}
 Let $X$ and $Y$ be metric spaces 
 and $A\subset X$ be a closed subset.
@@ -320,7 +340,7 @@ Then for any point $x\in X$ any connected component of $X\backslash [x]_f$ inter
 \end{thm}
 
 \parit{Proof.}
-Assume contrary.
+Assume the contrary.
 Denote by $W$ the connected component of $X\backslash [x]_f$ such that $A\cap W=\emptyset$.
 Let us define the new map $h\:X\to\ Y$ 
 by setting $h(z)=f(x)$ for any $z\in W$
@@ -332,33 +352,14 @@ Note that $\|x-y\|_f>0=\|x-y\|_h$ for any $y\in W$.
 Therefore $f\succ h$, a contradiction.
 \qeds
 
-The following two propositions follow directly from the definition of metric minimizing maps.
 
-\begin{thm}{Proposition}\label{prop:subset}
-Let $X$ and $Y$ be metric spaces and $A\subset X$ be a closed subset.
-Assume $f\:X\to Y$ is a metric minimizing map relative to $A$.
-
-Given a closed subset $W\subset X$, set 
-\[A_W=\partial_X W\cup (A\cap W),\]
-where $\partial_X W$ denotes the boundary of $W$ relative to $X$.
-Then the restriction $f|_W$ is metric minimizing relative to $A_W$.
-\end{thm}
-
-\begin{thm}{Proposition}\label{prop:factor}
-Let $X, X'$ and $Y$ be metric spaces, 
-$A\subset X$ be a closed subset.
-Assume $f\:X\to Y$ is a metric minimizing map relative to $A$
-which factors through a continuous surjective map $\phi\:X\to X'$;
-that is $f=f'\circ\phi$ for a map $f'\:X'\to Y$.
-Then $f'\:X'\to Y$ is metric minimizing relative to $\phi(A)$.
-\end{thm}
 
 \section{Metric minimizing graphs}
 
 
 
-\begin{thm}{Proposition}
-Assume $\Gamma$ is a  finite graph and $A$ is the collection of its vertices.
+\begin{thm}{Proposition}\label{prop:memigraph}
+Assume $\Gamma$ is a  finite graph and $A$ is a subset of its vertices.
 Let $Y\in\CAT[0]$ and $f\:\Gamma\to Y$ be an arbitrary map.
 Then there is a metric minimizing map $f'\:\Gamma\to Y$ relative to $A$ such that
 $f'|_A=f|_A$ and 
@@ -386,7 +387,7 @@ where $\length f_n$ denotes the sum of lengths of all edges of $\Gamma$. %???BET
 Since $f_n\succ h$ implies $\length f_n>\length h$, 
 the conditions above hold.
 
-Fix an ultra-filter $\omega$ on the set of natural numbers.
+Fix a non-principal ultra-filter $\omega$ on the set of natural numbers.
 Let $Y^\omega$ be the ultra-power of $Y$;
 recall that $Y$ can be (and will be) considered as a subspace of $Y^\omega$.
 Pass to the ultra-limit $f_\omega\:\Gamma\to Y^\omega$ 
@@ -394,7 +395,7 @@ of $f_n\:\Gamma\to Y$.
 Note that $f_\omega$ is a metric minimizing map.
 
 It remains to show that $f_\omega(\Gamma)\subset Y$.
-Assume contrary, then there is a subsequence of $f_n$ which $\omega$-converges to a metric minimizing map, say $v_\omega\:\Gamma\to Y^\omega$ distinct from $f_\omega$.
+Assume the contrary, then there is a subsequence of $f_n$ which $\omega$-converges to a metric minimizing map, say $v_\omega\:\Gamma\to Y^\omega$ distinct from $f_\omega$.
 Denote by $g_\omega(x)$ the midpoint of $[v_\omega(x)f_\omega(x)]$.
 Note that $f_\omega\succ g_\omega$ and $g_\omega|_A=f|_A$, a contradiction.
 \qeds
@@ -423,10 +424,7 @@ As one may see from the diagram,
 the two conditions in the proposition do not guarantee that the map $f$ is metric minimizing.
 
 \parit{Proof.}
-By Proposition~\ref{prop:subset},
-the restriction of $f$ to any edge $[vw]$ of $\Gamma$
-is metric minimizing relative to $\{v,w\}$.
-Hence the first condition follows.
+The first condition is clear.
 
 Assume the second condition does not hold at a vertex $v\notin A$;
 that is, there is a point $x\in Y$ such that
@@ -456,30 +454,34 @@ otherwise it will be called \emph{interior vertex}.
 
 \begin{thm}{Corollary}\label{cor:planar-minimizing-graph}
 Let $Y$ be a $\CAT[0]$ space and
-$\Gamma$ an embedded graph in $\RR^2$.
+$\Gamma$ an embedded finite graph in $\RR^2$.
 Assume $f\:\Gamma\to Y$ is a metric minimizing map relative to the boundary vertices. 
-Then 
-one can equip $\Fill\Gamma$ with a $\CAT[0]$ pseudometric 
-and extend $f$ to a short map $\bar f\:\Fill\Gamma\to Y$ which is length preserving on $\|\Gamma\|_f$.
+Then $\|\Gamma\|_f$ is a planar graph and
+$\Fill\|\Gamma\|_f$ is a disc retract which supports a $\CAT[0]$ metric such that 
+ $\bar f$ extends to a short map $\hat f\:\Fill\|\Gamma\|_f\to Y$.
 \end{thm}
 
 \parit{Proof.}
-Fix a cycle $\gamma$ in $\Gamma$ which bounds one of the discs in the complement $\RR^2\backslash \Gamma$.
-Set $\ell=\length f\circ\gamma$.
+By Corollary \ref{cor:fiberconnected}, the fibers of $\pi_f$ are connected. Hence $|\Gamma|_f$ is 
+a planar graph and so is $\|\Gamma\|_f$.
+
+
+Fix a cycle $\gamma$ in $\|\Gamma\|_f$ which bounds one of the discs in the complement $\RR^2\backslash \|\Gamma\|_f$.
+Set $\ell=\length \bar f\circ\gamma$.
 
 By Reshetnyak's majorization theorem, there is a convex polygon $P$ (possibly degenerate) with perimeter $\ell$ which admits 
-a short map to $Y$ in such a way that $f\circ\gamma$ is formed by the image of the boundary.
+a short map to $Y$ in such a way that $\bar f\circ\gamma$ is formed by the image of the boundary.
 Note that each angle of $P$ is at least as big as 
 the angle between the corresponding edges.
 
-Prepare a polygon as above for each disc in the complement of $\Gamma$
-and glue these polygons into $|\Gamma|_f$ along the natural map.
+Prepare a polygon as above for each disc in the complement of $\|\Gamma\|_f$
+and glue these polygons into $\|\Gamma\|_f$ along the natural map.
 The obtained space $D$ is simply connected.
 Therefore in order to show that $D$ is $\CAT[0]$,
-we need to check that the sum of the angles around each interior vertex in $\Gamma$ is at least $2\cdot\pi$.
+we need to check that the sum of the angles around each interior vertex in $\|\Gamma\|_f$ is at least $2\cdot\pi$.
 
 
-Assume contrary, that is, 
+Assume the contrary, that is, 
 the sum of the angles around a fixed interior vertex $v$ is less than $2\cdot\pi$.
 The space of directions $\Sigma_{f(v)}$ is a $\CAT[1]$ space.
 The directions of the edges from $v$ have a natural
@@ -490,7 +492,10 @@ By Reshetnyak's majorization theorem,
 the closed broken line $\xi_1,\dots,\xi_k$ is majorized by a convex spherical polygon $P$.
 Note that $P$ lies in an open hemisphere with the pole  at some point in $P$.
 Choose $x\in Y$ so that the direction form $f(v)$ to $x$ coincides with the image of the pole in $\Sigma_{f(v)}$.
-This choice of $x$ contradicts the condition in Proposition~\ref{prop:metric-min-graph}.\qeds
+This choice of $x$ contradicts the condition in Proposition~\ref{prop:metric-min-graph}.
+
+The short maps from Reshetnyak's majorization theorem fit together to yield the required extension $\hat f$ of $\bar f$.
+\qeds
 
 
 
@@ -520,10 +525,10 @@ called a \emph{disc retract}.
 
 
 
-We will need the following disc version of Moore's theorem proved in \cite{moore}.
+We will need the following disc version of Moore's theorem \cite{moore} proved in \cite{LW3}.
 
 \begin{thm}{Proposition}\label{prop:disc-moore}
-Let $X$ be a Hausdorff space and
+Let $Y$ be a metric space and
 $f\:\DD\to X$ be a no-bubble map.
 Then $|\DD|_f$ is homeomorphic to a disc retract. Moreover, if $f|_{\partial\DD}$ is 
 an embedding, then $|\DD|_f$ is homeomorphic to a disc.
@@ -531,21 +536,10 @@ an embedding, then $|\DD|_f$ is homeomorphic to a disc.
 
 
 \parit{Proof.}
-Note that $|\DD|_f$ is a Hausdorff space
-and the forgetful map $h\:\DD\to |\DD|_f$ is continuous.
-Since $f$ is continuous and $\DD$ is compact, the space $|\DD|_f$ comes with the quotient topology for $h$. 
-
-Consider the disc $\DD$ as a subset in the sphere $\SS^2$.
-For any $x\in \DD$, set 
-\[[x]=h^{-1}\{h(x)\}\]
-and
-if $x\in \SS^2\backslash \DD$, set $[x]=\{x\}$.
-Denote by $\SS^2_f$ the set of classes $[x]$ with the quotient topology induced by the map $\iota_f\:x\mapsto [x]$.
-
-Note that for any point $x$, the set $[x]$ is connected and compact, with connected complement.
-Therefore $\SS^2_f$ is homeomorphic to $\SS^2$ by Moore's theorem, see \cite{moore}.
-
-It remains to note that $|\DD|_f$ is embedded into $\SS^2_f$ and its complement is homeomorphic to an open disc.
+Form Lemma \ref{lem:picont} we know that $\pi_f$ is continuous and hence $|\DD|_f$
+is a compact metric space. The fibers of $\pi_f$ are connected by Corollary \ref{cor:fiberconnected}.
+Since $f$ is a no-bubble map, we see that $\pi_f$ is cell-like. Therefore, the first claim follows from 
+Corollary 7.12 in \cite{LW3}.
 The special case when $f|{\partial\DD}$ is an embedding follows then from the Schoenflies theorem.
 \qeds
 
@@ -563,11 +557,11 @@ Then $f$ is a no-bubble map.
 In particular,  $|\DD|_f$ is homeomorphic to a disc retract. In case $f|_{\partial\DD}$ is an
 embedding it is homeomorphic to a disc.
 Moreover $\partial|\DD|_f$ is the image of $\partial \DD$
-under the map $x\mapsto [x]_f$.
+under the map $\pi_f$.
 \end{thm}
 
 Recall that the metric minimizing map $f\:\DD\to\ Y$ factors through a map \[\bar f\:|\DD|_f\to Y.\]
-By \ref{prop:factor} and \ref{prop:|D|} 
+By \ref{prop:memicrit} and \ref{prop:|D|} 
 the map $\bar f$
 is metric minimizing relative to $\partial|\DD|_f$.
 
@@ -587,12 +581,12 @@ is metric minimizing relative to $\partial|\DD|_f$.
 \begin{thm}{Key Lemma}\label{lem:key}
 Let $Y$ be a $\CAT[0]$ space and $s\:\DD\to Y$ 
 be a metric minimizing disc relative to the boundary $\partial \DD$.
-Given a finite set $F\subset \DD$ such that $\|x-y\|_s<\infty$ for each pair $x,y$ of points in $F$. Then
+Given a finite set $F\subset \|\DD\|_s$ such that $\|x-y\|_s<\infty$ for each pair $x,y$ of points in $F$. Then
 there is 
 (1) a $\CAT[0]$ space $W$, which is a disc retract,
-and (2) maps $p\:F\to W$ and $q\:W\to Y$ such that
-\[s(x)=q\circ p(x)\] 
-for any $x\in F\cap \partial \DD$
+and (2) short maps $p\:F\to W$ and $q\:W\to Y$ such that
+\[\bar s(x)=q\circ p(x)\] 
+for any $x\in F\cap \partial |\DD|_s$
 and 
 \[\|p(x)-p(y)\|_q\le \|x-y\|_s\] 
 for any $x,y\in F$.
@@ -605,8 +599,8 @@ We can assume that
 every pair of the constructed geodesics 
 are either disjoint, or their intersection is formed by finite collections of arcs and points.
 
-Indeed, assuming some number of geodesics $\gamma_1,\dots,\gamma_n$ which meets the above property is already chosen and we need to choose one more geodesic connecting $x$ to $y$.
-Choose a minimizing geodesic $\gamma_{n+1}$ which maximize the time it spends in $\gamma_1,\dots,\gamma_n$  in the order of importance.
+Indeed, if some number of geodesics $\gamma_1,\dots,\gamma_n$ has this property and we are given points $x$ and $y$, then
+we choose a minimizing geodesic $\gamma_{n+1}$ from $x$ to $y$ which maximizes the time it spends in $\gamma_1,\dots,\gamma_n$  in the order of importance.
 Namely, 
 \begin{itemize}
 \item  among all minimizing geodesics connecting $x$ to $y$
@@ -624,8 +618,10 @@ embedded in $|\DD|_s$.
 According to Proposition~\ref{prop:|D|},
 $|\DD|_s$ admits an embedding into the plane.
 Therefore $\Gamma$ can be considered as a graph embedded into the plane.
-
-It remains to apply Corollary~\ref{cor:planar-minimizing-graph}.
+By Proposition \ref{prop:memigraph}, there is a map $u\:\Gamma\to Y$ metric minimizing relative to $\Gamma\cap\partial|\DD|_{\bar s}$ with
+$\bar s|_\Gamma\succcurlyeq u$. Hence there is a short map $\alpha\:\|\Gamma\|_{\bar s|_\Gamma}\to\|\Gamma\|_u$. 
+By Corollary~\ref{cor:planar-minimizing-graph} there is a $\CAT[0]$ disc retract $W$, a length preserving embedding
+$\|\Gamma\|_u\hookrightarrow W$ and a map $\hat u\:W\to Y$ extending $\bar u$. Set $p:=\alpha|_F$ and $q:=\hat u$.
 \qeds
 
 \section{Compactness of planar CAT[0] spaces}
@@ -649,35 +645,33 @@ $\mathcal{K}_\ell$ is precompact in the Gromov--Hausdorff topology.
 Further $\area K$ denotes the two-dimensional Hausdorff measure of a metric space $K$. 
 
 \parit{Proof.}
-Let $K$ be a metric space with isometry class in $\mathcal {K}_\ell$.
+Let $K$ be a metric space with metric $d$ and isometry class in $\mathcal {K}_\ell$.
 By Reshetnyak's theorem there is a short map from a convex plane figure $F$ with perimeter at most $\ell$ onto $K$.
-In particular, $\area K \le \area F 
-\le \ell^2$.
+In particular, $\area K \le \area F \le \tfrac{\ell^2}{4\pi}$.
 
 Fix $\eps>0$. 
 Set $m=\lceil 10\cdot\tfrac\ell\eps\rceil$.
-Choose $m$ points $y_1,\dots,y_m$ on $\partial D$
-which divide $\partial D$ into arcs of equal length.
+Choose $m$ points $y_1,\dots,y_m$ on $\partial K$
+which divide $\partial K$ into arcs of equal length.
 
 Consider the maximal set of points $\{x_1,\dots,x_n\}$ such that $d(x_i,x_j)>\eps$ and $d(x_i,y_j)>\eps$.
 
 Note that the set $\{x_1,\dots,x_n,y_1,\dots,y_m\}$
-forms an $\eps$-net in $(\DD,d)$.
+forms an $\eps$-net in $(K,d)$.
 
 Further note that the balls $B_i=B_{\eps/2}(x_i)$
 do not overlap.
 By comparison,
 \[\area B_i\ge \tfrac{\pi\cdot\eps^2}{4}.\]
 
-It follows that $n\le 2\cdot\left(\tfrac\ell\eps\right)^2$.
-That is, there is a function $N(\eps)$,
-which returns a positive integer for any $\eps>0$
-such that for any 
-$(\DD,d)$ contains an $\eps$-net
+It follows that $n\le \tfrac{1}{\pi^2}\cdot\left(\tfrac\ell\eps\right)^2$.
+That is, there is a integer valued function $N(\eps)$,
+such that for  
+$(K,d)$ contains an $\eps$-net
 with at most $N(\eps)$ points.
 
 In other words, $\mathcal{K}_\ell$ is uniformly totally bounded.
-Any class of metrics with such property is precompact in Gromov--Hausdorff topology; 
+Any class of metrics with this property is precompact in Gromov--Hausdorff topology; 
 see for example \cite[7.4.15]{BBI}.
 \qeds
 
@@ -712,11 +706,11 @@ we get that any saddle map has no bubbles.
 
 
 \begin{thm}{Proposition}\label{prop:memisaddle}
-Let $W$ be a $\CAT[0]$ space then any continuous metric minimizing map $s\:\DD\to W$ is saddle.
+Let $W$ be a $\CAT[0]$ space. Then any continuous metric minimizing map $s\:\DD\to W$ is saddle.
 \end{thm}
 
 \parit{Proof.}
-Assume contrary, let $K$ be a closed convex set in $W$
+Assume the contrary, let $K$ be a closed convex set in $W$
 and $\Omega$ be a violating component of the complement $\DD\backslash s^{-1}(K)$. 
 Redefine $s$ for each $x\in\Omega$ by moving 
 $s(x)$ to its closest point projection on $K$.
@@ -737,9 +731,9 @@ Assume $s\:\DD\to W$ is a saddle map.
 Then $\|\DD\|_s$ is $\CAT[0]$.
 \end{thm}
 
-The statement above is a slight generalization of theorem proved by Shefel in \cite{shefel-2D};
-originally it was proved if the ambient space is the plane and we need it for a disc retract.
-The proof below roughly the same as the original.
+The statement above is a slight generalization of a theorem proved by Shefel in \cite{shefel-2D};
+originally it was proved if the ambient space is the plane and we need it for disc retracts.
+The proof below is roughly the same as the original.
 However, Shefel's proof was written very tight
 and we have decided to provide all details.
 
@@ -764,12 +758,11 @@ Let $W$ be a $\CAT[0]$  disc retract. If $K\subset W$ is a closed convex subset 
 point in $W\backslash K$, then there is a (possibly degenerated) geodesic $\sigma\in\Geod(W)$ which separates $p$ and $K$;
 that is, $K$ and $p$ lie in the different connected components of $W\backslash \sigma$.
 
-Moreover one can assume that $\sigma$ lies in the given countable dense subset $\mathcal{G}$
+Moreover one can assume that $\sigma$ lies in a given countable dense subset $\mathcal{G}$
 of $\Geod(W)$.
 \end{thm}
 
-This lemma analogous to the following statement in the plane geometry: \emph{any closed convex set in the plane is an intersection of open half planes}.
-A Euclidean proof admits a straightforward generalization to the $\CAT[0]$ disc retracts.
+This lemma is analogous to the following statement in plane geometry: \emph{any closed convex set in the plane is an intersection of open half planes}.
 
 \begin{wrapfigure}{r}{34 mm}
 \begin{lpic}[t(-5 mm),b(-0 mm),r(0 mm),l(0 mm)]{pics/K-p(1)}
@@ -798,7 +791,7 @@ This point forms a degenerate geodesic from $\Geod W$.
 If $\sigma$ is not degenerate then any geodesic from $\mathcal{G}$ which is sufficiently close $\sigma$ also separates $K$ from $p$.
 In the degenerate case all the, 
 the point $m$ separates $K$ from $p$ 
-and the same holds for any geodesic from $\Geod(W)$ sufficiently close to $m$ which goes from one of connected component of $W\backslash\{m\}$ to an other one.
+and the same holds for any geodesic from $\Geod(W)$ sufficiently close to $m$ which goes from one of connected component of $W\backslash\{m\}$ to another.
 The latter  set is open in $\Geod(W)$.
 Hence the result follows.
 \qeds
@@ -868,32 +861,32 @@ $F\:\Conv(\Delta)\to \Conv(\Delta')$ between convex hulls which induces an isome
 
 \parit{Proof.}
 There are obvious cases, namely if $\Delta'$ is either embedded or contained in a single geodesic. 
-For the general case we observe that if we cut $\Delta$ into two triangles $\Delta^\pm$ by a geodesic which joins a vertex to its opposite side, and if 
+For the general case, we observe that if we cut $\Delta$ into two triangles $\Delta^\pm$ by a geodesic which joins a vertex to its opposite side, and  
 the claim is true for both triangles $\Delta^+$ and $\Delta^-$, then it is also true for $\Delta$. Now let us assume that $\Delta'$ is neither embedded nor contained
-in a single geodesic. Then there is a vertex of $\Delta'$ such that the two adjacent sides have a closed nontrivial interval in common. Choose a point $p$ in the interior
+in a single geodesic. Then there is a vertex of $\Delta'$ such that the two adjacent sides have a maximal closed nontrivial interval in common. Choose a point $p$ in the interior
 of a side of $\Delta$ which maps to an endpoint of this interval. Cut $\Delta$ into two triangles $\Delta^\pm$ by joining $p$ to its opposite vertex.
 We obtain natural maps $f^\pm:\Delta^\pm\to\Delta'$ where one of them say $f^+$ is degenerated, in the sense that its image is contained in a side of $\Delta'$, and $f^-$ has 
 a nondegenerated vertex, in the sense that the image of adjacent sides only intersect in the image of the vertex. Repeating this modification at most twice,
-reduces the general case to the above obvious ones.
+reduces the general case to the  obvious ones above.
 \qeds
 
 \begin{thm}{Lemma}\label{lem:puzzle-compact}
 Let $W$ be a $\CAT[0]$ disc retract 
-and $N$ is a positive integer. 
+and $N$ a positive integer. 
 Consider the class of metric spaces $\mathcal{S}_N$ 
 which are homeomorphic to a disc retract
-and can be covered by at most $N$ isometric copies of closed convex subsets of $W$.
+and can be covered isometrically by at most $N$ closed convex subsets of $W$.
 Then $\mathcal{S}_N$ is compact in Gromov--Hausdorff topology.
 \end{thm}
 
 \parit{Proof.}
 $\mathcal{S}_N$ is precompact by \cite[7.4.15]{BBI}. So let $Z$ be a limit space. Clearly, $Z$
-is covered by at most $N$ convex subsets of 
+is covered by at most $N$ closed convex subsets of 
 $W$ and by Lemma \ref{lem:closed} it is homeomorphic to a disc retract.
 \qeds
 
 \begin{thm}{Lemma}\label{lem:proj-continuous}
-Let $X$ be a metric space and $u\:\DD\to X$ a continuous map. Denote by $\pi\:\DD\to \|\DD\|_u$ the natrual projection and
+Let $X$ be a metric space and $u\:\DD\to X$ a continuous map. Denote by $\pi\:\DD\to \|\DD\|_u$ the natural projection and
 by $\bar u\:\|\DD\|_u\to X$ the induced map. Assume that $\DD$ has a decomposition $\DD=\bigcup_{n=1}^N C_n$ into a finite 
 number of sets such that $\bar u$ embeds each $\pi(C_n)$ isometrically as a closed subset into $X$. Then $\pi$
 is continuous.
@@ -908,10 +901,10 @@ Since $\bar u$ restricts to an isometry on $\pi(C_n)$, the claim follows.
 \parit{Proof of Shefel's theorem \ref{thm:shefel-2D}.}
 Fix a fine triangulation $\tau$ of $\DD$.
 Map the vertices of $\tau$ by $s$,
-and extend it to the 1-skeleton by mapping edges with constant speed to 
+and extend to the 1-skeleton by mapping edges with constant speed to 
 corresponding geodesics. Then use Lemma \ref{lem:isomtri} to extend the map to the whole disc.
 
-The obtained map $u\:\DD\to W$ can be made arbitrary close to $s$ assuming that the triangulation is fine.
+The obtained map $u\:\DD\to W$ can be made arbitrary close to $s$ by choosing the triangulation fine enough.
 Say given $\eps>0$ we can assume that 
 \[|s(x)-u(x)|_X<\eps\eqlbl{eq:|s-u|<e}\]
 for any $x\in\DD$.
@@ -950,17 +943,17 @@ Denote by $w_\eps\:Q_\eps\to W$ the limit of the short maps $\bar u_n$.
 \end{thm}
 
 \parit{Proof.}
-Assume that $w_\eps$ is not saddle. Then there is a geodesic $\gamma\in\Geod(W)$ such that $\DD-w_\eps^{-1}(\gamma)$
+Assume that $w_\eps$ is not saddle. Then there is a closed convex subset $K\subset W$ such that $\DD-w_\eps^{-1}(K)$
 has a component $U$ which is disjoint from $\partial \DD$. Choose a point $p$ in $U$. By Lemma \ref{lem:sepbygeo}, there is  
-a geodesic $\gamma'\in\Geod(W)$ which separates $w_\eps(p)$ and $\gamma$.
+a geodesic $\gamma\in\Geod(W)$ which separates $w_\eps(p)$ and $K$.
 Then there exists a disc $D$ in $U$ such that
-$w_\eps(\partial D)$ and $w_\eps(p)$ lie in different components of $W-\gamma'$. Choose $\delta>0$ 
-such that the distance from $\gamma'$ of $w_\eps(\partial D)$ and $w_\eps(p)$ is larger than $\delta$.
-Then there is a natural number $M$ such that the distance from $\gamma'$ of $\bar u_n(\partial D_n)$ and $\bar u_n(p_n)$ is larger than $\frac{\delta}{2}$
+$w_\eps(\partial D)$ and $w_\eps(p)$ lie in different components of $W-\gamma$. Choose $\delta>0$ 
+such that the distance from $\gamma$ of $w_\eps(\partial D)$ and $w_\eps(p)$ is larger than $\delta$.
+Then there is a natural number $M$ such that the distance from $\gamma$ of $\bar u_n(\partial D_n)$ and $\bar u_n(p_n)$ is larger than $\frac{\delta}{2}$
 where $D_n$ and $p_n$ are lifts of $D$ respectively $p$.
-By density of $\mathcal{G}$, there is a geodesic $\gamma_k\in \mathcal{G}$ with $k>M$ which has distance less than $\frac{\delta}{2}$ from $\gamma'$. 
-Hence $\bar u_k^{-1}(\gamma')$ separates $p_k$ from the boundary. By Lemma \ref{lem:proj-continuous}, the projection $\pi_k\:\DD\to \|\DD\|_{u_k}$ is continuous
-and therefore $u_k^{-1}(\gamma')$ separates some lift $\hat p_k$ of $p_k$ from the boundary.
+By density of $\mathcal{G}$, there is a geodesic $\gamma_k\in \mathcal{G}$ with $k>M$ which has distance less than $\frac{\delta}{2}$ from $\gamma$. 
+Hence $\bar u_k^{-1}(\gamma_k)$ separates $p_k$ from the boundary. By Lemma \ref{lem:proj-continuous}, the projection $\pi_k\:\DD\to \|\DD\|_{u_k}$ is continuous
+and therefore $u_k^{-1}(\gamma_k)$ separates some lift $\hat p_k$ of $p_k$ from the boundary.
 This is a contradiction because, by construction, $\gamma_k$ cannot cut a hat from $u_k$.
 \qeds
 
@@ -972,13 +965,13 @@ The space $Q_\eps$ is $\CAT[0]$.
 It is enough to show that any point in the interior of $Q_\eps$ has a $\CAT[0]$ neighborhood.
 We first show that the total angle around any such point, say $z\in Q_\eps$ is at least $2\cdot\pi$.
 Since the decompositions of $\|\DD\|_{u_n}$ into convex subset of $W$ are nested for varying $n$, they
-induce such unique such limit decomposition of $Q_\eps$. Moreover, $w_\eps$ restricts to an isometry on each 
+induce a unique such limit decomposition of $Q_\eps$. Moreover, $w_\eps$ restricts to an isometry on each 
 of the convex sets occuring in this decomposition. Therefore, $w_\eps$ is a local radial isometry.
 If the total angle at $z$ is too small, then $w_\eps(z)\notin\Conv [w_\eps (\partial\Omega)]$
 for a small neighborhood $\Omega\ni w$ in $Q_\eps$. By Lemma \ref{lem:sepbygeo} we could cut a hat from $w_\eps$
-contradicting that $w_\eps$ is saddle.
-To conclude that $z$ has a $\CAT[0]$ neighborhood, we first cut a small ball around $z$ into to halves using a geodesic through $z$.
-Next observe that for a small enough radius we can cut each of this halves into sectors which are contained in a single convex set
+in contradiction to $w_\eps$ beeing saddle.
+To obtain a $\CAT[0]$ neighborhood of $z$, we first cut a small ball around $z$ into to halves using a geodesic through $z$.
+Next observe that for a small enough radius we can cut both of this halves into sectors each of which is contained in a single convex set
 from our decomposition. The claim follows from Reshetnyak's gluing theorem.
 \qeds
 
@@ -1006,20 +999,8 @@ Then each metric component of $\|\DD\|_s$ is a $\CAT[0]$ space.
 \end{thm}
 
 \parit{Proof of Main theorem.}
-First let us show that each metric component of $\|\DD\|_s$ is geodesic.
-
-Indeed, given two points $p$ and $q$ in $|\DD|_s$ 
-choose a sequence of constant-speed paths $\gamma_n$ from $p$ to $q$
-such that 
-\[\length\gamma_n\to \|p-q\|_s\]
-as $n\to\infty$.
-
-Note that $\gamma_n$ are Lipschitz maps in $|\DD|_s$.
-Since $|\DD|_s$ is compact, we can pass to a partial limit $\gamma$ of $\gamma_n$.
-Clearly \[\length\gamma= \|p-q\|_s;\]
-that is $\gamma$ forms a geodesic in $\|\DD\|_s$
-
-We can also assume that $\|\DD\|_s$ is a metric space. Otherwise we treat each metric component 
+From Corollary \ref{cor:geospace} we know that each metric component of $\|\DD\|_s$ is a complete geodesic space.
+We can assume that $\|\DD\|_s$ is a metric space. Otherwise we treat each metric component 
 individually.
 In addition, it is sufficient to consider
 the case that $\partial \|\DD\|_s$ is formed by a rectifiable simple closed curve.
@@ -1053,7 +1034,7 @@ such that its subsequence of points in $\partial \|\DD\|_s$ is
  also dense in $\partial \|\DD\|_s$.
 
 Set $F_n=\{x_1,\dots,x_n\}$.
-Denote by $p_n\:F_n\to W$ a map satisfying the conditions in the Key Lemma~\ref{lem:key}.
+Denote by $p_n\:F_n\to W$ a short map provided by the Key Lemma~\ref{lem:key}.
 
 Using a diagonal argument we can extract a short map \[p:\mathcal{F}\to W.\]
 
@@ -1062,18 +1043,18 @@ the map $p$ can be extended to the whole space $\|\DD\|_s$
 as a short map.
 The obtained map will still be denoted as $p$.
 
-Pass to an ultralimit $\mathfrak{q}$ of the maps $q_n$ provided by the Key Lemma~\ref{lem:key}. The target of $\mathfrak{q}$ is an ultrapower  $\mathfrak{Y}$ of $Y$,
+Pass to an ultralimit $\mathfrak{q}$ of the short maps $q_n$ provided by the Key Lemma~\ref{lem:key}. The target of $\mathfrak{q}$ is an ultrapower  $\mathfrak{Y}$ of $Y$,
 which is a $\CAT[0]$ space containing $Y$ as a convex subspace.
 The closest point projection of $\mathfrak{q}$ to $Y$ will be denoted by $q$.
 By construction, $q$ is short.
 
 
-Summarizing, the space $W$ is $\CAT[0]$ disc retract and
+Summarizing, the space $W$ is a $\CAT[0]$ disc retract and
  there are two short maps 
 $\|\DD\|_s\xrightarrow{p} W \xrightarrow{q} Y$
 such that 
-\[q\circ p|_{\partial\DD}=s|_{\partial\DD}.\] 
-Since $s$ is metric minimizing, both maps $p$ and $q$ are length preserving and metric minimizing.
+\[q\circ p|_{\partial|\DD|_s}=\bar s|_{\partial|\DD|_s}.\] 
+Since $\bar s$ is metric minimizing (Proposition \ref{prop:memicrit}), both maps $p$ and $q$ are length preserving and metric minimizing.
 
 It remains to apply Shefel's theorem \ref{thm:shefel-2D}.
 
@@ -1667,34 +1648,7 @@ On the other hand the space $\|\DD\|_s$ might not even be separable,
 say if $s$ is given as a cone over a Koch snowflake then 
 $|\DD|_s$ is homeomorphic to the disc while $\|\DD\|_s$ is homeomorphic to an uncountable set of segments glued at one end.
 
-The separablity condition in the Main Theorem \ref{thm:main}
-might not be necesary.
-While we tried to remove it, we found the following statement 
-which we want to share.
 
-\begin{thm}{Proposition}
-Let $Y\in\CAT[0]$ 
-and 
-$f\:\DD\to Y$ be a continuous metric minimizing disc.
-Then $\|\DD\|_f$ is a complete metric space.
-\end{thm}
-
-\parit{Proof.}
-Denote by $Z$ the completion of $\|\DD\|_f$.
-
-By Proposition \ref{prop:|D|},
-the space $|\DD|_f$ is compact.
-Therefore the tautological map $\iota\:\|\DD\|_f\to |\DD|_f$ 
-extends to a continuous map $\bar \iota\:W\to |\DD|_f$.
-
-If $\|\DD\|_f$ is a proper subset of $Z$ 
-then $\bar \iota$ is not injective.
-
-In this case there is a rectifiable path $\gamma\:[0,1]\to Z$,
-such that $\gamma(t)\in\|\DD\|_f$ for all $t<1$ and $\gamma(1)\notin \|\DD\|_f$.
-Note that the path $\bar f\circ \gamma$ is also rectifiable and in particular continuous, so it can be lifted to $\|\DD\|_f$.
-That is, $\gamma(1)\in \|\DD\|_f$, a contradiction.
-\qeds
 
 \parbf{Smooth metric minimizing surfaces.}
 At the moment we do not see any way to show that a given surface is metric minimizing except by constructing an appropriate energy for which it is energy minimizing, as we did in Section~\ref{sec:smooth}.
