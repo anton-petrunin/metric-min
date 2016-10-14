@@ -179,11 +179,13 @@ where the length is computed with respect to $|{*}-{*}|_f$.
 The metric spaces defined by the pseudometrics $|{*}-{*}|_f$ 
 and $\|{*}-{*}\|_f$ on $X$ will be denoted as $|X|_f$ and $\|X\|_f$ correspondingly.
 
-The map $f$ factors as $f=\bar f\circ \pi_f$ with $\pi_f\:X\to|X|_f$ and $\bar f\:|X|_f\to Y$.
+\medskip
 
+The map $f$ factors as $f=\bar f\circ \pi_f$ with $\pi_f\:X\to|X|_f$ and $\bar f\:|X|_f\to Y$.
+For a point $x\in X$ we denote by $[x]_f:=\pi_f^{-1}(\pi_f(x))$ the fiber of $\pi_f$ through $x$.
 
 \begin{thm}{Lemma}\label{lem:picont}
-Let $X$ be a length space, $Y$ a metric spaces and $f\:X\to Y$ a continuous map. Then the following holds true.
+Let $X$ be a length space, $Y$ a metric space and $f\:X\to Y$ a continuous map. Then the following holds true.
 \begin{itemize}
  \item $\pi_f\:X\to|X|_f$ is continuous.
  \item For points $x,y\in X$ with $|x-y|_f<\infty$ holds
@@ -207,14 +209,14 @@ $\diam f(C)<r$. It remains to join $\hat x$ and $\hat y$ by a path in $C$.
 \qeds
 
 \begin{thm}{Corollary}\label{cor:geospace}
-Let $X$ be a compact geodesic space, $Y$ a metric spaces and $f\:X\to Y$ a continuous map. Then $\|X\|_f$ is a geodesic space.
+Let $X$ be a compact geodesic space, $Y$ a metric space and $f\:X\to Y$ a continuous map. Then each metric component of $\|X\|_f$ is a complete geodesic space.
 \end{thm}
 \parit{Proof.}
 From Lemma \ref{lem:picont} we know that $\pi_f$ is continuous and therefore $|X|_f$ is compact.
 \qeds
 
 \begin{thm}{Lifting Lemma}\label{lem:lift}
-Let $X$ be a compact geodesic space, $Y$ a metric spaces and $f\:X\to Y$ a continuous map. Let $c\:[0,1]\to|X|_f$ be a rectifiable
+Let $X$ be a compact geodesic space, $Y$ a metric space and $f\:X\to Y$ a continuous map. Let $c\:[0,1]\to|X|_f$ be a rectifiable
 path joining points $p$ and $q$ in $|X|_f$. Suppose that $\hat p$ and $\hat q$ are lifts of the points $p$ an $q$ to $X$.
 Then for every $\epsilon>0$ there exists a piecewise geodesic path $\hat c\:[0,1]\to X$ joining $\hat p$ to $\hat q$ such that 
 \[|\pi_f\circ\hat c(t)-c(t)|_f<\epsilon\ \text{ for all }t\in[0,1].\]
@@ -229,67 +231,74 @@ Then for every $\epsilon>0$ there exists a piecewise geodesic path $\hat c\:[0,1
 \qeds
 
 \begin{thm}{Corollary}\label{cor:connecedpreimage}
-Let $X$ be a compact geodesic space, $Y$ a metric spaces and $f\:X\to Y$ a continuous map. Then
-the inverse image of an open connected subset $C$ of $|X|_f$ under $\pi_f$ is pathconnected in $X$.
+Let $X$ be a compact geodesic space, $Y$ a metric space and $f\:X\to Y$ a continuous map. Then
+the inverse image under $\pi_f$ of an open connected subset $C$ of $|X|_f$  is pathconnected in $X$.
 \end{thm}
 \parit{Proof.}
 Let $C$ be an open connected subset of $|X|_f$. By Lemma \ref{lem:picont}, $|X|_f$ is locally pathconnected and therefore
 $C$ is pathconnected. Hence the claim follows from the Lifting Lemma \ref{lem:lift}.
 \qeds
 
-\begin{thm}{Lifting Lemma}\label{lem:lift}
-Let $X$ be a compact geodesic space, $Y$ a metric spaces and $f\:X\to Y$ a continuous map. Let $c\:[0,1]\to|X|_f$ be a rectifiable
-path joining points $p$ and $q$ in $|X|_f$. Suppose that $\hat p$ and $\hat q$ are lifts of the points $p$ an $q$ to $X$.
-Then for every $\epsilon>0$ there exists a piecewise geodesic path $\hat c\:[0,1]\to X$ joining $\hat p$ to $\hat q$ such that 
-\[|\pi_f\circ\hat c(t)-c(t)|_f<\epsilon\ \text{ for all }t\in[0,1].\]
+\begin{thm}{Corollary}\label{cor:fiberconnected}
+Let $X$ be a compact geodesic space, $Y$ a metric space and $f\:X\to Y$ a continuous map. Then
+for every point $y\in Y$ the fiber $\pi_f^{-1}(y)$ is connected.
 \end{thm}
 \parit{Proof.}
- Since $\|X\|_f$ is a geodesic space by Corollary \ref{cor:geospace} it is enough to consider the case where $c$ is a geodesic.
- Given $\epsilon>0$ denote $U_\epsilon$ the open $\epsilon$-neighborhood of $c([0,1])$ and choose times $0=t_0<t_1<\ldots<t_k=1$ 
- such that $|c(t_i)-c(t_{i+1})|_f<\frac{\epsilon}{2}$. Choose arbitrary lifts $\hat c(t_i)$ of the points
- $c(t_i)$ for $i\in\{1,\ldots,k-1\}$. By Lemma \ref{lem:picont}, we find open connected sets $C_i\subset X$ containing $\hat c(t_i)$ and $\hat c(t_{i+1})$ with
- $\diam f(C_i)<\epsilon$. In particular $\pi_f(C_i)\subset U_\epsilon$. To finish the proof we join $\hat c(t_i)$ and $\hat c(t_{i+1})$ by piecewise geodesics
- in $C_i$.
+Let $p$ be a point in $\pi_f^{-1}(y)$ and denote its connected component by $C_p$. If the fiber is not connected, then there is an
+open neighbourhood $\tilde U$ of $C_p$ disjoint from all other components. Since the fiber is closed we get that $\pi_f^{-1}(y)-C_p$
+is closed as well. Hence there exist open neighborhoods $U$ and $V$ of $C_p$ and $\pi_f^{-1}(y)-C_p$ respectively with $U\cap V=\emptyset$.
+Now pick a point $q$ in  $\pi_f^{-1}(y)-C_p$. Since  $X$ is a geodesic space, it follows from Lemma \ref{lem:picont} that we can find a sequence
+of paths $\gamma_k\:[0,1]\to X$ connecting $p$ and $q$ and with $\diam f\circ\gamma_k([0,1])<\frac{1}{k}$. For every $k\in\mathcal{N}$ we choose a point 
+$z_k\in f\circ\gamma_k([0,1])$ disjoint from $U\cup V$. Since $X$ is compact, the sequence $(z_k)$ subconverges to a point in $\pi_f^{-1}(y)$. Contradiction.
 \qeds
 
-\parbf{Remarks.}
-\begin{itemize}
-\item If $f$ is injective and the image $f(X)$ is compact, then 
-the space $\|X\|_f$ is isometric to the image $f(X)$ in $Y$ equipped with induced intrinsic metric. 
-\item Both pseudometrics $|{*}-{*}|_f$ and  $\|{*}-{*}\|_f$
-define the same equivalence classes on $X$;
-that is,
-\[|x-y|_f=0\quad\iff\quad\|x-y\|_f=0.\]
-The equivalence class of $x\in X$ will be denoted as $[x]_f$; 
-it can be regarded as a point in  $|X|_f$ and in $\|X\|_f$.
-\item  More precisely, $\bar f$ preserves the lengths of all curves $\pi_f(\gamma)$ with $\gamma$ a curve in $X$, see the following lemma.
-\end{itemize}
+\begin{thm}{Lemma}\label{lem:idem}
+Let $X$ be a compact geodesic space, $Y$ a metric spaces and $f\:X\to Y$ a continuous map. Then for any map $s\:|X|_f\to Y$ holds
+\[|X|_{s\circ\pi_f}\cong||X|_{f}|_s.\]
+In particular $|X|_{f}\cong||X|_{f}|_{\bar f}$.
+\end{thm}
+\parit{Proof.}
+ Since $\pi_f$ is continuous, by Lemma \ref{lem:picont}, we see $|\pi_f(x)-\pi_f(y)|_s=0$ if $|x-y|_{s\circ\pi_f}=0$. Moreover,
+ $\pi_f$ induces a surjective short map $\alpha\:|X|_{s\circ\pi_f}\to||X|_{f}|_s$. From Corollary \ref{cor:connecedpreimage} it follows that
+ $\alpha$ is an isometry.
+\qeds
 
 
+If $f\:X\to Y$ is a continuous map between metric spaces $X$ and $Y$, then there is another pseudometric on $X$ induced by $f$. Namely set 
+\[d_f(x,y):=\inf\{\length_Y(f\circ\gamma)|\ \gamma \text{ a path in } X\text{ connecting }x\text{ and }y\}.\]
+Denote $Z_f:=X/\sim$ the quotient metric space. In the following we describe the relation between $d_f$ and $\|*-*\|_f$.
 
 \begin{thm}{Lemma}\label{lem:intrinsicmetric}
-Let $X$ and $Y$ be metric spaces and let $f\:X\to Y$ be a continuous map. Then for any curve $\gamma$ in $X$ holds $f\circ\gamma$
-is rectifiable iff $\pi_f\circ\gamma$ is rectifiable; and in this case $\length_Y(f\circ\gamma)=\length_{\|X\|_f}(\pi_f(\gamma))$.
+Let $X$ and $Y$ be metric spaces, $f\:X\to Y$ a continuous map and $\gamma$ a curve in $X$. Then $f\circ\gamma$
+is rectifiable iff $\pi_f\circ\gamma$ is rectifiable; and in this case $\length_Y(f\circ\gamma)=\length_{|X|_f}(\pi_f(\gamma))$.
+In particular, $\bar f$ preserves the lengths of all rectifiable curves $\pi_f(\gamma)$ with $\gamma$ a curve in $X$.
 \end{thm}
 \parit{Proof.}
 Let $\gamma\:[a,b]\to X$ be a continuous curve.
-Since $\bar f\:|X|_f\to Y$ is short, we have $\length_Y(f\circ \gamma)\leq\length_{\|X\|_f}(\pi_f(\gamma))$. On the other hand,
+Since $\bar f\:|X|_f\to Y$ is short, we have $\length_Y(f\circ \gamma)\leq\length_{|X|_f}(\pi_f(\gamma))$. On the other hand,
 if $\length_Y(f\circ \gamma)$ is finite, then for every finite partition ${a=t_0<t_1<\ldots t_k=b}$ of $[a,b]$ we have
 \[\length_Y(f\circ \gamma)=\sum_{i=0}^{k-1}\length_Y(f\circ \gamma|_{[t_i,t_{i+1}]})\geq\sum_{i=0}^{k-1}|\gamma(t_i)-\gamma(t_{i+1})|_f.\]
-Hence $\length_Y(f\circ \gamma)\geq\length_{\|X\|_f}(\pi_f(\gamma))$.
+Hence $\length_Y(f\circ \gamma)\geq\length_{|X|_f}(\pi_f(\gamma))$.
 \qeds
 
-
+\begin{thm}{Corollary}\label{cor:reltolengthmetric}
+Let $X$ be a compact geodesic space, $Y$ a metric space and $f\:X\to Y$ a continuous map. Then there is a surjective length preserving map
+$\alpha\:Z_f\to\|X\|_f$ induced by the quotient maps. If $f$ is injective, then $\alpha$ is an isometry and both spaces are isometric to
+to the image $f(X)$ in $Y$ equipped with induced intrinsic metric.
+\end{thm}
+\parit{Proof.}
+The claim follows directly from Lemma \ref{lem:intrinsicmetric}.
+\qeds
 
 Given two maps $f,h\:X\to Y$ we will write $f\succcurlyeq h$ if 
 \[\|x-y\|_f\ge \|x-y\|_h\]
 for any pair of points $x,y\in X$.
 We will write $f\succ h$ 
-if in addition the inequality is strict for at least one pair of points then.
+if in addition the inequality is strict for at least one pair of points.
 
 
 
-\parbf{Metric minimizing map.}
+\parbf{Metric minimizing maps.}
 Let $X$ and $Y$ be metric spaces and $A\subset X$ be a closed subset.
 
 The map $f\:X\to Y$ is called \emph{metric minimizing relative to $A$}
