@@ -1,70 +1,55 @@
-\documentclass[a4paper,10pt]{amsart}
+\documentclass{article}
 \usepackage{metric-min}
-\usepackage{showkeys}
+%\usepackage{showkeys}
 
 \begin{document}
 \title{Metric minimzing surfaces revisited}
 \author{Anton Petrunin}
-\address{A. Petrunin\newline\vskip-4mm
-Math. Dept. PSU,
-University Park, PA 16802,
-USA}
-\email{petrunin@math.psu.edu}
+%\address{A. Petrunin\newline\vskip-4mm Math. Dept. PSU,University Park, PA 16802,USA}
+%\email{petrunin@math.psu.edu}
 \author{Stephan Stadler}
-\address{S. Stadler\newline\vskip-4mm
-Math. Inst.,
-Universit\"at M\"unchen, Theresienstr. 39, D-80333 M\"unchen, Germany}
-\email{stadler@math.lmu.de}
+%\address{S. Stadler\newline\vskip-4mm Math. Inst.,Universit\"at M\"unchen, Theresienstr. 39, D-80333 M\"unchen, Germany}\email{stadler@math.lmu.de}
 %\thanks{A.~Petrunin was partially supported by NSF grant DMS 1309340.}
 
 
 \date{}
 
+\maketitle
+
 \begin{abstract}
 A surface which does not admit a length nonincreasing deformation is called \emph{metric minimizing}.
-We show that metric minimizing surfaces in $\CAT[0]$ spaces are $\CAT[0]$ with respect to their intrinsic metric.
+We show that reasonable metric minimizing surfaces in $\CAT[0]$ spaces are $\CAT[0]$ with respect to their intrinsic metric.
 As an application we obtain structural results about energy and area minimizing surfaces including
-strengthenings of known regularity results. 
+strengthening of known regularity results. 
 
 \end{abstract}
-\maketitle
 
 \section{Introduction}
 
+Let $X$ be a metric space, $\DD$ is a unit disc and $s\:\DD\to X$ is an embedding map.
+The image $s(\DD)\subset X$ with induced intrinsic metric will be denoted as $\|D\|_s$.%
+\footnote{This definition will be made more precise and more general in the next section.}
 
-\subsection{Motivation and results}
-Beginning in the late 40s, Alexandrov and his school developed a theory of surfaces of bounded curvature, thereby 
-generalizing Riemannian geometry of surfaces to a nonsmooth setting. Emphasizing the intrinsic viewpoint, they succeeded
-in proving strong structural results about such surfaces, which makes their theory a powerful tool in studying objects with an
-associated surface of bounded curvature. To give an example of such a situation, let us consider a smooth surface $\Sigma$ immersed 
-in $\mathbb{R}^n$.  
-If the principal curvatures at a point $p$ of $\Sigma$ with respect to a certain normal direction have the same sign, then
-a pointed neighbourhood of $p$ is contained in an open halfspace. For smooth harmonic surfaces, such behaviour is excluded
-by the maximum principle and therefore, any smooth immersed harmonic surface in $\mathbb{R}^n$ is nonpositively curved.   
-In particular, we can associate to such a harmonic map a Riemannian surface of nonpositive curvature. 
-This has strong analytical and topological consequences since the intrinsic metric is subject to Bishop-Gromov, Gau\ss-Bonnet, etc. 
-Unfortunately, the above argument breaks down if either the surface is not immersed or else it is not regular enough.
-But as it turns out, both conditions are irrelevant in order for the intrinsic metric to be nonpositively curved in the sense of Alexandrov.
-
-The aim of this paper is to prove an analogous global structural result about the intrinsic metric of a much more general class of surfaces.
-We will study "metric minimizing" surfaces in general $\CAT[0]$ spaces\footnote{A general $\CAT[0]$ space is not necessarily locally compact.}. 
-Their defining property is that any other parametrized surface with
-equal boundary increases the intrinsic distance for at least two points of the domain. Examples of metric minimizing surfaces include
+The map $s\:\DD\to X$ is called \emph{metric minimizing} if for any other $s'\:\DD\to X$ which coincides with $s$ on the boundary $\partial \DD$, 
+the intrinsic distance increase for at least two points of the domain. 
+Examples of metric minimizing surfaces include
 ruled surfaces, energy minimizing and area minimizing surfaces. 
 
-
- For the intrinsic structure of metric minimizing surfaces 
-we obtain global geometric and topological information. A special case of our main theorem, Corollary \ref{cor:main} reads:
+%??? \|\DD\|_s is not difined yet???
 
 \begin{thm}{Theorem}\label{thm:mainintro}
 Let $X$ be a $\CAT[0]$ space 
 and $s\:\DD\to X$ be a continuous metric minimizing map relative to the boundary $\partial\DD$ such that $s|_{\partial\DD}$ is rectifiable
 and embedded.
-Suppose that the intrinsic metric space $\|\DD\|_s$  is separable. Then $\|\DD\|_s$ is a $\CAT[0]$ space homeomorphic to a disc.
+Suppose that the intrinsic metric space $\|\DD\|_s$  is separable. 
+$\|\DD\|_s$ is a $\CAT[0]$ space homeomorphic to a disc.
 \end{thm}
 
-This is a substantial extension of the results in \cite{petrunin-metric-min}; and also fills in a gap in the proof. 
-It also generalizes Alexandrov's theorem on ruled surfaces \cite{A}.
+The theorem generalizes Alexandrov's theorem on ruled surfaces \cite{A};
+it is also closely related to the resuls of Shefel in \cite{shefel-2D} and \cite{shefel-3D}.
+A weaker vesion of the above theorem was proved by the first author in \cite{petrunin-metric-min};
+this proof also contained a gap which we fill in this paper. 
+
 Another source for applications comes from the following result (see Theorem \ref{thm:harmonic}).
 
 \begin{thm}{Theorem}\label{thm:harmonicintro}
@@ -74,13 +59,14 @@ Then $u$ is continuous and metric minimizing relative $\partial\DD$.
 \end{thm}
 
 A combination of Theorem \ref{thm:mainintro} and Theorem \ref{thm:harmonicintro} generalizes, within the $\CAT[0]$-setting,
-a recent result by Lytchak and Wenger from area minimizers to energy minimizers???
+a recent result by Lytchak and Wenger from area minimizers to energy minimizers.%???ref???
 
 
 Note that the separability assumption in Theorem \ref{thm:mainintro} is a priori not even enough to ensure the continuity of the natural 
 map from the disc to the induced intrinsic space. This generality is rewarded with applications to the regularity theory of harmonic maps 
-and minimal surfaces. Indeed our result combined with the smoothability of $\CAT[0]$-surfaces (i.e. Alexandrov's theory) 
-allows to reduce regularity questions to the smooth case. In particular we obtain for energy minimizing discs quick alternative proofs of Korevaar and Schoen's interior regularity
+and minimal surfaces. Indeed our result combined with the smoothability of $\CAT[0]$-surfaces %???ref???
+allows to reduce regularity questions to the smooth case. 
+In particular we obtain for energy minimizing discs alternative proofs of Korevaar and Schoen's interior regularity
 result \cite{KS} as well as Serbinowski's boundary regularity result \cite{Se} (see Theorem \ref{thm:Lipregularity}). 
 
 \begin{thm}{Theorem}\label{thm:Lipregularityintro}
@@ -93,32 +79,38 @@ $\DD$ for every $\alpha<\beta$.
 
 Actually our result is even stronger, as we obtain global intrinsic continuity (see Theorem \ref{thm:harmonic}). 
 
-Other applications of our result will be presented in \cite{LSW} and \cite{St}. 
+For other applications see \cite{LSW} and \cite{St}. 
 
-\subsection{Structure of the paper}
-In section 2 we recall some definitions from metric geometry, introduce the concept of metric minimizing map and prove some
-basic properties. In section 3 we discuss metric minimizing graphs and show that any metric minimizing graph can be extended to a short
-map defined on a $\CAT[0]$ space (Corollary \ref{cor:planar-minimizing-graph}). In section 4 we study metric minimizing discs and
+\parbf{Structure of the paper.}
+In section 2 we recall some definitions from metric geometry, introduce the concept of metric minimizing map and prove some basic properties. 
+In section 3 we discuss metric minimizing graphs and show that any metric minimizing graph can be extended to a short
+map defined on a $\CAT[0]$ space (Corollary \ref{cor:planar-minimizing-graph}). 
+In section 4 we study metric minimizing discs and
 use a theorem of Moore \cite{moore} to obtain topological information about  their 
-associated "`connecting metric space"' (Proposition \ref{prop:|D|}). This result is result is responsible for 
-the topological control in the main theorems. In section 5 we prove the key lemma (Lemma \ref{lem:key}) which implies that 
+associated ``connecting metric space'' (Proposition \ref{prop:|D|}). 
+This result is responsible for 
+the topological control in the main theorems. 
+In section 5 we prove the key lemma (Lemma \ref{lem:key}) which implies that 
 metric minimizing discs factorize through two-dimensional $\CAT[0]$-spaces. Section 6 provides a compactness result for $\CAT[0]$-surfaces
-which might be of independent interest. In section 7 we treat the two-dimensional case, i.e. metric minimizing discs
-in $\CAT[0]$-surfaces and generalize Shefel's result on saddle surfaces. In section 8 we prove our main theorem (Theorem \ref{thm:main})
-from which Corollary \ref{cor:main} directly follows. Section 9 is devoted to the existence and uniqueness of metric minimizing maps.
-Here we also introduce the notion of intrinsic continuity. In section 10 we turn to applications and prove structure and regularity results
-for harmonic discs. In section 11 we treat smooth saddle surfaces in $\mathbb{R}^3$ and show that they are locally metric minimizing.
-This is rather tricky and relies on PDE results. In the final section 12 we comment on the separability condition and on saddle 
+which might be of independent interest. 
+In section 7 we treat the two-dimensional case, i.e. metric minimizing discs
+in $\CAT[0]$-surfaces and generalize Shefel's result on saddle surfaces. 
+In section 8 we prove our main theorem (Theorem \ref{thm:main})
+from which Corollary \ref{cor:main} directly follows. 
+Section 9 is devoted to the existence and uniqueness of metric minimizing maps.
+Here we also introduce the notion of intrinsic continuity. 
+In section 10 we turn to applications and prove structure and regularity results
+for harmonic discs. 
+In section 11 we treat smooth saddle surfaces in $\mathbb{R}^3$ and show that they are locally metric minimizing.
+This is rather tricky and relies on PDE results. 
+In the final section 12 we comment on the separability condition and on saddle 
 surfaces in general.
 
-\subsection{Acknowledgement}
+\parbf{Acknowledgement.}
 We want to thank Sergei Ivanov, Carlo Sinestrari, Peter Topping and
 Burkhard Wilking for helping us with the proof of Proposition~\ref{prop:smooth}.
-The second author would like to thank Alexander Lytchak for explaining his recent work 
+We also would like to thank Alexander Lytchak for explaining his recent work 
 with Stefan Wenger and for several helpful discussions.
-\medskip
-
-
 
 \section{Definitions}\label{sec:Def}
 
@@ -141,7 +133,7 @@ Note that by our definition, the distance between points might be infinite.%
 For any pseudometric on a set 
 there is an equivalence relation ``$\sim$''
 such that $x\sim y$ if and only if $|x-y|=0$.
-The induced pseudometric $|{*}-{*}|$ on the set of equivalence classes of $\sim$ is nondegenerated.
+The pseudometric induced  on the set of equivalence classes of $\sim$ is nondegenerated.
 
 Further, for a nondegenerated pseudometric space we can consider the equivalence relation ``$\approx$'' defined as \[x\approx y\  \iff\  |x-y|<\infty.\]
 Its equivalence classes are called \emph{metric components}.
@@ -169,7 +161,7 @@ define a \emph{connecting pseudometric} $|{*}-{*}|_f$ on $X$ in
 the following way
 \[|x-y|_f=\inf\{\diam f(K)\},\]
 where the infimum is taken over all connected sets $K\subset X$ which contain $x$ and $y$;
-if there is no such set we set $|x-y|_f=\infty$.
+if there is no such set we assume $|x-y|_f=\infty$.
 
 The intrinsic metric induced by $|{*}-{*}|_f$ will be denoted as 
 $\|{*}-{*}\|_f$. 
@@ -197,12 +189,12 @@ where the infimum is taken over all {\em open} connected sets $K\subset X$ which
 
 \end{thm}
 \parit{Proof.}
-Let $(x_k)$ be a sequence in $X$ which converges to a point $x$. For $\epsilon>0$ choose $\delta>0$ such that
-$f(B_\delta(x))\subset B_\epsilon(f(x))$. If $x_k\in B_\delta(x)$, then there is a path in $X$ connecting $x_k$
-to $x$ whose image under $f$ has diameter less than $2\epsilon$ and therefore $|x-x_k|_f\to 0$. This shows the first claim.
+Let $(x_k)$ be a sequence in $X$ which converges to a point $x$. For $\eps>0$ choose $\delta>0$ such that
+$f(B_\delta(x))\subset B_\eps(f(x))$. If $x_k\in B_\delta(x)$, then there is a path in $X$ connecting $x_k$
+to $x$ whose image under $f$ has diameter less than $2\cdot\eps$ and therefore $|x-x_k|_f\to 0$. This shows the first claim.
 
-Let $C$ be a connected subset of $Y$ with finite diameter. Then for every $\epsilon>0$ the open $\epsilon$-neighbourhood $U_\epsilon$ of $C$ has diameter less than
-$\diam C+2\epsilon$. The claim follows since every component of the inverse image $f^{-1}(U_\epsilon)$ is open. 
+Let $C$ be a connected subset of $Y$ with finite diameter. Then for every $\eps>0$ the open $\eps$-neighbourhood $U_\eps$ of $C$ has diameter less than
+$\diam C+2\cdot\eps$. The claim follows since every component of the inverse image $f^{-1}(U_\eps)$ is open. 
 
 Let $x$ be a point in $|X|_f$ and $y\in B_r(x)$ for some $r>0$. Denote $\hat x$ and $\hat y$ arbitrary lifts of $x$ and $y$.
 From above we know that there is an open connected subset $C$ in $X$ containing $\hat x$ and $\hat y$ and such that 
@@ -216,18 +208,25 @@ Let $X$ be a compact geodesic space, $Y$ a metric space and $f\:X\to Y$ a contin
 From Lemma \ref{lem:picont} we know that $\pi_f$ is continuous and therefore $|X|_f$ is compact.
 \qeds
 
+%%%???Why is it complete???
+
 \begin{thm}{Lifting Lemma}\label{lem:lift}
 Let $X$ be a compact geodesic space, $Y$ a metric space and $f\:X\to Y$ a continuous map. Let $c\:[0,1]\to|X|_f$ be a rectifiable
 path joining points $p$ and $q$ in $|X|_f$. Suppose that $\hat p$ and $\hat q$ are lifts of the points $p$ an $q$ to $X$.
-Then for every $\epsilon>0$ there exists a piecewise geodesic path $\hat c\:[0,1]\to X$ joining $\hat p$ to $\hat q$ such that 
-\[|\pi_f\circ\hat c(t)-c(t)|_f<\epsilon\ \text{ for all }t\in[0,1].\]
+Then for every $\eps>0$ there exists a piecewise geodesic path $\hat c\:[0,1]\to X$ joining $\hat p$ to $\hat q$ such that 
+\[|\pi_f\circ\hat c(t)-c(t)|_f<\eps\ \text{for all}\ t\in[0,1].\]
 \end{thm}
+
 \parit{Proof.}
- Since $\|X\|_f$ is a geodesic space by Corollary \ref{cor:geospace} it is enough to consider the case where $c$ is a geodesic.
- Given $\epsilon>0$ denote $U_\epsilon$ the open $\epsilon$-neighborhood of $c([0,1])$ and choose times $0=t_0<t_1<\ldots<t_k=1$ 
- such that $|c(t_i)-c(t_{i+1})|_f<\frac{\epsilon}{2}$. Choose arbitrary lifts $\hat c(t_i)$ of the points
- $c(t_i)$ for $i\in\{1,\ldots,k-1\}$. By Lemma \ref{lem:picont}, we find open connected sets $C_i\subset X$ containing $\hat c(t_i)$ and $\hat c(t_{i+1})$ with
- $\diam f(C_i)<\epsilon$. In particular $\pi_f(C_i)\subset U_\epsilon$. To finish the proof we join $\hat c(t_i)$ and $\hat c(t_{i+1})$ by piecewise geodesics
+Since $\|X\|_f$ is a geodesic space, 
+by Corollary \ref{cor:geospace} it is enough to consider the case where $c$ is a geodesic.
+Given $\eps>0$ denote $U_\eps$ the open $\eps$-neighborhood of $c([0,1])$ and choose times $0=t_0<t_1<\ldots<t_k=1$ 
+such that $|c(t_i)-c(t_{i+1})|_f<\frac{\eps}{2}$. Choose arbitrary lifts $\hat c(t_i)$ of the points
+$c(t_i)$ for $i\in\{1,\ldots,k-1\}$.
+By Lemma \ref{lem:picont}, we find open connected sets $C_i\subset X$ containing $\hat c(t_i)$ and $\hat c(t_{i+1})$ with
+$\diam f(C_i)<\eps$. 
+In particular $\pi_f(C_i)\subset U_\eps$. 
+To finish the proof we join $\hat c(t_i)$ and $\hat c(t_{i+1})$ by piecewise geodesics
  in $C_i$.
 \qeds
 
@@ -250,13 +249,13 @@ open neighbourhood $\tilde U$ of $C_p$ disjoint from all other components. Since
 is closed as well. Hence there exist open neighborhoods $U$ and $V$ of $C_p$ and $\pi_f^{-1}(y)-C_p$ respectively with $U\cap V=\emptyset$.
 Now pick a point $q$ in  $\pi_f^{-1}(y)-C_p$. Since  $X$ is a geodesic space, it follows from Lemma \ref{lem:picont} that we can find a sequence
 of paths $\gamma_k\:[0,1]\to X$ connecting $p$ and $q$ and with $\diam f\circ\gamma_k([0,1])<\frac{1}{k}$. For every $k\in\mathcal{N}$ we choose a point 
-$z_k\in f\circ\gamma_k([0,1])$ disjoint from $U\cup V$. Since $X$ is compact, the sequence $(z_k)$ subconverges to a point in $\pi_f^{-1}(y)$. Contradiction.
+$z_k\in f\circ\gamma_k([0,1])$ disjoint from $U\cup V$. Since $X$ is compact, the sequence $(z_k)$ subconverges to a point in $\pi_f^{-1}(y)$, a contradiction.
 \qeds
 
 \begin{thm}{Lemma}\label{lem:idem}
 Let $X$ be a compact geodesic space, $Y$ a metric spaces and $f\:X\to Y$ a continuous map. Then for any map $s\:|X|_f\to Y$ holds
 \[|X|_{s\circ\pi_f}\cong||X|_{f}|_s.\]
-In particular $|X|_{f}\cong||X|_{f}|_{\bar f}$.
+In particular $|X|_{f}\cong||X|_{f}|_{\bar f}$. %???what is \bar f???
 \end{thm}
 \parit{Proof.}
  Since $\pi_f$ is continuous, by Lemma \ref{lem:picont}, we see $|\pi_f(x)-\pi_f(y)|_s=0$ if $|x-y|_{s\circ\pi_f}=0$. Moreover,
@@ -264,10 +263,17 @@ In particular $|X|_{f}\cong||X|_{f}|_{\bar f}$.
  $\alpha$ is an isometry.
 \qeds
 
-
-If $f\:X\to Y$ is a continuous map between metric spaces $X$ and $Y$, then there is another pseudometric on $X$ induced by $f$. Namely set 
+\parbf{An alternative definition.}
+If $f\:X\to Y$ is a continuous map between metric spaces $X$ and $Y$, then there is another pseudometric on $X$ induced by $f$. 
+Namely set 
 \[d_f(x,y):=\inf\{\length_Y(f\circ\gamma)|\ \gamma \text{ a path in } X\text{ connecting }x\text{ and }y\}.\]
-Denote $Z_f:=X/\sim$ the quotient metric space. In the following we describe the relation between $d_f$ and $\|*-*\|_f$.
+Denote $Z_f:=X/\sim$ the quotient metric space. 
+For the reasonable maps $Z_f$ is isometric to $\|X\|_f$,
+but in general they might differ;
+an example is given in \cite[4.2]{petrunin-intrinisic}.
+
+We will discuss now the relation between the metrics $d_f$ and $\|*-*\|_f$.
+
 
 \begin{thm}{Lemma}\label{lem:intrinsicmetric}
 Let $X$ and $Y$ be metric spaces, $f\:X\to Y$ a continuous map and $\gamma$ a curve in $X$. Then $f\circ\gamma$
@@ -291,6 +297,8 @@ to the image $f(X)$ in $Y$ equipped with induced intrinsic metric.
 The claim follows directly from Lemma \ref{lem:intrinsicmetric}.
 \qeds
 
+
+\parbf{Metric minimizing maps.}
 Given two maps $f,h\:X\to Y$ we will write $f\succcurlyeq h$ if 
 \[\|x-y\|_f\ge \|x-y\|_h\]
 for any pair of points $x,y\in X$.
@@ -298,8 +306,6 @@ We will write $f\succ h$
 if in addition the inequality is strict for at least one pair of points.
 
 
-
-\parbf{Metric minimizing maps.}
 Let $X$ and $Y$ be metric spaces and $A\subset X$ be a closed subset.
 
 The map $f\:X\to Y$ is called \emph{metric minimizing relative to $A$}
@@ -421,7 +427,8 @@ Moreover, $f$ is strictly metric minimizing relative to $A$.
 \end{wrapfigure}
 
 As one may see from the diagram,
-the two conditions in the proposition do not guarantee that the map $f$ is metric minimizing.
+the two conditions in the proposition do not guarantee that the map $f$ is metric minimizing,
+the solid points form the set $A$.
 
 \parit{Proof.}
 The first condition is clear.
@@ -460,6 +467,8 @@ Then $\|\Gamma\|_f$ is a planar graph and
 $\Fill\|\Gamma\|_f$ is a disc retract which supports a $\CAT[0]$ metric such that 
  $\bar f$ extends to a short map $\hat f\:\Fill\|\Gamma\|_f\to Y$.
 \end{thm}
+
+%??? Fill\|\Gamma\|_f --- bit too much and overdefining
 
 \parit{Proof.}
 By Corollary \ref{cor:fiberconnected}, the fibers of $\pi_f$ are connected. Hence $|\Gamma|_f$ is 
@@ -512,7 +521,7 @@ its boundary $\partial \DD$ is a unit circle.
 
 Let $X$ be a Hausdorff space and
 $f\:\DD\to X$ be a continuous map.
-We say that $f$ is a \emph{no-bubble map}
+We say that $f$ has \emph{no bubbles}\label{page:no-bubble}
 if for any point $p\in X$ every connected component of the complement $\DD\backslash f^{-1}\{p\}$ contains a point from $\partial \DD$.
 
 The following topological notion will be important throughout the text.
@@ -528,8 +537,8 @@ called a \emph{disc retract}.
 We will need the following disc version of Moore's theorem \cite{moore} proved in \cite{LW3}.
 
 \begin{thm}{Proposition}\label{prop:disc-moore}
-Let $Y$ be a metric space and
-$f\:\DD\to X$ be a no-bubble map.
+Let $Y$ be a metric space and a map
+$f\:\DD\to X$ has no bubbles.
 Then $|\DD|_f$ is homeomorphic to a disc retract. Moreover, if $f|_{\partial\DD}$ is 
 an embedding, then $|\DD|_f$ is homeomorphic to a disc.
 \end{thm}
@@ -537,8 +546,10 @@ an embedding, then $|\DD|_f$ is homeomorphic to a disc.
 
 \parit{Proof.}
 Form Lemma \ref{lem:picont} we know that $\pi_f$ is continuous and hence $|\DD|_f$
-is a compact metric space. The fibers of $\pi_f$ are connected by Corollary \ref{cor:fiberconnected}.
-Since $f$ is a no-bubble map, we see that $\pi_f$ is cell-like. Therefore, the first claim follows from 
+is a compact metric space. 
+The fibers of $\pi_f$ are connected by Corollary \ref{cor:fiberconnected}.
+Since $f$ is a no-bubble map, we see that $\pi_f$ is cell-like. 
+Therefore, the first claim follows from 
 Corollary 7.12 in \cite{LW3}.
 The special case when $f|{\partial\DD}$ is an embedding follows then from the Schoenflies theorem.
 \qeds
@@ -552,9 +563,10 @@ Applying \ref{prop:point-complement} and \ref{prop:disc-moore}, we get the follo
 
 \begin{thm}{Proposition}\label{prop:|D|}
 Let $f\:\DD\to\ Y$ be a continuous metric minimizing map relative to $\partial \DD$.
-Then $f$ is a no-bubble map.
+Then $f$ has no bubbles.
 
-In particular,  $|\DD|_f$ is homeomorphic to a disc retract. In case $f|_{\partial\DD}$ is an
+In particular,  $|\DD|_f$ is homeomorphic to a disc retract. 
+In case $f|_{\partial\DD}$ is an
 embedding it is homeomorphic to a disc.
 Moreover $\partial|\DD|_f$ is the image of $\partial \DD$
 under the map $\pi_f$.
@@ -581,7 +593,7 @@ is metric minimizing relative to $\partial|\DD|_f$.
 \begin{thm}{Key Lemma}\label{lem:key}
 Let $Y$ be a $\CAT[0]$ space and $s\:\DD\to Y$ 
 be a metric minimizing disc relative to the boundary $\partial \DD$.
-Given a finite set $F\subset \|\DD\|_s$ such that $\|x-y\|_s<\infty$ for each pair $x,y$ of points in $F$. Then
+Given a finite set $F\subset \|\DD\|_s$ such that $\|x-y\|_s<\infty$ for each pair $x,y$ of points in $F$
 there is 
 (1) a $\CAT[0]$ space $W$, which is a disc retract,
 and (2) short maps $p\:F\to W$ and $q\:W\to Y$ such that
@@ -621,7 +633,8 @@ Therefore $\Gamma$ can be considered as a graph embedded into the plane.
 By Proposition \ref{prop:memigraph}, there is a map $u\:\Gamma\to Y$ metric minimizing relative to $\Gamma\cap\partial|\DD|_{\bar s}$ with
 $\bar s|_\Gamma\succcurlyeq u$. Hence there is a short map $\alpha\:\|\Gamma\|_{\bar s|_\Gamma}\to\|\Gamma\|_u$. 
 By Corollary~\ref{cor:planar-minimizing-graph} there is a $\CAT[0]$ disc retract $W$, a length preserving embedding
-$\|\Gamma\|_u\hookrightarrow W$ and a map $\hat u\:W\to Y$ extending $\bar u$. Set $p:=\alpha|_F$ and $q:=\hat u$.
+$\|\Gamma\|_u\hookrightarrow W$ and a map $\hat u\:W\to Y$ extending $\bar u$. %???why not to say that q= \hat u???
+Set $p:=\alpha|_F$ and $q:=\hat u$.
 \qeds
 
 \section{Compactness of planar CAT[0] spaces}
@@ -697,12 +710,13 @@ is connected as well. As in Proposition~\ref{prop:disc-moore} the claim now foll
 \section{Two-dimensional case}
 
 Let $W$ be a metric space.
-A continuous map $s\:\DD\to W$ is called \emph{saddle} if for any closed convex subset $K\subset W$ holds that
+A continuous map $s\:\DD\to W$ is called \emph{saddle} if for any closed convex subset $K\subset W$ it holds that
 the boundary $\partial \DD$ intersects
 any connected component of $\DD\backslash s^{-1}(K)$.
 
 Applying this definition to one-point sets,
-we get that any saddle map has no bubbles.
+we get that any saddle map has no bubbles, 
+as defined on page \ref{page:no-bubble}.
 
 
 \begin{thm}{Proposition}\label{prop:memisaddle}
@@ -714,7 +728,9 @@ Assume the contrary, let $K$ be a closed convex set in $W$
 and $\Omega$ be a violating component of the complement $\DD\backslash s^{-1}(K)$. 
 Redefine $s$ for each $x\in\Omega$ by moving 
 $s(x)$ to its closest point projection on $K$.
-Denote by $s'$ the new map. Since $K$ is closed and convex, the nearest point projection onto $K$ is short.
+Denote by $s'$ the new map. 
+
+Since $K$ is closed and convex, the nearest point projection onto $K$ is short.
 Hence $s'$ is also continuous and metric minimizing. It remains to apply Corollary \ref{cor:strict-mm}.
 \qeds
 
@@ -738,11 +754,9 @@ However, Shefel's proof was written very tight
 and we have decided to provide all details.
 
 
-Note that since $W$ is a disc retract, its boundary $\partial W$ is compact. Therefore
-the space $\Geod(W)$ of geodesic segments with endpoints on $\partial W$ is compact as well.
-
 \begin{thm}{Lemma}\label{lem:extension}
-Let $W$ be a $\CAT[0]$  disc retract. Then any geodesic segment can be extended to a geodesic in $\Geod(W)$.
+Let $W$ be a $\CAT[0]$ disc retract. 
+Then any geodesic segment in $W$ can be extended to a geodesic between points in $\partial W$.
 \end{thm}
 
 \parit{Proof.}
@@ -752,6 +766,10 @@ intersects $[pq]$ in a point $z\neq q$. Then the geodesic cone from $z$ over $\p
 is not contractible in $W-\{x\}$ for any $x$ in the interior of $A$. In particular, $[pq]$ extends beyond $q$ to the boundary of
 $A$.
 \qeds
+
+Note that since $W$ is a disc retract, its boundary $\partial W$ is compact. 
+Therefore
+the space $\Geod(W)$ of geodesic segments with endpoints on $\partial W$ is compact as well.
 
 \begin{thm}{Lemma}\label{lem:sepbygeo}
 Let $W$ be a $\CAT[0]$  disc retract. If $K\subset W$ is a closed convex subset and $p$ is a
@@ -780,13 +798,15 @@ Let $q$ be the nearest point projection of $p$ onto $K$.
 
 Assume there is point $x\not\in [pq]$ which lies sufficiently close to the midpoint of $[pq]$.
 Then the nearest point projection $y$ of $x$ onto $[pq]$ lies in the interior of $[pq]$.
-Extend the geodesic $[xy]$ to a geodesic $\sigma$ in $\Geod(W)$.
+By Lemma~\ref{lem:extension},
+we can extend the geodesic $[xy]$ to a geodesic $\sigma$ in $\Geod(W)$.
 Note that $\sigma$ separates $K$ from $p$.
 
 If there is no point $x\not\in [pq]$ which lies sufficiently close to the midpoint of $[pq]$
 then the midpoint $m$ of $[pq]$ separates $K$ from $p$.
 This point forms a degenerate geodesic from $\Geod W$.
 
+It remains to prove the last statement.
 
 If $\sigma$ is not degenerate then any geodesic from $\mathcal{G}$ which is sufficiently close $\sigma$ also separates $K$ from $p$.
 In the degenerate case all the, 
@@ -815,8 +835,6 @@ Then there is a continuous map $v\:\DD\to K$ such that
 \item $u(x)=v(x)$ for any $x\notin\Omega$ and
 $v(x)\in K$ for any $x\in\Omega$.
 \end{enumerate}
-
-\medskip
 
 Moreover,
 \begin{enumerate}[(i)]
@@ -852,7 +870,7 @@ Redefine $v$ by setting $v(x)=p$.
 
 \begin{thm}{Lemma}\label{lem:isomtri}
 Let $W$ be a $\CAT[0]$ disc retract. 
-Let $\Delta$ be a triangle in the euclidean plane
+Let $\Delta$ be a triangle in the Euclidean plane
 and $\Delta'$ a triangle in $W$. 
 If $f\:\Delta\to \Delta'$ is a map which restricts to constant speed
 parametrizations on each side, then it extends to a map 
@@ -862,11 +880,18 @@ $F\:\Conv(\Delta)\to \Conv(\Delta')$ between convex hulls which induces an isome
 \parit{Proof.}
 There are obvious cases, namely if $\Delta'$ is either embedded or contained in a single geodesic. 
 For the general case, we observe that if we cut $\Delta$ into two triangles $\Delta^\pm$ by a geodesic which joins a vertex to its opposite side, and  
-the claim is true for both triangles $\Delta^+$ and $\Delta^-$, then it is also true for $\Delta$. Now let us assume that $\Delta'$ is neither embedded nor contained
-in a single geodesic. Then there is a vertex of $\Delta'$ such that the two adjacent sides have a maximal closed nontrivial interval in common. Choose a point $p$ in the interior
-of a side of $\Delta$ which maps to an endpoint of this interval. Cut $\Delta$ into two triangles $\Delta^\pm$ by joining $p$ to its opposite vertex.
+the claim is true for both triangles $\Delta^+$ and $\Delta^-$, then it is also true for $\Delta$. 
+
+Now let us assume that $\Delta'$ is neither embedded nor contained
+in a single geodesic. 
+Then there is a vertex of $\Delta'$ such that the two adjacent sides have a maximal closed nontrivial interval in common. 
+Choose a point $p$ in the interior
+of a side of $\Delta$ which maps to an endpoint of this interval. 
+Cut $\Delta$ into two triangles $\Delta^\pm$ by joining $p$ to its opposite vertex.
 We obtain natural maps $f^\pm:\Delta^\pm\to\Delta'$ where one of them say $f^+$ is degenerated, in the sense that its image is contained in a side of $\Delta'$, and $f^-$ has 
-a nondegenerated vertex, in the sense that the image of adjacent sides only intersect in the image of the vertex. Repeating this modification at most twice,
+a nondegenerated vertex, in the sense that the image of adjacent sides only intersect in the image of the vertex. 
+
+Repeating this modification at most twice,
 reduces the general case to the  obvious ones above.
 \qeds
 
@@ -1118,9 +1143,7 @@ Since $C$ is the continuous image of a disc, we get that $\|\DD\|_s$ is compact 
 
 
 
-\subsection{Intrinsic metric determines metric minimizing discs}~
-
-\medskip
+\parbf{Intrinsic metric determines metric minimizing discs.}
 Let $\gamma_{\pm 1}\:I\to X$ be two rectifiable paths, parametrized by arc length. We say that  $\gamma_{-1}$ is {\em parallel} to $\gamma_{+1}$, if $|\gamma_{-1}(t)-\gamma_{+1}(t)|$
 is constant on $I$.
 
@@ -1177,8 +1200,7 @@ Then $s$ is strictly metric minimizing.
 
 
 
-\subsection{Metric minimizing discs below given continuous ones}~
-
+\parbf{Metric minimizing discs below given continuous ones.}
 In this subsection we give a criterion which allows to 
 find continuous metric minimizing maps inside a given sublevel set defined by our partial order ``$\succcurlyeq$''.
 
@@ -1205,9 +1227,9 @@ metric is a geodesic space.
 
 
 
-\subsubsection{CAT[0] spaces}~
+\subsubsection{CAT[0] spaces}
 
-\medskip
+
 
 Let $X$ be a compact geodesic space and $Y$ a $CAT[0]$ space. Fix a map  
 $f:X\to Y$.
@@ -1253,8 +1275,7 @@ is a lower bound for $\mathcal{O}$. By Zorn's lemma we obtain a minimal element 
 \section{Application to harmonic maps}
 
 %???MAYBE WE SHOULD say harmonic insted of energy minimizing
-\subsection{Sobolev spaces and energy}
-
+\parbf{Sobolev spaces and energy.}
 We will collect some basic definitions and properties from Sobolev space theory in metric spaces as developed in 
 \cite{KS},\cite{R}, \cite{HKST} and \cite{LW}. For more details we refer the reader to these articles.
 We set $D:=\operatorname{interior}\DD$ and fix a complete metric space $X$.
@@ -1330,8 +1351,7 @@ Moreover, the local Lipschitz constant of $u$ depends only on the energy of $u$ 
 For convenience we will call an energy minimizing disc a {\em harmonic disc}.
 
 
-\subsection{Harmonic discs are metric minimizing}
-
+\parbf{Harmonic discs are metric minimizing.}
 In this subsection we show that harmonic maps from discs to $\CAT[0]$ spaces are metric minimizing, see Proposition~\ref{prop:harmonic}.
 
 
@@ -1349,8 +1369,8 @@ The map $u$ is saddle and continuous.
 
 \parit{Proof.}
 Since energy is nonincreasing under postcomposition with short maps, the uniqueness in Theorem \ref{thm:harmonic} implies that
-$u$ is saddle. By Lemma \ref{lem:CL}, every point $x$ in $\DD$ and every $\epsilon>0$
-there is a neighborhood of $x$ which is bounded by a Jordan curve $J$ such that $\length_X(u(J))<\epsilon$. From the saddle property we conclude 
+$u$ is saddle. By Lemma \ref{lem:CL}, every point $x$ in $\DD$ and every $\eps>0$
+there is a neighborhood of $x$ which is bounded by a Jordan curve $J$ such that $\length_X(u(J))<\eps$. From the saddle property we conclude 
 that $u$ is continuous.
 \qeds
 
@@ -1358,7 +1378,8 @@ that $u$ is continuous.
 In the situation of the lemma, the space $|D|_u$ is homeomorphic to a disc retract.
 \end{thm}
 \parit{Proof.}
-This follows from Proposition \ref{prop:disc-moore} since $u$ is a no-bubble map by Lemma \ref{lem:harmsaddle}.
+This follows from Proposition \ref{prop:disc-moore} since $u$ has no bubbles 
+by Lemma \ref{lem:harmsaddle}.
 \qeds
 
 Recall that any continuous map $u$ factors as $u=\bar u\circ \pi_u$ with $\pi_u\:\DD\to|\DD|_u$ and $\bar u\:|\DD|_u\to X$.
@@ -1425,8 +1446,7 @@ This proposition immediately generalizes to other convex energy functionals whic
 
 
 
-\subsection{Intrinisic structure and regularity of harmonic discs}                                                      			
-
+\parbf{Intrinisic structure and regularity of harmonic discs.}                                                     
 Now we are going to apply our main theorem (Theorem \ref{thm:main}) to obtain structural results about harmonic maps. In particular,
 we get a quick alternative proof of local Lipschitz regularity of harmonic discs.
 In order to do so, we need the following auxiliary observation.
@@ -1434,7 +1454,7 @@ In order to do so, we need the following auxiliary observation.
 \begin{thm}{Lemma}\label{lem:separable}
 Let $X$ be a $\CAT[0]$ space 
 and $u\:\DD\to X$ a Sobolev disc with rectifiable boundary $u|_{\partial \DD}$.
-If $u$ is a no-bubble map, then $\|\DD\|_u$ is separable.
+If $u$ has no bubbles, then $\|\DD\|_u$ is separable.
 \end{thm}
 
 \parit{Proof.}
@@ -1452,10 +1472,10 @@ $\pi_u(\partial( I'_1\times I'_2))$ intersects every continuous path from $p$ to
 \end{thm}
 
 \parit{Proof.}
-Since $u$ is a no-bubble map, we know from the proof of Proposition \ref{prop:disc-moore} that $\pi_u\:\DD\to|\DD|_u$ is cell-like and 
+Since $u$ has no bubbles, we know from the proof of Proposition \ref{prop:disc-moore} that $\pi_u\:\DD\to|\DD|_u$ is cell-like and 
 $|\DD|_u$ is a disc retract. 
-Let $\gamma$ be a continuous path from $p$ to $q$. Since $\pi_u$ is cell-like we find for every $\epsilon>0$ a continuous path $\hat\gamma_\epsilon$ joining $\hat p$
-and $\hat q$ such that $\pi_u(\hat\gamma_\epsilon)$ is pointwise $\epsilon$-close to $\gamma$. Clearly $\hat\gamma_\epsilon$ has to intersect 
+Let $\gamma$ be a continuous path from $p$ to $q$. Since $\pi_u$ is cell-like we find for every $\eps>0$ a continuous path $\hat\gamma_\eps$ joining $\hat p$
+and $\hat q$ such that $\pi_u(\hat\gamma_\eps)$ is pointwise $\eps$-close to $\gamma$. Clearly $\hat\gamma_\eps$ has to intersect 
 $\partial( I'_1\times I'_2)$ and the claim follows.
 \qeds
 
@@ -1478,7 +1498,8 @@ Moreover, if the boundary is embedded then $\|\DD\|_u$ is a $\CAT[0]$ disc .
 \end{thm}
 
 \parit{Proof.}
-From Lemma \ref{lem:harmsaddle} we know that $u$ is a no-bubble map. Then Lemma \ref{lem:separable} implies that 
+From Lemma \ref{lem:harmsaddle} we know that $u$ has no bubbles. 
+Then Lemma \ref{lem:separable} implies that 
 $\|\DD\|_u$ is separable. The claim now follows from Corollary \ref{cor:main} of our main theorem.
 
 \qeds
@@ -1509,14 +1530,14 @@ We have $\varphi_\infty=\pi_u$.
 \end{thm}
 \parit{Proof.}
 By uniqueness in Theorem \ref{thm:dirichlet} is it enough to show that $\varphi_\infty$ is energy minimizing. 
-So assume that there is $\epsilon>0$ such that $(1+2\epsilon)E(\pi_u)\leq E(\varphi_\infty)$. Then there exists $k\in\mathbb{N}$
-such that we still have $(1+\epsilon)E(\pi_u)\leq E(\varphi_k)$. Fix $\delta<\epsilon$ and choose a radius $\rho>0$
-such that $Z_k$ is covered by a finite number of $\rho$-balls each of which is $(1+\delta)$-bilipschitz to the euclidean  
+So assume that there is $\eps>0$ such that $(1+2\cdot\eps)E(\pi_u)\leq E(\varphi_\infty)$. Then there exists $k\in\mathbb{N}$
+such that we still have $(1+\eps)E(\pi_u)\leq E(\varphi_k)$. Fix $\delta<\eps$ and choose a radius $\rho>0$
+such that $Z_k$ is covered by a finite number of $\rho$-balls each of which is $(1+\delta)$-bilipschitz to the Euclidean  
 $\rho$-ball via the exponential map at its center. Next, we cover $\|\DD\|_u$ by a finite number of $\rho$-balls centered at regular points.
 Then we triangulate $\DD$ fine enough such that each 2-simplex maps via $\pi_u$ into one of the chosen $\rho$-balls. For any 2-simplex
 $\Delta$ in this triangulation we can compose $\pi_u|_\Delta$ with an appropriately chosen logarithm map in $\|\DD\|_u$ and an exponential map in 
 $Z_k$ such that $E(\exp^{Z_k}\circ\log^{\|\DD\|_u}\pi_u|_\Delta)\leq (1+\delta)E(\pi_u|_\Delta)$. By assumption there exists a 2-simplex
-$\Delta$ such that $(1+\epsilon)E(\pi_u|_\Delta)\leq E(\varphi_k|_\Delta)$. This is a contradiction, since $\delta<\epsilon$ and $\varphi_k$ is energy minimizing.
+$\Delta$ such that $(1+\eps)E(\pi_u|_\Delta)\leq E(\varphi_k|_\Delta)$. This is a contradiction, since $\delta<\eps$ and $\varphi_k$ is energy minimizing.
 \qeds
 
 
@@ -1556,7 +1577,8 @@ We could not find examples like that among strictly saddle surfaces or discs, bu
 
 Let $s\:\DD\to\RR^3$ be a smooth map.
 
-Fix an array of vector fields $\bm{v}=(v_1,\dots,v_k)$ in $\DD$. Consider the energy functional 
+Fix an array of vector fields $\bm{v}=(v_1,\dots,v_k)$ in $\DD$. 
+Consider the energy functional 
 \[E_{\bm{v}}s
 \df
 \sum_i\int\limits_\DD |v_is|^2\cdot d_x\area.\]
@@ -1700,6 +1722,10 @@ Trans. Amer. Math. Soc. 27 no. 4 (1925) pp. 416--428.
 \bibitem{petrunin-metric-min} Petrunin, A.
 ``Metric minimizing surfaces.''
 Electron. Res. Announc. Amer. Math. Soc. 5 (1999), 47--54 
+
+\bibitem{petrunin-intrinisic} Petrunin, A.
+``Intrinsic isometries in Euclidean space.''
+St. Petersburg Math. J. 22 (2011), no. 5, 803--812 
 
 \bibitem{petrunin-orthodox} Petrunin, A. 
 ``Exercises in Orthodox Geometry''
