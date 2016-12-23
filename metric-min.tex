@@ -4,10 +4,9 @@
 
 \begin{document}
 \title{Metric minimzing surfaces revisited}
-\author{Anton Petrunin}
+\author{Anton Petrunin and Stephan Stadler}
 %\address{A. Petrunin\newline\vskip-4mm Math. Dept. PSU,University Park, PA 16802,USA}
 %\email{petrunin@math.psu.edu}
-\author{Stephan Stadler}
 %\address{S. Stadler\newline\vskip-4mm Math. Inst.,Universit\"at M\"unchen, Theresienstr. 39, D-80333 M\"unchen, Germany}\email{stadler@math.lmu.de}
 %\thanks{A.~Petrunin was partially supported by NSF grant DMS 1309340.}
 
@@ -31,9 +30,9 @@ The image $s(\DD)\subset X$ with induced intrinsic metric will be denoted as $\|
 \footnote{This definition will be made more precise and more general in the next section.}
 
 The map $s\:\DD\to X$ is called \emph{metric minimizing} if for any other $s'\:\DD\to X$ which coincides with $s$ on the boundary $\partial \DD$, 
-the intrinsic distance increase for at least two points of the domain. 
+the intrinsic distance increase for at least two points of the domain.
 Examples of metric minimizing surfaces include
-ruled surfaces, energy minimizing and area minimizing surfaces. 
+ruled surfaces, energy minimizing and area minimizing surfaces.
 
 %??? \|\DD\|_s is not difined yet???
 
@@ -63,7 +62,8 @@ Then $u$ is continuous and metric minimizing relative $\partial\DD$.
 \end{thm}
 
 A combination of Theorem \ref{thm:mainintro} and Theorem \ref{thm:harmonicintro} generalizes, within the $\CAT[0]$-setting,
-a recent result by Lytchak and Wenger from area minimizers to energy minimizers.%???ref???
+a recent result by Lytchak and Wenger %???ref??? 
+from area minimizers to energy minimizers.
 
 
 Note that the separability assumption in Theorem \ref{thm:mainintro} is a priori not even enough to ensure the continuity of the natural 
@@ -98,8 +98,8 @@ the topological control in the main theorems.
 In section 5 we prove the key lemma (Lemma \ref{lem:key}) which implies that 
 metric minimizing discs factorize through two-dimensional $\CAT[0]$-spaces. Section 6 provides a compactness result for $\CAT[0]$-surfaces
 which might be of independent interest. 
-In section 7 we treat the two-dimensional case, i.e. metric minimizing discs
-in $\CAT[0]$-surfaces and generalize Shefel's result on saddle surfaces. 
+In section 7 we treat the two-dimensional case; 
+that is, metric minimizing discs in $\CAT[0]$-surfaces and generalize Shefel's result on saddle surfaces. 
 In section 8 we prove our main theorem (Theorem \ref{thm:main})
 from which Corollary \ref{cor:main} directly follows. 
 Section 9 is devoted to the existence and uniqueness of metric minimizing maps.
@@ -133,7 +133,7 @@ A nondegenerated pseudometric which only takes finite values is called a \emph{m
 or metric will be called \emph{pseudometric} or correspondingly \emph{metric space}.
 
 The value $|x-y|$ will also be called \emph{distance} form $x$ to $y$.
-Note that by our definition, the distance between points might be infinite.%
+Note that by our definition, the distance between points might be infinite.
 
 For any pseudometric on a set 
 there is an equivalence relation ``$\sim$''
@@ -149,7 +149,7 @@ We will say that the obtained metric spaces are \emph{defined} by the
 original pseudometric space.%???IS IT A GOOD WAY TO SAY??? 
 
 For a metric space $X$ and a continuous curve $c:[a,b]\to X$ we define its {\em length} as
-\[\length_X(c):=\sup\sum_{i=0}^{k-1} |c(t_i)-c(t_{i+1})|\]
+\[\length_X(c)=\sup\sum_{i=0}^{k-1} |c(t_i)-c(t_{i+1})|\]
 where the supremum is taken over all finite partitions ${a=t_0<t_1<\ldots t_k=b}$ of $[a,b]$. 
 A continuous curve $c$ is called {\em rectifiable} if its length is finite.
 
@@ -174,7 +174,7 @@ and $\|{*}-{*}\|_f$ on $X$ will be denoted as $|X|_f$ and $\|X\|_f$ correspondin
 \medskip
 
 The map $f$ factors as $f=\bar f\circ \pi_f$ with $\pi_f\:X\to|X|_f$ and $\bar f\:|X|_f\to Y$.
-For a point $x\in X$ we denote by $[x]_f:=\pi_f^{-1}(\pi_f(x))$ the fiber of $\pi_f$ through $x$.
+For a point $x\in X$, let $[x]_f=\pi_f^{-1}(\pi_f(x))$ be the fiber of $\pi_f$ through $x$.
 
 \begin{thm}{Lemma}\label{lem:picont}
 Let $X$ be a length space, $Y$ a metric space and $f\:X\to Y$ a continuous map. Then the following holds true.
@@ -237,7 +237,8 @@ Let $X$ be a compact geodesic space, $Y$ a metric space and $f\:X\to Y$ a contin
 the inverse image under $\pi_f$ of an open connected subset $C$ of $|X|_f$  is pathconnected in $X$.
 \end{thm}
 \parit{Proof.}
-Let $C$ be an open connected subset of $|X|_f$. By Lemma \ref{lem:picont}, $|X|_f$ is locally pathconnected and therefore
+Let $C$ be an open connected subset of $|X|_f$. 
+By Lemma \ref{lem:picont}, $|X|_f$ is locally pathconnected and therefore
 $C$ is pathconnected. Hence the claim follows from the Lifting Lemma \ref{lem:lift}.
 \qeds
 
@@ -269,8 +270,8 @@ In particular $|X|_{f}\cong||X|_{f}|_{\bar f}$. %???what is \bar f???
 \parbf{An alternative definition.}
 If $f\:X\to Y$ is a continuous map between metric spaces $X$ and $Y$, then there is another pseudometric on $X$ induced by $f$. 
 Namely set 
-\[d_f(x,y):=\inf\{\length_Y(f\circ\gamma)|\ \gamma \text{ a path in } X\text{ connecting }x\text{ and }y\}.\]
-Denote $Z_f:=X/\sim$ the quotient metric space. 
+\[d_f(x,y)=\inf\{\length_Y(f\circ\gamma)|\ \gamma \text{ a path in } X\text{ connecting }x\text{ and }y\}.\]
+Denote by $Z_f=X/\sim$ the quotient metric space. 
 For the reasonable maps $Z_f$ is isometric to $\|X\|_f$,
 but in general they might differ;
 an example is given in \cite[4.2]{petrunin-intrinisic}.
@@ -337,13 +338,12 @@ $\||X|_f\|_{\bar f}\cong\|X\|_f$ and $\||X|_f\|_s\cong\|X\|_{s\circ\pi_f}$.
 
 If on the other hand $\bar f$ is metric minimizing relative to $\pi_f(A)$ but there exists a map $s\:X\to Y$ with $f\succ s$,
 then there is a surjective short map $\alpha\:\|X\|_f\to\|X\|_s$ which strictly
-contracts the distance of at least one pair of points and such that $\pi_s=\alpha\circ\pi_f$. Again, by Lemma \ref{lem:idem}, we have 
-$\||X|_f\|_{\bar f}\cong\|X\|_f$ and $\||X|_f\|_s\cong\|X\|_{\bar s\circ\alpha}$. Contradiction. 
+contracts the distance of at least one pair of points and such that $\pi_s=\alpha\circ\pi_f$. 
+Again, by Lemma \ref{lem:idem}, we have  $\||X|_f\|_{\bar f}\cong\|X\|_f$ and $\||X|_f\|_s\cong\|X\|_{\bar s\circ\alpha}$, a contradiction. 
 \qeds
 
 \begin{thm}{Proposition}\label{prop:point-complement}
-Let $X$ and $Y$ be metric spaces 
-and $A\subset X$ be a closed subset.
+Let $X$ and $Y$ be metric spaces and $A\subset X$ be a closed subset.
 Assume $X$ is connected and $f\:X\to Y$ is a metric minimizing map relative to $A$.
 Then for any point $x\in X$ any connected component of $X\backslash [x]_f$ intersects $A$.
 
@@ -352,9 +352,7 @@ Then for any point $x\in X$ any connected component of $X\backslash [x]_f$ inter
 \parit{Proof.}
 Assume the contrary.
 Denote by $W$ the connected component of $X\backslash [x]_f$ such that $A\cap W=\emptyset$.
-Let us define the new map $h\:X\to\ Y$ 
-by setting $h(z)=f(x)$ for any $z\in W$
-and $h(z)=f(z)$ for any $z\notin W$.
+Let us define the new map $h\:X\to\ Y$ by setting $h(z)=f(x)$ for any $z\in W$ and $h(z)=f(z)$ for any $z\notin W$.
 
 By construction $f$ and $h$ agree on $A$ and $f\succcurlyeq h$.
 
@@ -638,7 +636,7 @@ By Proposition \ref{prop:memigraph}, there is a map $u\:\Gamma\to Y$ metric mini
 $\bar s|_\Gamma\succcurlyeq u$. Hence there is a short map $\alpha\:\|\Gamma\|_{\bar s|_\Gamma}\to\|\Gamma\|_u$. 
 By Corollary~\ref{cor:planar-minimizing-graph} there is a $\CAT[0]$ disc retract $W$, a length preserving embedding
 $\|\Gamma\|_u\hookrightarrow W$ and a map $\hat u\:W\to Y$ extending $\bar u$. %???why not to say that q= \hat u???
-Set $p:=\alpha|_F$ and $q:=\hat u$.
+Set $p=\alpha|_F$ and $q=\hat u$.
 \qeds
 
 \section{Compactness of planar CAT[0] spaces}
@@ -701,7 +699,9 @@ $\mathcal{K}_\ell$ is closed in the Gromov--Hausdorff topology.
 \end{thm}
 
 \parit{Proof.}
-Let $(X_n)$ be a sequence in $\mathcal{K}_\ell$ with $X_n\to X_\infty$. Set $r_n:=\frac{\length\partial X_n}{2\pi}$ and $B_n:=B_{r_n}(0)\subset \mathbb{R}^2$.
+Let $(X_n)$ be a sequence in $\mathcal{K}_\ell$ with $X_n\to X_\infty$. 
+Set $r_n=\frac{\length\partial X_n}{2\pi}$ 
+and $B_n=B_{r_n}(0)\subset \mathbb{R}^2$.
 Let $\gamma_n:\partial B_n\to\partial X_\infty$ be an arc length parametrization. Choose a point $p_n\in X_n$ with $X_n\subset B_{r_n}(p_n)$ and define
 $f_n:B_n\to X_n$ by sending the geodesic $[0\theta]$ for $\theta\in\partial B_n$ to the geodesic $[p_n\gamma_n(\theta)]$ with constant speed. Note that $f_n$ is short.
 We obtain a limit map $f_\infty:B_\infty\to X_\infty$ which is short and maps radial geodesics in $B_\infty$ to geodesics in $X_\infty$ joining the limit point $p_\infty$
@@ -988,7 +988,8 @@ such that the distance from $\gamma$ of $w_\eps(\partial D)$ and $w_\eps(p)$ is 
 Then there is a natural number $M$ such that the distance from $\gamma$ of $\bar u_n(\partial D_n)$ and $\bar u_n(p_n)$ is larger than $\frac{\delta}{2}$
 where $D_n$ and $p_n$ are lifts of $D$ respectively $p$.
 By density of $\mathcal{G}$, there is a geodesic $\gamma_k\in \mathcal{G}$ with $k>M$ which has distance less than $\frac{\delta}{2}$ from $\gamma$. 
-Hence $\bar u_k^{-1}(\gamma_k)$ separates $p_k$ from the boundary. By Lemma \ref{lem:proj-continuous}, the projection $\pi_k\:\DD\to \|\DD\|_{u_k}$ is continuous
+Hence $\bar u_k^{-1}(\gamma_k)$ separates $p_k$ from the boundary. 
+By Lemma \ref{lem:proj-continuous}, the projection $\pi_k\:\DD\to \|\DD\|_{u_k}$ is continuous
 and therefore $u_k^{-1}(\gamma_k)$ separates some lift $\hat p_k$ of $p_k$ from the boundary.
 This is a contradiction because, by construction, $\gamma_k$ cannot cut a hat from $u_k$.
 \qeds
@@ -1004,7 +1005,8 @@ Since the decompositions of $\|\DD\|_{u_n}$ into convex subset of $W$ are nested
 induce a unique such limit decomposition of $Q_\eps$. Moreover, $w_\eps$ restricts to an isometry on each 
 of the convex sets occuring in this decomposition. Therefore, $w_\eps$ is a local radial isometry.
 If the total angle at $z$ is too small, then $w_\eps(z)\notin\Conv [w_\eps (\partial\Omega)]$
-for a small neighborhood $\Omega\ni w$ in $Q_\eps$. By Lemma \ref{lem:sepbygeo} we could cut a hat from $w_\eps$
+for a small neighborhood $\Omega\ni w$ in $Q_\eps$. 
+By Lemma \ref{lem:sepbygeo} we could cut a hat from $w_\eps$
 in contradiction to $w_\eps$ beeing saddle.
 To obtain a $\CAT[0]$ neighborhood of $z$, we first cut a small ball around $z$ into to halves using a geodesic through $z$.
 Next observe that for a small enough radius we can cut both of this halves into sectors each of which is contained in a single convex set
@@ -1072,7 +1074,8 @@ such that its subsequence of points in $\partial \|\DD\|_s$ is
 Set $F_n=\{x_1,\dots,x_n\}$.
 Denote by $p_n\:F_n\to W$ a short map provided by the Key Lemma~\ref{lem:key}.
 
-Using a diagonal argument we can extract a short map \[p:\mathcal{F}\to W.\]
+Using a diagonal argument we can extract a short map 
+\[p\:\mathcal{F}\to W.\]
 
 Since $\mathcal{F}$ is dense in $\|\DD\|_s$,
 the map $p$ can be extended to the whole space $\|\DD\|_s$ 
@@ -1099,14 +1102,13 @@ It remains to apply Shefel's theorem \ref{thm:shefel-2D}.
 
 
 
-\parbf{Remark.} An argument similar to the the problem ``Saddle surface'' in \cite{petrunin-orthodox}
-can be used to show that the constructed map $p$ 
-is injective. 
+\parbf{Remark.} 
+An argument similar to the the problem ``Saddle surface'' in \cite{petrunin-orthodox} can be used to show that the constructed map $p$ is injective. 
 In particular $\|\DD\|_s$ is isometric to $W$.
 Unfortunately the proof requires some regularity of $\|\DD\|_s$ which only follows from Shefel's theorem. 
 
 Here is \emph{not a proof} of the statement above.
-We cheat in the use of order; 
+We say where we cheat in the footnote; 
 it is hard (if at all possible) to fix its precise meaning.
 
 \parit{Not a proof.} Assume  $w=p(x)=p(y)$ for distinct points $x,y\in\|\DD\|_s$
@@ -1115,7 +1117,7 @@ Choose a geodesic $\gamma$ which passes through $w$ and goes
 from boundary to boundary of $W$.
 The inverse image $p^{-1}(\gamma)$ is a contractible set with two ends at $\partial\|\DD\|_s$, say $a$ and $b$.
 In particular there is a well defined order of  points on $p^{-1}(\gamma)$.
-We can assume that the points $a,x,y,b$ appear in the same order on $p^{-1}(\gamma)$. 
+We can assume that the points $a,x,y,b$ appear in the same order on $p^{-1}(\gamma)$.\footnote{This is where we are cheating: the inverse image $p^{-1}(\gamma)$ might be as terrible as psedoarc, where the order points has no sense.}
 
 Note that there is a continuous one parameter family of geodesics $\gamma_t$ passing through $w$ with the ends at $\partial W$
 such that $\gamma=\gamma_0$ and $\gamma_1$ is $\gamma$ with reversed parametrization.
@@ -1132,7 +1134,7 @@ then $\|\DD\|_s$ is a $\CAT[0]$ disc.
 
 \parit{Proof.}
 By Proposition \ref{prop:|D|} $|\DD|_s$ is a disc retract in the general case, and a disc if $s|_{\partial\DD}$ is an embedding.
-The identity map $\iota:\|\DD\|_s\to |\DD|_s$ is continuous. Pick a point $p\in\partial\|\DD\|_s$ and consider the geodesic 
+The identity map $\iota\:\|\DD\|_s\to |\DD|_s$ is continuous. Pick a point $p\in\partial\|\DD\|_s$ and consider the geodesic 
 cone $C$ from $p$ over $\partial\|\DD\|_s$. Then $\iota|_C$ is surjective because otherwise there would be a point $q$ in the 
 interior of $|\DD|_s$ such that $C$ defines a contraction of $\partial|\DD|_s$ in $|\DD|_s-\{q\}$. 
 In particular $C=\|\DD\|_s$.
@@ -1167,8 +1169,8 @@ We say that  $\gamma_{0}$ is {\em parallel} to $\gamma_{1}$, if the function $t\
 
 
 \begin{thm}{Lemma}\label{lem:parpaths}
-Let $\gamma_0,\gamma_1\:\II\to X$ be two rectifiable paths parametrized by arc length;
-denote by $\gamma_t\:\II\to X$ their geodesic homotopy. 
+Let $\gamma_0,\gamma_1\:[0,\ell]\to X$ be two rectifiable paths parametrized by arc length;
+denote by $\gamma_t\:[0,\ell]\to X$ their geodesic homotopy. 
 If 
 \[\length\gamma_{\frac12}
 =\length\gamma_0
@@ -1177,27 +1179,34 @@ then $\gamma_{0}$ and $\gamma_{1}$ are parallel.
 \end{thm}
 
 \parit{Proof.}
-%Ref to existance of |\dot\gamma_0(t)|
-Convexity of the metric implies $|\dot\gamma_{\frac12}(t)|\leq 1$. 
-By assumtion, the length of $\gamma_{\frac12}$ equals $L$, hence $|\dot\gamma_{\frac12}(t)|=1$ for almost all $t\in[0,L]$. 
-So $\gamma_{\frac12}$
+%Ref to existance of |\dot\gamma_0(t)|???
+From comparison, we get
+\[2\cdot|\dot\gamma_{\frac12}(t)|^2
+\le
+|\dot\gamma_{0}(t)|^2
++|\dot\gamma_{0}(t)|^2
+-\tfrac12\cdot(|\gamma_{0}(t)-\gamma_{1}(t)|')^2\] 
+for almost all $t$.
+It particular $|\dot\gamma_{\frac12}(t)|\le 1$.
+
+By assumption, the length of $\gamma_{\frac12}$ equals $\ell$. 
+Hence $|\dot\gamma_{\frac12}(t)|=1$ for almost all $t\in[0,\ell]$. 
+In particular, $\gamma_{\frac12}$
 is parametrized by arc length. 
 
-Since the energy of a unit speed path equals its length, we conclude from energy convexity 
-$$
-\int\limits_0^L|\nabla |\gamma_0-\gamma_1||^2 d\mathcal{H}^1
-=
-0.
-$$
-Therefore, $\gamma_0$ is parallel to $\gamma_1$.
+It follows that $|\gamma_{0}(t)-\gamma_{1}(t)|'=0$ for almost all $t$.
+Since the function $t\mapsto |\gamma_{0}(t)-\gamma_{1}(t)|$ is Lipschitz,
+the latter  implies that $|\gamma_{0}(t)-\gamma_{1}(t)|$ does not depend on $t$.
+That is, $\gamma_{0}$ and $\gamma_{1}$ are parallel.
 \qeds
 
 \parbf{Remark.}
-It is possible to show in the above situation that  $h([0,1]\times[0,L])$ is intrinsically flat.
+In fact, it is possible to show in the above situation that the induced intrinsic metric on $[0,1]\times[0,\ell]$
+for the map $(t,\tau)\mapsto \gamma_t(\tau)$ is a product metric.
 
 \begin{thm}{Corollary}\label{cor:parpaths}
-Let $\gamma_0,\gamma_1\:[0,1]\to X$ be two rectifiable paths both starting in a point $p\in X$ and of equal length $L>0$. 
-If the lengths of the curves $\gamma_t$ is constant, then $\gamma_{0}=\gamma_{1}$.
+Let $\gamma_0,\gamma_1\:[0,1]\to X$ be two rectifiable paths both starting in a point $p\in X$ and of equal length $\ell>0$. 
+If the lengths in their geodesic homotopy $\gamma_t$ is constant, then $\gamma_{0}=\gamma_{1}$.
 \end{thm}
 
 \begin{thm}{Uniqueness Theorem}\label{prop:strict-mm}
@@ -1212,14 +1221,24 @@ Then
 $\|\DD\|_{s_t}$ is isometric to $\|\DD\|_{s_0}$ for all $t\in[0,1]$. 
 In particular, every $s_t$ is metric minimizing.
 From Corollary \ref{cor:parpaths} we see that $s_0$ agrees with $s_1$ on every path $\gamma$ which starts
-in $\partial\DD$ and has the property that $s_0\circ\gamma$ is rectifiable. Denote $A\subset\DD$ the closure of
-the set of endpoints of such paths. Since $s_0$ and $s_1$ are continuous, we conclude $s_0|_{A}=s_1|_{A}$.
-But $U:=\DD-A$ is open. Now let us modify $s_0$ another time to $\tilde s$ by sending all of $U$ to a point. Note that $\tilde s$
-is still metric minimizing. 
-For any point $p\in U$ we can choose a segment $\sigma$ going through $p$ and such that $\sigma$ intersects $A$ exactly in its endpoints. 
-With respect to $\tilde s$ all points on $\sigma$ have intrinsic distance equal to zero.  Hence the same is true for all $s_t$. 
-In particular, every $s_t$ is constant on $\sigma$. From $\partial \sigma\subset A$ we have  $s_0|_{\partial\sigma}=s_1|_{\partial\sigma}$
-and therefore $s_0(p)=s_1(p)$. The claim follows.
+in $\partial\DD$ and has the property that $s_0\circ\gamma$ is rectifiable. 
+
+Denote by $A\subset\DD$ the closure of the set of endpoints of such paths. 
+Since $s_0$ and $s_1$ are continuous, we conclude $s_0|_{A}=s_1|_{A}$.
+
+Let us show that $A=\DD$; assume contrary.
+Note that the complement $U=\DD\backslash A$ is open. 
+Let us redefine $s_0$ by sending all of $U$ to a point.
+Denote by $s_1$ the obtained map.
+Note that $s_1$
+is still metric minimizing.
+
+Fix a point $p\in U$.
+Choose a path $\sigma\:[0,1]\to\DD$ connecting $p$ to $A$ and intersecting $A$ exactly the endpoint $\sigma(1)$. 
+With respect to $s_1$ all points on $\sigma([0,1))$ have intrinsic distance equal to zero.  
+Hence the same is true for all $s_0$. 
+It follows that every $s_0$ is constant on $\sigma$.
+The latter implies that $p\in A$, a contradiction.
 \qeds
 
 
@@ -1242,7 +1261,7 @@ A map $f\:Y\to Z$ from a metric space $Y$ to a metric space
 {\em intrinsically continuous}, if for every $y\in Y$ 
 and every $\eps>0$ there
 exists $\delta>0$ such that any  $y'\in Y$
-with $|y,y'|<\delta$ can be connected to $y$ by a path $\gamma$ 
+with $|y-y'|<\delta$ can be connected to $y$ by a path $\gamma$ 
 with $\length(f\circ\gamma)<\eps$.
 \end{thm}
 
@@ -1250,45 +1269,56 @@ with $\length(f\circ\gamma)<\eps$.
 \begin{itemize}
  \item The main example of intrinsically continuous maps are Lipschitz
 maps from length spaces to arbitrary metric spaces.
-\item Restrictions of intrinsically continuous maps to compact sets are uniformly intrinsically continuous. 
+\item Restrictions of intrinsically continuous maps to compact sets are uniformly intrinsically continuous. %???I DID NOT GET THIS???
 \item If a map $f\:Y\to Z$ is intrinsically continuous, then 
 the natural projection $\pi_f\:Y\rightarrow \|Y\|_f$ is continuous. 
-If moreover $Y$ is compact, then $\|Y\|_f$ equipped with the induced 
+If, moreover, $Y$ is compact, then $\|Y\|_f$ equipped with the induced 
 metric is a geodesic space.
 \end{itemize}
 
 
 
 \parbf{CAT[0] spaces.}
-Let $X$ be a compact geodesic space and $Y$ a $CAT[0]$ space. Fix a map  
-$f:X\to Y$.
+Let $X$ be a compact geodesic space and $Y$ a $\CAT[0]$ space. 
+Fix a map $f\:X\to Y$.
 
 For a subset $A\subset X$  we 
-define its relative sublevel $\mathcal{S}(f)$ consisting of all maps $g:X\to Y$
+define its relative sublevel $\mathcal{S}(f)$ consisting of all maps $g\:X\to Y$
 with $g|_{A}=f|_{A}$ and $f\succcurlyeq g$. 
 If $f$ is intrinsically continuous as a map from $X$, then
 so is every element in $\mathcal{S}(f)$. 
 
 \begin{thm}{Proposition}\label{prop:exist}
-If $X$ is a compact geodesic space and $Y$ a CAT[0] space, then for every subset $A\subset X$ and every intrinsically continuous map $f\:X\rightarrow Y$,
+If $X$ is a compact geodesic space and $Y$ a $\CAT[0]$ space, then for every subset $A\subset X$ and every intrinsically continuous map $f\:X\rightarrow Y$,
 there is an intrinsically continuous  metric minimizing map $s\:X\rightarrow Y$
 such that $f\succcurlyeq s$.
 \end{thm}
 
+%???THE PROOF IS AN OVERKILL, ISN'T IT???
 
 \parit{Proof.}
-Let $\mathcal{O}\subset\mathcal{S}(f)$ be a well-ordered subset. 
-If $\mathcal{O}$ does not have a minimum, then we define
+Let $\mathcal{O}\subset\mathcal{S}(f)$ be a well-ordered subset with respect to ``$\succcurlyeq$''. 
+Assume $\mathcal{O}$ does not have a minimum.
+Note that
 $$
-\mathcal{F}:=\{A\subset\mathcal{O}|\ \mathcal{O}-A\text{ has a lower bound in }\mathcal{O}\}.
+\mathcal{F}=\{A\subset\mathcal{O}|\ \mathcal{O}-A\text{ has a lower bound in }\mathcal{O}\}.
 $$
-This defines a filter since $\mathcal{O}$ does not have a minimum and any point is a lower bound for the empty set.
+is filter.
+Indeed, since $\mathcal{O}$ does not have a minimum and any point is a lower bound for the empty set.
+
 Complete $\mathcal{F}$ to an ultrafilter $\omega$. Note that $\omega$ is non-principal since finite subsets have lower bounds.
-Set $Y_\omega:=\omega\lim_{\mathcal{O}}(Y,*)$ a pointed ultralimit with arbitrary fixed base point. Then $Y_\omega$
-is a CAT[0] space which contains $Y$ as a convex subset. The ultralimit $s_\omega:X_\omega\to Y_\omega$ is well defined, since
-$f$ is intrinsically continuous. Denote $\bar s_\omega$ the composition of $s_\omega$ with the nearest point projection $Y_\omega\to Y$.
-Since $X_\omega$ is canonically isometric to $X$, the map $\bar s_\omega$ lies in $\mathcal{S}(f)$. We claim that $\bar s_\omega$
-is a lower bound for $\mathcal{O}$. Let $\gamma$ be a path in $X$ and $s_0$ an element in $\mathcal{O}$. For a partition $x_0,\ldots,x_k$
+Denote by $Y^\omega$ the ultrapower of $Y$. 
+Then $Y^\omega$
+is a $\CAT[0]$ space which contains $Y$ as a convex subset. 
+The $\omega$-limit $s_\omega\:X\to Y^\omega$ is well defined, since
+$f$ is intrinsically continuous. 
+Denote $\bar s_\omega$ the composition of $s_\omega$ with the nearest point projection $Y_\omega\to Y$.
+Clearly, $\bar s_\omega\in \mathcal{S}(f)$.
+
+We claim that $\bar s_\omega$
+is a lower bound for $\mathcal{O}$. 
+Let $\gamma$ be a path in $X$ and $s_0$ an element in $\mathcal{O}$. 
+For a partition $x_0,\ldots,x_k$
 of $\gamma$ we have
 \begin{align*}
 \sum_{j=0}^k|\bar s_\omega(x_j)-\bar s_\omega(x_{j+1})|&=\omega\lim_{\mathcal{O}}\sum_{j=0}^k|s(x_j)-s(x_{j+1})|\leq 
@@ -1304,16 +1334,19 @@ is a lower bound for $\mathcal{O}$. By Zorn's lemma we obtain a minimal element 
 
 
 
-\section{Application to harmonic maps}
+\section{Sobolev discs}
 
 %???MAYBE WE SHOULD say harmonic insted of energy minimizing
-\parbf{Sobolev spaces and energy.}
-Let us review some definitions and properties from Sobolev space theory in metric spaces as developed in 
-\cite{KS},\cite{R}, \cite{HKST} and \cite{LW}. For more details we refer the reader to these articles.
+The material in this section is not new,
+it is needed to prepare the reader to the next section.
+Here we review some definitions and properties from Sobolev space theory in metric spaces as developed in 
+\cite{KS},\cite{R}, \cite{HKST} and \cite{LW}. 
+For more details we refer the reader to these articles.
+
 Denote by  $\DD^\circ$ the interior of $\DD$ and fix a complete metric space $X$.
 Following Reshetnyak (\cite{R}), we say that a map $u\:\DD^\circ\to X$ has {\em finite energy}, or lies in the Sobolev space $W^{1,2}(\DD^\circ,X)$ if
 \begin{itemize}
- \item $u$ is measureable and has essentially separable image.
+ \item $u$ is measureable and has essentially separable image. %???essentially, that is... ???
  \item There exists $g\in L^2(\DD^\circ,\RR)$ such that the composition $f\circ u$ with any short map $f\:X\to \mathbb{R}$ 
 lies in the classical Sobolev space $W^{1,2}(\DD^\circ)$
  and the norm of the weak gradient $|\nabla(f\circ u)|$ is almost everywhere bounded by $g$.
@@ -1321,9 +1354,9 @@ lies in the classical Sobolev space $W^{1,2}(\DD^\circ)$
 
 If $u$ lies in the Sobolev space $W^{1,2}(\DD^\circ,X)$ then its energy 
 \[E(u)=
-\int\limits_{\DD^\circ}\left(\frac{1}{\pi}\cdot\int_{\mathbb{S}^1}|(d_zu)(v)|^2\cdot d_v\length\right)\cdot d_z\area\]
+\int\limits_{\DD^\circ}\left(\frac{1}{\pi}\cdot\int_{\mathbb{S}^1}\left|(d_zu)(v)\right|^2\cdot d_v\length\right)\cdot d_z\area\]
 is finite. 
-Here $du_z$ denotes the approximate metric differential of $u$ at $z$. (See \cite{LW}.)
+Here $d_zu$ denotes the approximate metric differential of $u$ at $z$. (See \cite{LW}.)
 Note that in the case of a Riemannian manifold $X$ the energy as define above is equal to
 the classical Dirichlet energy up to a constant factor.
 A map $u\in W^{1,2}(\DD^\circ,X)$ will be further called a \emph{Sobolev disc}.
@@ -1337,9 +1370,9 @@ Let $u\:\DD^\circ\to X$ be a continuous map. Then $u$ has finite energy iff
 for some (and therefore any) $p\in X$ the map $x\mapsto|u(x)-p|$ lies in $L^2(\DD^\circ,\RR)$ and
 there is a Borel function $\rho\in L^2(\DD^\circ,\RR)$ such that for 2-almost all curves\footnote{A property $\mathcal{P}$ holds for 
 for 2-almost all curves in $\DD^\circ$ if there is a Borel function $f\:\DD^\circ\to[0,\infty]$ such that $\int_\gamma f=\infty$
-for every rectifiable curve $\gamma$ which fails to satisfy $\mathcal{P}$.} $\gamma:\II\to \DD^\circ$
+for every rectifiable curve $\gamma$ which fails to satisfy $\mathcal{P}$.} $\gamma\:\II\to \DD^\circ$
 $$
-\length(u\circ \gamma)\leq\int_\gamma \rho.
+\length(u\circ \gamma)\leq\int_\gamma \rho.%d\length???
 $$
 \end{thm}
 
@@ -1347,12 +1380,15 @@ $$
 The following variant of the Courant--Lebesgue Lemma will be used repeatedly.
 
 \begin{thm}{Courant--Lebesgue Lemma}(Lemma 7.3 in \cite{LW})\label{lem:CL}
-Let $u\:\DD^\circ\to X$ be a Sobolev disc. Let $z_0\in\DD$ and $\delta\in(0,1)$. For each $r\in(0,1)$
-let $\gamma_r$ be an arc-length parametrization of $\{z\in \DD^\circ:\ |z-z_0|=r\}$. Then there exists
-$A\subset (\delta,\sqrt{\delta})$ of strictly positive measure such that $u\circ\gamma_r$
+Let $u\:\DD^\circ\to X$ be a Sobolev disc. 
+Let $z_0\in\DD$ and $\delta\in(0,1)$. 
+For each $r\in(0,1)$ let $\gamma_r$ be an arc-length parametrization of $\{z\in \DD^\circ:\ |z-z_0|=r\}$. 
+Then there exists $A\subset (\delta,\sqrt{\delta})$ of strictly positive measure such that $u\circ\gamma_r$
 has an absolutely continuous representative of length
 $$
-\length_X(u\circ\gamma_r)\leq\pi\sqrt{\frac{2E(u)}{|\log\delta|}}
+\length_X(u\circ\gamma_r)
+\leq
+\pi\cdot\sqrt{\frac{2\cdot E(u)}{|\log\delta|}}
 $$
 for every $r\in A$.
 \end{thm}
@@ -1362,7 +1398,7 @@ for every $r\in A$.
 
 
 
-Any Sobolev disc $u$ has a well defined trace $\operatorname{tr}(u)\in L^2(\partial\DD)$. (See \cite{KS} and \cite{LW}.)
+Any Sobolev disc $u\:\DD^\circ\to X$ has a well defined trace $\operatorname{tr}(u)\in L^2(\partial\DD,X)$. (See \cite{KS} and \cite{LW}.)
 If $u$ extends to a continuous map $\bar u$ on $\DD$, then $\operatorname{tr}(u)$ is represented by $\bar u|_{\partial\DD}$. 
 We say that a circle $\gamma\:\partial\DD\to X$ is {\em spanned by} a Sobolev disc $u$, if $\gamma=\operatorname{tr}(u)$ is in 
 $L^2(\partial\DD,X)$.
@@ -1385,8 +1421,9 @@ Moreover, the local Lipschitz constant of $u$ depends only on the energy of $u$ 
 An energy minimizing disc will be further called \emph{harmonic disc}.
 
 
-\parbf{Harmonic discs are metric minimizing.}
-Our plane is to prove that harmonic maps from discs to $\CAT[0]$ spaces are metric minimizing ( Proposition~\ref{prop:harmonic}).
+\section{Harmonic discs are metric minimizing}
+
+Our plan is to prove that harmonic maps from discs to $\CAT[0]$ spaces are metric minimizing (Proposition~\ref{prop:harmonic}).
 We will begin with some preparations. 
 
 
@@ -1446,7 +1483,7 @@ $s\:|\DD|_u\to X$ with $u\succcurlyeq s$. Since $s$ is saddle by Proposition \re
 is continuous. (Compare the proof of Lemma \ref{lem:harmsaddle}.) 
 Since $s$ is metric minimizing and $s\circ\pi_u$ is continuous, we get that $s\circ\pi_u$ has finite energy from Lemma \ref{lem:sobolevchar}. 
 From Lemma 3.1 in \cite{LW3} we have for 2-almost all 
-curves $\gamma:\II\to \DD^\circ$
+curves $\gamma\:\II\to \DD^\circ$
 $$
 \length(s\circ\pi_u\circ \gamma)=\int_\II |d(s\circ\pi_u)_{\gamma(t)}(\dot\gamma(t))|dt\leq \int_\II |du_{\gamma(t)}(\dot\gamma(t))|dt=\length(u\circ \gamma).
 $$
@@ -1561,7 +1598,7 @@ with boundary condition $\psi_k$. By classical regularity theory, $\varphi_k$ is
 on all of $\DD$. 
 (See e.g. Theorem 5.3 in \cite{S}.) 
 Since the $Z_k$ are compact, of uniformly bounded diameter and uniformly bounded boundary lengths, the energies of the
-$\varphi_k$ are also unifomly bounded. Hence they subconverge to a map $\varphi_\infty:\DD\to \|\DD\|_u$ of finite energy $E(\varphi_\infty)\leq \liminf E(\varphi_k)$.
+$\varphi_k$ are also unifomly bounded. Hence they subconverge to a map $\varphi_\infty\:\DD\to \|\DD\|_u$ of finite energy $E(\varphi_\infty)\leq \liminf E(\varphi_k)$.
 \begin{thm}{Sublemma}\label{sublem:minimizer}
 We have $\varphi_\infty=\pi_u$.
 \end{thm}
