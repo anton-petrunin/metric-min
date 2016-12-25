@@ -281,7 +281,7 @@ We will discuss now the relation between the metrics $d_f$ and $\|*-*\|_f$.
 
 \begin{thm}{Lemma}\label{lem:intrinsicmetric}
 Let $X$ and $Y$ be metric spaces, $f\:X\to Y$ a continuous map and $\gamma$ a curve in $X$. Then $f\circ\gamma$
-is rectifiable iff $\pi_f\circ\gamma$ is rectifiable; and in this case $\length_Y(f\circ\gamma)=\length_{|X|_f}(\pi_f(\gamma))$.
+is rectifiable if and only if $\pi_f\circ\gamma$ is rectifiable; and in this case $\length_Y(f\circ\gamma)=\length_{|X|_f}(\pi_f(\gamma))$.
 In particular, $\bar f$ preserves the lengths of all rectifiable curves $\pi_f(\gamma)$ with $\gamma$ a curve in $X$.
 \end{thm}
 \parit{Proof.}
@@ -327,7 +327,7 @@ and $h|_A=f|_A$.
 Let $X$ be a compact geodesic space, $Y$ a metric space 
 and $A\subset X$ a closed subset.
 Let $f\:X\to Y$ be a continuous map. Then $f$ is metric minimizing relative to $A$
-iff $\bar f$ is metric minimizing relative to $\pi_f(A)$.
+if and only if $\bar f$ is metric minimizing relative to $\pi_f(A)$.
 \end{thm}
 
 \parit{Proof.}
@@ -1366,7 +1366,7 @@ See section 3.2 in \cite{LW3}.
 
 
 \begin{thm}{Lemma}\label{lem:sobolevchar}
-Let $u\:\DD^\circ\to X$ be a continuous map. Then $u$ has finite energy iff
+Let $u\:\DD^\circ\to X$ be a continuous map. Then $u$ has finite energy if and only if
 for some (and therefore any) $p\in X$ the map $x\mapsto|u(x)-p|$ lies in $L^2(\DD^\circ,\RR)$ and
 there is a Borel function $\rho\in L^2(\DD^\circ,\RR)$ such that for 2-almost all curves\footnote{A property $\mathcal{P}$ holds for 
 for 2-almost all curves in $\DD^\circ$ if there is a Borel function $f\:\DD^\circ\to[0,\infty]$ such that $\int_\gamma f=\infty$
@@ -1421,7 +1421,7 @@ Moreover, the local Lipschitz constant of $u$ depends only on the energy of $u$ 
 An energy minimizing disc will be further called \emph{harmonic disc}.
 
 
-\section{Harmonic discs are metric minimizing}
+\section{Harmonic discs}
 
 Our plan is to prove that harmonic maps from discs to $\CAT[0]$ spaces are metric minimizing (Proposition~\ref{prop:harmonic}).
 We will begin with some preparations. 
@@ -1434,8 +1434,9 @@ Then map $u$ is saddle and continuous.
 \end{thm}
 
 \parit{Proof.}
-Since energy is nonincreasing under postcomposition with short maps, the uniqueness in Theorem \ref{thm:harmonic} implies that
-$u$ is saddle. %??? something wrong here --- we refer to the theorem below, and also a short map (formally) might preserve the energy???
+Since energy is nonincreasing under composition with short maps, 
+the uniqueness in Theorem \ref{thm:dirichlet} implies that
+$u$ is saddle. 
 By Lemma \ref{lem:CL}, every point $x$ in $\DD$ and every $\eps>0$
 there is a neighborhood of $x$ which is bounded by a Jordan curve $J$ such that $\length_X(u(J))<\eps$. From the saddle property we conclude 
 that $u$ is continuous.
@@ -1449,19 +1450,6 @@ This follows from Proposition \ref{prop:disc-moore} since $u$ has no bubbles
 by Lemma \ref{lem:harmsaddle}.
 \qeds
 
-Recall that any continuous map $u$ factors as $u=\bar u\circ \pi_u$ with $\pi_u\:\DD\to|\DD|_u$ and $\bar u\:|\DD|_u\to X$.
-
-
-\begin{thm}{Lemma}\label{lem:memicrit}
-Let $u\:\DD\to X$ be a continuous map. 
-If $\bar u$ is metric minimizing relative to $\pi_u(\partial\DD)$, then $u$ is metric minimizing relative to $\partial\DD$.
-\end{thm}
-
-\parit{Proof.}
-If $u$ is not metric minimizing, then there is a map $s\:\DD\to X$ such that $s|_{\partial\DD}=u|_{\partial\DD}$ and $\|*-*\|_s\leq \|*-*\|_u$
-with a strict inequality for at least one pair of points. It follows that $\pi_s$ factors as $\pi_s=\alpha\circ\pi_u$ with a short  map $\alpha\:\|\DD\|_u\to\|\DD\|_s$.
-Note that $\bar s\circ\alpha|_{\partial|\DD|_u}=\bar u|_{\partial|\DD|_u}$, hence $\bar u$ is not metric minimizing.
-\qeds
 
 
 
@@ -1477,25 +1465,34 @@ Then $u$ is continuous and metric minimizing relative $\partial\DD$.
 
 
 \parit{Proof.}
-By Lemma \ref{lem:memicrit}, it is enough to show that $\bar u$ is metric minimizing relative to $\partial|\DD|_u$.
+By Proposition \ref{prop:memicrit}, it is enough to show that $\bar u$ is metric minimizing relative to $\partial|\DD|_u$.
 By Proposition \ref{prop:exist} there exists a metric minimizing map
-$s\:|\DD|_u\to X$ with $u\succcurlyeq s$. Since $s$ is saddle by Proposition \ref{prop:memisaddle}, Lemma \ref{lem:CL} implies that $s$
-is continuous. (Compare the proof of Lemma \ref{lem:harmsaddle}.) 
-Since $s$ is metric minimizing and $s\circ\pi_u$ is continuous, we get that $s\circ\pi_u$ has finite energy from Lemma \ref{lem:sobolevchar}. 
+$s\:|\DD|_u\to X$ with $u\succcurlyeq s$. 
+Since $s$ is saddle by Proposition \ref{prop:memisaddle}, Lemma \ref{lem:CL} implies that $s$
+is continuous. 
+(Compare the proof of Lemma \ref{lem:harmsaddle}.) 
+
+Since $s$ is metric minimizing and $s\circ\pi_u$ is continuous, by Lemma \ref{lem:sobolevchar}, we get that $s\circ\pi_u$ has finite energy. 
 From Lemma 3.1 in \cite{LW3} we have for 2-almost all 
 curves $\gamma\:\II\to \DD^\circ$
-$$
-\length(s\circ\pi_u\circ \gamma)=\int_\II |d(s\circ\pi_u)_{\gamma(t)}(\dot\gamma(t))|dt\leq \int_\II |du_{\gamma(t)}(\dot\gamma(t))|dt=\length(u\circ \gamma).
-$$
+\begin{align*}
+\length(s\circ\pi_u\circ \gamma)
+&=\int_\II |d(s\circ\pi_u)_{\gamma(t)}(\dot\gamma(t))|dt\leq
+\\
+&\leq \int_\II |du_{\gamma(t)}(\dot\gamma(t))|dt=
+\\
+&=\length(u\circ \gamma).
+\end{align*}
 The Lebesgue Differentiation theorem implies $d(s\circ\pi_u)\leq du$ almost everywhere. Since $E$ is monotonic in the metric differentials, it follows that 
 $E(s)=E(u)$, that is $s\circ\pi_u$ is also energy minimizing.
-By uniqueness in Theorem \ref{thm:dirichlet} we get $u=s\circ\pi_u$. Therefore $\bar u=s$ and Lemma \ref{lem:memicrit} implies that $u$
+By uniqueness in Theorem \ref{thm:dirichlet} we get $u=s\circ\pi_u$. Therefore $\bar u=s$ and Proposition \ref{prop:memicrit} implies that $u$
 is metric minimizing.
  \qeds
  
  
  \parbf{Remark.}
 This proposition immediately generalizes to other convex energy functionals which are monotonic in the metric differentials.
+For example the energy considered in Section~\ref{sec:smooth}.
  
  
  
