@@ -208,7 +208,12 @@ $\diam f(C)<r$.
 It remains to join $\hat x$ and $\hat y$ by a path in $C$.
 \qeds
 
-\begin{thm}{Corollary}\label{cor:geospace}
+The following lemma essentially says that completeness survives under passing to intrinsic metric
+and intrinsic metric on compact space is always geodesic.
+These statements should be classical, 
+but we were not be able to find it in the literature.
+
+\begin{thm}{Lemma}\label{lem:geospace}
 Let $X$ be a compact geodesic space, $Y$ a metric space and $f\:X\to Y$ a continuous map. 
 Then each metric component of $\|X\|_f$ is a complete geodesic space.
 \end{thm}
@@ -230,36 +235,35 @@ such that $\length\gamma_n\to \|x-y\|_f$.
 Then its partial limit in $|X|_f$ is a geodesic from $x$ to $y$ for the metric $\|x-y\|_f$.
 \qeds
 
-\begin{thm}{Lifting Lemma}\label{lem:lift}
-Let $X$ be a compact geodesic space, $Y$ a metric space and $f\:X\to Y$ a continuous map. 
-Let $c\:[0,1]\to|X|_f$ be a rectifiable path joining points $p$ and $q$ in $|X|_f$. 
-Suppose that $\hat p$ and $\hat q$ are lifts of the points $p$ an $q$ to $X$.
-Then for every $\eps>0$ there exists a piecewise geodesic path $\hat c\:[0,1]\to X$ joining $\hat p$ to $\hat q$ such that 
-\[|\pi_f\circ\hat c(t)-c(t)|_f<\eps\ \text{for all}\ t\in[0,1].\]
-\end{thm}
+%\begin{thm}{Lifting Lemma}\label{lem:lift}
+%Let $X$ be a compact geodesic space, $Y$ a metric space and $f\:X\to Y$ a continuous map. 
+%Let $c\:[0,1]\to|X|_f$ be a rectifiable path joining points $p$ and $q$ in $|X|_f$. 
+%Suppose that $\hat p$ and $\hat q$ are lifts of the points $p$ an $q$ to $X$.
+%Then for every $\eps>0$ there exists a piecewise geodesic path $\hat c\:[0,1]\to X$ joining $\hat p$ to $\hat q$ such that 
+%\[|\pi_f\circ\hat c(t)-c(t)|_f<\eps\ \text{for all}\ t\in[0,1].\]
+%\end{thm}
 
-\parit{Proof.}
-Since $\|X\|_f$ is a geodesic space, 
-by Corollary \ref{cor:geospace} it is enough to consider the case where $c$ is a geodesic.
-Given $\eps>0$ denote $U_\eps$ the open $\eps$-neighborhood of $c([0,1])$ and choose times $0=t_0<t_1<\ldots<t_k=1$ 
-such that $|c(t_i)-c(t_{i+1})|_f<\frac{\eps}{2}$. 
-Choose arbitrary lifts $\hat c(t_i)$ of the points $c(t_i)$ for $i\in\{1,\ldots,k-1\}$.
-By Lemma \ref{lem:picont}, we find open connected sets $C_i\subset X$ containing $\hat c(t_i)$ and $\hat c(t_{i+1})$ with $\diam f(C_i)<\eps$. 
-In particular $\pi_f(C_i)\subset U_\eps$. 
-To finish the proof we join $\hat c(t_i)$ and $\hat c(t_{i+1})$ by piecewise geodesics in $C_i$.
-\qeds
+%\parit{Proof.}
+%Since $\|X\|_f$ is a geodesic space, 
+%by Lemma \ref{lem:geospace} it is enough to consider the case where $c$ is a geodesic.
+%Given $\eps>0$ denote $U_\eps$ the open $\eps$-neighborhood of $c([0,1])$ and choose times %$0=t_0<t_1<\ldots<t_k=1$ 
+%such that $|c(t_i)-c(t_{i+1})|_f<\frac{\eps}{2}$. 
+%Choose arbitrary lifts $\hat c(t_i)$ of the points $c(t_i)$ for $i\in\{1,\ldots,k-1\}$.
+%By Lemma \ref{lem:picont}, we find open connected sets $C_i\subset X$ containing $\hat c(t_i)$ and $\hat c(t_{i+1})$ with $\diam f(C_i)<\eps$. 
+%In particular $\pi_f(C_i)\subset U_\eps$. 
+%To finish the proof we join $\hat c(t_i)$ and $\hat c(t_{i+1})$ by piecewise geodesics in $C_i$.
+%\qeds
 
-\begin{thm}{Corollary}\label{cor:connecedpreimage}
-Let $X$ be a compact geodesic space, $Y$ a metric space and $f\:X\to Y$ a continuous map. 
-Then the inverse image under $\pi_f$ of an open connected subset $C$ of $|X|_f$  is pathconnected in $X$.
-\end{thm}
+%\begin{thm}{Corollary}\label{cor:connecedpreimage}
+%Let $X$ be a compact geodesic space, $Y$ a metric space and $f\:X\to Y$ a continuous map. 
+%Then the inverse image under $\pi_f$ of an open connected subset $C$ of $|X|_f$  is pathconnected in $X$.
+%\end{thm}
 
-\parit{Proof.}
-Let $C$ be an open connected subset of $|X|_f$. 
-By Lemma \ref{lem:picont}, $|X|_f$ is locally pathconnected and therefore
-$C$ is pathconnected. 
-Hence the claim follows from the Lifting Lemma \ref{lem:lift}.
-\qeds
+%\parit{Proof.}
+%Let $C$ be an open connected subset of $|X|_f$. 
+%By Lemma \ref{lem:picont}, $|X|_f$ is locally pathconnected and therefore $C$ is pathconnected. 
+%Hence the claim follows from the Lifting Lemma \ref{lem:lift}.
+%\qeds
 
 
 \begin{thm}{Corollary}\label{cor:fiberconnected}
@@ -276,24 +280,23 @@ $[x]_f\cap U$ and $[x]_f\cap V$ are nonempty.
 
 We can assume that $x\in [x]_f\cap U$.
 Pic $y\in [x]_f\cap V$.
-Then there is a sequence of connected sets $K_\ni p,q$ such that $\diam f(K)<\tfrac1n$.
+Then there is a sequence of connected sets $K_n\ni p,q$ such that $\diam f(K)<\tfrac1n$.
 For each $n$ pick a point $k_n\in K_n\backslash (U\cup V)$ and let $k$ be its partial limit.
 It follows that $k\in [x]_f\backslash (U\cup V)$, a contradiction.
 \qeds
 
-\begin{thm}{Lemma}\label{lem:idem}
-Let $X$ be a compact geodesic space, $Y$ a metric spaces and $f\:X\to Y$ a continuous map.
- Then for any map $s\:|X|_f\to Y$ holds
-\[|X|_{s\circ\pi_f}\cong||X|_{f}|_s.\]
-In particular $|X|_{f}\cong||X|_{f}|_{\bar f}$. %???what is \bar f???
-\end{thm}
+%\begin{thm}{Lemma}\label{lem:idem}
+%Let $X$ be a compact geodesic space, $Y$ a metric spaces and $f\:X\to Y$ a continuous map.
+%Then for any map $s\:|X|_f\to Y$ holds
+%\[|X|_{s\circ\pi_f}\cong||X|_{f}|_s.\]
+%In particular $|X|_{f}\cong||X|_{f}|_{\bar f}$. %???what is \bar f???
+%\end{thm}
 
-\parit{Proof.}
-Since $\pi_f$ is continuous, by Lemma \ref{lem:picont}, we see $|\pi_f(x)-\pi_f(y)|_s=0$ if $|x-y|_{s\circ\pi_f}=0$. 
-Moreover, $\pi_f$ induces a surjective short map $\alpha\:|X|_{s\circ\pi_f}\to||X|_{f}|_s$. 
-From Corollary \ref{cor:connecedpreimage} it follows that
- $\alpha$ is an isometry.
-\qeds
+%\parit{Proof.}
+%Since $\pi_f$ is continuous, by Lemma \ref{lem:picont}, we see $|\pi_f(x)-\pi_f(y)|_s=0$ if $|x-y|_{s\circ\pi_f}=0$. 
+%Moreover, $\pi_f$ induces a surjective short map $\alpha\:|X|_{s\circ\pi_f}\to||X|_{f}|_s$. 
+%From Corollary \ref{cor:connecedpreimage} it follows that $\alpha$ is an isometry.
+%\qeds
 
 \parbf{An alternative definition.}
 Let us discuss an alternative definition of induced length metric denoted as $\llangle {*}-{*}\rrangle_f$.
@@ -330,6 +333,8 @@ if there is no map $h\:X\to Y$ distinct from $f$
 such that $f\succcurlyeq h$, 
 and $h|_A=f|_A$.
 
+The following proposition easily follow directly from definition.
+
 \begin{thm}{Proposition}\label{prop:memicrit}
 Let $X$ be a compact geodesic space, $Y$ a metric space 
 and $A\subset X$ a closed subset.
@@ -347,20 +352,16 @@ $f|_C$ to any closed set $C\subset X$ is metric minimizing realtive to $\partial
 
 \end{thm}
 
-\parit{Proof.}
-Assume that $f$ is metric minimizing relative to $A$ but there is a map $s\:|X|_f\to Y$ with $\bar f\succ s$. 
-Then there is a surjective short map $\||X|_f\|_{\bar f}\to\||X|_f\|_s$ which strictly
-contracts the distance of at least one pair of points.
-This is a contradiction because $s\circ\pi_f|_A=f|_A$ and, by Lemma \ref{lem:idem}, 
-$\||X|_f\|_{\bar f}\cong\|X\|_f$ and $\||X|_f\|_s\cong\|X\|_{s\circ\pi_f}$. 
+%\parit{Proof.}
+%Assume that $f$ is metric minimizing relative to $A$ but there is a map $s\:|X|_f\to Y$ with $\bar f\succ s$. 
+%Then there is a surjective short map $\||X|_f\|_{\bar f}\to\||X|_f\|_s$ which strictly contracts the distance of at least one pair of points.
+%This is a contradiction because $s\circ\pi_f|_A=f|_A$ and, by Lemma \ref{lem:idem}, $\||X|_f\|_{\bar f}\cong\|X\|_f$ and $\||X|_f\|_s\cong\|X\|_{s\circ\pi_f}$. 
 
-If on the other hand $\bar f$ is metric minimizing relative to $\pi_f(A)$ but there exists a map $s\:X\to Y$ with $f\succ s$,
-then there is a surjective short map $\alpha\:\|X\|_f\to\|X\|_s$ which strictly
-contracts the distance of at least one pair of points and such that $\pi_s=\alpha\circ\pi_f$. 
-Again, by Lemma \ref{lem:idem}, we have  $\||X|_f\|_{\bar f}\cong\|X\|_f$ and $\||X|_f\|_s\cong\|X\|_{\bar s\circ\alpha}$, a contradiction. 
+%If on the other hand $\bar f$ is metric minimizing relative to $\pi_f(A)$ but there exists a map $s\:X\to Y$ with $f\succ s$, then there is a surjective short map $\alpha\:\|X\|_f\to\|X\|_s$ which strictlycontracts the distance of at least one pair of points and such that $\pi_s=\alpha\circ\pi_f$. 
+%Again, by Lemma \ref{lem:idem}, we have  $\||X|_f\|_{\bar f}\cong\|X\|_f$ and $\||X|_f\|_s\cong\|X\|_{\bar s\circ\alpha}$, a contradiction. 
 
-Part (ii) is trivial.
-\qeds
+%Part (ii) is trivial.
+%\qeds
 
 \begin{thm}{Proposition}\label{prop:point-complement}
 Let $X$ and $Y$ be metric spaces and $A\subset X$ be a closed subset.
@@ -1150,7 +1151,7 @@ Then each metric component of $\|\DD\|_s$ is a $\CAT[0]$ space.
 \end{thm}
 
 \parit{Proof of Main theorem.}
-From Corollary \ref{cor:geospace} we know that each metric component of $\|\DD\|_s$ is a complete geodesic space.
+From Lemma \ref{lem:geospace} we know that each metric component of $\|\DD\|_s$ is a complete geodesic space.
 We can assume that $\|\DD\|_s$ is a metric space.
 Otherwise we treat each metric component 
 individually.
