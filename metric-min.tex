@@ -29,7 +29,7 @@ and $s\:\DD\to Y$ is a continous map.
 The induced intrinsic distance $\|x-y\|_s$ for points $x,y\in\DD$ is defined in the preliminaries,
 but if $s$ is reasonable, it coincides with the least upper bound for the lengths of $s\circ\gamma$ for all paths $\gamma\:[0,1]\to \DD$ which connect $x$ to $y$.
 In particular, if $s$ is an embedding then $\|x-y\|_s$ coincides with the induced intrinsic metric between $s(x)$ and $s(y)$ in the image $s(\DD)\subset Y$.
-The disc $\DD$ with the metric $\|{*}-{*}\|_s$ will be denoted as $\|\DD\|_s$.
+The disc $\DD$ equipped with the metric $\|{*}-{*}\|_s$ will be denoted as $\|\DD\|_s$.
 
 The map $s\:\DD\to Y$ is called \emph{metric minimizing relative its boundary} if for any other map $s'\:\DD\to Y$ which coincides with $s$ on the boundary $\partial \DD$, 
 the intrinsic distance increase for at least two points of the domain.
@@ -61,7 +61,8 @@ this proof also contained a gap which we fill in this paper.
 For the applications of our result see \cite{LSW} and \cite{St}.
 
 Any metric minimizing surface in a $\CAT[0]$ space is saddle 
-in the sense that intersection of a convex set can not cut a hat from the surface.
+in the sense that intersection of a convex set can not cut a hat from the surface;
+see Section~\ref{Shefel}.
 The converse does not hold even for the smooth surfaces in $\RR^3$.
 In \cite{petrunin-metric-min} it was asked if all the saddle surfaces are locally metric minimizing.
 We prove it in the following partial case; 
@@ -92,9 +93,9 @@ In Section~\ref{Shefel} we treat the two-dimensional case;
 that is, metric minimizing discs in $\CAT[0]$-surfaces;
 this part is a straightforward generalization of the Shefel's result from \cite{shefel-2D}. 
 
-In Section~\ref{Main theorem} we assemble the proof our main theorem (\ref{thm:main}) a corollary from which (\ref{cor:main}) is  Theorem~\ref{thm:mainintro} above.
+In Section~\ref{Main theorem} we assemble the proof our main theorem (\ref{thm:main}) a its corollary (\ref{cor:main}) which includes most of the statements in Theorem~\ref{thm:mainintro} above.
 
-Section~\ref{Existence and uniqueness} is devoted to the existence and uniqueness of metric minimizing maps.
+Section~\ref{Existence and uniqueness} is devoted to the uniqueness of metric minimizing maps, which proves the remaining part of Theorem~\ref{thm:mainintro} above.
 Here we also introduce the notion of intrinsic continuity. 
 
 Sections \ref{Harmonic discs}--\ref{sec:smooth} are about examples.
@@ -158,7 +159,7 @@ if there is no such set we assume $|x-y|_f=\infty$.
 The intrinsic metric induced by $|{*}-{*}|_f$ will be denoted as 
 $\|{*}-{*}\|_f$. 
 That~is, 
-\[\|x-y\|_f=\inf\set{\length(\gamma)}{\gamma\ \text{continuous curve in}\ |X|_f\ \text{connecting}\ x \ \text{and}\ y}\]
+\[\|x-y\|_f=\inf\set{\length(\gamma)}{\gamma\ \text{is a path in}\ |X|_f\ \text{from}\ x \ \text{to}\ y}\]
 where the length is computed with respect to $|{*}-{*}|_f$.
 
 The metric spaces defined by the pseudometrics $|{*}-{*}|_f$ 
@@ -168,6 +169,12 @@ and $\|{*}-{*}\|_f$ on $X$ will be denoted as $|X|_f$ and $\|X\|_f$ correspondin
 
 The map $f$ factors as $f=\bar f\circ \pi_f$ with $\pi_f\:X\to|X|_f$ and $\bar f\:|X|_f\to Y$.
 For a point $x\in X$, let $[x]_f=\pi_f^{-1}(\pi_f(x))$ be the fiber of $\pi_f$ through $x$.
+
+Note that $\bar f$ is length preserving;
+that is,
+\[\length(\bar f\circ\gamma)=\length\gamma\]
+for any path $\gamma\:[0,1]\to |X|_f$.
+The same holds for the natural map $|X|_f\to \|X\|_f$.
 
 \begin{thm}{Lemma}\label{lem:picont}
 Let $X$ be a length space, $Y$ a metric space and $f\:X\to Y$ a continuous map. 
@@ -183,6 +190,7 @@ where the infimum is taken over all {\em open} connected sets $K\subset X$ which
 \end{itemize}
 
 \end{thm}
+
 \parit{Proof.}
 Let $(x_k)$ be a sequence in $X$ which converges to a point $x$. 
 For $\eps>0$ choose $\delta>0$ such that $f(B_\delta(x))\subset B_\eps(f(x))$. 
@@ -204,11 +212,23 @@ It remains to join $\hat x$ and $\hat y$ by a path in $C$.
 Let $X$ be a compact geodesic space, $Y$ a metric space and $f\:X\to Y$ a continuous map. 
 Then each metric component of $\|X\|_f$ is a complete geodesic space.
 \end{thm}
+
 \parit{Proof.}
 From Lemma \ref{lem:picont} we know that $\pi_f$ is continuous and therefore $|X|_f$ is compact.
-\qeds
 
-%%%???Why is it complete???
+Assume $\|X\|_f$ is not complete.
+Fix a sequence $(x_n)$ in $\|X\|_f$ converging in itself, but not converging in $\|X\|_f$.
+After passing to a subsequence, we can connect the points on the sequence appear on a rectifiable curve $\gamma\:[0,1)\to\|X\|_f$ in the same order.
+
+This curve can be lifted to $\bar\gamma\:[0,1)\to |X|_f$.
+Since $|X|_f$ is compact we can extend it to a path $\bar\gamma_+\:[0,1]\to |X|_f$.
+Its projection to  $\gamma_+\:[0,1]\to\|X\|_f$ has the same length.
+Therefore $\gamma_+(1)$ is the limit of $(x_n)$, a contradiction.
+
+Assume $\gamma_n$ is a sequence of constant speed paths from $x$ to $y$ in $|X|_f$
+such that $\length\gamma_n\to \|x-y\|_f$.
+Then its partial limit in $|X|_f$ is a geodesic from $x$ to $y$ for the metric $\|x-y\|_f$.
+\qeds
 
 \begin{thm}{Lifting Lemma}\label{lem:lift}
 Let $X$ be a compact geodesic space, $Y$ a metric space and $f\:X\to Y$ a continuous map. 
@@ -233,6 +253,7 @@ To finish the proof we join $\hat c(t_i)$ and $\hat c(t_{i+1})$ by piecewise geo
 Let $X$ be a compact geodesic space, $Y$ a metric space and $f\:X\to Y$ a continuous map. 
 Then the inverse image under $\pi_f$ of an open connected subset $C$ of $|X|_f$  is pathconnected in $X$.
 \end{thm}
+
 \parit{Proof.}
 Let $C$ be an open connected subset of $|X|_f$. 
 By Lemma \ref{lem:picont}, $|X|_f$ is locally pathconnected and therefore
@@ -240,22 +261,24 @@ $C$ is pathconnected.
 Hence the claim follows from the Lifting Lemma \ref{lem:lift}.
 \qeds
 
+
 \begin{thm}{Corollary}\label{cor:fiberconnected}
-Let $X$ be a compact geodesic space, $Y$ a metric space and $f\:X\to Y$ a continuous map.
-Then for every point $y\in Y$ the fiber $\pi_f^{-1}(y)$ is connected.
+Let $X$ be a compact space, 
+$Y$ a metric space and $f\:X\to Y$ a continuous map.
+Then for every point $x\in X$ the fiber $[x]_f$ is connected.
 \end{thm}
+
+
 \parit{Proof.}
-Let $p$ be a point in $\pi_f^{-1}(y)$ and denote its connected component by $C_p$. 
-If the fiber is not connected, then there is an
-open neighbourhood $\tilde U$ of $C_p$ disjoint from all other components.
- Since the fiber is closed we get that $\pi_f^{-1}(y)-C_p$
-is closed as well.
- Hence there exist open neighborhoods $U$ and $V$ of $C_p$ and $\pi_f^{-1}(y)-C_p$ respectively with $U\cap V=\emptyset$.
-Now pick a point $q$ in  $\pi_f^{-1}(y)-C_p$.
- Since  $X$ is a geodesic space, it follows from Lemma \ref{lem:picont} that we can find a sequence
-of paths $\gamma_k\:[0,1]\to X$ connecting $p$ and $q$ and with $\diam f\circ\gamma_k([0,1])<\frac{1}{k}$. For every $k\in\mathcal{N}$ we choose a point 
-$z_k\in f\circ\gamma_k([0,1])$ disjoint from $U\cup V$.
- Since $X$ is compact, the sequence $(z_k)$ subconverges to a point in $\pi_f^{-1}(y)$, a contradiction.
+Assume contrary;
+that is, a fiber $[x]_f$ can be covered by disjoint open sets $U,V\subset X$ such that each intersection 
+$[x]_f\cap U$ and $[x]_f\cap V$ are nonempty.
+
+We can assume that $x\in [x]_f\cap U$.
+Pic $y\in [x]_f\cap V$.
+Then there is a sequence of connected sets $K_\ni p,q$ such that $\diam f(K)<\tfrac1n$.
+For each $n$ pick a point $k_n\in K_n\backslash (U\cup V)$ and let $k$ be its partial limit.
+It follows that $k\in [x]_f\backslash (U\cup V)$, a contradiction.
 \qeds
 
 \begin{thm}{Lemma}\label{lem:idem}
@@ -264,6 +287,7 @@ Let $X$ be a compact geodesic space, $Y$ a metric spaces and $f\:X\to Y$ a conti
 \[|X|_{s\circ\pi_f}\cong||X|_{f}|_s.\]
 In particular $|X|_{f}\cong||X|_{f}|_{\bar f}$. %???what is \bar f???
 \end{thm}
+
 \parit{Proof.}
 Since $\pi_f$ is continuous, by Lemma \ref{lem:picont}, we see $|\pi_f(x)-\pi_f(y)|_s=0$ if $|x-y|_{s\circ\pi_f}=0$. 
 Moreover, $\pi_f$ induces a surjective short map $\alpha\:|X|_{s\circ\pi_f}\to||X|_{f}|_s$. 
@@ -272,45 +296,19 @@ From Corollary \ref{cor:connecedpreimage} it follows that
 \qeds
 
 \parbf{An alternative definition.}
+Let us discuss an alternative definition of induced length metric denoted as $\llangle {*}-{*}\rrangle_f$.
+It will not used in the paper.
+We include it to explain why we prefer a metric $\|{*}-{*}\|_f$ with a more complicated definition.
+
 If $f\:X\to Y$ is a continuous map between metric spaces $X$ and $Y$, then there is another pseudometric on $X$ induced by $f$. 
 Namely set 
-\[d_f(x,y)=\inf\{\length_Y(f\circ\gamma)|\ \gamma \text{ a path in } X\text{ connecting }x\text{ and }y\}.\]
-Denote by $Z_f=X/\sim$ the quotient metric space. 
-For the reasonable maps $Z_f$ is isometric to $\|X\|_f$,
-but in general they might differ;
+\[\llangle x-y\rrangle_f=\inf\{\length_Y(f\circ\gamma)|\ \gamma \text{ a path in } X\text{ connecting }x\text{ and }y\}.\]
+Denote by $\llangle X\rrangle_f=X/\sim$ the quotient metric space. 
+For the reasonable maps $\llangle X\rrangle_f$ is isometric to $\|X\|_f$.
+For example this is so if $f$ is an embedding, we omit the proof since we do not use this statement.
+For general $f$ we only have that the natural map $\llangle X\rrangle_f\to \|X\|_f$ is length preserving,
+but these spaces might be not isometric;
 an example is given in \cite[4.2]{petrunin-intrinisic}.
-
-We will discuss now the relation between the metrics $d_f$ and $\|*-*\|_f$.
-
-
-\begin{thm}{Lemma}\label{lem:intrinsicmetric}
-Let $X$ and $Y$ be metric spaces, $f\:X\to Y$ a continuous map and $\gamma$ a curve in $X$.
- Then $f\circ\gamma$
-is rectifiable if and only if $\pi_f\circ\gamma$ is rectifiable; and in this case $\length_Y(f\circ\gamma)=\length_{|X|_f}(\pi_f(\gamma))$.
-In particular, $\bar f$ preserves the lengths of all rectifiable curves $\pi_f(\gamma)$ with $\gamma$ a curve in $X$.
-\end{thm}
-\parit{Proof.}
-Let $\gamma\:[a,b]\to X$ be a continuous curve.
-Since $\bar f\:|X|_f\to Y$ is short, we have $\length_Y(f\circ \gamma)\leq\length_{|X|_f}(\pi_f(\gamma))$. On the other hand,
-if $\length_Y(f\circ \gamma)$ is finite, then for every finite partition ${a=t_0<t_1<\ldots t_k=b}$ of $[a,b]$ we have
-\[\length_Y(f\circ \gamma)=\sum_{i=0}^{k-1}\length_Y(f\circ \gamma|_{[t_i,t_{i+1}]})\geq\sum_{i=0}^{k-1}|\gamma(t_i)-\gamma(t_{i+1})|_f.\]
-Hence $\length_Y(f\circ \gamma)\geq\length_{|X|_f}(\pi_f(\gamma))$.
-\qeds
-
-\begin{thm}{Corollary}\label{cor:reltolengthmetric}
-Let $X$ be a compact geodesic space, $Y$ a metric space and $f\:X\to Y$ a continuous map.
- Then there is a surjective length preserving map
-$\alpha\:Z_f\to\|X\|_f$ induced by the quotient maps. 
-If $f$ is injective, then $\alpha$ is an isometry and both spaces are isometric to
-to the image $f(X)$ in $Y$ equipped with induced intrinsic metric.
-\end{thm}
-\parit{Proof.}
-The claim follows directly from Lemma \ref{lem:intrinsicmetric}.
-\qeds
-
-
-
-
 
 
 \section{Metric minimizing maps}\label{Metric minimizing maps}
@@ -336,6 +334,9 @@ and $h|_A=f|_A$.
 Let $X$ be a compact geodesic space, $Y$ a metric space 
 and $A\subset X$ a closed subset.
 Let $f\:X\to Y$ be a continuous map.
+Recall that 
+$f$ is a composition of $\pi_f\: X\to|X|_f$ and $\bar f\:|X|_f\to Y$.
+
 Then the following holds.
 \begin{enumerate}[(i)]
 \item The map $f$ is metric minimizing relative to $A$
@@ -1525,10 +1526,9 @@ Then the system takes the form
 \[w_t+\left(\begin{smallmatrix}
    1&0\\0&-1
   \end{smallmatrix}\right)
-w_z=h(t+z,t-z,w)\]
-
-This system is ???,
-according to \cite[Theorem 3.6]{bressan}, it can be solved locally for smooth initial data at $t=0$.
+w_z=h(t+z,t-z,w),\]
+which is a semilinear hyperbolic system.
+According to \cite[Theorem 3.6]{bressan}, it can be solved locally for smooth initial data at $t=0$.
 
 It remains to choose $v_3$ and $v_4$ for solution so that $\lambda_1, \lambda_2>0$ in a small neighborhood of $p$.
 \qeds
