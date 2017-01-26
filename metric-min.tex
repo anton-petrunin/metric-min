@@ -82,7 +82,7 @@ For the applications of our result see \cite{LSW} and \cite{St}.
 
 \parbf{Structure of the paper.}
 In Section~\ref{sec:Def} we give the necessary definitions from metric geometry, introduce the concept of metric minimizing map
-and in Section~\ref{Metric minimizing maps} and prove its basic properties. 
+and in Section~\ref{Metric minimizing maps} and prove its basic properties including uniqueness. 
 
 In Section~\ref{Metric minimizing graphs}
 we discuss metric minimizing graphs and show that any metric minimizing graph can be extended to a short
@@ -100,9 +100,7 @@ In Section~\ref{Shefel} we treat the two-dimensional case;
 that is, metric minimizing discs in $\CAT[0]$-surfaces;
 this part is a straightforward generalization of the Shefel's result from \cite{shefel-2D}. 
 
-In Section~\ref{Main theorem} we assemble the proof our main theorem (\ref{thm:main}) a its corollary (\ref{cor:main}) which includes most of the statements in Theorem~\ref{thm:mainintro} above.
-
-Section~\ref{Existence and uniqueness} is devoted to the uniqueness of metric minimizing maps, which proves the remaining part of Theorem~\ref{thm:mainintro} above.
+In Section~\ref{Main theorem} we assemble the proof our main theorem (\ref{thm:main}) a its corollary (\ref{cor:main}) which includes most of the statements in Theorem~\ref{thm:mainintro} above; the uniquness part follw from the  theorem \ref{prop:strict-mm} proved earlier.
 
 Sections \ref{Harmonic discs}--\ref{sec:smooth} are about examples.
 In Section~\ref{Harmonic discs} we recall some results about  harmonic discs and show that they imply any harmonic disc is metric minimizing. 
@@ -457,6 +455,103 @@ The nearest point projection to a convex set in $\CAT[0]$ space is short.
 Therefore $s\succcurlyeq s'_\omega$ for any $s\in \mathcal{O}$.
 That is, $\mathcal{O}$ is not maximal, a contradiction.
 \qeds
+
+Given two points $p_0$ and $p_1$ in a $\CAT[0]$ space $X$,
+denote by $p_t$ the point $\gamma(t)$ on the 
+the geodesic path $\gamma\:[0,1]\to X$ such that $\gamma(0)=p_0$ and $\gamma(1)=p_1$.
+
+Note that the map $(p_0,p_1,t)\mapsto p_t$ is continuous.
+Therefore given two continuous maps $f_0,f_1\:K\to X$,
+the one parameter family of maps $f_t\:K\to X$ is a homotopy;
+further it will be called \emph{geodesic homotopy}.
+
+Let $\gamma_{0}, \gamma_1\:\II\to X$ be two rectifiable curves parametrized by arc length. 
+We say that  $\gamma_{0}$ is {\em parallel} to $\gamma_{1}$, if the function $t\mapsto |\gamma_{0}(t)-\gamma_{1}(t)|_X$.
+
+
+\begin{thm}{Lemma}\label{lem:parpaths}
+Let $\gamma_0,\gamma_1\:[0,\ell]\to X$ be two rectifiable curves. 
+Denote by $\gamma_t\:[0,\ell]\to X$ their geodesic homotopy.
+Then
+\[\length\gamma_{\frac12}
+\le \tfrac12\cdot\length\gamma_0 +\tfrac12\cdot\length\gamma_1\]
+for any $t\in [0,1]$.
+
+If in addition $\gamma_0$ and $\gamma_1$ are parametrized by arc length and 
+\[\length\gamma_{\frac12}
+=\length\gamma_0
+=\length\gamma_1,\] 
+then $\gamma_{0}$ and $\gamma_{1}$ are parallel. 
+\end{thm}
+
+\parit{Proof.}
+%Ref to existance of |\dot\gamma_0(t)|???
+From comparison, we get
+\[2\cdot|\dot\gamma_{\frac12}(t)|^2
+\le
+|\dot\gamma_{0}(t)|^2
++|\dot\gamma_{0}(t)|^2
+-\tfrac12\cdot(|\gamma_{0}(t)-\gamma_{1}(t)|')^2\] 
+for almost all $t$.
+Taking the integral, we get the first statement.
+
+If in addition $\gamma_0$ and $\gamma_1$ are parametrized by arc length, 
+then $|\dot\gamma_{\frac12}(t)|\le 1$.
+
+By assumption, the length of $\gamma_{\frac12}$ equals $\ell$. 
+Hence $|\dot\gamma_{\frac12}(t)|=1$ for almost all $t\in[0,\ell]$. 
+In particular, $\gamma_{\frac12}$
+is parametrized by arc length. 
+
+It follows that $|\gamma_{0}(t)-\gamma_{1}(t)|'=0$ for almost all $t$.
+Since the function $t\zz\mapsto |\gamma_{0}(t)-\gamma_{1}(t)|$ is Lipschitz,
+the latter  implies that $|\gamma_{0}(t)-\gamma_{1}(t)|$ does not depend on $t$.
+That is, $\gamma_{0}$ and $\gamma_{1}$ are parallel.
+\qeds
+
+\parbf{Remark.}
+In fact, it is possible to show in the above situation that the induced intrinsic metric on $[0,1]\times[0,\ell]$
+for the map $(t,\tau)\mapsto \gamma_t(\tau)$ is a product metric.
+
+\begin{thm}{Corollary}\label{cor:parpaths}
+Let $\gamma_0,\gamma_1\:[0,1]\to X$ be two rectifiable paths both starting in a point $p\in X$ and of equal length $\ell>0$. 
+If the lengths in their geodesic homotopy $\gamma_t$ is constant, then $\gamma_{0}=\gamma_{1}$.
+\end{thm}
+
+\begin{thm}{Uniqueness Theorem}\label{prop:strict-mm}
+Let $X$ be a connected space, 
+$A\subset X$ be a closed subset 
+and $Y$ be a $\CAT[0]$ space.
+Assume $s_0, s_1\:X\to Y$ be continuous and metric minimizing maps relative to $A$
+and $\|{*}-{*}\|_{s_0}=\|{*}-{*}\|_{s_1}$.
+Then $s_0=s_1$.
+\end{thm}
+
+\parit{Proof.}
+For $t\in[0,1]$ denote $s_t\:X\to Y$ the geodesic homotopy. 
+By Lemma~\ref{lem:parpaths},  $\|X\|_{s_{\frac12}}$ is isometric to $\|X\|_{s_0}$. 
+In particular, every $s_{\frac12}$ is metric minimizing.
+
+From Corollary \ref{cor:parpaths} we see that $s_0$ agrees with $s_1$ on the set $V$ 
+which lies on finite distance from $A$ in $\|{*}-{*}\|_{s_i}$.
+
+The remaining 
+
+Let $A'\subset X$ be the maximal subset which is  the inverse image of component of $A$ in $\|X\|_{s_0}$
+Since the spaces $\|X\|_{s_0}$ and $\|X\|_{s_1}$ are connected, the statement follows.
+
+Denote by $A\subset\DD$ the closure of the set of endpoints of such paths. 
+Since $s_0$ and $s_1$ are continuous, we conclude $s_0|_{A}=s_1|_{A}$.
+\qeds
+
+
+
+%MAYBE IT WILL BE A COR OR PART OF AN OTHER STATEMENT, BUT WE NEED IT???
+\begin{thm}{Corollary}\label{cor:strict-mm}
+Let  $X$ be a $\CAT[0]$ space and $s\:\DD\to X$ be continuous and metric minimizing relative to $\partial\DD$. 
+Then $s$ is strictly metric minimizing.
+\end{thm}
+
 
 
 \section{Metric minimizing graphs}\label{Metric minimizing graphs}
@@ -1225,114 +1320,6 @@ interior of $|\DD|_s$ such that $C$ defines a contraction of $\partial|\DD|_s$ i
 In particular $C=\|\DD\|_s$.
 Since $C$ is the continuous image of a disc, we get that $\|\DD\|_s$ is compact and that $\iota$ is a homeomorphism.
 \qeds
-
-
-
-
-
-
-
-
-
-
-
-
-
-\section{Existence and uniqueness}\label{Existence and uniqueness}
-
-Given two points $p_0$ and $p_1$ in a $\CAT[0]$ space $X$,
-denote by $p_t$ the point $\gamma(t)$ on the 
-the geodesic path $\gamma\:[0,1]\to X$ such that $\gamma(0)=p_0$ and $\gamma(1)=p_1$.
-
-Note that the map $(p_0,p_1,t)\mapsto p_t$ is continuous.
-Therefore given two continuous maps $f_0,f_1\:K\to X$,
-the one parameter family of maps $f_t\:K\to X$ is a homotopy;
-further it will be called \emph{geodesic homotopy}.
-
-Let $\gamma_{0}, \gamma_1\:\II\to X$ be two rectifiable curves parametrized by arc length. 
-We say that  $\gamma_{0}$ is {\em parallel} to $\gamma_{1}$, if the function $t\mapsto |\gamma_{0}(t)-\gamma_{1}(t)|_X$.
-
-
-\begin{thm}{Lemma}\label{lem:parpaths}
-Let $\gamma_0,\gamma_1\:[0,\ell]\to X$ be two rectifiable paths parametrized by arc length;
-denote by $\gamma_t\:[0,\ell]\to X$ their geodesic homotopy. 
-If 
-\[\length\gamma_{\frac12}
-=\length\gamma_0
-=\length\gamma_1,\] 
-then $\gamma_{0}$ and $\gamma_{1}$ are parallel. 
-\end{thm}
-
-\parit{Proof.}
-%Ref to existance of |\dot\gamma_0(t)|???
-From comparison, we get
-\[2\cdot|\dot\gamma_{\frac12}(t)|^2
-\le
-|\dot\gamma_{0}(t)|^2
-+|\dot\gamma_{0}(t)|^2
--\tfrac12\cdot(|\gamma_{0}(t)-\gamma_{1}(t)|')^2\] 
-for almost all $t$.
-It particular $|\dot\gamma_{\frac12}(t)|\le 1$.
-
-By assumption, the length of $\gamma_{\frac12}$ equals $\ell$. 
-Hence $|\dot\gamma_{\frac12}(t)|=1$ for almost all $t\in[0,\ell]$. 
-In particular, $\gamma_{\frac12}$
-is parametrized by arc length. 
-
-It follows that $|\gamma_{0}(t)-\gamma_{1}(t)|'=0$ for almost all $t$.
-Since the function $t\mapsto |\gamma_{0}(t)-\gamma_{1}(t)|$ is Lipschitz,
-the latter  implies that $|\gamma_{0}(t)-\gamma_{1}(t)|$ does not depend on $t$.
-That is, $\gamma_{0}$ and $\gamma_{1}$ are parallel.
-\qeds
-
-\parbf{Remark.}
-In fact, it is possible to show in the above situation that the induced intrinsic metric on $[0,1]\times[0,\ell]$
-for the map $(t,\tau)\mapsto \gamma_t(\tau)$ is a product metric.
-
-\begin{thm}{Corollary}\label{cor:parpaths}
-Let $\gamma_0,\gamma_1\:[0,1]\to X$ be two rectifiable paths both starting in a point $p\in X$ and of equal length $\ell>0$. 
-If the lengths in their geodesic homotopy $\gamma_t$ is constant, then $\gamma_{0}=\gamma_{1}$.
-\end{thm}
-
-\begin{thm}{Uniqueness Theorem}\label{prop:strict-mm}
-Let $X$ be a $\CAT[0]$ space and $s_0, s_1\:\DD\to X$ be continuous and metric minimizing relative to $\partial\DD$. 
-If 
-$\|\DD\|_{s_0}$ is isometric to $\|\DD\|_{s_1}$, then $s_0=s_1$.
-\end{thm}
-
-\parit{Proof.}
-For $t\in[0,1]$ denote $s_t\:\DD\to X$ the map obtained by geodesic interpolation. 
-Then
-$\|\DD\|_{s_t}$ is isometric to $\|\DD\|_{s_0}$ for all $t\in[0,1]$. 
-In particular, every $s_t$ is metric minimizing.
-From Corollary \ref{cor:parpaths} we see that $s_0$ agrees with $s_1$ on every path $\gamma$ which starts
-in $\partial\DD$ and has the property that $s_0\circ\gamma$ is rectifiable. 
-
-Denote by $A\subset\DD$ the closure of the set of endpoints of such paths. 
-Since $s_0$ and $s_1$ are continuous, we conclude $s_0|_{A}=s_1|_{A}$.
-
-Let us show that $A=\DD$; assume contrary.
-Note that the complement $U=\DD\backslash A$ is open. 
-Let us redefine $s_0$ by sending all of $U$ to a point.
-Denote by $s_1$ the obtained map.
-Note that $s_1$
-is still metric minimizing.
-
-Fix a point $p\in U$.
-Choose a path $\sigma\:[0,1]\to\DD$ connecting $p$ to $A$ and intersecting $A$ exactly the endpoint $\sigma(1)$. 
-With respect to $s_1$ all points on $\sigma([0,1))$ have intrinsic distance equal to zero.  
-Hence the same is true for all $s_0$. 
-It follows that every $s_0$ is constant on $\sigma$.
-The latter implies that $p\in A$, a contradiction.
-\qeds
-
-
-
-%MAYBE IT WILL BE A COR OR PART OF AN OTHER STATEMENT, BUT WE NEED IT???
-\begin{thm}{Corollary}\label{cor:strict-mm}
-Let  $X$ be a $\CAT[0]$ space and $s\:\DD\to X$ be continuous and metric minimizing relative to $\partial\DD$. 
-Then $s$ is strictly metric minimizing.
-\end{thm}
 
 \section{Harmonic discs}\label{Harmonic discs}
 
