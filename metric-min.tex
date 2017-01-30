@@ -522,8 +522,8 @@ If the lengths in their geodesic homotopy $\gamma_t$ is constant, then $\gamma_{
 Let $X$ be a connected space, 
 $A\subset X$ be a closed subset 
 and $Y$ be a $\CAT[0]$ space.
-Assume $s_0, s_1\:X\to Y$ be continuous and metric minimizing maps relative to $A$
-and $\|{*}-{*}\|_{s_0}=\|{*}-{*}\|_{s_1}$.
+Assume that the maps $s_0, s_1\:X\to Y$ are continuous and metric minimizing relative to $A$ and agree on $A$.
+Further assume that the metric $\|{*}-{*}\|_{s_0}$ coincide with $\|{*}-{*}\|_{s_1}$ and take only finite values.
 Then $s_0=s_1$.
 \end{thm}
 
@@ -534,25 +534,8 @@ In particular, every $s_{\frac12}$ is metric minimizing.
 
 From Corollary \ref{cor:parpaths} we see that $s_0$ agrees with $s_1$ on the set $V$ 
 which lies on finite distance from $A$ in $\|{*}-{*}\|_{s_i}$.
-
-The remaining 
-
-Let $A'\subset X$ be the maximal subset which is  the inverse image of component of $A$ in $\|X\|_{s_0}$
-Since the spaces $\|X\|_{s_0}$ and $\|X\|_{s_1}$ are connected, the statement follows.
-
-Denote by $A\subset\DD$ the closure of the set of endpoints of such paths. 
-Since $s_0$ and $s_1$ are continuous, we conclude $s_0|_{A}=s_1|_{A}$.
+Hence the statement follows.
 \qeds
-
-
-
-%MAYBE IT WILL BE A COR OR PART OF AN OTHER STATEMENT, BUT WE NEED IT???
-\begin{thm}{Corollary}\label{cor:strict-mm}
-Let  $X$ be a $\CAT[0]$ space and $s\:\DD\to X$ be continuous and metric minimizing relative to $\partial\DD$. 
-Then $s$ is strictly metric minimizing.
-\end{thm}
-
-
 
 \section{Metric minimizing graphs}\label{Metric minimizing graphs}
 
@@ -891,15 +874,8 @@ Denote by $s'$ the new map.
 
 Since $K$ is closed and convex, the nearest point projection onto $K$ is short.
 Hence $s'$ is also continuous and metric minimizing. 
-It remains to apply Corollary \ref{cor:strict-mm}.
+It remains to apply ???.
 \qeds
-
- 
-
-
-
-
-
 
 \begin{thm}{Shefel's theorem}\label{thm:shefel-2D}
 Let $W$ be a $\CAT[0]$ space which is a disc retract.
@@ -990,7 +966,7 @@ and $\eps>0$.
 Assume $s\:\DD\to W$ is a saddle map 
 and $u\:\DD\to W$ is a continuous map such that 
 \[|s(x)-u(x)|<\eps\]
-and $u(x)\in K$ for any point in the boundary of some open set $\Omega\subset \DD$.
+and $u(x)\in K$ for any point $x$ in the boundary of an open set $\Omega\subset \DD$.
 
 Then there is a continuous map $v\:\DD\to K$ such that 
 \begin{enumerate}[(i)]
@@ -1012,15 +988,21 @@ where $\Conv S$ denotes the minimal closed convex set containing $S$.
 Let $\pi\:W\to K$ denote the closest point projection of $W$ onto $K$.
 Note that $\pi$
 is a short map.
-Choose an open neighborhood $U$ of $\partial \Omega$ such that 
-$|s(x)-\pi\circ u(x)|<\eps$ for $x\in U$.
-The assumptions imply that $s(\Omega)$ is 
-contained in the $\eps$-neighborhood of $K$;
-that is, $|s(x)-\pi\circ s(x)|<\eps$ for $x\in\Omega$.
-It follows that for points in $U$ the geodesic segment $[\pi\circ s(x)\pi\circ u(x)]$ is contained in the $\eps$-ball
+
+By assumptions $\pi\circ u(x)=u(x)$ for any $x\in\partial\Omega$.
+Therefore, there is an open set $U\supset\partial \Omega$ such that 
+$$|s(x)-\pi\circ u(x)|_W<\eps$$ 
+for $x\in U$.
+
+The assumptions imply that $s(\Omega)$ lies in the $\eps$-neighborhood of $K$;
+that is, 
+\[|s(x)-\pi\circ s(x)|_W<\eps\] 
+for any $x\in\Omega$.
+It follows that for points in $U$ the geodesic segment $[\pi{\circ}s(x)\,\pi{\circ}u(x)]$ is contained in the $\eps$-ball
 around $s(x)$.
 Fix a continuous function $\lambda\:\Omega\to [0,1]$
-which is equal to $1$ on $\partial \Omega$ and has support in $U$.
+with the support in $U$
+such that  $\lambda(x)=1$ for any $x\in \partial \Omega$.
 For $x\notin \Omega$ set $v(x)=u(x)$ and if 
 $x\in \Omega$, set $v(x)$ to be the point which divides the geodesic $[\pi\circ s(x)\pi\circ u(x)]$
 at proportion $\lambda(x)$.
@@ -1097,15 +1079,15 @@ By assumptions $u(x_k)\to u(x)\in u(C_n)=\bar u\circ \pi (C_n)$.
 Since $\bar u$ restricts to an isometry on $\pi(C_n)$, the claim follows.
 \qeds
 
-\parit{Proof of Shefel's theorem \ref{thm:shefel-2D}.}
-Fix a fine triangulation $\tau$ of $\DD$.
+\parit{Proof of \ref{thm:shefel-2D}.}
+Fix a triangulation $\tau$ of $\DD$.
 Map the vertices of $\tau$ by $s$,
 and extend to the 1-skeleton by mapping edges with constant speed to 
 corresponding geodesics.
 Then use Lemma \ref{lem:isomtri} to extend the map to the whole disc.
 
 The obtained map $u\:\DD\to W$ can be made arbitrary close to $s$ by choosing the triangulation fine enough.
-Say given $\eps>0$ we can assume that 
+That is, given $\eps>0$ we can assume that 
 \[|s(x)-u(x)|_X<\eps\eqlbl{eq:|s-u|<e}\]
 for any $x\in\DD$.
 
@@ -1113,32 +1095,26 @@ Note that the image of each solid triangle $\triangle$
 is the closed region bounded by the geodesic triangle in $W$ with the corresponding vertices.
 Moreover,  $\|\triangle\|_u$ is isometric to the image $u(\triangle)$ by Lemma \ref{lem:isomtri}.
 Denote by $N$ the number of triangles in $\tau$.
-Then, $\|\DD\|_u$ decomposes into $N$ convex sets which are mapped isometrically by the induced map
-$\bar u$, in particular, $\|\DD\|_u$ belongs to $\mathcal{S}_N$.  
+Then, $\|\DD\|_u$ decomposes into $N$ convex sets which are mapped isometrically by the induced map $\bar u$; 
+in particular, $\|\DD\|_u$ belongs to $\mathcal{S}_N$.  
 
 Recall that the space $\Geod(W)$ of all geodesics in $W$ with endpoints on $\partial W$ is compact. 
 Fix a dense sequence of geodesics $\mathcal{G}=\{\gamma_1,\gamma_2,\ldots\}$ in $\Geod(W)$.
-The geodesics form convex sets in $W$, so we can apply the Cutting hat lemma \ref{lem:cutting-hat}
-recursively.
-We obtain a sequence of maps, say $u=u_0,u_1,u_2,\ldots$ such that 
+Since each geodesic $\gamma_i$ forms a convex sets in $W$, 
+we can apply the cutting hat lemma (\ref{lem:cutting-hat}) to $\gamma_1,\gamma_2,\ldots$ recursively.
+This way we obtain a sequence of maps, say $u=u_0,u_1,u_2,\ldots$ such that 
 \[|u_n(x)-s(x)|<\eps\]
 for any $x$.
-
-
-
 
 Furthermore, each space $\|\DD\|_{u_n}$
 belongs to $\mathcal{S}_N$ and has a decomposition into at most $N$ convex sets which are mapped isometrically by 
 the induced map 
 \[\bar u_n\:\|\DD\|_{u_n}\to W.\] 
-There is a more precise description, namely each of the convex sets is 
-obtained from one of the triangles in $\tau$ by applying cuts along the geodesics $\gamma_k$. 
-In particular, the decompositions
-are nested.
+By construction, each of the convex sets in the definition of $\mathcal{S}_N$ is obtained from one of the triangles in $\tau$ by cutting along the geodesics $\gamma_k$. 
+In particular, the decompositions are nested.
 
-Since $\mathcal{S}_N$ is compact, we can pass to a partial limit of $\|\DD\|_{u_n}$ as $n\to\infty$,
-say $Q_\eps$.
-Denote by $w_\eps\:Q_\eps\to W$ the limit of the short maps $\bar u_n$.
+Since $\mathcal{S}_N$ is compact, we can pass to a partial limit of $\|\DD\|_{u_n}$ as $n\to\infty$.
+Denote the limit by $Q_\eps$ and let $w_\eps\:Q_\eps\to W$ be the limit of the short maps $\bar u_n$.
 
 \begin{thm}{Sublemma}
  The map $w_\eps$ is saddle.
@@ -1190,8 +1166,13 @@ The claim follows from Reshetnyak's gluing theorem.
 Now, assume that the boundary of $\|\DD\|_s$ is rectifiable.
 By the Lemma on compactness~\ref{lem:compact},
 we can pass to a partial limit, say $Q_0$, of $Q_\eps$ as $\eps\to 0$ and denote $w_0\:Q_0\to W$ the limit map.
-By construction, $Q_0$ is a $\CAT[0]$ disc retract which majorizes $\|\DD\|_s$,
-that is the limit map lifts to a short map $Q_0\to \|\DD\|_s$ which maps $\partial Q_0$ onto  $\partial \|\DD\|_s$ in a length-preserving way.
+By construction, $Q_0$ is a $\CAT[0]$ disc retract which majorizes $\|\DD\|_s$;
+that is, the limit map lifts to a short map $Q_0\to \|\DD\|_s$ which maps $\partial Q_0$ onto  $\partial \|\DD\|_s$ in a length-preserving way.
+Indeed ???
+
+Indeed, any curve $\gamma$ in $Q_0$ can be approximated by a curve in $Q_\eps$ 
+and therefore in $\|\DD\|_{u_n}$ by a curve $\gamma_n$ 
+with arbitrary close 
 
 Since $Q_0$ is a $\CAT[0]$ space, its boundary can be majorized by a convex figure in the plane.
 Hence the same holds for $\|\DD\|_s$.
