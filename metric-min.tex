@@ -380,7 +380,7 @@ $f|_C$ to any closed set $C\subset X$ is metric minimizing realtive to $\partial
 \begin{thm}{Proposition}\label{prop:point-complement}
 Let $X$ and $Y$ be metric spaces and $A\subset X$ be a closed subset.
 Assume $X$ is connected and $f\:X\to Y$ is a metric minimizing map relative to $A$.
-Then $f$ \emph{has no bubbles}; that is, for any point $x\in X$ any connected component of $X\backslash [x]_f$ intersects $A$.
+Then $f$ \label{page:no-bubble}\emph{has no bubbles}; that is, for any point $x\in X$ any connected component of $X\backslash [x]_f$ intersects $A$.
 
 \end{thm}
 
@@ -658,7 +658,7 @@ its boundary $\partial \DD$ is a unit circle.
 
 Let $X$ be a Hausdorff space and
 $f\:\DD\to X$ be a continuous map.
-Recall that $f$ has \emph{no bubbles}\label{page:no-bubble}
+Recall that $f$ has \emph{no bubbles}
 if for any point $p\in X$ every connected component of the complement $\DD\backslash f^{-1}\{p\}$ contains a point from $\partial \DD$.
 
 The following topological notion will be important throughout the text.
@@ -850,36 +850,47 @@ As in Proposition~\ref{prop:disc-moore} the claim now follows from Moore's theor
 
 \section{Two-dimensional case}\label{Shefel}
 
-Let $W$ be a metric space.
-A continuous map $s\:\DD\to W$ is called \emph{saddle} if for any closed convex subset $K\subset W$ it holds that
-the boundary $\partial \DD$ intersects
-any connected component of $\DD\backslash s^{-1}(K)$.
+Let $X$ and $W$ be a metric spaces.
+A continuous map $s\:X\to W$ is called \emph{saddle} with respect to a closed subset $A\subset X$ 
+if for any closed convex subset $K\subset W$ it holds that
+$A$ intersects
+every connected component of $X\backslash s^{-1}(K)$.
 
 Applying this definition to one-point sets,
 we get that any saddle map has no bubbles, 
-as defined on page \ref{page:no-bubble}.
+as defined in Proposition \ref{page:no-bubble}.
 
 
-\begin{thm}{Proposition}\label{prop:memisaddle}
-Let $W$ be a $\CAT[0]$ space.
-Then any continuous metric minimizing map $s\:\DD\to W$ is saddle.
-\end{thm}
+%%%IT SEEMS WE DO NOT NEED IT???
 
-\parit{Proof.}
-Assume the contrary, let $K$ be a closed convex set in $W$
-and $\Omega$ be a violating component of the complement $\DD\backslash s^{-1}(K)$. 
-Redefine $s$ for each $x\in\Omega$ by moving 
-$s(x)$ to its closest point projection on $K$.
-Denote by $s'$ the new map. 
+%\begin{thm}{Proposition}\label{prop:memisaddle} 
+%Let $W$ be a $\CAT[0]$ space and $s\:\DD\to W$ be a continuous metric minimizing map.
+%Fix $x\in \partial \DD$;
+%denote by $X$ be the metric component of $\pi(x)$ in $\|\DD\|_s$ and set $A=\pi(\partial \DD)\cap X$.
+%Then restriction $\bar s|_X\:X\to W$ is saddle with respect to $A$.
 
-Since $K$ is closed and convex, the nearest point projection onto $K$ is short.
-Hence $s'$ is also continuous and metric minimizing. 
-It remains to apply ???.
-\qeds
+%In particular, if $\|{*}-{*}\|_s$ takes only finite values then the map $s\:\DD\to W$ is saddle with respect to $\partial \DD$.
+%\end{thm}
+
+%\parit{Proof.}
+%Assume the contrary, let $K$ be a closed convex set in $W$
+%and $\Omega$ be a violating component of the complement $X\backslash s^{-1}(K)$. 
+%Redefine $\bar s$ for each $x\in\Omega$ by moving 
+%$\bar s(x)$ to its closest point projection on $K$.
+%Denote by $\bar s'$ the new map. 
+
+%Since $K$ is closed and convex, the nearest point projection onto $K$ is short.
+%Hence $\bar s'\curlyeqprec\bar s$. 
+%Moreover, we have
+%\[\length \bar s'\circ\gamma<\length \bar s\circ\gamma\]
+%for any rectifiable curve $\gamma$ which connects a point in $\Omega$ to a point in the complement $X\backslash \Omega$.
+%That is, $\bar s'\prec\bar s$ or $\bar s$ is not metric minimizing with respect to $A$;
+%the later contradicts Proposition \ref{prop:memicrit}.
+%\qeds
 
 \begin{thm}{Shefel's theorem}\label{thm:shefel-2D}
 Let $W$ be a $\CAT[0]$ space which is a disc retract.
-Assume $s\:\DD\to W$ is a saddle map. 
+Assume $s\:\DD\to W$ is a saddle map with respect to $\partial \DD$. 
 Then $\|\DD\|_s$ is $\CAT[0]$.
 \end{thm}
 
@@ -1251,7 +1262,10 @@ such that
 \[q\circ p|_{\partial|\DD|_s}=\bar s|_{\partial|\DD|_s}.\] 
 Since $\bar s$ is metric minimizing (Proposition \ref{prop:memicrit}), both maps $p$ and $q$ are length preserving and metric minimizing.
 
-It remains to apply Shefel's theorem \ref{thm:shefel-2D} for the map $\DD\to W$.
+Consider a composition $\DD\xrightarrow{r} |\DD|_s\xrightarrow{p} W$, where $r$ is a retract.
+By Shefel's theorem (\ref{thm:shefel-2D}) $\|\DD\|_{p\circ r}$ is $\CAT[0]$.
+Since $p$ is length preserving, $\|\DD\|_{p\circ r}$ is isometric to $\|\DD\|_s$;
+hence the result follows.
 \qeds
 
 
