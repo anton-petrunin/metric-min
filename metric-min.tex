@@ -861,32 +861,30 @@ we get that any saddle map has no bubbles,
 as defined in Proposition \ref{page:no-bubble}.
 
 
-%%%IT SEEMS WE DO NOT NEED IT???
+\begin{thm}{Proposition}\label{prop:memisaddle} 
+Let $W$ be a $\CAT[0]$ space and $s\:\DD\to W$ be a continuous metric minimizing map.
+Fix $x\in \partial \DD$;
+denote by $X$ be the metric component of $\pi(x)$ in $\|\DD\|_s$ and set $A=\pi(\partial \DD)\cap X$.
+Then restriction $\bar s|_X\:X\to W$ is saddle with respect to $A$.
 
-%\begin{thm}{Proposition}\label{prop:memisaddle} 
-%Let $W$ be a $\CAT[0]$ space and $s\:\DD\to W$ be a continuous metric minimizing map.
-%Fix $x\in \partial \DD$;
-%denote by $X$ be the metric component of $\pi(x)$ in $\|\DD\|_s$ and set $A=\pi(\partial \DD)\cap X$.
-%Then restriction $\bar s|_X\:X\to W$ is saddle with respect to $A$.
+In particular, if $\|{*}-{*}\|_s$ takes only finite values then the map $s\:\DD\to W$ is saddle with respect to $\partial \DD$.
+\end{thm}
 
-%In particular, if $\|{*}-{*}\|_s$ takes only finite values then the map $s\:\DD\to W$ is saddle with respect to $\partial \DD$.
-%\end{thm}
+\parit{Proof.}
+Assume the contrary, let $K$ be a closed convex set in $W$
+and $\Omega$ be a violating component of the complement $X\backslash s^{-1}(K)$. 
+Redefine $\bar s$ for each $x\in\Omega$ by moving 
+$\bar s(x)$ to its closest point projection on $K$.
+Denote by $\bar s'$ the new map. 
 
-%\parit{Proof.}
-%Assume the contrary, let $K$ be a closed convex set in $W$
-%and $\Omega$ be a violating component of the complement $X\backslash s^{-1}(K)$. 
-%Redefine $\bar s$ for each $x\in\Omega$ by moving 
-%$\bar s(x)$ to its closest point projection on $K$.
-%Denote by $\bar s'$ the new map. 
-
-%Since $K$ is closed and convex, the nearest point projection onto $K$ is short.
-%Hence $\bar s'\curlyeqprec\bar s$. 
-%Moreover, we have
-%\[\length \bar s'\circ\gamma<\length \bar s\circ\gamma\]
-%for any rectifiable curve $\gamma$ which connects a point in $\Omega$ to a point in the complement $X\backslash \Omega$.
-%That is, $\bar s'\prec\bar s$ or $\bar s$ is not metric minimizing with respect to $A$;
-%the later contradicts Proposition \ref{prop:memicrit}.
-%\qeds
+Since $K$ is closed and convex, the nearest point projection onto $K$ is short.
+Hence $\bar s'\curlyeqprec\bar s$. 
+Moreover, we have
+\[\length \bar s'\circ\gamma<\length \bar s\circ\gamma\]
+for any rectifiable curve $\gamma$ which connects a point in $\Omega$ to a point in the complement $X\backslash \Omega$.
+That is, $\bar s'\prec\bar s$ or $\bar s$ is not metric minimizing with respect to $A$;
+the later contradicts Proposition \ref{prop:memicrit}.
+\qeds
 
 \begin{thm}{Shefel's theorem}\label{thm:shefel-2D}
 Let $W$ be a $\CAT[0]$ space which is a disc retract.
@@ -1263,7 +1261,8 @@ such that
 Since $\bar s$ is metric minimizing (Proposition \ref{prop:memicrit}), both maps $p$ and $q$ are length preserving and metric minimizing.
 
 Consider a composition $\DD\xrightarrow{r} |\DD|_s\xrightarrow{p} W$, where $r$ is a retract.
-By Shefel's theorem (\ref{thm:shefel-2D}) $\|\DD\|_{p\circ r}$ is $\CAT[0]$.
+By Proposition~\ref{prop:memisaddle}
+and Shefel's theorem (\ref{thm:shefel-2D}), the space $\|\DD\|_{p\circ r}$ is $\CAT[0]$.
 Since $p$ is length preserving, $\|\DD\|_{p\circ r}$ is isometric to $\|\DD\|_s$;
 hence the result follows.
 \qeds
