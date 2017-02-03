@@ -895,7 +895,7 @@ the later contradicts Proposition \ref{prop:memicrit}.
 \begin{thm}{Shefel's theorem}\label{thm:shefel-2D}
 Let $W$ be a $\CAT[0]$ space which is a disc retract.
 Assume $s\:\DD\to W$ is a saddle map with respect to $\partial \DD$. 
-Then $\|\DD\|_s$ is $\CAT[0]$.
+Then $\llangle\DD\rrangle_s$ is $\CAT[0]$.
 \end{thm}
 
 The statement above is a slight generalization of a theorem proved by Shefel in \cite{shefel-2D};
@@ -1039,7 +1039,7 @@ Let $\Delta$ be a triangle in the Euclidean plane
 and $\Delta'$ a triangle in $W$. 
 If $f\:\Delta\to \Delta'$ is a map which restricts to constant speed
 parametrizations on each side, then it extends to a map 
-$F\:\Conv(\Delta)\to \Conv(\Delta')$ between convex hulls which induces an isometry $\bar F\:\|\Conv(\Delta)\|_F\to \Conv(\Delta')$. 
+$F\:\Conv(\Delta)\to \Conv(\Delta')$ between convex hulls which induces an isometry $\bar F\:\llangle\Conv(\Delta)\rrangle_F\to \Conv(\Delta')$. 
 \end{thm}
 
 \parit{Proof.}
@@ -1079,8 +1079,8 @@ $W$ and by Lemma \ref{lem:closed} it is homeomorphic to a disc retract.
 
 \begin{thm}{Lemma}\label{lem:proj-continuous}
 Let $X$ be a metric space and $u\:\DD\to X$ a continuous map.
-Denote by $\pi\:\DD\to \|\DD\|_u$ the natural projection and
-by $\bar u\:\|\DD\|_u\to X$ the induced map.
+Denote by $\pi\:\DD\to \llangle\DD\rrangle_u$ the natural projection and
+by $\bar u\:\llangle\DD\rrangle_u\to X$ the induced map.
 Assume that $\DD$ has a decomposition $\DD=\bigcup_{n=1}^N C_n$ into a finite 
 number of sets such that $\bar u$ embeds each $\pi(C_n)$ isometrically as a closed subset into $X$.
 Then $\pi$
@@ -1108,10 +1108,10 @@ for any $x\in\DD$.
 
 Note that the image of each solid triangle $\triangle$
 is the closed region bounded by the geodesic triangle in $W$ with the corresponding vertices.
-Moreover,  $\|\triangle\|_u$ is isometric to the image $u(\triangle)$ by Lemma \ref{lem:isomtri}.
+Moreover,  $\llangle\triangle\rrangle_u$ is isometric to the image $u(\triangle)$ by Lemma \ref{lem:isomtri}.
 Denote by $N$ the number of triangles in $\tau$.
-Then, $\|\DD\|_u$ decomposes into $N$ convex sets which are mapped isometrically by the induced map $\bar u$; 
-in particular, $\|\DD\|_u$ belongs to $\mathcal{S}_N$.  
+Then, $\llangle\DD\rrangle_u$ decomposes into $N$ convex sets which are mapped isometrically by the induced map $\bar u$; 
+in particular, $\llangle\DD\rrangle_u$ belongs to $\mathcal{S}_N$.  
 
 Recall that the space $\Geod(W)$ of all geodesics in $W$ with endpoints on $\partial W$ is compact. 
 Fix a dense sequence of geodesics $\mathcal{G}=\{\gamma_1,\gamma_2,\ldots\}$ in $\Geod(W)$.
@@ -1121,14 +1121,14 @@ This way we obtain a sequence of maps, say $u=u_0,u_1,u_2,\ldots$ such that
 \[|u_n(x)-s(x)|<\eps\]
 for any $x$.
 
-Furthermore, each space $\|\DD\|_{u_n}$
+Furthermore, each space $\llangle\DD\rrangle_{u_n}$
 belongs to $\mathcal{S}_N$ and has a decomposition into at most $N$ convex sets which are mapped isometrically by 
 the induced map 
-\[\bar u_n\:\|\DD\|_{u_n}\to W.\] 
+\[\bar u_n\:\llangle\DD\rrangle_{u_n}\to W.\] 
 By construction, each of the convex sets in the definition of $\mathcal{S}_N$ is obtained from one of the triangles in $\tau$ by cutting along the geodesics $\gamma_k$. 
 In particular, the decompositions are nested.
 
-Since $\mathcal{S}_N$ is compact, we can pass to a partial limit of $\|\DD\|_{u_n}$ as $n\to\infty$.
+Since $\mathcal{S}_N$ is compact, we can pass to a partial limit of $\llangle\DD\rrangle_{u_n}$ as $n\to\infty$.
 Denote the limit by $Q_\eps$ and let $w_\eps\:Q_\eps\to W$ be the limit of the short maps $\bar u_n$.
 
 \begin{thm}{Sublemma}
@@ -1150,7 +1150,7 @@ Then there is a natural number $M$ such that the distance from $\gamma$ of $\bar
 where $D_n$ and $p_n$ are lifts of $D$ respectively $p$.
 By density of $\mathcal{G}$, there is a geodesic $\gamma_k\in \mathcal{G}$ with $k>M$ which has distance less than $\frac{\delta}{2}$ from $\gamma$. 
 Hence $\bar u_k^{-1}(\gamma_k)$ separates $p_k$ from the boundary. 
-By Lemma \ref{lem:proj-continuous}, the projection $\pi_k\:\DD\to \|\DD\|_{u_k}$ is continuous
+By Lemma \ref{lem:proj-continuous}, the projection $\pi_k\:\DD\to \llangle\DD\rrangle_{u_k}$ is continuous
 and therefore $u_k^{-1}(\gamma_k)$ separates some lift $\hat p_k$ of $p_k$ from the boundary.
 This is a contradiction because, by construction, $\gamma_k$ cannot cut a hat from $u_k$.
 \qeds
@@ -1162,15 +1162,15 @@ The space $Q_\eps$ is $\CAT[0]$.
 \parit{Proof.}
 It is enough to show that any point in the interior of $Q_\eps$ has a $\CAT[0]$ neighborhood.
 We first show that the total angle around any such point, say $z\in Q_\eps$ is at least $2\cdot\pi$.
-Since the decompositions of $\|\DD\|_{u_n}$ into convex subset of $W$ are nested for varying $n$, they
+Since the decompositions of $\llangle\DD\rrangle_{u_n}$ into convex subset of $W$ are nested for varying $n$, they
 induce a unique such limit decomposition of $Q_\eps$.
 Moreover, $w_\eps$ restricts to an isometry on each 
-of the convex sets occuring in this decomposition.
+of the convex sets occurring in this decomposition.
 Therefore, $w_\eps$ is a local radial isometry.
 If the total angle at $z$ is too small, then $w_\eps(z)\notin\Conv [w_\eps (\partial\Omega)]$
 for a small neighborhood $\Omega\ni w$ in $Q_\eps$. 
 By Lemma \ref{lem:sepbygeo} we could cut a hat from $w_\eps$
-in contradiction to $w_\eps$ beeing saddle.
+in contradiction to $w_\eps$ being saddle.
 To obtain a $\CAT[0]$ neighborhood of $z$, we first cut a small ball around $z$ into to halves using a geodesic through $z$.
 Next observe that for a small enough radius we can cut both of this halves into sectors each of which is contained in a single convex set
 from our decomposition.
@@ -1178,12 +1178,12 @@ The claim follows from Reshetnyak's gluing theorem.
 \qeds
 
 
-Now, assume that the boundary of $\|\DD\|_s$ is rectifiable.
+Now, assume that the boundary of $\llangle\DD\rrangle_s$ is rectifiable.
 By the Lemma on compactness~\ref{lem:compact},
 we can pass to a partial limit, say $Q_0$, of $Q_\eps$ as $\eps\to 0$ and denote $w_0\:Q_0\to W$ the limit map.
 Note that $Q_0$ is a $\CAT[0]$ disc retract.
 
-Further note thaat by construction, there is a map $s'$ arbitrary close to $s$ 
+Further note that by construction, there is a map $s'$ arbitrary close to $s$ 
 such that (1) the curve of $s'|_{\partial \DD}$ is shorter than $s|_{\partial \DD}$ 
 and (2) the space $\|\DD\|_{s'}$ is arbitrary close to $Q_0$.
 Passing to the limit as $s'\to s$ we get that $Q_0$ majorizes $\|\DD\|_s$;
