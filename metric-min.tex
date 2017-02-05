@@ -27,22 +27,23 @@ We show that reasonable metric minimizing surfaces in $\CAT[0]$ spaces are $\CAT
 
 Assume $Y$ is a metric space, 
 $\DD$ is the unit disc 
-and $s\:\DD\to Y$ is a continous map.
+and $s\:\DD\to Y$ is a continuous map.
 The induced intrinsic distance $\|x-y\|_s$ between the points $x,y\in\DD$ is defined in the preliminaries.
 However, 
-for the reasonable%
+for reasonable%
 \footnote{In particular if $s$ is a \emph{light map}; that is inverse image of any point is 0-dimensional.} 
 maps $s$, 
 the value $\|x-y\|_s$ coincides with the least upper bound for the lengths of $s\circ\gamma$ for all paths $\gamma\:[0,1]\to \DD$ which connect $x$ to $y$.
 In particular, if $s$ is an embedding then $\|x-y\|_s$ coincides with the induced intrinsic metric between $s(x)$ and $s(y)$ in the image $s(\DD)\subset Y$.
 The disc $\DD$ equipped with the metric $\|{*}-{*}\|_s$ will be denoted as $\|\DD\|_s$.
 
-The map $s\:\DD\to Y$ is called \emph{metric minimizing relative its boundary} if for any other map $s'\:\DD\to Y$ which coincides with $s$ on the boundary $\partial \DD$, 
-the intrinsic distance increase for at least two points of the domain.
+The map $s\:\DD\to Y$ is called \emph{metric minimizing relative its boundary} if for any other map $s'\:\DD\to Y$ which coincides with $s$ 
+on the boundary $\partial \DD$, 
+the intrinsic distance increases for at least two points of the domain.
 Examples of metric minimizing surfaces include
 ruled surfaces, energy minimizing and area minimizing surfaces; 
 see Proposition~\ref{prop:harmonic}.
-A general construction of metric minimizing maps is given in Proposition~\ref{prop:exist}
+A general construction of metric minimizing maps is given in Proposition~\ref{prop:exist}.
 
 \begin{thm}{Main theorem}\label{thm:mainintro}
 Let $Y$ be a $\CAT[0]$ space 
@@ -64,10 +65,10 @@ this proof also contained a gap which we fill in this paper.
 The theorem generalizes Alexandrov's theorem on ruled surfaces \cite{A};
 it is also closely related to the resuls of Shefel in \cite{shefel-2D} and \cite{shefel-3D}. 
 Any metric minimizing surface in a $\CAT[0]$ space is saddle 
-in the sense that intersection of a convex set can not cut a hat from the surface;
+in the sense that an intersection with a convex set can not cut a hat from the surface;
 see Section~\ref{Shefel}.
-The converse does not hold even for the smooth surfaces in $\RR^3$, see the example in Section~\ref{sec:smooth}.
-In \cite{petrunin-metric-min} it was asked if all the saddle surfaces are locally metric minimizing.
+The converse does not hold even for smooth surfaces in $\RR^3$, see the example in Section~\ref{sec:smooth}.
+In \cite{petrunin-metric-min} it was asked if all saddle surfaces are locally metric minimizing.
 We prove it in the following partial case; 
 see Proposition~\ref{prop:smooth} below. 
 
@@ -75,10 +76,10 @@ see Proposition~\ref{prop:smooth} below.
 Any smooth strictly saddle surface in $\RR^3$ is locally metric minimizing. 
 \end{thm}
 
-We suspect that analogous statement does hold in 4-dimesional Euclidean space;
+We suspect that an analogous statement in 4-dimensional Euclidean space does not hold;
 see the last section for more details.
 
-For the applications of our result see \cite{LSW} and \cite{St}.
+For applications of our result see \cite{LSW} and \cite{St}.
 
 \parbf{Structure of the paper.}
 In Section~\ref{sec:Def} we give the necessary definitions from metric geometry, introduce the concept of metric minimizing map
@@ -86,24 +87,28 @@ and in Section~\ref{Metric minimizing maps} and prove its basic properties inclu
 
 In Section~\ref{Metric minimizing graphs}
 we discuss metric minimizing graphs and show that any metric minimizing graph can be extended to a short
-map defined on a $\CAT[0]$ disc retruct (Corollary \ref{cor:planar-minimizing-graph}). 
-In Section~\ref{Metric minimizing discs} we study metric minimizing discs and use a theorem of Moore \cite{moore} to obtain topological information about  their associated \emph{connecting metric space} (Proposition \ref{prop:|D|}). 
+map defined on a $\CAT[0]$ disc retract (Corollary \ref{cor:planar-minimizing-graph}). 
+In Section~\ref{Metric minimizing discs} we study metric minimizing discs and use a theorem of Moore \cite{moore} to obtain 
+topological information about  their associated \emph{connecting metric space} (Proposition \ref{prop:|D|}). 
 This result is responsible for 
 the topological control in the main theorems;
 this is the main missing part in \cite{petrunin-metric-min}. 
 
-In the seciotns~\ref{Key Lemma}--\ref{Shefel} we prepare geimetrical statements for the proof of main theorem.
-In Section~\ref{Key Lemma} we prove the key lemma (\ref{lem:key}) which implies that metric minimizing discs factorize through two-dimensional $\CAT[0]$-spaces. 
+In the sections~\ref{Key Lemma}--\ref{Shefel} we prepare geometrical statements for the proof of the main theorem.
+In Section~\ref{Key Lemma} we prove the key lemma (\ref{lem:key}) which implies that metric minimizing discs factorize through 
+two-dimensional $\CAT[0]$-spaces. 
 Section~\ref{Compactness} provides a compactness result for $\CAT[0]$-surfaces;
 this theorem might be of independent interest. 
 In Section~\ref{Shefel} we treat the two-dimensional case; 
 that is, metric minimizing discs in $\CAT[0]$-surfaces;
-this part is a straightforward generalization of the Shefel's result from \cite{shefel-2D}. 
+this part is a straightforward generalization of Shefel's result from \cite{shefel-2D}. 
 
-In Section~\ref{Main theorem} we assemble the proof our main theorem (\ref{thm:main}) a its corollary (\ref{cor:main}) which includes most of the statements in Theorem~\ref{thm:mainintro} above; the uniquness part follw from the  theorem \ref{prop:strict-mm} proved earlier.
+In Section~\ref{Main theorem} we assemble the proof our main theorem (\ref{thm:main}) and its corollary (\ref{cor:main}) 
+which includes most of the statements in Theorem~\ref{thm:mainintro} above; the uniqueness part follow from theorem \ref{prop:strict-mm} 
+proved earlier.
 
 Sections \ref{Harmonic discs}--\ref{sec:smooth} are about examples.
-In Section~\ref{Harmonic discs} we recall some results about  harmonic discs and show that they imply any harmonic disc is metric minimizing. 
+In Section~\ref{Harmonic discs} we recall some results about  harmonic discs and show that they imply that any harmonic disc is metric minimizing. 
 In Section~\ref{sec:smooth} we treat smooth saddle surfaces in $\mathbb{R}^3$ and show that they are locally metric minimizing.
 This turned out to be rather tricky.
 
@@ -160,16 +165,17 @@ define a \emph{connecting pseudometric} $|{*}-{*}|_f$ on $X$ in
 the following way
 \[|x-y|_f=\inf\{\diam f(K)\},\]
 where the infimum is taken over all connected sets $K\subset X$ which contain $x$ and $y$;
-if there is no such set we assume $|x-y|_f=\infty$.
+if there is no such set we set $|x-y|_f=\infty$. The associated nondegenerated pseudometric space will be
+denoted as $|X|_f$.
 
-The intrinsic metric induced by $|{*}-{*}|_f$ will be denoted as 
+The intrinsic metric induced by $|{*}-{*}|_f$ will be indicated by 
 $\|{*}-{*}\|_f$. 
 That~is, 
 \[\|x-y\|_f=\inf\set{\length(\gamma)}{\gamma\ \text{is a path in}\ |X|_f\ \text{from}\ x \ \text{to}\ y}\]
-where the length is computed with respect to $|{*}-{*}|_f$.
+where the length is computed with respect to $|{*}-{*}|_f$. 
 
-The metric spaces defined by the pseudometrics $|{*}-{*}|_f$ 
-and $\|{*}-{*}\|_f$ on $X$ will be denoted as $|X|_f$ and $\|X\|_f$ correspondingly.
+Accordingly the associated nondegenerated  pseudometric space defined by $\|{*}-{*}\|_f$ on $X$ 
+is named $\|X\|_f$. Note that by definition, each metric component of $\|X\|_f$ is a length space.
 
 \medskip
 
@@ -218,8 +224,8 @@ Since $X$ is a length space, we can join $\hat x$ and $\hat y$ by a path in $C$.
 Hence the last statement follows.
 \qeds
 
-The following lemma essentially says that completeness survives under passing to intrinsic metric
-and intrinsic metric on compact space is always geodesic.
+The following lemma essentially says that completeness survives under passing to the intrinsic metric
+and the intrinsic metric on compact spaces is always geodesic.
 While the second statement is a classical (see for example \cite[II-\S8 Thm. 3]{KF}), 
 we were not be able to find the first one in the literature.
 
@@ -276,7 +282,7 @@ Then its partial limit in $|X|_f$ is a geodesic from $x$ to $y$ for the metric $
 
 
 \begin{thm}{Corollary}\label{cor:fiberconnected}
-Let $f\:X\to Y$ a continuous map beweeen metric spaces.
+Let $f\:X\to Y$ be a continuous map between metric spaces.
 Assume $X$ is compact. 
 Then for every point $x\in X$ the fiber $[x]_f$ is connected.
 \end{thm}
@@ -323,7 +329,7 @@ Denote by $\llangle X\rrangle_f=X/\sim$ the quotient metric space.
 For the reasonable maps $\llangle X\rrangle_f$ is isometric to $\|X\|_f$.
 For example this is so if $f$ is an embedding, we omit the proof since we do not use this statement.
 
-In general, we only have that the natural length preserving map $\llangle X\rrangle_f\to \|X\|_f$,
+In general, we only have the natural length preserving map $\llangle X\rrangle_f\to \|X\|_f$,
 but these spaces might be not isometric;
 an example is given in \cite[4.2]{petrunin-intrinisic}.
 
@@ -889,7 +895,7 @@ the later contradicts Proposition \ref{prop:memicrit}.
 \begin{thm}{Shefel's theorem}\label{thm:shefel-2D}
 Let $W$ be a $\CAT[0]$ space which is a disc retract.
 Assume $s\:\DD\to W$ is a saddle map with respect to $\partial \DD$. 
-Then $\|\DD\|_s$ is $\CAT[0]$.
+Then $\llangle\DD\rrangle_s$ is $\CAT[0]$.
 \end{thm}
 
 The statement above is a slight generalization of a theorem proved by Shefel in \cite{shefel-2D};
@@ -1033,7 +1039,7 @@ Let $\Delta$ be a triangle in the Euclidean plane
 and $\Delta'$ a triangle in $W$. 
 If $f\:\Delta\to \Delta'$ is a map which restricts to constant speed
 parametrizations on each side, then it extends to a map 
-$F\:\Conv(\Delta)\to \Conv(\Delta')$ between convex hulls which induces an isometry $\bar F\:\|\Conv(\Delta)\|_F\to \Conv(\Delta')$. 
+$F\:\Conv(\Delta)\to \Conv(\Delta')$ between convex hulls which induces an isometry $\bar F\:\llangle\Conv(\Delta)\rrangle_F\to \Conv(\Delta')$. 
 \end{thm}
 
 \parit{Proof.}
@@ -1073,8 +1079,8 @@ $W$ and by Lemma \ref{lem:closed} it is homeomorphic to a disc retract.
 
 \begin{thm}{Lemma}\label{lem:proj-continuous}
 Let $X$ be a metric space and $u\:\DD\to X$ a continuous map.
-Denote by $\pi\:\DD\to \|\DD\|_u$ the natural projection and
-by $\bar u\:\|\DD\|_u\to X$ the induced map.
+Denote by $\pi\:\DD\to \llangle\DD\rrangle_u$ the natural projection and
+by $\bar u\:\llangle\DD\rrangle_u\to X$ the induced map.
 Assume that $\DD$ has a decomposition $\DD=\bigcup_{n=1}^N C_n$ into a finite 
 number of sets such that $\bar u$ embeds each $\pi(C_n)$ isometrically as a closed subset into $X$.
 Then $\pi$
@@ -1102,10 +1108,10 @@ for any $x\in\DD$.
 
 Note that the image of each solid triangle $\triangle$
 is the closed region bounded by the geodesic triangle in $W$ with the corresponding vertices.
-Moreover,  $\|\triangle\|_u$ is isometric to the image $u(\triangle)$ by Lemma \ref{lem:isomtri}.
+Moreover,  $\llangle\triangle\rrangle_u$ is isometric to the image $u(\triangle)$ by Lemma \ref{lem:isomtri}.
 Denote by $N$ the number of triangles in $\tau$.
-Then, $\|\DD\|_u$ decomposes into $N$ convex sets which are mapped isometrically by the induced map $\bar u$; 
-in particular, $\|\DD\|_u$ belongs to $\mathcal{S}_N$.  
+Then, $\llangle\DD\rrangle_u$ decomposes into $N$ convex sets which are mapped isometrically by the induced map $\bar u$; 
+in particular, $\llangle\DD\rrangle_u$ belongs to $\mathcal{S}_N$.  
 
 Recall that the space $\Geod(W)$ of all geodesics in $W$ with endpoints on $\partial W$ is compact. 
 Fix a dense sequence of geodesics $\mathcal{G}=\{\gamma_1,\gamma_2,\ldots\}$ in $\Geod(W)$.
@@ -1115,14 +1121,14 @@ This way we obtain a sequence of maps, say $u=u_0,u_1,u_2,\ldots$ such that
 \[|u_n(x)-s(x)|<\eps\]
 for any $x$.
 
-Furthermore, each space $\|\DD\|_{u_n}$
+Furthermore, each space $\llangle\DD\rrangle_{u_n}$
 belongs to $\mathcal{S}_N$ and has a decomposition into at most $N$ convex sets which are mapped isometrically by 
 the induced map 
-\[\bar u_n\:\|\DD\|_{u_n}\to W.\] 
+\[\bar u_n\:\llangle\DD\rrangle_{u_n}\to W.\] 
 By construction, each of the convex sets in the definition of $\mathcal{S}_N$ is obtained from one of the triangles in $\tau$ by cutting along the geodesics $\gamma_k$. 
 In particular, the decompositions are nested.
 
-Since $\mathcal{S}_N$ is compact, we can pass to a partial limit of $\|\DD\|_{u_n}$ as $n\to\infty$.
+Since $\mathcal{S}_N$ is compact, we can pass to a partial limit of $\llangle\DD\rrangle_{u_n}$ as $n\to\infty$.
 Denote the limit by $Q_\eps$ and let $w_\eps\:Q_\eps\to W$ be the limit of the short maps $\bar u_n$.
 
 \begin{thm}{Sublemma}
@@ -1144,7 +1150,7 @@ Then there is a natural number $M$ such that the distance from $\gamma$ of $\bar
 where $D_n$ and $p_n$ are lifts of $D$ respectively $p$.
 By density of $\mathcal{G}$, there is a geodesic $\gamma_k\in \mathcal{G}$ with $k>M$ which has distance less than $\frac{\delta}{2}$ from $\gamma$. 
 Hence $\bar u_k^{-1}(\gamma_k)$ separates $p_k$ from the boundary. 
-By Lemma \ref{lem:proj-continuous}, the projection $\pi_k\:\DD\to \|\DD\|_{u_k}$ is continuous
+By Lemma \ref{lem:proj-continuous}, the projection $\pi_k\:\DD\to \llangle\DD\rrangle_{u_k}$ is continuous
 and therefore $u_k^{-1}(\gamma_k)$ separates some lift $\hat p_k$ of $p_k$ from the boundary.
 This is a contradiction because, by construction, $\gamma_k$ cannot cut a hat from $u_k$.
 \qeds
@@ -1156,15 +1162,15 @@ The space $Q_\eps$ is $\CAT[0]$.
 \parit{Proof.}
 It is enough to show that any point in the interior of $Q_\eps$ has a $\CAT[0]$ neighborhood.
 We first show that the total angle around any such point, say $z\in Q_\eps$ is at least $2\cdot\pi$.
-Since the decompositions of $\|\DD\|_{u_n}$ into convex subset of $W$ are nested for varying $n$, they
+Since the decompositions of $\llangle\DD\rrangle_{u_n}$ into convex subset of $W$ are nested for varying $n$, they
 induce a unique such limit decomposition of $Q_\eps$.
 Moreover, $w_\eps$ restricts to an isometry on each 
-of the convex sets occuring in this decomposition.
+of the convex sets occurring in this decomposition.
 Therefore, $w_\eps$ is a local radial isometry.
 If the total angle at $z$ is too small, then $w_\eps(z)\notin\Conv [w_\eps (\partial\Omega)]$
 for a small neighborhood $\Omega\ni w$ in $Q_\eps$. 
 By Lemma \ref{lem:sepbygeo} we could cut a hat from $w_\eps$
-in contradiction to $w_\eps$ beeing saddle.
+in contradiction to $w_\eps$ being saddle.
 To obtain a $\CAT[0]$ neighborhood of $z$, we first cut a small ball around $z$ into to halves using a geodesic through $z$.
 Next observe that for a small enough radius we can cut both of this halves into sectors each of which is contained in a single convex set
 from our decomposition.
@@ -1172,12 +1178,12 @@ The claim follows from Reshetnyak's gluing theorem.
 \qeds
 
 
-Now, assume that the boundary of $\|\DD\|_s$ is rectifiable.
+Now, assume that the boundary of $\llangle\DD\rrangle_s$ is rectifiable.
 By the Lemma on compactness~\ref{lem:compact},
 we can pass to a partial limit, say $Q_0$, of $Q_\eps$ as $\eps\to 0$ and denote $w_0\:Q_0\to W$ the limit map.
 Note that $Q_0$ is a $\CAT[0]$ disc retract.
 
-Further note thaat by construction, there is a map $s'$ arbitrary close to $s$ 
+Further note that by construction, there is a map $s'$ arbitrary close to $s$ 
 such that (1) the curve of $s'|_{\partial \DD}$ is shorter than $s|_{\partial \DD}$ 
 and (2) the space $\|\DD\|_{s'}$ is arbitrary close to $Q_0$.
 Passing to the limit as $s'\to s$ we get that $Q_0$ majorizes $\|\DD\|_s$;
