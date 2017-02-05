@@ -1190,6 +1190,45 @@ The same argument can be repeated for all disc retracts in $\|\DD\|_s$ with rect
 Existence of majorization implies that all triangles in $\|\DD\|_s$ are thin, that is $\|\DD\|_s$ is $\CAT[0]$.
 \qeds
 
+\section{Finite-whole extension lemma}\label{Finite-whole extension lemma}
+
+\begin{thm}{Finite-whole extension lemma}\label{lem:finite-whole}
+Let $X$ and $Y$ be a metric spaces, $A\subset X$ and $f\:A\to Y$ is a short map.
+Assume $Y$ is compact and for any finite set $F\subset X$ there is a short map $F\to Y$ which agrees with $f$ in $F\cap A$.
+Then there is a short map $X\to Y$ which agrees with $f$ in $A$.
+\end{thm}
+
+\parit{Proof.}
+Given a finite set $F\subset X$,
+denote by $\mathfrak{S}_F$ the set of all short maps $h\: F\to Y$ which agree with $f$ in $F\cap A$.
+Given $x\in F$ consider the set
+\[K(F,x)=\set{h(x)\in Y}{h\in \mathfrak{S}_F}.\]
+
+By assumption of lemma 
+\[K(F,x)\ne\emptyset\eqlbl{Kne0}\] for any finite set $F\subset X$ and $x\in F$.
+Further, note that $K(F,x)$ is closed and
+\[K(F',x)\supset K(F,x)\eqlbl{KinK}\]
+for any other finite set $F'$ such that 
+$x\in F'\subset F$.
+
+Without loss of generality we can assume that $A$ is a maximal set with respect to inclusion which satisfies the assumptions of the lemma. 
+(It follows that $A$ is closed subset of $X$, but we will not use it.)
+
+Arguing by contradiction, assume $A\ne X$; fix $x\in X\backslash A$.
+Given $y\in Y$ there is a finite set $F\ni x$ such that $y\notin K(F,x)$.
+Or equivalently the intersection of all $K(F,x)$ for all finite sets $F$ including $x$ is empty.
+
+By finite intersection property, 
+we can choose a finite collection of finite sets $F_1,\dots F_n$ containing $x$ such that 
+\[K(F_1,x)\cap \dots\cap K(F_n,x)=\emptyset.\eqlbl{K(F,x)}\]
+
+Since the union $F=F_1\cup\dots\cup F_n$ is finite, \ref{Kne0} and \ref{KinK}
+imply
+\[K(F_1,x)\cap \dots\cap K(F_n,x)\supset K(F,x)\ne \emptyset\]
+which contradicts \ref{K(F,x)}.
+\qeds
+
+
 \section{Main theorem}\label{Main theorem}
 
 \begin{thm}{Main Theorem}\label{thm:main}
@@ -1218,7 +1257,7 @@ Given a finite set $F\subset \DD$,
 denote by $\mathcal{W}_F$
 the set of isometry classes of spaces $W$ which meet the conditions of the Key Lemma~\ref{lem:key}
 for $F$;
-according to Lemma~\ref{lem:key} $\mathcal{W}_F\ne\emptyset$.
+according to the key lemma~\ref{lem:key} $\mathcal{W}_F\ne\emptyset$.
 Note that for two finite sets $F\subset F'$ in $\DD$,
 we have $\mathcal{W}_F\supset \mathcal{W}_{F'}$.
 
@@ -1228,9 +1267,22 @@ Therefore
 =
 \bigcap_{F}\mathcal{W}_F\ne \emptyset\]
 where the intersection is taken over all finite subsets $F$ in $\DD$. 
-%ALL? OR NESTED SEQUENCE EXHAUSTING A DENSE SET  --- I think it is true forl all???
 
-Fix a space $W$ from $\mathcal{W}$
+Fix a space $W$ from $\mathcal{W}$.
+Note that there is a map $p\:\partial \|\DD\|_s\to W$ which satisfy the assumptions in the finite-whole lemma (\ref{lem:finite-whole});
+that is given a finite set $F\subset \DD$...
+Moreover, there is a short map $q\:\mathcal{W}\to Y$ such that $q\circ p=\id_{\partial \|\DD\|_s}$.
+To construct $p$ and $q$ choose a dense sequence of points $\{x_1,x_2,\dots\}$ in $\partial \|\DD\|_s$,
+fix a finite set $F\subset \|\DD\|_s$,
+pass to the $\omega$limit maps for the maps provided by the key lemma (\ref{lem:key}) for the sequence of sets 
+$F_n=F\cup\{x_1,\dots, x_n\}$ and project the resulting map to the convex subset $Y$ in $Y^\omega$.
+%%%???NOT QUITE BUT CLOSE???
+
+Applying the finite-whole lemma (\ref{lem:finite-whole}) we obtain a short (and therefore length-preserving) map from $\|D\|_s$ to $W$. ???
+%%%%???
+
+
+
 and a dense sequence of points $\mathcal{F}=\{x_1,x_2,\dots\}$ in $\|\DD\|_s$, 
 such that its subsequence of points in $\partial \|\DD\|_s$ is
  also dense in $\partial \|\DD\|_s$.
