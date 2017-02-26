@@ -124,6 +124,35 @@ and Burkhard Wilking
 for helping us with the proof of Proposition~\ref{prop:smooth}.
 We also would like to thank Alexander Lytchak for explaining his recent work with Stefan Wenger and for several helpful discussions.
 
+\section{Alternative definition}\label{sec:alt-def}
+
+A geodesic metric space is called planar if it admits an injective continuous map into the plane.
+
+Let $Y$ be a metric space,
+$\gamma\:\SS^1\to Y$ be a closed curve,
+$X$ is a planar space 
+and $s\:X\to Y$ be a map.
+We say that $s$ majorize $\gamma$ if $s$ is short ant $\gamma$ factors through $s$;
+that is $\gamma=s\circ\bar\gamma$ for a curve $\bar\gamma\:\SS^1\to X$.
+
+A planar metric space $X$ is called metric minimizing filling of $\gamma$ if
+$\gamma$ admits a majorization $\SS^1\xrightarrow{\bar\gamma}X\xrightarrow{s}Y$
+and for any other majorization $\SS^1\xrightarrow{\bar\gamma'}X'\xrightarrow{s'}Y$ of $\gamma$
+there is no short map $i\:X\to X'$ such that $\gamma'=i\circ\gamma$ which is strictly short on a pair of pints in $X$. 
+
+\begin{thm}{Main theorem}\label{thm:mainintro}
+Let $Y$ be a $\CAT[0]$ space and $X$ minimizing filling of a closed curve $\gamma\:\SS^1\to Y$
+and $\SS^1\xrightarrow{\bar\gamma}X\xrightarrow{s}Y$ be its majorization.
+Then $X$ is a $\CAT[0]$. 
+
+Moreover
+\begin{enumerate}[(i)]
+\item if $\gamma$ is rectifiable then $X$ is homeomorphic to a disc retract
+and $s$ uniquely determined by $\gamma$ and $\bar\gamma$;
+\item if in addition $\gamma$ is a simple curve, then $X$ is homeomorphic to the disc.
+\end{enumerate}
+\end{thm}
+
 \section{Induced  pseudometrics}\label{sec:Def}
 
 Let $X$ be a set.
@@ -165,31 +194,39 @@ define a \emph{connecting pseudometric} $|{*}-{*}|_f$ on $X$ in
 the following way
 \[|x-y|_f=\inf\{\diam f(K)\},\]
 where the infimum is taken over all connected sets $K\subset X$ which contain $x$ and $y$;
-if there is no such set we set $|x-y|_f=\infty$. The associated nondegenerated pseudometric space will be
-denoted as $|X|_f$.
+if there is no such set we set $|x-y|_f=\infty$. 
+
+The associated non-degenerated pseudometric space will be
+denoted as $|X|_f$ and we denote by $\pi_f\:X\to |X|_f$ the natural projection map.
+The map $f$ factors as $f=\bar f\circ \pi_f$ with $\pi_f\:X\to|X|_f$ and $\bar f\:|X|_f\to Y$.
+For a point $x\in X$, let $[x]_f=\pi_f^{-1}(\pi_f(x))$ be the fiber of $\pi_f$ through $x$.
+
+Note that is $X$ is compact (which will be always the case)
+then the constructed decomposition $f=\bar f\circ \pi_f$ is so called monotonic-light decomposition --- the map $\pi_f$ is \emph{monotonic}
+in the sense that inverse image of each point is connected (see the corollary \ref{cor:fiberconnected} below)
+and $\bar f$ is \emph{light}; 
+that is the inverse image of any point has dimension $0$.
 
 The intrinsic metric induced by $|{*}-{*}|_f$ will be indicated by 
 $\|{*}-{*}\|_f$. 
 That~is, 
-\[\|x-y\|_f=\inf\set{\length(\gamma)}{\gamma\ \text{is a path in}\ |X|_f\ \text{from}\ x \ \text{to}\ y}\]
+\[\|x-y\|_f
+=
+\inf
+\set{\length(\gamma)}{\gamma\ \text{is a path in}\ |X|_f\ \text{from}\ \pi_f(x) \ \text{to}\ \pi_f(y)}\]
 where the length is computed with respect to $|{*}-{*}|_f$. 
 
 Accordingly the associated nondegenerated  pseudometric space defined by $\|{*}-{*}\|_f$ on $X$ 
-is named $\|X\|_f$. Note that by definition, each metric component of $\|X\|_f$ is a length space.
+is named $\|X\|_f$. 
+Note that by definition, each metric component of $\|X\|_f$ is a length space.
 
-\medskip
 
-The map $f$ factors as $f=\bar f\circ \pi_f$ with $\pi_f\:X\to|X|_f$ and $\bar f\:|X|_f\to Y$.
-For a point $x\in X$, let $[x]_f=\pi_f^{-1}(\pi_f(x))$ be the fiber of $\pi_f$ through $x$.
-
-Note that $\bar f$ is a light map,
-that is the inverse image $f^{-1}(x)$ of any point $x$ has dimension $0$.
-Further note that $\bar f$
+Note that  $\bar f$
 is length preserving;
 that is,
 \[\length(\bar f\circ\gamma)=\length\gamma\]
 for any path $\gamma\:[0,1]\to |X|_f$.
-The same holds for the natural map $|X|_f\zz\to \|X\|_f$.
+The same holds for the natural map $|X|_f\zz\to \|X\|_f$ which is also a bijective map with a continuous inverse.
 
 \begin{thm}{Lemma}\label{lem:picont}
 Let $X$ be a length space, $Y$ a metric space and $f\:X\to Y$ a continuous map. 
@@ -247,7 +284,8 @@ Therefore $\gamma_+(1)$ is the limit of $(x_n)$, a contradiction.
 
 Assume $\gamma_n$ is a sequence of constant speed paths from $x$ to $y$ in $|X|_f$
 such that $\length\gamma_n\to \|x-y\|_f$.
-Then its partial limit in $|X|_f$ is a geodesic from $x$ to $y$ for the metric $\|x-y\|_f$.
+Since $|X|_f$ is compact, we can pass to its partial limit $\gamma$.
+Clearly $\gamma$ is a geodesic from $x$ to $y$ for the metric $\|x-y\|_f$.
 \qeds
 
 %\begin{thm}{Lifting Lemma}\label{lem:lift}
@@ -284,7 +322,8 @@ Then its partial limit in $|X|_f$ is a geodesic from $x$ to $y$ for the metric $
 \begin{thm}{Corollary}\label{cor:fiberconnected}
 Let $f\:X\to Y$ be a continuous map between metric spaces.
 Assume $X$ is compact. 
-Then for every point $x\in X$ the fiber $[x]_f$ is connected.
+Then for every point $x\in X$ the fiber $[x]_f$ is connected;
+in other words, the map $\pi_f\:X\to |X|_f$ is monotonic.
 \end{thm}
 
 
@@ -313,7 +352,7 @@ It follows that $k\in [x]_f\backslash (U\cup V)$, a contradiction.
 %From Corollary \ref{cor:connecedpreimage} it follows that $\alpha$ is an isometry.
 %\qeds
 
-\parbf{An alternative definition.}
+\parbf{An alternative definitions.}
 Let us discuss an alternative definition of induced length metric denoted as $\llangle {*}-{*}\rrangle_f$.
 It will not used in the paper.
 We include it to explain why we prefer a metric $\|{*}-{*}\|_f$ with a more complicated definition.
@@ -333,20 +372,34 @@ In general, we only have the natural length preserving map $\llangle X\rrangle_f
 but these spaces might be not isometric;
 an example is given in \cite[4.2]{petrunin-intrinisic}.
 
+Equivalently the pseudometric $\|{*}-{*}\|_f$ can be defined the following way.
+Given $\eps>0$ and two points $x,y\in X$ 
+define 
+\[\|x-y\|_f=\lim_{\eps\to0}
+\left[\sup\left\{\,\sum_i|f(x_i)-f(x_{i-1}|_Y\,\right\}\right]\eqlbl{eq:eps-chain}\]
+where the infimum is taken for all possible $\eps$-chains $x=x_0,x_1,\dots,x_n=y$ in $X$; that is a point array $x_0,x_1,\dots,x_n\in X$ such that $|x_i-x_{i-1}|_X<\eps$ for any $i$.
+
+??? I will prove the equivalence later.
+
+
+
 
 \section{Metric minimizing maps}\label{Metric minimizing maps}
-Given two maps $f,h\:X\to Y$ we will write $f\succcurlyeq h$ if 
-\[\|x-y\|_f\ge \|x-y\|_h\]
-for any pair of points $x,y\in X$.
-We will write $f\succ h$ if in addition the inequality is strict for at least one pair of points.
-
-
 Let $X$ and $Y$ be metric spaces and $A\subset X$ be a closed subset.
+Given a map $f\:X\to Y$
+we will write 
+\[f\succcurlyeq h\rel{A}\] 
+if $f|_A=h|_A$ and there is a short map $i\:\|X\|_f\to \|X\|_h$ 
+such that $i(a)=a$ for any $a\in A$.
+We will write 
+\[f\succ h\rel{A}\] 
+if in addition the strict inequality
+\[\|i(x)-i(y)\|_f>\|x-y\|_h\] 
+holds for at least one pair of points $x,y\in X$.
+
 
 The map $f\:X\to Y$ is called \emph{metric minimizing relative to $A$}
-if there is no map $h\:X\to Y$ such that $f\succ h$
-and $h$ agrees with $f$ on $A$;
-that is, $h|_A=f|_A$.
+if there is no map $h\:X\to Y$ such that $f\succ h\rel{A}$.
 
 We say that $f\:X\to Y$ is \emph{strictly metric minimizing relative to $A$}
 if there is no map $h\:X\to Y$ distinct from $f$
@@ -528,13 +581,16 @@ If the lengths in their geodesic homotopy $\gamma_t$ is constant, then $\gamma_{
 Let $X$ be a connected space, 
 $A\subset X$ be a closed subset 
 and $Y$ be a $\CAT[0]$ space.
-Assume that the maps $s_0, s_1\:X\to Y$ are continuous and metric minimizing relative to $A$ and agree on $A$.
-Further assume that the metric $\|{*}-{*}\|_{s_0}$ coincide with $\|{*}-{*}\|_{s_1}$ and take only finite values.
-Then $s_0=s_1$.
+Assume that the map $s_0\:X\to Y$ is continuous and metric minimizing relative to $A$ and 
+$s_1\preccurlyeq s_0$ for an other map $s_1\:X\to Y$.
+Then there is $i\:X\to X$ such that $s_1(x)=i\circ s_0(x)$ for any $x$ in any $\|{*}-{*}\|$-metric compontent containing points from $A$.
 \end{thm}
 
 \parit{Proof.}
-For $t\in[0,1]$ denote $s_t\:X\to Y$ the geodesic homotopy. 
+Let $i$ be as in the definition of preorder  $\preccurlyeq$.
+Note that it is distance preserving map $\|X\|_{s_0}\to \|X\|_{s_1}$.
+
+For $t\in[0,1]$ denote $s_t\:X\to Y$ the geodesic homotopy between $s_0$ and $i\circ s_0$. 
 By Lemma~\ref{lem:parpaths},  $\|X\|_{s_{\frac12}}$ is isometric to $\|X\|_{s_0}$. 
 In particular, every $s_{\frac12}$ is metric minimizing.
 
@@ -655,19 +711,17 @@ The short maps from Reshetnyak's majorization theorem fit together to yield the 
 
 
 
-\section{Metric minimizing discs}\label{Metric minimizing discs}
+\section{Disc retracts}\label{Metric minimizing discs}
 
 
 
 Let us denote by $\DD$ the closed unit disc in the plane,
 its boundary $\partial \DD$ is a unit circle.
 
-Let $X$ be a Hausdorff space and
-$f\:\DD\to X$ be a continuous map.
+Let $Y$ be a Hausdorff space and
+$f\:\DD\to Y$ be a continuous map.
 Recall that $f$ has \emph{no bubbles}
-if for any point $p\in X$ every connected component of the complement $\DD\backslash f^{-1}\{p\}$ contains a point from $\partial \DD$.
-
-The following topological notion will be important throughout the text.
+if for any point $p\in Y$ every connected component of the complement $\DD\backslash f^{-1}\{p\}$ contains a point from $\partial \DD$.
 
 \begin{thm}{Definition}
 A compact simply connected topological space which admits an embedding into the plane is 
@@ -675,17 +729,14 @@ called a \emph{disc retract}.
 \end{thm}
 
 
-
-
-We will need the following disc version of Moore's theorem \cite{moore} proved in \cite{LW3}.
-
 \begin{thm}{Proposition}\label{prop:disc-moore}
-Let $Y$ be a metric space and a map $f\:\DD\to X$ has no bubbles.
+Let $Y$ be a metric space and a map $f\:\DD\to Y$ has no bubbles.
 Then $|\DD|_f$ is homeomorphic to a disc retract.
 
 Moreover, if $f|_{\partial\DD}$ is an embedding, then $|\DD|_f$ is homeomorphic to a disc.
 \end{thm}
 
+The proposition above is a disc version of Moore's theorem \cite{moore} proved in \cite{LW3}.
 
 \parit{Proof.}
 Form Lemma \ref{lem:picont} we know that $\pi_f$ is continuous and hence $|\DD|_f$
@@ -854,348 +905,6 @@ As in Proposition~\ref{prop:disc-moore} the claim now follows from Moore's theor
 \qeds
 
 
-\section{Two-dimensional case}\label{Shefel}
-
-Let $X$ and $W$ be a metric spaces.
-A continuous map $s\:X\to W$ is called \emph{saddle} with respect to a closed subset $A\subset X$ 
-if for any closed convex subset $K\subset W$ it holds that
-$A$ intersects
-every connected component of $X\backslash s^{-1}(K)$.
-
-Applying this definition to one-point sets,
-we get that any saddle map has no bubbles, 
-as defined in Proposition \ref{page:no-bubble}.
-
-
-\begin{thm}{Proposition}\label{prop:memisaddle} 
-Let $W$ be a $\CAT[0]$ space and $s\:\DD\to W$ be a continuous metric minimizing map.
-Fix $x\in \partial \DD$;
-denote by $X$ be the metric component of $\pi(x)$ in $\|\DD\|_s$ and set $A=\pi(\partial \DD)\cap X$.
-Then restriction $\bar s|_X\:X\to W$ is saddle with respect to $A$.
-
-In particular, if $\|{*}-{*}\|_s$ takes only finite values then the map $s\:\DD\to W$ is saddle with respect to $\partial \DD$.
-\end{thm}
-
-\parit{Proof.}
-Assume the contrary, let $K$ be a closed convex set in $W$
-and $\Omega$ be a violating component of the complement $X\backslash s^{-1}(K)$. 
-Redefine $\bar s$ for each $x\in\Omega$ by moving 
-$\bar s(x)$ to its closest point projection on $K$.
-Denote by $\bar s'$ the new map. 
-
-Since $K$ is closed and convex, the nearest point projection onto $K$ is short.
-Hence $\bar s'\curlyeqprec\bar s$. 
-Moreover, we have
-\[\length \bar s'\circ\gamma<\length \bar s\circ\gamma\]
-for any rectifiable curve $\gamma$ which connects a point in $\Omega$ to a point in the complement $X\backslash \Omega$.
-That is, $\bar s'\prec\bar s$ or $\bar s$ is not metric minimizing with respect to $A$;
-the later contradicts Proposition \ref{prop:memicrit}.
-\qeds
-
-\begin{thm}{Shefel's theorem}\label{thm:shefel-2D}
-Let $W$ be a $\CAT[0]$ space which is a disc retract.
-Assume $s\:\DD\to W$ is a saddle map with respect to $\partial \DD$. 
-Then $\llangle\DD\rrangle_s$ is $\CAT[0]$.
-\end{thm}
-
-The statement above is a slight generalization of a theorem proved by Shefel in \cite{shefel-2D};
-originally it was proved if the ambient space is the plane and we need it for disc retracts.
-The proof below is roughly the same as the original.
-However, Shefel's proof was written very tight
-and we have decided to provide all details.
-
-
-\begin{thm}{Lemma}\label{lem:extension}
-Let $W$ be a $\CAT[0]$ disc retract. 
-Then any geodesic segment in $W$ can be extended to a geodesic between points in $\partial W$.
-\end{thm}
-
-\parit{Proof.}
-It is enough to show that a geodesic segment $[pq]$ extends beyond $q$ if $q$ is an interior point of $W$.
-Choose a neighborhood $A$ of $q$ which is homeomorphic to a closed disc and such that the boundary $\partial A$
-intersects $[pq]$ in a point $z\neq q$.
-Then the geodesic cone from $z$ over $\partial A$ covers $A$ because $\partial A$
-is not contractible in $W-\{x\}$ for any $x$ in the interior of $A$. 
-In particular, $[pq]$ extends beyond $q$ to the boundary of
-$A$.
-\qeds
-
-Note that since $W$ is a disc retract, its boundary $\partial W$ is compact. 
-Therefore
-the space $\Geod(W)$ of geodesic segments with endpoints on $\partial W$ is compact as well.
-
-\begin{thm}{Lemma}\label{lem:sepbygeo}
-Let $W$ be a $\CAT[0]$  disc retract. 
-If $K\subset W$ is a closed convex subset and $p$ is a
-point in $W\backslash K$, then there is a (possibly degenerated) geodesic $\sigma\in\Geod(W)$ which separates $p$ and $K$;
-that is, $K$ and $p$ lie in the different connected components of $W\backslash \sigma$.
-
-Moreover one can assume that $\sigma$ lies in a given countable dense subset $\mathcal{G}$
-of $\Geod(W)$.
-\end{thm}
-
-This lemma is analogous to the following statement in plane geometry: \emph{any closed convex set in the plane is an intersection of open half planes}.
-
-\begin{wrapfigure}{r}{34 mm}
-\begin{lpic}[t(-5 mm),b(-0 mm),r(0 mm),l(0 mm)]{pics/K-p(1)}
-\lbl[]{5,10;$W$}
-\lbl[]{14,12;$K$}
-\lbl[tl]{28,14;$p$}
-\lbl[tr]{26,7;$x$}
-\lbl[br]{22.5,13;$y$}
-\lbl[tl]{18.5,10.5;$q$}
-\end{lpic}
-\end{wrapfigure}
-
-\parit{Proof.}
-Let $q$ be the nearest point projection of $p$ onto $K$.
-
-Assume there is point $x\not\in [pq]$ which lies sufficiently close to the midpoint of $[pq]$.
-Then the nearest point projection $y$ of $x$ onto $[pq]$ lies in the interior of $[pq]$.
-By Lemma~\ref{lem:extension},
-we can extend the geodesic $[xy]$ to a geodesic $\sigma$ in $\Geod(W)$.
-Note that $\sigma$ separates $K$ from $p$.
-
-If there is no point $x\not\in [pq]$ which lies sufficiently close to the midpoint of $[pq]$
-then the midpoint $m$ of $[pq]$ separates $K$ from $p$.
-This point forms a degenerate geodesic from $\Geod W$.
-
-It remains to prove the last statement.
-
-If $\sigma$ is not degenerate then any geodesic from $\mathcal{G}$ which is sufficiently close $\sigma$ also separates $K$ from $p$.
-In the degenerate case all the, 
-the point $m$ separates $K$ from $p$ 
-and the same holds for any geodesic from $\Geod(W)$ sufficiently close to $m$ which goes from one of connected component of $W\backslash\{m\}$ to another.
-The latter  set is open in $\Geod(W)$.
-Hence the result follows.
-\qeds
-
-
-
-
-\begin{thm}{Cutting hat lemma}\label{lem:cutting-hat}
-Let 
-$W$ be a $\CAT[0]$ space, 
-$K\subset W$ be a closed convex set 
-and $\eps>0$.
-Assume $s\:\DD\to W$ is a saddle map 
-and $u\:\DD\to W$ is a continuous map such that 
-\[|s(x)-u(x)|<\eps\]
-and $u(x)\in K$ for any point $x$ in the boundary of an open set $\Omega\subset \DD$.
-
-Then there is a continuous map $v\:\DD\to K$ such that 
-\begin{enumerate}[(i)]
-\item $|s(x)-v(x)|<\eps$ holds for any $x\in\DD$.
-\item $u(x)=v(x)$ for any $x\notin\Omega$ and
-$v(x)\in K$ for any $x\in\Omega$.
-\end{enumerate}
-
-Moreover,
-\begin{enumerate}[(i)]
-\addtocounter{enumi}{2}
-\item we can assume that \[v(\Omega)\subset \Conv u(\partial\Omega),\]
-where $\Conv S$ denotes the minimal closed convex set containing $S$.
-\item\label{lem:cutting-hat:b} if $u$ has no bubbles, we can assume that the constructed map $v$ has no bubbles.
-\end{enumerate}
-\end{thm}
-
-\parit{Proof.}
-Let $\pi\:W\to K$ denote the closest point projection of $W$ onto $K$.
-Note that $\pi$
-is a short map.
-
-By assumptions $\pi\circ u(x)=u(x)$ for any $x\in\partial\Omega$.
-Therefore, there is an open set $U\supset\partial \Omega$ such that 
-$$|s(x)-\pi\circ u(x)|_W<\eps$$ 
-for $x\in U$.
-
-The assumptions imply that $s(\Omega)$ lies in the $\eps$-neighborhood of $K$;
-that is, 
-\[|s(x)-\pi\circ s(x)|_W<\eps\] 
-for any $x\in\Omega$.
-It follows that for points in $U$ the geodesic segment $[\pi{\circ}s(x)\,\pi{\circ}u(x)]$ is contained in the $\eps$-ball
-around $s(x)$.
-Fix a continuous function $\lambda\:\Omega\to [0,1]$
-with the support in $U$
-such that  $\lambda(x)=1$ for any $x\in \partial \Omega$.
-For $x\notin \Omega$ set $v(x)=u(x)$ and if 
-$x\in \Omega$, set $v(x)$ to be the point which divides the geodesic $[\pi\circ s(x)\pi\circ u(x)]$
-at proportion $\lambda(x)$.
-By construction $v$ satisfies both conditions.
-
-Finally note that $\Conv u(\partial\Omega)\subset K$. 
-Therefore we obtain statement (a) 
-by applying the lemma for the convex set $K'=\Conv u(\partial\Omega)$.
-
-To prove (\ref{lem:cutting-hat:b}), we need to remove bubbles form the constructed map $v$.
-Namely for any $x$ we can choose a maximal open set $\Upsilon_x$ such that for some point $p\in W$ the complement $\DD\backslash v^{-1}\{p\}$ has $\Upsilon_x$ as a
-connected component with no points from $\partial \DD$.
-Redefine $v$ by setting $v(x)=p$.
-\qeds
-
-\begin{thm}{Lemma}\label{lem:isomtri}
-Let $W$ be a $\CAT[0]$ disc retract. 
-Let $\Delta$ be a triangle in the Euclidean plane
-and $\Delta'$ a triangle in $W$. 
-If $f\:\Delta\to \Delta'$ is a map which restricts to constant speed
-parametrizations on each side, then it extends to a map 
-$F\:\Conv(\Delta)\to \Conv(\Delta')$ between convex hulls which induces an isometry $\bar F\:\llangle\Conv(\Delta)\rrangle_F\to \Conv(\Delta')$. 
-\end{thm}
-
-\parit{Proof.}
-There are obvious cases, namely if $\Delta'$ is either embedded or contained in a single geodesic. 
-For the general case, we observe that if we cut $\Delta$ into two triangles $\Delta^\pm$ by a geodesic which joins a vertex to its opposite side, and  
-the claim is true for both triangles $\Delta^+$ and $\Delta^-$, then it is also true for $\Delta$. 
-
-Now let us assume that $\Delta'$ is neither embedded nor contained
-in a single geodesic. 
-Then there is a vertex of $\Delta'$ such that the two adjacent sides have a maximal closed nontrivial interval in common. 
-Choose a point $p$ in the interior
-of a side of $\Delta$ which maps to an endpoint of this interval. 
-Cut $\Delta$ into two triangles $\Delta^\pm$ by joining $p$ to its opposite vertex.
-We obtain natural maps $f^\pm:\Delta^\pm\to\Delta'$ where one of them say $f^+$ is degenerated, in the sense that its image is contained in a side of $\Delta'$, and $f^-$ has 
-a nondegenerated vertex, in the sense that the image of adjacent sides only intersect in the image of the vertex. 
-
-Repeating this modification at most twice,
-reduces the general case to the  obvious ones above.
-\qeds
-
-\begin{thm}{Lemma}\label{lem:puzzle-compact}
-Let $W$ be a $\CAT[0]$ disc retract 
-and $N$ a positive integer. 
-Consider the class of metric spaces $\mathcal{S}_N$ 
-which are homeomorphic to a disc retract
-and can be covered isometrically by at most $N$ closed convex subsets of $W$.
-Then $\mathcal{S}_N$ is compact in Gromov--Hausdorff topology.
-\end{thm}
-
-\parit{Proof.}
-$\mathcal{S}_N$ is precompact by \cite[7.4.15]{BBI}.
-So let $Z$ be a limit space.
-Clearly, $Z$
-is covered by at most $N$ closed convex subsets of 
-$W$ and by Lemma \ref{lem:closed} it is homeomorphic to a disc retract.
-\qeds
-
-\begin{thm}{Lemma}\label{lem:proj-continuous}
-Let $X$ be a metric space and $u\:\DD\to X$ a continuous map.
-Denote by $\pi\:\DD\to \llangle\DD\rrangle_u$ the natural projection and
-by $\bar u\:\llangle\DD\rrangle_u\to X$ the induced map.
-Assume that $\DD$ has a decomposition $\DD=\bigcup_{n=1}^N C_n$ into a finite 
-number of sets such that $\bar u$ embeds each $\pi(C_n)$ isometrically as a closed subset into $X$.
-Then $\pi$
-is continuous.
-\end{thm}
-
-\parit{Proof.}
-Let $x_k\to x$ be a converging sequence in $\DD$. 
-After passing to a subsequence we may assume that all $x_k$ are contained in a single set $C_n$. 
-By assumptions $u(x_k)\to u(x)\in u(C_n)=\bar u\circ \pi (C_n)$. 
-Since $\bar u$ restricts to an isometry on $\pi(C_n)$, the claim follows.
-\qeds
-
-\parit{Proof of \ref{thm:shefel-2D}.}
-Fix a triangulation $\tau$ of $\DD$.
-Map the vertices of $\tau$ by $s$,
-and extend to the 1-skeleton by mapping edges with constant speed to 
-corresponding geodesics.
-Then use Lemma \ref{lem:isomtri} to extend the map to the whole disc.
-
-The obtained map $u\:\DD\to W$ can be made arbitrary close to $s$ by choosing the triangulation fine enough.
-That is, given $\eps>0$ we can assume that 
-\[|s(x)-u(x)|_X<\eps\eqlbl{eq:|s-u|<e}\]
-for any $x\in\DD$.
-
-Note that the image of each solid triangle $\triangle$
-is the closed region bounded by the geodesic triangle in $W$ with the corresponding vertices.
-Moreover,  $\llangle\triangle\rrangle_u$ is isometric to the image $u(\triangle)$ by Lemma \ref{lem:isomtri}.
-Denote by $N$ the number of triangles in $\tau$.
-Then, $\llangle\DD\rrangle_u$ decomposes into $N$ convex sets which are mapped isometrically by the induced map $\bar u$; 
-in particular, $\llangle\DD\rrangle_u$ belongs to $\mathcal{S}_N$.  
-
-Recall that the space $\Geod(W)$ of all geodesics in $W$ with endpoints on $\partial W$ is compact. 
-Fix a dense sequence of geodesics $\mathcal{G}=\{\gamma_1,\gamma_2,\ldots\}$ in $\Geod(W)$.
-Since each geodesic $\gamma_i$ forms a convex sets in $W$, 
-we can apply the cutting hat lemma (\ref{lem:cutting-hat}) to $\gamma_1,\gamma_2,\ldots$ recursively.
-This way we obtain a sequence of maps, say $u=u_0,u_1,u_2,\ldots$ such that 
-\[|u_n(x)-s(x)|<\eps\]
-for any $x$.
-
-Furthermore, each space $\llangle\DD\rrangle_{u_n}$
-belongs to $\mathcal{S}_N$ and has a decomposition into at most $N$ convex sets which are mapped isometrically by 
-the induced map 
-\[\bar u_n\:\llangle\DD\rrangle_{u_n}\to W.\] 
-By construction, each of the convex sets in the definition of $\mathcal{S}_N$ is obtained from one of the triangles in $\tau$ by cutting along the geodesics $\gamma_k$. 
-In particular, the decompositions are nested.
-
-Since $\mathcal{S}_N$ is compact, we can pass to a partial limit of $\llangle\DD\rrangle_{u_n}$ as $n\to\infty$.
-Denote the limit by $Q_\eps$ and let $w_\eps\:Q_\eps\to W$ be the limit of the short maps $\bar u_n$.
-
-\begin{thm}{Sublemma}
- The map $w_\eps$ is saddle.
-\end{thm}
-
-\parit{Proof.}
-Assume that $w_\eps$ is not saddle.
-Then there is a closed convex subset $K\subset W$ such that $\DD-w_\eps^{-1}(K)$
-has a component $U$ which is disjoint from $\partial \DD$.
-Choose a point $p$ in $U$.
-By Lemma \ref{lem:sepbygeo}, there is  
-a geodesic $\gamma\in\Geod(W)$ which separates $w_\eps(p)$ and $K$.
-Then there exists a disc $D$ in $U$ such that
-$w_\eps(\partial D)$ and $w_\eps(p)$ lie in different components of $W-\gamma$. 
-Choose $\delta>0$ 
-such that the distance from $\gamma$ of $w_\eps(\partial D)$ and $w_\eps(p)$ is larger than $\delta$.
-Then there is a natural number $M$ such that the distance from $\gamma$ of $\bar u_n(\partial D_n)$ and $\bar u_n(p_n)$ is larger than $\frac{\delta}{2}$
-where $D_n$ and $p_n$ are lifts of $D$ respectively $p$.
-By density of $\mathcal{G}$, there is a geodesic $\gamma_k\in \mathcal{G}$ with $k>M$ which has distance less than $\frac{\delta}{2}$ from $\gamma$. 
-Hence $\bar u_k^{-1}(\gamma_k)$ separates $p_k$ from the boundary. 
-By Lemma \ref{lem:proj-continuous}, the projection $\pi_k\:\DD\to \llangle\DD\rrangle_{u_k}$ is continuous
-and therefore $u_k^{-1}(\gamma_k)$ separates some lift $\hat p_k$ of $p_k$ from the boundary.
-This is a contradiction because, by construction, $\gamma_k$ cannot cut a hat from $u_k$.
-\qeds
-
-\begin{thm}{Sublemma}
-The space $Q_\eps$ is $\CAT[0]$. 
-\end{thm}
-
-\parit{Proof.}
-It is enough to show that any point in the interior of $Q_\eps$ has a $\CAT[0]$ neighborhood.
-We first show that the total angle around any such point, say $z\in Q_\eps$ is at least $2\cdot\pi$.
-Since the decompositions of $\llangle\DD\rrangle_{u_n}$ into convex subset of $W$ are nested for varying $n$, they
-induce a unique such limit decomposition of $Q_\eps$.
-Moreover, $w_\eps$ restricts to an isometry on each 
-of the convex sets occurring in this decomposition.
-Therefore, $w_\eps$ is a local radial isometry.
-If the total angle at $z$ is too small, then $w_\eps(z)\notin\Conv [w_\eps (\partial\Omega)]$
-for a small neighborhood $\Omega\ni w$ in $Q_\eps$. 
-By Lemma \ref{lem:sepbygeo} we could cut a hat from $w_\eps$
-in contradiction to $w_\eps$ being saddle.
-To obtain a $\CAT[0]$ neighborhood of $z$, we first cut a small ball around $z$ into to halves using a geodesic through $z$.
-Next observe that for a small enough radius we can cut both of this halves into sectors each of which is contained in a single convex set
-from our decomposition.
-The claim follows from Reshetnyak's gluing theorem.
-\qeds
-
-
-Now, assume that the boundary of $\llangle\DD\rrangle_s$ is rectifiable.
-By the Lemma on compactness~\ref{lem:compact},
-we can pass to a partial limit, say $Q_0$, of $Q_\eps$ as $\eps\to 0$ and denote $w_0\:Q_0\to W$ the limit map.
-Note that $Q_0$ is a $\CAT[0]$ disc retract.
-
-Further note that by construction, there is a map $s'$ arbitrary close to $s$ 
-such that (1) the curve of $s'|_{\partial \DD}$ is shorter than $s|_{\partial \DD}$ 
-and (2) the space $\|\DD\|_{s'}$ is arbitrary close to $Q_0$.
-Passing to the limit as $s'\to s$ we get that $Q_0$ majorizes $\|\DD\|_s$;
-that is, there is a short map $Q_0\to \|\DD\|_s$ which maps $\partial Q_0$ onto  $\partial \|\DD\|_s$ in a length-preserving way.
-
-Since $Q_0$ is a $\CAT[0]$ space, its boundary can be majorized by a convex figure in the plane.
-Hence the same holds for $\|\DD\|_s$.
-
-The same argument can be repeated for all disc retracts in $\|\DD\|_s$ with rectifiable boundary, in particular for all solid triangles in $\|\DD\|_s$.
-Existence of majorization implies that all triangles in $\|\DD\|_s$ are thin, that is $\|\DD\|_s$ is $\CAT[0]$.
-\qeds
-
 \section{Finite-whole extension lemma}\label{Finite-whole extension lemma}
 
 \begin{thm}{Finite-whole extension lemma}\label{lem:finite-whole}
@@ -1217,7 +926,8 @@ Further, note that $K(F,x)$ is closed and
 for any other finite set $F'$ such that 
 $x\in F'\subset F$.
 
-Without loss of generality we can assume that $A$ is a maximal set with respect to inclusion which satisfies the assumptions of the lemma. 
+Without loss of generality we can assume that $A$ (the domain of $f$) is a maximal set with respect to inclusion such that $f$ satisfies the assumptions of the lemma;
+that is, we can not add to the domain of $f$ a single point in such a way that the assumptions of the lemma still holds.
 (It follows that $A$ is closed subset of $X$, but we will not use it.)
 
 Arguing by contradiction, assume $A\ne X$; fix $x\in X\backslash A$.
@@ -1240,11 +950,10 @@ which contradicts \ref{K(F,x)}.
 \begin{thm}{Main Theorem}\label{thm:main}
 Let $Y$ be a $\CAT[0]$ space 
 and $s\:\DD\to Y$ be a metric minimizing map relative to the boundary $\partial\DD$.
-Assume $\|\DD\|_s$  is separable. 
 Then each metric component of $\|\DD\|_s$ is a $\CAT[0]$ space. 
 \end{thm}
 
-\parit{Proof of Main theorem.}
+\parit{Proof.}
 From Lemma \ref{lem:geospace} we know that each metric component of $\|\DD\|_s$ is a complete geodesic space.
 We can assume that $\|\DD\|_s$ is a metric space.
 Otherwise we treat each metric component 
@@ -1255,8 +964,10 @@ the case that $\partial \|\DD\|_s$ is formed by a rectifiable simple closed curv
 Indeed, fix a triangle $\triangle$ in $\|\DD\|_s$. 
 If the above case has been proven, then by \ref{prop:memicrit}(\ref{prop:memicrit:retriction}),
 the closure of each connected open component bounded by $\triangle$ is $\CAT[0]$.
-In particular $\triangle$ is thin.
-Since $\triangle$ is arbitrary, the statement follows.
+In particular $\triangle$ is thin;
+this can be shown the same way as in \cite{bishop}.
+Since $\triangle$ is arbitrary, the statement will follow.
+
 
 
 Given a finite set $F\subset \DD$,
@@ -1274,42 +985,13 @@ Therefore
 \bigcap_{F}\mathcal{W}_F\ne \emptyset\]
 where the intersection is taken over all finite subsets $F$ in $\DD$. 
 
-Fix a space $W$ from $\mathcal{W}$.
-Note that there is a map $p\:\partial \|\DD\|_s\to W$ which satisfy the assumptions in the finite-whole lemma (\ref{lem:finite-whole});
-that is given a finite set $F\subset \DD$...
-Moreover, there is a short map $q\:\mathcal{W}\to Y$ such that $q\circ p=\id_{\partial \|\DD\|_s}$.
-To construct $p$ and $q$ choose a dense sequence of points $\{x_1,x_2,\dots\}$ in $\partial \|\DD\|_s$,
-fix a finite set $F\subset \|\DD\|_s$,
-pass to the $\omega$limit maps for the maps provided by the key lemma (\ref{lem:key}) for the sequence of sets 
-$F_n=F\cup\{x_1,\dots, x_n\}$ and project the resulting map to the convex subset $Y$ in $Y^\omega$.
-%%%???NOT QUITE BUT CLOSE???
 
-Applying the finite-whole lemma (\ref{lem:finite-whole}) we obtain a short (and therefore length-preserving) map from $\|D\|_s$ to $W$. ???
-%%%%???
+Fix a space $W$ from $\mathcal{W}$;
+denote by $p\:\partial \|\DD\|_s\to W$ the map ??? needed explanation.
 
-
-
-and a dense sequence of points $\mathcal{F}=\{x_1,x_2,\dots\}$ in $\|\DD\|_s$, 
-such that its subsequence of points in $\partial \|\DD\|_s$ is
- also dense in $\partial \|\DD\|_s$.
-
-Set $F_n=\{x_1,\dots,x_n\}$.
-Denote by $p_n\:F_n\to W$ and $q_n\:W\to Y$ the short maps provided by the Key Lemma~\ref{lem:key}.
-
-Using a diagonal argument we can extract a short map 
-\[p\:\mathcal{F}\to W.\]
-
-Since $\mathcal{F}$ is dense in $\|\DD\|_s$,
-the map $p$ can be extended to the whole space $\|\DD\|_s$ 
-as a short map.
-The obtained map will still be denoted as $p$.
-
-Pass to an ultralimit $q_\omega\:W\to Y$ of the short maps $q_n$.
-The target of $q_\omega$ is an ultrapower  $Y^\omega$ of $Y$,
-which is a $\CAT[0]$ space containing $Y$ as a convex subspace.
-The closest point projection of $q_\omega$ to $Y$ will be denoted by $q$.
-By construction, $q$ is short.
-
+Recall that by the key lemma~\ref{lem:key}, the space $W$ is a $\CAT[0]$ disc retract
+and the map  satisfy the assumptions in the finite-whole lemma (\ref{lem:finite-whole}).
+It follows that the map $p$ can be extended to a short map whole $\|D\|_s$ which we still denote by $p$.
 
 Summarizing, the space $W$ is a $\CAT[0]$ disc retract and
  there are two short maps 
@@ -1317,6 +999,12 @@ $\|\DD\|_s\xrightarrow{p} W \xrightarrow{q} Y$
 such that 
 \[q\circ p|_{\partial|\DD|_s}=\bar s|_{\partial|\DD|_s}.\] 
 Since $\bar s$ is metric minimizing (Proposition \ref{prop:memicrit}), both maps $p$ and $q$ are length preserving and metric minimizing.
+
+Fix a retract $r\:\DD\to W$ and consider an arbitrary lift $i$ of $p$;
+that is, a map which makes the following diagram commuting and 
+Note that by construction $i$ we have
+\[\|x-y\|_s\ge \|i(x)-i(y)\|_{r\circ q}\]
+for any $x,y\in \DD$
 
 Consider a composition $\DD\xrightarrow{r} |\DD|_s\xrightarrow{p} W$, where $r$ is a retract.
 By Proposition~\ref{prop:memisaddle}
