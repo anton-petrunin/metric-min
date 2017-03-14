@@ -23,30 +23,92 @@ We show that reasonable metric minimizing surfaces in $\CAT[0]$ spaces are $\CAT
 
 \section{Introduction}
 
-A geodesic metric space is called planar if it admits an injective continuous map into the plane.
+Let $\DD$ be the unit disc in the plane and $Y$ a $\CAT[0]$ space.
+We will be interested in the metric minimizing maps $s\:\DD\to Y$;
+that is maps which minimize the induced intrinsic metric.
 
-To see a source of examples of planar spaces,
-start with arbitrary metric on the disc $\DD$,
-equip $\DD$ with the induced intrinsic metric
-and pass to its metric component.
-The obtained space is planar; see ??? below.
-In particular, any metric planar graph is a planar space.
+To define \emph{metric minimizing map}, we first need a definition of induced intrinsic metric.
+Assume $s\:\DD\to Y$ is a map, not necessary continuous.
+Given two points $x,y\in \DD$, set 
+\[\|x-y\|_s=\inf\{\,\length (s\circ\gamma)\,\}\] 
+where the infimum is taken for all paths $\gamma\:[0,1]\to\DD$ 
+connecting $x$ to $y$ such that the composition $s\circ\gamma$ is rectifiable path (in prticular continous).
+The value $\|x-y\|_s$ is called \emph{intrinsic distance} between the points $x$ and $y$ \emph{induced} by $s$; 
+it may take infinite value.
 
-Let $Y$ be a metric space,
+The value $\|x-y\|_s$ can vanish at distinct points, in other words $\|{*}-{*}\|_s$ is a \emph{pseudometric} on $\DD$.
+The corresponding metric space will be denoted as $\|\DD\|_s$;
+that is points in $\|\DD\|_s$ are the equivalence classes $[x]$ for the equivalence relation $x\sim y$ $\iff$ $\|x-y\|_s=0$
+and the distance defined as $\|[x]-[y]\|_s=\|x-y\|_s$.
+
+If $s'\:\DD\to Y$ is an other map which agree with $s$ on the boundary $\partial \DD$,
+we will write $s\succcurlyeq s'$ if there is a short map 
+\[i\:(\DD,\|{*}-{*}\|_s)\to (\DD,\|{*}-{*}\|_{s'})\] 
+which is identical on the boundary. 
+
+Finally, if $s\succcurlyeq s'$ implies $s'\succcurlyeq s$ we say that $s$ is \emph{metric minimizing}.
+
+\begin{thm}{Main theorem}\label{thm:mainintro}
+Let $Y$ be a $\CAT[0]$ space and $s\:\DD\to Y$ is metric minimzing map.
+Assume the boundary curve $s|_{\partial\DD}$ is rectifiable.
+Then the space $\|\DD\|_s$ is a $\CAT[0]$ space homeomorphic to a disc retract.
+
+Moreover if $s|_{\partial\DD}$ is injective then $\|\DD\|_s$ is homeomorphic to a disc.
+\end{thm}
+
+\section{Planar spaces}
+
+In this section we will reformulate the main theorem, in terms of \emph{planar spaces} which is more suitable for the proof.  
+
+For a general map the space $\|\DD\|_s$ defined above might have few \emph{metric components};
+that is the maximal subsets of points on finite distance from each other.
+These components might be bad fractal, 
+but the metric on one component is planar in the sense of the following definition.
+
+\begin{thm}{Definition}
+A geodesic metric space is called \emph{planar} if it admits an injective continuous map into the plane.
+\end{thm}
+
+The existence of an injective continuous map into the plane is evident;
+the existence of geodesics between points follow  from the lemma below;
+this is a classical statement (see for example \cite[II-\S8 Thm. 3]{KF}).
+
+
+\begin{thm}{Lemma}\label{lem:geospace}
+Let $X$ be a compact geodesic space, $Y$ a metric space and $f\:X\to Y$ a map. 
+Then each metric component of $\|X\|_f$ is a geodesic space.
+\end{thm}
+
+\parit{Proof.}
+Assume $\gamma_n$ is a sequence of constant speed paths from $x$ to $y$ in $|X|_f$
+such that $\length\gamma_n\to \|x-y\|_f$.
+Since $|X|_f$ is compact, we can pass to its partial limit $\gamma$.
+Clearly $\gamma$ is a geodesic from $x$ to $y$ for the metric $\|x-y\|_f$.
+\qeds
+
+
+Let 
 $\gamma\:\SS^1\to Y$ be a closed curve,
-$X$ is a planar space 
+$X$ be a planar space 
 and $s\:X\to Y$ be a map.
 We say that $s$ majorize $\gamma$ if $s$ is short and $\gamma$ factors through $s$;
 that is $\gamma=s\circ\bar\gamma$ for a curve $\bar\gamma\:\SS^1\to X$.
 
+A majorization $\SS^1\xrightarrow{\bar\gamma}X\xrightarrow{s}Y$ of $\gamma$ is called \emph{minimizing} 
+if there is no short map $s'\:X\to Y$ which agree with $s$ on $\bar\gamma(\SS^1)$ and distinct from $s$.
 
-A majorization $\SS^1\xrightarrow{\bar\gamma}X\xrightarrow{s}Y$ of $\gamma$ is called metric minimizing 
+A majorization $\SS^1\xrightarrow{\bar\gamma}X\xrightarrow{s}Y$ of $\gamma$ is called \emph{totally minimizing}
 if for any other majorization $\SS^1\xrightarrow{\bar\gamma'}X'\xrightarrow{s'}Y$ of $\gamma$
 there is no short map $i\:X\to X'$ such that $\gamma'=i\circ\gamma$ which is strictly short on a pair of pints in $X$. 
 
-\begin{thm}{Main theorem}\label{thm:mainintro}
-Let $Y$ be a $\CAT[0]$ space and $X$ minimizing filling of a closed rectifiable curve $\gamma\:\SS^1\to Y$
-and $\SS^1\xrightarrow{\bar\gamma}X\xrightarrow{s}Y$ be its majorization.
+Assume $s\:\DD\to Y$ is a metric minimizing map as in the main theorem \ref{thm:mainintro}.
+Denote by $X$ the metric component of $\partial \DD$ in $\|\DD\|_s$.
+Note that the map $X\to Y$ induced by $s$ is a totally minimizing majorization of $\gamma=s|_{\partial \DD}$.
+Note that the map  which sends all the metric components in $\|\DD\|_s$ other than $X$ to one point in $X$ is short.
+Therefore the ain theorem can be reformulated the following way.
+
+\begin{thm}{Reformulation of the main theorem}\label{thm:reformulation}
+Let $Y$ be a $\CAT[0]$ space and $\SS^1\xrightarrow{\bar\gamma}X\xrightarrow{s}Y$ be a totally minimizing majorization of a closed rectifiable curve $\gamma\:\SS^1\to Y$.
 Then $X$ is a $\CAT[0]$ space homeomorphic to a disc retract.
 
 Moreover if in addition $\gamma$ is a simple curve, then $X$ is homeomorphic to the disc.
@@ -59,6 +121,7 @@ Let $X$ and $Y$ be a metric spaces, $A\subset X$ and $f\:A\to Y$ is a short map.
 Assume $Y$ is compact and for any finite set $F\subset X$ there is a short map $F\to Y$ which agrees with $f$ in $F\cap A$.
 Then there is a short map $X\to Y$ which agrees with $f$ in $A$.
 \end{thm}
+
 
 \parit{Proof.}
 Given a finite set $F\subset X$,
@@ -91,7 +154,63 @@ imply
 which contradicts \ref{K(F,x)}.
 \qeds
 
-\section{Minimizing graphs}\label{Metric minimizing graphs}
+\begin{thm}{Finite-whole extension lemma}\label{lem:finite-whole}
+Let $X$, $Y$ and $Z$ be a metric spaces, 
+$A\subset X$ and $f\:A\to Z$ is a short map.
+Assume $Y$ and $Z$ are compact and for any finite set $F\subset X$ there is a short maps 
+$\alpha_F\:F\to Y$ 
+and $\beta_F\:F\to Z$ such that 
+$\beta_F$ agrees with $f$ in $F\cap A$
+and 
+\[|\alpha_F(x)-\alpha_F(y)|_Y\ge |\beta_F(x)-\beta_F(y)|_Z\]
+for any $x,y\in F$.
+Then there is a short maps $\alpha\:X\to Y$ and $\beta\:X\to Y$ which agrees with $f$ in $A$
+and
+\[|\alpha(x)-\alpha(y)|_Y\ge |\beta(x)-\beta(y)|_Z\]
+for any $x,y\in X$.
+\end{thm}
+
+The proof is nearly identical.
+
+\parit{Proof.}
+Given a finite set $F\subset X$,
+denote by $\mathfrak{S}_F$ the set of all pairs of short maps $(\alpha_F,\beta_F)$ satisfying the assumption of lemma.
+Given $x\in F$ consider the set
+\[K(F,x)=\set{\alpha_F(x),\beta_F(y)\in Y\times Z}{(\alpha_F,\beta_F)\in \mathfrak{S}_F}.\]
+
+By assumption of lemma 
+\[K(F,x)\ne\emptyset\eqlbl{Kne0}\] for any finite set $F\subset X$ and $x\in F$.
+Further, note that $K(F,x)$ is closed and
+\[K(F',x)\supset K(F,x)\eqlbl{KinK}\]
+for any other finite set $F'$ such that 
+$x\in F'\subset F$.
+
+Without loss of generality we can assume that $A$ (the domain of $f$) is a maximal set with respect to inclusion such that $f$ satisfies the assumptions of the lemma;
+that is, we can not add to the domain of $f$ a single point in such a way that the assumptions of the lemma still holds.
+(It follows that $A$ is closed subset of $X$, but we will not use it.)
+
+Assume $A\ne X$; fix $x\in X\backslash A$.
+Given $(y,z)\in Y\times Z$ there is a finite set $F\ni x$ such that $(y,z)\notin K(F,x)$.
+Or equivalently the intersection of all $K(F,x)$ for all finite sets $F$ including $x$ is empty.
+
+By finite intersection property, 
+we can choose a finite collection of finite sets $F_1,\dots F_n$ containing $x$ such that 
+\[K(F_1,x)\cap \dots\cap K(F_n,x)=\emptyset.\eqlbl{K(F,x)}\]
+
+Since the union $F=F_1\cup\dots\cup F_n$ is finite, \ref{Kne0} and \ref{KinK}
+imply
+\[K(F_1,x)\cap \dots\cap K(F_n,x)\supset K(F,x)\ne \emptyset\]
+which contradicts \ref{K(F,x)}.
+It follows that we can assume that $A=X$.
+
+That is, for any finite set $F\in X$ there is a map $\alpha\:F\to Y$ such that 
+\[|x-y|_X \ge |\alpha_F(x)-\alpha_F(y)|_Y \ge |f(x)-f(y)|_Z\]
+for any $x,y\in F$.
+
+\qeds
+
+
+\section{Length minimizing graphs}\label{Metric minimizing graphs}
 
 Assume $\Gamma$ is a  finite graph and $A$ is a subset of its vertices.
 Let $Y\in\CAT[0]$ and $f\:\Gamma\to Y$ be an arbitrary map.
@@ -205,7 +324,7 @@ The short maps from Reshetnyak's majorization theorem fit together to yield the 
 
 \begin{thm}{Key Lemma}\label{lem:key}
 Let $Y$ be a $\CAT[0]$ space and $X$ 
-be a metric minimizing filling of a closed curve $\gamma$.
+be a metric minimizing filling of a closed curve $\gamma$ in $Y$.
 Given a finite set $F\subset X$ 
 there is 
 (1) a $\CAT[0]$ space $W$, which is a disc retract,
@@ -327,6 +446,153 @@ On the other hand, since we can lift radial geodesics from $X_\infty$ to $B_\inf
 is connected as well.
 As in Proposition~\ref{prop:disc-moore} the claim now follows from Moore's theorem in \cite{moore}.
 \qeds
+
+\section{Geodesic homotopy}
+
+Given two points $p_0$ and $p_1$ in a $\CAT[0]$ space $Y$,
+denote by $p_t$ the point $\gamma(t)$ on the 
+the geodesic path $\gamma\:[0,1]\to Y$ from $p_0$ to $p_1$;
+that is, $\gamma(0)=p_0$ and $\gamma(1)=p_1$.
+
+Note that the map $(p_0,p_1,t)\mapsto p_t$ is continuous.
+Therefore given two continuous maps $f_0,f_1\:K\to Y$,
+the one parameter family of maps $f_t\:K\to Y$ 
+is a homotopy;
+further it will be called \emph{geodesic homotopy}.
+
+Let $\gamma_{0}, \gamma_1\:\II\to Y$ be two rectifiable curves parametrized by arc length. 
+We say that  $\gamma_{0}$ is {\em parallel} to $\gamma_{1}$, if the function $t\mapsto |\gamma_{0}(t)-\gamma_{1}(t)|_Y$ is constant.
+
+
+\begin{thm}{Lemma}\label{lem:parpaths}
+Let $\gamma_0,\gamma_1\:[0,\ell]\to Y$ be two rectifiable curves. 
+Denote by $\gamma_t\:[0,\ell]\to Y$ their geodesic homotopy.
+Then
+\[\length\gamma_{\frac12}
+\le \tfrac12\cdot\length\gamma_0 +\tfrac12\cdot\length\gamma_1\]
+for any $t\in [0,1]$.
+
+If in addition $\gamma_0$ and $\gamma_1$ are parametrized by arc length and 
+\[\length\gamma_{\frac12}
+=\length\gamma_0
+=\length\gamma_1,\] 
+then $\gamma_{0}$ and $\gamma_{1}$ are parallel. 
+\end{thm}
+
+\parit{Proof.}
+%Ref to existance of |\dot\gamma_0(t)|???
+From comparison, we get
+\[2\cdot|\dot\gamma_{\frac12}(t)|^2
+\le
+|\dot\gamma_{0}(t)|^2
++|\dot\gamma_{0}(t)|^2
+-\tfrac12\cdot(|\gamma_{0}(t)-\gamma_{1}(t)|')^2\] 
+for almost all $t$.
+Taking the integral, we get the first statement.
+
+If in addition $\gamma_0$ and $\gamma_1$ are parametrized by arc length, 
+then $|\dot\gamma_{\frac12}(t)|\le 1$.
+
+By assumption, the length of $\gamma_{\frac12}$ equals $\ell$. 
+Hence $|\dot\gamma_{\frac12}(t)|=1$ for almost all $t\in[0,\ell]$. 
+In particular, $\gamma_{\frac12}$
+is parametrized by arc length. 
+
+It follows that $|\gamma_{0}(t)-\gamma_{1}(t)|'=0$ for almost all $t$.
+Since the function 
+\[t\mapsto |\gamma_{0}(t)-\gamma_{1}(t)|\] 
+is Lipschitz,
+the latter  implies that it is constant,
+and therefore $\gamma_{0}$ and $\gamma_{1}$ are parallel.
+\qeds
+
+\parbf{Remark.}
+In fact, it is possible to show in the above situation that the induced intrinsic metric on $[0,1]\times[0,\ell]$
+for the map $(t,\tau)\mapsto \gamma_t(\tau)$ is a product metric.
+
+\begin{thm}{Corollary}\label{cor:parpaths}
+Let $\gamma_0,\gamma_1\:[0,1]\to Y$ be two rectifiable paths both starting in a point $p\in Y$ and of equal length $\ell>0$. 
+If the lengths in their geodesic homotopy $\gamma_t$ is constant, then $\gamma_{0}=\gamma_{1}$.
+\end{thm}
+
+\begin{thm}{Uniqueness}\label{prop:strict-mm}
+Let $X$ be a geodesic space, 
+$A\subset X$ be a closed subset 
+and $Y$ be a $\CAT[0]$ space.
+Assume that the map $s_0\:X_0\to Y$ is continuous and metric minimizing relative to $A$ and 
+$s_1\preccurlyeq s_0$ for an other map $s_1\:X_1\to Y$.
+Then there is $i\:X_0\to X_1$ such that $s_0=s_1\circ i$.
+\end{thm}
+
+\parit{Proof.}
+Let $i$ be as in the definition of preorder  $\preccurlyeq$.
+Note that it is distance preserving map $X_0\to X_1$.
+
+For $t\in[0,1]$ denote $s_t\:X\to Y$ the geodesic homotopy between $s_0$ and $s_1\circ i$. 
+Since $s_0$ is metric minimizing, $s_t\:X\to Y$ are length preserving for any $t\in[0,1]$.
+
+From Corollary \ref{cor:parpaths} we see that $s_0$ agrees with $s_1$ on any rectifiable curve starting at $A$.
+Hence the statement follows.
+\qeds
+
+\section{Main theorem}\label{Main theorem}
+
+\begin{thm}{Main Theorem}\label{thm:main}
+Let $Y$ be a $\CAT[0]$ space, 
+and $\SS^1\xrightarrow{\bar\gamma}X\xrightarrow{s}Y $ is a metric minimizing majorization of a closed rectifiable curve $\gamma\:\SS^1\to Y$.
+Then $X$ is a $\CAT[0]$ space homeomorphic to a disc retract. 
+\end{thm}
+
+\parit{Proof.}
+Given a finite set $F\subset X$,
+denote by $\mathcal{W}_F$
+the set of isometry classes of spaces $W$ which meet the conditions of the Key Lemma~\ref{lem:key}
+for $F$;
+according to the key lemma~\ref{lem:key} $\mathcal{W}_F\ne\emptyset$.
+Note that for two finite sets $F\subset F'$ in $X$,
+we have $\mathcal{W}_F\supset \mathcal{W}_{F'}$.
+
+According to the Lemma on compactness (\ref{lem:compact}) $\mathcal{W}_F$ is compact.
+Therefore 
+\[\mathcal{W}
+=
+\bigcap_{F}\mathcal{W}_F\ne \emptyset\]
+where the intersection is taken over all finite subsets $F\subset X$. 
+
+
+Fix a space $W$ from $\mathcal{W}$.
+Note that for any finite set $F\subset X$
+there are short maps 
+$p_F\:F\to W$ 
+and
+$q_F\:W\to Y$ such that
+$q_F\circ p_F(x)=s(x)$ for any $x\in \bar\gamma(\SS^1)\cap F$.
+
+
+Recall that by the key lemma~\ref{lem:key}, the space $W$ is a $\CAT[0]$ disc retract
+and the map  satisfy the assumptions in the finite-whole lemma (\ref{lem:finite-whole}).
+It follows that there are maps $p\: X\to W$ and $q\:W\to Y$
+such that $q\circ p(x)=s(x)$ for any $x\in \bar\gamma(\SS^1)$
+
+Since $s$ is metric minimizing, 
+both maps $p$ and $q$ are metric minimizing and $p$ is distance preserving.
+
+Denote by $K$ the convex hull of $p\circ\bar\gamma(\SS^1)$ in $W$.
+Let us show that 
+\[p(X)=K\eqlbl{XinK}\]
+Note that $p(X)\supset p\circ\bar\gamma(\SS^1)$ and $p(X)$ is a convex.
+Therefore $p(X)\supset K$.
+Further since the closest point projection $\pi_K\:W\to K$ is short,
+so is $q \circ \pi_K \circ p\:X\to Y$.
+If $p(X)\backslash K\ne\emptyset$ then $\pi_K$ shortens some curves in $p(X)$;
+the latter contradicts metric minimality of $s$.
+Hence \ref{XinK} follows.
+
+By \ref{XinK}, $X$ is isometric to $K$.
+hence the statement follows.
+\qeds
+
+
 
 \begin{thebibliography}{52}
 

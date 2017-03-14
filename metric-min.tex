@@ -385,6 +385,7 @@ where the infimum is taken for all possible $\eps$-chains $x=x_0,x_1,\dots,x_n=y
 
 
 \section{Metric minimizing maps}\label{Metric minimizing maps}
+
 Let $X$ and $Y$ be metric spaces and $A\subset X$ be a closed subset.
 Given a map $f\:X\to Y$
 we will write 
@@ -515,22 +516,22 @@ Therefore $s\succcurlyeq s'_\omega$ for any $s\in \mathcal{O}$.
 That is, $\mathcal{O}$ is not maximal, a contradiction.
 \qeds
 
-Given two points $p_0$ and $p_1$ in a $\CAT[0]$ space $X$,
+Given two points $p_0$ and $p_1$ in a $\CAT[0]$ space $Y$,
 denote by $p_t$ the point $\gamma(t)$ on the 
-the geodesic path $\gamma\:[0,1]\to X$ such that $\gamma(0)=p_0$ and $\gamma(1)=p_1$.
+the geodesic path $\gamma\:[0,1]\to Y$ such that $\gamma(0)=p_0$ and $\gamma(1)=p_1$.
 
 Note that the map $(p_0,p_1,t)\mapsto p_t$ is continuous.
-Therefore given two continuous maps $f_0,f_1\:K\to X$,
-the one parameter family of maps $f_t\:K\to X$ is a homotopy;
+Therefore given two continuous maps $f_0,f_1\:K\to Y$,
+the one parameter family of maps $f_t\:K\to Y$ is a homotopy;
 further it will be called \emph{geodesic homotopy}.
 
-Let $\gamma_{0}, \gamma_1\:\II\to X$ be two rectifiable curves parametrized by arc length. 
-We say that  $\gamma_{0}$ is {\em parallel} to $\gamma_{1}$, if the function $t\mapsto |\gamma_{0}(t)-\gamma_{1}(t)|_X$.
+Let $\gamma_{0}, \gamma_1\:\II\to Y$ be two rectifiable curves parametrized by arc length. 
+We say that  $\gamma_{0}$ is {\em parallel} to $\gamma_{1}$, if the function $t\mapsto |\gamma_{0}(t)-\gamma_{1}(t)|_Y$.
 
 
 \begin{thm}{Lemma}\label{lem:parpaths}
-Let $\gamma_0,\gamma_1\:[0,\ell]\to X$ be two rectifiable curves. 
-Denote by $\gamma_t\:[0,\ell]\to X$ their geodesic homotopy.
+Let $\gamma_0,\gamma_1\:[0,\ell]\to Y$ be two rectifiable curves. 
+Denote by $\gamma_t\:[0,\ell]\to Y$ their geodesic homotopy.
 Then
 \[\length\gamma_{\frac12}
 \le \tfrac12\cdot\length\gamma_0 +\tfrac12\cdot\length\gamma_1\]
@@ -573,7 +574,7 @@ In fact, it is possible to show in the above situation that the induced intrinsi
 for the map $(t,\tau)\mapsto \gamma_t(\tau)$ is a product metric.
 
 \begin{thm}{Corollary}\label{cor:parpaths}
-Let $\gamma_0,\gamma_1\:[0,1]\to X$ be two rectifiable paths both starting in a point $p\in X$ and of equal length $\ell>0$. 
+Let $\gamma_0,\gamma_1\:[0,1]\to Y$ be two rectifiable paths both starting in a point $p\in Y$ and of equal length $\ell>0$. 
 If the lengths in their geodesic homotopy $\gamma_t$ is constant, then $\gamma_{0}=\gamma_{1}$.
 \end{thm}
 
