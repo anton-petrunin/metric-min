@@ -58,57 +58,36 @@ Moreover if $s|_{\partial\DD}$ is injective then $\|\DD\|_s$ is homeomorphic to 
 
 \section{Planar spaces}
 
-In this section we will reformulate the main theorem, in terms of \emph{planar spaces} which is more suitable for the proof.  
+For a general map the space $\|\DD\|_s$ defined above might have more than one \emph{metric component};
+that is, the maximal subsets of points on finite distance from each other.
+A metric space isometric to such metric component will be called \emph{planar spaces}.
+They might be bad fractal, but they are not arbitrary.
+For example, a finite metric graph is planar space if and only if it planar graph.
 
-For a general map the space $\|\DD\|_s$ defined above might have few \emph{metric components};
-that is the maximal subsets of points on finite distance from each other.
-These components might be bad fractal, 
-but the metric on one component is planar in the sense of the following definition.
+Assume $X$ is a planar space, 
+$A\subset X$ is a closed subset
+and $Y$ be a $\CAT[0]$ space.
+A short map $s\:X\to Y$ is called metric minimizing relative to $A$
+if there is no short map $s'\:X\to Y$ which agree with $s$ on $A$ and distinct from $s$.
 
-\begin{thm}{Definition}
-A geodesic metric space is called \emph{planar} if it admits an injective continuous map into the plane.
-\end{thm}
-
-The existence of an injective continuous map into the plane is evident;
-the existence of geodesics between points follow  from the lemma below;
-this is a classical statement (see for example \cite[II-\S8 Thm. 3]{KF}).
-
-
-\begin{thm}{Lemma}\label{lem:geospace}
-Let $X$ be a compact geodesic space, $Y$ a metric space and $f\:X\to Y$ a map. 
-Then each metric component of $\|X\|_f$ is a geodesic space.
-\end{thm}
-
-\parit{Proof.}
-Assume $\gamma_n$ is a sequence of constant speed paths from $x$ to $y$ in $|X|_f$
-such that $\length\gamma_n\to \|x-y\|_f$.
-Since $|X|_f$ is compact, we can pass to its partial limit $\gamma$.
-Clearly $\gamma$ is a geodesic from $x$ to $y$ for the metric $\|x-y\|_f$.
-\qeds
-
-
-Let 
-$\gamma\:\SS^1\to Y$ be a closed curve,
-$X$ be a planar space 
-and $s\:X\to Y$ be a map.
-We say that $s$ majorize $\gamma$ if $s$ is short and $\gamma$ factors through $s$;
-that is $\gamma=s\circ\bar\gamma$ for a curve $\bar\gamma\:\SS^1\to X$.
-
-A majorization $\SS^1\xrightarrow{\bar\gamma}X\xrightarrow{s}Y$ of $\gamma$ is called \emph{minimizing} 
-if there is no short map $s'\:X\to Y$ which agree with $s$ on $\bar\gamma(\SS^1)$ and distinct from $s$.
-
-A majorization $\SS^1\xrightarrow{\bar\gamma}X\xrightarrow{s}Y$ of $\gamma$ is called \emph{totally minimizing}
-if for any other majorization $\SS^1\xrightarrow{\bar\gamma'}X'\xrightarrow{s'}Y$ of $\gamma$
-there is no short map $i\:X\to X'$ such that $\gamma'=i\circ\gamma$ which is strictly short on a pair of pints in $X$. 
+A short map $s\:X\to Y$ is called \emph{totally metric minimizing} relative to $A$
+if the following condition holds;
+if $i\:X\to X'$ is a short map to a planar space $X'$ and 
+$s'\:X'\to Y$  is an other short map such that $s$ agrees with $s'\circ i$ on $A$,
+then $s=s'\circ i$.
 
 Assume $s\:\DD\to Y$ is a metric minimizing map as in the main theorem \ref{thm:mainintro}.
+Let $\pi_s\:\DD\to \|\DD\|_s$ be the projection map.
 Denote by $X$ the metric component of $\partial \DD$ in $\|\DD\|_s$.
-Note that the map $X\to Y$ induced by $s$ is a totally minimizing majorization of $\gamma=s|_{\partial \DD}$.
+Note that the map $X\to Y$ induced by $s$ is a totally metric minimizing map relative to $A=\pi(\partial \DD)\subset X$.
 Note that the map  which sends all the metric components in $\|\DD\|_s$ other than $X$ to one point in $X$ is short.
-Therefore the ain theorem can be reformulated the following way.
+Therefore the main theorem can be reformulated the following way.
 
 \begin{thm}{Reformulation of the main theorem}\label{thm:reformulation}
-Let $Y$ be a $\CAT[0]$ space and $\SS^1\xrightarrow{\bar\gamma}X\xrightarrow{s}Y$ be a totally minimizing majorization of a closed rectifiable curve $\gamma\:\SS^1\to Y$.
+Let $Y$ be a $\CAT[0]$ space, 
+$X$ be planar space, 
+$\gamma\:\SS^1\to X$ is a closed curve and
+$s\: X\to Y$ is a totally metric minimizing map relative $\gamma(\SS^1)$.
 Then $X$ is a $\CAT[0]$ space homeomorphic to a disc retract.
 
 Moreover if in addition $\gamma$ is a simple curve, then $X$ is homeomorphic to the disc.

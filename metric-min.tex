@@ -185,7 +185,7 @@ We will say that the obtained metric spaces are \emph{defined} by the  original 
 For a metric space $X$ and a curve $c\:[a,b]\to X$ we define its {\em length} as
 \[\length_X(c)=\sup\sum_{i=0}^{k-1} |c(t_i)-c(t_{i+1})|\]
 where the supremum is taken over all finite partitions ${a=t_0<t_1<\ldots t_k=b}$ of $[a,b]$. 
-A continuous curve $c$ is called {\em rectifiable} if its length is finite.
+A curve $c$ is called {\em rectifiable} if its length is finite.
 
 \parbf{Induced  pseudometrics.}
 Let $X$ and $Y$ be metric spaces.
@@ -199,15 +199,15 @@ if there is no such set we set $|x-y|_f=\infty$.
 The associated non-degenerated pseudometric space will be
 denoted as $|X|_f$ and we denote by $\pi_f\:X\to |X|_f$ the natural projection map.
 The map $f$ factors as $f=\bar f\circ \pi_f$ with $\pi_f\:X\to|X|_f$ and $\bar f\:|X|_f\to Y$.
-For a point $x\in X$, let $[x]_f=\pi_f^{-1}(\pi_f(x))$ be the fiber of $\pi_f$ through $x$.
+For a point $x\in X$, let $[x]_f=\pi_f^{-1}(\pi_f(x))$ be the \emph{fiber} of $\pi_f$ thru $x$.
 
-Note that is $X$ is compact (which will be always the case)
+If $X$ is compact (which will be always the case)
 then the constructed decomposition $f=\bar f\circ \pi_f$ is so called monotonic-light decomposition --- the map $\pi_f$ is \emph{monotonic}
 in the sense that inverse image of each point is connected (see the corollary \ref{cor:fiberconnected} below)
 and $\bar f$ is \emph{light}; 
 that is the inverse image of any point has dimension $0$.
 
-The intrinsic metric induced by $|{*}-{*}|_f$ will be indicated by 
+The intrinsic metric denoted by $|{*}-{*}|_f$ will be indicated by 
 $\|{*}-{*}\|_f$. 
 That~is, 
 \[\|x-y\|_f
@@ -217,7 +217,7 @@ That~is,
 where the length is computed with respect to $|{*}-{*}|_f$. 
 
 Accordingly the associated nondegenerated  pseudometric space defined by $\|{*}-{*}\|_f$ on $X$ 
-is named $\|X\|_f$. 
+is denoted by $\|X\|_f$. 
 Note that by definition, each metric component of $\|X\|_f$ is a length space.
 
 
@@ -229,7 +229,7 @@ for any path $\gamma\:[0,1]\to |X|_f$.
 The same holds for the natural map $|X|_f\zz\to \|X\|_f$ which is also a bijective map with a continuous inverse.
 
 \begin{thm}{Lemma}\label{lem:picont}
-Let $X$ be a length space, $Y$ a metric space and $f\:X\to Y$ a continuous map. 
+Let $X$ be a length space, $Y$ be a metric space and $f\:X\to Y$ be a continuous map. 
 Then the following holds true.
 \begin{itemize}
 \item $\pi_f\:X\to|X|_f$ is continuous.
@@ -267,7 +267,8 @@ While the second statement is a classical (see for example \cite[II-\S8 Thm. 3]{
 we were not be able to find the first one in the literature.
 
 \begin{thm}{Lemma}\label{lem:geospace}
-Let $X$ be a compact geodesic space, $Y$ a metric space and $f\:X\to Y$ a continuous map. 
+Let $X$ be a compact %geodesic IS NOT NEEDED 
+space, $Y$ a metric space and $f\:X\to Y$ a continuous map. 
 Then each metric component of $\|X\|_f$ is a complete geodesic space.
 \end{thm}
 
@@ -333,7 +334,7 @@ that is, a fiber $[x]_f$ can be covered by disjoint open sets $U,V\subset X$ suc
 $[x]_f\cap U$ and $[x]_f\cap V$ are nonempty.
 
 We can assume that $x\in [x]_f\cap U$.
-Pic $y\in [x]_f\cap V$.
+Pick $y\in [x]_f\cap V$.
 Then there is a sequence of connected sets $K_n\ni p,q$ such that $\diam f(K)<\tfrac1n$.
 For each $n$ pick a point $k_n\in K_n\backslash (U\cup V)$ and let $k$ be its partial limit.
 It follows that $k\in [x]_f\backslash (U\cup V)$, a contradiction.
@@ -828,6 +829,7 @@ $\|\Gamma\|_u\hookrightarrow W$ and a map $\hat u\:W\to Y$ extending $\bar u$. %
 Set $p=\alpha|_F$ and $q=\hat u$.
 \qeds
 
+
 \section{Compactness of planar CAT[0] spaces}\label{Compactness}
 
 Let $\mathcal{K}_\ell$ be the set of isometry classes of $\CAT[0]$ metrics on a disc retract with rectifiable
@@ -908,17 +910,49 @@ As in Proposition~\ref{prop:disc-moore} the claim now follows from Moore's theor
 
 \section{Finite-whole extension lemma}\label{Finite-whole extension lemma}
 
+The following lemma is an easy corollary of Tychonoff's theorem on product of compact topological spaces.
+
 \begin{thm}{Finite-whole extension lemma}\label{lem:finite-whole}
+Suppose that $X$ is a set 
+and $Y$ is a compact topological space.
+Assume that for any finite set $F\subset X$ 
+a closed nonempty set of maps $\mathfrak{S}_F$ from $F$ to $Y$ is given and the following property fulfilled:
+\begin{itemize}
+\item For any finite set $F$ and any map $h\in \mathfrak{S}_F$
+and any other subset $F'\subset F$
+the restriction $h|_{F'}$ belongs to $\mathfrak{S}_{F'}$. 
+\end{itemize}
+
+Then there is a map $h\: X\to Y$ such that $h|_F\in \mathfrak{S}_F$ for any finite set $F\subset X$.
+\end{thm}
+
+Note that if $X$ and $Y$ are metric spaces and $A$ is a subset in $X$
+then one can take as $\mathfrak{S}_F$ the short maps $F\to Y$ which coinside with the given short map $A\to Y$ on $A\cap F$.
+This way we obtain the following corollary.
+In a similar fashion, we will use the lemma in the proof of main theorem.
+
+\begin{thm}{Corollary}
 Let $X$ and $Y$ be a metric spaces, $A\subset X$ and $f\:A\to Y$ is a short map.
 Assume $Y$ is compact and for any finite set $F\subset X$ there is a short map $F\to Y$ which agrees with $f$ in $F\cap A$.
 Then there is a short map $X\to Y$ which agrees with $f$ in $A$.
 \end{thm}
 
-\parit{Proof.}
-Given a finite set $F\subset X$,
-denote by $\mathfrak{S}_F$ the set of all short maps $h\: F\to Y$ which agree with $f$ in $F\cap A$.
-Given $x\in F$ consider the set
-\[K(F,x)=\set{h(x)\in Y}{h\in \mathfrak{S}_F}.\]
+\parit{Proof of the finite-whole extension lemma.}
+Given a subset $A\subset X$,
+a map $f\: A\to Y$ will be called \emph{good}
+if for any finite set $F\subset X$
+there is $h\in\mathfrak{S}_F$ which agrees with $f$ on the intersection $F\cap A$.
+
+We can choose a good map $f$ with the maximal domain $A$ with respect to inclusion;
+that is, we can not enlarge the domain of $f$ by a single point in such a way that it remains to be good.
+So far $A$ might be empty, but we will show actually that $A=X$.
+
+Set
+\[\mathfrak{S}_F'=\set{h\in \mathfrak{S}_F}{f(x)=h(x)\quad\text{for any}\quad x\in F\cap A}.\]
+Note that  $\mathfrak{S}_F'$ satisfies all the assumption of the lemma.
+
+Given a finite set $F\subset X$ and $x\in F$ consider the set
+\[K(F,x)=\set{h(x)\in Y}{h\in \mathfrak{S}_F'}.\]
 
 By assumption of lemma 
 \[K(F,x)\ne\emptyset\eqlbl{Kne0}\] for any finite set $F\subset X$ and $x\in F$.
@@ -927,11 +961,7 @@ Further, note that $K(F,x)$ is closed and
 for any other finite set $F'$ such that 
 $x\in F'\subset F$.
 
-Without loss of generality we can assume that $A$ (the domain of $f$) is a maximal set with respect to inclusion such that $f$ satisfies the assumptions of the lemma;
-that is, we can not add to the domain of $f$ a single point in such a way that the assumptions of the lemma still holds.
-(It follows that $A$ is closed subset of $X$, but we will not use it.)
-
-Arguing by contradiction, assume $A\ne X$; fix $x\in X\backslash A$.
+Assume $A\ne X$; fix $x\in X\backslash A$.
 Given $y\in Y$ there is a finite set $F\ni x$ such that $y\notin K(F,x)$.
 Or equivalently the intersection of all $K(F,x)$ for all finite sets $F$ including $x$ is empty.
 
@@ -987,7 +1017,22 @@ Therefore
 where the intersection is taken over all finite subsets $F$ in $\DD$. 
 
 
-Fix a space $W$ from $\mathcal{W}$;
+Fix a space $W$ from $\mathcal{W}$.
+Summarizing,
+given a finite set $F\subset |\DD|_s$ there is a short map $h\:F\to W$ 
+and a short map $q\:W\to Y$ such that $q\circ h$ agrees with $s$ on $\partial\DD\cap F$.
+Denote by $\mathfrak{S}_F$ the set of all such maps.
+Clearly it satisfies the assumption of the finite-to-whole lemma.
+
+Therefore there is a short map $h\:\DD\to W$ such that for any finite set $F\subset \DD$ there is a short map $q\:W\to Y$ such that $q\circ h$ agrees with $s$ on $\partial \DD\cap F$.
+
+Choose a sequence of finite sets $F_n$ such that the intersections $F_n\cap\partial \DD$ get dense and denser in $\partial \DD$, denote by $q_n$ the corresponding maps.
+Pass to the ultralimit $q_\omega\:W\to Y^\omega$ and denote by $\bar q_\omega$ its composition with the closest-point-projection $Y^\omega\to Y$.
+Note that $\bar q_\omega\:W\to Y$ is a short map and $\bar q_\omega\circ h$ agrees with $s$ on $\partial \DD$.
+
+???
+
+
 denote by $p\:\partial \|\DD\|_s\to W$ the map ??? needed explanation.
 
 Recall that by the key lemma~\ref{lem:key}, the space $W$ is a $\CAT[0]$ disc retract
