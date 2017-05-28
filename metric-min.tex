@@ -422,7 +422,7 @@ Then the following holds.
 \item The map $f$ is metric minimizing relative to $A$
 if and only if $\bar f$ is metric minimizing relative to $\pi_f(A)$;
 \item\label{prop:memicrit:retriction} If the map $f$ is metric minimizing relative to $A$ then its restriction
-$f|_C$ to any closed set $C\subset X$ is metric minimizing realtive to $\partial_X C\cup (A\cap C)$.
+$f|_C$ to any closed set $C\subset X$ is metric minimizing relative to $\partial_X C\cup (A\cap C)$.
 \end{enumerate}
 
 \end{thm}
@@ -991,7 +991,7 @@ Otherwise we treat each metric component
 individually.
 
 In addition, it is sufficient to consider
-the case that $\partial \|\DD\|_s$ is formed by a rectifiable simple closed curve.
+the case that $|\DD|_s$ is  homeomorphic to disc and its boundary is rectifiable simple. 
 Indeed, fix a triangle $\triangle$ in $\|\DD\|_s$. 
 If the above case has been proven, then by \ref{prop:memicrit}(\ref{prop:memicrit:retriction}),
 the closure of each connected open component bounded by $\triangle$ is $\CAT[0]$.
@@ -999,7 +999,9 @@ In particular $\triangle$ is thin;
 this can be shown the same way as in \cite{bishop}.
 Since $\triangle$ is arbitrary, the statement will follow.
 
-
+Since $|\DD|_s$ is a disc, we can identify $\DD$ and $|\DD|_s$
+and therefore we can assume that the map $s$ is light;
+that is, inverse image of any point is zero-dimensional.
 
 Given a finite set $F\subset \DD$,
 denote by $\mathcal{W}_F$
@@ -1018,22 +1020,33 @@ where the intersection is taken over all finite subsets $F$ in $\DD$.
 
 
 Fix a space $W$ from $\mathcal{W}$.
-Summarizing,
-given a finite set $F\subset |\DD|_s$ there is a short map $h\:F\to W$ 
+Summarizing, we constructed a $\CAT[0]$ disc retract $W$,
+such that given a finite set $F\subset \DD$ there is a short map $h\:F\to W$ 
 and a short map $q\:W\to Y$ such that $q\circ h$ agrees with $s$ on $\partial\DD\cap F$.
 Denote by $\mathfrak{S}_F$ the set of all such maps.
-Clearly it satisfies the assumption of the finite-to-whole lemma.
 
-Therefore there is a short map $h\:\DD\to W$ such that for any finite set $F\subset \DD$ there is a short map $q\:W\to Y$ such that $q\circ h$ agrees with $s$ on $\partial \DD\cap F$.
+Note that the set of maps $\mathfrak{S}_F$ satisfies the assumption of the finite-to-whole lemma \ref{lem:finite-whole}.
+
+Indeed, the condition on the restriction of $h\in  \mathfrak{S}_F$ is evident.
+To prove the closeness of $\mathfrak{S}_F$ consider a converging sequence $h_n\in  \mathfrak{S}_F$;
+denote by $h$ its limit.
+For each $h_n$ there is a short map $q_n\:W\to Y$ satisfying the condition above.
+Pass to its ultra limit $q_\omega\:W\to Y^\omega$.
+Recall that $Y$ is a convex closed set in $Y^\omega$.
+In particular the closest-point-projection $\pi\:Y^\omega\to Y$ is well defined and short.
+Therefore, the composition $q=\pi\circ q_\omega$ is short.
+Clearly the pair $h\:F\to W$ and $q\:W\to Y$ satisfies the condition above.
+
+Applying the the finite-to-whole lemma \ref{lem:finite-whole},
+we get a short map $h\:\DD\to W$ such that for any finite set $F\subset \DD$ there is a short map $q\:W\to Y$ such that $q\circ h$ agrees with $s$ on $\partial \DD\cap F$.
+
+Our next aim is to show that $q$ can be chosen once for all finite sets $F$.
+This is done the same way as the proof of closeness of $\mathfrak{S}_F$ above.
 
 Choose a sequence of finite sets $F_n$ such that the intersections $F_n\cap\partial \DD$ get dense and denser in $\partial \DD$, denote by $q_n$ the corresponding maps.
-Pass to the ultralimit $q_\omega\:W\to Y^\omega$ and denote by $\bar q_\omega$ its composition with the closest-point-projection $Y^\omega\to Y$.
-Note that $\bar q_\omega\:W\to Y$ is a short map and $\bar q_\omega\circ h$ agrees with $s$ on $\partial \DD$.
-
-???
-
-
-denote by $p\:\partial \|\DD\|_s\to W$ the map ??? needed explanation.
+Pass to the ultralimit $q_\omega\:W\to Y^\omega$ and set $q=\pi\circ q_\omega$,
+where $\pi\:Y^\omega\to Y$ is the closest point projection.
+By construction $q\:W\to Y$ is short and $q\circ h$ agrees with $s$ on $\partial \DD$. 
 
 Recall that by the key lemma~\ref{lem:key}, the space $W$ is a $\CAT[0]$ disc retract
 and the map  satisfy the assumptions in the finite-whole lemma (\ref{lem:finite-whole}).
