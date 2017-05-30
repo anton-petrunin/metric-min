@@ -1,0 +1,40 @@
+\section{Discs}
+
+Recall that a map between topological spaces is called monotone if the inverse image of any point is connected.
+
+\begin{thm}{Proposition}
+Let $f\:\DD\to \DD$ be a light onto map such that for any closed convex set $K\subset \DD$
+each connected component of $\DD\backslash f^{-1}K$ intersects the boundary $\partial \DD$.
+Assume the restriction $f|_{\partial \DD}$ is a monotone map $\partial\DD\to \partial\DD$.
+Then $f$ is monotone.
+\end{thm}
+
+\parit{Proof.}
+Assume contrary;
+that is, there is a point $x\in \DD$ such that the inverse image $f^{-1}\{x\}$ at can be subdivided into two closed sets $A$ and $B$.
+
+Note that $\Theta=\DD\backslash f^{-1}\{x\}=\DD\backslash (A\cup B)$ is connected.
+Indeed ...
+It follows that $\pi_1\Theta$ contains a free group with two generators.
+
+Consider the set
+\[\Omega=\set{(z,s)\in \DD\times\SS^1}{f(z)\not\in [xs]}.\]
+Note that $\Omega$ is an open subset of $\DD\times\SS^1$.
+
+The restriction of the projection $\DD\times\SS^1\to \DD$ sends $\Omega$ to $\Theta$.
+Note that indunced homomorphism $\pi_1\Omega\to \pi_1\Theta$ is onto.
+Indeed, given $z\in \Theta$, we can choose a $s_z\in\SS^1$ such that 
+$f(z)\notin [xs_z]$;
+moreover the function $z\to s_z$ can be chousen to be contiouous.
+In particular for any loop $\lambda\:[0,1]\to\Theta$, the loop 
+\[\bar\lambda\:t\mapsto (\lambda(t),s_{\lambda(t)})\]
+is a lift of $\lambda$ in $\Omega\subset \DD\times\SS^1$.
+It follows that $\pi_1\Omega$ contains a free group with two generators.
+
+The restriction of the projection $\DD\times\SS^1\to \SS^1$ to $\Omega$ has fiber 
+$\Phi_s=\DD\backslash f^{-1}[xs]$ at point $s\in\SS^1$.
+Clearly $\Phi_s$ is connected and therefore the projection $\Omega\to \SS^1$ induce an isomorphism of fundamental groups.
+In particular 
+\[\pi_1\Omega=\ZZ,\]
+a contradiction. \qeds
+
