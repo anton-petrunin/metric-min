@@ -789,11 +789,14 @@ there is
 (1) a $\CAT[0]$ space $W$, which is a disc retract,
 and (2) short maps $p\:F\to W$ and $q\:W\to Y$ such that
 \[\bar s(x)=q\circ p(x)\] 
-for any $x\in F\cap \partial |\DD|_s$
+for any $x\in F_{\partial}=F\cap \partial |\DD|_s$
 and 
 \[\|p(x)-p(y)\|_q\le \|x-y\|_s\] 
 for any $x,y\in F$.
 \end{thm}
+
+??? We need to add that $p$ is monotonic on $F_{\partial}$ in the following sense:
+$p(F_\partial)\subset \partial W$ and for any inner point $w\in W$ the directions of $[w\,p(x)]$ have the same nonstrict cyclic order as  $F_{\partial}$ in $\partial\DD$. 
 
 \parit{Proof.}
 Let us connect each pair $x,y$ of points in $F$ by geodesics.
@@ -834,6 +837,8 @@ Set $p=\alpha|_F$ and $q=\hat u$.
 
 Let $\mathcal{K}_\ell$ be the set of isometry classes of $\CAT[0]$ metrics on a disc retract with rectifiable
 boundary curves of length at most $\ell$.
+
+???We need to add that convergence respects the boundary.
 
 
 Here is the main statement in this section.
@@ -991,7 +996,7 @@ Otherwise we treat each metric component
 individually.
 
 In addition, it is sufficient to consider
-the case that $|\DD|_s$ is  homeomorphic to disc and its boundary is rectifiable simple. 
+the case that $|\DD|_s$ is  homeomorphic to disc and its boundary is rectifiable and simple. 
 Indeed, fix a triangle $\triangle$ in $\|\DD\|_s$. 
 If the above case has been proven, then by \ref{prop:memicrit}(\ref{prop:memicrit:retriction}),
 the closure of each connected open component bounded by $\triangle$ is $\CAT[0]$.
@@ -1023,8 +1028,8 @@ Fix a space $W$ from $\mathcal{W}$.
 Summarizing, we constructed a $\CAT[0]$ disc retract $W$,
 such that given a finite set $F\subset \DD$ there is a short map $h\:F\to W$ 
 and a short map $q\:W\to Y$ such that $q\circ h$ agrees with $s$ on $\partial\DD\cap F$.
-Denote by $\mathfrak{S}_F$ the set of all such maps.
 
+Denote by $\mathfrak{S}_F$ the set of all maps $h\:F\to W$ described above.
 Note that the set of maps $\mathfrak{S}_F$ satisfies the assumption of the finite-to-whole lemma \ref{lem:finite-whole}.
 
 Indeed, the condition on the restriction of $h\in  \mathfrak{S}_F$ is evident.
@@ -1035,7 +1040,7 @@ Pass to its ultra limit $q_\omega\:W\to Y^\omega$.
 Recall that $Y$ is a convex closed set in $Y^\omega$.
 In particular the closest-point-projection $\pi\:Y^\omega\to Y$ is well defined and short.
 Therefore, the composition $q=\pi\circ q_\omega$ is short.
-Clearly the pair $h\:F\to W$ and $q\:W\to Y$ satisfies the condition above.
+Finally note that the pair $h\:F\to W$ and $q\:W\to Y$ satisfies the condition above.
 
 Applying the the finite-to-whole lemma \ref{lem:finite-whole},
 we get a short map $h\:\DD\to W$ such that for any finite set $F\subset \DD$ there is a short map $q\:W\to Y$ such that $q\circ h$ agrees with $s$ on $\partial \DD\cap F$.
@@ -1044,57 +1049,19 @@ Our next aim is to show that $q$ can be chosen once for all finite sets $F$.
 This is done the same way as the proof of closeness of $\mathfrak{S}_F$ above.
 
 Choose a sequence of finite sets $F_n$ such that the intersections $F_n\cap\partial \DD$ get dense and denser in $\partial \DD$, denote by $q_n$ the corresponding maps.
-Pass to the ultralimit $q_\omega\:W\to Y^\omega$ and set $q=\pi\circ q_\omega$,
+Let $q_\omega\:W\to Y^\omega$ be the ultralimit of $q_n$ and set $q=\pi\circ q_\omega$,
 where $\pi\:Y^\omega\to Y$ is the closest point projection.
-By construction $q\:W\to Y$ is short and $q\circ h$ agrees with $s$ on $\partial \DD$. 
+By construction $q\:W\to Y$ is short and $q\circ h$ agrees with $s$ on $\partial \DD$.
 
-Recall that by the key lemma~\ref{lem:key}, the space $W$ is a $\CAT[0]$ disc retract
-and the map  satisfy the assumptions in the finite-whole lemma (\ref{lem:finite-whole}).
-It follows that the map $p$ can be extended to a short map whole $\|D\|_s$ which we still denote by $p$.
+Note that $h(\partial\DD)\subset \partial W$.
+Moreover, form ???, it follows that the restriction $h|_{\partial\DD}$ is monotonic in the following sense.
+For any point $w$ in the interior of $W$ the direction from $w$ to $h(s)$ is turns monotonically for $s\in \SS^1=\partial\DD$.
 
-Summarizing, the space $W$ is a $\CAT[0]$ disc retract and
- there are two short maps 
-$\|\DD\|_s\xrightarrow{p} W \xrightarrow{q} Y$
-such that 
-\[q\circ p|_{\partial|\DD|_s}=\bar s|_{\partial|\DD|_s}.\] 
-Since $\bar s$ is metric minimizing (Proposition \ref{prop:memicrit}), both maps $p$ and $q$ are length preserving and metric minimizing.
-
-Fix a retract $r\:\DD\to W$ and consider an arbitrary lift $i$ of $p$;
-that is, a map which makes the following diagram commuting and 
-Note that by construction $i$ we have
-\[\|x-y\|_s\ge \|i(x)-i(y)\|_{r\circ q}\]
-for any $x,y\in \DD$
-
-Consider a composition $\DD\xrightarrow{r} |\DD|_s\xrightarrow{p} W$, where $r$ is a retract.
-By Proposition~\ref{prop:memisaddle}
-and Shefel's theorem (\ref{thm:shefel-2D}), the space $\|\DD\|_{p\circ r}$ is $\CAT[0]$.
-Since $p$ is length preserving, $\|\DD\|_{p\circ r}$ is isometric to $\|\DD\|_s$;
-hence the result follows.
+Note that if $W$ is homeomorphic to a disc, the latter property implies standard monotonicity of $h|_{\partial\DD}\:\DD\to\partial W$;
+that is, the inverse image $f^{-1}\{v\}$ is connected for any point $v\in\partial W$.
+By Proposition~\ref{prop:mono-disc}, in this case $h$ is monotonic and in particular $\|\DD\|_h$ is isometric to $W$.
 \qeds
 
-
-
-\parbf{Remark.} 
-An argument similar to the the problem ``Saddle surface'' in \cite{petrunin-orthodox} can be used to show that the constructed map $p$ is injective. 
-In particular $\|\DD\|_s$ is isometric to $W$.
-Unfortunately the proof requires some regularity of $\|\DD\|_s$ which only follows from Shefel's theorem. 
-
-Here is \emph{not a proof} of the statement above.
-We say where we cheat in the footnote; 
-it is hard (if at all possible) to fix its precise meaning.
-
-\parit{Not a proof.} Assume  $w=p(x)=p(y)$ for distinct points $x,y\in\|\DD\|_s$
-Note that  $w$ lies in the interior of $W$.
-Choose a geodesic $\gamma$ which passes through $w$ and goes 
-from boundary to boundary of $W$.
-The inverse image $p^{-1}(\gamma)$ is a contractible set with two ends at $\partial\|\DD\|_s$, say $a$ and $b$.
-In particular there is a well defined order of  points on $p^{-1}(\gamma)$.
-We can assume that the points $a,x,y,b$ appear in the same order on $p^{-1}(\gamma)$.\footnote{This is where we are cheating: the inverse image $p^{-1}(\gamma)$ might be as terrible as psedoarc, where the order points has no sense.}
-
-Note that there is a continuous one parameter family of geodesics $\gamma_t$ passing through $w$ with the ends at $\partial W$
-such that $\gamma=\gamma_0$ and $\gamma_1$ is $\gamma$ with reversed parametrization.
-Note that the order of $x$ and $y$ on $p^{-1}(\gamma_t)$ does not change in $t$.
-On the other hand the orders on $\gamma_0$ and on $\gamma_1$ are opposite, a contradiction.\qeds 
 
 \begin{thm}{Corollary}\label{cor:main}
 Let $Y$ be a $\CAT[0]$ space 

@@ -1,25 +1,50 @@
 \section{Discs}
 
 Recall that a map between topological spaces is called monotone if the inverse image of any point is connected.
+Note that by the definition, any monotone map is onto.
 
-\begin{thm}{Proposition}
-Let $f\:\DD\to \DD$ be a light onto map such that for any closed convex set $K\subset \DD$
-each connected component of $\DD\backslash f^{-1}K$ intersects the boundary $\partial \DD$.
-Assume the restriction $f|_{\partial \DD}$ is a monotone map $\partial\DD\to \partial\DD$.
+\begin{thm}{Proposition}\label{prop:mono-disc}
+Let $f\:\DD\to \DD$ be a continuous map such that restriction $f|_{\partial\DD}$ is a monotone map $\partial\DD\to\partial\DD$.
+Assume that for any closed convex set $K\subset \DD$ each connected component of $\DD\backslash f^{-1}K$ intersects the boundary $\partial \DD$.
 Then $f$ is monotone.
 \end{thm}
 
+\parbf{Remark.} 
+One may think that proof can be done along the same lines as for the problem ``Saddle surface'' in \cite{petrunin-orthodox}. 
+Unfortunately the proof requires some extra regularity of $f$. 
+
+Here is the \emph{fake proof}, we say where we cheat in the footnote; 
+it is hard (if at all possible) to fix its precise meaning.
+In the fake proof we assume that $f$ is light, that is inverse image of point is zero-dimensional --- the general case can reduced this case.
+
+\parit{Fake proof.}
+Assume  $w=f(x)=f(y)$ for distinct points $x,y\in\DD$
+Note that  $w$ lies in the interior of $\DD$.
+Choose a geodesic $\gamma$ which passes through $w$ and goes 
+from boundary to boundary of $\DD$.
+The inverse image $p^{-1}(\gamma)$ is a contractible set with two ends at $\partial\|\DD\|_s$, say $a$ and $b$.
+We can assume that the points $a,x,y,b$ appear in the same order on $p^{-1}(\gamma)$.\footnote{This is where we are cheating: the inverse image $p^{-1}(\gamma)$ might be as terrible as psedoarc, where the order points has no sense.}
+
+Note that there is a continuous one parameter family of geodesics $\gamma_t$ passing through $w$ with the ends at $\partial \DD$
+such that $\gamma=\gamma_0$ and $\gamma_1$ is $\gamma$ with reversed parametrization.
+Note that the order of $x$ and $y$ on $p^{-1}(\gamma_t)$ does not change in $t$.
+On the other hand the orders on $\gamma_0$ and on $\gamma_1$ are opposite, a contradiction.\qeds 
+
 \parit{Proof.}
-Assume contrary;
-that is, there is a point $x\in \DD$ such that the inverse image $f^{-1}\{x\}$ at can be subdivided into two closed sets $A$ and $B$.
+Note that any monotone map $\SS^1\to\SS^1$ has degree $\pm1$.
+If follows $f|_{\partial\DD}\:\partial\DD\to\partial\DD$ has degree $\pm1$
+and therefore the same holds for $f\:\DD\to\DD$.
+In particular, $f\:\DD\to\DD$ is onto.
 
-Note that $\Theta=\DD\backslash f^{-1}\{x\}=\DD\backslash (A\cup B)$ is connected.
-Indeed ...
-It follows that $\pi_1\Theta$ contains a free group with two generators.
+Assume $f$ is not monotone.
+Then there is a point $x\in \DD$ such that the inverse image $f^{-1}\{x\}$ is not connected.
 
-Consider the set
-\[\Omega=\set{(z,s)\in \DD\times\SS^1}{f(z)\not\in [xs]}.\]
-Note that $\Omega$ is an open subset of $\DD\times\SS^1$.
+Consider two open subsets $\Theta\subset\DD$ and $\Omega\subset \DD\times\SS^1$.
+\begin{align*}
+\Theta&=\DD\backslash f^{-1}\{x\},
+\\
+\Omega&=\set{(z,s)\in \DD\times\SS^1}{f(z)\not\in [xs]}.
+\end{align*}
 
 The restriction of the projection $\DD\times\SS^1\to \DD$ sends $\Omega$ to $\Theta$.
 Note that indunced homomorphism $\pi_1\Omega\to \pi_1\Theta$ is onto.
@@ -29,12 +54,31 @@ moreover the function $z\to s_z$ can be chousen to be contiouous.
 In particular for any loop $\lambda\:[0,1]\to\Theta$, the loop 
 \[\bar\lambda\:t\mapsto (\lambda(t),s_{\lambda(t)})\]
 is a lift of $\lambda$ in $\Omega\subset \DD\times\SS^1$.
-It follows that $\pi_1\Omega$ contains a free group with two generators.
+
+Assume $x\notin\partial\DD$.
+Then $\partial\DD\subset \Theta$.
+Since $\{x\}$ is convex, every connected component of $\Theta$ have to intersect $\partial\DD$.
+Since $\partial\DD$ is connected so is $\Theta$.
+
+Since $f^{-1}\{x\}$ is not connected, it can be divided into two subsets by a curve in $\Theta$.
+Therefore $\pi_1\Theta$ contains a free group with two generators.
 
 The restriction of the projection $\DD\times\SS^1\to \SS^1$ to $\Omega$ has fiber 
 $\Phi_s=\DD\backslash f^{-1}[xs]$ at point $s\in\SS^1$.
-Clearly $\Phi_s$ is connected and therefore the projection $\Omega\to \SS^1$ induce an isomorphism of fundamental groups.
+Note that $\Phi_s$ is simply connected and therefore the projection $\Omega\to \SS^1$ induce an isomorphism of fundamental groups.
 In particular 
 \[\pi_1\Omega=\ZZ,\]
-a contradiction. \qeds
+a contradiction.
+
+The case $x\in\partial\DD$ is done in a similar fashion.
+
+The fiber $\Phi_s$ has one or two connected components each is simply connected.
+The fiber $\Phi_x$ has one component.
+Further any closed curve in $\Omega$ can be contracted to the fiber $\Phi_x$ and then to a point.
+Therefore $\Omega$ is simply connected.
+
+On the other hand, since $f^{-1}\{x\}$ is not connected, there is a closed curve in $\Theta$ which separates a nonempty subset in $f^{-1}\{x\}$ and $\partial \DD$. 
+This curve generates an infinite cyclic subgroup in $\pi_1\Theta$.
+Since $\pi_1\Omega\to \pi_1\Theta$ is onto, the latter leads to a contradiction.
+\qeds
 
