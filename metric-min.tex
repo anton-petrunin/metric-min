@@ -124,47 +124,20 @@ and Burkhard Wilking
 for helping us with the proof of Proposition~\ref{prop:smooth}.
 We also would like to thank Alexander Lytchak for explaining his recent work with Stefan Wenger and for several helpful discussions.
 
-\section{Alternative definition}\label{sec:alt-def}
+\section{Preliminary definitions}\label{sec:Def}
 
-A geodesic metric space is called planar if it admits an injective continuous map into the plane.
-
-Let $Y$ be a metric space,
-$\gamma\:\SS^1\to Y$ be a closed curve,
-$X$ is a planar space 
-and $s\:X\to Y$ be a map.
-We say that $s$ majorize $\gamma$ if $s$ is short ant $\gamma$ factors through $s$;
-that is $\gamma=s\circ\bar\gamma$ for a curve $\bar\gamma\:\SS^1\to X$.
-
-A planar metric space $X$ is called metric minimizing filling of $\gamma$ if
-$\gamma$ admits a majorization $\SS^1\xrightarrow{\bar\gamma}X\xrightarrow{s}Y$
-and for any other majorization $\SS^1\xrightarrow{\bar\gamma'}X'\xrightarrow{s'}Y$ of $\gamma$
-there is no short map $i\:X\to X'$ such that $\gamma'=i\circ\gamma$ which is strictly short on a pair of pints in $X$. 
-
-\begin{thm}{Main theorem}\label{thm:mainintro}
-Let $Y$ be a $\CAT[0]$ space and $X$ minimizing filling of a closed curve $\gamma\:\SS^1\to Y$
-and $\SS^1\xrightarrow{\bar\gamma}X\xrightarrow{s}Y$ be its majorization.
-Then $X$ is a $\CAT[0]$. 
-
-Moreover
-\begin{enumerate}[(i)]
-\item if $\gamma$ is rectifiable then $X$ is homeomorphic to a disc retract
-and $s$ uniquely determined by $\gamma$ and $\bar\gamma$;
-\item if in addition $\gamma$ is a simple curve, then $X$ is homeomorphic to the disc.
-\end{enumerate}
-\end{thm}
-
-\section{Induced  pseudometrics}\label{sec:Def}
-
+\parbf{Pseudometrics.}
 Let $X$ be a set.
-A \emph{pseudometric} $(x,y)\mapsto |x-y|$ on a set $X$ 
-is a function $X\times X\to[0,\infty]$
+A \emph{pseudometric} on a set $X$ 
+is a function $X\times X\to[0,\infty]$ denoted as $(x,y)\mapsto |x-y|$
 such that 
 \begin{itemize}
 \item $|x-x|=0$, for any $x\in X$;
 \item $|x-y|=|y-x|$, for any $x,y\in X$;
 \item $|x-y|+|y-z|\ge|x-z|$ for any  $x,y,z\in X$.
 \end{itemize}
-If in addition $|x-y|=0$ implies $x=y$ then the pseudometric $|{*}-{*}|$ is called \emph{nondegenerated}.
+If in addition $|x-y|=0$ implies $x=y$ then the pseudometric $|{*}-{*}|$ is called \emph{nondegenerated};
+some authors call it \emph{$\infty$-metric space}.
 A nondegenerated pseudometric which only takes finite values is called a \emph{metric}. 
 A set with a pseudometric or metric will be called \emph{pseudometric} or correspondingly \emph{metric space}.
 
@@ -180,14 +153,15 @@ Further, for a nondegenerated pseudometric space we can consider the equivalence
 Its equivalence classes are called \emph{metric components}.
 Note that by definition each metric component is a \emph{metric space}.
 Consequently, a nondegenerated pseudometric space can be thought of as a disjoint union of \emph{metric spaces}.
-We will say that the obtained metric spaces are \emph{defined} by the  original pseudometric space.%???IS IT A GOOD WAY TO SAY??? 
+We will say that the obtained metric spaces are \emph{defined} by the  original pseudometric space.
 
-For a metric space $X$ and a curve $c\:[a,b]\to X$ we define its {\em length} as
-\[\length_X(c)=\sup\sum_{i=0}^{k-1} |c(t_i)-c(t_{i+1})|\]
+\parbf{Length.}
+For a metric space $X$ and a curve $\gamma\:[a,b]\to X$ we define its {\em length} as
+\[\length_X\gamma=\sup\sum_{i=0}^{k-1} |\gamma(t_i)-\gamma(t_{i+1})|\]
 where the supremum is taken over all finite partitions ${a=t_0<t_1<\ldots t_k=b}$ of $[a,b]$. 
-A curve $c$ is called {\em rectifiable} if its length is finite.
+A curve $\gamma$ is called {\em rectifiable} if its length is finite.
 
-\parbf{Induced  pseudometrics.}
+\parbf{Connecting pseudometric.}
 Let $X$ and $Y$ be metric spaces.
 Given a map $f\:X\to Y$,
 define a \emph{connecting pseudometric} $|{*}-{*}|_f$ on $X$ in
@@ -197,42 +171,21 @@ where the infimum is taken over all connected sets $K\subset X$ which contain $x
 if there is no such set we set $|x-y|_f=\infty$. 
 
 The associated non-degenerated pseudometric space will be
-denoted as $|X|_f$ and we denote by $\pi_f\:X\to |X|_f$ the natural projection map.
-The map $f$ factors as $f=\bar f\circ \pi_f$ with $\pi_f\:X\to|X|_f$ and $\bar f\:|X|_f\to Y$.
-For a point $x\in X$, let $[x]_f=\pi_f^{-1}(\pi_f(x))$ be the \emph{fiber} of $\pi_f$ thru $x$.
+denoted as $|X|_f$ and we denote by $\bar\pi_f\:X\to |X|_f$ the natural projection map.
+The map $f$ factors as $f=\bar f\circ \bar\pi_f$ with $\bar\pi_f\:X\to|X|_f$ and $\bar f\:|X|_f\to Y$.
+For a point $x\in X$, let $[x]_f=\bar\pi_f^{-1}(\bar\pi_f(x))$ be the \emph{fiber} of $\bar\pi_f$ thru $x$.
 
 If $X$ is compact (which will be always the case)
-then the constructed decomposition $f=\bar f\circ \pi_f$ is so called monotonic-light decomposition --- the map $\pi_f$ is \emph{monotonic}
+then the constructed decomposition $f=\bar f\circ \bar\pi_f$ is so called monotonic-light decomposition --- the map $\bar\pi_f$ is \emph{monotonic}
 in the sense that inverse image of each point is connected (see the corollary \ref{cor:fiberconnected} below)
 and $\bar f$ is \emph{light}; 
 that is the inverse image of any point has dimension $0$.
-
-The intrinsic metric denoted by $|{*}-{*}|_f$ will be indicated by 
-$\|{*}-{*}\|_f$. 
-That~is, 
-\[\|x-y\|_f
-=
-\inf
-\set{\length(\gamma)}{\gamma\ \text{is a path in}\ |X|_f\ \text{from}\ \pi_f(x) \ \text{to}\ \pi_f(y)}\]
-where the length is computed with respect to $|{*}-{*}|_f$. 
-
-Accordingly the associated nondegenerated  pseudometric space defined by $\|{*}-{*}\|_f$ on $X$ 
-is denoted by $\|X\|_f$. 
-Note that by definition, each metric component of $\|X\|_f$ is a length space.
-
-
-Note that  $\bar f$
-is length preserving;
-that is,
-\[\length(\bar f\circ\gamma)=\length\gamma\]
-for any path $\gamma\:[0,1]\to |X|_f$.
-The same holds for the natural map $|X|_f\zz\to \|X\|_f$ which is also a bijective map with a continuous inverse.
 
 \begin{thm}{Lemma}\label{lem:picont}
 Let $X$ be a length space, $Y$ be a metric space and $f\:X\to Y$ be a continuous map. 
 Then the following holds true.
 \begin{itemize}
-\item $\pi_f\:X\to|X|_f$ is continuous.
+\item $\bar\pi_f\:X\to|X|_f$ is continuous.
 
  \item For points $x,y\in X$ with $|x-y|_f<\infty$ we have
 \[|x-y|_f=\inf\{\diam f(K)\},\]
@@ -261,6 +214,85 @@ Since $X$ is a length space, we can join $\hat x$ and $\hat y$ by a path in $C$.
 Hence the last statement follows.
 \qeds
 
+\begin{thm}{Lemma}\label{cor:fiberconnected}
+Let $f\:X\to Y$ be a continuous map between metric spaces.
+Assume $X$ is compact. 
+Then for every point $x\in X$ the fiber $[x]_f$ is connected;
+in other words, the map $\bar\pi_f\:X\to |X|_f$ is monotonic.
+\end{thm}
+
+
+\parit{Proof.}
+Assume contrary;
+that is, a fiber $[x]_f$ can be covered by disjoint open sets $U,V\subset X$ such that each intersection 
+$[x]_f\cap U$ and $[x]_f\cap V$ are nonempty.
+
+We can assume that $x\in [x]_f\cap U$.
+Pick $y\in [x]_f\cap V$.
+Then there is a sequence of connected sets $K_n\ni p,q$ such that $\diam f(K)<\tfrac1n$.
+For each $n$ pick a point $k_n\in K_n\backslash (U\cup V)$ and let $k$ be its partial limit.
+It follows that $k\in [x]_f\backslash (U\cup V)$, a contradiction.
+\qeds
+
+\parbf{Intrinisic pseudometric.}
+The intrinsic metric defined by $|{*}-{*}|_f$ will be denoted by 
+$\|{*}-{*}\|_f$. 
+That~is, 
+\[\|x-y\|_f
+=
+\inf
+\set{\length(\gamma)}{\gamma\ \text{is a path in}\ |X|_f\ \text{from}\ \bar\pi_f(x) \ \text{to}\ \bar\pi_f(y)}\]
+where the length is computed with respect to $|{*}-{*}|_f$. 
+
+Accordingly the associated nondegenerated  pseudometric space defined by $\|{*}-{*}\|_f$ on $X$ 
+is denoted by $\|X\|_f$. 
+Note that by definition, each metric component of $\|X\|_f$ is a length space.
+
+\begin{wrapfigure}{r}{33 mm}
+\begin{tikzpicture}[scale=1.4]
+
+  \node[main node] (1) at (1,.5) {$\|X\|_f$};
+  \node[main node] (2) at (1,1.5){$|X|_f$};
+  \node[main node] (11) at (2,2){$Y$};
+  \node[main node] (12) at (0,2) {$X$};
+\draw[
+    >=latex,
+%   every node/.style={above,midway},% either
+    auto=right,                      % or
+    loop above/.style={out=75,in=105,loop},
+    every loop,
+    ]
+   (2) edge node[right]{$\iota_f$}(1)
+   (12) edge[bend left] node[above]{$f$}(11)
+   (12) edge node[below left]{$\bar f$}(2)
+   (2) edge node[below]{$\bar\pi_f$}(11)
+   (12) edge[bend right] node[left below]{$\bar{\bar f}$}(1)
+   (1) edge[bend right] node[below right]{$\bar{\bar\pi}_f$}(11);
+\end{tikzpicture}
+\end{wrapfigure}
+
+We will denote by $\iota_f\:|X|_f\zz\to \|X\|_f$ the natural map between the spaces;
+note that $\iota$ is bijective and has a continuous inverse.
+Set 
+\[
+\bar{\bar f}=\iota_f\circ\bar f
+\quad\text{and}\quad
+\bar{\bar\pi}_f=\bar\pi_f\circ\iota_f^{-1}.
+\]
+
+
+Note that  $\bar f$
+is length preserving;
+that is,
+\[\length(\bar f\circ\gamma)=\length\gamma\]
+for any path $\gamma\:[0,1]\to |X|_f$.
+The same holds for  $\iota_f\:|X|_f\zz\to \|X\|_f$ and $\bar{\bar f}\:\|X\|_f\to Y$.
+
+Recall that a map between topological spaces is called monotone if the inverse image of any point is connected.
+Note that by the definition, any monotone map is onto.
+Note that if $f\:X\to Y$ is monotonic then $\|X\|_f$ is isometric to $Y$
+and the isometry induced by the quotient map $[x]_f\mapsto f(x)$.
+
 The following lemma essentially says that completeness survives under passing to the intrinsic metric
 and the intrinsic metric on compact spaces is always geodesic.
 While the second statement is a classical (see for example \cite[II-\S8 Thm. 3]{KF}), 
@@ -273,7 +305,7 @@ Then each metric component of $\|X\|_f$ is a complete geodesic space.
 \end{thm}
 
 \parit{Proof.}
-From Lemma \ref{lem:picont} we know that $\pi_f$ is continuous and therefore $|X|_f$ is compact.
+From Lemma \ref{lem:picont} we know that $\bar\pi_f$ is continuous and therefore $|X|_f$ is compact.
 
 Fix a sequence $(x_n)$ in $\|X\|_f$ converging in itself, but not converging in $\|X\|_f$.
 After passing to a subsequence, we can assume that the points of the sequence appear on a rectifiable curve $\gamma\:[0,1)\to\|X\|_f$ in the same order.
@@ -294,7 +326,7 @@ Clearly $\gamma$ is a geodesic from $x$ to $y$ for the metric $\|x-y\|_f$.
 %Let $c\:[0,1]\to|X|_f$ be a rectifiable path joining points $p$ and $q$ in $|X|_f$. 
 %Suppose that $\hat p$ and $\hat q$ are lifts of the points $p$ an $q$ to $X$.
 %Then for every $\eps>0$ there exists a piecewise geodesic path $\hat c\:[0,1]\to X$ joining $\hat p$ to $\hat q$ such that 
-%\[|\pi_f\circ\hat c(t)-c(t)|_f<\eps\ \text{for all}\ t\in[0,1].\]
+%\[|\bar\pi_f\circ\hat c(t)-c(t)|_f<\eps\ \text{for all}\ t\in[0,1].\]
 %\end{thm}
 
 %\parit{Proof.}
@@ -304,13 +336,13 @@ Clearly $\gamma$ is a geodesic from $x$ to $y$ for the metric $\|x-y\|_f$.
 %such that $|c(t_i)-c(t_{i+1})|_f<\frac{\eps}{2}$. 
 %Choose arbitrary lifts $\hat c(t_i)$ of the points $c(t_i)$ for $i\in\{1,\ldots,k-1\}$.
 %By Lemma \ref{lem:picont}, we find open connected sets $C_i\subset X$ containing $\hat c(t_i)$ and $\hat c(t_{i+1})$ with $\diam f(C_i)<\eps$. 
-%In particular $\pi_f(C_i)\subset U_\eps$. 
+%In particular $\bar\pi_f(C_i)\subset U_\eps$. 
 %To finish the proof we join $\hat c(t_i)$ and $\hat c(t_{i+1})$ by piecewise geodesics in $C_i$.
 %\qeds
 
 %\begin{thm}{Corollary}\label{cor:connecedpreimage}
 %Let $X$ be a compact geodesic space, $Y$ a metric space and $f\:X\to Y$ a continuous map. 
-%Then the inverse image under $\pi_f$ of an open connected subset $C$ of $|X|_f$  is pathconnected in $X$.
+%Then the inverse image under $\bar\pi_f$ of an open connected subset $C$ of $|X|_f$  is pathconnected in $X$.
 %\end{thm}
 
 %\parit{Proof.}
@@ -320,40 +352,21 @@ Clearly $\gamma$ is a geodesic from $x$ to $y$ for the metric $\|x-y\|_f$.
 %\qeds
 
 
-\begin{thm}{Corollary}\label{cor:fiberconnected}
-Let $f\:X\to Y$ be a continuous map between metric spaces.
-Assume $X$ is compact. 
-Then for every point $x\in X$ the fiber $[x]_f$ is connected;
-in other words, the map $\pi_f\:X\to |X|_f$ is monotonic.
-\end{thm}
-
-
-\parit{Proof.}
-Assume contrary;
-that is, a fiber $[x]_f$ can be covered by disjoint open sets $U,V\subset X$ such that each intersection 
-$[x]_f\cap U$ and $[x]_f\cap V$ are nonempty.
-
-We can assume that $x\in [x]_f\cap U$.
-Pick $y\in [x]_f\cap V$.
-Then there is a sequence of connected sets $K_n\ni p,q$ such that $\diam f(K)<\tfrac1n$.
-For each $n$ pick a point $k_n\in K_n\backslash (U\cup V)$ and let $k$ be its partial limit.
-It follows that $k\in [x]_f\backslash (U\cup V)$, a contradiction.
-\qeds
 
 %\begin{thm}{Lemma}\label{lem:idem}
 %Let $X$ be a compact geodesic space, $Y$ a metric spaces and $f\:X\to Y$ a continuous map.
 %Then for any map $s\:|X|_f\to Y$ holds
-%\[|X|_{s\circ\pi_f}\cong||X|_{f}|_s.\]
+%\[|X|_{s\circ\bar\pi_f}\cong||X|_{f}|_s.\]
 %In particular $|X|_{f}\cong||X|_{f}|_{\bar f}$. %???what is \bar f???
 %\end{thm}
 
 %\parit{Proof.}
-%Since $\pi_f$ is continuous, by Lemma \ref{lem:picont}, we see $|\pi_f(x)-\pi_f(y)|_s=0$ if $|x-y|_{s\circ\pi_f}=0$. 
-%Moreover, $\pi_f$ induces a surjective short map $\alpha\:|X|_{s\circ\pi_f}\to||X|_{f}|_s$. 
+%Since $\bar\pi_f$ is continuous, by Lemma \ref{lem:picont}, we see $|\bar\pi_f(x)-\bar\pi_f(y)|_s=0$ if $|x-y|_{s\circ\bar\pi_f}=0$. 
+%Moreover, $\bar\pi_f$ induces a surjective short map $\alpha\:|X|_{s\circ\bar\pi_f}\to||X|_{f}|_s$. 
 %From Corollary \ref{cor:connecedpreimage} it follows that $\alpha$ is an isometry.
 %\qeds
 
-\parbf{An alternative definitions.}
+\parbf{On an alternative definitions.}
 Let us discuss an alternative definition of induced length metric denoted as $\llangle {*}-{*}\rrangle_f$.
 It will not used in the paper.
 We include it to explain why we prefer a metric $\|{*}-{*}\|_f$ with a more complicated definition.
@@ -379,8 +392,7 @@ define
 \[\|x-y\|_f=\lim_{\eps\to0}
 \left[\sup\left\{\,\sum_i|f(x_i)-f(x_{i-1}|_Y\,\right\}\right]\eqlbl{eq:eps-chain}\]
 where the infimum is taken for all possible $\eps$-chains $x=x_0,x_1,\dots,x_n=y$ in $X$; that is a point array $x_0,x_1,\dots,x_n\in X$ such that $|x_i-x_{i-1}|_X<\eps$ for any $i$.
-
-??? I will prove the equivalence later.
+(Again, we do not prove the equivalence since it is not used.)
 
 
 
@@ -391,12 +403,13 @@ Let $X$ and $Y$ be metric spaces and $A\subset X$ be a closed subset.
 Given a map $f\:X\to Y$
 we will write 
 \[f\succcurlyeq h\rel{A}\] 
-if $f|_A=h|_A$ and there is a short map $i\:\|X\|_f\to \|X\|_h$ 
-such that $i(a)=a$ for any $a\in A$.
+if $f|_A=h|_A$ and there is a short map $\sigma\:\|X\|_f\to \|X\|_h$ 
+such that 
+\[\sigma\circ\bar{\bar\pi}_f(a)=\bar{\bar\pi}_h(a)\] for any $a\in A$.
 We will write 
 \[f\succ h\rel{A}\] 
 if in addition the strict inequality
-\[\|i(x)-i(y)\|_f>\|x-y\|_h\] 
+\[\|\sigma(x)-\sigma(y)\|_f>\|x-y\|_h\] 
 holds for at least one pair of points $x,y\in X$.
 
 
@@ -415,24 +428,26 @@ Let $X$ be a compact geodesic space, $Y$ a metric space
 and $A\subset X$ a closed subset.
 Let $f\:X\to Y$ be a continuous map.
 Recall that 
-$f$ is a composition of $\pi_f\: X\to|X|_f$ and a length-preserving light map $\bar f\:|X|_f\to Y$.
+$f$ is a composition of $\bar\pi_f\: X\to|X|_f$ and a length-preserving light map $\bar f\:|X|_f\to Y$.
 
 Then the following holds.
 \begin{enumerate}[(i)]
-\item The map $f$ is metric minimizing relative to $A$
-if and only if $\bar f$ is metric minimizing relative to $\pi_f(A)$;
+\item\label{prop:memicrit:bar-f} The map $f$ is metric minimizing relative to $A$
+if and only if $\bar f$ is metric minimizing relative to $\bar\pi_f(A)$;
 \item\label{prop:memicrit:retriction} If the map $f$ is metric minimizing relative to $A$ then its restriction
-$f|_C$ to any closed set $C\subset X$ is metric minimizing relative to $\partial_X C\cup (A\cap C)$.
+$f|_C$ to any closed set $C\subset X$ is metric minimizing relative to 
+\[C_A=\partial_X C\cup (A\cap C).\]
 \end{enumerate}
 
 \end{thm}
 
+
 %\parit{Proof.}
 %Assume that $f$ is metric minimizing relative to $A$ but there is a map $s\:|X|_f\to Y$ with $\bar f\succ s$. 
 %Then there is a surjective short map $\||X|_f\|_{\bar f}\to\||X|_f\|_s$ which strictly contracts the distance of at least one pair of points.
-%This is a contradiction because $s\circ\pi_f|_A=f|_A$ and, by Lemma \ref{lem:idem}, $\||X|_f\|_{\bar f}\cong\|X\|_f$ and $\||X|_f\|_s\cong\|X\|_{s\circ\pi_f}$. 
+%This is a contradiction because $s\circ\bar\pi_f|_A=f|_A$ and, by Lemma \ref{lem:idem}, $\||X|_f\|_{\bar f}\cong\|X\|_f$ and $\||X|_f\|_s\cong\|X\|_{s\circ\bar\pi_f}$. 
 
-%If on the other hand $\bar f$ is metric minimizing relative to $\pi_f(A)$ but there exists a map $s\:X\to Y$ with $f\succ s$, then there is a surjective short map $\alpha\:\|X\|_f\to\|X\|_s$ which strictlycontracts the distance of at least one pair of points and such that $\pi_s=\alpha\circ\pi_f$. 
+%If on the other hand $\bar f$ is metric minimizing relative to $\bar\pi_f(A)$ but there exists a map $s\:X\to Y$ with $f\succ s$, then there is a surjective short map $\alpha\:\|X\|_f\to\|X\|_s$ which strictlycontracts the distance of at least one pair of points and such that $\bar\pi_s=\alpha\circ\bar\pi_f$. 
 %Again, by Lemma \ref{lem:idem}, we have  $\||X|_f\|_{\bar f}\cong\|X\|_f$ and $\||X|_f\|_s\cong\|X\|_{\bar s\circ\alpha}$, a contradiction. 
 
 %Part (ii) is trivial.
@@ -475,7 +490,7 @@ with $\length(f\circ\gamma)<\eps$.
 maps from length spaces to arbitrary metric spaces.
 \item Restrictions of intrinsically continuous maps to compact sets are uniformly intrinsically continuous. %???I DID NOT GET THIS???
 \item If a map $f\:X\to Z$ is intrinsically continuous, then 
-the natural projection $\pi_f\:X\rightarrow \|X\|_f$ is continuous. 
+the natural projection $\bar\pi_f\:X\rightarrow \|X\|_f$ is continuous. 
 If, moreover, $X$ is compact, then $\|X\|_f$ equipped with the induced 
 metric is a geodesic space.
 \end{itemize}
@@ -671,7 +686,7 @@ and the short maps $\|\Gamma\|_f\to W\to Y$ which composition is
 
 
 \parit{Proof.}
-By Corollary \ref{cor:fiberconnected}, the fibers of $\pi_f$ are connected.
+By Corollary \ref{cor:fiberconnected}, the fibers of $\bar\pi_f$ are connected.
 Hence $|\Gamma|_f$ is 
 a planar graph and so is $\|\Gamma\|_f$.
 
@@ -741,10 +756,10 @@ Moreover, if $f|_{\partial\DD}$ is an embedding, then $|\DD|_f$ is homeomorphic 
 The proposition above is a disc version of Moore's theorem \cite{moore} proved in \cite{LW3}.
 
 \parit{Proof.}
-Form Lemma \ref{lem:picont} we know that $\pi_f$ is continuous and hence $|\DD|_f$
+Form Lemma \ref{lem:picont} we know that $\bar\pi_f$ is continuous and hence $|\DD|_f$
 is a compact metric space. 
-The fibers of $\pi_f$ are connected by Corollary \ref{cor:fiberconnected}.
-Since $f$ is a no-bubble map, we see that $\pi_f$ is cell-like. 
+The fibers of $\bar\pi_f$ are connected by Corollary \ref{cor:fiberconnected}.
+Since $f$ is a no-bubble map, we see that $\bar\pi_f$ is cell-like. 
 Therefore, the first claim follows from 
 Corollary 7.12 in \cite{LW3}.
 The special case when the restriction $f|_{\partial\DD}$ is an embedding follows then from the Schoenflies theorem.
@@ -765,7 +780,7 @@ In particular,  $|\DD|_f$ is homeomorphic to a disc retract.
 In case $f|_{\partial\DD}$ is an
 embedding it is homeomorphic to a disc.
 Moreover $\partial|\DD|_f$ is the image of $\partial \DD$
-under the map $\pi_f$.
+under the map $\bar\pi_f$.
 \end{thm}
 
 
@@ -983,26 +998,21 @@ which contradicts \ref{K(F,x)}.
 
 \section{Main theorem}\label{Main theorem}
 
-\begin{thm}{Main Theorem}\label{thm:main}
+\begin{thm}{Theorem}\label{thm:main}
 Let $Y$ be a $\CAT[0]$ space 
 and $s\:\DD\to Y$ be a metric minimizing map relative to the boundary $\partial\DD$.
-Then each metric component of $\|\DD\|_s$ is a $\CAT[0]$ space. 
+Assume the restriction $s|_{\partial\DD}$ is a rectifiable curve.
+Then each metric component of $\|\DD\|_s$ a $\CAT[0]$ disc retract. 
 \end{thm}
 
 \parit{Proof.}
-From Lemma \ref{lem:geospace} we know that each metric component of $\|\DD\|_s$ is a complete geodesic space.
-We can assume that $\|\DD\|_s$ is a metric space.
-Otherwise we treat each metric component 
-individually.
-
-In addition, it is sufficient to consider
-the case that $|\DD|_s$ is  homeomorphic to disc and its boundary is rectifiable and simple. 
-Indeed, fix a triangle $\triangle$ in $\|\DD\|_s$. 
+It is sufficient to consider
+the case that $|\DD|_s$ is  homeomorphic to disc.
+Indeed, it is sufficient to show that a triangle $[xyz]$ in $\|\DD\|_s$ is thin. 
 If the above case has been proven, then by \ref{prop:memicrit}(\ref{prop:memicrit:retriction}),
-the closure of each connected open component bounded by $\triangle$ is $\CAT[0]$.
-In particular $\triangle$ is thin;
-this can be shown the same way as in \cite{bishop}.
-Since $\triangle$ is arbitrary, the statement will follow.
+the closure of each connected open component of $\|\DD\|_s\backslash ([xy]\cup[yz]\cup[zx])$
+surrounded by the triangle is $\CAT[0]$.
+Therefor thinness of $[xyz]$ can be proved using the same argument as in \cite{bishop}.
 
 Since $|\DD|_s$ is a disc, we can identify $\DD$ and $|\DD|_s$
 and therefore we can assume that the map $s$ is light;
@@ -1024,12 +1034,13 @@ Therefore
 where the intersection is taken over all finite subsets $F$ in $\DD$. 
 
 
-Fix a space $W$ from $\mathcal{W}$.
-Summarizing, we constructed a $\CAT[0]$ disc retract $W$,
-such that given a finite set $F\subset \DD$ there is a short map $h\:F\to W$ 
-and a short map $q\:W\to Y$ such that $q\circ h$ agrees with $s$ on $\partial\DD\cap F$.
+Fix a space $W$ from $\mathcal{W}$;
+the sapce $W$ is a $\CAT[0]$ disc retract,
+such that given a finite set $F\subset \DD$ there is a short map $h_F\:F\to W$ 
+and a short map $q_F\:W\to Y$ such that $q_F\circ h_F$ agrees with $s$ on $\partial\DD\cap F$.
 
-Denote by $\mathfrak{S}_F$ the set of all maps $h\:F\to W$ described above.
+Given a finite set $F\subset \DD$,
+denote by $\mathfrak{S}_F$ the set of all maps $h_F\:F\to W$ described above.
 Note that the set of maps $\mathfrak{S}_F$ satisfies the assumption of the finite-to-whole lemma \ref{lem:finite-whole}.
 
 Indeed, the condition on the restriction of $h\in  \mathfrak{S}_F$ is evident.
@@ -1043,9 +1054,10 @@ Therefore, the composition $q=\pi\circ q_\omega$ is short.
 Finally note that the pair $h\:F\to W$ and $q\:W\to Y$ satisfies the condition above.
 
 Applying the the finite-to-whole lemma \ref{lem:finite-whole},
-we get a short map $h\:\DD\to W$ such that for any finite set $F\subset \DD$ there is a short map $q\:W\to Y$ such that $q\circ h$ agrees with $s$ on $\partial \DD\cap F$.
+we get a short map $h\:\DD\to W$ such that $h|_F\in \mathfrak{S}_F$
+for any finite set $F\subset \DD$.
 
-Our next aim is to show that $q$ can be chosen once for all finite sets $F$.
+Our next aim is to show that for the map $h_F=h|_F$ we can choose one map $q$ once for all finite sets $F$.
 This is done the same way as the proof of closeness of $\mathfrak{S}_F$ above.
 
 Choose a sequence of finite sets $F_n$ such that the intersections $F_n\cap\partial \DD$ get dense and denser in $\partial \DD$, denote by $q_n$ the corresponding maps.
@@ -1053,9 +1065,20 @@ Let $q_\omega\:W\to Y^\omega$ be the ultralimit of $q_n$ and set $q=\pi\circ q_\
 where $\pi\:Y^\omega\to Y$ is the closest point projection.
 By construction $q\:W\to Y$ is short and $q\circ h$ agrees with $s$ on $\partial \DD$.
 
-Note that $h(\partial\DD)\subset \partial W$.
+Note that $h(\partial\DD)= \partial W$.
 Moreover, form ???, it follows that the restriction $h|_{\partial\DD}$ is monotonic in the following sense.
 For any point $w$ in the interior of $W$ the direction from $w$ to $h(s)$ is turns monotonically for $s\in \SS^1=\partial\DD$.
+
+??? PROBLEMS START???
+
+Denote by $W'$ the space $W$ with removed cut-points.
+Given an interior point $w\in W$ denote by $W_w$ the closure of the connected component of $w$ in $W'$.
+Note that $W_w$ is closed convex set in $W$ which is homeomorphic to a disc.
+Therefore the closest point projection $\theta_w\:W\to W_w$ is a short map.
+
+The composition $\theta_w\circ h$ satisfies the assumption of  Proposition~\ref{prop:mono-disc}.
+In particular $\theta_w\circ h\:\DD\to W_w$ is onto in particular $w$ belongs to the image $h(\DD)$.
+
 
 Note that if $W$ is homeomorphic to a disc, the latter property implies standard monotonicity of $h|_{\partial\DD}\:\DD\to\partial W$;
 that is, the inverse image $f^{-1}\{v\}$ is connected for any point $v\in\partial W$.
@@ -1277,6 +1300,11 @@ In this case, a posteriori $\|\DD\|_s$ is compact.
 
 \bibitem{A} Alexandrov, A. D. ``Ruled  surfaces  in  metric  spaces,'' Vestnik Leningrad. Univ., 12:5-26, 1957 (Russian).
 
+\bibitem{bishop}
+Bishop, Richard L.
+``The intrinsic geometry of a Jordan domain.''
+Int. Electron. J. Geom. 1 (2008), no. 2, 33--39. 
+
 \bibitem{bressan} Bressan, A.
 ``Hyperbolic systems of conservation laws.
 The one-dimensional Cauchy problem.'' 
@@ -1379,3 +1407,33 @@ Conference Proceedings and Lecture Notes in Geometry and Topology, II. Internati
 
 
 \end{document}
+
+
+\section{Alternative definition}\label{sec:alt-def}
+
+A geodesic metric space is called planar if it admits an injective continuous map into the plane.
+
+Let $Y$ be a metric space,
+$\gamma\:\SS^1\to Y$ be a closed curve,
+$X$ is a planar space 
+and $s\:X\to Y$ be a map.
+We say that $s$ majorize $\gamma$ if $s$ is short ant $\gamma$ factors through $s$;
+that is $\gamma=s\circ\bar\gamma$ for a curve $\bar\gamma\:\SS^1\to X$.
+
+A planar metric space $X$ is called metric minimizing filling of $\gamma$ if
+$\gamma$ admits a majorization $\SS^1\xrightarrow{\bar\gamma}X\xrightarrow{s}Y$
+and for any other majorization $\SS^1\xrightarrow{\bar\gamma'}X'\xrightarrow{s'}Y$ of $\gamma$
+there is no short map $i\:X\to X'$ such that $\gamma'=i\circ\gamma$ which is strictly short on a pair of pints in $X$. 
+
+\begin{thm}{Main theorem}\label{thm:mainintro}
+Let $Y$ be a $\CAT[0]$ space and $X$ minimizing filling of a closed curve $\gamma\:\SS^1\to Y$
+and $\SS^1\xrightarrow{\bar\gamma}X\xrightarrow{s}Y$ be its majorization.
+Then $X$ is a $\CAT[0]$. 
+
+Moreover
+\begin{enumerate}[(i)]
+\item if $\gamma$ is rectifiable then $X$ is homeomorphic to a disc retract
+and $s$ uniquely determined by $\gamma$ and $\bar\gamma$;
+\item if in addition $\gamma$ is a simple curve, then $X$ is homeomorphic to the disc.
+\end{enumerate}
+\end{thm}
