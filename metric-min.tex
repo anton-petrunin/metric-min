@@ -762,7 +762,8 @@ The fibers of $\bar\pi_f$ are connected by Corollary \ref{cor:fiberconnected}.
 Since $f$ is a no-bubble map, we see that $\bar\pi_f$ is cell-like. 
 Therefore, the first claim follows from 
 Corollary 7.12 in \cite{LW3}.
-The special case when the restriction $f|_{\partial\DD}$ is an embedding follows then from the Schoenflies theorem.
+
+If the restriction $f|_{\partial\DD}$ is an embedding, then $|\DD|_f$ is homeomorphic to a disc by Schoenflies theorem.
 \qeds
 
 Given a disc retract $X$,
@@ -850,13 +851,27 @@ Set $p=\alpha|_F$ and $q=\hat u$.
 
 \section{Compactness of planar CAT[0] spaces}\label{Compactness}
 
-Let $\mathcal{K}_\ell$ be the set of isometry classes of $\CAT[0]$ metrics on a disc retract with rectifiable
-boundary curves of length at most $\ell$.
+A sequence of pairs $(X_n,\gamma_n)$, where $X_n$ is a metric space and $\gamma\:\SS^1\to X$ is a closed curve in $X$ is said to converge to $(X_\infty,\gamma_\infty)$ if there is a convergence of $X_n$ to $X_\infty$ in the sense of Gromov--Haudorff for which $\gamma_n$ converges to $\gamma_\infty$ pointwise.
 
-???We need to add that convergence respects the boundary.
+More precisely, (1) there is a metric $\rho$ on the disjoint union $\bm{X}=X_\infty\sqcup X_1\sqcup X_2\dots$ such that $\rho|_{X_\alpha}$ coinsides with the metric on $X_\alpha$ for any $\alpha\in\{\infty,0,1,\dots\}$ and $X_n$ converge to $X_\infty$ in the sense of Hausdorff as the subsets in $(\bm{X},\rho)$ and (2) the sequence of the compositions $\gamma_n\:\SS^1\to X_n \hookrightarrow\bm{X}$ converges to $\gamma_\infty\:\SS^1\to X_\infty \hookrightarrow\bm{X}$ pointwise.
+
+\begin{wrapfigure}{r}{28 mm}
+\begin{lpic}[t(-2 mm),b(-0 mm),r(0 mm),l(0 mm)]{pics/two-bry-curves(1)}
+%\lbl[lb]{12.5,11;$W_0$}}
+\end{lpic}
+\end{wrapfigure}
+
+Let $X$ be a topological space with a closed curve $\gamma\:\SS^1\to X$.
+If the mapping cylinder 
+\[Z_\gamma=X\sqcup_{\gamma(u)\sim(u,0)}\SS^1\times[0,1]\]
+is homeomorphic to the disc $\DD$ then $X$ is called \emph{disc retract} and $\gamma$ is called its \emph{boundary curve}.
+Note that a disc retract (for example the one shown on the picture) may have essentially different boundary curves,
+that is one is not a reparametrizationcan of the other.
 
 
-Here is the main statement in this section.
+Consider the class $\mathcal{K}_\ell$ of $\CAT[0]$ disc retracts with marked
+boundary curves with Lipschitz constant $\ell$.
+
 
 \begin{thm}{Compactness lemma}\label{lem:compact}
 $\mathcal{K}_\ell$ is compact in the Gromov--Hausdorff topology.
@@ -896,9 +911,11 @@ such that for
 $(K,d)$ contains an $\eps$-net
 with at most $N(\eps)$ points.
 
-In other words, $\mathcal{K}_\ell$ is uniformly totally bounded.
+In other words, set of isometry classes of metric spaces in $\mathcal{K}_\ell$ is uniformly totally bounded.
 Any class of metrics with this property is precompact in Gromov--Hausdorff topology; 
 see for example \cite[7.4.15]{BBI}.
+
+Since the set $\ell$-Lipschitz maps defined on $\SS^1$ with compact target is compact with respect to pointwise convergence, we conclude that $\mathcal{K}_\ell$ is precompact in the described topology. 
 \qeds
 
 
@@ -910,21 +927,22 @@ $\mathcal{K}_\ell$ is closed in the Gromov--Hausdorff topology.
 \end{thm}
 
 \parit{Proof.}
-Let $(X_n)$ be a sequence in $\mathcal{K}_\ell$ with $X_n\to X_\infty$. 
-Set $r_n=\frac{\length\partial X_n}{2\pi}$ 
-and $B_n=B_{r_n}(0)\subset \mathbb{R}^2$.
-Let $\gamma_n:\partial B_n\to\partial X_\infty$ be an arc length parametrization.
-Choose a point $p_n\in X_n$ with $X_n\subset B_{r_n}(p_n)$ and define
-$f_n:B_n\to X_n$ by sending the geodesic $[0\theta]$ for $\theta\in\partial B_n$ to the geodesic $[p_n\gamma_n(\theta)]$ with constant speed. 
-Note that $f_n$ is short.
-We obtain a limit map $f_\infty:B_\infty\to X_\infty$ which is short and maps radial geodesics in $B_\infty$ to geodesics in $X_\infty$ joining the limit point $p_\infty$
-to a boundary point.
+Let $(X_n,\gamma_n)$ be a sequence in $\mathcal{K}_\ell$.
+Assume $X_n\to X_\infty$ and $\gamma_n\to\gamma_\infty$. 
+Choose a point $p_n\in X_n$ and define
+$f_n:\DD\to X_n$ by sending the geodesic $[0\theta]$ for $\theta\in\partial \DD=\SS^1$ to the geodesic path $[p_n\gamma_n(\theta)]$ with constant speed. 
+
+By comparison, $f_n$ is $2\cdot\ell$-Lipschitz. %??? explain
+The limit map $f_\infty:\DD\to X_\infty$ is also $2\cdot\ell$-Lipschitz.
+
 Note that if two points $x$  and $y$ map to the same point $q$ under $f_\infty$, then $q$ is a branch point in $X_\infty$ and there is a path $c$ connecting 
 $x$ and $y$ which also maps to $q$. 
+
 In particular, $f^{-1}(q)$ is connected.
-On the other hand, since we can lift radial geodesics from $X_\infty$ to $B_\infty$ we see that $X_\infty-f^{-1}(q)$
+
+On the other hand, in the mapping cylinder $Z_\gamma_{\infty}$, the product of the geodesic path $[p\gamma(\theta)]$ with the vertical line $\theta\times [0,1]$ can be lifted to  $\DD$ we see that $X_\infty-f^{-1}(q)$
 is connected as well.
-As in Proposition~\ref{prop:disc-moore} the claim now follows from Moore's theorem in \cite{moore}.
+By Proposition~\ref{prop:disc-moore}, $X_\infty$ is a disc retract with boundary curve $\gamma_\infty$.
 \qeds
 
 
@@ -1294,7 +1312,6 @@ it is sufficiently to prove theorem assuming the disc spans a rectifiable curve.
 In this case, a posteriori $\|\DD\|_s$ is compact.
 
 \include{disc}
-
 
 \begin{thebibliography}{52}
 
