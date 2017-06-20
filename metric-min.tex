@@ -21,6 +21,46 @@ We show that reasonable metric minimizing surfaces in $\CAT[0]$ spaces are $\CAT
 
 \end{abstract}
 
+\section{New introduction}
+
+Let $Y$ be a metric space and $\gamma\:\SS^1\to Y$ is a closed rectifiable curve.
+
+Assume that a map $s\:\DD\to Y$ \emph{spans} $\gamma$;
+that is, the restriction of $s$ to $\SS^1=\partial\DD$ coincides with $\gamma$.
+Consider the induced length pseudometric on $\DD$ defined as 
+\[\|x-y\|_s=\inf_\alpha\{\length\alpha\},\]
+where the exact upper bound is taken for all paths $\alpha$ from $x$ to $y$ in $\DD$.
+
+The metric space which corresponds to $\DD$ equipped with the pseudometric  $\|{*}-{*}\|_s$ will be denoted by $\|\DD\|_s$, this space comes with the \emph{boundary curve} which is $\SS^1=\partial\DD$ under projection $\DD\to\|\DD\|_s$; the boundary curve will be denoted by $\delta_s$.
+
+Assume $s$ and $s'$ are two maps spanning $\gamma$.
+We write $s\succcurlyeq s'$ if there is a \emph{majorization}
+$\iota\:\|\DD\|_s\to \|\DD\|_{s'}$;
+that is, $\iota$ is a short map such that $\delta_{s'}=\iota\circ\delta_s$.
+
+A spanning map $s$ is called metric minimizing if $s\succcurlyeq s'$ implies that the corresponding majorization is an isometry.
+Intuitively, it means that one can not deform a  metric minimizing map keeping its values on the boundary and decreasing the induced metric.
+
+\begin{wrapfigure}{r}{28 mm}
+\begin{lpic}[t(-2 mm),b(-0 mm),r(0 mm),l(0 mm)]{pics/two-bry-curves(1)}
+%\lbl[lb]{12.5,11;$W_0$}}
+\end{lpic}
+\end{wrapfigure}
+
+A metric space $W$ with a choice of closed curve $\delta\:\SS^1\to W$ is called \emph{disc retract} it the mapping cylinder of $\delta$ 
+\[W_\gamma=W\sqcup_{\delta(u)\sim(u,0)}\SS^1\times[0,1]\]
+is homeomorphic to the disc $\DD$.
+The curve $\delta$ will be called \emph{boundary curve} of the disc retract $W$.
+Note that a disc retract (for example the one shown on the picture) may have essentially different boundary curves,
+that is one is not a reparametrizationcan of the other.
+
+
+\begin{thm}{Theorem}
+Assume $Y$ is a $\CAT[0]$ space and $s\:\DD\to Y$ is a metric minimizing map.
+Then $\|\DD\|_s$ is a $\CAT[0]$ disc retract with boundary curve $\delta_s$
+\end{thm}
+
+
 \section{Introduction}
 
 %???\bar has too many meanings --- better use it only for one thing.
@@ -155,12 +195,6 @@ Note that by definition each metric component is a \emph{metric space}.
 Consequently, a nondegenerated pseudometric space can be thought of as a disjoint union of \emph{metric spaces}.
 We will say that the obtained metric spaces are \emph{defined} by the  original pseudometric space.
 
-\parbf{Length.}
-For a metric space $X$ and a curve $\gamma\:[a,b]\to X$ we define its {\em length} as
-\[\length_X\gamma=\sup\sum_{i=0}^{k-1} |\gamma(t_i)-\gamma(t_{i+1})|\]
-where the supremum is taken over all finite partitions ${a=t_0<t_1<\ldots t_k=b}$ of $[a,b]$. 
-A curve $\gamma$ is called {\em rectifiable} if its length is finite.
-
 \parbf{Connecting pseudometric.}
 Let $X$ and $Y$ be metric spaces.
 Given a map $f\:X\to Y$,
@@ -235,13 +269,18 @@ It follows that $k\in [x]_f\backslash (U\cup V)$, a contradiction.
 \qeds
 
 \parbf{Intrinisic pseudometric.}
+For a metric space $X$ and a curve $\gamma\:[a,b]\to X$ we define its {\em length} as
+\[\length\gamma=\sup\sum_{i=0}^{k-1} |\gamma(t_i)-\gamma(t_{i+1})|\]
+where the supremum is taken over all finite partitions ${a=t_0<t_1<\ldots t_k=b}$ of $[a,b]$. 
+A curve $\gamma$ is called {\em rectifiable} if its length is finite.
+
 The intrinsic metric defined by $|{*}-{*}|_f$ will be denoted by 
 $\|{*}-{*}\|_f$. 
 That~is, 
 \[\|x-y\|_f
 =
 \inf
-\set{\length(\gamma)}{\gamma\ \text{is a path in}\ |X|_f\ \text{from}\ \bar\pi_f(x) \ \text{to}\ \bar\pi_f(y)}\]
+\set{\length\gamma}{\gamma\ \text{is a path in}\ |X|_f\ \text{from}\ \bar\pi_f(x) \ \text{to}\ \bar\pi_f(y)}\]
 where the length is computed with respect to $|{*}-{*}|_f$. 
 
 Accordingly the associated nondegenerated  pseudometric space defined by $\|{*}-{*}\|_f$ on $X$ 
@@ -376,7 +415,7 @@ Consider the pseudometric on $X$ defined as
 \[\llangle x-y\rrangle_f
 =
 \inf
-\set{\length_Y(f\circ\gamma)}{\gamma\ \text{a path in}\  X\ \text{connecting}\ x\ \text{and}\ y}.\]
+\set{\length(f\circ\gamma)_Y}{\gamma\ \text{a path in}\  X\ \text{connecting}\ x\ \text{and}\ y}.\]
 Denote by $\llangle X\rrangle_f=X/\sim$ the quotient metric space.
 
 For the reasonable maps $\llangle X\rrangle_f$ is isometric to $\|X\|_f$.
@@ -386,13 +425,14 @@ In general, we only have the natural length preserving map $\llangle X\rrangle_f
 but these spaces might be not isometric;
 an example is given in \cite[4.2]{petrunin-intrinisic}.
 
-Equivalently the pseudometric $\|{*}-{*}\|_f$ can be defined the following way.
+The following equivalent definition of the pseudometric $\|{*}-{*}\|_f$ was used in \cite{petrunin-intrinisic}.
 Given $\eps>0$ and two points $x,y\in X$ 
 define 
 \[\|x-y\|_f=\lim_{\eps\to0}
 \left[\sup\left\{\,\sum_i|f(x_i)-f(x_{i-1}|_Y\,\right\}\right]\eqlbl{eq:eps-chain}\]
-where the infimum is taken for all possible $\eps$-chains $x=x_0,x_1,\dots,x_n=y$ in $X$; that is a point array $x_0,x_1,\dots,x_n\in X$ such that $|x_i-x_{i-1}|_X<\eps$ for any $i$.
-(Again, we do not prove the equivalence since it is not used.)
+where the infimum is taken for all possible \emph{$\eps$-chains} $x=x_0,x_1,\dots,x_n=y$ in $X$;
+that is, $x_0,x_1,\dots,x_n\in X$ is a point array such that $|x_i-x_{i-1}|_X<\eps$ for any $i$.
+Again, we do not prove the equivalence since it is not used.
 
 
 
@@ -692,7 +732,7 @@ a planar graph and so is $\|\Gamma\|_f$.
 
 
 Fix a cycle $\gamma$ in $\|\Gamma\|_f$ which bounds one of the discs in the complement $\RR^2\backslash \|\Gamma\|_f$.
-Set $\ell=\length \bar f\circ\gamma$.
+Set $\ell=\length (\bar f\circ\gamma)$.
 
 By Reshetnyak's majorization theorem, there is a convex polygon $P$ (possibly degenerate) with perimeter $\ell$ which admits 
 a short map to $Y$ in such a way that $\bar f\circ\gamma$ is formed by the image of the boundary.
@@ -787,79 +827,24 @@ under the map $\bar\pi_f$.
 
 
 
+\input{disc.tex}
 
-
-
-
-
-
-
-\section{Key Lemma}\label{Key Lemma}
-
-
-\begin{thm}{Key Lemma}\label{lem:key}
-Let $Y$ be a $\CAT[0]$ space and $s\:\DD\to Y$ 
-be a metric minimizing disc relative to the boundary $\partial \DD$.
-Given a finite set $F\subset \|\DD\|_s$ such that $\|x-y\|_s<\infty$ for each pair $x,y$ of points in $F$
-there is 
-(1) a $\CAT[0]$ space $W$, which is a disc retract,
-and (2) short maps $p\:F\to W$ and $q\:W\to Y$ such that
-\[\bar s(x)=q\circ p(x)\] 
-for any $x\in F_{\partial}=F\cap \partial |\DD|_s$
-and 
-\[\|p(x)-p(y)\|_q\le \|x-y\|_s\] 
-for any $x,y\in F$.
-\end{thm}
-
-??? We need to add that $p$ is monotonic on $F_{\partial}$ in the following sense:
-$p(F_\partial)\subset \partial W$ and for any inner point $w\in W$ the directions of $[w\,p(x)]$ have the same nonstrict cyclic order as  $F_{\partial}$ in $\partial\DD$. 
-
-\parit{Proof.}
-Let us connect each pair $x,y$ of points in $F$ by geodesics.
-
-We can assume that 
-every pair of the constructed geodesics 
-are either disjoint, or their intersection is formed by finite collections of arcs and points.
-
-Indeed, if some number of geodesics $\gamma_1,\dots,\gamma_n$ has this property and we are given points $x$ and $y$, then
-we choose a minimizing geodesic $\gamma_{n+1}$ from $x$ to $y$ which maximizes the time it spends in $\gamma_1,\dots,\gamma_n$  in the order of importance.
-Namely, 
-\begin{itemize}
-\item  among all minimizing geodesics connecting $x$ to $y$
-choose one which spends maximal time in $\gamma_1$ --- in this case $\gamma_{n+1}$ intesects $\gamma_1$ along the empty set, one-point set or a closed arc.
-\item among all minimizing geodesics as above
-choose one which spends maximal time in $\gamma_2$ --- in this case $\gamma_{n+1}$ intesects $\gamma_2$ along at most two arcs and points.
-\item and so on.
-\end{itemize}
-
-%IT SHOULD BE POSSIBLE TO ENSURE THAT INTERSECTION OF ANY TWO GEODESIC IS EMPTY OR CONNECTED, BUT I FAILED TO MAKE IT FORMALLY???
-
-In particular the set of all these geodesics forms a finite graph, say $\Gamma$,
-embedded in $|\DD|_s$. 
-
-According to Proposition~\ref{prop:|D|},
-$|\DD|_s$ admits an embedding into the plane.
-Therefore $\Gamma$ can be considered as a graph embedded into the plane.
-By Proposition~\ref{prop:exist}, there is a map $u\:\Gamma\to Y$ metric minimizing relative to $\Gamma\cap\partial|\DD|_{\bar s}$ with
-$\bar s|_\Gamma\succcurlyeq u$.
-Hence there is a short map $\alpha\:\|\Gamma\|_{\bar s|_\Gamma}\to\|\Gamma\|_u$. 
-By Corollary~\ref{cor:planar-minimizing-graph} there is a $\CAT[0]$ disc retract $W$, a length preserving embedding
-$\|\Gamma\|_u\hookrightarrow W$ and a map $\hat u\:W\to Y$ extending $\bar u$. %???why not to say that q= \hat u???
-Set $p=\alpha|_F$ and $q=\hat u$.
-\qeds
 
 
 \section{Compactness of planar CAT[0] spaces}\label{Compactness}
 
 A sequence of pairs $(X_n,\gamma_n)$, where $X_n$ is a metric space and $\gamma\:\SS^1\to X$ is a closed curve in $X$ is said to converge to $(X_\infty,\gamma_\infty)$ if there is a convergence of $X_n$ to $X_\infty$ in the sense of Gromov--Haudorff for which $\gamma_n$ converges to $\gamma_\infty$ pointwise.
 
-More precisely, (1) there is a metric $\rho$ on the disjoint union $\bm{X}=X_\infty\sqcup X_1\sqcup X_2\dots$ such that $\rho|_{X_\alpha}$ coinsides with the metric on $X_\alpha$ for any $\alpha\in\{\infty,0,1,\dots\}$ and $X_n$ converge to $X_\infty$ in the sense of Hausdorff as the subsets in $(\bm{X},\rho)$ and (2) the sequence of the compositions $\gamma_n\:\SS^1\to X_n \hookrightarrow\bm{X}$ converges to $\gamma_\infty\:\SS^1\to X_\infty \hookrightarrow\bm{X}$ pointwise.
+More precisely, (1) there is a metric $\rho$ on the disjoint union 
+\[\bm{X}=X_\infty\sqcup X_1\sqcup X_2\dots\]
+such that the restrictions $\rho|_{X_\alpha}$ coinsides with the metric on $X_\alpha$ for any $\alpha\in\{\infty,0,1,\dots\}$ and $X_n$ converge to $X_\infty$ in the sense of Hausdorff as the subsets in $(\bm{X},\rho)$ and (2) the sequence of the compositions $\gamma_n\:\SS^1\to X_n \hookrightarrow\bm{X}$ converges to $\gamma_\infty\:\SS^1\to X_\infty \hookrightarrow\bm{X}$ pointwise.
 
 \begin{wrapfigure}{r}{28 mm}
 \begin{lpic}[t(-2 mm),b(-0 mm),r(0 mm),l(0 mm)]{pics/two-bry-curves(1)}
 %\lbl[lb]{12.5,11;$W_0$}}
 \end{lpic}
 \end{wrapfigure}
+
 
 Let $X$ be a topological space with a closed curve $\gamma\:\SS^1\to X$.
 If the mapping cylinder 
@@ -940,11 +925,63 @@ $x$ and $y$ which also maps to $q$.
 
 In particular, $f^{-1}(q)$ is connected.
 
-On the other hand, in the mapping cylinder $Z_\gamma_{\infty}$, the product of the geodesic path $[p\gamma(\theta)]$ with the vertical line $\theta\times [0,1]$ can be lifted to  $\DD$ we see that $X_\infty-f^{-1}(q)$
+On the other hand, in the mapping cylinder $Z_{\gamma_{\infty}}$, the product of the geodesic path $[p\gamma(\theta)]$ with the vertical line $\theta\times [0,1]$ can be lifted to  $\DD$ we see that $X_\infty-f^{-1}(q)$
 is connected as well.
 By Proposition~\ref{prop:disc-moore}, $X_\infty$ is a disc retract with boundary curve $\gamma_\infty$.
 \qeds
 
+
+\section{Key Lemma}\label{Key Lemma}
+
+
+\begin{thm}{Key Lemma}\label{lem:key}
+Let $Y$ be a $\CAT[0]$ space and $s\:\DD\to Y$ 
+be a metric minimizing disc relative to the boundary $\partial \DD$.
+Given a finite set $F\subset \|\DD\|_s$ such that $\|x-y\|_s<\infty$ for each pair $x,y$ of points in $F$
+there is 
+(1) a $\CAT[0]$ space $W$, which is a disc retract with a boundary curve $\delta$,
+(2) short maps $p\:F\to W$ and $q\:W\to Y$ such that
+\[\bar s(x)=q\circ p(x)\] 
+for any $x\in F_{\partial}=F\cap \partial |\DD|_s$
+and 
+\[\|p(x)-p(y)\|_q\le \|x-y\|_s\] 
+for any $x,y\in F$
+and (3) the points in $p(F\cap\partial\DD)$ appear on the boundary curve $\delta$ in the same order as the corresponding points in $F\cap\partial\DD$ appear on $\partial\DD$.
+\end{thm} 
+
+\parit{Proof.}
+Let us connect each pair $x,y$ of points in $F$ by geodesics.
+
+We can assume that 
+every pair of the constructed geodesics 
+are either disjoint, or their intersection is formed by finite collections of arcs and points.
+
+Indeed, if some number of geodesics $\gamma_1,\dots,\gamma_n$ has this property and we are given points $x$ and $y$, then
+we choose a minimizing geodesic $\gamma_{n+1}$ from $x$ to $y$ which maximizes the time it spends in $\gamma_1,\dots,\gamma_n$  in the order of importance.
+Namely, 
+\begin{itemize}
+\item  among all minimizing geodesics connecting $x$ to $y$
+choose one which spends maximal time in $\gamma_1$ --- in this case $\gamma_{n+1}$ intesects $\gamma_1$ along the empty set, one-point set or a closed arc.
+\item among all minimizing geodesics as above
+choose one which spends maximal time in $\gamma_2$ --- in this case $\gamma_{n+1}$ intesects $\gamma_2$ along at most two arcs and points.
+\item and so on.
+\end{itemize}
+
+%IT SHOULD BE POSSIBLE TO ENSURE THAT INTERSECTION OF ANY TWO GEODESIC IS EMPTY OR CONNECTED, BUT I FAILED TO MAKE IT FORMALLY???
+
+In particular the set of all these geodesics forms a finite graph, say $\Gamma$,
+embedded in $|\DD|_s$. 
+
+According to Proposition~\ref{prop:|D|},
+$|\DD|_s$ admits an embedding into the plane.
+Therefore $\Gamma$ can be considered as a graph embedded into the plane.
+By Proposition~\ref{prop:exist}, there is a map $u\:\Gamma\to Y$ metric minimizing relative to $\Gamma\cap\partial|\DD|_{\bar s}$ with
+$\bar s|_\Gamma\succcurlyeq u$.
+Hence there is a short map $\alpha\:\|\Gamma\|_{\bar s|_\Gamma}\to\|\Gamma\|_u$. 
+By Corollary~\ref{cor:planar-minimizing-graph} there is a $\CAT[0]$ disc retract $W$, a length preserving embedding
+$\|\Gamma\|_u\hookrightarrow W$ and a map $\hat u\:W\to Y$ extending $\bar u$. %???why not to say that q= \hat u???
+Set $p=\alpha|_F$ and $q=\hat u$.
+\qeds
 
 \section{Finite-whole extension lemma}\label{Finite-whole extension lemma}
 
@@ -1030,7 +1067,7 @@ Indeed, it is sufficient to show that a triangle $[xyz]$ in $\|\DD\|_s$ is thin.
 If the above case has been proven, then by \ref{prop:memicrit}(\ref{prop:memicrit:retriction}),
 the closure of each connected open component of $\|\DD\|_s\backslash ([xy]\cup[yz]\cup[zx])$
 surrounded by the triangle is $\CAT[0]$.
-Therefor thinness of $[xyz]$ can be proved using the same argument as in \cite{bishop}.
+Therefore thinness of $[xyz]$ can be proved using the same argument as in \cite{bishop}.
 
 Since $|\DD|_s$ is a disc, we can identify $\DD$ and $|\DD|_s$
 and therefore we can assume that the map $s$ is light;
@@ -1311,7 +1348,6 @@ Also as it was mention in ???,
 it is sufficiently to prove theorem assuming the disc spans a rectifiable curve.
 In this case, a posteriori $\|\DD\|_s$ is compact.
 
-\include{disc}
 
 \begin{thebibliography}{52}
 
@@ -1339,6 +1375,10 @@ Graduate Studies in Mathematics, 33. American Mathematical Society, Providence, 
 
 \bibitem{HKST} Heinonen, J.;  Koskela, P.;  Shanmugalinga, N.; Tyson, J. ``Sobolev spaces on metric measure spaces,''
 volume 27 of New Mathematical Monographs. Cambridge University Press, Cambridge, 2015.
+
+\bibitem{jost} Jost, J.
+Univalency of harmonic mappings between surfaces.
+J. Reine Angew. Math. 324 (1981), 141--153. 
 
 \bibitem{KF}
 \begin{otherlanguage}{russian}
@@ -1411,6 +1451,10 @@ Conference Proceedings and Lecture Notes in Geometry and Topology, II. Internati
 %5 
 %(1964), 
 %1382--1396
+
+\bibitem{schoen-yau} Schoen, Richard; Yau, Shing Tung
+On univalent harmonic maps between surfaces.
+Invent. Math. 44 (1978), no. 3, 265--278. 
 
 \bibitem{St} Stadler, S. ``Harmonic discs in CAT(0) spaces'', in preparation.
 
