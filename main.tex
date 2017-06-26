@@ -1,0 +1,69 @@
+\section{Proof assembling}\label{Main theorem}
+
+
+
+\parit{Proof.}
+It is sufficient to consider
+the case that $|\DD|_s$ is  homeomorphic to disc.
+Indeed, it is sufficient to show that a triangle $[xyz]$ in $\<\DD\>_s$ is thin. 
+Once the above case has been proven, the closure of each connected open component of $\<\DD\>_s\backslash ([xy]\cup[yz]\cup[zx])$
+surrounded by the triangle is $\CAT[0]$.
+From this thinness of the triangle $[xyz]$ follows; see \cite{bishop}.
+
+%Since $|\DD|_s$ is homeomorphic to the disc, we can identify $\DD$ and $|\DD|_s$ and therefore we can assume that the map $s$ is light; that is, inverse image of any point is zero-dimensional.
+
+Given a finite set $F\subset \DD$,
+denote by $\mathcal{W}_F$
+the set of isometry classes of spaces $W$ which meet the conditions of the Key Lemma~\ref{lem:key}
+for $F$;
+according to the key lemma~\ref{lem:key} $\mathcal{W}_F\ne\emptyset$.
+Note that for two finite sets $F\subset F'$ in $\DD$,
+we have $\mathcal{W}_F\supset \mathcal{W}_{F'}$.
+
+According to the Lemma on compactness (\ref{lem:compact}) $\mathcal{W}_F$ is compact.
+Therefore 
+\[\mathcal{W}
+=
+\bigcap_{F}\mathcal{W}_F\ne \emptyset\]
+where the intersection is taken over all finite subsets $F$ in $\DD$. 
+
+
+Fix a space $W$ from $\mathcal{W}$;
+the sapce $W$ is a $\CAT[0]$ disc retract,
+such that given a finite set $F\subset \DD$ there is a short map $h_F\:F\to W$ 
+and a short map $q_F\:W\to Y$ such that $q_F\circ h_F$ agrees with $s$ on $\partial\DD\cap F$.
+
+Given a finite set $F\subset \DD$,
+denote by $\mathfrak{S}_F$ the set of all maps $h_F\:F\to W$ described above.
+Note that the set of maps $\mathfrak{S}_F$ satisfies the assumption of the finite-to-whole lemma \ref{lem:finite-whole}.
+
+Indeed, the condition on the restriction of $h\in  \mathfrak{S}_F$ is evident.
+To prove the closeness of $\mathfrak{S}_F$ consider a converging sequence $h_n\in  \mathfrak{S}_F$;
+denote by $h$ its limit.
+For each $h_n$ there is a short map $q_n\:W\to Y$ satisfying the condition above.
+Pass to its ultra limit $q_\omega\:W\to Y^\omega$.
+Recall that $Y$ is a convex closed set in $Y^\omega$.
+In particular the closest-point-projection $\pi\:Y^\omega\to Y$ is well defined and short.
+Therefore, the composition $q=\pi\circ q_\omega$ is short.
+Finally note that the pair $h\:F\to W$ and $q\:W\to Y$ satisfies the condition above.
+
+Applying the the finite-to-whole lemma \ref{lem:finite-whole},
+we get a short map $h\:\DD\to W$ such that $h|_F\in \mathfrak{S}_F$
+for any finite set $F\subset \DD$.
+
+Our next aim is to show that for the map $h_F=h|_F$ we can choose one map $q$ once for all finite sets $F$.
+This is done the same way as the proof of closeness of $\mathfrak{S}_F$ above.
+
+Choose a sequence of finite sets $F_n$ such that the intersections $F_n\cap\partial \DD$ get dense and denser in $\partial \DD$, denote by $q_n$ the corresponding maps.
+Let $q_\omega\:W\to Y^\omega$ be the ultralimit of $q_n$ and set $q=\pi\circ q_\omega$,
+where $\pi\:Y^\omega\to Y$ is the closest point projection.
+By construction $q\:W\to Y$ is short and $q\circ h$ agrees with $s$ on $\partial \DD$;
+that is $s\succcurlyeq q\circ h$.
+
+It follows that the map $h$ induces a short map $\hat h\:\<\DD\>_s\to W$ and $\hat h\circ\delta_s$ is the boundary curve of $W$.
+Since $W$ is a disc retract, there is a retraction $r\:\DD\to W$;
+consider the composition $\DD\xrightarrow{r}W\xrightarrow{q} Y$.
+Note that  $W=\<\DD\>_{q\circ r}$.
+Since $s$ is metric minimizing $\hat h$ is an isometry.
+Hence the statement follows.
+\qeds

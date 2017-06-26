@@ -1,0 +1,77 @@
+\section{Key Lemma}\label{Key Lemma}
+
+
+\begin{thm}{Key Lemma}\label{lem:key}
+Let $Y$ be a $\CAT[0]$ space and $s\:\DD\to Y$ 
+be a metric minimizing disc.
+Given a finite set $F\subset \DD$
+there is 
+(1) a $\CAT[0]$ disc retract $W$ with a boundary curve $\delta$,
+(2) a map $p\:F\to W$ such that
+\[|p(x)-p(y)|_W\le \<x-y\>_s\] 
+for any $x,y\in F$ and $p(x)=\delta(x)$ for any $x\in F\cap \partial\DD$
+and (3) a short map $q\:W\to Y$ such that
+\[s(x)=q\circ p(x)\] 
+for any $x\in\partial\DD\cap F$.
+\end{thm} 
+
+\parit{Proof.} Assume $\partial \DD\cap F= \emptyset$.
+Then one can take one-point space as $W$ and arbitrary maps $p\:F\to W$ and $q\:W\to Y$ give a solution.
+Further we assume that $\partial \DD\cap F\ne\emptyset$.
+
+Without loss of generality we may assume that the distance $\<x-y\>_s$
+between any pair of points $x,y\in F$ is finite.
+Indeed, since the boundary curve $s|_{\partial\DD}$ is rectifiable,
+it is always the case for the pairs of points in $\partial \DD\cap F$.
+Consider the set $F'\subset F$ which lies on finite distance from one (and therefore any) point in $\partial \DD\cap F$.
+Assume $p'\:F'\to W$ and $q\:W\to Y$ be the maps satisfying the proposition for $F'$.
+Extend $p'$ to $F$ by sending all the set $F\backslash F'$ to one point in $W$ the obtained map $p$ together with $q$ satisfy the proposition for $F$.
+
+For any pair $x,y\in F$, connect $\hat x$ to $\hat y$ by a minimizing geodesic in $\<\DD\>_s$. 
+We can assume that the constructed geodesics 
+are either disjoint, or their intersection is formed by finite collections of arcs and points.
+
+Indeed, if some number of geodesics $\gamma_1,\dots,\gamma_n$ has this property and we are given points $x$ and $y$, then
+we choose a minimizing geodesic $\gamma_{n+1}$ from $x$ to $y$ which maximizes the time it spends in $\gamma_1,\dots,\gamma_n$  in the order of importance.
+Namely, 
+\begin{itemize}
+\item  among all minimizing geodesics connecting $x$ to $y$
+choose one which spends maximal time in $\gamma_1$ --- in this case $\gamma_{n+1}$ intesects $\gamma_1$ along the empty set, one-point set or a closed arc.
+\item among all minimizing geodesics as above
+choose one which spends maximal time in $\gamma_2$ --- in this case $\gamma_{n+1}$ intesects $\gamma_2$ along at most two arcs and points.
+\item and so on.
+\end{itemize}
+
+%IT SHOULD BE POSSIBLE TO ENSURE THAT INTERSECTION OF ANY TWO GEODESIC IS EMPTY OR CONNECTED, BUT I FAILED TO MAKE IT FORMALLY??? 
+
+It follows that the constructed geodesics together form a finite graph, say $\Gamma$,
+embedded in $\<\DD\>_s$.
+According to Proposition~\ref{prop:|D|},
+ $\iota_s$ embeds $\Gamma$ in $|\DD|_s$.
+The space $|\DD|_s$ comes with an embedding into the plane.
+Therefore $\Gamma$ can be considered as a graph embedded into the plane.
+
+By Proposition~\ref{prop:metric-min-graph-exist}, there is a map $u\:\Gamma\to Y$ metric minimizing relative to $A=F\cap\partial\DD$ such that
+\[s|_\gamma\succcurlyeq u\rel A.\]
+
+Fix an open disc $\Delta$ cut by $\Gamma$ from $|\DD|_s$.
+By Reshetnyak's theorem, the closed curve $u|_{\partial\Delta}$
+is majorized by a convex plane polygon, possibly degenerate to a point or a line segment.
+Note that the angle of the majorizing polygon can not be smaller than the angle between the corresponding edges in $u(\Gamma)\subset Y$.
+
+Let us glue the majorizing polygons into $\<\Gamma\>_u$;
+denote by $W$ the obtained space.
+According to the Proposition~\ref{prop:metric-min-graph}\ref{sum>=2pi}, the angle around each inner vertex has to be at least $2\cdot\pi$.
+Clearly $W$ is a disc retract, in particular it is simply connected.
+It follows that $W$ is a $\CAT[0]$ space.
+
+The short map $q\:W\to Y$ is constructed by gluing together the maps provided by Reshetnyak's majorization theorem.
+The space $W$ comes with a natural short map $\<\Gamma\>_u\to W$.
+
+Define $p(x)$ which sends $x\in F$ as the image corresponding vertex of $\Gamma$ in $W$.
+Since $s|_\gamma\succcurlyeq u\rel A$, 
+\[|p(x)-p(y)|_W\le \<x-y\>_s\]
+for any $x,y\in F$.
+
+By construction the pair of maps $p,q$ meets all the conditions.
+\qeds

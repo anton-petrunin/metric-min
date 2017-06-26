@@ -1,0 +1,81 @@
+\section{Compactness of planar CAT[0] spaces}\label{Compactness}
+
+A sequence of pairs $(X_n,\gamma_n)$, where $X_n$ is a metric space and $\gamma\:\SS^1\to X$ is a closed curve in $X$ is said to converge to $(X_\infty,\gamma_\infty)$ if there is a convergence of $X_n$ to $X_\infty$ in the sense of Gromov--Haudorff for which $\gamma_n$ converges to $\gamma_\infty$ pointwise.
+
+More precisely, (1) there is a metric $\rho$ on the disjoint union 
+\[\bm{X}=X_\infty\sqcup X_1\sqcup X_2\dots\]
+such that the restrictions $\rho|_{X_\alpha}$ coinsides with the metric on $X_\alpha$ for any $\alpha\zz\in\{0,1,\dots,\infty\}$ and $X_n$ converge to $X_\infty$ in the sense of Hausdorff as the subsets in $(\bm{X},\rho)$ and (2) the sequence of the compositions $\gamma_n\:\SS^1\to X_n \hookrightarrow\bm{X}$ converges to $\gamma_\infty\:\SS^1\to X_\infty \hookrightarrow\bm{X}$ pointwise.
+
+Consider the class $\mathcal{K}_\ell$ of $\CAT[0]$ disc retracts with marked
+which boundary curves have Lipschitz constant $\ell$.
+
+
+\begin{thm}{Compactness lemma}\label{lem:compact}
+$\mathcal{K}_\ell$ is compact in the Gromov--Hausdorff topology.
+\end{thm}
+
+It follows immediately from Lemmas \ref{lem:precompact} and \ref{lem:closed} proven below.
+
+\begin{thm}{Lemma}\label{lem:precompact}
+$\mathcal{K}_\ell$ is precompact in the Gromov--Hausdorff topology.
+\end{thm}
+
+Further $\area K$ denotes the two-dimensional Hausdorff measure of a metric space $K$. 
+
+\parit{Proof.}
+Let $K$ be a metric space with isometry class in $\mathcal {K}_\ell$.
+By the Reshetnyak's majorization theorem there is a short map from a convex plane figure $F$ with perimeter at most $2\cdot\pi\cdot \ell$ onto $K$.
+In particular, 
+\[\area K \le \area F \le \pi\cdot\ell^2.\]
+
+Fix $\eps>0$. 
+Set $m=\lceil 10\cdot\tfrac\ell\eps\rceil$.
+Choose $m$ points $y_1,\dots,y_m$ on $\partial K$
+which divide $\partial K$ into arcs of equal length.
+
+Consider the maximal set of points $\{x_1,\dots,x_n\}$ such that $d(x_i,x_j)>\eps$ and $d(x_i,y_j)>\eps$.
+
+Note that the set $\{x_1,\dots,x_n,y_1,\dots,y_m\}$
+forms an $\eps$-net in $(K,d)$.
+
+Further note that the balls $B_i=B_{\eps/2}(x_i)$
+do not overlap.
+By comparison,
+\[\area B_i\ge \tfrac{\pi\cdot\eps^2}{4}.\]
+
+It follows that $n\le 4\cdot\left(\tfrac\ell\eps\right)^2$.
+In particular, there is a integer valued function $N(\eps)$, such that any  
+$K$ as above contains an $\eps$-net
+with at most $N(\eps)$ points.
+The latter means that the class $\mathcal{K}_\ell$ is uniformly totally bounded.
+By the selection theorem \cite[7.4.15]{BBI}, the class of metrics with this property is precompact in Gromov--Hausdorff topology.
+
+Since the set $\ell$-Lipschitz maps defined on $\SS^1$ with compact target is compact with respect to pointwise convergence, we conclude that $\mathcal{K}_\ell$ is precompact in the topology defined above. 
+\qeds
+
+
+
+
+
+\begin{thm}{Lemma}\label{lem:closed}
+$\mathcal{K}_\ell$ is closed in the Gromov--Hausdorff topology.
+\end{thm}
+
+\parit{Proof.}
+Let $(X_n,\gamma_n)$ be a sequence in $\mathcal{K}_\ell$.
+Assume $X_n\to X$ and $\gamma_n\to\gamma$. 
+Choose a point $p_n\in X_n$ and define
+$f_n:\DD\to X_n$ by sending the geodesic $[0\theta]$ for $\theta\in\partial \DD=\SS^1$ to the geodesic path $[p_n\gamma_n(\theta)]$ with constant speed. 
+
+By comparison, $f_n$ is $5\cdot\ell$-Lipschitz. %??? explain
+The limit map $f\:\DD\to X$ is also $5\cdot\ell$-Lipschitz.
+
+Note that if two points $x$  and $y$ map to the same point $q$ under $f$, then $q$ is a branch point in $X$ and there is a path $c$ connecting 
+$x$ and $y$ which also maps to $q$. 
+In particular, $f$ is monotone.
+
+On the other hand, the map $f$ has no bubbles.
+It follows since in the mapping cylinder $X_\gamma$, the product of the geodesic path $[p\gamma(\theta)]$ with the vertical line $\theta\times [0,1]$ can be lifted to $\DD$.
+
+Therefore, by Proposition~\ref{prop:disc-moore}, $X$ is a disc retract with boundary curve $\gamma$.
+\qeds

@@ -1,0 +1,342 @@
+\documentclass{article}
+\usepackage{metric-min}
+%\usepackage{showkeys}
+
+\begin{document}
+
+\title{Metric minimzing surfaces revisited}
+\author{Anton Petrunin and Stephan Stadler}
+%\address{A. Petrunin\newline\vskip-4mm Math. Dept. PSU,University Park, PA 16802,USA}
+%\email{petrunin@math.psu.edu}
+%\address{S. Stadler\newline\vskip-4mm Math. Inst.,Universit\"at M\"unchen, Theresienstr. 39, D-80333 M\"unchen, Germany}\email{stadler@math.lmu.de}
+%\thanks{A.~Petrunin was partially supported by NSF grant DMS 1309340.}
+
+%%%%%%%???to do: the construction passing to ultralimit+projection has to me formulated as a lemma.
+
+\date{}
+
+\maketitle
+
+\begin{abstract}
+A surface which does not admit a length nonincreasing deformation is called \emph{metric minimizing}.
+We show that metric minimizing surfaces in $\CAT[0]$ spaces are $\CAT[0]$ with respect to their intrinsic metric. 
+\end{abstract}
+
+\section{Introduction}
+
+Let us denote by $\DD$ the closed unit disc in the plane,
+its boundary $\partial \DD=\SS^1$ is a unit circle.
+Let $Y$ be a metric space and $\gamma\:\SS^1\to Y$ is a closed rectifiable curve.
+
+Assume that a continuous map $s\:\DD\to Y$ \emph{spans} $\gamma$;
+that is, the restriction of $s$ to $\SS^1$ coincides with $\gamma$.
+Consider the induced length-pseudometric on $\DD$ defined as 
+\[\<x-y\>_s=\inf_\alpha\{\length\alpha\},\]
+where the exact upper bound is taken for all paths $\alpha$ from $x$ to $y$ in $\DD$;
+the distance $\<x-y\>_s$ might take infinite value.
+The corresponding metric space will be denoted by $\<\DD\>_s$ (see the next section for the precise definition).
+
+The space $\<\DD\>_s$ comes with the projection $ \hat\pi_s\:\DD\to\<\DD\>_s$;
+the restriction of $ \hat\pi_s$ to $\SS^1=\partial\DD$ will be denoted by $\delta_s$.
+
+Assume $s$ and $s'$ are two maps spanning the same curve.
+We write $s\succcurlyeq s'$ if there is a \emph{majorization}
+$\mu\:\<\DD\>_s\to \<\DD\>_{s'}$;
+that is, $\mu$ is a short map such that $\delta_{s'}=\mu\circ\delta_s$.
+
+A spanning map $s$ is called \emph{metric minimizing disc} if $s\succcurlyeq s'$ implies that the corresponding majorization $\mu$ is an isometry.
+
+\begin{wrapfigure}{r}{28 mm}
+\begin{lpic}[t(-2 mm),b(-0 mm),r(0 mm),l(0 mm)]{pics/two-bry-curves(1)}
+%\lbl[lb]{12.5,11;$W_0$}}
+\end{lpic}
+\end{wrapfigure}
+
+A topological space $W$ with a choice of closed curve $\delta\:\SS^1\zz\to W$ is called \emph{disc retract} it the mapping cylinder of $\delta$ 
+\[W_\delta=W\bigsqcup_{\delta(u)\sim(u,0)}\SS^1\times[0,1]\]
+is homeomorphic to the disc $\DD$.
+The curve $\delta$ will be called \emph{boundary curve} of the disc retract $W$.
+Note that a disc retract (for example the one shown on the picture) may have essentially different boundary curves,
+that is one is not a reparametrizationcan of the other.
+
+\begin{thm}{Theorem}
+Assume $Y$ is a $\CAT[0]$ space and $s\:\DD\to Y$ is a metric minimizing map.
+Then $\<\DD\>_s$ is a $\CAT[0]$ disc retract with boundary curve $\delta_s$.
+\end{thm}
+
+Note that we did not make any assumption on the continuous map $s$,
+in particular, before hand, the space $\<\DD\>_s$ might have wild topology.
+
+\section{Definitions}
+
+\parbf{Metrics and pseudometrics.}
+Let $X$ be a set.
+A \emph{pseudometric} on a set $X$ 
+is a function $X\times X\to[0,\infty]$ denoted as $(x,y)\mapsto |x-y|$
+such that 
+\begin{itemize}
+\item $|x-x|=0$, for any $x\in X$;
+\item $|x-y|=|y-x|$, for any $x,y\in X$;
+\item $|x-y|+|y-z|\ge|x-z|$ for any  $x,y,z\in X$.
+\end{itemize}
+If in addition $|x-y|=0$ implies $x=y$ then the pseudometric $|{*}-{*}|$ is called a \emph{metric space}; some authors prefer to call it \emph{$\infty$-metric space} to emphasize that the distance between points might be infinite.
+The value $|x-y|$ will also be called \emph{distance} form $x$ to $y$.
+
+For any pseudometric on a set there is an equivalence relation ``$\sim$'' such that 
+\[x\sim y\quad\iff\quad|x-y|=0.\]
+The pseudometric induced  on the set of equivalence classes 
+\[[x]=\set{x'\in X}{x\sim x}\] becomes a metric.
+The obtained metric space will be denoted as $[X]$;
+it comes with the projection map $X\to [X]$ defined as $x\mapsto [x]$.
+
+
+For a metric space we can consider the equivalence relation ``$\approx$'' defined as 
+\[x\approx y\quad\iff\quad|x-y|<\infty.\]
+Its equivalence classes are called \emph{metric components}.
+Note that by definition each metric component is a \emph{genuine} metric space, meaning that distance between points may take only finite values.
+Consequently, a metric space can be thought of as a disjoint union of genuine metric spaces.
+
+\parbf{Induced pseudometrics.}
+Assume $X$ is a topological space and $Y$ is a metric space.
+Let $f\:X\to Y$ be a continuous map. 
+
+Let us define the \emph{length pseudometric} on $X$ induced by $f$;
+it is defined as
+\[\< x-y\>_f
+=
+\inf
+\set{\length(f\circ\gamma)_Y}{\gamma\ \text{a path in}\  X\ \text{connecting}\ x\ \text{and}\ y}.\]
+Denote by $\< X\>_f$ the corresponding metric space; that is 
+\[\< X\>_f=[(X,\<{*}-{*}\>_f)].\] 
+
+Similarly, define a \emph{connecting pseudometric} $|{*}-{*}|_f$ on $X$ in
+the following way
+\[|x-y|_f=\inf\{\diam f(K)\},\]
+where the greatest lower bound is taken over all connected sets $K\subset X$ which contain $x$ and $y$;
+if there is no such set we set $|x-y|_f=\infty$. 
+
+The associated metric space will be
+denoted as $|X|_f$;
+that is 
+\[| X|_f=[(X,|{*}-{*}|_f)].\]
+
+If $X$ is a metric space, the constructions above can be applied for the identity map $\id\:X\to X$.
+In this case the obtained spaces $\<X\>_\id$ and $|X|_\id$ will be dented by $\<X\>$ and $|X|$ correspondingly.
+The space $\<X\>$ is $X$ equipped with induced intrinsic metric.
+Note that $|X|$ is a locally connected and the tautological map $|X|\to X$ is short and length-preserving.
+
+For the projections 
+\[\bar \pi_f\:X\to |X|_f\quad\text{and}\quad \hat \pi_f\:X\to \<X\>_f\]
+we will also use shortcut notation 
+\[\bar x=\bar\pi_f(x) \quad\text{and}\quad  \hat x= \hat \pi_f(x).\]
+
+\begin{thm}{Lemma}\label{lem:picont}
+Assume $X$ is a locally connected topological space, $Y$ is a metric space and $f\:X\to Y$ be a continuous map. 
+Then $\bar\pi_f\:X\to|X|_f$ is continuous.
+\end{thm}
+
+\parit{Proof.}
+Fix $\bar x\in |X|_f$.
+Consider two $\eps$-balls $B(\bar x,\eps)_{|X|_f}$ and $B(f(x),\eps)_{Y}$.
+
+Note that the inverse image
+\[V=\pi_f^{-1}[B(\bar x,\eps)_{|X|_f}]\]
+is the connected component of $x$ in the inverse image 
+\[W=f^{-1}[B(f(x),\eps)_{Y}].\]
+Since $X$ is locally connected, the set $V$ is open.
+Hence the statement follows.\qeds
+
+\begin{wrapfigure}{r}{33 mm}
+\begin{tikzpicture}[scale=1.5]
+
+  \node[main node] (1) at (1,.5) {$|X|_f$};
+  \node[main node] (2) at (1,1.5){$\<X\>_f$};
+  \node[main node] (11) at (2,2){$Y$};
+  \node[main node] (12) at (0,2) {$X$};
+\draw[
+    >=latex,
+%   every node/.style={above,midway},% either
+    auto=right,                      % or
+    loop above/.style={out=75,in=105,loop},
+    every loop,
+    ]
+   (2) edge node[right]{$\iota_f$}(1)
+   (12) edge[bend left] node[above]{$f$}(11)
+   (12) edge node[below]{$ \hat \pi_f$}(2)
+   (2) edge node[below]{$ \hat f$}(11)
+   (12) edge[bend right] node[left below]{$\bar \pi_f$}(1)
+   (1) edge[bend right] node[below right]{$\bar f$}(11);
+\end{tikzpicture}
+\end{wrapfigure}
+
+Note that $\iota_f\: \hat x\to \bar x$ defines a map $\iota_f\: \<X\>_f\to |X|_f$ and by construction it is length-preserving.
+Since $\<X\>_f$ is a length space, the latter implies that $\iota_f$ short.
+In general $\iota_f$ might be not injective, an example is given in \cite[4.2]{petrunin-intrinisic}.
+Below (Proposition~\ref{prop:|D|}) you will see that for metric minimizing disc $f\:\DD\to Y$ the map $\iota_f$ is injective.
+
+The maps $\bar f\:|X|_f\to Y$ and $ \hat f\:\<X\>_f\to Y$ are uniquely defined by the identity
+\[f(x)=\bar f(\bar x)=  \hat f( \hat x)\] for any $x\in X$.
+By construction, the diagram commutes.
+
+\parbf{Monotone-light decomposition.}
+Let $f\:X\to Y$ be a map between topological spaces.
+Recall that 
+\begin{itemize}
+\item $f$ is called \emph{monotonic} if the inverse image of each point is connected,
+ \item $f$ is called \emph{light} if the inverse image of any point totally disconnected.
+\end{itemize}
+Since connected set is nonempty by definition, any monotonic map is onto.
+
+\begin{thm}{Lemma}\label{cor:fiberconnected}
+Assume $X$ is a compact topological space and $Y$ is a metric space.
+Let $f\:X\to Y$ be a continuous map.
+Then the map $\bar \pi_f$ is monotonic and $\bar f$ is light.
+In particular 
+\[f=\bar f\circ\bar\pi_f\]
+is a monotone-light decomposition. 
+\end{thm}
+
+\parit{Proof.}
+The lightness of $\bar f$ should be evident.
+
+Assume contrary $\bar\pi_f$ is not monotone;
+that is, for some $x\in X$ the equivalence class 
+\[K=\bar\pi_f^{-1}(\bar x)=\set{x'\in X}{|x-x'|_f=0}\]
+can be covered by disjoint open sets $U,V\subset X$ such that each intersection 
+$K\cap U$ and $K\cap V$ are nonempty.
+
+Note that $K$ is closed.
+
+We can assume that $x\in U$.
+Pick $x'\in K\cap V$.
+Then there is a sequence of connected sets $K_n\ni x,x'$ such that $\diam f(K_n)<\tfrac1n$.
+For each $n$ pick a point $k_n\in K_n\backslash (U\cup V)$ and let $k$ be its partial limit.
+It follows that $k\in K\backslash (U\cup V)$, a contradiction.
+\qeds
+
+\input{retracts.tex}
+\input{compact.tex}
+\input{graphs.tex}
+\input{key}
+\input{finite-whole}
+\input{main}
+
+
+\begin{thebibliography}{52}
+
+\bibitem{A} Alexandrov, A. D. ``Ruled  surfaces  in  metric  spaces,'' Vestnik Leningrad. Univ., 12:5-26, 1957 (Russian).
+
+\bibitem{bishop}
+Bishop, Richard L.
+``The intrinsic geometry of a Jordan domain.''
+Int. Electron. J. Geom. 1 (2008), no. 2, 33--39. 
+
+\bibitem{bressan} Bressan, A.
+``Hyperbolic systems of conservation laws.
+The one-dimensional Cauchy problem.'' 
+Oxford Lecture Series in Mathematics and its Applications, 20. 
+Oxford University Press, Oxford, 2000. 
+xii+250 pp.
+
+\bibitem{BBI}Burago, D.; Burago, Y.; Ivanov, S.
+A course in metric geometry.
+Graduate Studies in Mathematics, 33. American Mathematical Society, Providence, RI, 2001. xiv+415 pp.
+
+\bibitem{GS} Gromov, Mikhail, and Richard Schoen. "Harmonic maps into singular spaces and p-adic superrigidity for lattices in groups of rank one." Publications Mathématiques de l'IHÉS 76.1 (1992): 165-246.
+
+\bibitem{H} Hamilton, R. S. ``Harmonic Maps of Manifolds with Boundary,'' Lecture Notes in Mathematics, Springer, 1975, ISBN 978-3-540-37530-2.
+
+\bibitem{HKST} Heinonen, J.;  Koskela, P.;  Shanmugalinga, N.; Tyson, J. ``Sobolev spaces on metric measure spaces,''
+volume 27 of New Mathematical Monographs. Cambridge University Press, Cambridge, 2015.
+
+\bibitem{jost} Jost, J.
+Univalency of harmonic mappings between surfaces.
+J. Reine Angew. Math. 324 (1981), 141--153. 
+
+\bibitem{KF}
+\begin{otherlanguage}{russian}
+Колмогоров, А. Н.;
+Фомин, С. В.,
+\textit{Элементы теории функций и функционального анализа.}
+Издание седьмое, 2004.
+\end{otherlanguage}
+
+\bibitem{KS}Korevaar, N. J.; Schoen, R. M. ``Sobolev spaces and harmonic maps for metric space targets,'' Comm. Anal. Geom., 1(3-4):561-659, 1993.
+
+\bibitem{LSW} Lytchak, A.; Stadler, S.; Wenger, S.  ``On conformal changes of CAT(0) spaces'', in preparation.
+
+\bibitem{LW}Lytchak, A.; Wenger, S. ``Area minimizing discs in metric spaces,'' preprint arXiv:1502.06571, 2015.
+
+\bibitem{LW2}Lytchak, A.; Wenger, S. ``Energy and area minimizers in metric spaces,'' preprint  arXiv:1507.02670, 2015.
+
+\bibitem{LW3}Lytchak, A.; Wenger, S. ``Intrinsic structure of minimal discs in metric spaces ,'' preprint  arXiv:1602.06755, 2016.
+
+\bibitem{LW4}Lytchak, A.; Wenger, S. ``Regularity of harmonic discs in spaces with quadratic isoperimetric inequality  ,'' preprint  arXiv:1512.01060, 2016.
+
+\bibitem{moore}
+Moore, R. L.,
+``Concerning upper semi-continuous collections of continua,''
+Trans. Amer. Math. Soc. 27 no. 4 (1925) pp. 416--428.
+
+\bibitem{petrunin-metric-min} Petrunin, A.
+``Metric minimizing surfaces.''
+Electron. Res. Announc. Amer. Math. Soc. 5 (1999), 47--54 
+
+\bibitem{petrunin-intrinisic} Petrunin, A.
+``Intrinsic isometries in Euclidean space.''
+St. Petersburg Math. J. 22 (2011), no. 5, 803--812 
+
+\bibitem{petrunin-orthodox} Petrunin, A. 
+``Exercises in Orthodox Geometry''
+{\tt arXiv:0906.0290 [math.HO]}
+
+\bibitem{R}Reshetnyak, Yu. G. ``Sobolev classes of functions with values in a metric space,'' II, Sibirsk. Mat. Zh. 45 (2004), no. 4, 855-870. MR 2091651 (2005e:46055)
+
+\bibitem{Se} Serbinowski,  T. ``Boundary regularity of harmonic maps to nonpositively curved metric spaces,''
+Comm. Anal. Geom. , 2(1):139-153, 1994.
+
+\bibitem{S}Schoen, R. ``Analytic Aspects of The Harmonic Map Problem'' Chapter IX in  
+``Lectures on harmonic maps'' by Schoen, R.; Yau, S. T.,  
+Conference Proceedings and Lecture Notes in Geometry and Topology, II. International Press, Cambridge, MA, 1997. vi+394 pp. ISBN: 1-57146-002-0
+
+\bibitem{shefel-2D} 
+\begin{otherlanguage}{russian}
+Шефель, С. З.,
+\textit{О седловых поверхностях ограниченной спрямляемой кривой.}
+Доклады АН СССР, 162 (1965) №2, 
+294---296.
+\end{otherlanguage}
+%\v{S}efel', S.,
+%\textit{On saddle surfaces bounded by a rectifiable curve,} 
+%Dokl. Akad. Nauk SSSR 
+%162 
+%(1965), 
+%294--296.
+
+\bibitem{shefel-3D} 
+\begin{otherlanguage}{russian}
+Шефель, С. З., 
+\textit{О внутренней геометрии седловых поверхностей.}
+Сибирский математический журнал, 5 (1964), 1382---1396
+\end{otherlanguage}
+%\v{S}efel', S., 
+%\textit{On the intrinsic geometry of saddle surfaces,} Sibirsk. Mat. \v{Z}. 
+%5 
+%(1964), 
+%1382--1396
+
+\bibitem{schoen-yau} Schoen, Richard; Yau, Shing Tung
+On univalent harmonic maps between surfaces.
+Invent. Math. 44 (1978), no. 3, 265--278. 
+
+\bibitem{St} Stadler, S. ``Harmonic discs in CAT(0) spaces'', in preparation.
+
+%\bibitem{W1}Whyburn, G. T., ``On sequences and limiting sets,'' Fund. Math. vol. 25 (1935) pp. 408-426.
+
+%\bibitem{W2}Whyburn, G. T., ``Analytic topology,'' Amer. Math. Soc. Colloquium Publications, vol. 28, 1942.
+
+%\bibitem{Wi}Wilder, R. L., ``Topology of Manifolds,'' American Mathematical Society Colloquium Publications, vol. 32. American Mathematical
+%Society, New York, N. Y., 1949.
+\end{thebibliography}
+
+\end{document}

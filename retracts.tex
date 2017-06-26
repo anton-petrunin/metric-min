@@ -1,0 +1,64 @@
+\section{Disc retracts}\label{Metric minimizing discs}
+
+\begin{thm}{Proposition}\label{prop:|D|}
+Let $s\:\DD\to\ Y$ be a metric minimizing disc.
+Then $|\DD|_s$ is a disc retract with boundary curve $\delta_s=\bar\pi_s|_{\SS^1}$.
+Moreover the map $\iota_s\:\<\DD\>_s\to |\DD|_s$ is injective and defines an isometry
+$\<\DD\>_s\to \<|\DD|_s\>$;
+that is $\iota_s$ is an isometry from $\<\DD\>_s$ to $|\DD|_s$ equipped with induced intrinsic metric.
+\end{thm}
+
+Let $Y$ be a metric space and
+$s\:\DD\to Y$ be a continuous map.
+We say that $s$ has \label{page:no-bubble}\emph{no bubbles}
+if for any point $p\in Y$ every connected component of the complement $\DD\backslash s^{-1}\{p\}$ contains a point from $\partial \DD$.
+
+\begin{thm}{Lemma}\label{prop:point-complement}
+Let $Y$ be metric spaces and $s\:\DD\to Y$ be a metric minimizing map.
+Then $s$ has no bubbles.
+\end{thm}
+
+\parit{Proof.}
+Assume the contrary;
+that is, there is $y\in Y$ such that the complement $\DD\backslash s^{-1}(y)$ contains a connected component $\Omega$ such that $\partial \DD\cap \Omega=\emptyset$.
+
+Let us define the new map $s'\:\DD\to\ Y$ by setting $s'(z)=y$ for any $x\in \Omega$ and $s'(x)=s(x)$ for any $x\notin \Omega$.
+
+By construction $s'$ and $s$ agree on $\partial\DD$ and moreover $s\succcurlyeq s'$.
+
+Note that
+\[\<x-x'\>_{s}>0=\<x-x'\>_{s'}\]
+for a pair of distinct points $x,x'\in \Omega$, a contradiction.
+\qeds
+
+
+
+\begin{thm}{Lemma}\label{prop:disc-moore}
+Let $Y$ be a metric space and a map $f\:\DD\to Y$ has no bubbles.
+Then $|\DD|_f$ is homeomorphic to a disc retract with boundary curve $\bar\pi_f|_{\SS^1}$.
+%Moreover, if $f|_{\partial\DD}$ is an embedding, then $|\DD|_f$ is homeomorphic to a disc.
+\end{thm}
+
+The proposition above is a disc version of Moore's theorem \cite{moore} proved in \cite{LW3}.
+
+\parit{Proof.}
+Form Lemma \ref{lem:picont} we know that $\bar\pi_f$ is continuous and hence $|\DD|_f$
+is a compact metric space. 
+The fibers of $\bar\pi_f$ are connected by Corollary \ref{cor:fiberconnected}.
+Since $f$ is a no-bubble map, we see that $\bar\pi_f$ is cell-like. 
+Therefore, the claim follows from \cite[Corollary 7.12]{LW3}.
+%If the restriction $f|_{\partial\DD}$ is an embedding, then $|\DD|_f$ is homeomorphic to a disc by Schoenflies theorem.
+\qeds
+
+\parit{Proof of Proposition~\ref{prop:|D|}.}
+The first two statement follows from the Lemmas.
+
+Since $|\DD|_s$ is a disc retract, the mapping cylinder over the boundary curve of $|\DD|_s$ is homeomorphic to $\DD$.
+Denote by $\theta\:\DD\to |\DD|_s$ the projection.
+
+Note that $\<\DD\>_{\bar s\circ\theta}$ is isometric to $|\DD|_s$ equipped with the induced intrinsic metric.
+Recall that the map $\iota_s\:\<\DD\>_s\to|\DD|_s$ is short;
+in particular the induced map $\<\DD\>_s\to\<\DD\>_{\bar s\circ\theta}$ is also short.
+Therefore $s\succcurlyeq \bar s\circ\theta$;
+since $s$ is metric minimizing the statement follow.
+\qeds

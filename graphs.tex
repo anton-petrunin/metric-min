@@ -1,0 +1,93 @@
+\section{Metric minimizing graphs}\label{Metric minimizing graphs}
+
+Let $Y$ be a metric space, $\Gamma$ be a graph and $A$ is a subset of its vertexes.
+A \emph{metric minimizing graphs} are defined the same way as metric minimizing disc.
+
+Namely, given two map $f,f'\:\Gamma\to Y$, we write $f\succcurlyeq f'\rel A$ if $f$ and $f'$ agree on $A$ and there is a majorization $\mu\:\<\Gamma\>_f\to \<\Gamma\>_{f'}$
+such that $f(a)\zz=f'(\mu(a))$ for any $a\in A$.
+
+A map $f$ is called \emph{metric minimizing relative to $A$} if $f\succcurlyeq f'\rel A$ implies that the majorization $\mu$ is an isometry.
+
+\begin{thm}{Proposition}\label{prop:metric-min-graph-exist}
+Let $Y$ be a $\CAT[0]$ space, 
+$\Gamma$ a finite  graph and $A$ a subset of its vertexes.
+
+Given a map $f\:\Gamma\to Y$ there is a metric minimizing map $h\:\Gamma\to Y$
+such that $f\succcurlyeq h\rel A$.
+\end{thm}
+
+\parit{Proof.}
+Let $\mathcal{O}$ be a maximal well-ordered subset with respect to ``$\succcurlyeq\rel A$'' containing $f$. 
+We need to show that $\mathcal{O}$ has a minimum.
+
+Assume contrary.
+Note that
+$$
+\mathcal{F}
+=
+\set{Q\subset\mathcal{O}}{\mathcal{O}-Q\text{ has a lower bound in }\mathcal{O}}.
+$$
+is nonprincipal filter.
+Complete $\mathcal{F}$ to an ultrafilter $\omega$. 
+
+It remains to apply the \emph{ultralimit+projection construction}.
+Namely, denote by $Y^\omega$ the ultrapower of $Y$. 
+Then $Y^\omega$
+is a $\CAT[0]$ space which contains $Y$ as a convex subset. 
+The $\omega$-limit $s_\omega\:X\to Y^\omega$ is well defined, since
+$f$ is intrinsically continuous. 
+
+Denote $s'_\omega$ the composition of $s_\omega$ with the nearest point projection $Y^\omega\to Y$.
+The nearest point projection to a convex set in $\CAT[0]$ space is short.
+Therefore $s\succcurlyeq s'_\omega$ for any $s\in \mathcal{O}$.
+That is, $\mathcal{O}$ is not maximal, a contradiction.
+\qeds
+
+\begin{thm}{Proposition}\label{prop:metric-min-graph}
+Let $Y$ be a $\CAT[0]$ space, 
+$\Gamma$ a finite  graph and $A$ a subset of its vertexes.
+Assume the map $v\mapsto v'$ is metric minimizing map $\Gamma\to Y$ relative to $A$.
+Then
+\begin{enumerate}[(a)]
+\item each edge of $\Gamma$ maps to a geodesic
+\item for any vertex $v\notin A$ and any $x\ne f(v)$
+there is an edge  $[vw]$ in $\Gamma$ such that
+$\measuredangle[v'\,^{w'}_x]\ge \tfrac\pi2$.
+\item\label{sum>=2pi} for any vertex $v\notin A$ and any cyclic order $w_1,\dots,w_n$ of adjacent vertexes we have
+\[\measuredangle[v'\,^{w'_1}_{w'_2}]+\dots+\measuredangle[v'\,^{w'_{n-1}}_{w'_n}]+\measuredangle[v'\,^{w'_n}_{w'_1}]\ge 2\cdot\pi.\]
+\end{enumerate}
+\end{thm}
+
+\begin{wrapfigure}{r}{22 mm}
+\begin{lpic}[t(-8 mm),b(-0 mm),r(0 mm),l(0 mm)]{pics/not-sufficient(1)}
+%\lbl[lb]{12.5,11;$W_0$}}
+\end{lpic}
+\end{wrapfigure}
+
+\parit{Remark.}
+As one may see from the diagram, the conditions in the proposition do not guarantee that the map $f$ is metric minimizing,
+the solid points form the set $A$.
+
+\parit{Proof.}
+The first condition is evident.
+
+Assume the second condition does not hold at a vertex $v\zz\notin A$;
+that is, there is a point $x\in Y$ such that
+$\measuredangle[v'\,^{w'}_x]< \tfrac\pi2$
+for any adjacent vertex $w$.
+In this case moving $v'$ toward $x$ along $[v',x]$ decrease the lengths of all edges adjacent to $v$, a contradiction.
+
+Assume the third condition does not hold, that is, 
+the sum of the angles around a fixed interior vertex $v'$ is less than $2\cdot\pi$.
+
+Recall that the space of directions $\Sigma_{v'}$ is a $\CAT[1]$ space.
+Denote by $\xi_1,\dots,\xi_n$ the directions of $[v'w'_1],\dots, [v',w'_n]$ in $\Sigma_{v'}$.
+By the assumption, we have
+\[|\xi_1-\xi_2|_{\Sigma_{v'}}+\dots+|\xi_n-\xi_1|_{\Sigma_{v'}}<2\cdot\pi.\]
+By Reshetnyak's majorization theorem,
+the closed broken line $[\xi_1,\dots,\xi_k]$ is majorized by a convex spherical polygon $P$.
+
+Note that $P$ lies in an open hemisphere with the pole  at some point in $P$.
+Choose $x\in Y$ so that the direction form $v'$ to $x$ coincides with the image of the pole in $\Sigma_{f(v)}$.
+This choice of $x$ contradicts the condition in Proposition~\ref{prop:metric-min-graph}.
+\qeds
