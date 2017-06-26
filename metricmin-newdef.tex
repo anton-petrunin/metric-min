@@ -79,7 +79,7 @@ such that
 \item $|x-y|=|y-x|$, for any $x,y\in X$;
 \item $|x-y|+|y-z|\ge|x-z|$ for any  $x,y,z\in X$.
 \end{itemize}
-If in addition $|x-y|=0$ implies $x=y$ then the pseudometric $|{*}-{*}|$ is called a \emph{metric space}; some authors prefer to call it \emph{$\infty$-metric space} to emphasize that the distance between points might be infinite.
+If in addition $|x-y|=0$ implies $x=y$ then the pseudometric $|{*}-{*}|$ is called a \emph{metric}; some authors prefer to call it \emph{$\infty$-metric} to emphasize that the distance between points might be infinite.
 The value $|x-y|$ will also be called \emph{distance} form $x$ to $y$.
 
 For any pseudometric on a set there is an equivalence relation ``$\sim$'' such that 
@@ -96,12 +96,11 @@ Its equivalence classes are called \emph{metric components}.
 Note that by definition each metric component is a \emph{genuine} metric space, meaning that distance between points may take only finite values.
 Consequently, a metric space can be thought of as a disjoint union of genuine metric spaces.
 
-\parbf{Induced pseudometrics.}
+\parbf{Pseudometrics induced by maps.}
 Assume $X$ is a topological space and $Y$ is a metric space.
 Let $f\:X\to Y$ be a continuous map. 
 
-Let us define the \emph{length pseudometric} on $X$ induced by $f$;
-it is defined as
+Let us define the \emph{length pseudometric} on $X$ induced by $f$ as
 \[\< x-y\>_f
 =
 \inf
@@ -120,11 +119,6 @@ denoted as $|X|_f$;
 that is 
 \[| X|_f=[(X,|{*}-{*}|_f)].\]
 
-If $X$ is a metric space, the constructions above can be applied for the identity map $\id\:X\to X$.
-In this case the obtained spaces $\<X\>_\id$ and $|X|_\id$ will be dented by $\<X\>$ and $|X|$ correspondingly.
-The space $\<X\>$ is $X$ equipped with induced intrinsic metric.
-Note that $|X|$ is a locally connected and the tautological map $|X|\to X$ is short and length-preserving.
-
 For the projections 
 \[\bar \pi_f\:X\to |X|_f\quad\text{and}\quad \hat \pi_f\:X\to \<X\>_f\]
 we will also use shortcut notation 
@@ -133,6 +127,7 @@ we will also use shortcut notation
 \begin{thm}{Lemma}\label{lem:picont}
 Assume $X$ is a locally connected topological space, $Y$ is a metric space and $f\:X\to Y$ be a continuous map. 
 Then $\bar\pi_f\:X\to|X|_f$ is continuous.
+In particular, if in addition $X$ is compact then so is $|X|_f$.
 \end{thm}
 
 \parit{Proof.}
@@ -145,6 +140,8 @@ is the connected component of $x$ in the inverse image
 \[W=f^{-1}[B(f(x),\eps)_{Y}].\]
 Since $X$ is locally connected, the set $V$ is open.
 Hence the statement follows.\qeds
+
+
 
 \begin{wrapfigure}{r}{33 mm}
 \begin{tikzpicture}[scale=1.5]
@@ -160,7 +157,7 @@ Hence the statement follows.\qeds
     loop above/.style={out=75,in=105,loop},
     every loop,
     ]
-   (2) edge node[right]{$\iota_f$}(1)
+   (2) edge node[right]{$\tau_f$}(1)
    (12) edge[bend left] node[above]{$f$}(11)
    (12) edge node[below]{$ \hat \pi_f$}(2)
    (2) edge node[below]{$ \hat f$}(11)
@@ -169,14 +166,62 @@ Hence the statement follows.\qeds
 \end{tikzpicture}
 \end{wrapfigure}
 
-Note that $\iota_f\: \hat x\to \bar x$ defines a map $\iota_f\: \<X\>_f\to |X|_f$ and by construction it is length-preserving.
-Since $\<X\>_f$ is a length space, the latter implies that $\iota_f$ short.
-In general $\iota_f$ might be not injective, an example is given in \cite[4.2]{petrunin-intrinisic}.
-Below (Proposition~\ref{prop:|D|}) you will see that for metric minimizing disc $f\:\DD\to Y$ the map $\iota_f$ is injective.
+Note that $\tau_f\: \hat x\to \bar x$ defines a map $\tau_f\: \<X\>_f\to |X|_f$ and by construction it is length-preserving.
+Since $\<X\>_f$ is a length space, the latter implies that $\tau_f$ short.
+The map $\tau_f$ might not induce an isometry
+\[\<X\>_f\to\<|X|_f\>_{\bar f}.\]
+Moreover, in general $\tau_f$ might be not injective, an example is given in \cite[4.2]{petrunin-intrinisic},
+but this is the case for metric minimizing discs $f\:\DD\to Y$; see
+Proposition~\ref{prop:|D|}.
 
 The maps $\bar f\:|X|_f\to Y$ and $ \hat f\:\<X\>_f\to Y$ are uniquely defined by the identity
 \[f(x)=\bar f(\bar x)=  \hat f( \hat x)\] for any $x\in X$.
 By construction, the diagram commutes.
+
+\parbf{Metrics induced by metrics.}
+%???formally this par is irrelevant, but I think to include it here to provide a better picture 
+If $X$ is a metric space, these two constructions above can be applied for the identity map $\id\:X\to X$.
+In this case the obtained spaces $\<X\>_\id$ and $|X|_\id$ will be dented by $\<X\>$ and $|X|$ correspondingly.
+The space $\<X\>$ is $X$ equipped with induced intrinsic metric.
+The spaces $\<X\>$, $|X|$ and $X$ have the same underlying space;
+in other words they can be considered as one set with different metrics and it defines tautological maps between them.
+Both tautological map 
+\[\<X\>\to |X|\to X\]
+are short and length-preserving.
+
+In particular the tautological map $\<|X|_f\>_{\bar f}\zz\to \<|X|_f\>$ is an isometry;
+that is, for any continuous map $f\:X\to Y$ the induced length metric on $|X|_f$ coincides with the length metric induced by $\bar f\:|X|\to Y$.
+
+
+Recall that geodesic in a metric space is a curve which lenght conisides with the distance between its endpoints.
+A metric space is called \emph{geodesic} if any two points on finite distance can be joined by a geodesic.
+
+\begin{thm}{Lemma}\label{lem:geospace}
+Let $X$ be a compact metric space. 
+Then $\<X\>$ is a complete geodesic space.
+\end{thm}
+
+The second statement is a classical (see for example \cite[II-\S8 Thm. 3]{KF}), 
+we were not be able to find the first one in the literature.
+
+\parit{Proof.}
+Assume contrary $\<X\>_f$ is not complete.
+Fix a sequence $(x_n)$ in $\<X\>_f$ converging in itself, but not converging in $\<X\>_f$.
+After passing to a subsequence, we can assume that the points of the sequence appear on a rectifiable curve $\hat\gamma\:[0,1)\to\<X\>$ in the same order.
+
+The corresponding curve $\gamma\:[0,1)\to X$ has the same length.
+Since $X$ is compact we can extend it to a path $\gamma_+\:[0,1]\to X$.
+The curve 
+\[\hat\gamma_+=\hat\pi\circ\gamma_+\:[0,1]\to\<X\>\]
+has the same length.
+Therefore $\hat\gamma_+(1)$ is the limit of $(x_n)$, a contradiction.
+
+Now let us show that $\<X\>$ is geodesic.
+Assume $\gamma_n$ is a sequence of constant speed paths from $x$ to $y$ in $X$
+such that $\length\hat\gamma_n\to \<x-y\>$ as $n\to\infty$.
+Since $X$ is compact, we can pass to its partial limit $\gamma$ of  $\gamma_n$.
+The corresponding curve $\hat\gamma=\hat \pi\circ\gamma$ is the needed geodesic from $\hat x$ to $\hat y$ in $\<X\>$.
+\qeds
 
 \parbf{Monotone-light decomposition.}
 Let $f\:X\to Y$ be a map between topological spaces.
