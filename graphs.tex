@@ -1,9 +1,9 @@
 \section{Metric minimizing graphs}\label{Metric minimizing graphs}
 
-Let $Y$ be a metric space, $\Gamma$ be a graph and $A$ is a subset of its vertexes.
-A \emph{metric minimizing graphs} are defined the same way as metric minimizing disc.
+\emph{Metric minimizing graphs} are defined the same way as metric minimizing disc.
 
-Namely, given two map $f,f'\:\Gamma\to Y$, we write $f\succcurlyeq f'\rel A$ if $f$ and $f'$ agree on $A$ and there is a majorization $\mu\:\<\Gamma\>_f\to \<\Gamma\>_{f'}$
+Namely, let $Y$ be a metric space, $\Gamma$ be a graph and $A$ is a subset of its vertexes.
+Given two map $f,f'\:\Gamma\to Y$, we write $f\succcurlyeq f'\rel A$ if $f$ and $f'$ agree on $A$ and there is a majorization $\mu\:\<\Gamma\>_f\to \<\Gamma\>_{f'}$
 such that $f(a)\zz=f'(\mu(a))$ for any $a\in A$.
 
 A map $f$ is called \emph{metric minimizing relative to $A$} if $f\succcurlyeq f'\rel A$ implies that the majorization $\mu$ is an isometry.
@@ -31,15 +31,15 @@ is nonprincipal filter.
 Complete $\mathcal{F}$ to an ultrafilter $\omega$. 
 
 It remains to apply the \emph{ultralimit+projection construction}.
+
 Namely, denote by $Y^\omega$ the ultrapower of $Y$. 
 Then $Y^\omega$
 is a $\CAT[0]$ space which contains $Y$ as a convex subset. 
 The $\omega$-limit $s_\omega\:X\to Y^\omega$ is well defined, since
 $f$ is intrinsically continuous. 
-
-Denote $s'_\omega$ the composition of $s_\omega$ with the nearest point projection $Y^\omega\to Y$.
+Denote $s'$ the composition of $s_\omega$ with the nearest point projection $Y^\omega\to Y$.
 The nearest point projection to a convex set in $\CAT[0]$ space is short.
-Therefore $s\succcurlyeq s'_\omega$ for any $s\in \mathcal{O}$.
+Therefore $s\succcurlyeq s'$ for any $s\in \mathcal{O}$.
 That is, $\mathcal{O}$ is not maximal, a contradiction.
 \qeds
 
@@ -49,10 +49,10 @@ $\Gamma$ a finite  graph and $A$ a subset of its vertexes.
 Assume the map $v\mapsto v'$ is metric minimizing map $\Gamma\to Y$ relative to $A$.
 Then
 \begin{enumerate}[(a)]
-\item each edge of $\Gamma$ maps to a geodesic
+\item each edge of $\Gamma$ maps to a geodesic;
 \item for any vertex $v\notin A$ and any $x\ne f(v)$
 there is an edge  $[vw]$ in $\Gamma$ such that
-$\measuredangle[v'\,^{w'}_x]\ge \tfrac\pi2$.
+$\measuredangle[v'\,^{w'}_x]\ge \tfrac\pi2$;
 \item\label{sum>=2pi} for any vertex $v\notin A$ and any cyclic order $w_1,\dots,w_n$ of adjacent vertexes we have
 \[\measuredangle[v'\,^{w'_1}_{w'_2}]+\dots+\measuredangle[v'\,^{w'_{n-1}}_{w'_n}]+\measuredangle[v'\,^{w'_n}_{w'_1}]\ge 2\cdot\pi.\]
 \end{enumerate}

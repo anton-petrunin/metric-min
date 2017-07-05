@@ -24,11 +24,13 @@ that is, there is $y\in Y$ such that the complement $\DD\backslash s^{-1}(y)$ co
 
 Let us define the new map $s'\:\DD\to\ Y$ by setting $s'(z)=y$ for any $x\in \Omega$ and $s'(x)=s(x)$ for any $x\notin \Omega$.
 
-By construction $s'$ and $s$ agree on $\partial\DD$ and moreover $s\succcurlyeq s'$.
+By construction $s'$ and $s$ agree on $\partial\DD$ and moreover $s\succcurlyeq s'$
+with the majorization $\mu\:\hat\pi_s(x)\zz\mapsto \hat\pi_{s'}(x)$.
 
 Note that
 \[\<x-x'\>_{s}>0=\<x-x'\>_{s'}\]
-for a pair of distinct points $x,x'\in \Omega$, a contradiction.
+for a pair of distinct points $x,x'\in \Omega$.
+In particular, $\mu$ is not an isometry, a contradiction.
 \qeds
 
 
@@ -39,14 +41,22 @@ Then $|\DD|_f$ is homeomorphic to a disc retract with boundary curve $\bar\pi_f|
 %Moreover, if $f|_{\partial\DD}$ is an embedding, then $|\DD|_f$ is homeomorphic to a disc.
 \end{thm}
 
-The proposition above is a disc version of Moore's theorem \cite{moore} proved in \cite{LW3}.
+The lemma above is a disc version of Moore's quotient theorem \cite{moore}
+which states that if for a for a continuous map from the sphere $\SS^2$ to a Hausdorff space $X$
+the inverse image of any point is connected and its complement is connected then $f$ can be approximated by a homemorphism; in particular $X$ is homeomorphic to $\SS^2$.
 
 \parit{Proof.}
 Form Lemma \ref{lem:picont} we know that $\bar\pi_f$ is continuous and hence $|\DD|_f$
 is a compact metric space. 
-The fibers of $\bar\pi_f$ are connected by Corollary \ref{cor:fiberconnected}.
-Since $f$ is a no-bubble map, we see that $\bar\pi_f$ is cell-like. 
-Therefore, the claim follows from \cite[Corollary 7.12]{LW3}.
+
+
+The mapping cone over $\DD$ along it boundary is homeomorphic to the sphere $\SS^2$;
+denote by $\Sigma$ the mapping cone over $|\DD|_f$ with respect to $\bar\pi_s|_{\SS^1}$.
+Let us extend the map $\bar\pi_f$ to a map between the mapping cones $\SS^2\to\Sigma$.
+Note that this map satisfies Moore's quotient theorem, hence the statement follows.
+%The fibers of $\bar\pi_f$ are connected by Corollary \ref{cor:fiberconnected}.
+%Since $f$ is a no-bubble map, we see that $\bar\pi_f$ is cell-like. 
+%Therefore, the claim follows from \cite[Corollary 7.12]{LW3}.
 %If the restriction $f|_{\partial\DD}$ is an embedding, then $|\DD|_f$ is homeomorphic to a disc by Schoenflies theorem.
 \qeds
 
@@ -57,8 +67,7 @@ Since $|\DD|_s$ is a disc retract, the mapping cylinder over the boundary curve 
 Denote by $\theta\:\DD\to |\DD|_s$ the projection.
 
 Note that $\<\DD\>_{\bar s\circ\theta}$ is isometric to $|\DD|_s$ equipped with the induced intrinsic metric.
-Recall that the map $\tau_s\:\<\DD\>_s\to|\DD|_s$ is short;
-in particular the induced map $\<\DD\>_s\to\<\DD\>_{\bar s\circ\theta}$ is also short.
-Therefore $s\succcurlyeq \bar s\circ\theta$;
-since $s$ is metric minimizing the statement follow.
+Recall that the map $\tau_s\:\<\DD\>_s\to|\DD|_s$ is short and the induced map $\mu\:\<\DD\>_s\to\<\DD\>_{\bar s\circ\theta}$ is a majorization.
+Since $s$ is metric minimizing, $\mu$ is an isometry.
+Hence the statement follows.
 \qeds
