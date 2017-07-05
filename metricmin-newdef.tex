@@ -68,6 +68,14 @@ Then $\<\DD\>_s$ is a $\CAT[0]$ disc retract with boundary curve $\delta_s$.
 Note that we did not make any assumption on the continuous map $s$;
 in particular, before hand, the space $\<\DD\>_s$ might have wild topology.
 
+If the condition that the boundary curve is rectifiable is removed, the space $\<\DD\>_s$ might have points on infinite distance from each other, but as our proof shows all the triangles with finite sides in $\<\DD\>_s$ are thin; in particular each metric component of $\<\DD\>_s$ is a $\CAT[0]$ space.
+In fact one can consider $\<\DD\>_s$ as a $\CAT[0]$ space if infinte distances beteen points are legal.
+
+It is evident that any metric minimizing disc $s$ the Euclidean space is saddle; 
+that is for for any hyperplane $\Pi$ each of the connected components of $\DD\backslash s^{-1}\Pi$ meets the boundary.
+In section \ref{sec:smooth} we prove partial converse in 3-dimensional case, see also final remarks.
+
+
 \section{Definitions}
 
 \parbf{Metrics and pseudometrics.}
@@ -266,6 +274,123 @@ It follows that $k\in K\backslash (U\cup V)$, a contradiction.
 \input{key}
 \input{finite-whole}
 \input{main}
+
+\section{Smooth surfaces}\label{sec:smooth}
+
+In this section we show that any strictly saddle surface is locally metric minimizing.
+
+\begin{wrapfigure}{r}{20 mm}
+\begin{lpic}[t(-5 mm),b(-0 mm),r(0 mm),l(0 mm)]{pics/not-sufficient-surface(1)}
+%\lbl[lb]{12.5,11;$W_0$}}
+\end{lpic}
+\end{wrapfigure}
+
+In general smooth saddle surfaces may not be globally metric minimizing.
+An example homeomorphic to a pair of pants 
+can be found among surfaces surrounding the triangle with three segments as shown on the picture.
+We could not find examples like that among strictly saddle surfaces or discs, but it is very likely that such examples do exist.
+
+\begin{thm}{Proposition}\label{prop:smooth}
+Any smooth strictly saddle surface in $\RR^3$ is locally metric minimizing.
+\end{thm}
+
+Let $s\:\DD\to\RR^3$ be a smooth map.
+
+Fix an array of vector fields $\bm{v}=(v_1,\dots,v_k)$ on $\DD$. 
+Consider the energy functional 
+\[E_{\bm{v}}s
+\df
+\sum_i\int\limits_\DD |v_is|^2\cdot d_x\area,\]
+where $vs$ denotes the derivative of $s$ in the direction of the field $v$.
+Set 
+\[\Delta_{\bm{v}}s=\sum_iv_i(v_is).\]
+It is convenient to think of the operator $s\mapsto \Delta_{\bm{v}}s$
+as an analog of the Laplacian.
+
+Note that 
+\begin{enumerate}[(i)]
+\item $E_{\bm{v}}$ is well defined for any Lipschitz map $s$.
+\item $E_{\bm{v}}$ is convex, that is
+\[E_{\bm{v}}[t\cdot s_1+(1-t)\cdot s_2]
+\le 
+t\cdot E_{\bm{v}} s_1+(1-t)\cdot E_{\bm{v}} s_2.\]
+\item If $s$ is a smooth $E_{\bm{v}}$-minimizing map in the class of Lipschitz maps with given boundary data then $s$ is metric minimizing.
+\item A smooth map $s\:\DD\to\RR^3$ is a $E_{\bm{v}}$-minimizing map among the class of Lipschitz maps with given boundary if and only if
+\[\Delta_{\bm{v}}s=0.\]
+
+\end{enumerate}
+
+The discussion above reduces the Proposition above to the following.
+
+\begin{thm}{Claim}
+Assume $s\:\DD\to \RR^3$ is a smooth strictly saddle surface. 
+Then for any interior point $p\in\DD$ there is an array of 4 vector fields $\bm{v}=(v_1,v_2,v_3,v_4)$ such that the equation \[\Delta_{\bm{v}}s=0\eqlbl{eq:laplasian}\]
+holds in an open neighborhood of $p$.
+\end{thm}
+
+\parit{Proof.}
+Denote 
+by $\kappa_1,\kappa_2$ the principal curvatures,
+and by $e_1,e_2$ the corresponding unit principal vectors. 
+Further, denote by by $a_1,a_2$ a pair of asymptotic vectors; we can assume that $a_1,a_2$ form coordinate vector fields in a neighborhood of $x$.
+
+
+Set $v_1=\tfrac 1{\sqrt{|\kappa_1|}}\cdot e_1$ and $v_2=\tfrac 1{\sqrt{|\kappa_2|}}\cdot e_2$. 
+It remains to show that one can choose smooth functions  $\lambda_1$ and $\lambda_2$ 
+so that \ref{eq:laplasian}
+holds in a neighborhood of $x$ for $v_3=\lambda_1\cdot a_1$ and $v_4=\lambda_1\cdot a_1$.
+
+Note that the sum $v_1(v_1s)+v_2(v_2s)$ has vanishing normal part.
+That is \[v_1(v_1s)+v_2(v_2s)\] is a tangent vector to the surface.
+
+Since the $a_i$ are asymptotic,
+the vectors $a_1(a_1s)$ and $a_2(a_2s)$ have vanishing normal part.
+Therefore, for any choice of $\lambda_i$,
+the following two vectors are also tangent
+\begin{align*}
+v_3(v_3s)&=\lambda_1^2\cdot a_1(a_1s)+\tfrac12\cdot a_1\lambda_1^2\cdot a_1s
+\\
+v_4(v_4s)&=\lambda_2^2\cdot a_2(a_2s)+\tfrac12\cdot a_2\lambda_2^2\cdot a_2s.
+\end{align*}
+
+Set $w=(\lambda_1^2,\lambda_2^2)$.
+Note that the system \ref{eq:laplasian} can be rewritten as 
+\[\left(\begin{smallmatrix}
+   1&0\\0&0
+  \end{smallmatrix}\right)
+w_x
++
+\left(\begin{smallmatrix}
+   0&0\\0&1
+  \end{smallmatrix}\right)
+w_y=h(x,y,w),\]
+where $h\:\RR^3\to\RR^2$ is a smooth function.
+
+Change coordinate system, by setting $x=t+z$ and $y=t-z$.
+Then the system takes the form 
+\[w_t+\left(\begin{smallmatrix}
+   1&0\\0&-1
+  \end{smallmatrix}\right)
+w_z=h(t+z,t-z,w),\]
+which is a semilinear hyperbolic system.
+According to \cite[Theorem 3.6]{bressan}, it can be solved locally for smooth initial data at $t=0$.
+
+It remains to choose $v_3$ and $v_4$ for solution so that $\lambda_1, \lambda_2>0$ in a small neighborhood of $p$.
+\qeds
+
+
+\section{Final remarks}\label{Final remarks}
+
+We do not see any way to show that a given surface is metric minimizing except by constructing an appropriate energy for which it is energy minimizing, as we did in Section~\ref{sec:smooth}.
+Locally, the energy functional as in Section~\ref{sec:smooth} can be described by 3 functions defined on the disc.
+These three functions are subject to certain differential equations and 
+straightforward calculations show that on generic smooth saddle surfaces in $\RR^4$ 
+it has no solutions even locally.
+
+By that reason we expect that generic smooth saddle surfaces in $\RR^4$ are locally not metric minimizing. 
+That is, arbitrary small neighborhoods of any point admit deformations which shrink 
+the intrinsic metric and keep the boundary fixed.
+On the other hand we do not have a single examples of saddle surface for which this condition would hold at single point.
 
 
 \begin{thebibliography}{52}
