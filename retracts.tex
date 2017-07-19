@@ -14,36 +14,37 @@ We say that $s$ has \label{page:no-bubble}\emph{no bubbles}
 if for any point $p\in Y$ every connected component of the complement $\DD\backslash s^{-1}\{p\}$ contains a point from $\partial \DD$.
 
 \begin{thm}{Lemma}\label{prop:point-complement}
-Let $Y$ be metric spaces and $s\:\DD\to Y$ be a metric minimizing map.
+Let $Y$ be a metric space and $s\:\DD\to Y$ be a metric minimizing disc.
 Then $s$ has no bubbles.
 \end{thm}
 
 \parit{Proof.}
 Assume the contrary;
-that is, there is $y\in Y$ such that the complement $\DD\backslash s^{-1}(y)$ contains a connected component $\Omega$ such that $\partial \DD\cap \Omega=\emptyset$.
+that is, there is $y\in Y$ such that the complement $\DD\backslash s^{-1}(y)$ contains a connected component $\Omega$ 
+such that $\partial \DD\cap \Omega=\emptyset$.
 
-Let us define the new map $s'\:\DD\to\ Y$ by setting $s'(z)=y$ for any $x\in \Omega$ and $s'(x)=s(x)$ for any $x\notin \Omega$.
+Let us define a new map $s'\:\DD\to\ Y$ by setting $s'(z)=y$ for any $x\in \Omega$ and $s'(x)=s(x)$ for any $x\notin \Omega$.
 
-By construction $s'$ and $s$ agree on $\partial\DD$ and moreover $s\succcurlyeq s'$
-with the majorization $\mu\:\hat\pi_s(x)\zz\mapsto \hat\pi_{s'}(x)$.
+By construction, $s'$ and $s$ agree on $\partial\DD$. Moreover, $s\succcurlyeq s'$
+because of the majorization $\mu\:\hat\pi_s(x)\zz\mapsto \hat\pi_{s'}(x)$.
 
 Note that
 \[\<x-x'\>_{s}>0=\<x-x'\>_{s'}\]
 for a pair of distinct points $x,x'\in \Omega$.
-In particular, $\mu$ is not an isometry, a contradiction.
+In particular, $\mu$ is not an isometry. A contradiction.
 \qeds
 
 
 
 \begin{thm}{Lemma}\label{prop:disc-moore}
-Let $Y$ be a metric space and a map $f\:\DD\to Y$ has no bubbles.
+Let $Y$ be a metric space and assume that a map $f\:\DD\to Y$ has no bubbles.
 Then $|\DD|_f$ is homeomorphic to a disc retract with boundary curve $\bar\pi_f|_{\SS^1}$.
 %Moreover, if $f|_{\partial\DD}$ is an embedding, then $|\DD|_f$ is homeomorphic to a disc.
 \end{thm}
 
 This lemma is nearly identical to \cite[Corollary 7.12]{LW3}; it could be considered a a disc version of Moore's quotient theorem \cite{moore}
-which states that if for a for a continuous map from the sphere $\SS^2$ to a Hausdorff space $X$
-the inverse image of any point is connected and its complement is connected then $f$ can be approximated by a homemorphism; in particular $X$ is homeomorphic to $\SS^2$.
+which states that if a continuous map $f$ from the sphere $\SS^2$ to a Hausdorff space $X$
+has acyclic fibers, then $f$ can be approximated by a homemorphism; in particular $X$ is homeomorphic to $\SS^2$.
 
 \parit{Proof.}
 Form Lemma \ref{lem:picont} we know that $\bar\pi_f$ is continuous and hence $|\DD|_f$
@@ -61,7 +62,7 @@ Note that this map satisfies Moore's quotient theorem, hence the statement follo
 \qeds
 
 \parit{Proof of Proposition~\ref{prop:|D|}.}
-The first two statement follows from the Lemmas.
+The first two statements follow from Lemma \ref{prop:point-complement} and Lemma \ref{prop:disc-moore}.
 
 Since $|\DD|_s$ is a disc retract, the mapping cylinder over the boundary curve of $|\DD|_s$ is homeomorphic to $\DD$.
 Denote by $\theta\:\DD\to |\DD|_s$ the projection.
