@@ -24,28 +24,29 @@ We show that metric minimizing surfaces in $\CAT[0]$ spaces are locally $\CAT[0]
 
 \section{Introduction}
 
-Let us denote by $\DD$ the closed unit disc in the plane,
-its boundary $\partial \DD=\SS^1$ is a unit circle.
+Let us denote by $\DD$ the closed unit disc in the plane.
+Its boundary $\partial \DD=\SS^1$ is the unit circle.
 Let $Y$ be a metric space and $\gamma\:\SS^1\to Y$ is a closed rectifiable curve.
 
-Assume that a continuous map $s\:\DD\to Y$ \emph{spans} $\gamma$;
-that is, the restriction of $s$ to $\SS^1$ coincides with $\gamma$.
+We say that a continuous map $s\:\DD\to Y$ \emph{spans} $\gamma$,
+if the restriction of $s$ to $\SS^1$ coincides with $\gamma$.
 Consider the induced length-pseudometric on $\DD$ defined as 
-\[\<x-y\>_s=\inf_\alpha\{\length\alpha\},\]
-where the exact upper bound is taken for all paths $\alpha$ from $x$ to $y$ in $\DD$;
-the distance $\<x-y\>_s$ might take infinite value.
-The corresponding metric space will be denoted by $\<\DD\>_s$;
-see the next section for the precise definition.
+\[\<x-y\>_s=\inf_\alpha\{\length s\circ\alpha\},\]
+where the greatest lower bound is taken over all paths $\alpha$ from $x$ to $y$ in $\DD$.
+The distance $\<x-y\>_s$ might take infinite values.
+We denote by $\<\DD\>_s$ the corresponding metric space;
+see the next section for a precise definition.
 
 The space $\<\DD\>_s$ comes with the projection $ \hat\pi_s\:\DD\to\<\DD\>_s$;
-the restriction of $ \hat\pi_s$ to $\SS^1=\partial\DD$ will be denoted by $\delta_s$.
+its restriction to $\SS^1=\partial\DD$ will be denoted by $\delta_s$.
 
-Assume $s$ and $s'$ are two maps spanning the same curve.
+Now assume that $s$ and $s'$ are two maps spanning the same curve.
 We write $s\succcurlyeq s'$ if there is a \emph{majorization}
 $\mu\:\<\DD\>_s\to \<\DD\>_{s'}$;
-that is, $\mu$ is a short map such that $\delta_{s'}=\mu\circ\delta_s$.
+meaning that $\mu$ is a short map with $\delta_{s'}=\mu\circ\delta_s$.
 
-The map $s\:\DD\to Y$ is called \emph{metric minimizing disc} if $s\succcurlyeq s'$ implies that the corresponding majorization $\mu$ is an isometry.
+A map $s\:\DD\to Y$ will be called \emph{metric minimizing disc} if $s\succcurlyeq s'$ 
+implies that the corresponding majorization $\mu$ is an isometry.
 
 \begin{wrapfigure}{r}{28 mm}
 \begin{lpic}[t(-2 mm),b(-0 mm),r(0 mm),l(0 mm)]{pics/two-bry-curves(1)}
@@ -53,27 +54,30 @@ The map $s\:\DD\to Y$ is called \emph{metric minimizing disc} if $s\succcurlyeq 
 \end{lpic}
 \end{wrapfigure}
 
-A topological space $W$ with a choice of closed curve $\delta\:\SS^1\zz\to W$ is called \emph{disc retract} it the mapping cylinder of~$\delta$ 
+A topological space $W$ together with a choice of a closed curve $\delta\:\SS^1\zz\to W$ is called \emph{disc retract} 
+it the mapping cylinder of~$\delta$ 
 \[W_\delta=W\bigsqcup_{\delta(u)\sim(u,0)}\SS^1\times[0,1]\]
 is homeomorphic to the disc $\DD$.
 The curve $\delta$ will be called \emph{boundary curve} of the disc retract $W$.
 Note that a disc retract (for example the one shown on the picture) may have essentially different boundary curves,
-that is one is not a reparametrizationcan of the other.
+in the sense that one is not a reparametrization of the other.
 
 \begin{thm}{Main theorem}
 Assume $Y$ is a $\CAT[0]$ space and $s\:\DD\to Y$ is a metric minimizing map.
 Then $\<\DD\>_s$ is a $\CAT[0]$ disc retract with boundary curve $\delta_s$.
 \end{thm}
 
-Note that we did not make any assumption on the continuous map $s$;
+Note that we did not make any assumptions on the continuous map $s$;
 in particular, before hand, the space $\<\DD\>_s$ might have wild topology.
 
-If the condition that the boundary curve is rectifiable is removed, the space $\<\DD\>_s$ might have points on infinite distance from each other, but as our proof shows all the triangles with finite sides in $\<\DD\>_s$ are thin; in particular each metric component of $\<\DD\>_s$ is a $\CAT[0]$ space.
-In fact one can consider $\<\DD\>_s$ as a $\CAT[0]$ space if infinte distances beteen points are legal.
+If we remove the condition that the boundary curve has to be rectifiable, then the space $\<\DD\>_s$ might have points of 
+infinite distance from each other. However, our proof shows that all triangles with finite sides in $\<\DD\>_s$ are still thin; 
+in particular each metric component of $\<\DD\>_s$ is a $\CAT[0]$ space.
+In fact one can consider $\<\DD\>_s$ as a $\CAT[0]$ space where infinite distances between points are legal.
 
-It is evident that any metric minimizing disc $s$ the Euclidean space is saddle; 
+It is evident that any metric minimizing disc $s$ in a Euclidean space is saddle; 
 that is for for any hyperplane $\Pi$ each of the connected components of $\DD\backslash s^{-1}\Pi$ meets the boundary.
-In section \ref{sec:smooth} we prove partial converse in 3-dimensional case, see also final remarks.
+In section \ref{sec:smooth} we prove a partial converse in 3-dimensional case, compare also our final remarks.
 
 
 \section{Definitions}
@@ -102,7 +106,7 @@ it comes with the projection map $X\to [X]$ defined as $x\mapsto [x]$.
 For a metric space we can consider the equivalence relation ``$\approx$'' defined as 
 \[x\approx y\quad\iff\quad|x-y|<\infty.\]
 Its equivalence classes are called \emph{metric components}.
-Note that by definition each metric component is a \emph{genuine} metric space, meaning that distance between points may take only finite values.
+Note that by definition each metric component is a \emph{genuine metric space}, meaning that distance between points are finite.
 Consequently, a metric space is a disjoint union of genuine metric spaces.
 
 \parbf{Pseudometrics induced by maps.}
@@ -130,7 +134,7 @@ that is
 
 For the projections 
 \[\bar \pi_f\:X\to |X|_f\quad\text{and}\quad \hat \pi_f\:X\to \<X\>_f\]
-we will also use shortcut notation 
+we will also use the shortcut notations 
 \[\bar x=\bar\pi_f(x) \quad\text{and}\quad  \hat x= \hat \pi_f(x).\]
 
 \begin{thm}{Lemma}\label{lem:picont}
@@ -140,15 +144,12 @@ In particular, if in addition $X$ is compact then so is $|X|_f$.
 \end{thm}
 
 \parit{Proof.}
-Fix $\bar x\in |X|_f$.
-Consider two $\eps$-balls $B(\bar x,\eps)_{|X|_f}$ and $B(f(x),\eps)_{Y}$.
-
-Note that the inverse image
-\[V=\pi_f^{-1}[B(\bar x,\eps)_{|X|_f}]\]
-is the connected component of $x$ in the inverse image 
-\[W=f^{-1}[B(f(x),\eps)_{Y}].\]
-Since $X$ is locally connected, the set $V$ is open.
-Hence the statement follows.\qeds
+For a point $x\in X$ and $\epsilon>0$ we denote by $U$
+the connected component of $f^{-1}[B(f(x),\eps)_{Y}]$ which contains
+$x$. Since $X$ is locally connected, the set $U$ is open. 
+Note that $\bar\pi_f(U)\subset B(\bar x,2\eps)_{|X|_f}$. Hence
+$\bar\pi_f$ is continuous.
+\qeds
 
 
 
