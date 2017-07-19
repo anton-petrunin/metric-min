@@ -140,14 +140,15 @@ we will also use the shortcut notations
 \begin{thm}{Lemma}\label{lem:picont}
 Let $X$ be a locally connected topological space and $Y$ a metric space. Assume that $f\:X\to Y$ is a continuous map. 
 Then $\bar\pi_f\:X\to|X|_f$ is continuous.
+
 In particular, if in addition $X$ is compact then so is $|X|_f$.
 \end{thm}
 
 \parit{Proof.}
-For a point $x\in X$ and $\epsilon>0$ we denote by $U$
-the connected component of $f^{-1}[B(f(x),\eps)_{Y}]$ which contains
-$x$. Since $X$ is locally connected, the set $U$ is open. 
-Note that $\bar\pi_f(U)\subset B(\bar x,2\eps)_{|X|_f}$. Hence
+For a point $x\in X$ and $\eps>0$ we denote by $U$ the connected component of $f^{-1}[B(f(x),\eps)_{Y}]$ which contains $x$.
+Since $X$ is locally connected, the set $U$ is open.
+
+Note that $\bar\pi_f(U)\subset B(\bar x,2\cdot \eps)_{|X|_f}$. Hence
 $\bar\pi_f$ is continuous.
 \qeds
 
@@ -271,9 +272,8 @@ It follows that $k\in K\backslash (U\cup V)$, a contradiction. Hence $\bar\pi_f$
 
 Note that for every closed connected subset $C\subset |X|_f$ the inverse image $Z:=\bar\pi_f^{-1}C$ is
 connected. Indeed, if $Z$ is the disjoint union of two compact sets $Z_1$ and $Z_2$, then the sets 
-$C_i:=\{\bar x\in C:\ \bar\pi_f^{-1}(\bar x)\subset Z_i\}$ are closed.
+$C_i:=\set{\bar x\in C}{\bar\pi_f^{-1}(\bar x)\subset Z_i}$ are closed.
 From this the lightness of $\bar f$ is evident.
-
 \qeds
 
 \input{retracts.tex}
