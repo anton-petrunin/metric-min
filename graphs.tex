@@ -21,30 +21,16 @@ such that $f\succcurlyeq h\rel A$.
 Note that if we replace $f$ by a map $f'$ which agrees with $f$ on the vertexes of $\Gamma$ and
 restricts on edges to constant speed parametrizations of the corresponding geodesics, then
 $f\succcurlyeq f'\rel A$. Since $\Gamma$ is finite we therefore may assume that $f$ is Lipschitz to begin with.
-Now let $\mathcal{O}$ be a maximal well-ordered subset with respect to ``$\succcurlyeq\rel A$'' containing $f$. 
+Consequently, the sublevel $\mathcal{M}_f:=\{f\succcurlyeq g\rel A\}$ consists of Lipschitz maps $g\: \Gamma\to Y$ with the same Lipschitz
+constant as $f$. By Arzel\`a-Ascoli $\mathcal{M}_f$ is compact.
+ We will use Zorn's Lemma to show that 
+$\mathcal{M}_f$ has a minimal element.
+
+Let $\mathcal{O}$ be a well-ordered subset of $\mathcal{M}_f$. 
 We need to show that $\mathcal{O}$ has a lower bound.
-
-Assume contrary.
-Note that
-$$
-\mathcal{F}
-=
-\set{Q\subset\mathcal{O}}{\mathcal{O}-Q\text{ has a lower bound in }\mathcal{O}}.
-$$
-is nonprincipal filter.
-Complete $\mathcal{F}$ to an ultrafilter $\omega$. 
-
-It remains to apply the \emph{ultralimit+projection construction}.
-
-Namely, denote by $Y^\omega$ the ultrapower of $Y$. 
-Then $Y^\omega$
-is a $\CAT[0]$ space which contains $Y$ as a convex subset. 
-The $\omega$-limit $s_\omega\:X\to Y^\omega$ is well defined, since
-$f$ is intrinsically continuous. 
-Denote $s'$ the composition of $s_\omega$ with the nearest point projection $Y^\omega\to Y$.
-The nearest point projection to a convex set in $\CAT[0]$ space is short.
-Therefore $s\succcurlyeq s'$ for any $s\in \mathcal{O}$.
-That is, $\mathcal{O}$ is not maximal, a contradiction.
+If we view $\mathcal{O}$ as a net indexed by itself, then by compactness of 
+$\mathcal{M}_f$ there exists a limit point $s$ of $\mathcal{O}$. Clearly, $s$
+is a lower bound of $\mathcal{O}$.
 \qeds
 
 \begin{thm}{Proposition}\label{prop:metric-min-graph}
