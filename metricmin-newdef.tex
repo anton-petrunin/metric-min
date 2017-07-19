@@ -138,7 +138,7 @@ we will also use the shortcut notations
 \[\bar x=\bar\pi_f(x) \quad\text{and}\quad  \hat x= \hat \pi_f(x).\]
 
 \begin{thm}{Lemma}\label{lem:picont}
-Assume $X$ is a locally connected topological space, $Y$ is a metric space and $f\:X\to Y$ be a continuous map. 
+Let $X$ be a locally connected topological space and $Y$ a metric space. Assume that $f\:X\to Y$ is a continuous map. 
 Then $\bar\pi_f\:X\to|X|_f$ is continuous.
 In particular, if in addition $X$ is compact then so is $|X|_f$.
 \end{thm}
@@ -180,8 +180,8 @@ Note that $\tau_f\: \hat x\to \bar x$ defines a map $\tau_f\: \<X\>_f\to |X|_f$ 
 Since $\<X\>_f$ is a length space, the latter implies that $\tau_f$ short.
 The map $\tau_f$ might not induce an isometry
 \[\<X\>_f\to\<|X|_f\>_{\bar f}.\]
-Moreover, in general $\tau_f$ might be not injective, an example is given in \cite[4.2]{petrunin-intrinisic}.
-However, this is the case for metric minimizing discs $f\:\DD\to Y$; see
+In general $\tau_f$ does not have to be injective, an example is given in \cite[4.2]{petrunin-intrinisic}.
+However, for metric minimizing discs $f\:\DD\to Y$ this is true; see
 Proposition~\ref{prop:|D|}.
 
 The maps $\bar f\:|X|_f\to Y$ and $ \hat f\:\<X\>_f\to Y$ are uniquely defined by the identity
@@ -190,20 +190,21 @@ By construction, the diagram commutes.
 
 \parbf{Metrics induced by metrics.}
 %???formally this par is irrelevant, but I think to include it here to provide a better picture 
-If $X$ is a metric space, these two constructions above can be applied for the identity map $\id\:X\to X$.
-In this case the obtained spaces $\<X\>_\id$ and $|X|_\id$ will be dented by $\<X\>$ and $|X|$ correspondingly.
+If $X$ is a metric space, the two constructions above can be applied to the identity map $\id\:X\to X$.
+In this case the obtained spaces $\<X\>_\id$ and $|X|_\id$ will be denoted by $\<X\>$ and $|X|$ correspondingly.
 The space $\<X\>$ is $X$ equipped with induced intrinsic metric.
-The spaces $\<X\>$, $|X|$ and $X$ have the same underlying space;
-in other words they can be considered as one set with different metrics and it defines tautological maps between them.
-Both tautological map 
+All three spaces $\<X\>$, $|X|$ and $X$ have the same underlying set;
+in other words they can be considered as a single space with different metrics and tautological maps between them.
+Both tautological maps 
 \[\<X\>\to |X|\to X\]
 are short and length-preserving.
 
 In particular the tautological map $\<|X|_f\>_{\bar f}\zz\to \<|X|_f\>$ is an isometry;
-that is, for any continuous map $f\:X\to Y$ the induced length metric on $|X|_f$ coincides with the length metric induced by $\bar f\:|X|\to Y$.
+that is, for any continuous map $f\:X\to Y$ the induced length metric on $|X|_f$ coincides with the length metric induced by 
+$\bar f\:|X|\to Y$.
 
 
-Recall that geodesic in a metric space is a curve which lenght conisides with the distance between its endpoints.
+Recall that a geodesic in a metric space is a curve whose length coincides with the distance between its endpoints.
 A metric space is called \emph{geodesic} if any two points on finite distance can be joined by a geodesic.
 
 \begin{thm}{Lemma}\label{lem:geospace}
@@ -211,7 +212,7 @@ Let $X$ be a compact metric space.
 Then $\<X\>$ is a complete geodesic space.
 \end{thm}
 
-The second statement is a classical (see for example \cite[II-\S8 Thm. 3]{KF}), 
+The second statement is classical (see for example \cite[II-\S8 Thm. 3]{KF}) but 
 we were not be able to find the first one in the literature.
 
 \parit{Proof.}
@@ -229,7 +230,7 @@ Therefore $\hat\gamma_+(1)$ is the limit of $(x_n)$, a contradiction.
 It remains to show that $\<X\>$ is geodesic.
 Assume $\gamma_n$ is a sequence of constant speed paths from $x$ to $y$ in $X$
 such that $\length\hat\gamma_n\to \<x-y\>$ as $n\to\infty$.
-Since $X$ is compact, we can pass to its partial limit $\gamma$ of  $\gamma_n$.
+Since $X$ is compact, we can pass to a partial limit $\gamma$ of  $\gamma_n$.
 The corresponding curve $\hat\gamma=\hat \pi\circ\gamma$ is the needed geodesic from $\hat x$ to $\hat y$ in $\<X\>$.
 \qeds
 
@@ -240,10 +241,10 @@ Recall that
 \item $f$ is called \emph{monotonic} if the inverse image of each point is connected,
  \item $f$ is called \emph{light} if the inverse image of any point totally disconnected.
 \end{itemize}
-Since connected set is nonempty by definition, any monotonic map is onto.
+Since a connected set is nonempty by definition, any monotonic map is onto.
 
 \begin{thm}{Lemma}\label{cor:fiberconnected}
-Assume $X$ is a compact topological space and $Y$ is a metric space.
+Assume $X$ is a locally connected compact metric space and $Y$ is a metric space.
 Let $f\:X\to Y$ be a continuous map.
 Then the map $\bar \pi_f$ is monotonic and $\bar f$ is light.
 In particular 
@@ -252,21 +253,27 @@ is a monotone-light decomposition.
 \end{thm}
 
 \parit{Proof.}
-The lightness of $\bar f$ should be evident.
+We first prove the monotonicity of $\bar\pi_f$.
 
-Assume contrary $\bar\pi_f$ is not monotone;
+Assume contrary that $\bar\pi_f$ is not monotone;
 that is, for some $x\in X$ the equivalence class 
 \[K=\bar\pi_f^{-1}(\bar x)=\set{x'\in X}{|x-x'|_f=0}\]
-can be covered by disjoint open sets $U,V\subset X$ such that each intersection 
+is not connected. Since $X$ is normal, we
+can cover $K$ by disjoint open sets $U,V\subset X$ such that both intersections
 $K\cap U$ and $K\cap V$ are nonempty.
 
-Note that $K$ is closed.
+By Lemma \ref{lem:picont} $K$ is closed.
 
-We can assume that $x\in U$.
-Pick $x'\in K\cap V$.
+Assume that $x\in U$ and pick $x'\in K\cap V$.
 Then there is a sequence of connected sets $K_n\ni x,x'$ such that $\diam f(K_n)<\tfrac1n$.
-For each $n$ pick a point $k_n\in K_n\backslash (U\cup V)$ and let $k$ be its partial limit.
-It follows that $k\in K\backslash (U\cup V)$, a contradiction.
+For each $n$ we choose a point $k_n\in K_n\backslash (U\cup V)$ and let $k$ be a partial limit.
+It follows that $k\in K\backslash (U\cup V)$, a contradiction. Hence $\bar\pi_f$ is monotone.
+
+Note that for every closed connected subset $C\subset |X|_f$ the inverse image $Z:=\bar\pi_f^{-1}C$ is
+connected. Indeed, if $Z$ is the disjoint union of two compact sets $Z_1$ and $Z_2$, then the sets 
+$C_i:=\{\bar x\in C:\ \bar\pi_f^{-1}(\bar x)\subset Z_i\}$ are closed.
+From this the lightness of $\bar f$ is evident.
+
 \qeds
 
 \input{retracts.tex}
