@@ -1,9 +1,10 @@
 \section{Metric minimizing graphs}\label{Metric minimizing graphs}
 
-\emph{Metric minimizing graphs} are defined the same way as metric minimizing disc.
+\emph{Metric minimizing graphs} are defined analog to metric minimizing discs.
 
-Namely, let $Y$ be a metric space, $\Gamma$ be a graph and $A$ is a subset of its vertexes.
-Given two map $f,f'\:\Gamma\to Y$, we write $f\succcurlyeq f'\rel A$ if $f$ and $f'$ agree on $A$ and there is a majorization $\mu\:\<\Gamma\>_f\to \<\Gamma\>_{f'}$
+Namely, let $Y$ be a metric space, $\Gamma$ a graph and $A$ a subset of its vertexes.
+Given two maps $f,f'\:\Gamma\to Y$, we write $f\succcurlyeq f'\rel A$ if $f$ and $f'$ agree on $A$ 
+and there is a majorization $\mu\:\<\Gamma\>_f\to \<\Gamma\>_{f'}$
 such that $f(a)\zz=f'(\mu(a))$ for any $a\in A$.
 
 A map $f$ is called \emph{metric minimizing relative to $A$} if $f\succcurlyeq f'\rel A$ implies that the majorization $\mu$ is an isometry.
@@ -17,8 +18,11 @@ such that $f\succcurlyeq h\rel A$.
 \end{thm}
 
 \parit{Proof.}
-Let $\mathcal{O}$ be a maximal well-ordered subset with respect to ``$\succcurlyeq\rel A$'' containing $f$. 
-We need to show that $\mathcal{O}$ has a minimum.
+Note that if we replace $f$ by a map $f'$ which agrees with $f$ on the vertexes of $\Gamma$ and
+restricts on edges to constant speed parametrizations of the corresponding geodesics, then
+$f\succcurlyeq f'\rel A$. Since $\Gamma$ is finite we therefore may assume that $f$ is Lipschitz to begin with.
+Now let $\mathcal{O}$ be a maximal well-ordered subset with respect to ``$\succcurlyeq\rel A$'' containing $f$. 
+We need to show that $\mathcal{O}$ has a lower bound.
 
 Assume contrary.
 Note that
