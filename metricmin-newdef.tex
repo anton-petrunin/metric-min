@@ -77,7 +77,8 @@ In fact one can consider $\<\DD\>_s$ as a $\CAT[0]$ space where infinite distanc
 
 It is evident that any metric minimizing disc $s$ in a Euclidean space is saddle; 
 that is for for any hyperplane $\Pi$ each of the connected components of $\DD\backslash s^{-1}\Pi$ meets the boundary.
-In section \ref{sec:smooth} we prove a partial converse in 3-dimensional case, compare also our final remarks.
+In section \ref{sec:smooth} we prove a local converse in 3-dimensional case and show by example that there is no global converse.
+We also conjecture that in 4-dimensional case even local converse does not hold.
 
 
 \section{Definitions}
@@ -285,18 +286,19 @@ From this the lightness of $\bar f$ is evident.
 
 \section{Smooth surfaces}\label{sec:smooth}
 
-In this section we show that any strictly saddle surface is locally metric minimizing.
+\parbf{Three-dimesional case.}
+In general smooth saddle disc may not be globally metric minimizing.
+An example is shown on the picture;
+it is a saddle polyhedral disc with a hexagon boundary forming a Y-shape marked with bold lines.
 
-\begin{wrapfigure}{r}{20 mm}
-\begin{lpic}[t(-5 mm),b(-0 mm),r(0 mm),l(0 mm)]{pics/not-sufficient-surface(1)}
+\begin{center}
+\begin{lpic}[t(-0 mm),b(-0 mm),r(0 mm),l(0 mm)]{pics/not-sufficient-disc(1)}
 %\lbl[lb]{12.5,11;$W_0$}}
 \end{lpic}
-\end{wrapfigure}
+\end{center}
 
-In general smooth saddle surfaces may not be globally metric minimizing.
-An example homeomorphic to a pair of pants 
-can be found among surfaces surrounding the triangle with three segments as shown on the picture.
-We could not find examples like that among strictly saddle surfaces or discs, but it is very likely that such examples do exist.
+By smoothing this example one can produce a strictly saddle disc which is not metric minimizing.
+As the following Proposition states, there are no local examples of that type.
 
 \begin{thm}{Proposition}\label{prop:smooth}
 Any smooth strictly saddle surface in $\RR^3$ is locally metric minimizing.
@@ -386,9 +388,7 @@ According to \cite[Theorem 3.6]{bressan}, it can be solved locally for smooth in
 It remains to choose $v_3$ and $v_4$ for solution so that $\lambda_1, \lambda_2>0$ in a small neighborhood of $p$.
 \qeds
 
-
-\section{Final remarks}\label{Final remarks}
-
+\parbf{Four-dimensional case.}
 We do not see any way to show that a given surface is metric minimizing except by constructing an appropriate energy for which it is energy minimizing, as we did in Section~\ref{sec:smooth}.
 Locally, the energy functional as in Section~\ref{sec:smooth} can be described by 3 functions defined on the disc.
 These three functions are subject to certain differential equations and 
