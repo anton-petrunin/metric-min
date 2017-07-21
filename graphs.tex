@@ -11,6 +11,41 @@ A map $f$ is called \emph{metric minimizing relative to $A$} if $f\succcurlyeq f
 
 \begin{thm}{Proposition}\label{prop:metric-min-graph-exist}
 Let $Y$ be a $\CAT[0]$ space, 
+$X$ a compact metric space and $A$ a subset of $X$.
+
+Given a Lipschitz continuous map $f\:X\to Y$ there is a metric minimizing map $h\:\Gamma\to Y$
+such that $f\succcurlyeq h\rel A$.
+\end{thm}
+
+\parit{Proof.}
+Let $\mathcal{O}$ be a well-ordered subset with respect to ``$\succcurlyeq\rel A$'' containing $f$. 
+We need to show that $\mathcal{O}$ has a minimal element.
+
+Assume contrary.
+Note that
+$$
+\mathcal{F}
+=
+\set{Q\subset\mathcal{O}}{\mathcal{O}-Q\text{ has a lower bound}}.
+$$
+is nonprincipal filter.
+Complete $\mathcal{F}$ to an ultrafilter $\omega$ on $\mathcal{O}$. 
+
+It remains to apply the \emph{ultralimit+projection construction}.
+
+Namely, denote by $Y^\omega$ the ultrapower of $Y$. 
+Then $Y^\omega$
+is a $\CAT[0]$ space which contains $Y$ as a closed convex subset. 
+The $\omega$-limit $s_\omega\:X\to Y^\omega$ is well defined, since
+$f$ is Lipschitz continuous. 
+Denote $s'$ the composition of $s_\omega$ with the nearest point projection $Y^\omega\to Y$.
+The nearest point projection to a convex set in $\CAT[0]$ space is short.
+Therefore $s\succcurlyeq s'$ for any $s\in \mathcal{O}$.
+\qeds
+
+
+\begin{thm}{Corollary}\label{prop:metric-min-graph-exist}
+Let $Y$ be a $\CAT[0]$ space, 
 $\Gamma$ a finite  graph and $A$ a subset of its vertexes.
 
 Given a map $f\:\Gamma\to Y$ there is a metric minimizing map $h\:\Gamma\to Y$ relative to $A$
@@ -18,25 +53,16 @@ such that $f\succcurlyeq h\rel A$.
 \end{thm}
 
 \parit{Proof.}
-Note that if we replace $f$ by a map $f'$ which agrees with $f$ on the vertexes of $\Gamma$ and
-restricts on edges to constant speed parametrizations of the corresponding geodesics, then
-$f\succcurlyeq f'\rel A$. Since $\Gamma$ is finite we therefore may assume that $f$ is Lipschitz to begin with.
-Consequently, the sublevel $\mathcal{M}_f:=\{f\succcurlyeq g\rel A\}$ consists of Lipschitz maps $g\: \Gamma\to Y$ with the same Lipschitz
-constant as $f$. By Arzel\`a-Ascoli $\mathcal{M}_f$ is compact.
- We will use Zorn's Lemma to show that 
-$\mathcal{M}_f$ has a minimal element.
-
-Let $\mathcal{O}$ be a well-ordered subset of $\mathcal{M}_f$. 
-We need to show that $\mathcal{O}$ has a lower bound.
-If we view $\mathcal{O}$ as a net indexed by itself, then by compactness of 
-$\mathcal{M}_f$ there exists a limit point $s$ of $\mathcal{O}$. Clearly, $s$
-is a lower bound of $\mathcal{O}$.
+Note that we can replace $f$ by a map $f'$ which agrees with $f$ on the vertexes of $\Gamma$ and
+restricts to constant speed parametrizations of the corresponding geodesics on each edge. Then
+$f\succcurlyeq f'\rel A$ and since $\Gamma$ is finite $f'$ is Lipschitz continuous.
+The claim follows from Proposition \ref{prop:metric-min-graph-exist}.
 \qeds
 
 \begin{thm}{Proposition}\label{prop:metric-min-graph}
 Let $Y$ be a $\CAT[0]$ space, 
 $\Gamma$ a finite  graph and $A$ a subset of its vertexes.
-Assume the map $v\mapsto v'$ is metric minimizing map $\Gamma\to Y$ relative to $A$.
+Assume that the assignment $v\mapsto v'$ is a metric minimizing map $\Gamma\to Y$ relative to $A$.
 Then
 \begin{enumerate}[(a)]
 \item each edge of $\Gamma$ maps to a geodesic;
@@ -65,19 +91,19 @@ Assume the second condition does not hold at a vertex $v\zz\notin A$;
 that is, there is a point $x\in Y$ such that
 $\measuredangle[v'\,^{w'}_x]< \tfrac\pi2$
 for any adjacent vertex $w$.
-In this case moving $v'$ toward $x$ along $[v',x]$ decrease the lengths of all edges adjacent to $v$, a contradiction.
+In this case moving $v'$ toward $x$ along $[v',x]$ decreases the lengths of all edges adjacent to $v$, a contradiction.
 
 Assume the third condition does not hold, that is, 
 the sum of the angles around a fixed interior vertex $v'$ is less than $2\cdot\pi$.
 
 Recall that the space of directions $\Sigma_{v'}$ is a $\CAT[1]$ space.
 Denote by $\xi_1,\dots,\xi_n$ the directions of $[v'w'_1],\dots, [v',w'_n]$ in $\Sigma_{v'}$.
-By the assumption, we have
+By assumption, we have
 \[|\xi_1-\xi_2|_{\Sigma_{v'}}+\dots+|\xi_n-\xi_1|_{\Sigma_{v'}}<2\cdot\pi.\]
 By Reshetnyak's majorization theorem,
 the closed broken line $[\xi_1,\dots,\xi_k]$ is majorized by a convex spherical polygon $P$.
 
-Note that $P$ lies in an open hemisphere with the pole  at some point in $P$.
+Note that $P$ lies in an open hemisphere with pole  at some point in $P$.
 Choose $x\in Y$ so that the direction form $v'$ to $x$ coincides with the image of the pole in $\Sigma_{f(v)}$.
 This choice of $x$ contradicts the condition in Proposition~\ref{prop:metric-min-graph}.
 \qeds

@@ -1,15 +1,14 @@
 \section{Finite-whole extension lemma}\label{Finite-whole extension lemma}
 
-The following lemma is an easy corollary of Tychonoff's theorem on product of compact topological spaces.
+The following lemma is an easy corollary of Tychonoff's theorem on products of compact topological spaces.
 
 \begin{thm}{Finite-whole extension lemma}\label{lem:finite-whole}
 Suppose that $X$ is a set 
 and $Y$ is a compact topological space.
 Assume that for any finite set $F\subset X$ 
-a closed nonempty set $\mathfrak{S}_F$ of maps  $F\to Y$ such that
+a closed nonempty set $\mathfrak{S}_F$ of maps  $F\to Y$ is given, such that
 \begin{itemize}
-\item for any finite set $F$ and any map $h\in \mathfrak{S}_F$
-and any other subset $F'\subset F$
+\item for any subset $F'\subset F$ and any map $h\in \mathfrak{S}_F$
 the restriction $h|_{F'}$ belongs to $\mathfrak{S}_{F'}$. 
 \end{itemize}
 
@@ -17,12 +16,12 @@ Then there is a map $h\: X\to Y$ such that $h|_F\in \mathfrak{S}_F$ for any fini
 \end{thm}
 
 Note that if $X$ and $Y$ are metric spaces and $A$ is a subset in $X$
-then one can take as $\mathfrak{S}_F$ the short maps $F\to Y$ which coinside with the given short map $A\to Y$ on $A\cap F$.
+then one can take as $\mathfrak{S}_F$ short maps $F\to Y$ which coincide with a given short map $A\to Y$ on $A\cap F$.
 This way we obtain the following corollary.
-In a similar fashion, we will use the lemma in the proof of main theorem.
+In a similar fashion, we will use the lemma in the proof of our main theorem.
 
 \begin{thm}{Corollary}
-Let $X$ and $Y$ be a metric spaces, $A\subset X$ and $f\:A\to Y$ is a short map.
+Let $X$ and $Y$ be metric spaces, $A\subset X$ and $f\:A\to Y$ a short map.
 Assume $Y$ is compact and for any finite set $F\subset X$ there is a short map $F\to Y$ which agrees with $f$ in $F\cap A$.
 Then there is a short map $X\to Y$ which agrees with $f$ in $A$.
 \end{thm}
@@ -33,8 +32,8 @@ a map $f\: A\to Y$ will be called \emph{good}
 if for any finite set $F\subset X$
 there is $h\in\mathfrak{S}_F$ which agrees with $f$ on the intersection $F\cap A$.
 
-We can choose a good map $f$ with the maximal domain $A$ with respect to inclusion;
-that is, we can not enlarge the domain of $f$ by a single point in such a way that it remains to be good.
+We can choose a good map $f$ which has the maximal domain $A$ with respect to inclusion;
+that is, we can not enlarge the domain of $f$ by a single point while keeping it good.
 
 So far $A$ might be empty, but we will show that $A=X$;
 the latter implies the lemma.
