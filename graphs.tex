@@ -2,7 +2,7 @@
 
 \emph{Metric minimizing graphs} are defined analog to metric minimizing discs.
 
-Namely, let $Y$ be a metric space, $\Gamma$ a graph and $A$ a subset of its vertexes.
+Namely, let $Y$ be a metric space, $\Gamma$ a finite graph and $A$ a subset of its vertexes.
 Given two maps $f,f'\:\Gamma\to Y$, we write $f\succcurlyeq f'\rel A$ if $f$ and $f'$ agree on $A$ 
 and there is a majorization $\mu\:\<\Gamma\>_f\to \<\Gamma\>_{f'}$
 such that $f(a)\zz=f'(\mu(a))$ for any $a\in A$.
@@ -11,14 +11,20 @@ A map $f$ is called \emph{metric minimizing relative to $A$} if $f\succcurlyeq f
 
 \begin{thm}{Proposition}\label{prop:metric-min-graph-exist}
 Let $Y$ be a $\CAT[0]$ space, 
-$X$ a compact metric space and $A$ a subset of $X$.
+$\Gamma$ is a finite graph and $A$ a subset of its vertexes.
 
-Given a Lipschitz continuous map $f\:X\to Y$ there is a metric minimizing map $h\:\Gamma\to Y$
-such that $f\succcurlyeq h\rel A$.
+Given a Lipschitz continuous map $f\:\Gamma\to Y$ there is a map $h\:\Gamma\to Y$ 
+which is metric minimizing relative to $A$ and $f\succcurlyeq h\rel A$.
 \end{thm}
 
 \parit{Proof.}
-Let $\mathcal{O}$ be a well-ordered subset with respect to ``$\succcurlyeq\rel A$'' containing $f$. 
+On each edge of $\Gamma$, fix a parametrization by $[0,1]$.
+A map $h\:\Gamma\to Y$ will be called \emph{straight} if it
+sends each edge of $\Gamma$ to a geodesic path in $Y$.
+
+Without loss of generality, we may assume that $f$ is straight.
+
+Let $\mathcal{O}$ be a maximal well-ordered subset of straight maps with respect to ``$\succcurlyeq\rel A$'' with $f$ as the maximal element . 
 We need to show that $\mathcal{O}$ has a minimal element.
 
 Assume contrary.
@@ -36,8 +42,8 @@ It remains to apply the \emph{ultralimit+projection construction}.
 Namely, denote by $Y^\omega$ the ultrapower of $Y$. 
 Then $Y^\omega$
 is a $\CAT[0]$ space which contains $Y$ as a closed convex subset. 
-The $\omega$-limit $s_\omega\:X\to Y^\omega$ is well defined, since
-$f$ is Lipschitz continuous. 
+The $\omega$-limit $s_\omega\:\Gamma\to Y^\omega$ is well defined, since
+$f$ and, therefore, all maps in $\mathcal{O}$ are Lipschitz continuous. 
 Denote $s'$ the composition of $s_\omega$ with the nearest point projection $Y^\omega\to Y$.
 The nearest point projection to a convex set in $\CAT[0]$ space is short.
 Therefore $s\succcurlyeq s'$ for any $s\in \mathcal{O}$.
