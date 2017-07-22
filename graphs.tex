@@ -22,13 +22,14 @@ Let us parametrize each edge of $\Gamma$ by $[0,1]$.
 A map $h\:\Gamma\to Y$ will be called \emph{straight} if it
 sends each edge of $\Gamma$ to a geodesic path in $Y$.
 
-If $\:\Gamma\to Y$ is straight then $f\succcurlyeq h\rel A$ if and only if 
+If $h\:\Gamma\to Y$ is straight then $f\succcurlyeq h\rel A$ if and only if 
 $|f(v)-f(w)|_Y\ge |h(v)-h(w)|_Y$
-for any two vertexes $v$ and $w$ in $\Gamma$ connected by an edge.
+for any two adjacent vertexes $v$ and $w$ in $\Gamma$.
 In particular, we can assume that the given map $f$ is straight.
 
-Let $\set{f_\alpha}{\alpha\in \mathcal{O}}$ be a maximal well-ordered subset of straight maps with respect to ``$\succcurlyeq\rel A$'' with $f$ as the maximal element. 
-We need to show that $\{f_\alpha\}$ has a minimal element.
+Let $\set{f_\alpha}{\alpha\in \mathcal{O}}$ be a well-ordered subset of straight maps with respect to ``$\succcurlyeq\rel A$'' 
+with $f$ as the maximal element. 
+We need to show that $\{f_\alpha\}$ has a lower bound.
 
 Assume contrary.
 Note that
@@ -37,7 +38,7 @@ $$
 =
 \set{Q\subset\mathcal{O}}{\{f_\alpha\}_{\alpha\in \mathcal{O}\backslash Q}\text{ has a lower bound } f_\beta}.
 $$
-is nonprincipal filter.
+is a nonprincipal filter.
 Complete $\mathcal{F}$ to an ultrafilter $\omega$ on $\mathcal{O}$ and apply the \emph{ultralimit+projection construction}.
 
 Namely, denote by $Y^\omega$ the ultrapower of $Y$. 
@@ -47,24 +48,10 @@ The $\omega$-limit $s_\omega\:\Gamma\to Y^\omega$ is well defined, since
 $f$ and, therefore, all $f_\alpha$ are Lipschitz continuous. 
 Denote $f'$ the composition of $f_\omega$ with the nearest point projection $Y^\omega\to Y$.
 The nearest point projection to a convex set in $\CAT[0]$ space is short.
-Therefore $f_\alpha\succcurlyeq f'$ for any $\alpha\in \mathcal{O}$, a contradiction.
+Therefore $f_\alpha\succcurlyeq f'$ for any $\alpha\in \mathcal{O}$. Let $f''$ denote the straightening of $f'$.
+Then $f'\succcurlyeq f''$ and the claim follows from Zorn's Lemma.
 \qeds
 
-
-\begin{thm}{Corollary}\label{prop:metric-min-graph-exist}
-Let $Y$ be a $\CAT[0]$ space, 
-$\Gamma$ a finite  graph and $A$ a subset of its vertexes.
-
-Given a map $f\:\Gamma\to Y$ there is a metric minimizing map $h\:\Gamma\to Y$ relative to $A$
-such that $f\succcurlyeq h\rel A$.
-\end{thm}
-
-\parit{Proof.}
-Note that we can replace $f$ by a map $f'$ which agrees with $f$ on the vertexes of $\Gamma$ and
-restricts to constant speed parametrizations of the corresponding geodesics on each edge. Then
-$f\succcurlyeq f'\rel A$ and since $\Gamma$ is finite $f'$ is Lipschitz continuous.
-The claim follows from Proposition \ref{prop:metric-min-graph-exist}.
-\qeds
 
 \begin{thm}{Proposition}\label{prop:metric-min-graph}
 Let $Y$ be a $\CAT[0]$ space, 
@@ -87,8 +74,8 @@ $\measuredangle[v'\,^{w'}_x]\ge \tfrac\pi2$;
 \end{wrapfigure}
 
 \parit{Remark.}
-As one may see from the diagram, the conditions in the proposition do not guarantee that the map $f$ is metric minimizing,
-the solid points form the set $A$.
+As one may see from the diagram where the solid points form the set $A$, 
+the conditions in the proposition do not guarantee that the map $f$ is metric minimizing.
 
 \parit{Proof.}
 The first condition is evident.
