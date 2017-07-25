@@ -5,32 +5,32 @@ closed curve is said to \emph{converge} to $(X_\infty,\gamma_\infty)$ if there i
 in the sense of Gromov--Hausdorff for which $\gamma_n$ converges to $\gamma_\infty$ pointwise.
 
 More precisely, we ask the following.
-\begin{enumerate}[(1.)]
+\begin{enumerate}[(1)]
 	\item There is a metric $\rho$ on the disjoint union 
 \[\bm{X}=X_\infty\sqcup X_1\sqcup X_2\dots\]
-which restricts to the given metric on each $X_\alpha, \alpha\in\{0,1,\dots,\infty\}$, 
+which restricts to the given metric on each $X_\alpha, \alpha\in\{1,2,\dots,\infty\}$, 
 and such that $X_n$ converge to $X_\infty$ in the sense of Hausdorff as subsets in $(\bm{X},\rho)$.
 \item  The sequence of compositions $\gamma_n\:\SS^1\to X_n \hookrightarrow\bm{X}$ 
-converges to $\gamma_\infty\:\SS^1\to X_\infty \hookrightarrow\bm{X}$ pointwise.
+converges to $\gamma_\infty\:\SS^1\zz\to X_\infty \hookrightarrow\bm{X}$ pointwise.
 \end{enumerate}
 Consider the class $\mathcal{K}_\ell$ of $\CAT[0]$ disc retracts whose marked
 boundary curves have Lipschitz constant $\ell$.
 
 
-\begin{thm}{Compactness Lemma}\label{lem:compact}
+\begin{thm}{Compactness lemma}\label{lem:compact}
 $\mathcal{K}_\ell$ is compact in the topology described above.
 \end{thm}
 
-The lemma follows from Lemmas \ref{lem:precompact} and \ref{lem:closed} proven below.
+The lemma follows from the two lemmas below.
 
 \begin{thm}{Lemma}\label{lem:precompact}
 $\mathcal{K}_\ell$ is precompact in the topology described above.
 \end{thm}
 
-In the following $\area K$ will denote the two-dimensional Hausdorff measure of a metric space $K$. 
-
 \parit{Proof.}
-Let $K$ be a metric space with metric $d$ and isometry class in $\mathcal {K}_\ell$.
+Let $K$ be a metric space with the isometry class in $\mathcal {K}_\ell$.
+
+Denote by $\area A$ the two-dimensional Hausdorff measure of $A\subset K$.
 By the Euclidean isoperimetric inequality we have 
 \[\area K \le \pi\cdot\ell^2.\]
 
@@ -42,17 +42,17 @@ which divide $\partial K$ into arcs of equal length.
 Consider the maximal set of points $\{x_1,\dots,x_n\}$ such that $d(x_i,x_j)>\eps$ and $d(x_i,y_j)>\eps$.
 
 Note that the set $\{x_1,\dots,x_n,y_1,\dots,y_m\}$
-forms an $\eps$-net in $(K,d)$.
-
+is an $\eps$-net in $(K,d)$.
 Further note that the balls $B_i=B_{\eps/2}(x_i)$
 do not overlap.
+
 By comparison,
 \[\area B_i\ge \tfrac{\pi\cdot\eps^2}{4}.\]
-
 It follows that $n\le 4\cdot\left(\tfrac\ell\eps\right)^2$.
 In particular, there is a integer valued function $N(\eps)$, such that any  
 $K$ as above contains an $\eps$-net
 with at most $N(\eps)$ points.
+
 The latter means that the class $\mathcal{K}_\ell$ is uniformly totally bounded.
 By the selection theorem \cite[7.4.15]{BBI}, the class of metrics with this property is precompact in the Gromov--Hausdorff topology.
 
@@ -72,19 +72,19 @@ $\mathcal{K}_\ell$ is closed in the topology described above.
 Let $(X_n,\gamma_n)$ be a sequence in $\mathcal{K}_\ell$.
 Assume $X_n\to X$ and $\gamma_n\to\gamma$. 
 Choose a point $p_n\in X_n$ and define
-$f_n:\DD\to X_n$ by sending the geodesic $[0\theta]$ for $\theta\in\partial \DD=\SS^1$ to the geodesic path $[p_n\gamma_n(\theta)]$ with constant speed. 
+$f_n:\DD\to X_n$ by sending the geodesic $[0,\theta]$ for $\theta\in\partial \DD=\SS^1$ to the geodesic path $[p_n\gamma_n(\theta)]$ with constant speed. 
 
-By comparison, $f_n$ is $5\cdot\ell$-Lipschitz. %??? explain
-The limit map $f\:\DD\to X$ is also $5\cdot\ell$-Lipschitz.
+By comparison, $f_n$ is $(5\cdot\ell)$-Lipschitz. %??? explain
+The limit map $f\:\DD\to X$ is also $(5\cdot\ell)$-Lipschitz.
 
 Note that if two different points $x$  and $y$ map to the same point $q$ under $f$, then $q$ is a branch point in $X$ 
-and there is a path $c$ connecting 
+and there is an arc in $\DD$ connecting 
 $x$ and $y$ which also maps to $q$. 
 In particular, $f$ is monotone.
 
 On the other hand, the map $f$ has no bubbles.
-This follows since in the mapping cylinder $X_\gamma$, the concatenation of the geodesic path $[p\gamma(\theta)]$ 
+This follows since in the mapping cylinder $X_\gamma$, the concatenation of the geodesic path $[p,\gamma(\theta)]$ 
 with the vertical line $\theta\times [0,1]$ can be lifted to $\DD$.
 
-Therefore, by Lemma~\ref{prop:disc-moore}, $X$ is a disc retract with boundary curve $\gamma$.
+Therefore, by Lemma~\ref{prop:disc-moore}, $X$ is a disc retract with the boundary curve $\gamma$.
 \qeds

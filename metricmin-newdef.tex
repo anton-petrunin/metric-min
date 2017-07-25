@@ -25,7 +25,8 @@ We show that metric minimizing surfaces in $\CAT[0]$ spaces are locally $\CAT[0]
 
 Let us denote by $\DD$ the closed unit disc in the plane.
 Its boundary $\partial \DD=\SS^1$ is the unit circle.
-Let $Y$ be a metric space and $\gamma\:\SS^1\to Y$ is a closed rectifiable curve.
+Let $Y$ be a metric space
+and $\gamma\:\SS^1\to Y$ be a closed rectifiable curve.
 
 We say that a continuous map $s\:\DD\to Y$ \emph{spans} $\gamma$,
 if the restriction of $s$ to $\SS^1$ coincides with $\gamma$.
@@ -42,10 +43,10 @@ its restriction to $\SS^1=\partial\DD$ will be denoted by $\delta_s$.
 Now assume that $s$ and $s'$ are two maps spanning the same curve.
 We write $s\succcurlyeq s'$ if there is a \emph{majorization}
 $\mu\:\<\DD\>_s\to \<\DD\>_{s'}$;
-meaning that $\mu$ is a short map with $\delta_{s'}=\mu\circ\delta_s$.
+meaning that $\mu$ is a \emph{short} map with $\delta_{s'}=\mu\circ\delta_s$.
 
 A map $s\:\DD\to Y$ will be called \emph{metric minimizing disc} if $s\succcurlyeq s'$ 
-implies that the corresponding majorization $\mu$ is an isometry.
+always implies that the corresponding majorization $\mu$ is an isometry.
 
 \begin{wrapfigure}{r}{28 mm}
 \begin{lpic}[t(-2 mm),b(-0 mm),r(0 mm),l(0 mm)]{pics/two-bry-curves(1)}
@@ -54,7 +55,7 @@ implies that the corresponding majorization $\mu$ is an isometry.
 \end{wrapfigure}
 
 A topological space $W$ together with a choice of a closed curve $\delta\:\SS^1\zz\to W$ is called \emph{disc retract} 
-it the mapping cylinder of~$\delta$ 
+if the mapping cylinder of~$\delta$ 
 \[W_\delta=W\bigsqcup_{\delta(u)\sim(u,0)}\SS^1\times[0,1]\]
 is homeomorphic to the disc $\DD$.
 The curve $\delta$ will be called \emph{boundary curve} of the disc retract $W$.
@@ -66,6 +67,7 @@ Assume $Y$ is a $\CAT[0]$ space and $s\:\DD\to Y$ is a metric minimizing map.
 Then $\<\DD\>_s$ is a $\CAT[0]$ disc retract with boundary curve $\delta_s$.
 \end{thm}
 
+This statement generalize the main theorem in \cite{petrunin-metric-min}; we also fill a gap in the proof.
 Note that we did not make any assumptions on the continuous map $s$;
 in particular, before hand, the space $\<\DD\>_s$ might have wild topology.
 
@@ -74,9 +76,9 @@ infinite distance from each other. However, our proof shows that all triangles w
 in particular each metric component of $\<\DD\>_s$ is a $\CAT[0]$ space.
 In fact one can consider $\<\DD\>_s$ as a $\CAT[0]$ space where infinite distances between points are legal.
 
-It is evident that any metric minimizing disc $s$ in a Euclidean space is saddle; 
-that is, for any hyperplane $\Pi$ each of the connected components of $\DD\backslash s^{-1}\Pi$ meets the boundary.
-In section \ref{sec:smooth} we prove a converse for the local statement in dimension three and show by example that there is no global converse.
+In section \ref{sec:smooth} we discuss the relation between saddle surfaces and metric minimizing discs.
+Evidently smooth metric minimizing disc $s$ in a Euclidean space is saddle, we prove 
+a local converse of this statement in dimension three and show by example that there is no global converse.
 We also conjecture that in the 4-dimensional case even the local converse does not hold.
 
 
@@ -84,7 +86,7 @@ We also conjecture that in the 4-dimensional case even the local converse does n
 
 \parbf{Metrics and pseudometrics.}
 Let $X$ be a set.
-A \emph{pseudometric} on a set $X$ 
+A \emph{pseudometric} on $X$ 
 is a function $X\times X\to[0,\infty]$ denoted as $(x,y)\mapsto |x-y|$
 such that 
 \begin{itemize}
@@ -126,7 +128,6 @@ the following way
 \[|x-y|_f=\inf\{\diam f(K)\},\]
 where the greatest lower bound is taken over all connected sets $K\subset X$ which contain $x$ and $y$;
 if there is no such set we set $|x-y|_f=\infty$. 
-
 The associated metric space will be
 denoted as $|X|_f$;
 that is 
@@ -154,7 +155,7 @@ $\bar\pi_f$ is continuous.
 
 
 
-\begin{wrapfigure}{r}{33 mm}
+\begin{wrapfigure}{r}{37 mm}
 \begin{tikzpicture}[scale=1.5]
 
   \node[main node] (1) at (1,.5) {$|X|_f$};
@@ -177,12 +178,12 @@ $\bar\pi_f$ is continuous.
 \end{tikzpicture}
 \end{wrapfigure}
 
-Note that $\tau_f\: \hat x\to \bar x$ defines a map $\tau_f\: \<X\>_f\to |X|_f$ and by construction it is length-preserving.
+Note that $\tau_f\: \hat x\to \bar x$ defines a map $\tau_f\: \<X\>_f\zz\to |X|_f$ and by construction it is length-preserving.
 Since $\<X\>_f$ is a length space, the latter implies that $\tau_f$ short.
 The map $\tau_f$ might not induce an isometry
 \[\<X\>_f\to\<|X|_f\>_{\bar f}.\]
-In general $\tau_f$ does not have to be injective, an example is given in \cite[4.2]{petrunin-intrinisic}.
-However, for metric minimizing discs $f\:\DD\to Y$ this is true; see
+Moreover, $\tau_f$ does not have to be injective, an example is given in \cite[4.2]{petrunin-intrinisic}.
+However, for metric minimizing discs $f\:\DD\to Y$ both statements hold true; see
 Proposition~\ref{prop:|D|}.
 
 The maps $\bar f\:|X|_f\to Y$ and $ \hat f\:\<X\>_f\to Y$ are uniquely defined by the identity
@@ -230,12 +231,12 @@ Therefore $\hat\gamma_+(1)$ is the limit of $(x_n)$, a contradiction.
 
 It remains to show that $\<X\>$ is geodesic.
 Assume $\gamma_n$ is a sequence of constant speed paths from $x$ to $y$ in $X$
-such that $\length\hat\gamma_n\to \<x-y\>$ as $n\to\infty$.
+such that $\length(\hat\gamma_n)\to \<x-y\>$ as $n\to\infty$.
 Since $X$ is compact, we can pass to a partial limit $\gamma$ of  $\gamma_n$.
 The corresponding curve $\hat\gamma=\hat \pi\circ\gamma$ is the needed geodesic from $\hat x$ to $\hat y$ in $\<X\>$.
 \qeds
 
-\parbf{Monotone-light decomposition.}
+\parbf{Monotone-light factorization.} %???any reason you prefer decomposition???
 Let $f\:X\to Y$ be a map between topological spaces.
 Recall that 
 \begin{itemize}
@@ -250,13 +251,13 @@ Let $f\:X\to Y$ be a continuous map.
 Then the map $\bar \pi_f$ is monotonic and $\bar f$ is light.
 In particular 
 \[f=\bar f\circ\bar\pi_f\]
-is a monotone-light decomposition. 
+is a monotone-light factorization. 
 \end{thm}
 
 \parit{Proof.}
 First we prove the monotonicity of $\bar\pi_f$.
 
-Assume that $\bar\pi_f$ is not monotone;
+Assume the contrary;
 that is, for some $x\in X$ the equivalence class 
 \[K=\bar\pi_f^{-1}(\bar x)=\set{x'\in X}{|x-x'|_f=0}\]
 is not connected. Since $X$ is normal, we
@@ -267,13 +268,16 @@ By Lemma \ref{lem:picont}, $K$ is closed.
 
 Assume that $x\in U$ and pick $x'\in K\cap V$.
 Then there is a sequence of connected sets $K_n\ni x,x'$ such that $\diam f(K_n)<\tfrac1n$.
-For each $n$ we choose a point $k_n\in K_n\backslash (U\cup V)$ and let $k$ be a partial limit.
-It follows that $k\in K\backslash (U\cup V)$, a contradiction. Hence $\bar\pi_f$ is monotone.
+For each $n$ we choose a point $k_n\in K_n\backslash (U\cup V)$.
+Let $k$ be a partial limit of the sequence $(k_n)$.
+It follows that $k\in K\backslash (U\cup V)$, a contradiction. 
 
-Note that for every closed connected subset $C\subset |X|_f$ the inverse image $Z:=\bar\pi_f^{-1}C$ is
-connected. Indeed, if $Z$ is the disjoint union of two compact sets $Z_1$ and $Z_2$, then the sets 
-$C_i:=\set{\bar x\in C}{\bar\pi_f^{-1}(\bar x)\subset Z_i}$ are closed.
-From this the lightness of $\bar f$ is evident.
+Assume $\bar f$ is not light;
+that is, the inverse image of some $y\in Y$ contains a closed connected set $C$ with more than one point.  
+Note that the inverse image $Z:=\bar\pi_f^{-1}C$ is connected. 
+Indeed, if $Z$ is the disjoint union of two compact sets $Z_1$ and $Z_2$, then the sets 
+$C_i=\{\,\bar x\in C\mid\bar\pi_f^{-1}(\bar x)\subset Z_i\,\}$ are closed.
+It follows that $|z-z'|_f=0$ for any two points $z,z'\in Z$, a contradiction.
 \qeds
 
 \input{retracts.tex}
@@ -283,16 +287,20 @@ From this the lightness of $\bar f$ is evident.
 \input{finite-whole}
 \input{main}
 
-\section{Smooth surfaces}\label{sec:smooth}
+\section{Saddle surfaces}\label{sec:smooth}
 
- It is an old conjecture of Shefel that any saddle disc in a $\CAT[0]$ space is
-locally $\CAT[0]$ with respect to its intrinsic metric. See \cite{petrunin-metric-min}
-for the definition of a general saddle disc and a precise formulation of the conjecture.
-In this section we will discuss the relation between metric minimizing discs and saddle discs in
-low-dimensional Euclidean spaces. 
+In this section we will discuss the relation between metric minimizing discs and saddle discs.
+
+Recall that a map $s\:\DD\to \RR^m$ is called \emph{saddle} if for any hyperplane $\Pi\subset\RR^m$ each of the connected components of $\DD\backslash s^{-1}\Pi$ meets the boundary.
+
+If $s$ is smooth embedding in $\RR^3$ then its saddle if and only if the  obtained surface has nonpositive Gauss curvature. 
+An old conjecture of Samuel Shefel states that any saddle disc in a $\RR^3$ is $\CAT[0]$ with respect to its intrinsic metric.
+
+It is evident that any metric minimizing disc $s$ in a Euclidean space is saddle.
+ 
 
 \parbf{Three-dimesional case.}
-In general a smooth saddle disc may not be globally metric minimizing.
+In general a saddle disc may not be globally metric minimizing.
 An example is shown in the picture.
 It is a saddle polyhedral disc made from 10 triangles
 with a hexagon boundary forming a Y-shape marked with bold lines.
@@ -304,7 +312,7 @@ with a hexagon boundary forming a Y-shape marked with bold lines.
 \end{lpic}
 \end{center}
 
-By smoothing this example one can produce a strictly saddle disc which is not metric minimizing.
+By smoothing this example one can produce a smooth disc which is not metric minimizing, but \emph{strictly saddle} meaning the principle curvatures at each interior point have opposite signs. 
 As the following proposition states, there are no local examples of that type.
 
 \begin{thm}{Proposition}\label{prop:smooth}
@@ -396,14 +404,14 @@ It remains to choose $v_3$ and $v_4$ for solution so that $\lambda_1, \lambda_2>
 \qeds
 
 \parbf{Four-dimensional case.}
-We do not see any way to show that a given surface is metric minimizing except by constructing an appropriate energy 
-for which it is energy minimizing, as we did in Section~\ref{sec:smooth}.
-Locally, the energy functional as in Section~\ref{sec:smooth} can be described by three functions defined on the disc.
-These three functions are subject to certain differential equations and 
-straightforward calculations show that on generic smooth saddle surfaces in $\RR^4$ 
+Except for the constructing an energy as we did above,
+we do not see any way to show that a given smooth surface is metric minimizing.
+Locally, the appropriate energy functional can be described by three functions defined on the disc.
+These three functions are subject to certain differential equations.
+Straightforward computations show that on generic smooth saddle surfaces in $\RR^4$ 
 there is no solution even locally.
 
-By that reason we expect that generic smooth saddle surfaces in $\RR^4$ are locally not metric minimizing. 
+By that reason we expect that generic smooth saddle surfaces in $\RR^4$ are not locally metric minimizing. 
 That is, arbitrary small neighborhoods of any point admit deformations which shrink 
 the intrinsic metric and keep the boundary fixed.
 On the other hand we do not have an examples of a saddle surface for which this condition would hold at single point.
@@ -469,9 +477,9 @@ Trans. Amer. Math. Soc. 27 no. 4 (1925) pp. 416--428.
 ``Metric minimizing surfaces.''
 Electron. Res. Announc. Amer. Math. Soc. 5 (1999), 47--54 
 
-%\bibitem{petrunin-intrinisic} Petrunin, A.
-%``Intrinsic isometries in Euclidean space.''
-%St. Petersburg Math. J. 22 (2011), no. 5, 803--812 
+\bibitem{petrunin-intrinisic} Petrunin, A.
+``Intrinsic isometries in Euclidean space.''
+St. Petersburg Math. J. 22 (2011), no. 5, 803--812 
 
 %\bibitem{petrunin-orthodox} Petrunin, A. 
 %``Exercises in Orthodox Geometry''

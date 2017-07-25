@@ -5,8 +5,8 @@
 Let $Y$ be a $\CAT[0]$ space and $s\:\DD\to Y$ 
 be a metric minimizing disc.
 Given a finite set $F\subset \DD$ such that $\hat\pi_s(F)$ has finite
-diameter in $<D>_s$. Then
-there exists a finite piecewise geodesic graph $\Gamma$ embedded in $<D>_s$ such that 
+diameter in $\<D\>_s$. Then
+there exists a finite piecewise geodesic graph $\Gamma$ embedded in $\<D\>_s$ such that 
 $F$ is a subset of its vertexes.
 \end{thm} 
 
@@ -52,8 +52,8 @@ for any $x\in\partial\DD\cap F$.
  
 \end{thm} 
 
-\parit{Proof.} Assume $\partial \DD\cap F= \emptyset$.
-Then one can take a one-point space as $W$ and arbitrary maps $p\:F\to W$ and $q\:W\to Y$.
+\parit{Proof.} If $\partial \DD\cap F= \emptyset$,
+then one can take a one-point space as $W$ and arbitrary maps $p\:F\to W$ and $q\:W\to Y$.
 So suppose $\partial \DD\cap F\ne\emptyset$.
 
 Without loss of generality we may assume that the distance $\<x-y\>_s$
@@ -69,29 +69,31 @@ By Lemma \ref{lem:graph}, there exists a finite piecewise geodesic graph $\Gamma
 contains $F$ as a subset of its vertexes.
 According to Proposition~\ref{prop:|D|},
  $\tau_s$ embeds $\Gamma$ in $|\DD|_s$.
-The space $|\DD|_s$ comes with an embedding into the plane.
-Therefore $\Gamma$ can be considered as a graph embedded into the plane.
+By Proposition~\ref{prop:|D|},
+$|\DD|_s$ is a disc retract.
+Therefore $\Gamma$ can be (and will be) considered as a graph embedded into the plane.
 
 By Proposition~\ref{prop:metric-min-graph-exist}, there is a map 
 $u\:\Gamma\to Y$ metric minimizing relative to $A=F\cap\partial\DD$ such that
-\[s|_\gamma\succcurlyeq u\rel A.\]
+\[s|_\Gamma\succcurlyeq u\rel A.\eqlbl{eq:>=}\]
 
 Fix an open disc $\Delta$ cut by $\Gamma$ from $|\DD|_s$.
 By Reshetnyak's theorem, the closed curve $u|_{\partial\Delta}$
 is majorized by a convex plane polygon, possibly degenerate to a point or a line segment.
-Note that the angle of the majorizing polygon can not be smaller than the angle between the corresponding edges in $u(\Gamma)\subset Y$.
+Note that the angle of the majorizing polygon cannot be smaller than the angle between the corresponding edges in $u(\Gamma)\subset Y$.
 
 Let us glue the majorizing polygons into $\<\Gamma\>_u$;
 denote by $W$ the resulting space.
 According to Proposition~\ref{prop:metric-min-graph}\ref{sum>=2pi}, the angle around each inner vertex has to be at least $2\cdot\pi$.
-Clearly $W$ is a disc retract, in particular it is simply connected.
+Clearly $W$ is a disc retract;
+in particular, it is simply connected.
 It follows that $W$ is a $\CAT[0]$ space.
 
 The short map $q\:W\to Y$ is constructed by gluing together the maps provided by Reshetnyak's majorization theorem.
 The space $W$ comes with a natural short map $\<\Gamma\>_u\to W$.
 
 Define $p(x)$ for $x\in F$ as the image of the corresponding vertex of $\Gamma$ in $W$.
-Since $s|_\gamma\succcurlyeq u\rel A$, 
+By \ref{eq:>=}, 
 \[|p(x)-p(y)|_W\le \<x-y\>_s\]
 for any $x,y\in F$.
 
@@ -100,9 +102,9 @@ By construction the pair of maps $p,q$ meet all conditions.
 
 
 The following establishes a connection between the 
-Key Lemma \ref{lem:key} and the Finite-Whole Extension Lemma \ref{lem:finite-whole}.
+key lemma (\ref{lem:key}) and the finite-whole extension lemma (\ref{lem:finite-whole}).
 
-\begin{thm}{Lemma}\label{lem:closed}
+\begin{thm}{Lemma}\label{lem:S-closed}
 Let $Y$ be a $\CAT[0]$ space and $s\:\DD\to Y$ 
 be a metric minimizing disc. Let $W$ be a
 $\CAT[0]$ disc retract with boundary curve $\delta$. For a given 
@@ -116,8 +118,10 @@ for any $x\in\partial\DD\cap F$.
 Then $\mathfrak{S}_F$ is closed under pointwise convergence. 
 \end{thm}
 
+The proof is an application of the ultralimit+projection construction;
+we used it once before and will use it again latter.
+
 \parit{Proof.}
-The proof uses the ultralimit+projection construction.
 Consider a converging sequence $p_n\in  \mathfrak{S}_F$;
 denote by $p_\infty$ its limit.
 For each $p_n$ there is a short map $q_n\:W\to Y$ satisfying the condition above.

@@ -1,23 +1,26 @@
 \section{Proof assembling}\label{Main theorem}
 
-The following lemma will estabish the final step in the proof of the main theorem.
+The following lemma will be used in the final step in the proof of the main theorem.
 
 \begin{thm}{Lemma}\label{lem:maj is isom}
 Let $Y$ be a $\CAT[0]$ space and $s\:\DD\to Y$ be a metric minimizing map.
 Assume that there is a $\CAT[0]$ disc retract $W$ with boundary curve $\delta$ and a short map $f\:\<D\>_s \to W$
 such that $f\circ \delta_s=\delta$. If there exists a short map 
-$q\: W\to Y$ with $q\circ \delta=s|_{\partial \DD}$, the $f$ is an isometry.
+$q\: W\to Y$ with $q\circ \delta=s|_{\partial \DD}$, then the map $f$ is an isometry.
 \end{thm}
 
 \parit{Proof.}
-Let $r\:\DD\to W$ be the natural projection from the mapping cylinder of $\delta$. Then $r$ 
-is a retraction with $r|_{\partial \DD}=\delta$.
-The composition $\DD\xrightarrow{r}W\xrightarrow{q} Y$ fulfills $q\circ r|_{\partial \DD}=s|_{\partial \DD}$.
+Let $r\:\DD\to W$ be the projection from the mapping cylinder $\DD=W_\delta$. 
+Note that $r$ is a retraction and $r|_{\partial \DD}=\delta$.
+The composition $\DD\xrightarrow{r}W\xrightarrow{q} Y$ fulfills \[q\circ r|_{\partial \DD}=s|_{\partial \DD}.\]
 
 Note that  $\<W\>_q=\<\DD\>_{q\circ r}$ and the natural projection $\rho\: W\to \<W\>_q$ is short.
-It follows that $\rho\circ f\: \<\DD\>_s\to \<\DD\>_{q\circ r}$ is short and therefore an isometry
-because $s$ is metric minimizing. Then $f$ is an isometric embedding which contains $\delta$
-in its image. By Lemma \ref{lem:geospace} and Proposition \ref{prop:|D|} $\<\DD\>_s$ is a complete geodesic space.
+It follows that $\rho\circ f\: \<\DD\>_s\to \<\DD\>_{q\circ r}$ is a majorization.
+Since $s$ is metric minimizing, $\rho\circ f$ is an isometry. 
+
+Therefore $f$ is an isometric embedding which contains $\delta$
+in its image. 
+By Lemma \ref{lem:geospace} and Proposition \ref{prop:|D|} $\<\DD\>_s$ is a complete geodesic space.
 So $f$ has to be surjective and therefore an isometry.
 \qeds
 
@@ -25,7 +28,7 @@ So $f$ has to be surjective and therefore an isometry.
 It is sufficient to consider
 the case that $|\DD|_s$ is  homeomorphic to a disc.
 Indeed, it is sufficient to show that a triangle $[xyz]$ in $\<\DD\>_s$ is thin. 
-Once the above case has been proven, the closure of each connected open component of $\<\DD\>_s\backslash ([xy]\cup[yz]\cup[zx])$
+Once the above case has been proven, the closure of each connected open component of $\<\DD\>_s\backslash ([x,y]\cup[y,z]\cup[z,x])$
 surrounded by the triangle is $\CAT[0]$.
 From this, the thinness of the triangle $[xyz]$ follows; see \cite{bishop}.
 
@@ -55,9 +58,10 @@ and a short map $q_F\:W\to Y$ such that $q_F\circ h_F$ agrees with $s$ on $\part
 
 Given a finite set $F\subset \DD$,
 denote by $\mathfrak{S}_F$ the set of all maps $h_F\:F\to W$ described above.
-Note that $\mathfrak{S}_F$ satisfies the assumption of the finite-whole extension lemma \ref{lem:finite-whole}.
 
-Indeed, $\mathfrak{S}_F$ is closed by Lemma \ref{lem:closed} and the condition on the restriction of $h_F\in  \mathfrak{S}_F$ is evident.
+By Lemma \ref{lem:S-closed}, $\mathfrak{S}_F$ is closed.
+The condition on the restriction of $h_F\in  \mathfrak{S}_F$ in the finite-whole extension lemma (\ref{lem:finite-whole}) is evident.
+That is, $\mathfrak{S}_F$ satisfies the assumption of the lemma.
 
 Applying the finite-whole extension lemma \ref{lem:finite-whole},
 we get a map $h\:\DD\to W$ such that $h|_F\in \mathfrak{S}_F$
@@ -75,8 +79,7 @@ where $\nu\:Y^\omega\to Y$ is the closest-point-projection.
 By construction $q\:W\to Y$ is short and $q\circ h$ agrees with $s$ on $\partial \DD$.
 Note that we can't quite conclude $s\succcurlyeq q\circ h$ because $h$ might not be continuous.
 
-However, by construction, the map $h$ induces a short map $\hat h\:\<\DD\>_s\to W$ 
-such that $\hat h\circ\delta_s$ is the boundary curve of $W$. By Lemma \ref{lem:maj is isom}
-$\hat h$ is an isometry and the statement follows.
-
+By construction, the map $h$ induces a short map $\hat h\:\<\DD\>_s\to W$ 
+such that $\hat h\circ\delta_s$ is the boundary curve of $W$.
+By Lemma \ref{lem:maj is isom}, $\hat h$ is an isometry and the statement follows.
 \qeds
