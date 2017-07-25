@@ -1,6 +1,40 @@
 \section{Key Lemma}\label{Key Lemma}
 
 
+\begin{thm}{Lemma}\label{lem:graph}
+Let $Y$ be a $\CAT[0]$ space and $s\:\DD\to Y$ 
+be a metric minimizing disc.
+Given a finite set $F\subset \DD$ such that $\hat\pi_s(F)$ has finite
+diameter in $<D>_s$. Then
+there exists a finite piecewise geodesic graph $\Gamma$ embedded in $<D>_s$ such that 
+$F$ is a subset of its vertexes.
+\end{thm} 
+
+\parit{Proof.} 
+For any pair $x,y\in F$, connect $\hat x$ to $\hat y$ by a minimizing geodesic in $\<\DD\>_s$. 
+We can assume that the constructed geodesics 
+are either disjoint or their intersection is formed by finite collections of arcs and points.
+
+Indeed, if some number of geodesics $\gamma_1,\dots,\gamma_n$ already has this property and we are given points $x$ and $y$, then
+we choose a minimizing geodesic $\gamma_{n+1}$ from $x$ to $y$ which maximizes the time it spends in $\gamma_1,\dots,\gamma_n$  
+in the order of importance.
+Namely, 
+\begin{itemize}
+\item  among all minimizing geodesics connecting $x$ to $y$
+choose one which spends maximal time in $\gamma_1$ --- in this case $\gamma_{n+1}$ intersects $\gamma_1$ along the empty set, 
+a one-point set or a closed arc.
+\item among all minimizing geodesics as above
+choose one which spends maximal time in $\gamma_2$ --- in this case $\gamma_{n+1}$ intersects $\gamma_2$ along at most two arcs and points.
+\item and so on.
+\end{itemize}
+
+%IT SHOULD BE POSSIBLE TO ENSURE THAT INTERSECTION OF ANY TWO GEODESIC IS EMPTY OR CONNECTED, BUT I FAILED TO MAKE IT FORMALLY??? 
+
+It follows that together the constructed geodesics form a finite graph $\Gamma$ as required.
+\qeds
+
+
+
 \begin{thm}{Key Lemma}\label{lem:key}
 Let $Y$ be a $\CAT[0]$ space and $s\:\DD\to Y$ 
 be a metric minimizing disc.
@@ -31,27 +65,8 @@ Suppose $p'\:F'\to W$ and $q\:W\to Y$ are maps satisfying the proposition for $F
 Extend $p'$ to $F$ by sending $F\backslash F'$ to one point in $W$. The resulting
 map $p$ together with $q$ will then satisfy the proposition for $F$.
 
-For any pair $x,y\in F$, connect $\hat x$ to $\hat y$ by a minimizing geodesic in $\<\DD\>_s$. 
-We can assume that the constructed geodesics 
-are either disjoint or their intersection is formed by finite collections of arcs and points.
-
-Indeed, if some number of geodesics $\gamma_1,\dots,\gamma_n$ already has this property and we are given points $x$ and $y$, then
-we choose a minimizing geodesic $\gamma_{n+1}$ from $x$ to $y$ which maximizes the time it spends in $\gamma_1,\dots,\gamma_n$  
-in the order of importance.
-Namely, 
-\begin{itemize}
-\item  among all minimizing geodesics connecting $x$ to $y$
-choose one which spends maximal time in $\gamma_1$ --- in this case $\gamma_{n+1}$ intersects $\gamma_1$ along the empty set, 
-a one-point set or a closed arc.
-\item among all minimizing geodesics as above
-choose one which spends maximal time in $\gamma_2$ --- in this case $\gamma_{n+1}$ intersects $\gamma_2$ along at most two arcs and points.
-\item and so on.
-\end{itemize}
-
-%IT SHOULD BE POSSIBLE TO ENSURE THAT INTERSECTION OF ANY TWO GEODESIC IS EMPTY OR CONNECTED, BUT I FAILED TO MAKE IT FORMALLY??? 
-
-It follows that together the constructed geodesics form a finite graph, say $\Gamma$,
-embedded in $\<\DD\>_s$.
+By Lemma \ref{lem:graph}, there exists a finite piecewise geodesic graph $\Gamma$ embedded in $<D>_s$ which
+contains $F$ as a subset of its vertexes.
 According to Proposition~\ref{prop:|D|},
  $\tau_s$ embeds $\Gamma$ in $|\DD|_s$.
 The space $|\DD|_s$ comes with an embedding into the plane.
@@ -82,3 +97,34 @@ for any $x,y\in F$.
 
 By construction the pair of maps $p,q$ meet all conditions.
 \qeds
+
+
+The following establishes a connection between the 
+Key Lemma \ref{lem:key} and the finite-whole extension lemma \ref{lem:finite-whole}.
+
+\begin{thm}{Lemma}\label{lem:closed}
+Let $Y$ be a $\CAT[0]$ space and $s\:\DD\to Y$ 
+be a metric minimizing disc. Let $W$ be a
+$\CAT[0]$ disc retract with boundary curve $\delta$. For a given 
+finite set $F\subset \DD$ we define $\mathfrak{S}_F$ to be the family of maps  
+ $p\:F\to W$ such that
+\[|p(x)-p(y)|_W\le \<x-y\>_s\] 
+for $x,y\in F$ with $p(x)=\delta(x)$ for $x\in F\cap \partial\DD$ and such that there exits
+a short map $q\:W\to Y$ with
+\[s(x)=q\circ p(x)\] 
+for any $x\in\partial\DD\cap F$.
+Then $\mathfrak{S}_F$ is closed under pointwise convergence. 
+\end{thm}
+
+\parit{Proof.}
+The proof uses the ultralimit+projection construction.
+Consider a converging sequence $p_n\in  \mathfrak{S}_F$;
+denote by $p_\infty$ its limit.
+For each $p_n$ there is a short map $q_n\:W\to Y$ satisfying the condition above.
+Pass to its ultralimit $q_\omega\:W\to Y^\omega$.
+Recall that $Y$ is a closed convex set in $Y^\omega$.
+In particular the closest-point-projection $\nu\:Y^\omega\to Y$ is well defined and short.
+Therefore, the composition $q=\nu\circ q_\omega$ is short.
+Finally note that the maps $p\infty\:F\to W$ and $q\:W\to Y$ satisfy the condition above.
+\qeds
+
