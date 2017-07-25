@@ -202,7 +202,7 @@ are short and length-preserving.
 
 In particular the tautological map $\<|X|_f\>_{\bar f}\zz\to \<|X|_f\>$ is an isometry;
 that is, for any continuous map $f\:X\to Y$ the induced length metric on $|X|_f$ coincides with the length metric induced by 
-$\bar f\:|X|\to Y$.
+$\bar f\:|X|_f\to Y$.
 
 
 Recall that a geodesic in a metric space is a curve whose length coincides with the distance between its endpoints.
@@ -284,6 +284,12 @@ From this the lightness of $\bar f$ is evident.
 \input{main}
 
 \section{Smooth surfaces}\label{sec:smooth}
+
+ It is an old conjecture of Shefel that any saddle disc in a $\CAT[0]$ space is
+locally $\CAT[0]$ with respect to its intrinsic metric. See \cite{petrunin-metric-min}
+for the definition of a general saddle disc and a precise formulation of the conjecture.
+In this section we will discuss the relation between metric minimizing discs and saddle discs in
+low-dimensional Euclidean spaces. 
 
 \parbf{Three-dimesional case.}
 In general a smooth saddle disc may not be globally metric minimizing.
@@ -405,7 +411,7 @@ On the other hand we do not have an examples of a saddle surface for which this 
 
 \begin{thebibliography}{52}
 
-\bibitem{A} Alexandrov, A. D. ``Ruled  surfaces  in  metric  spaces,'' Vestnik Leningrad. Univ., 12:5-26, 1957 (Russian).
+%\bibitem{A} Alexandrov, A. D. ``Ruled  surfaces  in  metric  spaces,'' Vestnik Leningrad. Univ., 12:5-26, 1957 (Russian).
 
 \bibitem{bishop}
 Bishop, Richard L.
@@ -423,16 +429,16 @@ xii+250 pp.
 A course in metric geometry.
 Graduate Studies in Mathematics, 33. American Mathematical Society, Providence, RI, 2001. xiv+415 pp.
 
-\bibitem{GS} Gromov, Mikhail, and Richard Schoen. "Harmonic maps into singular spaces and p-adic superrigidity for lattices in groups of rank one." Publications Mathématiques de l'IHÉS 76.1 (1992): 165-246.
+%\bibitem{GS} Gromov, Mikhail, and Richard Schoen. "Harmonic maps into singular spaces and p-adic superrigidity for lattices in groups of rank one." Publications Mathématiques de l'IHÉS 76.1 (1992): 165-246.
 
-\bibitem{H} Hamilton, R. S. ``Harmonic Maps of Manifolds with Boundary,'' Lecture Notes in Mathematics, Springer, 1975, ISBN 978-3-540-37530-2.
+%\bibitem{H} Hamilton, R. S. ``Harmonic Maps of Manifolds with Boundary,'' Lecture Notes in Mathematics, Springer, 1975, ISBN 978-3-540-37530-2.
 
-\bibitem{HKST} Heinonen, J.;  Koskela, P.;  Shanmugalinga, N.; Tyson, J. ``Sobolev spaces on metric measure spaces,''
-volume 27 of New Mathematical Monographs. Cambridge University Press, Cambridge, 2015.
+%\bibitem{HKST} Heinonen, J.;  Koskela, P.;  Shanmugalinga, N.; Tyson, J. ``Sobolev spaces on metric measure spaces,''
+%volume 27 of New Mathematical Monographs. Cambridge University Press, Cambridge, 2015.
 
-\bibitem{jost} Jost, J.
-Univalency of harmonic mappings between surfaces.
-J. Reine Angew. Math. 324 (1981), 141--153. 
+%\bibitem{jost} Jost, J.
+%Univalency of harmonic mappings between surfaces.
+%J. Reine Angew. Math. 324 (1981), 141--153. 
 
 \bibitem{KF}
 \begin{otherlanguage}{russian}
@@ -442,17 +448,17 @@ J. Reine Angew. Math. 324 (1981), 141--153.
 Издание седьмое, 2004.
 \end{otherlanguage}
 
-\bibitem{KS}Korevaar, N. J.; Schoen, R. M. ``Sobolev spaces and harmonic maps for metric space targets,'' Comm. Anal. Geom., 1(3-4):561-659, 1993.
+%\bibitem{KS}Korevaar, N. J.; Schoen, R. M. ``Sobolev spaces and harmonic maps for metric space targets,'' Comm. Anal. Geom., 1(3-4):561-659, 1993.
 
-\bibitem{LSW} Lytchak, A.; Stadler, S.; Wenger, S.  ``On conformal changes of CAT(0) spaces'', in preparation.
+%\bibitem{LSW} Lytchak, A.; Stadler, S.; Wenger, S.  ``On conformal changes of CAT(0) spaces'', in preparation.
 
-\bibitem{LW}Lytchak, A.; Wenger, S. ``Area minimizing discs in metric spaces,'' preprint arXiv:1502.06571, 2015.
+%\bibitem{LW}Lytchak, A.; Wenger, S. ``Area minimizing discs in metric spaces,'' preprint arXiv:1502.06571, 2015.
 
-\bibitem{LW2}Lytchak, A.; Wenger, S. ``Energy and area minimizers in metric spaces,'' preprint  arXiv:1507.02670, 2015.
+%\bibitem{LW2}Lytchak, A.; Wenger, S. ``Energy and area minimizers in metric spaces,'' preprint  arXiv:1507.02670, 2015.
 
 \bibitem{LW3}Lytchak, A.; Wenger, S. ``Intrinsic structure of minimal discs in metric spaces ,'' preprint  arXiv:1602.06755, 2016.
 
-\bibitem{LW4}Lytchak, A.; Wenger, S. ``Regularity of harmonic discs in spaces with quadratic isoperimetric inequality  ,'' preprint  arXiv:1512.01060, 2016.
+%\bibitem{LW4}Lytchak, A.; Wenger, S. ``Regularity of harmonic discs in spaces with quadratic isoperimetric inequality  ,'' preprint  arXiv:1512.01060, 2016.
 
 \bibitem{moore}
 Moore, R. L.,
@@ -463,30 +469,30 @@ Trans. Amer. Math. Soc. 27 no. 4 (1925) pp. 416--428.
 ``Metric minimizing surfaces.''
 Electron. Res. Announc. Amer. Math. Soc. 5 (1999), 47--54 
 
-\bibitem{petrunin-intrinisic} Petrunin, A.
-``Intrinsic isometries in Euclidean space.''
-St. Petersburg Math. J. 22 (2011), no. 5, 803--812 
+%\bibitem{petrunin-intrinisic} Petrunin, A.
+%``Intrinsic isometries in Euclidean space.''
+%St. Petersburg Math. J. 22 (2011), no. 5, 803--812 
 
-\bibitem{petrunin-orthodox} Petrunin, A. 
-``Exercises in Orthodox Geometry''
-{\tt arXiv:0906.0290 [math.HO]}
+%\bibitem{petrunin-orthodox} Petrunin, A. 
+%``Exercises in Orthodox Geometry''
+%{\tt arXiv:0906.0290 [math.HO]}
 
-\bibitem{R}Reshetnyak, Yu. G. ``Sobolev classes of functions with values in a metric space,'' II, Sibirsk. Mat. Zh. 45 (2004), no. 4, 855-870. MR 2091651 (2005e:46055)
+%\bibitem{R}Reshetnyak, Yu. G. ``Sobolev classes of functions with values in a metric space,'' II, Sibirsk. Mat. Zh. 45 (2004), no. 4, 855-870. MR 2091651 (2005e:46055)
 
-\bibitem{Se} Serbinowski,  T. ``Boundary regularity of harmonic maps to nonpositively curved metric spaces,''
-Comm. Anal. Geom. , 2(1):139-153, 1994.
+%\bibitem{Se} Serbinowski,  T. ``Boundary regularity of harmonic maps to nonpositively curved metric spaces,''
+%Comm. Anal. Geom. , 2(1):139-153, 1994.
 
-\bibitem{S}Schoen, R. ``Analytic Aspects of The Harmonic Map Problem'' Chapter IX in  
-``Lectures on harmonic maps'' by Schoen, R.; Yau, S. T.,  
-Conference Proceedings and Lecture Notes in Geometry and Topology, II. International Press, Cambridge, MA, 1997. vi+394 pp. ISBN: 1-57146-002-0
+%\bibitem{S}Schoen, R. ``Analytic Aspects of The Harmonic Map Problem'' Chapter IX in  
+%``Lectures on harmonic maps'' by Schoen, R.; Yau, S. T.,  
+%Conference Proceedings and Lecture Notes in Geometry and Topology, II. International Press, Cambridge, MA, 1997. vi+394 pp. ISBN: 1-57146-002-0
 
-\bibitem{shefel-2D} 
-\begin{otherlanguage}{russian}
-Шефель, С. З.,
-\textit{О седловых поверхностях ограниченной спрямляемой кривой.}
-Доклады АН СССР, 162 (1965) №2, 
-294---296.
-\end{otherlanguage}
+%\bibitem{shefel-2D} 
+%\begin{otherlanguage}{russian}
+%Шефель, С. З.,
+%\textit{О седловых поверхностях ограниченной спрямляемой кривой.}
+%Доклады АН СССР, 162 (1965) №2, 
+%294---296.
+%\end{otherlanguage}
 %\v{S}efel', S.,
 %\textit{On saddle surfaces bounded by a rectifiable curve,} 
 %Dokl. Akad. Nauk SSSR 
@@ -494,23 +500,23 @@ Conference Proceedings and Lecture Notes in Geometry and Topology, II. Internati
 %(1965), 
 %294--296.
 
-\bibitem{shefel-3D} 
-\begin{otherlanguage}{russian}
-Шефель, С. З., 
-\textit{О внутренней геометрии седловых поверхностей.}
-Сибирский математический журнал, 5 (1964), 1382---1396
-\end{otherlanguage}
+%\bibitem{shefel-3D} 
+%\begin{otherlanguage}{russian}
+%Шефель, С. З., 
+%\textit{О внутренней геометрии седловых поверхностей.}
+%Сибирский математический журнал, 5 (1964), 1382---1396
+%\end{otherlanguage}
 %\v{S}efel', S., 
 %\textit{On the intrinsic geometry of saddle surfaces,} Sibirsk. Mat. \v{Z}. 
 %5 
 %(1964), 
 %1382--1396
 
-\bibitem{schoen-yau} Schoen, Richard; Yau, Shing Tung
-On univalent harmonic maps between surfaces.
-Invent. Math. 44 (1978), no. 3, 265--278. 
+%\bibitem{schoen-yau} Schoen, Richard; Yau, Shing Tung
+%On univalent harmonic maps between surfaces.
+%Invent. Math. 44 (1978), no. 3, 265--278. 
 
-\bibitem{St} Stadler, S. ``Harmonic discs in CAT(0) spaces'', in preparation.
+%\bibitem{St} Stadler, S. ``Harmonic discs in CAT(0) spaces'', in preparation.
 
 %\bibitem{W1}Whyburn, G. T., ``On sequences and limiting sets,'' Fund. Math. vol. 25 (1935) pp. 408-426.
 

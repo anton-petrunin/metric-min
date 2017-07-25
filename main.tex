@@ -1,6 +1,25 @@
 \section{Proof assembling}\label{Main theorem}
 
+The following lemma will estabish the final step in the proof of the main theorem.
 
+\begin{thm}{Lemma}\label{lem:maj is isom}
+Let $Y$ be a $\CAT[0]$ space and $s\:\DD\to Y$ be a metric minimizing map.
+Assume that there is a $\CAT[0]$ disc retract $W$ with boundary curve $\delta$ and a short map $f\:\<D\>_s \to W$
+such that $f\circ \delta_s=\delta$. If there exists a short map 
+$q\: W\to Y$ with $q\circ \delta=s|_{\partial \DD}$, the $f$ is an isometry.
+\end{thm}
+
+\parit{Proof.}
+Let $r\:\DD\to W$ be the natural projection from the mapping cylinder of $\delta$. Then $r$ 
+is a retraction with $r|_{\partial \DD}=\delta$.
+The composition $\DD\xrightarrow{r}W\xrightarrow{q} Y$ fulfills $q\circ r|_{\partial \DD}=s|_{\partial \DD}$.
+
+Note that  $\<W\>_q=\<\DD\>_{q\circ r}$ and the natural projection $\rho\: W\to \<W\>_q$ is short.
+It follows that $\rho\circ f\: \<\DD\>_s\to \<\DD\>_{q\circ r}$ is short and therefore an isometry
+because $s$ is metric minimizing. Then $f$ is an isometric embedding which contains $\delta$
+in its image. By Lemma \ref{lem:geospace} and Proposition \ref{prop:|D|} $\<\DD\>_s$ is a complete geodesic space.
+So $f$ has to be surjective and therefore an isometry.
+\qeds
 
 \parit{Proof of the main theorem.}
 It is sufficient to consider
@@ -36,40 +55,28 @@ and a short map $q_F\:W\to Y$ such that $q_F\circ h_F$ agrees with $s$ on $\part
 
 Given a finite set $F\subset \DD$,
 denote by $\mathfrak{S}_F$ the set of all maps $h_F\:F\to W$ described above.
-Note that the set of maps $\mathfrak{S}_F$ satisfies the assumption of the finite-to-whole lemma \ref{lem:finite-whole}.
+Note that $\mathfrak{S}_F$ satisfies the assumption of the finite-whole extension lemma \ref{lem:finite-whole}.
 
-Indeed, the condition on the restriction of $h\in  \mathfrak{S}_F$ is evident.
-To prove that $\mathfrak{S}_F$ is closed we apply the ultralimit+projection construction.
+Indeed, $\mathfrak{S}_F$ is closed by Lemma \ref{lem:closed} and the condition on the restriction of $h_F\in  \mathfrak{S}_F$ is evident.
 
-Namely, consider a converging sequence $h_n\in  \mathfrak{S}_F$;
-denote by $h$ its limit.
-For each $h_n$ there is a short map $q_n\:W\to Y$ satisfying the condition above.
-Pass to its ultralimit $q_\omega\:W\to Y^\omega$.
-Recall that $Y$ is a closed convex set in $Y^\omega$.
-In particular the closest-point-projection $\nu\:Y^\omega\to Y$ is well defined and short.
-Therefore, the composition $q=\nu\circ q_\omega$ is short.
-Finally note that the maps $h\:F\to W$ and $q\:W\to Y$ satisfy the condition above.
-
-Applying the the finite-to-whole lemma \ref{lem:finite-whole},
+Applying the finite-whole extension lemma \ref{lem:finite-whole},
 we get a map $h\:\DD\to W$ such that $h|_F\in \mathfrak{S}_F$
 for any finite set $F\subset \DD$.
 
 Our next aim is to show that there is a single map $q$ such that
 for all finite sets $F$ the composition $q\circ h|_F$ agrees with
 $s$ on $\partial\DD\cap F$.
-This is done by applying the ultralimit+projection construction again.
+This is done by applying the ultralimit+projection construction.
 
 Choose a sequence of finite sets $F_n$ such that the intersections $F_n\cap\partial \DD$ get denser and denser in $\partial \DD$, 
 denote by $q_n$ the corresponding maps.
 Let $q_\omega\:W\to Y^\omega$ be the ultralimit of $q_n$ and set $q=\nu\circ q_\omega$,
 where $\nu\:Y^\omega\to Y$ is the closest-point-projection.
-By construction $q\:W\to Y$ is short and $q\circ h$ agrees with $s$ on $\partial \DD$;
-that is $s\succcurlyeq q\circ h$.
+By construction $q\:W\to Y$ is short and $q\circ h$ agrees with $s$ on $\partial \DD$.
+Note that we can't quite conclude $s\succcurlyeq q\circ h$ because $h$ might not be continuous.
 
-By construction, the map $h$ induces a short map $\hat h\:\<\DD\>_s\to W$ and $\hat h\circ\delta_s$ is the boundary curve of $W$.
-Since $W$ is a disc retract, there is a retraction $r\:\DD\to W$;
-consider the composition $\DD\xrightarrow{r}W\xrightarrow{q} Y$.
-Note that  $W=\<\DD\>_{q\circ r}$.
-Since $s$ is metric minimizing the majorization $\hat h$ is an isometry.
-Hence the statement follows.
+However, by construction, the map $h$ induces a short map $\hat h\:\<\DD\>_s\to W$ 
+such that $\hat h\circ\delta_s$ is the boundary curve of $W$. By Lemma \ref{lem:maj is isom}
+$\hat h$ is an isometry and the statement follows.
+
 \qeds
