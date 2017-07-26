@@ -194,12 +194,12 @@ $\bar\pi_f$ is continuous.
     loop above/.style={out=75,in=105,loop},
     every loop,
     ]
-   (2) edge node[right]{$\tau_f$}(1)
-   (12) edge[bend left] node[above]{$f$}(11)
-   (12) edge node[below]{$ \hat \pi_f$}(2)
-   (2) edge node[below]{$ \hat f$}(11)
-   (12) edge[bend right] node[left below]{$\bar \pi_f$}(1)
-   (1) edge[bend right] node[below right]{$\bar f$}(11);
+   (2) edge node{$\tau_f$}(1)
+   (12) edge[bend left] node[swap]{$f$}(11)
+   (12) edge node[swap]{$\hat\pi_f$}(2)
+   (2) edge node[swap]{$ \hat f$}(11)
+   (12) edge[bend right] node{$\bar \pi_f$}(1)
+   (1) edge[bend right] node{$\bar f$}(11);
 \end{tikzpicture}
 \end{wrapfigure}
 
