@@ -8,6 +8,8 @@ $\<\DD\>_s\to \<|\DD|_s\>$;
 that is $\tau_s$ is an isometry from $\<\DD\>_s$ to $|\DD|_s$ equipped with induced intrinsic metric.
 \end{thm}
 
+We need a little preparation before giving the proof.
+
 Let $Y$ be a metric space and
 $s\:\DD\to Y$ be a continuous map.
 We say that $s$ has \label{page:no-bubble}\emph{no bubbles}
@@ -41,7 +43,7 @@ Let $Y$ be a metric space and assume that a map $f\:\DD\to Y$ has no bubbles.
 Then $|\DD|_f$ is homeomorphic to a disc retract with boundary curve $\bar\pi_f|_{\SS^1}$.
 \end{thm}
 
-This lemma is nearly identical to \cite[Corollary 7.12]{LW3}; it could be considered a a disc version of Moore's quotient theorem \cite{moore}
+This lemma is nearly identical to \cite[Corollary 7.12]{LW3}; it could be considered a a disc version of Moore's quotient theorem \cite{moore}, \cite{daverman}
 which states that if a continuous map $f$ from the sphere $\SS^2$ to a Hausdorff space $X$
 has acyclic fibers, then $f$ can be approximated by a homemorphism; in particular $X$ is homeomorphic to $\SS^2$.
 
@@ -60,10 +62,10 @@ Note that this map satisfies Moore's quotient theorem, hence the statement follo
 The first two statements follow from Lemma~\ref{prop:point-complement} and Lemma~\ref{prop:disc-moore}.
 
 Since $|\DD|_s$ is a disc retract, the mapping cylinder over the boundary curve of $|\DD|_s$ is homeomorphic to $\DD$.
-Denote by $\theta\:\DD\to |\DD|_s$ the corresponding projection.
+Denote by $r \:\DD\to |\DD|_s$ the corresponding retraction.
 
-Note that $\<\DD\>_{\bar s\circ\theta}$ is isometric to $|\DD|_s$ equipped with the induced intrinsic metric.
-Recall that the map $\tau_s\:\<\DD\>_s\to|\DD|_s$ is short and the induced map $\mu\:\<\DD\>_s\to\<\DD\>_{\bar s\circ\theta}$ is a majorization.
+Note that $\<\DD\>_{\bar s\circ r}$ is isometric to $|\DD|_s$ equipped with the induced intrinsic metric.
+Recall that the map $\tau_s\:\<\DD\>_s\to|\DD|_s$ is short and the induced map $\mu\:\<\DD\>_s\to\<\DD\>_{\bar s\circ r}$ is a majorization.
 Since $s$ is metric minimizing, $\mu$ is an isometry.
 Hence the statement follows.
 \qeds
