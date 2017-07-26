@@ -60,7 +60,7 @@ $\mu\:\<\DD\>_s\to \<\DD\>_{s'}$;
 meaning that $\mu$ is a \emph{short} map with $\delta_{s'}=\mu\circ\delta_s$.
 
 A map $s\:\DD\to Y$ will be called \emph{metric minimizing disc} if $s\succcurlyeq s'$ 
-always implies that the corresponding majorization $\mu$ is an isometry.
+ implies that the corresponding majorization $\mu$ is an isometry.
 
 \begin{wrapfigure}{r}{28 mm}
 \begin{lpic}[t(-2 mm),b(-0 mm),r(0 mm),l(0 mm)]{pics/two-bry-curves(1)}
@@ -89,12 +89,13 @@ in particular each metric component of $\<\DD\>_s$ is a $\CAT[0]$ space.
 In fact one can consider $\<\DD\>_s$ as a $\CAT[0]$ space where infinite distances between points are legal.
 
 In the last section, we discuss the relation between saddle surfaces and metric minimizing discs.
-Evidently smooth metric minimizing disc $s$ in a Euclidean space is saddle, we prove 
+Evidently, any smooth metric minimizing disc $s$ in a Euclidean space is saddle. We prove 
 a local converse of this statement in dimension three (Proposition~\ref{prop:smooth}) and show by example that there is no global converse.
 We expect that in the 4-dimensional case even the local converse does not hold.
 
-The main theorem generalizes theorem of Alexander Alexandrov about ruled surfaces in \cite{A} and the main theorem by fist author in \cite{petrunin-metric-min}.
-It is also closely related to the results of Samuel Shefel in \cite{shefel-2D} and \cite{shefel-3D}, see also \cite[Chapter 4]{akp} and \cite{petrunin-stadler}. 
+The main theorem generalizes a theorem of Alexander Alexandrov about ruled surfaces in \cite{A} and the main theorem by the fist author in \cite{petrunin-metric-min}.
+It is also closely related to the results of Samuel Shefel in \cite{shefel-2D} and \cite{shefel-3D} and the result of Alexander Lytchak and Stefan Wenger 
+in \cite{LW5}, see also \cite[Chapter 4]{akp} and \cite{petrunin-stadler}. 
 
 \parbf{Acknowledgement.}
 We want to thank 
@@ -132,7 +133,7 @@ it comes with the projection map $X\to [X]$ defined as $x\mapsto [x]$.
 For a metric space we can consider the equivalence relation ``$\approx$'' defined as 
 \[x\approx y\quad\iff\quad|x-y|<\infty.\]
 Its equivalence classes are called \emph{metric components}.
-Note that by definition each metric component is a \emph{genuine metric space}, meaning that distance between points are finite.
+Note that by definition each metric component is a \emph{genuine metric space}, meaning that distances between points are finite.
 Consequently, a metric space is a disjoint union of genuine metric spaces.
 
 \parbf{Pseudometrics induced by maps.}
@@ -239,7 +240,7 @@ Then $\<X\>$ is a complete geodesic space.
 \end{thm}
 
 The second statement is classical (see for example \cite[II-\S8 Thm. 3]{KF}) but 
-we were not be able to find the first one in the literature.
+we were not able to find the first one in the literature.
 
 \parit{Proof.}
 Assume contrary $\<X\>_f$ is not complete.
@@ -265,7 +266,7 @@ Let $f\:X\to Y$ be a map between topological spaces.
 Recall that 
 \begin{itemize}
 \item $f$ is called \emph{monotonic} if the inverse image of each point is connected,
- \item $f$ is called \emph{light} if the inverse image of any point totally disconnected.
+ \item $f$ is called \emph{light} if the inverse image of any point is totally disconnected.
 \end{itemize}
 Since a connected set is nonempty by definition, any monotonic map is onto.
 
@@ -290,7 +291,7 @@ $K\cap U$ and $K\cap V$ are nonempty.
 
 By Lemma~\ref{lem:picont}, $K$ is closed.
 
-Assume that $x\in U$ and pick $x'\in K\cap V$.
+Suppose that $x\in U$ and pick $x'\in K\cap V$.
 Then there is a sequence of connected sets $K_n\ni x,x'$ such that $\diam f(K_n)<\tfrac1n$.
 For each $n$ we choose a point $k_n\in K_n\backslash (U\cup V)$.
 Let $k$ be a partial limit of the sequence $(k_n)$.
@@ -317,7 +318,7 @@ In this section we will discuss the relation between metric minimizing discs and
 
 Recall that a map $s\:\DD\to \RR^m$ is called \emph{saddle} if for any hyperplane $\Pi\subset\RR^m$ each of the connected components of $\DD\backslash s^{-1}\Pi$ meets the boundary.
 
-If $s$ is smooth embedding in $\RR^3$ then its saddle if and only if the  obtained surface has nonpositive Gauss curvature. 
+If $s$ is a smooth embedding in $\RR^3$ then it is saddle if and only if the  obtained surface has nonpositive Gauss curvature. 
 An old conjecture of Samuel Shefel states that any saddle disc in a $\RR^3$ is $\CAT[0]$ with respect to its intrinsic metric, see \cite{shefel-3D}.
 
 It is evident that any metric minimizing disc $s$ in a Euclidean space is saddle.
@@ -336,7 +337,7 @@ with a hexagon boundary forming a Y-shape marked with bold lines.
 \end{lpic}
 \end{center}
 
-By smoothing this example one can produce a smooth disc which is not metric minimizing, but \emph{strictly saddle} meaning the principle curvatures at each interior point have opposite signs. 
+By smoothing this example one can produce a smooth disc which is not metric minimizing, but \emph{strictly saddle} meaning the principal curvatures at each interior point have opposite signs. 
 As the following proposition states, there are no local examples of that type.
 
 \begin{thm}{Proposition}\label{prop:smooth}
@@ -387,7 +388,7 @@ Further, denote by by $a_1,a_2$ a pair of asymptotic vectors; we can assume that
 Set $v_1=\tfrac 1{\sqrt{|\kappa_1|}}\cdot e_1$ and $v_2=\tfrac 1{\sqrt{|\kappa_2|}}\cdot e_2$. 
 It remains to show that one can choose smooth functions  $\lambda_1$ and $\lambda_2$ 
 so that \ref{eq:laplasian}
-holds in a neighborhood of $x$ for $v_3=\lambda_1\cdot a_1$ and $v_4=\lambda_1\cdot a_1$.
+holds in a neighborhood of $p$ for $v_3=\lambda_1\cdot a_1$ and $v_4=\lambda_1\cdot a_1$.
 
 Note that the sum $v_1(v_1s)+v_2(v_2s)$ has vanishing normal part.
 That is \[v_1(v_1s)+v_2(v_2s)\] is a tangent vector to the surface.
@@ -428,7 +429,7 @@ It remains to choose $v_3$ and $v_4$ for solution so that $\lambda_1, \lambda_2>
 \qeds
 
 \parbf{Four-dimensional case.}
-Except for the constructing an energy as we did above,
+Except for constructing an energy as we did above,
 we do not see any way to show that a given smooth surface is metric minimizing.
 Locally, the appropriate energy functional can be described by three functions defined on the disc.
 These three functions are subject to certain differential equations.
@@ -438,14 +439,14 @@ there is no solution even locally.
 By that reason we expect that generic smooth saddle surfaces in $\RR^4$ are not locally metric minimizing. 
 That is, arbitrary small neighborhoods of any point admit deformations which shrink 
 the intrinsic metric and keep the boundary fixed.
-On the other hand we do not have an examples of a saddle surface for which this condition would hold at single point.
+On the other hand we do not have an example of a saddle surface for which this condition would hold at a single point.
 
 
 \begin{thebibliography}{52}
 
 \bibitem{A}
 \begin{otherlanguage}{russian}
-Александров, А. Д. 
+Александров, А. Д., 
 \textit{Линейчатые поверхности в метрических пространствах.}
 Вестник ЛГУ 2 (1957): 15---44.
 \end{otherlanguage}
@@ -457,18 +458,23 @@ Alexander, S.; Kapovitch, V. and Petrunin, A.,
 \texttt{arXiv:1701.03483v2 [math.DG]}.
 
 \bibitem{bishop}
-Bishop, Richard L.
+Bishop, R. L.,
 \textit{The intrinsic geometry of a Jordan domain.}
 Int. Electron. J. Geom. 1 (2008), no. 2, 33--39. 
 
-\bibitem{bressan} Bressan, A.
+\bibitem{bressan} Bressan, A.,
 \textit{Hyperbolic systems of conservation laws.
 The one-dimensional Cauchy problem.}
 Oxford Lecture Series in Mathematics and its Applications, 20, 2000.
 
-\bibitem{BBI}Burago, D., Burago, Y., Ivanov, S.
+\bibitem{BBI}Burago, D.; Burago, Y. and Ivanov, S.,
 \textit{A course in metric geometry.}
 Graduate Studies in Mathematics, 33, 2001.
+
+
+\bibitem{daverman} Daverman, R. J.,
+\textit{Decompositions of Manifolds}
+Academic Press Inc., N.Y., 1986.
 
 %\bibitem{GS} Gromov, Mikhail, and Richard Schoen. "Harmonic maps into singular spaces and p-adic superrigidity for lattices in groups of rank one." Publications Mathématiques de l'IHÉS 76.1 (1992): 165-246.
 
@@ -498,26 +504,30 @@ Graduate Studies in Mathematics, 33, 2001.
 %\bibitem{LW2}Lytchak, A.; Wenger, S. ``Energy and area minimizers in metric spaces,'' preprint  arXiv:1507.02670, 2015.
 
 \bibitem{LW3}
-Lytchak, A.; Wenger, S.
+Lytchak, A.; Wenger, S.,
 \textit{Intrinsic structure of minimal discs in metric spaces.} 
-\texttt{arXiv:1602.06755 [math.DG]}
+\texttt{arXiv:1602.06755 [math.DG]}.
 
 %\bibitem{LW4}Lytchak, A.; Wenger, S. ``Regularity of harmonic discs in spaces with quadratic isoperimetric inequality  ,'' preprint  arXiv:1512.01060, 2016.
+
+\bibitem{LW5} Lytchak, A.; Wenger, S.,  
+\textit{Isoperimetric  characterization  of  upper  curvature bounds.}
+\texttt{arXiv:1611.05261 [math.DG]}.
 
 \bibitem{moore}
 Moore, R. L.,
 \textit{Concerning upper semi-continuous collections of continua.}
 Trans. Amer. Math. Soc. 27 no. 4 (1925) pp. 416--428.
 
-\bibitem{petrunin-metric-min} Petrunin, A.
+\bibitem{petrunin-metric-min} Petrunin, A.,
 \textit{Metric minimizing surfaces.}
 Electron. Res. Announc. Amer. Math. Soc. 5 (1999), 47--54 
 
-\bibitem{petrunin-intrinisic} Petrunin, A.
+\bibitem{petrunin-intrinisic} Petrunin, A.,
 \textit{Intrinsic isometries in Euclidean space.}
 St. Petersburg Math. J. 22 (2011), no. 5, 803--812 
 
-\bibitem{petrunin-stadler} Petrunin, A., Stadler, S.
+\bibitem{petrunin-stadler} Petrunin, A.; Stadler, S.,
 \textit{Monotonicity of saddle maps.} 
 \texttt{arXiv:1707.02367 [math.DG]}.
 

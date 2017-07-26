@@ -2,18 +2,18 @@
 
 \emph{Metric minimizing graphs} are defined analog to metric minimizing discs.
 
-Namely, let $Y$ be a metric space, $\Gamma$ a finite graph and $A$ a subset of its vertexes.
+Namely, let $Y$ be a metric space, $\Gamma$ be a finite graph and $A$ be a subset of its vertexes.
 Given two maps $f,f'\:\Gamma\to Y$, we write $f\succcurlyeq f'\rel A$ if $f$ and $f'$ agree on $A$ 
 and there is a majorization $\mu\:\<\Gamma\>_f\to \<\Gamma\>_{f'}$
 such that $f(a)\zz=f'(\mu(a))$ for any $a\in A$.
 
-A map $f\:\Gamma\to Y$ is called \emph{metric minimizing relative to $A$} if $f\succcurlyeq f'\rel A$ always implies that the majorization $\mu$ is an isometry.
+A map $f\:\Gamma\to Y$ is called \emph{metric minimizing relative to $A$} if $f\succcurlyeq f'\rel A$ implies that the majorization $\mu$ is an isometry.
 
 \begin{thm}{Proposition}\label{prop:metric-min-graph-exist}
 Let $Y$ be a $\CAT[0]$ space, 
-$\Gamma$ is a finite graph and $A$ a subset of its vertexes.
+$\Gamma$ be a finite graph and $A$ be a subset of its vertexes.
 
-Given a Lipschitz continuous map $f\:\Gamma\to Y$ there is a map $h\:\Gamma\to Y$ 
+Given a continuous map $f\:\Gamma\to Y$ there is a map $h\:\Gamma\to Y$ 
 which is metric minimizing relative to $A$ and $f\succcurlyeq h\rel A$.
 \end{thm}
 
@@ -47,7 +47,7 @@ is a $\CAT[0]$ space which contains $Y$ as a closed convex subset.
 The $\omega$-limit $s_\omega\:\Gamma\to Y^\omega$ is well defined, since
 $f$ and, therefore, all $f_\alpha$ are Lipschitz continuous. 
 Denote $f'$ the composition of $f_\omega$ with the nearest point projection $Y^\omega\to Y$.
-The nearest point projection to a convex set in $\CAT[0]$ space is short.
+The nearest point projection to a closed convex set in $\CAT[0]$ space is short.
 Therefore $f_\alpha\succcurlyeq f'$ for any $\alpha\in \mathcal{O}$. Let $f''$ denote the straightening of $f'$.
 Then $f'\succcurlyeq f''$ and the claim follows from Zorn's Lemma.
 \qeds
@@ -55,7 +55,7 @@ Then $f'\succcurlyeq f''$ and the claim follows from Zorn's Lemma.
 
 \begin{thm}{Proposition}\label{prop:metric-min-graph}
 Let $Y$ be a $\CAT[0]$ space, 
-$\Gamma$ a finite  graph and $A$ a subset of its vertexes.
+$\Gamma$ be a finite  graph and $A$ be a subset of its vertexes.
 Assume that the assignment $v\mapsto v'$ is a metric minimizing map $\Gamma\to Y$ relative to $A$.
 Then
 \begin{enumerate}[(a)]
@@ -98,6 +98,6 @@ By Reshetnyak's majorization theorem,
 the closed broken line $[\xi_1,\dots,\xi_k]$ is majorized by a convex spherical polygon $P$.
 
 Note that $P$ lies in an open hemisphere with pole  at some point in $P$.
-Choose $x\in Y$ so that the direction form $v'$ to $x$ coincides with the image of the pole in $\Sigma_{f(v)}$.
+Choose $x\in Y$ so that the direction from $v'$ to $x$ coincides with the image of the pole in $\Sigma_{f(v)}$.
 This choice of $x$ contradicts (\emph{\ref{prop:metric-min-graph:x}}).
 \qeds
