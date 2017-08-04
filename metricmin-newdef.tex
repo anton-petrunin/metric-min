@@ -91,7 +91,13 @@ in particular each metric component of $\<\DD\>_s$ is a $\CAT[0]$ space.
 In fact one can consider $\<\DD\>_s$ as a $\CAT[0]$ space where infinite distances between points are legal.
 
 Evidently, any smooth metric minimizing disc $s$ in a Euclidean space is saddle.
-We prove a local converse of this statement in dimension three (Proposition~\ref{prop:smooth}) and show by example that there is no global converse.
+The following statement gives a local converse in dimension three.
+
+\begin{thm}{Proposition}\label{prop:smooth}
+Any smooth strictly saddle surface in $\RR^3$ is locally metric minimizing.
+\end{thm}
+
+We also show by example that there is no global converse.
 We expect that in the four-dimensional case even the local converse does not hold.
 
 \medskip
@@ -369,11 +375,9 @@ It is a saddle polyhedral disc made from 10 triangles
 with a hexagon boundary forming a Y-shape marked with bold lines.
 
 By smoothing this example one can produce a smooth disc which is not metric minimizing, but \emph{strictly saddle} meaning the principal curvatures at each interior point have opposite signs. 
-As the following proposition states, there are no local examples of that type.
 
-\begin{thm}{Proposition}\label{prop:smooth}
-Any smooth strictly saddle surface in $\RR^3$ is locally metric minimizing.
-\end{thm}
+Proposition~\ref{prop:smooth} states that there are no local examples of that type.
+To prove this proposition we need to introduce certain energy functional.
 
 Let $s\:\DD\to\RR^3$ be a smooth map.
 
@@ -401,7 +405,7 @@ t\cdot E_{\bm{v}} s_1+(1-t)\cdot E_{\bm{v}} s_2.\]
 
 \end{enumerate}
 
-The discussion above reduces the proposition above to the following.
+The discussion above reduces Proposition~\ref{prop:smooth} to the following.
 
 \begin{thm}{Claim}
 Assume $s\:\DD\to \RR^3$ is a smooth strictly saddle surface. 
