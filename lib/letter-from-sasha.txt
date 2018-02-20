@@ -1,0 +1,105 @@
+ 
+Page 1
+
+1)  There are far too many notations and some unclear words. The by far best and clearest is the abstract.
+
+2)  "Majorization" is explained via "short map"
+a notion extensively used only by you.  Say distance  non-incerasing or $1$-Lipschitz instead, everybody understands this.
+
+
+3) $\delta _s$ goes to a different space than $\gamma$. I certainly understand what you mean, but if you introduce so many notations and
+then they are not correct it is not good.   Possible suggestions: Fix $\gamma$ consider the set  $\mathcal phi _{\gamma}$ of all disc with the same restriction $\gamma $  of $S^1$.Introduce your
+ordering in $\mathcal phi _{\gamma}$  and say that your objects are minimal with respect to this ordering.
+
+Page 2
+
+4) This is very improtant!    Say either before Theorem 1.1  or directly after it, what are examples of metric minimezers:
+
+a) Every harmonic one, in particular every minimal one   (in the last very special case, your result is proved in my paper with Wenger and previously
+"by formal calculations" by Mese),
+
+b) Every ruled surface.
+(In both cases provide 1-sentence of  explantions, possibly later in the main body of th text)
+
+
+c)   Say that there are much more minimizers, at leats in the compact setting, since any given disc is "minorized", by compactess by a minimal one.
+
+
+5) Say that  metric-minimality implies saddleness in R^n and more generally  (using convex functions) in $Y$.
+Say that the converse seem natural, is closely related to Sheffel's work and is surprisingly difficult. Then  Propositon 1.2, then the rest.
+
+
+Page 3
+
+6)  Say something about notations and definitions. You may refer to some book, but something is needed in my opinion.
+In particular:  "short map",  $B(x,\epsilon)_Y$.    also you use later "intrinsic metric" and "length metric".  Maybe, better to  stick to one of them.
+
+Page 4
+
+7)  The proof of Lemma 2.1 is too complicated   (I mean the formula $f^7-1} [ ... ]$ 
+and misses the main point (in my eyes). I would just say, that
+
+For any connected set $K\subset X$,  the diameter of $\pi _f (K)$ equals the diameter of $f(K)$.
+When applied to connected neighborhoods, the continuity  of $f$ implies the continuity  of $\pi _f$.
+
+Page 5
+
+8)  In the second paragraph, you have  a map $f:X\to Y$, which does not belong to this Subsection.
+
+9) The facts  that $\bar \pi_f$ has connected fibers and that $\bar f$ preserves  the length of any curve is not completely obvious
+(say not less obvious than Lemma 2.1 and Lemma 2.2).    Indeed, the first claim is proven later in Lemma 2.3.
+
+
+10) Second line in the proof of Lemma 2.2  "converging in itself" is very strange.
+
+
+11)  I think it is "monotone" not "monotonic"
+
+Page 6
+
+12) Last paragrpah in the proof of  Lemma 2.3.
+a) In the second line add $\subset \bar X$ after "$C$".
+b) In the third line, I would add after "is connected"  the words "due to monotonicity of $\bar \pi _f$"
+and delete the next sentence. Then directly "It follows ....".
+
+=====================
+
+On page 1 again:
+
+1) You say never in the text that your "disc retract" really is a disc retract.
+A suggestion:  define that a "disc retract" is a space homromorphic to a contractible subset of the disc.  Formulate the main theoremabout saying something about the boundary curve.
+Add the statement after the theorem, that if the boundary of $s$ is  a simple closed curve
+that your space is a disc.   At the beginning of Section 3,  give your definition fo a disc retract,
+say that both defintions  are equivalent. Then state Propostion 3.1.
+
+On pages 6,7
+
+2) In Proposition 3.1 (or before it) say that $Y$ is an arbitary  metric space. 
+
+3) Proof of 3.2, second line.  Replace "such that" by "with"
+
+4) Proof of Lemma 3.3.  First word "From" not "form".
+Third line "its boundary" instead of "it". I would  refer to some topological book for mapping cones,
+in particular, since you do not say, what they are.
+
+
+5)Important for me:    I do not understand the hocus-pocus  in the Proof of Propostion 3.1.
+What happens with the following example:
+
+Let $K$ be a cell-like set   in $D$  disjoint from the boundary  and intersecting every rectfiable curve in a set of length zero.  Set $Y=D /K$. and $f$ be the canonical projection.
+Is it not correct, that $f$ is metric minimizing, that $<D>_f$ is $D$ and $Y =|D|_f$?
+
+==================
+
+The proof of Lemma 4.3 should be slightly rectified: the boundary curve needs not be injective, then  $X$ does not need to branch at a point of non-injectivity.  
+
+The following should simplify and clarify the argument:  Discuss somewhere in the introduction or later that ruled surfaces are metric minimizing.  Then here you just say write $f$ as a limit of ruled discs, which is a ruled disc itself, hence metric minimizing ....
+
+
+И еще вот что в голову пришло:
+
+You could say in the introduction, that  the curvature of metric minimizing surfaces have already found several applications in NPC, in special cases:  my paper with Stephan,
+and the paper of Stephan on Fary-Milnor (minimal discs), my old paper
+"curvature of subsets of positive reach" and the paper of Alexanderr-Bishop 
+"Gauss-Lemma ...."   (ruled surfaces).  
+
