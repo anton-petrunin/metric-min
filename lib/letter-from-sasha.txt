@@ -103,3 +103,32 @@ and the paper of Stephan on Fary-Milnor (minimal discs), my old paper
 "curvature of subsets of positive reach" and the paper of Alexanderr-Bishop 
 "Gauss-Lemma ...."   (ruled surfaces).  
 
+====================
+
+1) English in the first and second sentence in section 5:
+I think "analog" and "vertexes" is not quite correct.
+
+2) The of metric minimizing graph is much clearer (and correcter) than the definition on the first page.
+
+3) I have not realized it until now, so probably it will be unclear to most other 
+potential readers as well: If you have a metric minimizing map, you can arbitrary change the parametrization by a homeomorphism. I would definitely make a comment somewhere.
+
+4)  Second line of proof of Prop. 5.1:  either here (or if you prefer  in the definition of geodesics) one should assume that the parametrization  has constant speed. Otherwise you will not get a limiting map.
+
+5)  Prop. 5.1 third paragraph. I think the term "well-ordered" is wrong.
+
+6) You argument using filters and ultrafilters on general sets beyond $N$
+is more sophisticated than needed Already usual ultrafilters are rather exotic.
+What you consider there (without further comments) is probably unknown to almost everybody.    Suggestions:  Instead of the third paragraph and below, write something like  "By finiteness of the number of vertices  and Zorn's lemma,
+it is sufficient to prove that for any ordered sequence of straight maps $f_1>f_2> ....>f_n >...$ there exists a map  $f$ with $f\leq f_n$ for all $n$."
+
+Then more or less as before.
+
+====================
+
+a) Is it correct that in Proposition 6.1 you should add that the graph contains 
+a geodesic between any pair of  points of $F$?
+
+b)   Where in 6.2 doe you distinguish between points of $F$ on the boundary and in the interior?
+
+====================
