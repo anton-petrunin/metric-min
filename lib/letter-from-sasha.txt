@@ -163,15 +163,16 @@ Chapter 8:
 
 XXX Is CAT(0) essential in Lemma 8.1? Should not it better be placed after 3.1 (since the same argument appears there).
 
-====================
-???did not do anything below, comments on chap. 9 seem to be serious. A.
-====================
 
 First paragraph in the proof of the main theorem. 
 
-a) Before you do reduction (maybe even in the beginning when you (should) discuss basic properties of metric minimizers you should say  something about restrictions to subdomains. Otherwise, I do not understand what you do.
+???Did not get what he wants. A.???
 
-b) You might also use  Lemma 3.1 from my paper with S.Wenger.
+a)??? Before you do reduction (maybe even in the beginning when you (should) discuss basic properties of metric minimizers you should say  something about restrictions to subdomains. Otherwise, I do not understand what you do.
+
+???Did not get why it is related. A.???
+
+b)??? You might also use  Lemma 3.1 from my paper with S.Wenger.
 
 Chapter 9
 
@@ -179,11 +180,15 @@ It might be better to add  (considerably) more details, so that it could be unde
 
 a)  I am bad in such things, but I do not understand the picture.
 
-b) Concerning properties of $E_v$:
+???Do you understand it. A.???
+
+b)??? Concerning properties of $E_v$:
   b1) Maybe say that it applies to Sobolev maps and refer also to Korevaar-Schoen?  Maybe not.
 
-b3)  That is not quite obvious (at least for me). First there are regularity issues:
+???One way to fix it is to use your argument on uniqueness of matric minimizers ???
+
+b3)??? That is not quite obvious (at least for me). First there are regularity issues:
 There might be a "smaller" $s'$ which is not Lipschitz. Moreover, you have not proved uniqueness, so there could exist a smaller disc, which differs only on a few curves.
 
 
-c) What are asymptotic vectors?
+c)XXX What are asymptotic vectors?
