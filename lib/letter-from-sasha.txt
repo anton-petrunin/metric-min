@@ -187,7 +187,7 @@ b)??? Concerning properties of $E_v$:
 
 ???One way to fix it is to use your argument on uniqueness of matric minimizers ???
 
-b3)??? That is not quite obvious (at least for me). First there are regularity issues:
+b3)XXX That is not quite obvious (at least for me). First there are regularity issues:
 There might be a "smaller" $s'$ which is not Lipschitz. Moreover, you have not proved uniqueness, so there could exist a smaller disc, which differs only on a few curves.
 
 

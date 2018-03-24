@@ -99,7 +99,7 @@ In particular, if $s$ spans a simple closed curve then $\<\DD\>_s$ is a $\CAT(0)
 \end{thm}
 
 The main theorem generalizes a theorem of Alexandr Alexandrov about ruled surfaces in \cite{A} and the main theorem by the first author announced in \cite{petrunin-metric-min}.
-It is also closely related to the results of Samuel Shefel in \cite{shefel-2D} and \cite{shefel-3D}, the results on minimal surfaces of Alexander Lytchak and Stefan Wenger 
+It is also closely related to the Gauss formula, results of Samuel Shefel in \cite{shefel-2D} and \cite{shefel-3D}, the results on minimal surfaces of Alexander Lytchak and Stefan Wenger 
 \cite[Theorem 1.2]{LW5}  and an earlier result of Chikako Mese \cite{mese};
 see also \cite[Chapter 4]{akp} and \cite{petrunin-stadler}.
 
@@ -389,7 +389,8 @@ It is evident that any metric minimizing disc $s$ in a Euclidean space is saddle
 In general a saddle disc may not be globally metric minimizing.
 An example is shown in the picture.
 It is a saddle polyhedral disc made from 10 triangles
-with a hexagon boundary forming a Y-shape marked with bold lines.
+with a hexagon boundary.
+The boundary curve goes along the Y-shape marked with bold lines, each segment is traveled twice back and forth.
 
 \begin{center}
 \begin{lpic}[t(-0 mm),b(-0 mm),r(0 mm),l(0 mm)]{pics/not-sufficient-disc(1)}
@@ -397,14 +398,20 @@ with a hexagon boundary forming a Y-shape marked with bold lines.
 \end{lpic}
 \end{center}
 
-By smoothing this example one can produce a smooth disc which is not metric minimizing, but \emph{strictly saddle} meaning the principal curvatures at each interior point have opposite signs. %??? not longer sure --- maybe not strictly...
+The picture is rotationally symmetric by the angle $\tfrac23\cdot\pi$.
+A shortening deformation can be obtained by rotating the central triangle slightly counterclockwise and extending the map on the remaing triangles linerarly.
 
-Proposition~\ref{prop:smooth} states that there are no local examples of that type.
+By smoothing this example one can produce a smooth saddl disc which is not metric minimizing.
+
+Proposition~\ref{prop:smooth} states that there are no local examples of that type which are
+\emph{strictly saddle} meaning the principal curvatures at each interior point have opposite signs.
 To prove this proposition we need to introduce certain energy functional.
 
 Let $s\:\DD\to\RR^3$ be a smooth map.
 
 Fix an array of vector fields $\bm{v}=(v_1,\dots,v_k)$ on $\DD$. 
+Assume that the boundary $\partial \DD$ can be reached from any point in $\DD$ by a piecwise smooth curve which moves in the direction of the vector fields $v_i$. 
+
 Consider the energy functional 
 \[E_{\bm{v}}s
 :=
@@ -417,12 +424,25 @@ as an analog of the Laplacian.
 
 Note that 
 \begin{enumerate}[(i)]
+
 \item $E_{\bm{v}}$ is well defined for any Lipschitz map $s$.
+
 \item $E_{\bm{v}}$ is convex; that is,
-\[E_{\bm{v}}[t\cdot s_1+(1-t)\cdot s_2]
+\[E_{\bm{v}}s_t
 \le 
-t\cdot E_{\bm{v}} s_1+(1-t)\cdot E_{\bm{v}} s_2.\]
-\item If $s$ is a smooth $E_{\bm{v}}$-minimizing map in the class of Lipschitz maps with given boundary data then $s$ is metric minimizing.
+(1-t)\cdot E_{\bm{v}} s_0+t\cdot E_{\bm{v}} s_1,\]
+where $s_t=(1-t)\cdot s_0+t\cdot s_1$ and $0\le t\le 1$.
+Moreover the equality holds for any $t$ only if for any $i$ we have $v_is_0=v_is_1$ almost everywhere.
+
+\item
+If $s_0$ is a smooth $E_{\bm{v}}$-minimizing map in the class of Lipschitz maps with given boundary data then $s_0$ is metric minimizing. 
+\\
+Indeed, if $s_1\preccurlyeq s_0$ then $s_1$ has to be Lipschitz.
+Therefore we can write $E_{\bm{v}} s_1\le E_{\bm{v}} s_0$ and from convexity $E_{\bm{v}} s_t\le E_{\bm{v}} s_0$ for any $0\le t\le 1$.
+Since $s_0$ is $E_{\bm{v}}$-minimizing, $E_{\bm{v}} s_t= E_{\bm{v}} s_0$ for any $t$.
+Hence $v_is_0=v_is_1$ almost everywhere.
+Since the boundary $\partial \DD$ can be reached from any point in $\DD$ by a piecwise smooth curve in the direction of the vector fields $v_i$, the latter implies that $s_0=s_1$.
+
 \item A smooth map $s\:\DD\to\RR^3$ is a $E_{\bm{v}}$-minimizing map among the class of Lipschitz maps with given boundary if and only if
 \[\Delta_{\bm{v}}s=0.\]
 
