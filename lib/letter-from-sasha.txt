@@ -1,42 +1,44 @@
  
 Page 1
 
-1)  There are far too many notations and some unclear words. The by far best and clearest is the abstract.
+1)XXX  There are far too many notations and some unclear words. The by far best and clearest is the abstract.
 
-2)  "Majorization" is explained via "short map"
+2)XXX  "Majorization" is explained via "short map"
 a notion extensively used only by you.  Say distance  non-incerasing or $1$-Lipschitz instead, everybody understands this.
 
 
-3) $\delta _s$ goes to a different space than $\gamma$. I certainly understand what you mean, but if you introduce so many notations and
+3)XXX $\delta _s$ goes to a different space than $\gamma$. I certainly understand what you mean, but if you introduce so many notations and
 then they are not correct it is not good.   Possible suggestions: Fix $\gamma$ consider the set  $\mathcal phi _{\gamma}$ of all disc with the same restriction $\gamma $  of $S^1$.Introduce your
 ordering in $\mathcal phi _{\gamma}$  and say that your objects are minimal with respect to this ordering.
 
 Page 2
 
-4) This is very improtant!    Say either before Theorem 1.1  or directly after it, what are examples of metric minimezers:
+4)XXX This is very improtant!    Say either before Theorem 1.1  or directly after it, what are examples of metric minimezers:
 
-a) Every harmonic one, in particular every minimal one   (in the last very special case, your result is proved in my paper with Wenger and previously
+a)XXX Every harmonic one, in particular every minimal one   (in the last very special case, your result is proved in my paper with Wenger and previously
 "by formal calculations" by Mese),
 
-b) Every ruled surface.
+b)XXX Every ruled surface.
 (In both cases provide 1-sentence of  explantions, possibly later in the main body of th text)
 
 
-c)   Say that there are much more minimizers, at leats in the compact setting, since any given disc is "minorized", by compactess by a minimal one.
+c)XXX   Say that there are much more minimizers, at leats in the compact setting, since any given disc is "minorized", by compactess by a minimal one.
 
 
-5) Say that  metric-minimality implies saddleness in R^n and more generally  (using convex functions) in $Y$.
+5)XXX Say that  metric-minimality implies saddleness in R^n and more generally  (using convex functions) in $Y$.
 Say that the converse seem natural, is closely related to Sheffel's work and is surprisingly difficult. Then  Propositon 1.2, then the rest.
 
 
 Page 3
 
-6)  Say something about notations and definitions. You may refer to some book, but something is needed in my opinion.
+6)XXX  Say something about notations and definitions. You may refer to some book, but something is needed in my opinion.
 In particular:  "short map",  $B(x,\epsilon)_Y$.    also you use later "intrinsic metric" and "length metric".  Maybe, better to  stick to one of them.
 
 Page 4
 
-7)  The proof of Lemma 2.1 is too complicated   (I mean the formula $f^7-1} [ ... ]$ 
+??? I did not get what he wanted to say here. A. ??? 
+
+7)???  The proof of Lemma 2.1 is too complicated   (I mean the formula $f^7-1} [ ... ]$ 
 and misses the main point (in my eyes). I would just say, that
 
 For any connected set $K\subset X$,  the diameter of $\pi _f (K)$ equals the diameter of $f(K)$.
@@ -44,20 +46,20 @@ When applied to connected neighborhoods, the continuity  of $f$ implies the cont
 
 Page 5
 
-8)  In the second paragraph, you have  a map $f:X\to Y$, which does not belong to this Subsection.
+8)???  In the second paragraph, you have  a map $f:X\to Y$, which does not belong to this Subsection.
 
-9) The facts  that $\bar \pi_f$ has connected fibers and that $\bar f$ preserves  the length of any curve is not completely obvious
+9)??? The facts  that $\bar \pi_f$ has connected fibers and that $\bar f$ preserves  the length of any curve is not completely obvious
 (say not less obvious than Lemma 2.1 and Lemma 2.2).    Indeed, the first claim is proven later in Lemma 2.3.
 
 
-10) Second line in the proof of Lemma 2.2  "converging in itself" is very strange.
+10)XXX Second line in the proof of Lemma 2.2  "converging in itself" is very strange.
 
 
-11)  I think it is "monotone" not "monotonic"
+11)XXX  I think it is "monotone" not "monotonic"
 
 Page 6
 
-12) Last paragrpah in the proof of  Lemma 2.3.
+12)XXX Last paragrpah in the proof of  Lemma 2.3.
 a) In the second line add $\subset \bar X$ after "$C$".
 b) In the third line, I would add after "is connected"  the words "due to monotonicity of $\bar \pi _f$"
 and delete the next sentence. Then directly "It follows ....".
@@ -66,7 +68,9 @@ and delete the next sentence. Then directly "It follows ....".
 
 On page 1 again:
 
-1) You say never in the text that your "disc retract" really is a disc retract.
+???I made a comment at the beggining of Section 3, but it is not what Sasha wanted???
+
+1)??? You say never in the text that your "disc retract" really is a disc retract.
 A suggestion:  define that a "disc retract" is a space homromorphic to a contractible subset of the disc.  Formulate the main theoremabout saying something about the boundary curve.
 Add the statement after the theorem, that if the boundary of $s$ is  a simple closed curve
 that your space is a disc.   At the beginning of Section 3,  give your definition fo a disc retract,
@@ -74,16 +78,17 @@ say that both defintions  are equivalent. Then state Propostion 3.1.
 
 On pages 6,7
 
-2) In Proposition 3.1 (or before it) say that $Y$ is an arbitary  metric space. 
+2)XXX In Proposition 3.1 (or before it) say that $Y$ is an arbitary  metric space. 
 
-3) Proof of 3.2, second line.  Replace "such that" by "with"
+3)XXX Proof of 3.2, second line.  Replace "such that" by "with"
 
-4) Proof of Lemma 3.3.  First word "From" not "form".
+4)XXX Proof of Lemma 3.3.  First word "From" not "form".
 Third line "its boundary" instead of "it". I would  refer to some topological book for mapping cones,
 in particular, since you do not say, what they are.
 
+???I think it is resolved now???
 
-5)Important for me:    I do not understand the hocus-pocus  in the Proof of Propostion 3.1.
+5)??? Important for me:    I do not understand the hocus-pocus  in the Proof of Propostion 3.1.
 What happens with the following example:
 
 Let $K$ be a cell-like set   in $D$  disjoint from the boundary  and intersecting every rectfiable curve in a set of length zero.  Set $Y=D /K$. and $f$ be the canonical projection.
@@ -91,33 +96,40 @@ Is it not correct, that $f$ is metric minimizing, that $<D>_f$ is $D$ and $Y =|D
 
 ==================
 
-The proof of Lemma 4.3 should be slightly rectified: the boundary curve needs not be injective, then  $X$ does not need to branch at a point of non-injectivity.  
+???Did something, but not what Sasha suggested --- he has a cool idea, but I think it makes things more complicated???
+??? The proof of Lemma 4.3 should be slightly rectified: the boundary curve needs not be injective, then  $X$ does not need to branch at a point of non-injectivity.  
 
 The following should simplify and clarify the argument:  Discuss somewhere in the introduction or later that ruled surfaces are metric minimizing.  Then here you just say write $f$ as a limit of ruled discs, which is a ruled disc itself, hence metric minimizing ....
 
 
-И еще вот что в голову пришло:
+???I think you can do the following better --- you know these papers???
 
-You could say in the introduction, that  the curvature of metric minimizing surfaces have already found several applications in NPC, in special cases:  my paper with Stephan,
+???You could say in the introduction, that  the curvature of metric minimizing surfaces have already found several applications in NPC, in special cases:  my paper with Stephan,
 and the paper of Stephan on Fary-Milnor (minimal discs), my old paper
 "curvature of subsets of positive reach" and the paper of Alexanderr-Bishop 
 "Gauss-Lemma ...."   (ruled surfaces).  
 
 ====================
 
-1) English in the first and second sentence in section 5:
+???As far as I see he wants us to be British???
+
+1)??? English in the first and second sentence in section 5:
 I think "analog" and "vertexes" is not quite correct.
 
-2) The of metric minimizing graph is much clearer (and correcter) than the definition on the first page.
+???Not sure what he wants, probably related to the resolved problem ???
 
-3) I have not realized it until now, so probably it will be unclear to most other 
+2)??? The of metric minimizing graph is much clearer (and correcter) than the definition on the first page.
+
+???Roughly he asks to motivate the def of metric minimizing map --- I did something, but maybe more is needed???
+
+3)??? I have not realized it until now, so probably it will be unclear to most other 
 potential readers as well: If you have a metric minimizing map, you can arbitrary change the parametrization by a homeomorphism. I would definitely make a comment somewhere.
 
-4)  Second line of proof of Prop. 5.1:  either here (or if you prefer  in the definition of geodesics) one should assume that the parametrization  has constant speed. Otherwise you will not get a limiting map.
+4)XXX  Second line of proof of Prop. 5.1:  either here (or if you prefer  in the definition of geodesics) one should assume that the parametrization  has constant speed. Otherwise you will not get a limiting map.
 
-5)  Prop. 5.1 third paragraph. I think the term "well-ordered" is wrong.
+5)XXX  Prop. 5.1 third paragraph. I think the term "well-ordered" is wrong.
 
-6) You argument using filters and ultrafilters on general sets beyond $N$
+6)XXX You argument using filters and ultrafilters on general sets beyond $N$
 is more sophisticated than needed Already usual ultrafilters are rather exotic.
 What you consider there (without further comments) is probably unknown to almost everybody.    Suggestions:  Instead of the third paragraph and below, write something like  "By finiteness of the number of vertices  and Zorn's lemma,
 it is sufficient to prove that for any ordered sequence of straight maps $f_1>f_2> ....>f_n >...$ there exists a map  $f$ with $f\leq f_n$ for all $n$."
@@ -126,29 +138,34 @@ Then more or less as before.
 
 ====================
 
-a) Is it correct that in Proposition 6.1 you should add that the graph contains 
+a)XXX Is it correct that in Proposition 6.1 you should add that the graph contains 
 a geodesic between any pair of  points of $F$?
 
-b)   Where in 6.2 doe you distinguish between points of $F$ on the boundary and in the interior?
+
+???Not sure what he wants --- I think it is clear??
+b)???   Where in 6.2 doe you distinguish between points of $F$ on the boundary and in the interior?
 
 ====================
 
 Chapter 7:  
 
-1) I do not understand why you do not just use Tikhonov. This is much less obscure 
+???I am neutral here, mybe a bit on side to keep the proof???
+1)??? I do not understand why you do not just use Tikhonov. This is much less obscure 
 statement than  the notions of ultraconvergence.
 
 
-2I think that  something very similar to Corollary 7.2 occurs in the paper  of Lang-Schroeder on Kirszbrauns theorem.
+2)XXX I think that  something very similar to Corollary 7.2 occurs in the paper  of Lang-Schroeder on Kirszbrauns theorem.
 
 3) Should you decide to keep the proof you have to mention the place where you use something obscure (Zorn's lemma), namely on the top of page 13.
 
 
 Chapter 8:
 
-Is CAT(0) essential in Lemma 8.1? Should not it better be placed after 3.1 (since the same argument appears there).
+XXX Is CAT(0) essential in Lemma 8.1? Should not it better be placed after 3.1 (since the same argument appears there).
 
-
+====================
+???did not do anything below, comments on chap. 9 seem to be serious. A.
+====================
 
 First paragraph in the proof of the main theorem. 
 

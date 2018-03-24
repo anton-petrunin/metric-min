@@ -1,27 +1,6 @@
 \section{Proof assembling}\label{Main theorem}
 
-The following lemma will be used in the final step in the proof of the main theorem.
 
-\begin{thm}{Lemma}\label{lem:maj is isom}
-Let $Y$ be a $\CAT(0)$ space and $s\:\DD\to Y$ be a metric minimizing map.
-Assume that there is a $\CAT(0)$ disc retract $W$ with boundary curve $\delta$ and a short map $f\:\<D\>_s \to W$
-such that $f\circ \delta_s=\delta$. If there exists a short map 
-$q\: W\to Y$ with $q\circ \delta=s|_{\partial \DD}$, then the map $f$ is an isometry.
-\end{thm}
-
-\parit{Proof.}
-Let $r\:\DD\to W$ be the projection from the mapping cylinder $\DD=W_\delta$. 
-Note that $r$ is a retraction, $r|_{\partial \DD}=\delta$ and the composition $\DD\xrightarrow{r}W\xrightarrow{q} Y$ fulfills \[q\circ r|_{\partial \DD}=s|_{\partial \DD}.\]
-
-Note that  $\<W\>_q=\<\DD\>_{q\circ r}$ and the natural projection $\rho\: W\to \<W\>_q$ is short.
-It follows that $\rho\circ f\: \<\DD\>_s\to \<\DD\>_{q\circ r}$ is a majorization.
-Since $s$ is metric minimizing, $\rho\circ f$ is an isometry. 
-
-Therefore $f$ is an isometric embedding which contains $\delta$
-in its image. 
-By Lemma \ref{lem:geospace} and Proposition \ref{prop:|D|}, $\<\DD\>_s$ is a complete geodesic space.
-So $f$ has to be surjective and therefore an isometry.
-\qeds
 
 \parit{Proof of the main theorem.}
 It is sufficient to consider
