@@ -149,10 +149,8 @@ b)???   Where in 6.2 doe you distinguish between points of $F$ on the boundary a
 
 Chapter 7:  
 
-???I am neutral here, mybe a bit on side to keep the proof???
-1)??? I do not understand why you do not just use Tikhonov. This is much less obscure 
+1)XXX I do not understand why you do not just use Tikhonov. This is much less obscure 
 statement than  the notions of ultraconvergence.
-
 
 2)XXX I think that  something very similar to Corollary 7.2 occurs in the paper  of Lang-Schroeder on Kirszbrauns theorem.
 
