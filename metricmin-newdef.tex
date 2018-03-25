@@ -390,7 +390,8 @@ In general a saddle disc may not be globally metric minimizing.
 An example is shown in the picture.
 It is a saddle polyhedral disc made from 10 triangles
 with a hexagon boundary.
-The boundary curve goes along the Y-shape marked with bold lines, each segment is traveled twice back and forth.
+The boundary curve goes along the Y-shape marked with bold lines;
+each segment of the Y-shape is traveled twice back and forth.
 
 \begin{center}
 \begin{lpic}[t(-0 mm),b(-0 mm),r(0 mm),l(0 mm)]{pics/not-sufficient-disc(1)}
@@ -399,24 +400,24 @@ The boundary curve goes along the Y-shape marked with bold lines, each segment i
 \end{center}
 
 The picture is rotationally symmetric by the angle $\tfrac23\cdot\pi$.
-A shortening deformation can be obtained by rotating the central triangle slightly counterclockwise and extending the map on the remaing triangles linerarly.
+A shortening deformation can be obtained by rotating the central triangle slightly counterclockwise and extending the map on the remaing 9 triangles linerarly.
 
-By smoothing this example one can produce a smooth saddl disc which is not metric minimizing.
+By smoothing this example one can produce a smooth saddle disc which is not metric minimizing.
 
 Proposition~\ref{prop:smooth} states that there are no local examples of that type which are
-\emph{strictly saddle} meaning the principal curvatures at each interior point have opposite signs.
+smooth and \emph{strictly saddle} meaning that the principal curvatures at each interior point have opposite signs.
 To prove this proposition we need to introduce certain energy functional.
 
 Let $s\:\DD\to\RR^3$ be a smooth map.
 
 Fix an array of vector fields $\bm{v}=(v_1,\dots,v_k)$ on $\DD$. 
-Assume that the boundary $\partial \DD$ can be reached from any point in $\DD$ by a piecwise smooth curve which moves in the direction of the vector fields $v_i$. 
+Assume that each integral curves for one of vector fields $v_i$ goes from boundary to boundary and sweeps this way whole $\DD$. 
 
 Consider the energy functional 
 \[E_{\bm{v}}s
 :=
 \sum_i\int\limits_\DD |v_is|^2,\]
-where $vs$ denotes the derivative of $s$ in the direction of the field $v$.
+where $vs=ds(v)$ denotes the derivative of $s$ in the direction of the field $v$.
 Set 
 \[\Delta_{\bm{v}}s=\sum_iv_i(v_is).\]
 It is convenient to think of the operator $s\mapsto \Delta_{\bm{v}}s$
@@ -438,10 +439,10 @@ Moreover the equality holds for any $t$ only if for any $i$ we have $v_is_0=v_is
 If $s_0$ is a smooth $E_{\bm{v}}$-minimizing map in the class of Lipschitz maps with given boundary data then $s_0$ is metric minimizing. 
 \\
 Indeed, if $s_1\preccurlyeq s_0$ then $s_1$ has to be Lipschitz.
-Therefore we can write $E_{\bm{v}} s_1\le E_{\bm{v}} s_0$ and from convexity $E_{\bm{v}} s_t\le E_{\bm{v}} s_0$ for any $0\le t\le 1$.
+It follows that $E_{\bm{v}} s_1\le E_{\bm{v}} s_0$ and from convexity $E_{\bm{v}} s_t\le E_{\bm{v}} s_0$ if $0\le t\le 1$.
 Since $s_0$ is $E_{\bm{v}}$-minimizing, $E_{\bm{v}} s_t= E_{\bm{v}} s_0$ for any $t$.
 Hence $v_is_0=v_is_1$ almost everywhere.
-Since the boundary $\partial \DD$ can be reached from any point in $\DD$ by a piecwise smooth curve in the direction of the vector fields $v_i$, the latter implies that $s_0=s_1$.
+Since $\DD$ is sweeped out by arcs of integral curves of $v_i$, the latter implies that $s_0=s_1$.
 
 \item A smooth map $s\:\DD\to\RR^3$ is a $E_{\bm{v}}$-minimizing map among the class of Lipschitz maps with given boundary if and only if
 \[\Delta_{\bm{v}}s=0.\]
