@@ -36,9 +36,11 @@ In particular:  "short map",  $B(x,\epsilon)_Y$.    also you use later "intrinsi
 
 Page 4
 
-??? I did not get what he wanted to say here. A. ??? 
+!!! I think the proof is fine, I would have done it the same way again. S.
 
-7)???  The proof of Lemma 2.1 is too complicated   (I mean the formula $f^7-1} [ ... ]$ 
+I did not get what he wanted to say here. A. ??? 
+
+7)  The proof of Lemma 2.1 is too complicated   (I mean the formula $f^7-1} [ ... ]$ 
 and misses the main point (in my eyes). I would just say, that
 
 For any connected set $K\subset X$,  the diameter of $\pi _f (K)$ equals the diameter of $f(K)$.
@@ -46,9 +48,14 @@ When applied to connected neighborhoods, the continuity  of $f$ implies the cont
 
 Page 5
 
-8)???  In the second paragraph, you have  a map $f:X\to Y$, which does not belong to this Subsection.
+8)!!! Only one map $f:X\to Y$ occurs and it needs to be there. S.
 
-9)??? The facts  that $\bar \pi_f$ has connected fibers and that $\bar f$ preserves  the length of any curve is not completely obvious
+In the second paragraph, you have  a map $f:X\to Y$, which does not belong to this Subsection.
+
+9)!!! He is right, I included a Lemma and a reference to former Lemma 2.3 
+
+
+??? The facts  that $\bar \pi_f$ has connected fibers and that $\bar f$ preserves  the length of any curve is not completely obvious
 (say not less obvious than Lemma 2.1 and Lemma 2.2).    Indeed, the first claim is proven later in Lemma 2.3.
 
 
@@ -68,7 +75,9 @@ and delete the next sentence. Then directly "It follows ....".
 
 On page 1 again:
 
-???I made a comment at the beggining of Section 3, but it is not what Sasha wanted???
+???I made a comment at the beggining of Section 3, but it is not what Sasha wanted
+
+!!!It is not what he wanted but I would prefer leaving it as it is. S.
 
 1)??? You say never in the text that your "disc retract" really is a disc retract.
 A suggestion:  define that a "disc retract" is a space homromorphic to a contractible subset of the disc.  Formulate the main theoremabout saying something about the boundary curve.
@@ -113,7 +122,11 @@ and the paper of Stephan on Fary-Milnor (minimal discs), my old paper
 
 ???As far as I see he wants us to be British???
 
-1)??? English in the first and second sentence in section 5:
+1)!!! vertices is maybe more common but what we wrote is now correct 
+
+
+
+English in the first and second sentence in section 5:
 I think "analog" and "vertexes" is not quite correct.
 
 ???Not sure what he wants, probably related to the resolved problem ???
@@ -142,7 +155,12 @@ a)XXX Is it correct that in Proposition 6.1 you should add that the graph contai
 a geodesic between any pair of  points of $F$?
 
 
-???Not sure what he wants --- I think it is clear??
+
+
+???Not sure what he wants --- I think it is clear?? 
+
+I don't know, left it. S.
+
 b)???   Where in 6.2 doe you distinguish between points of $F$ on the boundary and in the interior?
 
 ====================
@@ -179,6 +197,8 @@ It might be better to add  (considerably) more details, so that it could be unde
 a)  I am bad in such things, but I do not understand the picture.
 
 ???Do you understand it. A.???
+
+I think the picture is well explained. S.
 
 b)??? Concerning properties of $E_v$:
   b1) Maybe say that it applies to Sobolev maps and refer also to Korevaar-Schoen?  Maybe not.

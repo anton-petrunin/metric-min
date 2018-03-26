@@ -41,21 +41,22 @@ Let us denote by $\DD$ the closed unit disc in the plane.
 Its boundary $\partial \DD=\SS^1$ is the unit circle.
 
 Assume $s\:\DD\to \RR^3$ is an embedding.
-We say $s$ is \emph{metric minimizing} if a map $s'\:\DD\to \RR^3$ agrees with $s$ on $\partial \DD$ and 
+We say $s$ is \emph{metric minimizing} if one cannot shrink its intrinsic metric. Explicitly, this means that a map $s'\:\DD\to \RR^3$ which agrees with 
+$s$ on $\partial \DD$ can only fulfill 
 \[\length s\circ\gamma\ge \length s'\circ\gamma\]
-for any curve $\gamma$ in $\DD$, then the last inequality becomes equality for any $\gamma$.
+for all curves $\gamma$ in $\DD$, if equality holds for any $\gamma$.
 
-As it follows from the main theorem below, the iduced metric on the disc for a metric minimizing embedding is $\CAT(0)$.
+As it follows from the main theorem below, the induced metric on the disc for a metric minimizing embedding is $\CAT(0)$.
 
-To formulate the theorem in full generality we need to extend the definition of metric minimizing maps assuming only continuity of $s$, so the map $s$ is not necesary an embedding;
+To formulate the theorem in full generality we need to extend the definition of metric minimizing maps in two ways. First, we will only assume continuity of $s$, so the map $s$ might not be an embedding;
 this part is tricky.
-We also have to define it with arbitrary metric space as the target; this part is straightforward. 
+Secondly, we also have to define it with arbitrary metric spaces as targets; this part is straightforward. 
 
 Let $Y$ be a metric space
 and $s\:\DD\to Y$ be a continuous map.
 Let $\gamma\:\SS^1\to Y$ be a closed rectifiable curve.
 We say that $s\:\DD\to Y$ \emph{spans} $\gamma$,
-if $s|_{\SS^1}=\gamma$.
+if it is an extension,  $s|_{\SS^1}=\gamma$.
 
 Consider the induced length-pseudometric on $\DD$ defined as 
 \[\<x-y\>_s=\inf_\alpha\{\length s\circ\alpha\},\]
@@ -87,9 +88,11 @@ if the mapping cylinder of~$\delta$
 is homeomorphic to the disc $\DD$.
 The curve $\delta$ will be called \emph{boundary curve} of the disc retract $W$.
 
-The definition is motivated by the following observation: if the boundary curve of a disc retract $W$ is a simple closed curve then $W$ is homeomorphich to $\DD$.
+The definition is motivated by the following observation: if the boundary curve of a disc retract $W$ is a simple closed curve then $W$ is homeomorphic to $\DD$.
 Note that a disc retract (for example the one shown on the picture) may have essentially different boundary curves,
 in the sense that one is not a reparametrization of the other.
+
+
 
 \begin{thm}{Main theorem}
 Assume $Y$ is a $\CAT(0)$ space and $s\:\DD\to Y$ is a metric minimizing map.
@@ -98,10 +101,7 @@ Then $\<\DD\>_s$ is a $\CAT(0)$ disc retract with boundary curve $\delta_s$.
 In particular, if $s$ spans a simple closed curve then $\<\DD\>_s$ is a $\CAT(0)$ disc.
 \end{thm}
 
-The main theorem generalizes a theorem of Alexandr Alexandrov about ruled surfaces in \cite{A} and the main theorem by the first author announced in \cite{petrunin-metric-min}.
-It is also closely related to the Gauss formula, results of Samuel Shefel in \cite{shefel-2D} and \cite{shefel-3D}, the results on minimal surfaces of Alexander Lytchak and Stefan Wenger 
-\cite[Theorem 1.2]{LW5}  and an earlier result of Chikako Mese \cite{mese};
-see also \cite[Chapter 4]{akp} and \cite{petrunin-stadler}.
+This is a fundamental result which subsumes and generalizes many known results.
 
 Note that apart from continuity we did not make any regularity assumptions on the map $s$;
 in particular, before hand, the space $\<\DD\>_s$ might have wild topology.
@@ -111,9 +111,46 @@ However, our proof shows that all triangles with finite sides in $\<\DD\>_s$ are
 in particular each metric component of $\<\DD\>_s$ is a $\CAT(0)$ space.
 So one can consider $\<\DD\>_s$ as a $\CAT(0)$ space where infinite distances between points are legal.
 
-The class of metric minimizing discs is huge --- if the ambient space $Y$ is comact, then a metric minimizing  disc can be found \emph{below} any map $\DD\to Y$ with respect to $\succcurlyeq$.
-The ruled discs considered by Alexandrov are evidently metric minimizing.
-It is also expected that harmonic maps from disc to $\CAT(0)$ spaces are also metric minimizing.
+
+The class of metric minimizing discs is huge --- if the ambient space $Y$ is $\CAT(0)$, then one can use ultra-limits to find a metric minimizing  disc \emph{below} 
+any map $\DD\to Y$ with respect to $\succcurlyeq$. 
+More importantly, the class of metric minimizing discs contain most, if not all well-studied disc-type maps in metric geometry.
+The ruled discs considered by Alexandrov are evidently metric minimizing. Harmonic maps in the sense of Korevaar-Schoen \cite{KS} from the disc to $\CAT(0)$ spaces are metric minimizing.
+In particular, minimal discs in the sense of Lytchak-Wenger \cite{LW} are metric minimizing. These are Douglas-Rado solutions to the Plateau problem and therefore harmonic. 
+
+
+
+
+
+
+
+
+
+
+The main theorem generalizes a theorem of Alexandr Alexandrov about ruled surfaces in \cite{A} and the main theorem by the first author announced in \cite{petrunin-metric-min}.
+It is closely related to the classical Gauss formula and results on saddle surfaces by Samuel Shefel in \cite{shefel-2D} and \cite{shefel-3D}.
+It also generalizes a result on minimal surfaces by Alexander Lytchak and Stefan Wenger 
+\cite[Theorem 1.2]{LW5}  and an earlier result of Chikako Mese \cite{mese};
+see also \cite[Chapter 4]{akp} and \cite{petrunin-stadler}. Our result is new, even for harmonic discs.
+
+
+
+
+
+
+Our main theorem already has many applications and we expect many more to come.
+The intrinsic geometry of metric minimizing surfaces was 
+used in \cite{L} to study sets of positive reach; in \cite{AB} to generalize the Gauss equation to non-smooth spaces;
+in \cite{G} to bound the complexity of smooth maps; in \cite{LS} to deform general $\CAT(0)$ spaces and in 
+\cite{St} to control the mapping behaviour of minimal surfaces.
+
+
+
+
+
+
+
+
 
 In general it is hard to check whether a given surface is metric minimizing.
 Note that any smooth metric minimizing disc in a Euclidean space is saddle.
@@ -289,7 +326,21 @@ Both tautological maps
 \[\<X\>\to |X|\to X\]
 are short and length-preserving.
 
-Moreover, if $X$ is compact, then $\bar\pi_f$ has connected fibers and $\bar f\:|X|_f\to Y$ preserves the length of every curve.
+Moreover, if $X$ is compact, then $\bar\pi_f$ has connected fibers, see Lemma \ref{cor:fiberconnected}. 
+\begin{thm}{Lemma}\label{lem:lengthpres}
+Let $X$ be a compact metric space. 
+Then $\bar f\:|X|_f\to Y$ preserves the length of every curve.
+\end{thm}
+
+\parit{Proof.}
+Since $\bar f$ is short, we have $\length(\bar f\circ\gamma)\leq \length(\gamma)$ for every curve $\gamma:[0,1]\to|X|_f$.
+Let a rectifiable curve $\gamma$ be given and let $\eps>0$. Choose points $x_i$ on $\gamma$ such that $\length(\gamma)\leq\sum_i |x_i,x_{i+1}|_{|X|_f}+\eps$.
+Denote by $\gamma_i$ the piece of $\gamma$ between $x_i$ and $x_{i+1}$. Since $\bar\pi_f$ has connected fibers, each set $\bar\pi_f^{-1}(\gamma_i)$
+is connected. Hence 
+\[\length(\gamma)\leq \sum_i \diam f(\bar\pi_f^{-1}(\gamma_i))+\eps=\sum_i \diam(\bar f(\gamma_i))+\eps\leq \length(\bar f\circ\gamma)+\eps.\]
+The claim follows since $\eps$ was arbitrary.
+\qeds
+
 As a consequence,  the tautological map $\<|X|_f\>_{\bar f}\zz\to \<|X|_f\>$ is an isometry;
 that is, for any continuous map $f\:X\to Y$ the induced length metric on $|X|_f$ coincides with the length metric induced by 
 $\bar f\:|X|_f\to Y$.
@@ -532,6 +583,11 @@ On the other hand we do not have an example of a saddle surface for which this c
 \end{otherlanguage}
 %Alexandrov, A. D. ``Ruled  surfaces  in  metric  spaces,'' Vestnik Leningrad. Univ., 12:5-26, 1957 (Russian).
 
+
+\bibitem{AB} Alexander, S.; Bishop, R., \textit{Gauss equation and injectivity radii for subspaces in spaces of curvature bounded above.} 
+Geom. Dedicata 117 (2006), 65-84. 
+
+
 \bibitem{akp}
 Alexander, S.; Kapovitch, V. and Petrunin, A.,
 \textit{Invitation to Alexandrov geometry: CAT(0) spaces.}
@@ -556,6 +612,10 @@ Graduate Studies in Mathematics, 33, 2001.
 \textit{Decompositions of Manifolds}
 Academic Press Inc., N.Y., 1986.
 
+\bibitem{G} Gromov, M., \textit{Singularities, expanders and topology of maps. Part 1 : Homology versus volume in the spaces of cycles.} Geom. func. anal.,19 (2009) n 3, 743-841.
+
+
+
 %\bibitem{GS} Gromov, Mikhail, and Richard Schoen. "Harmonic maps into singular spaces and p-adic superrigidity for lattices in groups of rank one." Publications Mathématiques de l'IHÉS 76.1 (1992): 165-246.
 
 %\bibitem{H} Hamilton, R. S. ``Harmonic Maps of Manifolds with Boundary,'' Lecture Notes in Mathematics, Springer, 1975, ISBN 978-3-540-37530-2.
@@ -575,15 +635,25 @@ Academic Press Inc., N.Y., 1986.
 Издание седьмое, 2004.
 \end{otherlanguage}
 
+
+
+
+
 \bibitem{lang-shroeder} Lang, U.; Schroeder, V.
 \textit{Kirszbraun's theorem and metric spaces of bounded curvature.}
 Geom. Funct. Anal. 7 (1997), no. 3, 535--560. 
 
-%\bibitem{KS}Korevaar, N. J.; Schoen, R. M. ``Sobolev spaces and harmonic maps for metric space targets,'' Comm. Anal. Geom., 1(3-4):561-659, 1993.
+\bibitem{KS}Korevaar, N. J.; Schoen, R. M. ``Sobolev spaces and harmonic maps for metric space targets,'' Comm. Anal. Geom., 1(3-4):561-659, 1993.
 
-%\bibitem{LSW} Lytchak, A.; Stadler, S.; Wenger, S.  ``On conformal changes of CAT(0) spaces'', in preparation.
 
-%\bibitem{LW}Lytchak, A.; Wenger, S. ``Area minimizing discs in metric spaces,'' preprint arXiv:1502.06571, 2015.
+
+\bibitem{L} Lytchak, A,\textit{On the geometry of subsets of positive reach.} Manuscripta Math., Vol.115 (2004), 199-205. 
+
+
+\bibitem{LS} Lytchak, A.; Stadler, S.,  \textit{Conformal deformations of CAT(0) spaces}, preprint arXiv:1711.04507, 2017.
+
+
+\bibitem{LW}Lytchak, A.; Wenger, S. ``Area minimizing discs in metric spaces,'' Arch. Ration. Mech. Anal., 223(3):1123-1182, 2017.
 
 %\bibitem{LW2}Lytchak, A.; Wenger, S. ``Energy and area minimizers in metric spaces,'' preprint  arXiv:1507.02670, 2015.
 
@@ -662,7 +732,7 @@ St. Petersburg Math. J. 22 (2011), no. 5, 803--812
 %On univalent harmonic maps between surfaces.
 %Invent. Math. 44 (1978), no. 3, 265--278. 
 
-%\bibitem{St} Stadler, S. ``Harmonic discs in CAT(0) spaces'', in preparation.
+\bibitem{St} Stadler, S. \textit{On the theorem of Fary-Milnor}, in preparation.
 
 %\bibitem{W1}Whyburn, G. T., ``On sequences and limiting sets,'' Fund. Math. vol. 25 (1935) pp. 408-426.
 
