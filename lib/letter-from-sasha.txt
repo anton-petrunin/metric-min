@@ -184,6 +184,10 @@ First paragraph in the proof of the main theorem.
 
 ???Did not get what he wants. A.???
 
+
+
+
+
 a)??? Before you do reduction (maybe even in the beginning when you (should) discuss basic properties of metric minimizers you should say  something about restrictions to subdomains. Otherwise, I do not understand what you do.
 
 ???Did not get why it is related. A.???
