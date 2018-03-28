@@ -71,19 +71,11 @@ $\mathcal{K}_\ell$ is closed in the topology described above.
 \parit{Proof.}
 Let $(X_n,\gamma_n)$ be a sequence in $\mathcal{K}_\ell$.
 Assume $X_n\to X$ and $\gamma_n\to\gamma$. 
-Choose a point $p_n\in X_n$ and define
-$f_n:\DD\to X_n$ by sending the geodesic $[0,\theta]$ for $\theta\in\partial \DD=\SS^1$ to the geodesic path $[p_n,\gamma_n(\theta)]$ with constant speed. 
+Choose a point $o_n\in \partial X_n$ and define
+$f_n:\DD\to X_n$ by sending the geodesic $[0,\theta]$ for $\theta\in\partial \DD=\SS^1$ to the geodesic path $[o_n,\gamma_n(\theta)]$ with constant speed. 
 
-By comparison, $f_n$ is $(5\cdot\ell)$-Lipschitz. %??? explain
-The limit map $f\:\DD\to X$ is also $(5\cdot\ell)$-Lipschitz.
-
-Note that if two different points $x$  and $y$ map to the same point $q$ under $f$, then there is an arc in $\DD$ connecting 
-$x$ and $y$ which also maps to $q$. 
-In particular, $f$ is monotone.
-
-On the other hand, the map $f$ has no bubbles.
-This follows since in the mapping cylinder $X_\gamma$, the concatenation of the geodesic path $[p,\gamma(\theta)]$ 
-with the vertical line $\theta\times [0,1]$ can be lifted to $\DD$.
-
+By comparison, $f_n$ is a $(5\cdot\ell)$-Lipschitz continuous ruled disc. %??? explain
+The limit map $f\:\DD\to X$ is also a $(5\cdot\ell)$-Lipschitz continuous ruled disc. In particular, $f$
+is metric minimizing. By Lemma~\ref{prop:point-complement}, $f$ has no bubbles.
 Therefore, by Lemma~\ref{prop:disc-moore}, $X$ is a disc retract with boundary curve $\gamma$.
 \qeds
