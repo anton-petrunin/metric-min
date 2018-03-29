@@ -71,17 +71,11 @@ Assume that $s$ and $s'$ are two maps spanning the same curve.
 We write $s\succcurlyeq s'$ if there is a \emph{majorization}
 $\mu\:\<\DD\>_s\to \<\DD\>_{s'}$;
 meaning that $\mu$ is a \emph{short} map and $\delta_{s'}=\mu\circ\delta_s$
-(here short is a shortcut for \emph{distance  non-incerasing}).
+(here and further \emph{short} stands for \emph{distance  non-incerasing}).
 
 A map $s\:\DD\to Y$ will be called \emph{metric minimizing disc} if $s\succcurlyeq s'$ 
  implies that the corresponding majorization $\mu$ is an isometry.
-Observe that this notion is invariant under reparametrizations. If $s\:\DD\to Y$ is metric minimizing
-and $\varphi:\DD\to\DD$ is a homeomorphism, then again $s\circ\varphi$ is a metric minimizing disc.
-
-\begin{wrapfigure}{r}{28 mm}
-\begin{lpic}[t(-2 mm),b(-0 mm),r(0 mm),l(0 mm)]{pics/two-bry-curves(1)}
-\end{lpic}
-\end{wrapfigure}
+Observe that this notion is invariant under reparametrizations of $\DD$.
 
 A topological space $W$ together with a choice of a closed curve $\delta\:\SS^1\zz\to W$ is called \emph{disc retract} 
 if the mapping cylinder of~$\delta$ 
@@ -89,9 +83,16 @@ if the mapping cylinder of~$\delta$
 is homeomorphic to the disc $\DD$.
 The curve $\delta$ will be called \emph{boundary curve} of the disc retract $W$.
 
-The definition is motivated by the following observation: if the boundary curve of a disc retract $W$ is a simple closed curve then $W$ is homeomorphic to $\DD$.
-Note that a disc retract (for example the one shown in the picture) may have essentially different boundary curves,
+\begin{wrapfigure}{r}{28 mm}
+\begin{lpic}[t(-2 mm),b(-0 mm),r(0 mm),l(0 mm)]{pics/two-bry-curves(1)}
+\end{lpic}
+\end{wrapfigure}
+
+An example of disc retract which is not a disc is shown on the picture;
+note that it has essentially different boundary curves,
 in the sense that one is not a reparametrization of the other.
+The definition is motivated by the following observation: if the boundary curve of a disc retract $W$ is a simple closed curve then $W$ is homeomorphic to $\DD$.
+
 
 
 
@@ -114,14 +115,15 @@ So in this case, one could consider $\<\DD\>_s$ as a $\CAT(0)$ space where infin
 
 
 The class of metric minimizing discs is huge --- if the ambient space $Y$ is $\CAT(0)$, then one can find a metric minimizing  disc \emph{below} 
-any map $\DD\to Y$ with respect to $\succcurlyeq$. 
-The class of metric minimizing discs contain many well-studied disc-type maps in metric geometry.
+any continuos map $\DD\to Y$ with respect to $\succcurlyeq$. 
+Metric minimizing discs include many well-studied maps from $\DD$ to metric spaces.
 The ruled discs considered by Alexandrov \cite{A} are evidently metric minimizing since one cannot shorten a geodesic. 
 In addition, harmonic maps in the sense of Korevaar--Schoen \cite{KS} from the disc to $\CAT(0)$ spaces are metric minimizing.
-Indeed, harmonic discs are solutions to the Dirichlet problem, i.e. energy minimizing fillings of given loops.
+Indeed, harmonic discs are solutions to the Dirichlet problem;
+that is energy minimizing fillings of given loops.
 Since the Korevaar--Schoen energy is convex, such solutions are unique. But decreasing the intrinsic metric will only decrease the energy of the corresponding map.
-As a consequence, minimal discs in the sense of Lytchak--Wenger \cite{LW} are metric minimizing.
-These are Douglas--Rado solutions to the Plateau problem and therefore harmonic. 
+As a consequence, minimal discs in the sense of Lytchak--Wenger \cite{LW} are metric minimizing;
+these are Douglas--Rado solutions to the Plateau problem and therefore harmonic. 
 
 
 
@@ -143,7 +145,7 @@ They were used by Alexander Lytchak \cite{L} to study sets of positive reach (ru
 In  \cite{AB}, Stephanie Alexander and Richard Bishop used them to generalize the Gauss equation to non-smooth spaces (ruled surfaces).
 In \cite{G}, Mikhael Gromov used them to bound the complexity of smooth maps (general metric minimizing surfaces).
 In \cite{LS}, Alexander Lytchak and the second author used them to deform general $\CAT(0)$ spaces (minimal discs).
-In \cite{St}, the second author used it to control the mapping behaviour of minimal surfaces (minimal discs).  
+In \cite{St}, the second author used them to control the mapping behaviour of minimal surfaces (minimal discs).  
 
 In general it is hard to check whether a given surface is metric minimizing.
 Note that any smooth metric minimizing disc in a Euclidean space is saddle.
@@ -226,7 +228,7 @@ For a metric space we can consider the equivalence relation ``$\approx$'' define
 \[x\approx y\quad\iff\quad|x-y|<\infty.\]
 Its equivalence classes are called \emph{metric components}.
 Note that by definition each metric component is a \emph{genuine metric space}, meaning that distances between points are finite.
-Consequently, a metric space is a disjoint union of genuine metric spaces.
+Consequently, any metric space is a disjoint union of genuine metric spaces.
 
 \parbf{Pseudometrics induced by maps.}
 Assume $X$ is a topological space and $Y$ is a metric space.
@@ -236,7 +238,7 @@ Let us define the \emph{length pseudometric} on $X$ induced by $f$ as
 \[\< x-y\>_f
 =
 \inf
-\set{\length(f\circ\gamma)_Y}{\gamma\ \text{a path in}\  X\ \text{connecting}\ x\ \text{and}\ y}.\]
+\set{\length(f\circ\gamma)_Y}{\gamma\ \text{a path in}\  X\ \text{from}\ x\ \text{to}\ y}.\]
 Denote by $\< X\>_f$ the corresponding metric space; that is,
 \[\< X\>_f=[(X,\<{*}-{*}\>_f)].\] 
 
@@ -437,16 +439,19 @@ with a hexagon boundary.
 The boundary curve goes along the Y-shape marked with bold lines;
 each segment of the Y-shape is traveled twice back and forth.
 
+\begin{figure}[h]
+\centering
+\begin{lpic}[t(-0 mm),b(-0 mm),r(0 mm),l(0 mm)]{pics/not-sufficient-disc(1)}
+%\lbl[lb]{12.5,11;$W_0$}}
+\end{lpic}
+\end{figure}
+
 The picture is rotationally symmetric by the angle $\tfrac23\cdot\pi$.
 A shortening deformation can be obtained by rotating the central triangle slightly counterclockwise and extending the map on the remaing 9 triangles linerarly.
 
 By smoothing this example one can produce a smooth saddle disc which is not metric minimizing.
 
-\begin{center}
-\begin{lpic}[t(-0 mm),b(-0 mm),r(0 mm),l(0 mm)]{pics/not-sufficient-disc(1)}
-%\lbl[lb]{12.5,11;$W_0$}}
-\end{lpic}
-\end{center}
+
 
 Proposition~\ref{prop:smooth} states that there are no local examples of that type which are
 smooth and \emph{strictly saddle} meaning that the principal curvatures at each interior point have opposite signs.
