@@ -37,38 +37,13 @@ We show that metric minimizing surfaces in $\CAT(0)$ spaces are locally $\CAT(0)
 
 \section{Introduction}
 
-\parbf{Motivation and background.}
-
-Let us denote by $\DD$ the closed unit disc in the plane.
-Its boundary $\partial \DD=\SS^1$ is the unit circle.
-Let $X$ be a $\CAT(0)$ space and $\gamma:\SS^1\to X$ an embedded rectifiable loop. A ruled surface bounded by $\gamma$
-is an extension $f:\DD\to X$ of $\gamma$ obtained by choosing a basepoint $o$ on $\SS^1$ and sending each chord with 
-initial point $o$ to the corresponding geodesic. The image of $f$ is the geodesic 
-cone over $\gamma$ with respect to $o$. Alexandr Alexandrov  proved in \cite{A} that such a ruled surface is 
-a $\CAT(0)$ disc with respect to its intrinsic metric. This remarkable result reduces certain questions about 
-general $\CAT(0)$ spaces to the much more feasible case of surfaces. For instance, Alexandrov deduced the Euclidean
-quadratic isoperimetric inquality for curves, meaning that any rectifiable loop of length $l$ in a $\CAT(0)$ space
-bounds a disc of area at most $\frac{l^2}{4\pi}$. 
-
-Very recently Alexander Lytchak and Stefan Wenger \cite{LW5} obtained a similar 
-result about the intrinisic geometry of minimal discs in $\CAT(0)$ spaces. This led to a new method for constructing nonpositively curved spaces.
-According to \cite{LS}, each $\CAT(0)$ space has a vast number of nontrivial deformations.
-
-The goal of this paper is to prove an analogous structural result for a much more general class of maps. These so called {\em metric minimizing maps}
-provide a flexible new tool to study the geometry and topology of nonpositively curved spaces.
-
-
-
-
 
 \parbf{Main result.}
-
-
 Assume $s\:\DD\to \RR^3$ is an embedding.
-We say $s$ is \emph{metric minimizing} if its intrinsic metric is minimal. Explicitly, this means that  a map $s'\:\DD\to \RR^3$ which agrees with 
-$s$ on $\partial \DD$ can only fulfill 
+We say $s$ is \emph{metric minimizing} if its intrinsic metric is minimal. Explicitly, this means that if a map $s'\:\DD\to \RR^3$ agrees with 
+$s$ on $\partial \DD$ and fulfills 
 \[\length s\circ\gamma\ge \length s'\circ\gamma\]
-for all curves $\gamma$ in $\DD$, if equality holds for all $\gamma$.
+for all curves $\gamma$ in $\DD$, then the equality holds for all curves $\gamma$.
 
 As it follows from the main theorem below, the induced metric on the disc for a metric minimizing embedding is $\CAT(0)$.
 
@@ -138,14 +113,15 @@ in particular each metric component of $\<\DD\>_s$ is a $\CAT(0)$ space.
 So in this case, one could consider $\<\DD\>_s$ as a $\CAT(0)$ space where infinite distances between points are legal.
 
 
-The class of metric minimizing discs is huge --- if the ambient space $Y$ is $\CAT(0)$, then one can use ultra-limits to find a metric minimizing  disc \emph{below} 
+The class of metric minimizing discs is huge --- if the ambient space $Y$ is $\CAT(0)$, then one can find a metric minimizing  disc \emph{below} 
 any map $\DD\to Y$ with respect to $\succcurlyeq$. 
-More importantly, the class of metric minimizing discs contain most, if not all well-studied disc-type maps in metric geometry.
+The class of metric minimizing discs contain many well-studied disc-type maps in metric geometry.
 The ruled discs considered by Alexandrov \cite{A} are evidently metric minimizing since one cannot shorten a geodesic. 
-In addition, harmonic maps in the sense of Korevaar-Schoen \cite{KS} from the disc to $\CAT(0)$ spaces are metric minimizing.
+In addition, harmonic maps in the sense of Korevaar--Schoen \cite{KS} from the disc to $\CAT(0)$ spaces are metric minimizing.
 Indeed, harmonic discs are solutions to the Dirichlet problem, i.e. energy minimizing fillings of given loops.
-Since the Korevaar-Schoen energy is convex, such solutions are unique. But decreasing the intrinsic metric will only decrease the energy of the corresponding map.
-As a consequence, minimal discs in the sense of Lytchak-Wenger \cite{LW} are metric minimizing. These are Douglas-Rado solutions to the Plateau problem and therefore harmonic. 
+Since the Korevaar--Schoen energy is convex, such solutions are unique. But decreasing the intrinsic metric will only decrease the energy of the corresponding map.
+As a consequence, minimal discs in the sense of Lytchak--Wenger \cite{LW} are metric minimizing.
+These are Douglas--Rado solutions to the Plateau problem and therefore harmonic. 
 
 
 
@@ -160,26 +136,14 @@ It is closely related to the classical Gauss formula and results on saddle surfa
 It also generalizes the result on minimal surfaces by Alexander Lytchak and Stefan Wenger 
 \cite[Theorem 1.2]{LW5}  and an earlier result of Chikako Mese \cite{mese};
 see also \cite[Chapter 4]{akp} and \cite{petrunin-stadler}. 
-Although some special cases of Theorem \ref{thm:main} were known, the result is new even for harmonic discs.
+Despite that some special cases of Theorem \ref{thm:main} were known, the result is new even for harmonic discs.
 
-
-
-
-
-
-The curvature of metric minimizing discs has already had several applications and we expect many more to come.
-The intrinsic geometry of metric minimizing surfaces was 
-used in \cite{L} to study sets of positive reach (ruled surfaces); in \cite{AB} to generalize the Gauss equation to non-smooth spaces (ruled surfaces);
-in \cite{G} to bound the complexity of smooth maps (general metric minimizing surfaces); in \cite{LS} to deform general $\CAT(0)$ spaces (minimal discs) and in 
-\cite{St} to control the mapping behaviour of minimal surfaces (minimal discs).  
-
-
-
-
-
-
-
-
+Let us list few applications of metric minimizing surfaces.
+They were used by Alexander Lytchak \cite{L} to study sets of positive reach (ruled surfaces).
+In  \cite{AB}, Stephanie Alexander and Richard Bishop used them to generalize the Gauss equation to non-smooth spaces (ruled surfaces).
+In \cite{G}, Mikhael Gromov used them to bound the complexity of smooth maps (general metric minimizing surfaces).
+In \cite{LS}, Alexander Lytchak and the second author used them to deform general $\CAT(0)$ spaces (minimal discs).
+In \cite{St}, the second author used it to control the mapping behaviour of minimal surfaces (minimal discs).  
 
 In general it is hard to check whether a given surface is metric minimizing.
 Note that any smooth metric minimizing disc in a Euclidean space is saddle.
@@ -473,16 +437,16 @@ with a hexagon boundary.
 The boundary curve goes along the Y-shape marked with bold lines;
 each segment of the Y-shape is traveled twice back and forth.
 
+The picture is rotationally symmetric by the angle $\tfrac23\cdot\pi$.
+A shortening deformation can be obtained by rotating the central triangle slightly counterclockwise and extending the map on the remaing 9 triangles linerarly.
+
+By smoothing this example one can produce a smooth saddle disc which is not metric minimizing.
+
 \begin{center}
 \begin{lpic}[t(-0 mm),b(-0 mm),r(0 mm),l(0 mm)]{pics/not-sufficient-disc(1)}
 %\lbl[lb]{12.5,11;$W_0$}}
 \end{lpic}
 \end{center}
-
-The picture is rotationally symmetric by the angle $\tfrac23\cdot\pi$.
-A shortening deformation can be obtained by rotating the central triangle slightly counterclockwise and extending the map on the remaing 9 triangles linerarly.
-
-By smoothing this example one can produce a smooth saddle disc which is not metric minimizing.
 
 Proposition~\ref{prop:smooth} states that there are no local examples of that type which are
 smooth and \emph{strictly saddle} meaning that the principal curvatures at each interior point have opposite signs.
@@ -674,9 +638,9 @@ Geom. Funct. Anal. 7 (1997), no. 3, 535--560.
 
 \bibitem{KS}Korevaar, N. J.; Schoen, R. M. ``Sobolev spaces and harmonic maps for metric space targets,'' Comm. Anal. Geom., 1(3-4):561-659, 1993.
 
-
-
-\bibitem{L} Lytchak, A,\textit{On the geometry of subsets of positive reach.} Manuscripta Math., Vol.115 (2004), 199-205. 
+\bibitem{L} Lytchak, A, 
+\textit{On the geometry of subsets of positive reach.} 
+Manuscripta Math., Vol. 115 (2004), 199--205. 
 
 
 \bibitem{LS} Lytchak, A.; Stadler, S.,  \textit{Conformal deformations of CAT(0) spaces}, preprint arXiv:1711.04507, 2017.
@@ -761,7 +725,7 @@ St. Petersburg Math. J. 22 (2011), no. 5, 803--812
 %On univalent harmonic maps between surfaces.
 %Invent. Math. 44 (1978), no. 3, 265--278. 
 
-\bibitem{St} Stadler, S. \textit{On the theorem of Fary-Milnor}, in preparation.
+\bibitem{St} Stadler, S. \textit{On the theorem of Fary--Milnor}, in preparation.
 
 %\bibitem{W1}Whyburn, G. T., ``On sequences and limiting sets,'' Fund. Math. vol. 25 (1935) pp. 408-426.
 
