@@ -268,8 +268,8 @@ In particular, if in addition $X$ is compact then so is $|X|_f$.
 For a point $x\in X$ and $\eps>0$ we denote by $U$ the connected component of $f^{-1}[B(f(x),\eps)_{Y}]$ which contains $x$.
 Since $X$ is locally connected, the set $U$ is open.
 
-Note that $\bar\pi_f(U)\subset B(\bar x,2\cdot \eps)_{|X|_f}$. Hence
-$\bar\pi_f$ is continuous.
+Note that $\bar\pi_f(U)\subset B(\bar x,2\cdot \eps)_{|X|_f}$;
+hence the result.
 \qeds
 
 
@@ -310,18 +310,8 @@ The maps $\bar f\:|X|_f\to Y$ and $ \hat f\:\<X\>_f\to Y$ are uniquely defined b
 \[f(x)=\bar f(\bar x)=  \hat f( \hat x)\] for any $x\in X$.
 By construction, the diagram commutes.
 
-\parbf{Metrics induced by metrics.}
-%???formally this par is irrelevant, but I think to include it here to provide a better picture 
-If $X$ is a metric space, the two constructions above can be applied to the identity map $\id\:X\to X$.
-In this case the obtained spaces $\<X\>_\id$ and $|X|_\id$ will be denoted by $\<X\>$ and $|X|$ correspondingly.
-The space $\<X\>$ is $X$ equipped with induced length metric.
-All three spaces $\<X\>$, $|X|$ and $X$ have the same underlying set;
-in other words they can be considered as a single space with different metrics and tautological maps between them.
-Both tautological maps 
-\[\<X\>\to |X|\to X\]
-are short and length-preserving.
+Moreover, if $X$ is compact, then $\bar\pi_f$ has connected fibers, see Lemma \ref{cor:fiberconnected}.
 
-Moreover, if $X$ is compact, then $\bar\pi_f$ has connected fibers, see Lemma \ref{cor:fiberconnected}. 
 \begin{thm}{Lemma}\label{lem:lengthpres}
 Let $X$ be a compact metric space. 
 Then $\bar f\:|X|_f\to Y$ preserves the length of every curve.
@@ -336,7 +326,18 @@ is connected. Hence
 The claim follows since $\eps$ was arbitrary.
 \qeds
 
-As a consequence,  the tautological map $\<|X|_f\>_{\bar f}\zz\to \<|X|_f\>$ is an isometry;
+\parbf{Metrics induced by metrics.}
+%???formally this par is irrelevant, but I think to include it here to provide a better picture 
+If $X$ is a metric space, the two constructions above can be applied to the identity map $\id\:X\to X$.
+In this case the obtained spaces $\<X\>_\id$ and $|X|_\id$ will be denoted by $\<X\>$ and $|X|$ correspondingly.
+The space $\<X\>$ is $X$ equipped with induced length metric.
+All three spaces $\<X\>$, $|X|$ and $X$ have the same underlying set;
+in other words they can be considered as a single space with different metrics and tautological maps between them.
+Both tautological maps 
+\[\<X\>\to |X|\to X\]
+are short and length-preserving.
+
+As a consequence of Lemma~\ref{lem:lengthpres}, the tautological map $\<|X|_f\>_{\bar f}\zz\to \<|X|_f\>$ is an isometry;
 that is, for any continuous map $f\:X\to Y$ the induced length metric on $|X|_f$ coincides with the length metric induced by 
 $\bar f\:|X|_f\to Y$.
 
@@ -353,7 +354,7 @@ The second statement is classical (see for example \cite[II-\S8 Thm. 3]{KF}) but
 we were not able to find the first one in the literature.
 
 \parit{Proof.}
-Assume contrary $\<X\>_f$ is not complete.
+Assume that $\<X\>_f$ is not complete.
 Fix a sequence $(x_n)$ in $\<X\>_f$ that is Cauchy, but not converging in $\<X\>_f$.
 After passing to a subsequence, we can assume that the points of the sequence appear on a rectifiable curve $\hat\gamma\:[0,1)\to\<X\>$ in the same order.
 
