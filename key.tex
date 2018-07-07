@@ -6,7 +6,7 @@ Let $Y$ be a $\CAT(0)$ space and $s\:\DD\to Y$
 be a metric minimizing disc.
 Assume $F\subset \DD$ is a finite set such that $\hat\pi_s(F)$ has finite
 diameter in $\<\DD\>_s$.
-Then there exists a finite piecewise geodesic graph $\Gamma$ embedded in $\<\DD\>_s$ which contains a geodesic between any pair of points in $\hat\pi_s(F)$.
+Then there exists a finite piecewise geodesic graph $\Gamma$ embedded in $\<\DD\>_s$ that contains a geodesic between any pair of points in $\hat\pi_s(F)$.
 \end{thm} 
 
 \parit{Proof.} 
@@ -15,15 +15,15 @@ We can assume that the constructed geodesics
 are either disjoint or their intersection is formed by finite collections of arcs and points.
 
 Indeed, if some number of geodesics $\gamma_1,\dots,\gamma_n$ already has this property and we are given points $x$ and $y$, then
-we choose a minimizing geodesic $\gamma_{n+1}$ from $x$ to $y$ which maximizes the time it spends in $\gamma_1,\dots,\gamma_n$  
+we choose a minimizing geodesic $\gamma_{n+1}$ from $x$ to $y$ that maximizes the time it spends in $\gamma_1,\dots,\gamma_n$  
 in the order of importance.
 Namely, 
 \begin{itemize}
 \item  among all minimizing geodesics connecting $x$ to $y$
-choose one which spends maximal time in $\gamma_1$ --- in this case $\gamma_{n+1}$ intersects $\gamma_1$ along the empty set, 
+choose one that spends maximal time in $\gamma_1$ --- in this case $\gamma_{n+1}$ intersects $\gamma_1$ along the empty set, 
 a one-point set or a closed arc.
 \item among all minimizing geodesics as above
-choose one which spends maximal time in $\gamma_2$ --- in this case $\gamma_{n+1}$ intersects $\gamma_2$ along at most two arcs and points.
+choose one that spends maximal time in $\gamma_2$ --- in this case $\gamma_{n+1}$ intersects $\gamma_2$ along at most two arcs and points.
 \item and so on.
 \end{itemize}
 
@@ -57,13 +57,12 @@ Without loss of generality we may assume that the distance $\<x-y\>_s$
 between any pair of points $x,y\in F$ is finite.
 Indeed, since the boundary curve $s|_{\partial\DD}$ is rectifiable,
 this always holds for pairs of points in $\partial \DD\cap F$.
-Consider the subset $F'\subset F$ which lies at finite $\<{*}-{*}\>_s$-distance from one (and therefore any) point in $\partial \DD\cap F$.
+Consider the subset $F'\subset F$ that lies at finite $\<{*}-{*}\>_s$-distance from one (and therefore any) point in $\partial \DD\cap F$.
 Suppose $p'\:F'\to W$ and $q\:W\to Y$ are maps satisfying the proposition for $F'$.
 Extend $p'$ to $F$ by sending $F\backslash F'$ to one point in $W$. The resulting
 map $p$ together with $q$ will then satisfy the proposition for $F$.
 
-By Lemma~\ref{lem:graph}, there exists a finite piecewise geodesic graph $\Gamma$ embedded in $\<\DD\>_s$ which
-contains $F$ as a subset of its vertexes.
+By Lemma~\ref{lem:graph}, there exists a finite piecewise geodesic graph $\Gamma$ embedded in $\<\DD\>_s$ that contains $F$ as a subset of its vertexes.
 According to Proposition~\ref{prop:|D|},
  $\tau_s$ embeds $\Gamma$ in $|\DD|_s$.
 By Proposition~\ref{prop:|D|},
@@ -97,6 +96,15 @@ for any $x,y\in F$.
 By construction the pair of maps $p,q$ meet all conditions.
 \qeds
 
+If $\Delta$ is a $\CAT(0)$ space homeomorphic to the disc, then any homeomorphism $\DD\to \Delta$ is metric minimizing.
+Therefore from the proof above we get the following corollary:
+
+\begin{thm}{Corollary}
+Assume $\Delta$ is a $\CAT(0)$ space homeomorphic to the disc.
+Then there is a sequence of polyhedral $\CAT(0)$ metrics $\rho_n$ on the disc $\DD$ that converges to $\Delta$ in the sense of Gromov--Hausdorff.
+\end{thm}
+
+ 
 
 The following establishes a connection between the 
 key lemma (\ref{lem:key}) and the extension lemma (\ref{lem:finite-whole}).
