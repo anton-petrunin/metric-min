@@ -190,6 +190,7 @@ In the last section, we discuss the relation between saddle surfaces and metric 
 \parbf{Acknowledgement.}
 We want to thank 
 Sergei Ivanov, 
+Nina Lebedeva,
 Carlo Sinestrari, 
 Peter Topping 
 and Burkhard Wilking 
@@ -420,6 +421,26 @@ that is, the inverse image of some $y\in Y$ contains a closed connected set $C\s
 Note that the inverse image $Z:=\bar\pi_f^{-1}C$ is connected due to monotonicity of $\bar\pi_f$. 
 It follows that $|z-z'|_f=0$ for any two points $z,z'\in Z$, a contradiction.
 \qeds
+
+\parbf{On the definition of metric minimizing maps.}
+The definition of metric minimizing disc given in the first lines of the paper 
+agrees with the general definition if the map is Lipschitz embedding.
+Let us show that it fails to agree if the map is not an embedding.
+
+Fix a pseudoarc $P$ in the interior of $\DD$ such that $\area P=0$.
+Consider the quotient map $s\:\DD\to \DD/P$, which identifes all points in $P$.
+The space $\DD/P$ is considered with quotient metric.
+ 
+Since $P$ has no Jordan curves, the map $s$ preserves lengths of all curves.
+Moreover any short map $s'\:\DD\to \DD/P$ that agrees with $s$ on the boundary has to be area preserving.
+The latter implies that $s'$ is an isometry outside of $P$, which forces the identity $s'= s$.
+In other words the intrinsic metric induced by $s$ is minimal in the sense described on the first lines of the paper.
+
+On the other hand, 
+according to Moore's theorem, $\DD/P$ is homeomorphic to $\DD$.
+For a homeomorphism $s'\:\DD\to \DD/P$ the induced metric is isometric to $ \DD/P$.
+Therefore $s\:\DD\to\DD/P$ is a majorization which strictly decreases the distances between some points. 
+In other words, $s$ is not metric minimizing.
 
 \input{retracts.tex}
 \input{compact.tex}
