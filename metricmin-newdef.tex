@@ -39,7 +39,7 @@ We show that metric minimizing surfaces in $\CAT(0)$ spaces are locally $\CAT(0)
 
 
 \parbf{Main result.}
-Assume $s$ is an embedding from the disc $\DD$ into the Euclidean space $\RR^3$.
+Assume $s$ is a Lipschitz embedding of the disc $\DD$ into the Euclidean space $\RR^3$.
 We say $s$ is \emph{metric minimizing} if its intrinsic metric is minimal. Explicitly, this means that if a map $s'\:\DD\to \RR^3$ agrees with 
 $s$ on $\partial \DD=\SS^1$ and fulfills 
 \[\length s\circ\gamma\ge \length s'\circ\gamma\]
@@ -47,7 +47,8 @@ for all curves $\gamma$ in $\DD$, then equality holds for all curves $\gamma$.
 
 As it follows from the main theorem below, the induced metric on the disc for a metric minimizing embedding is $\CAT(0)$.
 
-To formulate the theorem in full generality we need to extend the definition of metric minimizing maps in two ways. First, we will only assume continuity of $s$, so the map $s$ might not be an embedding;
+To formulate the theorem in full generality we need to extend the definition of metric minimizing maps in two ways.
+First, we will only assume continuity of $s$, so the map $s$ might not be an embedding and not necessary Lipschitz;
 this part is tricky.
 Secondly, we also have to define it with arbitrary metric spaces as targets; this part is straightforward. 
 
@@ -55,7 +56,7 @@ Let $Y$ be a metric space
 and $s\:\DD\to Y$ be a continuous map.
 Let $\gamma\:\SS^1\to Y$ be a closed rectifiable curve.
 We say that $s\:\DD\to Y$ \emph{spans} $\gamma$,
-if it is an extension,  $s|_{\SS^1}=\gamma$.
+if $s$ is an extension of $\gamma$; that is,  $s|_{\SS^1}=\gamma$.
 
 Consider the induced length-pseudometric on $\DD$ defined as 
 \[\<x-y\>_s=\inf_\alpha\{\length s\circ\alpha\},\]
@@ -322,7 +323,13 @@ Since $\bar f$ is short, we have $\length(\bar f\circ\gamma)\leq \length(\gamma)
 Let a rectifiable curve $\gamma$ be given and let $\eps>0$. Choose points $x_i$ on $\gamma$ such that $\length(\gamma)\leq\sum_i |x_i,x_{i+1}|_{|X|_f}+\eps$.
 Denote by $\gamma_i$ the piece of $\gamma$ between $x_i$ and $x_{i+1}$. Since $\bar\pi_f$ has connected fibers, each set $\bar\pi_f^{-1}(\gamma_i)$
 is connected. Hence 
-\[\length(\gamma)\leq \sum_i \diam f(\bar\pi_f^{-1}(\gamma_i))+\eps=\sum_i \diam(\bar f(\gamma_i))+\eps\leq \length(\bar f\circ\gamma)+\eps.\]
+\begin{align*}
+\length(\gamma)&\leq \sum_i \diam f(\bar\pi_f^{-1}(\gamma_i))+\eps=
+\\
+&=\sum_i \diam(\bar f(\gamma_i))+\eps\leq
+\\
+&\leq\length(\bar f\circ\gamma)+\eps.
+\end{align*}
 The claim follows since $\eps$ was arbitrary.
 \qeds
 
