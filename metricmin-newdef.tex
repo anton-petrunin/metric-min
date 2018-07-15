@@ -74,9 +74,11 @@ $\mu\:\<\DD\>_s\to \<\DD\>_{s'}$;
 meaning that $\mu$ is a \emph{short} map and $\delta_{s'}=\mu\circ\delta_s$
 (here and further \emph{short} stands for \emph{distance  non-incerasing}).
 
-A map $s\:\DD\to Y$ will be called \emph{metric minimizing disc} if $s\succcurlyeq s'$ 
- implies that the corresponding majorization $\mu$ is an isometry.
-Observe that this notion is invariant under reparametrizations of $\DD$.
+A map $s\:\DD\to Y$ will be called \emph{metric minimizing disc} if $s\succcurlyeq s'$ implies that the corresponding majorization $\mu$ is an isometry.
+ 
+%(If the map $s$ is a Lipschitz embedding, then the map $\hat\pi_s\:\DD\to \<\DD\>_s$ is a Lipschitz homeomorphism.
+%In this case any majorization $\mu$, the map $s''=\hat s'\circ \mu\circ \hat\pi_s\:\DD\to Y$ satisfies the inequality $\length s\circ\gamma\ge \length s''\circ\gamma$ for any curve $\gamma$ in $\DD$; moreover, if $\mu$ is not an isometry then the inequality is strict for some curve. 
+%)
 
 A topological space $W$ together with a choice of a closed curve $\delta\:\SS^1\zz\to W$ is called \emph{disc retract} 
 if the mapping cylinder of~$\delta$ 
@@ -422,25 +424,6 @@ Note that the inverse image $Z:=\bar\pi_f^{-1}C$ is connected due to monotonicit
 It follows that $|z-z'|_f=0$ for any two points $z,z'\in Z$, a contradiction.
 \qeds
 
-\parbf{On the definition of metric minimizing maps.}
-The definition of metric minimizing disc given in the first lines of the paper 
-agrees with the general definition if the map is Lipschitz embedding.
-Let us show that it fails to agree if the map is not an embedding.
-
-Fix a pseudoarc $P$ in the interior of $\DD$ such that $\area P=0$.
-Consider the quotient map $s\:\DD\to \DD/P$, which identifes all points in $P$.
-The space $\DD/P$ is considered with quotient metric.
- 
-Since $P$ has no Jordan curves, the map $s$ preserves lengths of all curves.
-Moreover any short map $s'\:\DD\to \DD/P$ that agrees with $s$ on the boundary has to be area preserving.
-The latter implies that $s'$ is an isometry outside of $P$, which forces the identity $s'= s$.
-In other words the intrinsic metric induced by $s$ is minimal in the sense described on the first lines of the paper.
-
-On the other hand, 
-according to Moore's theorem, $\DD/P$ is homeomorphic to $\DD$.
-For a homeomorphism $s'\:\DD\to \DD/P$ the induced metric is isometric to $ \DD/P$.
-Therefore $s\:\DD\to\DD/P$ is a majorization which strictly decreases the distances between some points. 
-In other words, $s$ is not metric minimizing.
 
 \input{retracts.tex}
 \input{compact.tex}
