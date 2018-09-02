@@ -49,7 +49,7 @@ As it follows from the main theorem below, the induced metric on the disc for a 
 
 To formulate the theorem in full generality we need to extend the definition of metric minimizing maps in two ways.
 First, we will only assume continuity of $s$, so the map $s$ might not be an embedding and not necessary Lipschitz;
-this part is tricky.
+this part is tricky --- a straightforward generalization produces a too weak condition.
 Secondly, we also have to define it with arbitrary metric spaces as targets; this part is straightforward. 
 
 Let $Y$ be a metric space
@@ -141,7 +141,7 @@ these are Douglas--Rado solutions to the Plateau problem and therefore harmonic.
 
 
 As intended, the main theorem subsumes and generalizes several previously known results, including Alexandr Alexandrov's theorem about ruled surfaces in \cite{A} and 
-the main theorem by the first author announced in \cite{petrunin-metric-min}.
+the main theorem by the first author announced in \cite{petrunin-metric-min}, assuming it is formulated correctly; see Section~\ref{sec:old-thm}. 
 It is closely related to the classical Gauss formula and results on saddle surfaces by Samuel Shefel in \cite{shefel-2D} and \cite{shefel-3D}.
 It also generalizes the result on minimal surfaces by Alexander Lytchak and Stefan Wenger 
 \cite[Theorem 1.2]{LW5}  and an earlier result of Chikako Mese \cite{mese};
@@ -239,7 +239,7 @@ Its equivalence classes are called \emph{metric components}.
 Note that by definition each metric component is a \emph{genuine metric space}, meaning that distances between points are finite.
 Consequently, any metric space is a disjoint union of genuine metric spaces.
 
-\parbf{Pseudometrics induced by maps.}
+\parbf{Pseudometrics induced by a map.}
 Assume $X$ is a topological space and $Y$ is a metric space.
 Let $f\:X\to Y$ be a continuous map. 
 
@@ -315,6 +315,13 @@ Moreover, $\tau_f$ does not have to be injective, an example is given in \cite[4
 However, for metric minimizing discs $f\:\DD\to Y$ both statements hold true; see
 Proposition~\ref{prop:|D|}.
 
+The space $\<|X|_f\>_{\bar f}$ is the intrinsic metric on $|X|_f$, which is to $\<|X|_f\>$ in the notation defined below.
+We will denote it briefly by $\<|X|\>_f$.
+The corresponding pseudometric on $X$ will be denoted by $\<|{*}-{*}|\>_f$.
+This is a more natural way to pullback intrinsic metric to $X$.
+If $X$ is compact, then $\<|{*}-{*}|\>_f$ coincides with the pseudometric $\mathrm{pull}_f$ defined in \cite{petrunin-intrinisic}.
+It will show up in Section~\ref{sec:old-thm}.
+
 The maps $\bar f\:|X|_f\to Y$ and $ \hat f\:\<X\>_f\to Y$ are uniquely defined by the identity
 \[f(x)=\bar f(\bar x)=  \hat f( \hat x)\] for any $x\in X$.
 By construction, the diagram commutes.
@@ -369,9 +376,9 @@ The second statement is classical (see for example \cite[II-\S8 Thm. 3]{KF}) but
 we were not able to find the first one in the literature.
 
 \parit{Proof.}
-Assume that $\<X\>_f$ is not complete.
-Fix a sequence $(x_n)$ in $\<X\>_f$ that is Cauchy, but not converging in $\<X\>_f$.
-After passing to a subsequence, we can assume that the points of the sequence appear on a rectifiable curve $\hat\gamma\:[0,1)\to\<X\>$ in the same order.
+Assume that $\<X\>$ is not complete.
+Fix a Cauchy sequence $(x_n)$ in $\<X\>$ that is not converging in $\<X\>$.
+After passing to a subsequence, we can assume that the points of the sequence appear on a rectifiable curve $\hat\gamma\:[0,1)\zz\to\<X\>$ in the same order.
 
 The corresponding curve $\gamma\:[0,1)\to X$ has the same length.
 Since $X$ is compact we can extend it to a path $\gamma_+\:[0,1]\to X$.
@@ -436,6 +443,7 @@ It follows that $|z-z'|_f=0$ for any two points $z,z'\in Z$, a contradiction.
 \input{key}
 \input{finite-whole}
 \input{main}
+\input{old-thm}
 
 \section{Saddle surfaces}\label{sec:smooth}
 
@@ -609,7 +617,9 @@ Alexander, S.; Kapovitch, V. and Petrunin, A.,
 %\bibitem{bishop}
 %Bishop, R. L.,
 %\textit{The intrinsic geometry of a Jordan domain.}
-%Int. Electron. J. Geom. 1 (2008), no. 2, 33--39. 
+%Int. Electron. J. Geom. 1 (2008), no. 2, 33--39.
+
+\bibitem{banakh} Banakh, T. \textit{Running most of the time in a connected set},  MathOverflow   \texttt{https://mathoverflow.net/q/308172}, 
 
 \bibitem{bressan} Bressan, A.,
 \textit{Hyperbolic systems of conservation laws.
@@ -692,11 +702,11 @@ Trans. Amer. Math. Soc. 27 no. 4 (1925) pp. 416--428.
 
 \bibitem{petrunin-metric-min} Petrunin, A.,
 \textit{Metric minimizing surfaces.}
-Electron. Res. Announc. Amer. Math. Soc. 5 (1999), 47--54 
+Electron. Res. Announc. Amer. Math. Soc. 5 (1999), 47--54. 
 
 \bibitem{petrunin-intrinisic} Petrunin, A.,
 \textit{Intrinsic isometries in Euclidean space.}
-St. Petersburg Math. J. 22 (2011), no. 5, 803--812 
+St. Petersburg Math. J. 22 (2011), no. 5, 803--812 (\texttt{arXiv:1003.5621v2})
 
 \bibitem{petrunin-stadler} Petrunin, A.; Stadler, S.,
 \textit{Monotonicity of saddle maps.} 
@@ -733,7 +743,7 @@ St. Petersburg Math. J. 22 (2011), no. 5, 803--812
 \begin{otherlanguage}{russian}
 Шефель, С. З., 
 \textit{О внутренней геометрии седловых поверхностей.}
-Сибирский математический журнал, 5 (1964), 1382---1396
+Сибирский математический журнал, 5 (1964), 1382---1396.
 \end{otherlanguage}
 %\v{S}efel', S., 
 %\textit{On the intrinsic geometry of saddle surfaces,} Sibirsk. Mat. \v{Z}. 
@@ -745,7 +755,7 @@ St. Petersburg Math. J. 22 (2011), no. 5, 803--812
 %On univalent harmonic maps between surfaces.
 %Invent. Math. 44 (1978), no. 3, 265--278. 
 
-\bibitem{St} Stadler, S. \textit{On the theorem of Fary--Milnor}, in preparation.
+\bibitem{St} Stadler, S. \textit{The structure of minimal surfaces in CAT(0) spaces}, \texttt{arXiv:1808.06410 [math.DG]}.
 
 %\bibitem{W1}Whyburn, G. T., ``On sequences and limiting sets,'' Fund. Math. vol. 25 (1935) pp. 408-426.
 
@@ -753,6 +763,8 @@ St. Petersburg Math. J. 22 (2011), no. 5, 803--812
 
 %\bibitem{Wi}Wilder, R. L., ``Topology of Manifolds,'' American Mathematical Society Colloquium Publications, vol. 32. American Mathematical
 %Society, New York, N. Y., 1949.
+   
+  
 \end{thebibliography}
 
 \Addresses
