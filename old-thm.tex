@@ -1,15 +1,46 @@
 \section{About the old theorem}\label{sec:old-thm}
 
 In this section we formulate and prove two versions of the main theorem in \cite{petrunin-metric-min} with corrections.
-Note that the meaning of term \emph{metric minimizing} in this paper differ from the old paper.
+The meaning of term \emph{metric minimizing} in this paper differ from the old paper;
+instead of using the older term we write a definition every time it is needed.
 
 In Section~\ref{sec:defs}, we introduced two ways to pull back metric along a map $f\:X\to Y$ from a metric space $X$ to a length metric space $Y$:
 $\langle x-y\rangle_f$ and $\langle| x-y|\rangle_f$.
 Directly from the definition it follows that  $\langle x-y\rangle_f\ge \langle| x-y|\rangle_f$ for any $x,y\in X$.
+The following diagram is extention of the diagram in Section~\ref{sec:defs} that includes $\langle|X|\rangle_f$, from above we have that both maps $\hat\tau_f$ and $\bar\tau_f$ are short and $\tau_f=\bar\tau_f\circ\hat\tau_f$.
+
+\begin{figure}
+\centering
+\begin{tikzpicture}[scale=1.5]
+
+\node (0) at (1,.5) {$\langle|X|\rangle_f$};
+  \node (1) at (1,-.5) {$|X|_f$};
+  \node (2) at (1,1.5){$\<X\>_f$};
+  \node (11) at (3,1){$Y$};
+  \node (12) at (-1,1) {$X$};
+\draw[
+    >=latex,
+%   every node/.style={above,midway},% either
+    auto=right,                      % or
+    loop above/.style={out=75,in=105,loop},
+    every loop,
+    ]
+   %(2) edge node{$\tau_f$}(1)
+   (2) edge node{$\hat\tau_f$}(0)
+   (0) edge node{$\bar\tau_f$}(1)
+   (12) edge[bend right=10] node[swap]{$\hat{\bar \pi}_f$}(0)
+   (0) edge[bend right=10] node[swap]{$\hat{\bar f}$}(11)
+   (12) edge[bend left=90] node[swap]{$f$}(11)
+   (12) edge[bend right=-10] node[swap]{$\hat\pi_f$}(2)
+   (2) edge[bend right=-10] node[swap]{$ \hat f$}(11)
+   (12) edge[bend right] node{$\bar \pi_f$}(1)
+   (1) edge[bend right] node{$\bar f$}(11);
+\end{tikzpicture}
+\end{figure}
 
 Our first formulation use $\langle|{*}-{*}|\rangle$-metric instead of $\langle{*}-{*}\rangle$; besides that it is identical to the old formulation.
 
-\begin{thm}{Old theorem for $\bm{\langle|{*}-{*}|\rangle}$}
+\begin{thm}{Old theorem for $\bm{\langle|{*}-{*}|\rangle}$}\label{thm:old1}
 Let $Y$ be a $\CAT(0)$ space and $s\:\DD\to Y$ a continuous map that satisfies the following property: 
 if a continuous map $s'\:\DD\to Y$ agrees with $s$ on $\partial\DD$ and
 \[\<|x-y|\>_{s'}\le \<|x-y|\>_{s}\]
@@ -48,9 +79,9 @@ It remains to apply the main theorem.
 The second formulation use the metric $\langle{*}-{*}\rangle$ --- this is as in the original formulation,
 and it requires that this pseudometric is continuous --- this is stronger than  
 compactness of $\<\DD\>_s$ in the original formulation.
-(The sketch of proof given in \cite{petrunin-metric-min} actually needs that the metric $(x,y)\zz\mapsto\<x-y\>_{s}$ is continuous.)
+(The sketch of proof given in \cite{petrunin-metric-min} implicitly used that the metric $(x,y)\zz\mapsto\<x-y\>_{s}$ is continuous.)
 
-\begin{thm}{Old theorem for $\bm{\langle{*}-{*}\rangle}$}
+\begin{thm}{Old theorem for $\bm{\langle{*}-{*}\rangle}$}\label{thm:old2}
 Let $Y$ be a $\CAT(0)$ space and $s\:\DD\to Y$ a continuous map that satisfies the following property: 
 if a continuous map $s'\:\DD\to Y$ agrees with $s$ on $\partial\DD$ and
 \[\<x-y\>_{s'}\le \<x-y\>_{s}\]
@@ -70,8 +101,8 @@ Then $\<x-y\>_{s}=0$ for any pair $x,y\in P$.
 \end{thm}
 
 
-The statement might is evident if $P$ is path connected; 
-but there are examples (pseudoarc) of nontrivial connected compact sets that contains no arcs.
+The statement is evident if $P$ is path connected; 
+but there are examples (say pseudoarc) of nontrivial connected compact sets that contains no arcs.
 We present an argument of Taras Banakh \cite{banakh}.
 
 \parit{Proof.}
@@ -80,11 +111,10 @@ It is sufficient to construct a path $\alpha$ connecting $x$ to $y$ of arbitrary
 The curve $\alpha$ will be constructed as a limit of an iteration procedure;
 we define it on a collection of subintervals of $[0,1]$.
 The restriction of $\alpha$ to each subinterval runs from $P$ to $P$;
-the closure of the ends of the intervals forms a Cantor $C$ set in $[0,1]$; 
- $C$ interiors form the complement of a Cantor set.
+the closure of the ends of the intervals will form a Cantor $C$ set in $[0,1]$ and the interiors of the interval will form the complement of $C$.
 
 Fix a converging to zero sequence of positive numbers $(\eps_n)$. 
-Since $(x,y)\mapsto\<x-y\>_{s}$ is continuous, 
+Since $(x,y)\zz\mapsto\<x-y\>_{s}$ is continuous, 
 there are rectifiable curves $\gamma_1,\dots,\gamma_n$ that cut $\<\DD\>_s$ into closed sets $K_1,\dots,K_\ell$ of diameter at most $\eps_1$.
 Indeed, ...
 
@@ -148,6 +178,8 @@ Now consider the finite graph $\Gamma$ whose set of vertices coincides with $\ma
 It is clear that the sequences $P_1,\dots,P_k$ and $A_0,\dots,A_{k+1}$ have the required properties.
 \qeds
 
-\parit{Proof.}
+\parit{Proof of \ref{thm:old2}.}
 It is sufficient to show that $s$ is metric minimizing.
+
+???
 \qeds
