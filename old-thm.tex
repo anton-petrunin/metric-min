@@ -1,13 +1,56 @@
 \section{About the old theorem}\label{sec:old-thm}
 
-In this section we will show that the old theorem from \cite{petrunin-metric-min} follows from the new one.
+In this section we formulate and prove two versions of the main theorem in \cite{petrunin-metric-min} with corrections.
+Note that the meaning of term \emph{metric minimizing} in this paper differ from the old paper.
 
-Let us restate the main theorem in \cite{petrunin-metric-min} with a correction;
-originally it assumed only compactness of $\<D\>_s$,
-the proof actually used that the metric $(x,y)\zz\mapsto\<x-y\>_{s}$ is continuous,
-which is a stronger condition.
+In Section~\ref{sec:defs}, we introduced two ways to pull back metric along a map $f\:X\to Y$ from a metric space $X$ to a length metric space $Y$:
+$\langle x-y\rangle_f$ and $\langle| x-y|\rangle_f$.
+Directly from the definition it follows that  $\langle x-y\rangle_f\ge \langle| x-y|\rangle_f$ for any $x,y\in X$.
 
-\begin{thm}{Old theorem}
+Our first formulation use $\langle|{*}-{*}|\rangle$-metric instead of $\langle{*}-{*}\rangle$; besides that it is identical to the old formulation.
+
+\begin{thm}{Old theorem for $\bm{\langle|{*}-{*}|\rangle}$}
+Let $Y$ be a $\CAT(0)$ space and $s\:\DD\to Y$ a continuous map that satisfies the following property: 
+if a continuous map $s'\:\DD\to Y$ agrees with $s$ on $\partial\DD$ and
+\[\<|x-y|\>_{s'}\le \<|x-y|\>_{s}\]
+for any $x,y\in \DD$
+then the equality holds for all pairs of $x$ and $y$.
+Assume that the corresponding space $\<|\DD|\>_s$ is compact.
+Then $\<|\DD|\>_s$ is $\CAT(0)$.
+\end{thm}
+
+\parit{Proof.}
+Note that $s$ has no bubbles, this can be proved the same way as Lemma~\ref{prop:point-complement}.
+By Lemma~\ref{prop:disc-moore},  $|\DD|_s$ is a disc retract.
+
+Note that the natural map $\theta\:\<|\DD|\>_s\to |\DD|_s$ is injective and continuous.
+Since $\<|\DD|\>_s$ is compact and $|\DD|_s$ is Hausdorff, the map $\theta$ is a homeomorphism.
+
+In particular $\<|\DD|\>_s$ is a disc retract as well as $|\DD|_s$.
+Therefore the mapping cylinder of the boundary curve in $|\DD|_s$ is homeomorphic to $\DD$;
+fix a map $h\:\DD\zz\to|\DD|_s$ that is a composition of retraction of $\DD\zz\to A$ and a homeomorphism $A\zz\to  |\DD|_s$.
+(If $|\DD|_s$ is a disc, we can assume that $h$ is a homeomorphism.)
+Note that $\<\DD\>_{\bar s\circ h}$ is isometric to $\<|\DD|\>_s$.
+
+If $s$ is not metric minimizing,
+then there is an other map $h'\:\DD\to Y$ such that $h'\preccurlyeq  \bar s\circ h$ with nonisometric majorization $\mu\:\<|\DD|\>_s\to \<\DD\>_{h'}$.
+For the composition $s'=\hat h\circ \mu\circ \theta^{-1}\circ \bar \pi_s$, we have that 
+\[\<x-y\>_{s'}\le \<|x-y|\>_{s}\]
+for any $x,y\in\DD$.
+Therefore 
+\[\<|x-y|\>_{s'}\le \<|x-y|\>_{s}.\]
+
+By the assumption, the last inequality is an equality.
+Since $\<|\DD|\>_s$ is compact, we a metric minimizing $s'$. %??? more here???
+It remains to apply the main theorem.
+\qeds
+
+The second formulation use the metric $\langle{*}-{*}\rangle$ --- this is as in the original formulation,
+and it requires that this pseudometric is continuous --- this is stronger than  
+compactness of $\<\DD\>_s$ in the original formulation.
+(The sketch of proof given in \cite{petrunin-metric-min} actually needs that the metric $(x,y)\zz\mapsto\<x-y\>_{s}$ is continuous.)
+
+\begin{thm}{Old theorem for $\bm{\langle{*}-{*}\rangle}$}
 Let $Y$ be a $\CAT(0)$ space and $s\:\DD\to Y$ a continuous map that satisfies the following property: 
 if a continuous map $s'\:\DD\to Y$ agrees with $s$ on $\partial\DD$ and
 \[\<x-y\>_{s'}\le \<x-y\>_{s}\]
