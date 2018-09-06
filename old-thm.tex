@@ -1,8 +1,9 @@
 \section{About the old theorem}\label{sec:old-thm}
 
 In this section we formulate and prove two versions of the main theorem in \cite{petrunin-metric-min} with corrections.
-The meaning of term \emph{metric minimizing} in this paper differ from the old paper;
-instead of using the older term we write a definition every time it is needed.
+The meaning of term \emph{metric minimizing} in this paper differ from the old paper.
+Instead of using the older term we write a definition every time it is needed;
+both conditions are weaker, so the statements require additional assumptions.
 
 In Section~\ref{sec:defs}, we introduced two ways to pull back metric along a map $f\:X\to Y$ from a metric space $X$ to a length metric space $Y$:
 $\langle x-y\rangle_f$ and $\langle| x-y|\rangle_f$.
@@ -46,7 +47,7 @@ if a continuous map $s'\:\DD\to Y$ agrees with $s$ on $\partial\DD$ and
 \[\<|x-y|\>_{s'}\le \<|x-y|\>_{s}\]
 for any $x,y\in \DD$
 then the equality holds for all pairs of $x$ and $y$.
-Assume that the corresponding space $\<|\DD|\>_s$ is compact.
+Assume that the space $\<|\DD|\>_s$ is compact.
 Then $\<|\DD|\>_s$ is $\CAT(0)$.
 \end{thm}
 
@@ -54,32 +55,30 @@ Then $\<|\DD|\>_s$ is $\CAT(0)$.
 Note that $s$ has no bubbles, this can be proved the same way as Lemma~\ref{prop:point-complement}.
 By Lemma~\ref{prop:disc-moore},  $|\DD|_s$ is a disc retract.
 
-Note that the natural map $\theta\:\<|\DD|\>_s\to |\DD|_s$ is injective and continuous.
-Since $\<|\DD|\>_s$ is compact and $|\DD|_s$ is Hausdorff, the map $\theta$ is a homeomorphism.
+Note that the natural map $\bar\tau_s\:\<|\DD|\>_s\to |\DD|_s$ is injective and continuous.
+Since $\<|\DD|\>_s$ is compact and $|\DD|_s$ is Hausdorff, the map $\bar\tau_s$ is a homeomorphism.
 
 In particular $\<|\DD|\>_s$ is a disc retract as well as $|\DD|_s$.
 Therefore the mapping cylinder of the boundary curve in $|\DD|_s$ is homeomorphic to $\DD$;
-fix a map $h\:\DD\zz\to|\DD|_s$ that is a composition of retraction of $\DD\zz\to A$ and a homeomorphism $A\zz\to  |\DD|_s$.
-(If $|\DD|_s$ is a disc, we can assume that $h$ is a homeomorphism.)
+identify $\DD$ with the mapping cylinder and let $h\:\DD\to|\DD|_s$ be the projection that maps the cylinder to the boundary curve and does not move the rest of points.
+(If $|\DD|_s$ is a disc, we can assume instead that $h$ is a homeomorphism.)
 Note that $\<\DD\>_{\bar s\circ h}$ is isometric to $\<|\DD|\>_s$.
 
 If $s$ is not metric minimizing,
-then there is an other map $h'\:\DD\to Y$ such that $h'\preccurlyeq  \bar s\circ h$ with nonisometric majorization $\mu\:\<|\DD|\>_s\to \<\DD\>_{h'}$.
-For the composition $s'=\hat h\circ \mu\circ \theta^{-1}\circ \bar \pi_s$, we have that 
-\[\<x-y\>_{s'}\le \<|x-y|\>_{s}\]
+then there is an other map $h'\:\DD\to Y$ such that $\bar s\circ h\succcurlyeq h'$ with nonisometric majorization $\mu\:\<|\DD|\>_s\to \<\DD\>_{h'}$.
+For the composition $s'=\hat h\circ \mu\circ  \hat{\bar \pi}_s$, we have that 
+\[\<x-y\>_{s'}\le \<|x-y|\>_{s}\quad\text{and therefore}\quad \<|x-y|\>_{s'}\le \<|x-y|\>_{s}\]
 for any $x,y\in\DD$.
-Therefore 
-\[\<|x-y|\>_{s'}\le \<|x-y|\>_{s}.\]
 
 By the assumption, the last inequality is an equality.
-Since $\<|\DD|\>_s$ is compact, we a metric minimizing $s'$. %??? more here???
+Since $\<|\DD|\>_s$ is compact, we can assume that $s'$ is metric minimizing. %??? more here???
 It remains to apply the main theorem.
 \qeds
 
 The second formulation use the metric $\langle{*}-{*}\rangle$ --- this is as in the original formulation,
 and it requires that this pseudometric is continuous --- this is stronger than  
 compactness of $\<\DD\>_s$ in the original formulation.
-(The sketch of proof given in \cite{petrunin-metric-min} implicitly used that the metric $(x,y)\zz\mapsto\<x-y\>_{s}$ is continuous.)
+The sketch of proof given in \cite{petrunin-metric-min} implicitly used that the metric $(x,y)\zz\mapsto\<x-y\>_{s}$ is continuous.
 
 \begin{thm}{Old theorem for $\bm{\langle{*}-{*}\rangle}$}\label{thm:old2}
 Let $Y$ be a $\CAT(0)$ space and $s\:\DD\to Y$ a continuous map that satisfies the following property: 
@@ -88,98 +87,73 @@ if a continuous map $s'\:\DD\to Y$ agrees with $s$ on $\partial\DD$ and
 for any $x,y\in \DD$
 then the equality holds for all pairs of $x$ and $y$.
 Assume that the function $(x,y)\mapsto\<x-y\>_{s}$ is continuous.
-Then $\<D\>_s$ is $\CAT(0)$.
+Then $\<\DD\>_s$ is $\CAT(0)$.
 \end{thm}
 
-Note that the assumption in the old theorem is weaker than metric minimizing condition as defined in this paper;
-that is, a metric minimizing map have to satisfy this assumption, but the other way around may not hold --- a majorization may not lift to $\DD$.
-
-\begin{thm}{Lemma}
-Let $Y$ be a metric space and $s\:\DD\to Y$ a map such that the function $(x,y)\mapsto\<x-y\>_{s}$ is continuous.
-Assume that the fiber $s^{-1}\{z\}$ of some point $z\in Y$ contains a connected set $P$.
-Then $\<x-y\>_{s}=0$ for any pair $x,y\in P$.
+This version follows from the following proposition and the old theorem for $\langle|{*}-{*}|\rangle$.
+ 
+\begin{thm}{Proposition}\label{prop:<||>=<>}
+Let $Y$ be a metric space and $s\:\DD\to Y$ is a continuous map without bubbles.
+Assume that the function $(x,y)\mapsto \<x-y\>_s$ is continuous.
+Then 
+\[\<x-y\>_s=\<|x-|y\>_s\]
+for any $x,y\in \DD$.
 \end{thm}
 
+Before going into the proof, let us give an example which shows that the statement is not trivial.
+Consider a pseudo-arc $P\subset \DD$ and let $s$ be the quotient map $\DD\to \DD/P$.
+Evidently 
+\[\<|x-y|\>_s=0\]
+for any $x,y\in P$.
+However since $P$ contains no curves it is not at all evident that 
+\[\<x-y\>_s=0\]
+for any $x,y\in P$.
+We present an argument of Taras Banakh \cite{banakh};
+we do not know a generalization of the proposition to higher dimensions.
 
-The statement is evident if $P$ is path connected; 
-but there are examples (say pseudoarc) of nontrivial connected compact sets that contains no arcs.
-We present an argument of Taras Banakh \cite{banakh}.
+\begin{thm}{Lemma}\label{lem:subdivision}
+Let $Y$ be a metric space and $s\:\DD\to Y$ is a continuous map without bubbles.
+Assume that the function $(x,y)\mapsto \<x-y\>_s$ is continuous.
+Then there is a subdivision of $\<\DD\>_s$ into subsets with arbitrary small diameter and rectifiable boundary.
+\end{thm}
 
 \parit{Proof.}
-It is sufficient to construct a path $\alpha$ connecting $x$ to $y$ of arbitrary small length.
+Note that given $\eps>0$ there is $\delta>0$ such that a set of diameter $\delta$ in $\<\DD\>_s$ can not separate a set of diameter at least $\eps$ from the boundary curve.
+Indeed, otherwise passing to the limit we would get a one point set that separates a set from the boundary curve; that is, $s$ has a bubble --- a contradiction. 
 
-The curve $\alpha$ will be constructed as a limit of an iteration procedure;
-we define it on a collection of subintervals of $[0,1]$.
-The restriction of $\alpha$ to each subinterval runs from $P$ to $P$;
-the closure of the ends of the intervals will form a Cantor $C$ set in $[0,1]$ and the interiors of the interval will form the complement of $C$.
+Let us subdivide $\DD$ into small pieces by curves, say by vertical and horizontal lines.
+Since the function $(x,y)\mapsto \<x-y\>_s$ is continuous,
+we can assume that all pieces have small $\<{*}-{*}\>_s$-diameter;
+that is, given $\eps>0$ we can assume that $\<x-y\>_s<\eps$ for any two points $x$ and $y$ in one piece.
 
-Fix a converging to zero sequence of positive numbers $(\eps_n)$. 
-Since $(x,y)\zz\mapsto\<x-y\>_{s}$ is continuous, 
-there are rectifiable curves $\gamma_1,\dots,\gamma_n$ that cut $\<\DD\>_s$ into closed sets $K_1,\dots,K_\ell$ of diameter at most $\eps_1$.
-Indeed, ...
-
-Replacing $P$ by a smaller set, we can assume that $P$ is irreducible; that is, it does not contain proper connected closed sets containing $x$ and $y$.
-
-Set $\ell_i=\length(\gamma_i\cap P)$.
-Note that for each $i$ the intersection $\gamma_i\cap P$ can be covered by a finite number of arcs with total length arbitrary close to $\ell_i$.
-Denote by $\delta_1,\dots,\delta_k$ all these arcs of all $i$.
-
-Note that one can chose a sequence of points $x=x_0,y_1,x_1,\dots,y_n=y$
-such that 
-(1) for any $i\in\{1,\dots,n-1\}$ both points $x_i$ and $y_i$ lie on one arc $\delta_j$ for some $j$ 
-and 
-(2) for any $i\in\{1,\dots,n\}$ the points $x_{i-1}$ and $y_i$ lie in one connected component $Q_k$ of $K_j\cap P$ for some $j$.
-
-Let  $Q_1, \dots, Q_n$ be the required components; 
-set $P'=\bigcup_k Q_k$. 
-Include the subarcs from $x_i$ to $y_i$ in the curve $\alpha$ and repeat the procedure for each $Q_k$ and the diameter bound $\eps_2$.
-
-This way we get a decresing sequence of sets $P\supset P'\supset P''$,
-diameter of each connected component of 
-
-
-Note that one can choose a finite collection $P_1,\dots,P_m$ of connected components of $K_i\cap P$ such that $P_1\ni x$, $P_m\ni y$
-and the set $P_1\cup\dots\cup P_m\cup\delta_1\cup\dots\cup\delta_k$ contaians a connected set $P'\ni x,y$.
-
-Pass to an irreducible subset $P'$; it is formed by a collection of subarcs of $\delta_i$ and connected subsets of $K_i\cap P$.
-
-Now choose apply the same procedure for each $P_i$ for a smaller ...
-and iterate.
-
-At the end of the day we get a 
-
-Pass to a 
-
-Note that there is a chain of connected components $P_1,\dots,P_m$, of $K_i\cap P$ for different $i$ such that the union $P_1\cup\dots\cup P_m\cup\delta_1\cup\dots\cup\delta_k$ 
-
-one can find finite collection of subarcs of $\gamma_i$ such that
-
-*Proof.* Replacing $P$ by a smaller subcontinuum, we can assume that $P$ is irreducible between points $x$ and $y$, which means that any subcontinuum of $P$ that contains $x$ and $y$ coincides with $P$. 
-
-The irreducibility of $P$ implies that for any rational numbers $a<b$ the (closed) set $\{x\in \mathbb R:\{x\}\times[a,b]\subset P\}$ is nowhere dense in $\mathbb R$. Consequently the set $$G_1:=\{x\in\mathbb R:P\cap(\{x\}\times\mathbb R)\mbox{ is zero-dimensional}\}$$is dense $G_\delta$ in $\mathbb R$. Choose an increasing sequence $a_0,\dots,a_n\in G_1$ such that $P\subset [a_0,a_n]\times\mathbb R$ and $|a_i-a_{i-1}|<\frac12\varepsilon$ for all positive $i\le n$. For every $i\in\{0,\dots,n\}$ the inclusion $a_i\in G_1$ implies that the set $Z_i:=\{y\in \mathbb R:(a_i,y)\in P\}$ is zero-dimensional and hence nowhere dense in $\mathbb R$.
-
-By analogy, the set $$G_2:=\{y\in\mathbb R:P\cap(\mathbb R\times \{y\})\mbox{ is zero-dimensional}\}$$is dense $G_\delta$ in $\mathbb R$. Then we can choose a monotone sequence $b_0,\dots,b_m\in\mathbb G_2\setminus\bigcup_{i=0}^nZ_i$ such that $P\subset \mathbb R\times [b_0,b_m]$ and $|b_i-b_{i-1}|<\frac12\varepsilon$ for all positive $i\le m$.
-
-For every $(i,j)\in\{1,\dots,n\}\times\{1,\dots,m\}$ consider the cube $Q_{i,j}:=[a_{i-1},a_i]\times[b_{j-1},b_j]$ and its boundary $\partial Q_{i,j}$ in the plane.
-The choice of the points $a_{i-1}$, $a_i$, $b_{j-1}$, $b_j$ guarantees that the intersection $P\cap\partial Q_{i,j}$ is zero-dimensional and does not contain the vertices of the cube $Q_{i,j}$. 
-
-Let $V:=\bigcup_{i=0}^n\{a_i\}\times [b_0,b_m]$ and $H:=\bigcup_{j=0}^m[a_0,a_n]\times\{b_j\}$ be the unions of vertical and horizontal sides of the cubes $Q_{i,j}$. Let $\mathcal C$ be the family of connected components of the symmteric difference $\Xi:=(V\cup H)\setminus (V\cap H)$. Each component $C\in\mathcal C$ is a vertical or horizontal interval of length $<\frac12\varepsilon$. By the regularity of the Lebesque measure on the real line, there is a disjoint finite family $\mathcal I$ of compact connected subsets of $\Xi\cup\{x,y\}$ such that
-
-$\bullet$ $\{x\},\{y\}\in\mathcal I$;
-
-$\bullet$ $P\cap\Xi\subset \bigcup\mathcal I$;
-
-$\bullet$ $\lambda(\bigcup\mathcal I\setminus P)<\varepsilon$;
-
-$\bullet$ each set $I\in\mathcal I$ meets the set $P$.
-
-Now consider the finite graph $\Gamma$ whose set of vertices coincides with $\mathcal I$ and two distinct intervals $I,J\in\mathcal J$ form an edge of the graph $\Gamma$ if there exists a square $Q_{i,j}$ and a connected component of $P\cap Q_{i,j}$ that intersects both arcs $I$ and $J$. It can be shown that the graph $\Gamma$ is connected, so we can find a sequence $\{x\}=A_0,A_1,\dots,A_{k+1}=\{y\}$ of pairwise distinct vertices of the graph $\Gamma$ such that for every $i\le k$ the unordered pair $\{A_i,A_{i+1}\}$ is an edge of $\Gamma$. The latter means that $A_{i-1}$ and $A_i$ are intersected by some subcontinuum $P_i$ of $P$ that is contained in some square $Q_{j,l}$ and hence has diameter $<\varepsilon$.
-
-It is clear that the sequences $P_1,\dots,P_k$ and $A_0,\dots,A_{k+1}$ have the required properties.
+It remains to modify the decomposition to make the boundary curves $\<{*}-{*}\>_s$-rectifiable.
+Subdivide the curves into arcs with diameter smaller $\delta$ and exchange this piece by a curve of length smaller than $\delta$.
+This way we might add to a piece a subset of diameter at most $\eps$.
+Therefore the total $\<{*}-{*}\>_s$-diameter of each piece remains below $3\cdot\eps$.
+The curves might cut more pieces from $\DD$, but by the same argument each of these pieces will have $\<{*}-{*}\>_s$-diameter below $3\cdot\eps$.
 \qeds
 
-\parit{Proof of \ref{thm:old2}.}
-It is sufficient to show that $s$ is metric minimizing.
+\parit{Proof of \ref{prop:<||>=<>}.}
+Fix point $x,y\in \DD$.
+It is sufficient to construct a path $\alpha$ from $x$ to $y$ in $\DD$ such that the length of $s\circ\alpha$ is arbitrary close to $\<|x-y|\>_s$.
 
-???
+Since $(x,y)\mapsto \<x-y\>_s$ is continuous, $\<\DD\>_s$ and therefore $\<|\DD|\>_s$ are compact.
+In particular, there is a minimzing geodesic $\gamma$ from $\hat{\bar x}$ to $\hat{\bar y}$ in $\<|\DD|\>_s$.
+Denote by $\Gamma$ the inverse image of $\gamma$ in $\DD$;
+this is a connected compact set which does nto have to be path connected.
+
+To construct the needed path $\alpha$, it is sufficient to prove the following:
+
+\begin{itemize}
+ \item Given $\eps>0$ there is a finite collection of closed connected set $\Gamma_0,\dots,\Gamma_n$ in $\Gamma$ diameter ???
+ and a collection of paths $\alpha_1,\dots,\alpha_n$ such that (1) the total length of $s\circ\alpha_i$ is at most $\eps$, (2) diameter of each $\Gamma_i$ is at most $\eps$ and (3) $x\in\Gamma_0$, $y\in\Gamma_1$ and the set formed by union of $\Gamma_i$ and $\alpha_i$ is connected.
+\end{itemize}
+
+Indeed, once the claim is proved, one can iterate it for a sequence of $\eps_n$ that converge to zero very fast and this way we obtain a curve made from the arcs of total length at most $\eps_1+\eps_2+\dots$ and a Cantor set in $\Gamma$; the Cantor set made by intersection of the nested closed sets in $\Gamma$.
+The Cantor set can contribute at most $\<|x-y|\>_s$ to the length of curve; hence the result.
+
+Choose a sudivision of $\DD$ provided by Lemma~\ref{lem:subdivision}....
 \qeds
+
+
+
