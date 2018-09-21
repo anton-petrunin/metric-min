@@ -2,12 +2,18 @@
 
 In this section we formulate and prove two versions of the main theorem in \cite{petrunin-metric-min} with corrections.
 
-Note that the meaning of term \emph{metric minimizing} in our paper differ from the old paper \cite{petrunin-metric-min} --- the older paper used a weaker definition and the theorem required an additional condition.
+Note that the meaning of term \emph{metric minimizing} in the present paper differs from the old paper \cite{petrunin-metric-min} --- the old paper used a weaker definition and the theorem requires an additional assumption.
 
-In Section~\ref{sec:defs}, we introduced two ways to pull back metric along a map $f\:X\to Y$ from a topological space $X$ to a metric space $Y$: the induced length metric
-$\langle x-y\rangle_f$ and the induced intrinsic metric $\langle| x-y|\rangle_f$.
-Directly from the definition it follows that  $\langle x-y\rangle_f\ge \langle| x-y|\rangle_f$ for any $x,y\in X$.
-The diagram is an extention of the diagram in Section~\ref{sec:defs} that includes $\langle|X|\rangle_f$, from above we have that both maps $\hat\tau_f$ and $\bar\tau_f$ are short and $\tau_f=\bar\tau_f\circ\hat\tau_f$.
+In Section~\ref{sec:defs}, we introduced three ways to pull back metric along a map $f\:X\to Y$ from a topological space $X$ to a metric space $Y$: 
+the induced length metric
+$\langle x-y\rangle_f$,
+the induced intrinsic metric $\langle| x-y|\rangle_f$
+the induced connecting metric $|x-y|_f$.
+Directly from the definition it follows that 
+\[\langle x-y\rangle_f\ge \langle| x-y|\rangle_f\ge |x-y|_f\]
+for any $x,y\in X$.
+The diagram is an extention of the diagram in Section~\ref{sec:defs} that includes $\langle|X|\rangle_f$.
+From above we have that both maps $\hat\tau_f$ and $\bar\tau_f$ are short and $\tau_f=\bar\tau_f\circ\hat\tau_f$.
 
 \begin{figure}
 \centering
@@ -38,7 +44,7 @@ The diagram is an extention of the diagram in Section~\ref{sec:defs} that includ
 \end{tikzpicture}
 \end{figure}
 
-Our first formulation use $\langle|{*}-{*}|\rangle$-metric instead of $\langle{*}-{*}\rangle$; besides that it is identical to the old formulation.
+Our first formulation use $\langle|{*}-{*}|\rangle$-metric instead of $\langle{*}-{*}\rangle$ which used in the old formulation.
 
 \begin{thm}{Old theorem for $\bm{\langle|{*}-{*}|\rangle}$}\label{thm:old1}
 Let $Y$ be a $\CAT(0)$ space and $s\:\DD\to Y$ a continuous map that satisfies the following property: 
@@ -51,36 +57,46 @@ Then $\<|\DD|\>_s$ is $\CAT(0)$.
 \end{thm}
 
 \parit{Proof.}
-Note that $s$ has no bubbles, this can be proved the same way as Lemma~\ref{prop:point-complement}.
+Note that $s$ has no bubbles; it can be proved the same way as Lemma~\ref{prop:point-complement}.
 By Lemma~\ref{prop:disc-moore},  $|\DD|_s$ is a disc retract.
 
 Note that the natural map $\bar\tau_s\:\<|\DD|\>_s\to |\DD|_s$ is injective and continuous.
 Since $\<|\DD|\>_s$ is compact and $|\DD|_s$ is Hausdorff, the map $\bar\tau_s$ is a homeomorphism.
 
 In particular $\<|\DD|\>_s$ is a disc retract as well as $|\DD|_s$.
-Therefore the mapping cylinder of the boundary curve in $|\DD|_s$ is homeomorphic to $\DD$;
-identify $\DD$ with the mapping cylinder and let $h\:\DD\to|\DD|_s$ be the projection that maps the cylinder to the boundary curve and does not move the rest of points.
+Therefore the mapping cylinder of the boundary curve in $|\DD|_s$ is homeomorphic to $\DD$.
+Let us identify $\DD$ with the mapping cylinder of the boundary curve in $|\DD|_s$.
+Denote by $h\:\DD\to|\DD|_s$ the natural projection;
+it maps the cylinder to the boundary curve and does not move the points in $|\DD|_s$.
 (If $|\DD|_s$ is a disc, we can assume instead that $h$ is a homeomorphism.)
 Note that $\<\DD\>_{\bar s\circ h}$ is isometric to $\<|\DD|\>_s$.
 
 If $s$ is not metric minimizing,
 then there is an other map $h'\:\DD\to Y$ such that $\bar s\circ h\succcurlyeq h'$ with nonisometric majorization $\mu\:\<|\DD|\>_s\to \<\DD\>_{h'}$.
 For the composition $s'=\hat h\circ \mu\circ  \hat{\bar \pi}_s$, we have that 
-\[\<x-y\>_{s'}\le \<|x-y|\>_{s}\quad\text{and therefore}\quad \<|x-y|\>_{s'}\le \<|x-y|\>_{s}\]
+\[\<x-y\>_{s'}
+\le \<|x-y|\>_{s}\]
+and therefore
+\[\<|x-y|\>_{s'}
+\le \<|x-y|\>_{s}\eqlbl{eq:x-y}\]
 for any $x,y\in\DD$.
 
-By the assumption, the last inequality is an equality.
-Since $\<|\DD|\>_s$ is compact, we can assume that $s'$ is metric minimizing. %??? more here???
-It remains to apply the main theorem.
+By the assumption, equality holds in \ref{eq:x-y} for any $x$ and $y$.
+Since $\<|\DD|\>_s$ is compact, applying ultralimit+projection construction, we can assume that $s'$ is metric minimizing.
+By the main theorem $\<|\DD|\>_{s'}$ is $\CAT(0)$ disc retract.
+
+Note that we can assume that $\mu\:\<|\DD|\>_s\to \<\DD\>_{h'}$ is saddle;
+otherwise it can be shorten which would lead to a strict inequality in \ref{eq:x-y} for some $x$ and $y$.
+From the main theorem in \cite{petrunin-stadler} it follows that $\mu$ is monotonic and therefore an isometry --- a contradiction.
 \qeds
 
-The second formulation use the metric $\langle{*}-{*}\rangle$ --- this is as in the original formulation.
+The second formulation use the metric $\langle{*}-{*}\rangle$ as in the original formulation.
 
 \begin{thm}{Old theorem for $\bm{\langle{*}-{*}\rangle}$}\label{thm:old2}
 Let $Y$ be a $\CAT(0)$ space and $s\:\DD\to Y$ a continuous map that satisfies the following property: 
 if a continuous map $s'\:\DD\to Y$ agrees with $s$ on $\partial\DD$ and
 \[\<x-y\>_{s'}\le \<x-y\>_{s}\]
-for any $x,y\in \DD$
+for any $x,y\in \DD$,
 then the equality holds for all pairs of $x$ and $y$.
 Assume that the function $(x,y)\mapsto\<x-y\>_{s}$ is continuous.
 Then $\<\DD\>_s$ is $\CAT(0)$.
@@ -90,7 +106,7 @@ Note that continuity of the function $(x,y)\mapsto\<x-y\>_{s}$
 implies that $\<\DD\>_s$ is compact.
 Therefore the former condition is stronger than the latter.  
 The sketch of proof given in \cite{petrunin-metric-min} implicitly used that the metric $(x,y)\zz\mapsto\<x-y\>_{s}$ is continuous.
-(We do not know if compactness of $\<\DD\>_s$ is a sufficient.)
+(We do not know if compactness of $\<\DD\>_s$ alone is sufficient.)
 
 Theorem~\ref{thm:old2} follows from the following proposition and Theorem~\ref{thm:old1}.
  
@@ -103,6 +119,7 @@ for any $x,y\in \DD$.
 \end{thm}
 
 Before going into the proof, let us give an example which shows that the statement is not trivial.
+
 Consider a pseudo-arc $P\subset \DD$ and let $s$ be the quotient map $\DD\to \DD/P$.
 Evidently 
 \[\<|x-y|\>_s=0\]
@@ -111,12 +128,13 @@ However since $P$ contains no curves it is not at all evident that
 \[\<x-y\>_s=0\]
 for any $x,y\in P$.
 We present an argument of Taras Banakh \cite{banakh};
-we do not know a generalization of the proposition to higher dimensions.
+it works in dimension 2 and we do not know a generalization of the proposition to higher dimensions.
 
 \begin{thm}{Lemma}\label{lem:subdivision}
-Let $Y$ be a metric space and $s\:\DD\to Y$ is a continuous map without bubbles.
+Let $Y$ be a metric space and $s\:\DD\to Y$ a continuous map without bubbles.
 Assume that the function $(x,y)\mapsto \<x-y\>_s$ is continuous.
-Then there is a subdivision of $\<\DD\>_s$ into subsets with arbitrary small diameter and rectifiable boundary.
+Then there is a finite collection of curves in $\DD$ with finite total $\<{*}-{*}\>$-length 
+that divide $\DD$ into subsets with arbitrary small $\<{*}-{*}\>$-diameter.
 \end{thm}
 
 \parit{Proof.}
@@ -133,7 +151,7 @@ that is, given $\eps>0$ we can assume that $\<x-y\>_s<\eps$ for any two points $
 It remains to modify the decomposition to make the boundary curves $\<{*}-{*}\>_s$-rectifiable.
 
 Subdivide the curves into arcs with diameter smaller $\tfrac{\delta}{5}$ and exchange this piece by a curve of length smaller than $\tfrac{\delta}{5}$.
-The new arc together with the old one form a set of  $\<{*}-{*}\>_s$-diameter at most $\delta$
+The new arc together with the old one form a set of  $\<{*}-{*}\>_s$-diameter at most $\delta$.\footnote{Note that this arc might travel far in the Euclidean metric on $\DD$.}
 Therefore we might add to a piece a subset of diameter at most $\eps$ and the total $\<{*}-{*}\>_s$-diameter of each piece remains below $3\cdot\eps$.
 The curves might cut more pieces from $\DD$, but by the same argument each of these pieces will have $\<{*}-{*}\>_s$-diameter below $3\cdot\eps$.
 \qeds
@@ -143,35 +161,50 @@ Fix point $x,y\in \DD$.
 It is sufficient to construct a path $\alpha$ from $x$ to $y$ in $\DD$ such that the length of $s\circ\alpha$ is arbitrary close to $\<|x-y|\>_s$.
 
 Since $(x,y)\mapsto \<x-y\>_s$ is continuous, $\<\DD\>_s$ and therefore $\<|\DD|\>_s$ are compact.
-In particular, there is a minimzing geodesic $\gamma$ from $\hat{\bar x}$ to $\hat{\bar y}$ in $\<|\DD|\>_s$.
+In particular, there is a minimzing geodesic $\gamma$ from $\hat{\bar x}=\hat{\bar \pi}(x)$ to $\hat{\bar y}=\hat{\bar \pi}(y)$ in $\<|\DD|\>_s$.
 Denote by $\Gamma$ the inverse image of $\gamma$ in $\DD$;
 this is a connected compact set which does not have to be path connected.
 
-To construct the needed path $\alpha$, it is sufficient to prove the following:
+To construct the needed path $\alpha$, it is sufficient to prove the following claim:
 
 \begin{itemize}
  \item Given $\eps>0$ there is a set $\Gamma'\subset \Gamma$ 
- and a collection of paths $\alpha_1,\dots,\alpha_n$ such that 
- (1) the total length of $s\circ\alpha_i$ is at most $\eps$, 
+ and a collection of paths $\alpha_0,\dots,\alpha_n$ such that 
+ (1) the total length of $s(\alpha_i\backslash\Gamma)$ is at most $\eps$, 
  (2) The set $\Gamma'$ is a union of finite collection of closed connected set $\Gamma_0,\dots,\Gamma_n$, 
  (3) diameter of each $\Gamma_i$ is at most $\eps$, 
- (4) $x\in\Gamma_0$, $y\in\Gamma_1$ and 
+ (4) $x\in\alpha_0$, $y\in\alpha_n$ and 
  (5) the set formed by union of $\Gamma_i$ and $\alpha_i$ is connected.
 \end{itemize}
 
-Indeed, once the claim is proved, one can iterate it for a sequence of $\eps_n$ that converge to zero very fast. 
-This way we obtain a nested sequence of closed sets $\Gamma\supset \Gamma'\supset\Gamma''\supset\dots$ which intersection is a Cantors set in $\Gamma$ and a countable collection of arcs of total length at most $\eps_1+\eps_2+\dots$.
-The arcs and the Cantor set contain a simple curve $\DD$; the Cantor set can contribute at most $\<|x-y|\>_s$ to the $\<{*}-{*}\>_s$-length of curve; hence the result will follow.
+Indeed, once the claim is proved, one can apply it recursively for a sequence of $\eps_n$ that converge to zero very fast.
+Namely we can apply the claim to each of the subsets $\Gamma_n$ and take as $\Gamma''$ the union of all closed subsets provided by the claim.
+This way we obtain a nested sequence of closed sets $\Gamma\supset \Gamma'\supset\Gamma''\supset\dots$ which brake into finite union of closed connected subsets of arbitrary small diameter
+and a countable collection of arcs with total length at most $\eps_1+\eps_2+\dots$ 
+outside of $\Gamma$.
+Set 
+\[\Phi=\Gamma\cap \Gamma'\cap\Gamma''\cap\dots\]
+Note that there is a simple curve from $x$ to $y$ that is runs in the constructed arcs and $\Phi$.
+The part of the curve in $\Gamma$ contributes at most $\<|x-y|\>_s$ to its $\<{*}-{*}\>_s$-length.
+Therefore the total length of the curve can not exceed 
+\[\<|x-y|\>_s+\eps_1+\eps_2+\dots;\]
+hence the result will follow.
 
-Fix a subdivision $\Upsilon_1,\dots,\Upsilon_k$of $\DD$ provided by Lemma~\ref{lem:subdivision} for the given $\eps$.
+It remains to prove the claim.
+
+Fix a subdivision $\Upsilon_1,\dots,\Upsilon_k$ of $\DD$ provided by Lemma~\ref{lem:subdivision} for the given $\eps$.
 Denote by $\Delta$ the union of all the cutting curves.
+
 By the regularity of $\<{*}-{*}\>_s$-length, we may cover $\Delta\cap\Gamma$ by a finite collection of arcs with total  $\<{*}-{*}\>_s$-length arbitrary close to $\<{*}-{*}\>_s$-length of $\Delta\cap\Gamma$.
-Denote these arcs by $\alpha_1,\dots,\alpha_n$.
-Consider a finite graph with $n$ vertexes labeled by $\alpha_1,\dots,\alpha_n$,
+Denote these arcs by $\alpha_0,\dots,\alpha_n$.
+Without loss of generality we may assume that $x\in\alpha_0$ and $y\in\alpha_n$.
+
+Consider a finite graph with the vertexes labeled by $\alpha_0,\dots,\alpha_n$;
 two vertexes $\alpha_i$ and $\alpha_j$ are connected by an edge if the there is a connected set $\Theta\subset \Gamma\cap\Upsilon_k$ for some $k$ such that $\Theta$ intersects $\alpha_i$ and $\alpha_j$.
-Note that the graph is connected therefore we may choose a path from ??? to ???.
+Note that the graph is connected therefore we may choose a path from $\alpha_0$ to $\alpha_n$.
+
 The path corresponds to a sequence of arcs and a sequence of closed connected sets of $\Gamma$ with $\<{*}-{*}\>_s$-diameter at most $\eps$.
-Pass to a shortest collection of subarcs that keep the union connected, if some of the sets have common points, we can chop them a bit and extend the arcs slightly to ensure that the sets are disjoint.
+The $\Theta$-sets that correspond to the edges in the path can be taken as $\Gamma_i$ in the claim.
 Hence the claim and therefore the proposition follow. 
 \qeds
 
