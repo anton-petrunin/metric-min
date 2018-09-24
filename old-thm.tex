@@ -8,14 +8,13 @@ In Section~\ref{sec:defs}, we introduced three ways to pull back metric along a 
 the induced length metric
 $\langle x-y\rangle_f$,
 the induced intrinsic metric $\langle| x-y|\rangle_f$
-the induced connecting metric $|x-y|_f$.
-Directly from the definition it follows that 
+and the induced connecting metric $|x-y|_f$.
+From the definitions we have that 
 \[\langle x-y\rangle_f\ge \langle| x-y|\rangle_f\ge |x-y|_f\]
 for any $x,y\in X$.
-The diagram is an extention of the diagram in Section~\ref{sec:defs} that includes $\langle|X|\rangle_f$.
-From above we have that both maps $\hat\tau_f$ and $\bar\tau_f$ are short and $\tau_f=\bar\tau_f\circ\hat\tau_f$.
-
-\begin{figure}
+The second inequality is strict for generic maps, 
+an example of a map $f$ with strict first inequality is given in \cite[4.2]{petrunin-intrinisic}.
+\begin{figure}[h]
 \centering
 \begin{tikzpicture}[scale=1.5]
 
@@ -43,6 +42,9 @@ From above we have that both maps $\hat\tau_f$ and $\bar\tau_f$ are short and $\
    (1) edge[bend right] node{$\bar f$}(11);
 \end{tikzpicture}
 \end{figure}
+The diagram is an extention of the diagram in Section~\ref{sec:defs} that includes $\langle|X|\rangle_f$.
+From above we have that both maps $\hat\tau_f$ and $\bar\tau_f$ are short and $\tau_f=\bar\tau_f\circ\hat\tau_f$.
+Note that $\tau_f$ might be not injective while $\bar\tau_f$ is always injective.
 
 Our first formulation use $\langle|{*}-{*}|\rangle$-metric instead of $\langle{*}-{*}\rangle$ which used in the old formulation.
 
@@ -62,6 +64,7 @@ By Lemma~\ref{prop:disc-moore},  $|\DD|_s$ is a disc retract.
 
 Note that the natural map $\bar\tau_s\:\<|\DD|\>_s\to |\DD|_s$ is injective and continuous.
 Since $\<|\DD|\>_s$ is compact and $|\DD|_s$ is Hausdorff, the map $\bar\tau_s$ is a homeomorphism.
+Since $\bar\pi_s$ is continuous, so is $\hat{\bar \pi}_s$.
 
 In particular $\<|\DD|\>_s$ is a disc retract as well as $|\DD|_s$.
 Therefore the mapping cylinder of the boundary curve in $|\DD|_s$ is homeomorphic to $\DD$.
@@ -87,10 +90,12 @@ By the main theorem $\<|\DD|\>_{s'}$ is $\CAT(0)$ disc retract.
 
 Note that we can assume that $\mu\:\<|\DD|\>_s\to \<\DD\>_{h'}$ is saddle;
 otherwise it can be shorten which would lead to a strict inequality in \ref{eq:x-y} for some $x$ and $y$.
-From the main theorem in \cite{petrunin-stadler} it follows that $\mu$ is monotonic and therefore an isometry --- a contradiction.
+From the main theorem in \cite{petrunin-stadler} it follows that $\mu$ is monotonic
+(we need to apply the theorem for each disc in the disc retract $\<\DD\>_{h'}$).
+Since $\mu$ preserves the length of curves, it has to be an isometry --- a contradiction.
 \qeds
 
-The second formulation use the metric $\langle{*}-{*}\rangle$ as in the original formulation.
+In the second formulation use the metric $\langle{*}-{*}\rangle$ as in the original formulation.
 
 \begin{thm}{Old theorem for $\bm{\langle{*}-{*}\rangle}$}\label{thm:old2}
 Let $Y$ be a $\CAT(0)$ space and $s\:\DD\to Y$ a continuous map that satisfies the following property: 
@@ -118,7 +123,7 @@ Then
 for any $x,y\in \DD$.
 \end{thm}
 
-Before going into the proof, let us give an example which shows that the statement is not trivial.
+Before going into the proof, let us give an example showing that the statement is not trivial.
 
 Consider a pseudo-arc $P\subset \DD$ and let $s$ be the quotient map $\DD\to \DD/P$.
 Evidently 
@@ -150,14 +155,14 @@ that is, given $\eps>0$ we can assume that $\<x-y\>_s<\eps$ for any two points $
 
 It remains to modify the decomposition to make the boundary curves $\<{*}-{*}\>_s$-rectifiable.
 
-Subdivide the curves into arcs with diameter smaller $\tfrac{\delta}{5}$ and exchange this piece by a curve of length smaller than $\tfrac{\delta}{5}$.
+Subdivide the curves into arcs with $\<{*}-{*}\>_s$-diameter smaller $\tfrac{\delta}{5}$ and exchange this piece by a curve of $\<{*}-{*}\>_s$-length smaller than $\tfrac{\delta}{5}$.
 The new arc together with the old one form a set of  $\<{*}-{*}\>_s$-diameter at most $\delta$.\footnote{Note that this arc might travel far in the Euclidean metric on $\DD$.}
 Therefore we might add to a piece a subset of diameter at most $\eps$ and the total $\<{*}-{*}\>_s$-diameter of each piece remains below $3\cdot\eps$.
 The curves might cut more pieces from $\DD$, but by the same argument each of these pieces will have $\<{*}-{*}\>_s$-diameter below $3\cdot\eps$.
 \qeds
 
 \parit{Proof of \ref{prop:<||>=<>}.}
-Fix point $x,y\in \DD$.
+Fix points $x,y\in \DD$.
 It is sufficient to construct a path $\alpha$ from $x$ to $y$ in $\DD$ such that the length of $s\circ\alpha$ is arbitrary close to $\<|x-y|\>_s$.
 
 Since $(x,y)\mapsto \<x-y\>_s$ is continuous, $\<\DD\>_s$ and therefore $\<|\DD|\>_s$ are compact.
@@ -168,29 +173,29 @@ this is a connected compact set which does not have to be path connected.
 To construct the needed path $\alpha$, it is sufficient to prove the following claim:
 
 \begin{itemize}
- \item Given $\eps>0$ there is a set $\Gamma'\subset \Gamma$ 
+ \item[$\bigstar$] Given $\eps>0$ there is a set $\Gamma'\subset \Gamma$ 
  and a collection of paths $\alpha_0,\dots,\alpha_n$ such that 
  (1) the total length of $s(\alpha_i\backslash\Gamma)$ is at most $\eps$, 
  (2) The set $\Gamma'$ is a union of finite collection of closed connected set $\Gamma_0,\dots,\Gamma_n$, 
  (3) diameter of each $\Gamma_i$ is at most $\eps$, 
  (4) $x\in\alpha_0$, $y\in\alpha_n$ and 
- (5) the set formed by union of $\Gamma_i$ and $\alpha_i$ is connected.
+ (5) the union of $\Gamma'\cup \alpah_0\cup\dots\cup\alpha_n$ is connected.
 \end{itemize}
 
-Indeed, once the claim is proved, one can apply it recursively for a sequence of $\eps_n$ that converge to zero very fast.
+Indeed, once the claim $\bigstar$ is proved, one can apply it recursively for a sequence of $\eps_n$ that converge to zero very fast.
 Namely we can apply the claim to each of the subsets $\Gamma_n$ and take as $\Gamma''$ the union of all closed subsets provided by the claim.
 This way we obtain a nested sequence of closed sets $\Gamma\supset \Gamma'\supset\Gamma''\supset\dots$ which brake into finite union of closed connected subsets of arbitrary small diameter
 and a countable collection of arcs with total length at most $\eps_1+\eps_2+\dots$ 
 outside of $\Gamma$.
 Set 
 \[\Phi=\Gamma\cap \Gamma'\cap\Gamma''\cap\dots\]
-Note that there is a simple curve from $x$ to $y$ that is runs in the constructed arcs and $\Phi$.
+Note that there is a simple curve from $x$ to $y$ that runs in the constructed arcs and $\Phi$.
 The part of the curve in $\Gamma$ contributes at most $\<|x-y|\>_s$ to its $\<{*}-{*}\>_s$-length.
 Therefore the total length of the curve can not exceed 
 \[\<|x-y|\>_s+\eps_1+\eps_2+\dots;\]
 hence the result will follow.
 
-It remains to prove the claim.
+It remains to prove $\bigstar$.
 
 Fix a subdivision $\Upsilon_1,\dots,\Upsilon_k$ of $\DD$ provided by Lemma~\ref{lem:subdivision} for the given $\eps$.
 Denote by $\Delta$ the union of all the cutting curves.
@@ -201,9 +206,9 @@ Without loss of generality we may assume that $x\in\alpha_0$ and $y\in\alpha_n$.
 
 Consider a finite graph with the vertexes labeled by $\alpha_0,\dots,\alpha_n$;
 two vertexes $\alpha_i$ and $\alpha_j$ are connected by an edge if the there is a connected set $\Theta\subset \Gamma\cap\Upsilon_k$ for some $k$ such that $\Theta$ intersects $\alpha_i$ and $\alpha_j$.
-Note that the graph is connected therefore we may choose a path from $\alpha_0$ to $\alpha_n$.
+Note that the graph is connected therefore we may choose a path from $\alpha_0$ to $\alpha_n$ in the graph.
 
-The path corresponds to a sequence of arcs and a sequence of closed connected sets of $\Gamma$ with $\<{*}-{*}\>_s$-diameter at most $\eps$.
+The path corresponds to a sequence of arcs $\alpha_i$ and a sequence of $\Theta$-sets.
 The $\Theta$-sets that correspond to the edges in the path can be taken as $\Gamma_i$ in the claim.
 Hence the claim and therefore the proposition follow. 
 \qeds

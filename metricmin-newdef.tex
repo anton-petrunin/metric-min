@@ -122,9 +122,9 @@ However, our proof shows that all triangles with finite sides in $\<\DD\>_s$ are
 in particular each metric component of $\<\DD\>_s$ is a $\CAT(0)$ space.
 So in this case, one could consider $\<\DD\>_s$ as a $\CAT(0)$ space where infinite distances between points are legal.
 
-
-The class of metric minimizing discs is huge --- if the ambient space $Y$ is $\CAT(0)$, then one can find a metric minimizing  disc \emph{below} 
-any continuos map $\DD\to Y$ with respect to $\succcurlyeq$. 
+The class of metric minimizing discs is huge --- if the ambient space $Y$ is $\CAT(0)$, then one can find a metric minimizing  disc $\succcurlyeq$-\emph{below} for
+any map $s\:\DD\to Y$ such that the metric $(x,y)\mapsto\<x,y\>_s$ is continuous
+(this can be proves by applying ultralimit+projection construction described below).
 Metric minimizing discs include many well-studied maps from $\DD$ to metric spaces.
 The ruled discs considered by Alexandrov \cite{A} are evidently metric minimizing since one cannot shorten a geodesic. 
 In addition, harmonic maps in the sense of Korevaar--Schoen \cite{KS} from the disc to $\CAT(0)$ spaces are metric minimizing.
@@ -168,30 +168,32 @@ Any smooth strictly saddle surface in $\RR^3$ is locally metric minimizing.
 
 
 \parbf{Structure of the paper.}
-In Section 2 we define a couple of metrics induced by a given continuous map.
+In Section~\ref{sec:defs} we define a couple of metrics induced by a given continuous map.
 This naturally leads to the monotone-light factorization theorem in a metric context.
  
-In Section 3 we obtain topological control on the length space
+In Section~\ref{Metric minimizing discs} we obtain topological control on the length space
 associated to a metric minimizing disc. 
 This part follows from Moore's quotient theorem on cell-like maps.
  
-Section 4 establishes compactness of a certain class of nonpositively curved surfaces.
+Section~\ref{Compactness} establishes compactness of a certain class of nonpositively curved surfaces.
 This will be used later, when we approximate metric minimizing maps.
  
-In Section 6 we prove the key lemma which says that the restriction to a finite set of
+In Section~\ref{Key Lemma} we prove the key lemma which says that the restriction to a finite set of
 a metric minimizing disc factorizes as a composition of short maps over a nonpositively curved surface.
-The proof uses the properties of \emph{metric minimizing graphs} discussed in Section 5.
+The proof uses the properties of \emph{metric minimizing graphs} discussed in Section~\ref{Metric minimizing graphs}.
  
-In Section 7 we prove an extension result which is of independent interest and logically detached
+In Section~\ref{Finite-whole extension lemma} we prove an extension result which is of independent interest and logically detached
 from the rest of the paper.
 It gives a criterion that allows to extend maps from subsets
 to the whole space, once extensions on finite subsets are guaranteed.
  
-In Section 8 we assemble the proof of the main theorem.
+In Section~\ref{Main theorem} we assemble the proof of the main theorem.
 We show that a metric minimizing disc factorizes as a composition of short maps over a
 nonpositively curved surface.
 The proof is finished by showing that the first map of this factorization
 induces an isometry.
+
+In Section~\ref{sec:old-thm}, we give corrected forulations of the theorem in the old paper and show that they follow from the main theorem.
 
 In the last section, we discuss the relation between saddle surfaces and metric minimizing discs.
 
@@ -285,7 +287,7 @@ hence the result.
 
 
 
-\begin{wrapfigure}{r}{37 mm}
+\begin{wrapfigure}{R}{37 mm}
 \begin{tikzpicture}[scale=1.5]
 
   \node (1) at (1,.5) {$|X|_f$};
@@ -306,6 +308,7 @@ hence the result.
    (12) edge[bend right] node{$\bar \pi_f$}(1)
    (1) edge[bend right] node{$\bar f$}(11);
 \end{tikzpicture}
+\label{diagram-page}
 \end{wrapfigure}
 
 Note that $\tau_f\: \hat x\to \bar x$ defines a map $\tau_f\: \<X\>_f\zz\to |X|_f$ and by construction it preserves the lengths of
