@@ -8,7 +8,7 @@ We will not need this statement, but it follows from Moore's quotient theorem qu
 Let $Y$ be a metric space and $s\:\DD\to\ Y$ be a metric minimizing disc.
 Then $|\DD|_s$ is a disc retract with boundary curve $\delta_s=\bar\pi_s|_{\SS^1}$.
 Moreover, the map $\tau_s\:\<\DD\>_s\to |\DD|_s$ is injective and defines an isometry
-$\<\DD\>_s\zz\to \<|\DD|_s\>$;
+$\<\DD\>_s\zz\to \<|\DD|\>_s$;
 that is, $\tau_s$ is an isometry from $\<\DD\>_s$ to $|\DD|_s$ equipped with induced length metric.
 \end{thm}
 
@@ -72,6 +72,29 @@ Note that $\<\DD\>_{\bar s\circ r}$ is isometric to $|\DD|_s$ equipped with the 
 Recall that the map $\tau_s\:\<\DD\>_s\to|\DD|_s$ is short and the induced map $\mu\:\<\DD\>_s\zz\to\<\DD\>_{\bar s\circ r}$ is a majorization.
 Since $s$ is metric minimizing, $\mu$ is an isometry.
 Hence the statement follows.
+\qeds
+
+Assume $W$ is a disc retract with a boundary curve $\delta$.
+Recall that a point $p$ in a connected space $W$ is a \emph{cut point} if the complement $W\backslash\{p\}$ is not connected.
+
+\begin{thm}{Lemma}\label{lem:discs}
+Assume $W$ is a disc retract.
+Let $\Delta\subset W$ be a maximal connected subset that contains no cut points.
+Then closure of $\Delta$ is homeomorphic to $\DD$.
+\end{thm}
+
+\parit{Proof.}
+Let $\delta$ be a boundary curve of $W$, so the mapping cylinder $W_\delta$ is homeomorphic to $\DD$.
+
+Denote by $\bar\Delta$ the closure of $\Delta$.
+Note that for any $x\notin\bar\Delta$ there is a cutpoint $p\in\bar\Delta$ that cuts $x$ from $\Delta$.
+Moreover, the map $\sigma\:x\mapsto p$ is uniquely defined on $W\backslash\bar\Delta$;
+extend this map to whole $W$ by identity in $\bar\Delta$.
+By Moore's theorem (Lemma \ref{prop:disc-moore}), $\bar\Delta$ is a disc retract with a boundary curve $\sigma\circ\delta$.
+
+The space $\bar\Delta$ has no cut points, in other words $\sigma\circ\delta$ is monotonic.
+It follows that $\sigma\circ\delta$ can be reparameterized into a simple closed curve.
+By Jordan--Schoenflies theorem, the statement follows.
 \qeds
 
 The following lemma will be used in the final step in the proof of the main theorem, Section~\ref{Main theorem}.
