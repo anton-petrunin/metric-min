@@ -78,19 +78,24 @@ Assume $W$ is a disc retract with a boundary curve $\delta$.
 Recall that a point $p$ in a connected space $W$ is a \emph{cut point} if the complement $W\backslash\{p\}$ is not connected.
 
 \begin{thm}{Lemma}\label{lem:discs}
-Assume $W$ is a disc retract.
+Suppose that $W$ is a disc retract.
 Let $\Delta\subset W$ be a maximal connected subset that contains no cut points.
+Assume $\Delta$ has at least two points.
 Then closure of $\Delta$ is homeomorphic to $\DD$.
 \end{thm}
 
 \parit{Proof.}
 Let $\delta$ be a boundary curve of $W$, so the mapping cylinder $W_\delta$ is homeomorphic to $\DD$.
 
+Note that $p$ is a cut point of $W$ if and only if $\delta^{-1}\{p\}$ has at least two connected components.
+In particular, any cut point of $W$ lies on its boundary curve.
+
 Denote by $\bar\Delta$ the closure of $\Delta$.
-Note that for any $x\notin\bar\Delta$ there is a cutpoint $p\in\bar\Delta$ that cuts $x$ from $\Delta$.
+Note that for any $x\notin\bar\Delta$ there is a cut point $p\in\bar\Delta$ that cuts $x$ from $\Delta$.
 Moreover, the map $\sigma\:x\mapsto p$ is uniquely defined on $W\backslash\bar\Delta$;
 extend this map to whole $W$ by identity in $\bar\Delta$.
-By Moore's theorem (Lemma \ref{prop:disc-moore}), $\bar\Delta$ is a disc retract with a boundary curve $\sigma\circ\delta$.
+By Moore's theorem, $\bar\Delta$ is a disc retract with a boundary curve $\sigma\circ\delta$.
+Namely we apply Moore's theorem to $\SS^2= W_\delta/(\SS^1\times 1)$ and the quotient map $\SS^2\to \SS^2/\sim$ for the minimal equivalence relation such that $x\sim y$ if $\sigma(x)=\sigma(y)$.
 
 The space $\bar\Delta$ has no cut points, in other words $\sigma\circ\delta$ is monotonic.
 It follows that $\sigma\circ\delta$ can be reparameterized into a simple closed curve.
