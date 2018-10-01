@@ -48,9 +48,9 @@ for all curves $\gamma$ in $\DD$, then equality holds for all curves $\gamma$.
 As it follows from the main theorem below, the induced metric on the disc for a metric minimizing embedding is $\CAT(0)$.
 
 To formulate the theorem in full generality we need to extend the definition of metric minimizing maps in two ways.
-First, we will only assume continuity of $s$, so the map $s$ might not be an embedding and not necessary Lipschitz;
-this part is tricky --- a straightforward generalization produces a too weak condition.
-Secondly, we also have to define it with arbitrary metric spaces as targets; this part is straightforward. 
+First, we will only assume continuity of $s$, so the map $s$ might not be an embedding nor does it have to be Lipschitz;
+this part is tricky --- a straightforward generalization turns out to be too weak.
+Secondly, we will have to allow arbitrary metric spaces as targets; this part is straightforward. 
 
 Let $Y$ be a metric space
 and $s\:\DD\to Y$ be a continuous map.
@@ -122,9 +122,10 @@ However, our proof shows that all triangles with finite sides in $\<\DD\>_s$ are
 in particular each metric component of $\<\DD\>_s$ is a $\CAT(0)$ space.
 So in this case, one could consider $\<\DD\>_s$ as a $\CAT(0)$ space where infinite distances between points are legal.
 
-The class of metric minimizing discs is huge --- if the ambient space $Y$ is $\CAT(0)$, then one can find a metric minimizing  disc $\succcurlyeq$-\emph{below} for
+The class of metric minimizing discs is huge --- if the ambient space $Y$ is $\CAT(0)$, then one can find a 
+metric minimizing  disc $\succcurlyeq$-\emph{below} 
 any map $s\:\DD\to Y$ such that the metric $(x,y)\mapsto\<x,y\>_s$ is continuous
-(this can be proves by applying ultralimit+projection construction described below).
+(this can be proved by applying ultralimit+projection construction described below).
 Metric minimizing discs include many well-studied maps from $\DD$ to metric spaces.
 The ruled discs considered by Alexandrov \cite{A} are evidently metric minimizing since one cannot shorten a geodesic. 
 In addition, harmonic maps in the sense of Korevaar--Schoen \cite{KS} from the disc to $\CAT(0)$ spaces are metric minimizing.
@@ -154,7 +155,7 @@ They were used by Alexander Lytchak \cite{L} to study sets of positive reach (ru
 In  \cite{AB}, Stephanie Alexander and Richard Bishop used them to generalize the Gauss equation to non-smooth spaces (ruled surfaces).
 In \cite{G}, Mikhael Gromov used them to bound the complexity of smooth maps (general metric minimizing surfaces).
 In \cite{LS}, Alexander Lytchak and the second author used them to deform general $\CAT(0)$ spaces (minimal discs).
-In \cite{St}, the second author used them in the proof a $\CAT(0)$ version of the Fary--Milnor theorem to control the mapping behavior of minimal surfaces (minimal discs).  
+In \cite{St}, the second author used them in the proof of a $\CAT(0)$ version of the Fary--Milnor theorem to control the mapping behavior of minimal surfaces (minimal discs).  
 
 In general it is hard to check whether a given surface is metric minimizing.
 Note that any smooth metric minimizing disc in a Euclidean space is saddle.
@@ -193,7 +194,8 @@ nonpositively curved surface.
 The proof is finished by showing that the first map of this factorization
 induces an isometry.
 
-In Section~\ref{sec:old-thm}, we give corrected forulations of the theorem in the old paper and show that they follow from the main theorem.
+In Section~\ref{sec:old-thm}, we provide rectified formulations of the main result in \cite{petrunin-metric-min} and 
+show that they follow from the main theorem.
 
 In the last section, we discuss the relation between saddle surfaces and metric minimizing discs.
 
@@ -320,7 +322,7 @@ Moreover, $\tau_f$ does not have to be injective, an example is given in \cite[4
 However, for metric minimizing discs $f\:\DD\to Y$ both statements hold true; see
 Proposition~\ref{prop:|D|}.
 
-The space $\<|X|_f\>_{\bar f}$ is the intrinsic metric on $|X|_f$, which is to $\<|X|_f\>$ in the notation defined below.
+The space $\<|X|_f\>_{\bar f}$ is the intrinsic metric on $|X|_f$.
 We will denote it briefly by $\<|X|\>_f$.
 The corresponding pseudometric will be called \emph{intrinsic pseudometric} on $X$ induced by $f$; it will be denoted by $\<|{*}-{*}|\>_f$.
 This is a more natural way to pullback intrinsic metric to $X$.
