@@ -1,12 +1,12 @@
 \documentclass{article}
 \usepackage{metric-min}
 %\usepackage{showkeys}
-\hypersetup{pdftitle={Metric minimizing surfaces revisited},
+\hypersetup{pdftitle={Metric-minimizing surfaces revisited},
 pdfauthor={Anton Petrunin and Stephan Stadler}}
 
 \begin{document}
 
-\title{Metric minimizing surfaces revisited}
+\title{Metric-minimizing surfaces revisited}
 \author{Anton Petrunin and Stephan Stadler}
 \nofootnote{A.~Petrunin was partially supported by NSF grant DMS 1309340.
 S.~Stadler was supported by DFG grants STA 1511/1-1 and SPP 2026.}
@@ -31,8 +31,8 @@ Stephan Stadler,
 \maketitle
 
 \begin{abstract}
-A surface that does not admit a length nonincreasing deformation is called \emph{metric minimizing}.
-We show that metric minimizing surfaces in $\CAT(0)$ spaces are locally $\CAT(0)$ with respect to their length metrics. 
+A surface that does not admit a length nonincreasing deformation is called \emph{metric-minimizing}.
+We show that metric-minimizing surfaces in $\CAT(0)$ spaces are locally $\CAT(0)$ with respect to their length metrics. 
 \end{abstract}
 
 \section{Introduction}
@@ -40,14 +40,14 @@ We show that metric minimizing surfaces in $\CAT(0)$ spaces are locally $\CAT(0)
 
 \parbf{Main result.}
 Assume $s$ is a Lipschitz embedding of the disc $\DD$ into the Euclidean space $\RR^3$.
-We say $s$ is \emph{metric minimizing} if its intrinsic metric is minimal. Explicitly, this means that if a map $s'\:\DD\to \RR^3$ agrees with 
+We say $s$ is \emph{metric-minimizing} if its intrinsic metric is minimal. Explicitly, this means that if a map $s'\:\DD\to \RR^3$ agrees with 
 $s$ on $\partial \DD=\SS^1$ and fulfills 
 \[\length s\circ\gamma\ge \length s'\circ\gamma\]
 for all curves $\gamma$ in $\DD$, then equality holds for all curves $\gamma$.
 
-As it follows from the main theorem below, the induced metric on the disc for a metric minimizing embedding is $\CAT(0)$.
+As follows from the main theorem below, the induced metric on the disc for a metric-minimizing embedding is $\CAT(0)$.
 
-To formulate the theorem in full generality we need to extend the definition of metric minimizing maps in two ways.
+To formulate the theorem in full generality we need to extend the definition of metric-minimizing maps in two ways.
 First, we will only assume continuity of $s$, so the map $s$ might not be an embedding and not necessary Lipschitz;
 this part is tricky --- a straightforward generalization produces a too weak condition.
 Secondly, we also have to define it with arbitrary metric spaces as targets; this part is straightforward. 
@@ -77,8 +77,8 @@ here and further \emph{short} stands for \emph{distance  non-incerasing}.
 (Note that if $s$ and $s'$ are Lipschitz embeddings, then any majorization $\<\DD\>_s\to \<\DD\>_{s'}$ admits a continuous lifting $\DD\to\DD$; 
 in general such a lifting may not exist.)
 
-A map $s\:\DD\to Y$ will be called \emph{metric minimizing disc} if $s\succcurlyeq s'$ implies that the corresponding majorization $\mu$ is an isometry.
-\label{metric minimizing disc}
+A map $s\:\DD\to Y$ will be called \emph{metric-minimizing disc} if $s\succcurlyeq s'$ implies that the corresponding majorization $\mu$ is an isometry.
+\label{metric-minimizing disc}
 
  
  
@@ -86,11 +86,11 @@ A map $s\:\DD\to Y$ will be called \emph{metric minimizing disc} if $s\succcurly
 %In this case any majorization $\mu$, the map $s''=\hat s'\circ \mu\circ \hat\pi_s\:\DD\to Y$ satisfies the inequality $\length s\circ\gamma\ge \length s''\circ\gamma$ for any curve $\gamma$ in $\DD$; moreover, if $\mu$ is not an isometry, then the inequality is strict for some curve. 
 %)
 
-A topological space $W$ together with a choice of a closed curve $\delta\:\SS^1\zz\to W$ is called \emph{disc retract} 
+A topological space $W$ together with a choice of a closed curve $\delta\:\SS^1\zz\to W$ is called a \emph{disc retract} 
 if the mapping cylinder of~$\delta$ 
 \[W_\delta=W\bigsqcup_{\delta(u)\sim(u,0)}\SS^1\times[0,1]\]
 is homeomorphic to the disc $\DD$.
-The curve $\delta$ will be called \emph{boundary curve} of the disc retract $W$.
+The curve $\delta$ will be called the \emph{boundary curve} of the disc retract $W$.
 
 \begin{wrapfigure}{r}{28 mm}
 \begin{lpic}[t(-2 mm),b(-0 mm),r(0 mm),l(0 mm)]{pics/two-bry-curves(1)}
@@ -106,7 +106,7 @@ The definition is motivated by the following observation: if the boundary curve 
 
 
 \begin{thm}{Main theorem}\label{thm:main}
-Assume $Y$ is a $\CAT(0)$ space and $s\:\DD\to Y$ is a metric minimizing disc.
+Assume $Y$ is a $\CAT(0)$ space and $s\:\DD\to Y$ is a metric-minimizing disc.
 Then $\<\DD\>_s$ is a $\CAT(0)$ disc retract with boundary curve $\delta_s$.
 
 In particular, if $s$ spans a simple closed curve, then $\<\DD\>_s$ is a $\CAT(0)$ disc.
@@ -115,23 +115,23 @@ In particular, if $s$ spans a simple closed curve, then $\<\DD\>_s$ is a $\CAT(0
 
 
 Note that apart from continuity we did not make any regularity assumptions on the map $s$;
-in particular, before hand, the space $\<\DD\>_s$ might have wild topology.
+in particular, beforehand, the space $\<\DD\>_s$ might have wild topology.
 
 If we remove the condition that the boundary curve is rectifiable, then the space $\<\DD\>_s$ might have points at infinite distance from each other.
 However, our proof shows that all triangles with finite sides in $\<\DD\>_s$ are still thin; 
 in particular each metric component of $\<\DD\>_s$ is a $\CAT(0)$ space.
 So in this case, one could consider $\<\DD\>_s$ as a $\CAT(0)$ space where infinite distances between points are legal.
 
-The class of metric minimizing discs is huge --- if the ambient space $Y$ is $\CAT(0)$, then one can find a metric minimizing  disc $\succcurlyeq$-\emph{below} for
+The class of metric-minimizing discs is huge --- if the ambient space $Y$ is $\CAT(0)$, then one can find a metric-minimizing  disc $\succcurlyeq$-\emph{below} for
 any map $s\:\DD\to Y$ such that the metric $(x,y)\mapsto\<x,y\>_s$ is continuous
-(this can be proves by applying ultralimit+projection construction described below).
-Metric minimizing discs include many well-studied maps from $\DD$ to metric spaces.
-The ruled discs considered by Alexandrov \cite{A} are evidently metric minimizing since one cannot shorten a geodesic. 
-In addition, harmonic maps in the sense of Korevaar--Schoen \cite{KS} from the disc to $\CAT(0)$ spaces are metric minimizing.
+(this can be proved by applying ultralimit+projection construction described below).
+Metric-minimizing discs include many well-studied maps from $\DD$ to metric spaces.
+The ruled discs considered by Alexandrov \cite{A} are evidently metric-minimizing since one cannot shorten a geodesic. 
+In addition, harmonic maps in the sense of Korevaar--Schoen \cite{KS} from the disc to $\CAT(0)$ spaces are metric-minimizing.
 Indeed, harmonic discs are solutions to the Dirichlet problem;
 that is energy minimizing fillings of given loops.
 Since the Korevaar--Schoen energy is convex, such solutions are unique. But decreasing the intrinsic metric will only decrease the energy of the corresponding map.
-As a consequence, minimal discs in the sense of Lytchak--Wenger \cite{LW} are metric minimizing;
+As a consequence, minimal discs in the sense of Lytchak--Wenger \cite{LW} are metric-minimizing;
 these are Douglas--Rado solutions to the Plateau problem and therefore harmonic. 
 
 
@@ -141,28 +141,28 @@ these are Douglas--Rado solutions to the Plateau problem and therefore harmonic.
 
 
 
-As intended, the main theorem subsumes and generalizes several previously known results, including Alexandr Alexandrov's theorem about ruled surfaces in \cite{A} and 
-the main theorem by the first author announced in \cite{petrunin-metric-min}, assuming it is formulated correctly; see Section~\ref{sec:old-thm}. 
+As intended, the main theorem subsumes and generalizes several previously known results, including Alexandrov's theorem about ruled surfaces in \cite{A} and 
+the main theorem by the first author announced in \cite{petrunin-metric-min}, assuming it is formulated correctly; see Section~\ref{sec:old-thm} and \cite{petrunin-metric-min-correction}. 
 It is closely related to the classical Gauss formula and results on saddle surfaces by Samuel Shefel in \cite{shefel-2D} and \cite{shefel-3D}.
 It also generalizes the result on minimal surfaces by Alexander Lytchak and Stefan Wenger 
 \cite[Theorem 1.2]{LW5}  and an earlier result of Chikako Mese \cite{mese};
 see also \cite[Chapter 4]{akp} and \cite{petrunin-stadler}. 
 Despite that some special cases of Theorem \ref{thm:main} were known, the result is new even for harmonic discs.
 
-Let us list a few applications of metric minimizing surfaces.
+Let us list a few applications of metric-minimizing surfaces.
 They were used by Alexander Lytchak \cite{L} to study sets of positive reach (ruled surfaces).
 In  \cite{AB}, Stephanie Alexander and Richard Bishop used them to generalize the Gauss equation to non-smooth spaces (ruled surfaces).
-In \cite{G}, Mikhael Gromov used them to bound the complexity of smooth maps (general metric minimizing surfaces).
+In \cite{G}, Mikhael Gromov used them to bound the complexity of smooth maps (general metric-minimizing surfaces).
 In \cite{LS}, Alexander Lytchak and the second author used them to deform general $\CAT(0)$ spaces (minimal discs).
 In \cite{St}, the second author used them in the proof a $\CAT(0)$ version of the Fary--Milnor theorem to control the mapping behavior of minimal surfaces (minimal discs).  
 
-In general it is hard to check whether a given surface is metric minimizing.
-Note that any smooth metric minimizing disc in a Euclidean space is saddle.
+In general it is hard to check whether a given surface is metric-minimizing.
+Note that any smooth metric-minimizing disc in a Euclidean space is saddle.
 The converse fails in general (see Section~\ref{sec:smooth}), but the following statement gives a local converse in dimension three.
 We expect that in the four-dimensional case even the local converse does not hold.
 
 \begin{thm}{Proposition}\label{prop:smooth}
-Any smooth strictly saddle surface in $\RR^3$ is locally metric minimizing.
+Any smooth strictly saddle surface in $\RR^3$ is locally metric-minimizing.
 \end{thm}
  
 
@@ -171,16 +171,16 @@ Any smooth strictly saddle surface in $\RR^3$ is locally metric minimizing.
 In Section~\ref{sec:defs} we define a couple of metrics induced by a given continuous map.
 This naturally leads to the monotone-light factorization theorem in a metric context.
  
-In Section~\ref{Metric minimizing discs} we obtain topological control on the length space
-associated to a metric minimizing disc. 
+In Section~\ref{Metric-minimizing discs} we obtain topological control on the length space
+associated to a metric-minimizing disc. 
 This part follows from Moore's quotient theorem on cell-like maps.
  
 Section~\ref{Compactness} establishes compactness of a certain class of nonpositively curved surfaces.
-This will be used later, when we approximate metric minimizing maps.
+This will be used later, when we approximate metric-minimizing maps.
  
 In Section~\ref{Key Lemma} we prove the key lemma which says that the restriction to a finite set of
-a metric minimizing disc factorizes as a composition of short maps over a nonpositively curved surface.
-The proof uses the properties of \emph{metric minimizing graphs} discussed in Section~\ref{Metric minimizing graphs}.
+a metric-minimizing disc factorizes as a composition of short maps over a nonpositively curved surface.
+The proof uses the properties of \emph{metric-minimizing graphs} discussed in Section~\ref{Metric-minimizing graphs}.
  
 In Section~\ref{Finite-whole extension lemma} we prove an extension result which is of independent interest and logically detached
 from the rest of the paper.
@@ -188,14 +188,14 @@ It gives a criterion that allows to extend maps from subsets
 to the whole space, once extensions on finite subsets are guaranteed.
  
 In Section~\ref{Main theorem} we assemble the proof of the main theorem.
-We show that a metric minimizing disc factorizes as a composition of short maps over a
+We show that a metric-minimizing disc factorizes as a composition of short maps over a
 nonpositively curved surface.
 The proof is finished by showing that the first map of this factorization
 induces an isometry.
 
 In Section~\ref{sec:old-thm}, we give corrected forulations of the theorem in the old paper and show that they follow from the main theorem.
 
-In the last section, we discuss the relation between saddle surfaces and metric minimizing discs.
+In the last section, we discuss the relation between saddle surfaces and metric-minimizing discs.
 
 \parbf{Acknowledgement.}
 We want to thank 
@@ -221,8 +221,8 @@ such that
 \item $|x-y|=|y-x|$, for any $x,y\in X$;
 \item $|x-y|+|y-z|\ge|x-z|$ for any  $x,y,z\in X$.
 \end{itemize}
-If in addition $|x-y|=0$ implies $x=y$, then the pseudometric $|{*}-{*}|$ is called a \emph{metric}; some authors prefer to call it \emph{$\infty$-metric} to emphasize that the distance between points might be infinite.
-The value $|x-y|$ will also be called \emph{distance} form $x$ to $y$.
+If in addition $|x-y|=0$ implies $x=y$, then the pseudometric $|{*}-{*}|$ is called a \emph{metric}; some authors prefer to call it an \emph{$\infty$-metric} to emphasize that the distance between points might be infinite.
+The value $|x-y|$ will also be called the \emph{distance} form $x$ to $y$.
 
 A (pseudo)metric space $X$ is the underlying set which is also denoted by $X$ equipped with a (pseudo)metric which often will be denoted by $|{*}-{*}|_X$.
 We will use $X$ as an index if we want to emphasize that we are working in the space $X$;
@@ -255,8 +255,7 @@ Let us define the \emph{length pseudometric} on $X$ induced by $f$ as
 Denote by $\< X\>_f$ the corresponding metric space; that is,
 \[\< X\>_f=[(X,\<{*}-{*}\>_f)].\] 
 
-Similarly, define a \emph{connecting pseudometric} $|{*}-{*}|_f$ on $X$ in
-the following way
+Similarly, define a \emph{connecting pseudometric} $|{*}-{*}|_f$ on $X$ by
 \[|x-y|_f=\inf\{\diam f(K)\},\]
 where the greatest lower bound is taken over all connected sets $K\subset X$ that contain $x$ and $y$;
 if there is no such set we set $|x-y|_f=\infty$. 
@@ -317,10 +316,10 @@ Since $\<X\>_f$ is a length space, the latter implies that $\tau_f$ is short.
 The map $\tau_f$ might not induce an isometry
 \[\<X\>_f\to\<|X|_f\>_{\bar f}.\]
 Moreover, $\tau_f$ does not have to be injective, an example is given in \cite[4.2]{petrunin-intrinisic}.
-However, for metric minimizing discs $f\:\DD\to Y$ both statements hold true; see
+However, for metric-minimizing discs $f\:\DD\to Y$ both statements hold true; see
 Proposition~\ref{prop:|D|}.
 
-The space $\<|X|_f\>_{\bar f}$ is the intrinsic metric on $|X|_f$, which is to $\<|X|_f\>$ in the notation defined below.
+The space $\<|X|_f\>_{\bar f}$ is the intrinsic metric on $|X|_f$, which is $\<|X|_f\>$ in the notation defined below.
 We will denote it briefly by $\<|X|\>_f$.
 The corresponding pseudometric will be called \emph{intrinsic pseudometric} on $X$ induced by $f$; it will be denoted by $\<|{*}-{*}|\>_f$.
 This is a more natural way to pullback intrinsic metric to $X$.
@@ -452,17 +451,17 @@ It follows that $|z-z'|_f=0$ for any two points $z,z'\in Z$, a contradiction.
 
 \section{Saddle surfaces}\label{sec:smooth}
 
-In this section we will discuss the relation between metric minimizing discs and saddle discs.
+In this section we will discuss the relation between metric-minimizing discs and saddle discs.
 
 Recall that a map $s\:\DD\to \RR^m$ is called \emph{saddle} if for any hyperplane $\Pi\subset\RR^m$ each of the connected components of $\DD\backslash s^{-1}\Pi$ meets the boundary.
 
 If $s$ is a smooth embedding in $\RR^3$, then it is saddle if and only if the  obtained surface has nonpositive Gauss curvature. 
 An old conjecture of Samuel Shefel states that any saddle disc in a $\RR^3$ is $\CAT(0)$ with respect to its length metric, see \cite{shefel-3D}.
 
-It is evident that any metric minimizing disc $s$ in a Euclidean space is saddle.
+It is evident that any metric-minimizing disc $s$ in a Euclidean space is saddle.
 
 \parbf{Three-dimensional case.}
-In general a saddle disc may not be globally metric minimizing.
+In general a saddle disc may not be globally metric-minimizing.
 An example is shown in the picture.
 It is a saddle polyhedral disc made from 10 triangles
 with a hexagon boundary.
@@ -477,9 +476,9 @@ each segment of the Y-shape is traveled twice back and forth.
 \end{figure}
 
 The picture is rotationally symmetric by the angle $\tfrac23\cdot\pi$.
-A shortening deformation can be obtained by rotating the central triangle slightly counterclockwise and extending the map on the remaing 9 triangles linerarly.
+A shortening deformation can be obtained by rotating the central triangle slightly counterclockwise and extending the map on the remaining 9 triangles linearly.
 
-By smoothing this example one can produce a smooth saddle disc that is not metric minimizing.
+By smoothing this example one can produce a smooth saddle disc that is not metric-minimizing.
 
 Proposition~\ref{prop:smooth} states that there are no local examples of that type that are
 smooth and \emph{strictly saddle} meaning that the principal curvatures at each interior point have opposite signs.
@@ -513,7 +512,7 @@ where $s_t=(1-t)\cdot s_0+t\cdot s_1$ and $0\le t\le 1$.
 Moreover the equality holds for any $t$ if and only if for any $i$ we have $v_is_0=v_is_1$ almost everywhere.
 
 \item
-If $s_0$ is a smooth $E_{\bm{v}}$-minimizing map in the class of Lipschitz maps with given boundary data, then $s_0$ is metric minimizing. 
+If $s_0$ is a smooth $E_{\bm{v}}$-minimizing map in the class of Lipschitz maps with given boundary data, then $s_0$ is metric-minimizing. 
 \\
 Indeed, if $s_1\preccurlyeq s_0$, then $s_1$ has to be Lipschitz.
 It follows that $E_{\bm{v}} s_1\le E_{\bm{v}} s_0$ and from convexity $E_{\bm{v}} s_t\le E_{\bm{v}} s_0$ if $0\le t\le 1$.
@@ -582,18 +581,18 @@ w_z=h(t+z,t-z,w),\]
 which is a semilinear hyperbolic system.
 According to \cite[Theorem 3.6]{bressan}, it can be solved locally for smooth initial data at $t=0$.
 
-It remains to choose $v_3$ and $v_4$ for solution so that $\lambda_1, \lambda_2>0$ in a small neighborhood of $p$.
+It remains to choose $v_3$ and $v_4$ for solution such that $\lambda_1, \lambda_2>0$ in a small neighborhood of $p$.
 \qeds
 
 \parbf{Four-dimensional case.}
 Except for constructing an energy as we did above,
-we do not see any way to show that a given smooth surface is metric minimizing.
+we do not see any way to show that a given smooth surface is metric-minimizing.
 Locally, the appropriate energy functional can be described by three functions defined on the disc.
 These three functions are subject to certain differential equations.
 Straightforward computations show that on generic smooth saddle surfaces in $\RR^4$ 
 there is no solution even locally.
 
-By that reason we expect that generic smooth saddle surfaces in $\RR^4$ are not locally metric minimizing. 
+For that reason we expect that generic smooth saddle surfaces in $\RR^4$ are not locally metric-minimizing. 
 That is, arbitrary small neighborhoods of any point admit deformations that shrink 
 the length metric and keep the boundary fixed.
 On the other hand we do not have an example of a saddle surface for which this condition would hold at a single point.
@@ -712,6 +711,10 @@ Trans. Amer. Math. Soc. 27 no. 4 (1925) pp. 416--428.
 \bibitem{petrunin-metric-min} Petrunin, A.,
 \textit{Metric minimizing surfaces.}
 Electron. Res. Announc. Amer. Math. Soc. 5 (1999), 47--54. 
+
+\bibitem{petrunin-metric-min-correction} Petrunin, A.
+\textit{Correction to: Metric minimizing surfaces.}
+Electron. Res. Announc. Math. Sci. 25 (2018), 96. 
 
 \bibitem{petrunin-intrinisic} Petrunin, A.,
 \textit{Intrinsic isometries in Euclidean space.}
