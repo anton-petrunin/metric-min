@@ -7,7 +7,7 @@ Given two maps $f,f'\:\Gamma\to Y$, we write $f\succcurlyeq f'\rel A$ if $f$ and
 and there is a majorization $\mu\:\<\Gamma\>_f\to \<\Gamma\>_{f'}$
 such that $f(a)\zz=f'(\mu(a))$ for any $a\in A$.
 
-A map $f\:\Gamma\to Y$ is called \emph{metric-minimizing relative to $A$} if $f\succcurlyeq f'\rel A$ implies that the majorization $\mu$ is an isometry.
+A map $f\:\Gamma\to Y$ is called \emph{metric-minimizing relative to $A$} if $f\succcurlyeq f'\rel A$ implies that the majorization $\mu$ is distance-preserving.
 
 \begin{thm}{Proposition}\label{prop:metric-min-graph-exist}
 Let $Y$ be a $\CAT(0)$ space, 
@@ -35,8 +35,9 @@ Assume the contrary; let us apply the \emph{ultralimit+projection construction}.
 Namely, fix an ultrafilter $\omega$; denote by $Y^\omega$ the ultrapower of $Y$. 
 Then $Y^\omega$
 is a $\CAT(0)$ space that contains $Y$ as a closed convex subset. 
-The $\omega$-limit $f_\omega\:\Gamma\to Y^\omega$ is well defined, since all $f_n$ are Lipschitz continuous. 
+The $\omega$-limit $f_\omega\:\Gamma\to Y^\omega$ is well-defined since all $f_n$ are Lipschitz continuous. 
 Denote by $f'$ the composition of $f_\omega$ with the nearest point projection $Y^\omega\to Y$.
+
 The nearest point projection to a closed convex set in $\CAT(0)$ space is short.
 Therefore $f_n\succcurlyeq f'$ for any $n$.
 Let $f''$ denote the straightening of $f'$.
@@ -76,7 +77,7 @@ Assume the second condition does not hold at a vertex $v\zz\notin A$;
 that is, there is a point $x\in Y$ such that
 $\measuredangle[v'\,^{w'}_x]< \tfrac\pi2$
 for any adjacent vertex $w$.
-In this case moving $v'$ toward $x$ along $[v',x]$ decreases the lengths of all edges adjacent to $v$, a contradiction.
+In this case, moving $v'$ toward $x$ along $[v',x]$ decreases the lengths of all edges adjacent to $v$, a contradiction.
 
 Assume the third condition does not hold; 
 that is, the sum of the angles around a fixed interior vertex $v'$ is less than $2\cdot\pi$.
@@ -88,7 +89,7 @@ By assumption, we have
 By Reshetnyak's majorization theorem,
 the closed broken line $[\xi_1,\dots,\xi_k]$ is majorized by a convex spherical polygon $P$.
 
-Note that $P$ lies in an open hemisphere with pole  at some point in $P$.
+Note that $P$ lies in an open hemisphere with a pole at some point in $P$.
 Choose $x\in Y$ so that the direction from $v'$ to $x$ coincides with the image of the pole in $\Sigma_{f(v)}$.
 This choice of $x$ contradicts (\emph{\ref{prop:metric-min-graph:x}}).
 \qeds

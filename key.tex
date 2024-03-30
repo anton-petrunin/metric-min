@@ -20,10 +20,10 @@ in the order of importance.
 Namely, 
 \begin{itemize}
 \item  among all minimizing geodesics connecting $x$ to $y$
-choose one that spends maximal time in $\gamma_1$ --- in this case $\gamma_{n+1}$ intersects $\gamma_1$ along the empty set, 
-a one-point set or a closed arc.
+choose one that spends maximal time in $\gamma_1$ --- in this case, $\gamma_{n+1}$ intersects $\gamma_1$ along the empty set, 
+a one-point set, or a closed arc.
 \item among all minimizing geodesics as above
-choose one that spends maximal time in $\gamma_2$ --- in this case $\gamma_{n+1}$ intersects $\gamma_2$ along at most two arcs and points.
+choose one that spends maximal time in $\gamma_2$ --- in this case, $\gamma_{n+1}$ intersects $\gamma_2$ along at most two arcs and points.
 \item and so on.
 \end{itemize}
 
@@ -38,7 +38,7 @@ be a metric-minimizing disc.
 Given a finite set $F\subset \DD$
 there is 
 \begin{enumerate}[(1)]
-	\item a $\CAT(0)$ disc retract $W$ with boundary curve $\delta$;
+	\item a $\CAT(0)$ disc-retract $W$ with boundary curve $\delta$;
 	\item a map $p\:F\to W$ such that
 \[|p(x)-p(y)|_W\le \<x-y\>_s\] 
 for $x,y\in F$ and $p(x)=\delta(x)$ for $x\in F\cap \partial\DD$;
@@ -53,7 +53,7 @@ for any $x\in\partial\DD\cap F$.
 then one can take a one-point space as $W$ and arbitrary maps $p\:F\to W$ and $q\:W\to Y$.
 So suppose $\partial \DD\cap F\ne\emptyset$.
 
-Without loss of generality we may assume that the distance $\<x-y\>_s$
+Without loss of generality, we may assume that the distance $\<x-y\>_s$
 between any pair of points $x,y\in F$ is finite.
 Indeed, since the boundary curve $s|_{\partial\DD}$ is rectifiable,
 this always holds for pairs of points in $\partial \DD\cap F$.
@@ -66,7 +66,7 @@ By Lemma~\ref{lem:graph}, there exists a finite piecewise geodesic graph $\Gamma
 According to Proposition~\ref{prop:|D|},
  $\tau_s$ embeds $\Gamma$ in $|\DD|_s$.
 By Proposition~\ref{prop:|D|},
-$|\DD|_s$ is a disc retract.
+$|\DD|_s$ is a disc-retract.
 Therefore $\Gamma$ can be (and will be) considered as a graph embedded into the plane.
 
 By Proposition~\ref{prop:metric-min-graph-exist}, there is a map 
@@ -75,13 +75,13 @@ $u\:\Gamma\to Y$ metric-minimizing relative to $A=F\cap\partial\DD$ such that
 
 Fix an open disc $\Delta$ cut by $\Gamma$ from $|\DD|_s$.
 By Reshetnyak's theorem, the closed curve $u|_{\partial\Delta}$
-is majorized by a convex plane polygon, possibly degenerate to a point or a line segment.
+is majorized by a convex plane polygon, possibly degenerating to a point or a line segment.
 Note that the angle of the majorizing polygon cannot be smaller than the angle between the corresponding edges in $u(\Gamma)\subset Y$.
 
 Let us glue the majorizing polygons into $\<\Gamma\>_u$;
 denote by $W$ the resulting space.
 According to Proposition~\ref{prop:metric-min-graph}(\ref{sum>=2pi}), the angle around each inner vertex has to be at least $2\cdot\pi$.
-Clearly $W$ is a disc retract;
+Clearly, $W$ is a disc-retract;
 in particular, it is simply connected.
 It follows that $W$ is a $\CAT(0)$ space.
 
@@ -93,7 +93,7 @@ By \ref{eq:>=},
 \[|p(x)-p(y)|_W\le \<x-y\>_s\]
 for any $x,y\in F$.
 
-By construction the pair of maps $p,q$ meet all conditions.
+By construction, the pair of maps $p,q$ meet all conditions.
 \qeds
 
 The following establishes a connection between the 
@@ -102,7 +102,7 @@ key lemma (\ref{lem:key}) and the extension lemma (\ref{lem:finite-whole}).
 \begin{thm}{Lemma}\label{lem:S-closed}
 Let $Y$ be a $\CAT(0)$ space and $s\:\DD\to Y$ 
 be a metric-minimizing disc. Let $W$ be a
-$\CAT(0)$ disc retract with boundary curve $\delta$. For a given 
+$\CAT(0)$ disc-retract with boundary curve $\delta$. For a given 
 finite set $F\subset \DD$ we define $\mathfrak{S}_F$ to be the family of maps  
  $p\:F\to W$ such that
 \[|p(x)-p(y)|_W\le \<x-y\>_s\] 
@@ -114,7 +114,7 @@ Then $\mathfrak{S}_F$ is closed under pointwise convergence.
 \end{thm}
 
 The proof is an application of the ultralimit+projection construction;
-we used it once before and will use it again later.
+we used it before and will use it again later.
 
 \parit{Proof.}
 Consider a converging sequence $p_n\in  \mathfrak{S}_F$;
@@ -122,7 +122,7 @@ denote by $p_\infty$ its limit.
 For each $p_n$ there is a short map $q_n\:W\to Y$ satisfying the condition above.
 Pass to its ultralimit $q_\omega\:W\to Y^\omega$.
 Recall that $Y$ is a closed convex set in $Y^\omega$.
-In particular the nearest point projection $\nu\:Y^\omega\to Y$ is well defined and short.
+In particular, the nearest point projection $\nu\:Y^\omega\to Y$ is well-defined and short.
 Therefore, the composition $q=\nu\circ q_\omega$ is short.
 Finally note that the maps $p_\infty\:F\to W$ and $q\:W\to Y$ satisfy the condition above.
 \qeds

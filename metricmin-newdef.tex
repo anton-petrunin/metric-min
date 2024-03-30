@@ -5,6 +5,9 @@
 pdfauthor={Anton Petrunin and Stephan Stadler}}
 
 \begin{document}
+%\pagestyle{empty}\renewcommand\includegraphics[2][{}]{}\def\emph{\textit}\renewcommand\footnote[1]{\ (#1)}
+%\overfullrule=100mm
+
 
 \title{Metric-minimizing surfaces revisited}
 \author{Anton Petrunin and Stephan Stadler}
@@ -26,12 +29,12 @@ Stephan Stadler,
 
 \date{}
 
-%%%%%%%???to do: def cat(0) disc retract, all graphs are connected
+%%%%%%%???to do: def cat(0) disc-retract, all graphs are connected
 
 \maketitle
 
 \begin{abstract}
-A surface that does not admit a length nonincreasing deformation is called \emph{metric-minimizing}.
+A surface that does not admit a length-nonincreasing deformation is called \emph{metric-minimizing}.
 We show that metric-minimizing surfaces in $\CAT(0)$ spaces are locally $\CAT(0)$ with respect to their length metrics. 
 \end{abstract}
 
@@ -59,7 +62,7 @@ We say that $s\:\DD\to Y$ \emph{spans} $\gamma$,
 if $s$ is an extension of $\gamma$; that is,  $s|_{\SS^1}=\gamma$.
 
 Consider the induced length-pseudometric on $\DD$ defined as 
-\[\<x-y\>_s=\inf_\alpha\{\length s\circ\alpha\},\]
+\[\<x-y\>_s=\inf_\alpha\{\,\length (s\circ\alpha)\,\},\]
 where the greatest lower bound is taken over all paths $\alpha$ from $x$ to $y$ in $\DD$.
 The distance $\<x-y\>_s$ might take infinite values.
 We denote by $\<\DD\>_s$ the corresponding metric space;
@@ -72,42 +75,35 @@ Assume that $s$ and $s'$ are two maps spanning the same curve.
 We write $s\succcurlyeq s'$ if there is a \emph{majorization}
 $\mu\:\<\DD\>_s\to \<\DD\>_{s'}$;
 meaning that $\mu$ is a \emph{short} map and $\delta_{s'}=\mu\circ\delta_s$;
-here and further \emph{short} stands for \emph{distance  non-incerasing}.
+here and further \emph{short} stands for \emph{distance-nonincreasing}.
 
 (Note that if $s$ and $s'$ are Lipschitz embeddings, then any majorization $\<\DD\>_s\to \<\DD\>_{s'}$ admits a continuous lifting $\DD\to\DD$; 
-in general such a lifting may not exist.)
+in general, such a lifting may not exist.)
 
-A map $s\:\DD\to Y$ will be called \emph{metric-minimizing disc} if $s\succcurlyeq s'$ implies that the corresponding majorization $\mu$ is an isometry.
-\label{metric-minimizing disc}
+A map $s\:\DD\to Y$ will be called a \emph{metric-minimizing disc} if $\delta_s$ is rectifiable and $s\succcurlyeq s'$ implies that the corresponding majorization $\mu$ is distance-preserving.\label{metric-minimizing disc}
 
- 
- 
-%(If the map $s$ is a Lipschitz embedding, then the map $\hat\pi_s\:\DD\to \<\DD\>_s$ is a Lipschitz homeomorphism.
-%In this case any majorization $\mu$, the map $s''=\hat s'\circ \mu\circ \hat\pi_s\:\DD\to Y$ satisfies the inequality $\length s\circ\gamma\ge \length s''\circ\gamma$ for any curve $\gamma$ in $\DD$; moreover, if $\mu$ is not an isometry, then the inequality is strict for some curve. 
-%)
-
-A topological space $W$ together with a choice of a closed curve $\delta\:\SS^1\zz\to W$ is called a \emph{disc retract} 
+A topological space $W$ together with a choice of a closed curve $\delta\:\SS^1\zz\to W$ is called a \emph{disc-retract} 
 if the mapping cylinder of~$\delta$ 
 \[W_\delta=W\bigsqcup_{\delta(u)\sim(u,0)}\SS^1\times[0,1]\]
 is homeomorphic to the disc $\DD$.
-The curve $\delta$ will be called the \emph{boundary curve} of the disc retract $W$.
+The curve $\delta$ will be called the \emph{boundary curve} of the disc-retract $W$.
 
 \begin{wrapfigure}{r}{28 mm}
 \begin{lpic}[t(-2 mm),b(-0 mm),r(0 mm),l(0 mm)]{pics/two-bry-curves(1)}
 \end{lpic}
 \end{wrapfigure}
 
-An example of a disc retract that is not a disc is shown on the picture;
+An example of a disc-retract that is not a disc is shown in the picture;
 note that it has essentially different boundary curves,
 in the sense that one is not a reparametrization of the other.
-The definition is motivated by the following observation: if the boundary curve of a disc retract $W$ is a simple closed curve, then $W$ is homeomorphic to $\DD$.
+The definition is motivated by the following observation: \textit{if the boundary curve of a disc-retract $W$ is a simple closed curve, then $W$ is homeomorphic to $\DD$.}
 
 
 
 
 \begin{thm}{Main theorem}\label{thm:main}
 Assume $Y$ is a $\CAT(0)$ space and $s\:\DD\to Y$ is a metric-minimizing disc.
-Then $\<\DD\>_s$ is a $\CAT(0)$ disc retract with boundary curve $\delta_s$.
+Then $\<\DD\>_s$ is a $\CAT(0)$ disc-retract with boundary curve $\delta_s$.
 
 In particular, if $s$ spans a simple closed curve, then $\<\DD\>_s$ is a $\CAT(0)$ disc.
 \end{thm}
@@ -119,12 +115,12 @@ in particular, beforehand, the space $\<\DD\>_s$ might have wild topology.
 
 If we remove the condition that the boundary curve is rectifiable, then the space $\<\DD\>_s$ might have points at infinite distance from each other.
 However, our proof shows that all triangles with finite sides in $\<\DD\>_s$ are still thin; 
-in particular each metric component of $\<\DD\>_s$ is a $\CAT(0)$ space.
-So in this case, one could consider $\<\DD\>_s$ as a $\CAT(0)$ space where infinite distances between points are legal.
+in particular, each metric component of $\<\DD\>_s$ is a $\CAT(0)$ space.
+So, one could consider $\<\DD\>_s$ as a $\CAT(0)$ space where infinite distances between points are legal.
 
 The class of metric-minimizing discs is huge --- if the ambient space $Y$ is $\CAT(0)$, then one can find a metric-minimizing  disc $\succcurlyeq$-\emph{below} for
-any map $s\:\DD\to Y$ such that the metric $(x,y)\mapsto\<x,y\>_s$ is continuous
-(this can be proved by applying ultralimit+projection construction described below).
+any map $s\:\DD\zz\to Y$ such that the metric $(x,y)\mapsto\<x,y\>_s$ is continuous
+(it is an application of the ultralimit+projection construction described below).
 Metric-minimizing discs include many well-studied maps from $\DD$ to metric spaces.
 The ruled discs considered by Alexandrov \cite{A} are evidently metric-minimizing since one cannot shorten a geodesic. 
 In addition, harmonic maps in the sense of Korevaar--Schoen \cite{KS} from the disc to $\CAT(0)$ spaces are metric-minimizing.
@@ -143,7 +139,7 @@ these are Douglas--Rado solutions to the Plateau problem and therefore harmonic.
 
 As intended, the main theorem subsumes and generalizes several previously known results, including Alexandrov's theorem about ruled surfaces in \cite{A} and 
 the main theorem by the first author announced in \cite{petrunin-metric-min}, assuming it is formulated correctly; see Section~\ref{sec:old-thm} and \cite{petrunin-metric-min-correction}. 
-It is closely related to the classical Gauss formula and results on saddle surfaces by Samuel Shefel in \cite{shefel-2D} and \cite{shefel-3D}.
+It is closely related to the classical Gauss formula and results on saddle surfaces by Samuel Shefel \cite{shefel-2D,shefel-3D}.
 It also generalizes the result on minimal surfaces by Alexander Lytchak and Stefan Wenger 
 \cite[Theorem 1.2]{LW5}  and an earlier result of Chikako Mese \cite{mese};
 see also \cite[Chapter 4]{akp} and \cite{petrunin-stadler}. 
@@ -156,10 +152,9 @@ In \cite{G}, Mikhael Gromov used them to bound the complexity of smooth maps (ge
 In \cite{LS}, Alexander Lytchak and the second author used them to deform general $\CAT(0)$ spaces (minimal discs).
 In \cite{St}, the second author used them in the proof of a $\CAT(0)$ version of the Fary--Milnor theorem to control the mapping behavior of minimal surfaces (minimal discs).  
 
-In general it is hard to check whether a given surface is metric-minimizing.
 Note that any smooth metric-minimizing disc in a Euclidean space is saddle.
 The converse fails in general (see Section~\ref{sec:smooth}), but the following statement gives a local converse in dimension three.
-We expect that in the four-dimensional case even the local converse does not hold.
+In the four-dimensional case, we expect that even the local converse does not hold.
 
 \begin{thm}{Proposition}\label{prop:smooth}
 Any smooth strictly saddle surface in $\RR^3$ is locally metric-minimizing.
@@ -225,9 +220,9 @@ such that
 If in addition $|x-y|=0$ implies $x=y$, then the pseudometric $|{*}-{*}|$ is called a \emph{metric}; some authors prefer to call it an \emph{$\infty$-metric} to emphasize that the distance between points might be infinite.
 The value $|x-y|$ will also be called the \emph{distance} form $x$ to $y$.
 
-A (pseudo)metric space $X$ is the underlying set which is also denoted by $X$ equipped with a (pseudo)metric which often will be denoted by $|{*}-{*}|_X$.
+A (pseudo)metric space $X$ is the underlying set (also denoted by $X$) equipped with a (pseudo)metric which often will be denoted by $|{*}-{*}|_X$.
 We will use $X$ as an index if we want to emphasize that we are working in the space $X$;
-for example the ball of radius $R$ centered at $z$ in $X$ can be denoted as
+for example, the ball of radius $R$ centered at $z$ in $X$ can be denoted as
 \[B(z,R)_X=\set{x\in X}{|z-x|_X<R}.\]
 
 
@@ -259,7 +254,7 @@ Denote by $\< X\>_f$ the corresponding metric space; that is,
 Similarly, define a \emph{connecting pseudometric} $|{*}-{*}|_f$ on $X$ by
 \[|x-y|_f=\inf\{\diam f(K)\},\]
 where the greatest lower bound is taken over all connected sets $K\subset X$ that contain $x$ and $y$;
-if there is no such set we set $|x-y|_f=\infty$. 
+if there is no such set, then $|x-y|_f=\infty$. 
 The associated metric space will be
 denoted as $|X|_f$;
 that is,
@@ -311,9 +306,8 @@ hence the result.
 \label{diagram-page}
 \end{wrapfigure}
 
-Note that $\tau_f\: \hat x\to \bar x$ defines a map $\tau_f\: \<X\>_f\zz\to |X|_f$ and by construction it preserves the lengths of
-all curves coming from $X$.
-Since $\<X\>_f$ is a length space, the latter implies that $\tau_f$ is short.
+Note that $\tau_f\: \hat x\to \bar x$ defines a map $\tau_f\: \<X\>_f\zz\to |X|_f$, and by construction, it preserves the lengths of all curves coming from $X$.
+Since $\<X\>_f$ is a length space, it implies that $\tau_f$ is short.
 The map $\tau_f$ might not induce an isometry
 \[\<X\>_f\to\<|X|_f\>_{\bar f}.\]
 Moreover, $\tau_f$ does not have to be injective, an example is given in \cite[4.2]{petrunin-intrinisic}.
@@ -356,10 +350,10 @@ The claim follows since $\eps$ was arbitrary.
 \parbf{Metrics induced by metrics.}
 %???formally this par is irrelevant, but I think to include it here to provide a better picture 
 If $X$ is a metric space, the two constructions above can be applied to the identity map $\id\:X\to X$.
-In this case the obtained spaces $\<X\>_\id$ and $|X|_\id$ will be denoted by $\<X\>$ and $|X|$ correspondingly.
+In this case, the obtained spaces $\<X\>_\id$ and $|X|_\id$ will be denoted by $\<X\>$ and $|X|$ respectively.
 The space $\<X\>$ is $X$ equipped with induced length metric.
 All three spaces $\<X\>$, $|X|$ and $X$ have the same underlying set;
-in other words they can be considered as a single space with different metrics and tautological maps between them.
+in other words, they can be considered as a single space with different metrics and tautological maps between them.
 Both tautological maps 
 \[\<X\>\to |X|\to X\]
 are short and length-preserving.
@@ -370,15 +364,15 @@ $\bar f\:|X|_f\to Y$.
 
 
 Recall that a geodesic in a metric space is a curve whose length coincides with the distance between its endpoints.
-A metric space is called \emph{geodesic} if any two points at finite distance can be joined by a geodesic.
+A metric space is called \emph{geodesic} if any two points at a finite distance can be joined by a geodesic.
 
 \begin{thm}{Lemma}\label{lem:geospace}
 Let $X$ be a compact metric space. 
 Then $\<X\>$ is a complete geodesic space.
 \end{thm}
 
-The second statement is classical (see for example \cite[II-\S8 Thm. 3]{KF}) but 
-we were not able to find the first one in the literature.
+The second statement is classical (see for example \cite[II-\S8 Thm. 3]{KF});
+the first one appears in \cite{HK}.
 
 \parit{Proof.}
 Assume that $\<X\>$ is not complete.
@@ -406,19 +400,19 @@ Recall that
 \item $f$ is called \emph{monotone} if the inverse image of each point is connected,
  \item $f$ is called \emph{light} if the inverse image of any point is totally disconnected.
 \end{itemize}
-Since a connected set is nonempty by definition, any monotone map is onto.
+Since a connected set has to be nonempty, \textit{any monotone map is onto}.
 
 \begin{thm}{Lemma}\label{cor:fiberconnected}
 Assume $X$ is a locally connected compact metric space and $Y$ is a metric space.
 Let $f\:X\to Y$ be a continuous map.
 Then the map $\bar \pi_f$ is monotone and $\bar f$ is light.
-In particular 
+In particular, 
 \[f=\bar f\circ\bar\pi_f\]
 is a monotone-light factorization. 
 \end{thm}
 
 \parit{Proof.}
-First we prove the monotonicity of $\bar\pi_f$.
+First, we prove the monotonicity of $\bar\pi_f$.
 
 Assume the contrary;
 that is, for some $x\in X$ the equivalence class 
@@ -437,7 +431,7 @@ It follows that $k\in K\backslash (U\cup V)$, a contradiction.
 
 Assume $\bar f$ is not light;
 that is, the inverse image of some $y\in Y$ contains a closed connected set $C\subset |X|_f$ with more than one point.  
-Note that the inverse image $Z:=\bar\pi_f^{-1}C$ is connected due to monotonicity of $\bar\pi_f$. 
+Note that the inverse image $Z:=\bar\pi_f^{-1}C$ is connected due to the monotonicity of $\bar\pi_f$. 
 It follows that $|z-z'|_f=0$ for any two points $z,z'\in Z$, a contradiction.
 \qeds
 
@@ -462,7 +456,7 @@ An old conjecture of Samuel Shefel states that any saddle disc in a $\RR^3$ is $
 It is evident that any metric-minimizing disc $s$ in a Euclidean space is saddle.
 
 \parbf{Three-dimensional case.}
-In general a saddle disc may not be globally metric-minimizing.
+In general, a saddle disc may not be globally metric-minimizing.
 An example is shown in the picture.
 It is a saddle polyhedral disc made from 10 triangles
 with a hexagon boundary.
@@ -503,14 +497,14 @@ as an analog of the Laplacian.
 Note that 
 \begin{enumerate}[(i)]
 
-\item $E_{\bm{v}}$ is well defined for any Lipschitz map $s$.
+\item $E_{\bm{v}}$ is well-defined for any Lipschitz map $s$.
 
 \item $E_{\bm{v}}$ is convex; that is,
 \[E_{\bm{v}}s_t
 \le 
 (1-t)\cdot E_{\bm{v}} s_0+t\cdot E_{\bm{v}} s_1,\]
 where $s_t=(1-t)\cdot s_0+t\cdot s_1$ and $0\le t\le 1$.
-Moreover the equality holds for any $t$ if and only if for any $i$ we have $v_is_0=v_is_1$ almost everywhere.
+Moreover, the equality holds for any $t$ if and only if for any $i$ we have $v_is_0=v_is_1$ almost everywhere.
 
 \item
 If $s_0$ is a smooth $E_{\bm{v}}$-minimizing map in the class of Lipschitz maps with given boundary data, then $s_0$ is metric-minimizing. 
@@ -519,7 +513,7 @@ Indeed, if $s_1\preccurlyeq s_0$, then $s_1$ has to be Lipschitz.
 It follows that $E_{\bm{v}} s_1\le E_{\bm{v}} s_0$ and from convexity $E_{\bm{v}} s_t\le E_{\bm{v}} s_0$ if $0\le t\le 1$.
 Since $s_0$ is $E_{\bm{v}}$-minimizing, $E_{\bm{v}} s_t= E_{\bm{v}} s_0$ for any $t$.
 Hence $v_is_0=v_is_1$ almost everywhere.
-Since $\DD$ is sweeped out by arcs of integral curves of $v_i$, the latter implies $s_0=s_1$.
+Since $\DD$ is swept out by arcs of integral curves of $v_i$, the latter implies $s_0=s_1$.
 
 \item A smooth map $s\:\DD\to\RR^3$ is a $E_{\bm{v}}$-minimizing map among the class of Lipschitz maps with given boundary if and only if
 \[\Delta_{\bm{v}}s=0.\]
@@ -550,8 +544,8 @@ holds in a neighborhood of $p$ for $v_3=\lambda_1\cdot a_1$ and $v_4=\lambda_1\c
 Note that the sum $v_1(v_1s)+v_2(v_2s)$ has vanishing normal part.
 That is \[v_1(v_1s)+v_2(v_2s)\] is a tangent vector to the surface.
 
-Since the $a_i$ are asymptotic,
-the vectors $a_1(a_1s)$ and $a_2(a_2s)$ have vanishing normal part.
+Since $a_i$ are asymptotic,
+the vectors $a_1(a_1s)$ and $a_2(a_2s)$ have vanishing normal parts.
 Therefore, for any choice of $\lambda_i$,
 the following two vectors are also tangent
 \begin{align*}
@@ -594,10 +588,9 @@ Straightforward computations show that on generic smooth saddle surfaces in $\RR
 there is no solution even locally.
 
 For that reason we expect that generic smooth saddle surfaces in $\RR^4$ are not locally metric-minimizing. 
-That is, arbitrary small neighborhoods of any point admit deformations that shrink 
+That is, arbitrarily small neighborhoods of any point admit deformations that shrink 
 the length metric and keep the boundary fixed.
-On the other hand we do not have an example of a saddle surface for which this condition would hold at a single point.
-
+On the other hand, we do not have an example of a saddle surface for which this condition would hold at a single point.
 
 \begin{thebibliography}{52}
 
@@ -616,13 +609,8 @@ Geom. Dedicata 117 (2006), 65--84.
 
 \bibitem{akp}
 Alexander, S.; Kapovitch, V. and Petrunin, A.,
-\textit{Invitation to Alexandrov geometry: CAT(0) spaces.}
-\texttt{arXiv:1701.03483v2 [math.DG]}. 
-
-%\bibitem{bishop}
-%Bishop, R. L.,
-%\textit{The intrinsic geometry of a Jordan domain.}
-%Int. Electron. J. Geom. 1 (2008), no. 2, 33--39.
+\textit{An invitation to Alexandrov geometry: CAT(0) spaces.}
+SpringerBriefs in Mathematics, 2019. 
 
 \bibitem{banakh} Banakh, T. \textit{Running most of the time in a connected set},  MathOverflow   \texttt{https://mathoverflow.net/q/308172}, 
 
@@ -635,25 +623,16 @@ Oxford Lecture Series in Mathematics and its Applications, 20, 2000.
 \textit{A course in metric geometry.}
 Graduate Studies in Mathematics, 33, 2001.
 
-
 \bibitem{daverman} Daverman, R. J.,
 \textit{Decompositions of Manifolds}
 Academic Press Inc., N.Y., 1986.
 
 \bibitem{G} Gromov, M., \textit{Singularities, expanders and topology of maps. Part 1 : Homology versus volume in the spaces of cycles.} Geom. Funct. Anal. 19 (2009) no. 3, 743--841.
 
+\bibitem{HK}
+Hu, T.; Kirk, W. A.,  \textit{Local contractions in metric spaces.}
+Proc. Amer. Math. Soc. 68.1 (1978), 121--124.
 
-
-%\bibitem{GS} Gromov, Mikhail, and Richard Schoen. "Harmonic maps into singular spaces and p-adic superrigidity for lattices in groups of rank one." Publications Mathématiques de l'IHÉS 76.1 (1992): 165-246.
-
-%\bibitem{H} Hamilton, R. S. ``Harmonic Maps of Manifolds with Boundary,'' Lecture Notes in Mathematics, Springer, 1975, ISBN 978-3-540-37530-2.
-
-%\bibitem{HKST} Heinonen, J.;  Koskela, P.;  Shanmugalinga, N.; Tyson, J. ``Sobolev spaces on metric measure spaces,''
-%volume 27 of New Mathematical Monographs. Cambridge University Press, Cambridge, 2015.
-
-%\bibitem{jost} Jost, J.
-%Univalency of harmonic mappings between surfaces.
-%J. Reine Angew. Math. 324 (1981), 141--153. 
 
 \bibitem{KF}
 \begin{otherlanguage}{russian}
@@ -662,10 +641,6 @@ Academic Press Inc., N.Y., 1986.
 \textit{Элементы теории функций и функционального анализа.}
 Издание седьмое, 2004.
 \end{otherlanguage}
-
-
-
-
 
 \bibitem{lang-shroeder} Lang, U.; Schroeder, V.
 \textit{Kirszbraun's theorem and metric spaces of bounded curvature.}
@@ -682,23 +657,20 @@ Geom. Dedicata 166 (2013), 47--66.
 Manuscripta Math., Vol. 115 (2004), 199--205. 
 
 
-\bibitem{LS} Lytchak, A.; Stadler, S.,  \textit{Conformal deformations of CAT(0) spaces}, preprint arXiv:1711.04507, 2017.
+\bibitem{LS} Lytchak, A.; Stadler, S.,  \textit{Conformal deformations of CAT(0) spaces.} Math. Ann. 373 (2019), no. 1-2, 155--163. 
 
 
 \bibitem{LW}Lytchak, A.; Wenger, S. ``Area minimizing discs in metric spaces,'' Arch. Ration. Mech. Anal., 223(3):1123--1182, 2017.
 
-%\bibitem{LW2}Lytchak, A.; Wenger, S. ``Energy and area minimizers in metric spaces,'' preprint  arXiv:1507.02670, 2015.
-
 \bibitem{LW3}
 Lytchak, A.; Wenger, S.,
 \textit{Intrinsic structure of minimal discs in metric spaces.} 
-\texttt{arXiv:1602.06755 [math.DG]}.
-
-%\bibitem{LW4}Lytchak, A.; Wenger, S. ``Regularity of harmonic discs in spaces with quadratic isoperimetric inequality  ,'' preprint  arXiv:1512.01060, 2016.
+Geom. Topol. 22 (2018), no. 1, 591--644. 
 
 \bibitem{LW5} Lytchak, A.; Wenger, S.,  
 \textit{Isoperimetric  characterization  of  upper  curvature bounds.}
-\texttt{arXiv:1611.05261 [math.DG]}.
+Acta Math. 221 (2018), no. 1, 159--202. 
+
 
 \bibitem{mese} Mese, C.
 \textit{The curvature of minimal surfaces in singular spaces.}
@@ -707,7 +679,7 @@ Comm. Anal. Geom. 9 (2001), no. 1, 3--34.
 \bibitem{moore}
 Moore, R. L.,
 \textit{Concerning upper semi-continuous collections of continua.}
-Trans. Amer. Math. Soc. 27 no. 4 (1925) pp. 416--428.
+Trans. Amer. Math. Soc. 27 no. 4 (1925), 416--428.
 
 \bibitem{petrunin-metric-min} Petrunin, A.,
 \textit{Metric minimizing surfaces.}
@@ -719,24 +691,11 @@ Electron. Res. Announc. Math. Sci. 25 (2018), 96.
 
 \bibitem{petrunin-intrinisic} Petrunin, A.,
 \textit{Intrinsic isometries in Euclidean space.}
-St. Petersburg Math. J. 22 (2011), no. 5, 803--812 (\texttt{arXiv:1003.5621v2})
+St. Petersburg Math. J. 22 (2011), no. 5, 803--812.
 
 \bibitem{petrunin-stadler} Petrunin, A.; Stadler, S.,
 \textit{Monotonicity of saddle maps.} 
-\texttt{arXiv:1707.02367 [math.DG]}, to appear in Geom. Dedicata.
-
-%\bibitem{petrunin-orthodox} Petrunin, A. 
-%``Exercises in Orthodox Geometry''
-%{\tt arXiv:0906.0290 [math.HO]}
-
-%\bibitem{R}Reshetnyak, Yu. G. ``Sobolev classes of functions with values in a metric space,'' II, Sibirsk. Mat. Zh. 45 (2004), no. 4, 855-870. MR 2091651 (2005e:46055)
-
-%\bibitem{Se} Serbinowski,  T. ``Boundary regularity of harmonic maps to nonpositively curved metric spaces,''
-%Comm. Anal. Geom. , 2(1):139-153, 1994.
-
-%\bibitem{S}Schoen, R. ``Analytic Aspects of The Harmonic Map Problem'' Chapter IX in  
-%``Lectures on harmonic maps'' by Schoen, R.; Yau, S. T.,  
-%Conference Proceedings and Lecture Notes in Geometry and Topology, II. International Press, Cambridge, MA, 1997. vi+394 pp. ISBN: 1-57146-002-0
+Geom. Dedicata 198 (2019), 181--188.
 
 \bibitem{shefel-2D} 
 \begin{otherlanguage}{russian}
@@ -764,19 +723,8 @@ St. Petersburg Math. J. 22 (2011), no. 5, 803--812 (\texttt{arXiv:1003.5621v2})
 %(1964), 
 %1382--1396
 
-%\bibitem{schoen-yau} Schoen, Richard; Yau, Shing Tung
-%On univalent harmonic maps between surfaces.
-%Invent. Math. 44 (1978), no. 3, 265--278. 
-
-\bibitem{St} Stadler, S. \textit{The structure of minimal surfaces in CAT(0) spaces}, \texttt{arXiv:1808.06410 [math.DG]}.
-
-%\bibitem{W1}Whyburn, G. T., ``On sequences and limiting sets,'' Fund. Math. vol. 25 (1935) pp. 408-426.
-
-%\bibitem{W2}Whyburn, G. T., ``Analytic topology,'' Amer. Math. Soc. Colloquium Publications, vol. 28, 1942.
-
-%\bibitem{Wi}Wilder, R. L., ``Topology of Manifolds,'' American Mathematical Society Colloquium Publications, vol. 32. American Mathematical
-%Society, New York, N. Y., 1949.
-   
+\bibitem{St} Stadler, S. \textit{The structure of minimal surfaces in CAT(0) spaces},
+J. Eur. Math. Soc. (JEMS) 23 (2021), no. 11, 3521–3554.
   
 \end{thebibliography}
 

@@ -1,12 +1,12 @@
 \section{Disc retracts}\label{Metric-minimizing discs}
 
-A disc retract as defined above is nothing but the image of strong deformation retraction of $\DD$;
+A disc-retract as defined above is nothing but the image of strong deformation retraction of $\DD$;
 the restriction of the retraction to the boundary can be taken as the corresponding boundary curve.
 We will not need this statement, but it follows from Moore's quotient theorem quoted below. 
 
 \begin{thm}{Proposition}\label{prop:|D|}
 Let $Y$ be a metric space and $s\:\DD\to\ Y$ be a metric-minimizing disc.
-Then $|\DD|_s$ is a disc retract with boundary curve $\delta_s=\bar\pi_s|_{\SS^1}$.
+Then $|\DD|_s$ is a disc-retract with boundary curve $\delta_s=\bar\pi_s|_{\SS^1}$.
 Moreover, the map $\tau_s\:\<\DD\>_s\to |\DD|_s$ is injective and defines an isometry
 $\<\DD\>_s\zz\to \<|\DD|\>_s$;
 that is, $\tau_s$ is an isometry from $\<\DD\>_s$ to $|\DD|_s$ equipped with induced length metric.
@@ -36,20 +36,22 @@ because of the majorization $\mu\:\hat\pi_s(x)\zz\mapsto \hat\pi_{s'}(x)$.
 Note that
 \[\<x-x'\>_{s}>0=\<x-x'\>_{s'}\]
 for a pair of distinct points $x,x'\in \Omega$.
-In particular, $\mu$ is not an isometry, a contradiction.
+In particular, $\mu$ is not distance-preserving, a contradiction.
 \qeds
 
 
 
 \begin{thm}{Lemma}\label{prop:disc-moore}
-Let $Y$ be a metric space and assume that a map $f\:\DD\to Y$ has no bubbles.
-Then $|\DD|_f$ is homeomorphic to a disc retract with boundary curve $\bar\pi_f|_{\SS^1}$.
+Let $Y$ be a metric space. 
+Assume that a map $f\:\DD\to Y$ has no bubbles.
+Then $|\DD|_f$ is homeomorphic to a disc-retract with boundary curve~$\bar\pi_f|_{\SS^1}$.
 \end{thm}
 
-This lemma is nearly identical to \cite[Corollary 7.12]{LW3}; it could be considered a disc version of Moore's quotient theorem \cite{moore}, \cite{daverman}
-which states that if a continuous map $f$ from the sphere $\SS^2$ to a Hausdorff space $X$
-has acyclic fibers, then $f$ can be approximated by a homeomorphism;
-in particular $X$ is homeomorphic to $\SS^2$.
+This lemma is nearly identical to \cite[Corollary 7.12]{LW3}.
+It could be considered a disc version of Moore's quotient theorem \cite{moore, daverman}.
+The latter states that \textit{if a continuous map $f$ from the sphere $\SS^2$ to a Hausdorff space $X$
+has acyclic fibers, then $f$ can be approximated by a homeomorphism};
+in particular, $X$ is homeomorphic to $\SS^2$.
 
 \parit{Proof.}
 From Lemma~\ref{lem:picont} we know that $\bar\pi_f$ is continuous and hence $|\DD|_f$
@@ -65,23 +67,23 @@ Note that this map satisfies Moore's quotient theorem, hence the statement follo
 \parit{Proof of Proposition~\ref{prop:|D|}.}
 The first two statements follow from Lemma~\ref{prop:point-complement} and Lemma~\ref{prop:disc-moore}.
 
-Since $|\DD|_s$ is a disc retract, the mapping cylinder over the boundary curve of $|\DD|_s$ is homeomorphic to $\DD$.
+Since $|\DD|_s$ is a disc-retract, the mapping cylinder over the boundary curve of $|\DD|_s$ is homeomorphic to $\DD$.
 Denote by $r \:\DD\to |\DD|_s$ the corresponding retraction.
 
 Note that $\<\DD\>_{\bar s\circ r}$ is isometric to $|\DD|_s$ equipped with the induced length metric.
 Recall that the map $\tau_s\:\<\DD\>_s\to|\DD|_s$ is short and the induced map $\mu\:\<\DD\>_s\zz\to\<\DD\>_{\bar s\circ r}$ is a majorization.
-Since $s$ is metric-minimizing, $\mu$ is an isometry.
+Since $s$ is metric-minimizing, $\mu$ is distance-preserving.
 Hence the statement follows.
 \qeds
 
-Assume $W$ is a disc retract with a boundary curve $\delta$.
+Assume $W$ is a disc-retract with a boundary curve $\delta$.
 Recall that a point $p$ in a connected space $W$ is a \emph{cut point} if the complement $W\backslash\{p\}$ is not connected.
 
 \begin{thm}{Lemma}\label{lem:discs}
-Suppose that $W$ is a disc retract.
+Suppose that $W$ is a disc-retract.
 Let $\Delta\subset W$ be a maximal connected subset that contains no cut points.
 Assume $\Delta$ has at least two points.
-Then closure of $\Delta$ is homeomorphic to $\DD$.
+Then the closure of $\Delta$ is homeomorphic to $\DD$.
 \end{thm}
 
 \parit{Proof.}
@@ -93,11 +95,11 @@ In particular, any cut point of $W$ lies on its boundary curve.
 Denote by $\bar\Delta$ the closure of $\Delta$.
 Note that for any $x\notin\bar\Delta$ there is a cut point $p\in\bar\Delta$ that cuts $x$ from $\Delta$.
 Moreover, the map $\sigma\:x\mapsto p$ is uniquely defined on $W\backslash\bar\Delta$;
-extend this map to whole $W$ by identity in $\bar\Delta$.
-By Moore's theorem, $\bar\Delta$ is a disc retract with a boundary curve $\sigma\circ\delta$.
-Namely we apply Moore's theorem to $\SS^2= W_\delta/(\SS^1\times 1)$ and the quotient map $\SS^2\to \SS^2/\sim$ for the minimal equivalence relation such that $x\sim y$ if $\sigma(x)=\sigma(y)$.
+extend this map to the whole $W$ by identity in $\bar\Delta$.
+By Moore's theorem, $\bar\Delta$ is a disc-retract with a boundary curve $\sigma\circ\delta$.
+Namely, we apply Moore's theorem to $\SS^2= W_\delta/(\SS^1\times 1)$ and the quotient map $\SS^2\to \SS^2/\sim$ for the minimal equivalence relation such that $x\sim y$ if $\sigma(x)=\sigma(y)$.
 
-The space $\bar\Delta$ has no cut points, in other words $\sigma\circ\delta$ is monotonic.
+The space $\bar\Delta$ has no cut points; in other words, $\sigma\circ\delta$ is monotonic.
 It follows that $\sigma\circ\delta$ can be reparameterized into a simple closed curve.
 By Jordan--Schoenflies theorem, the statement follows.
 \qeds
@@ -106,7 +108,7 @@ The following lemma will be used in the final step in the proof of the main theo
 
 \begin{thm}{Lemma}\label{lem:maj is isom}
 Let $Y$ be a metric space and $s\:\DD\to Y$ be a metric-minimizing map.
-Assume that there is a $\CAT(0)$ disc retract $W$ with boundary curve $\delta$ and a short map $f\:\<\DD\>_s \to W$
+Assume that there is a $\CAT(0)$ disc-retract $W$ with boundary curve $\delta$ and a short map $f\:\<\DD\>_s \to W$
 such that $f\circ \delta_s=\delta$. If there exists a short map 
 $q\: W\to Y$ with $q\circ \delta=s|_{\partial \DD}$, then the map $f$ is an isometry.
 \end{thm}
@@ -117,10 +119,10 @@ Note that $r$ is a retraction, $r|_{\partial \DD}=\delta$ and the composition $\
 
 Note that  $\<W\>_q=\<\DD\>_{q\circ r}$ and the natural projection $\rho\: W\to \<W\>_q$ is short.
 It follows that $\rho\circ f\: \<\DD\>_s\to \<\DD\>_{q\circ r}$ is a majorization.
-Since $s$ is metric-minimizing, $\rho\circ f$ is an isometry. 
+Since $s$ is metric-minimizing, $\rho\circ f$ is distance-preserving. 
 
-Therefore $f$ is an isometric embedding that contains $\delta$
-in its image. 
+Therefore $f$ is an isometric embedding. 
 By Lemma \ref{lem:geospace} and Proposition \ref{prop:|D|}, $\<\DD\>_s$ is a complete geodesic space.
-So $f$ has to be surjective and therefore an isometry.
+Therefore, the image of $f$ is a closed convex set in $W$, and it contains $\delta$.
+Hence $f$ has to be surjective, and the lemma follows.
 \qeds
